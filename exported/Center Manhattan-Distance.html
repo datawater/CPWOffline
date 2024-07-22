@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Center Manhattan-Distance - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Center_Manhattan-Distance","wgTitle":"Center Manhattan-Distance","wgCurRevisionId":15681,"wgRevisionId":15681,"wgArticleId":1181,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CAB","Brian Auger","Dennis Chambers"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Center_Manhattan-Distance","wgRelevantArticleId":1181,"wgRequestId":"Zp7DSKr3TkUYSeSKrHxdBAAAAA8","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Center_Manhattan-Distance rootpage-Center_Manhattan-Distance skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Center Manhattan-Distance</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Squares.html" title="Squares">Squares</a> * Center Manhattan-Distance</b>
+</p><p>The <b>Center Manhattan-Distance</b> is the <a href="Manhattan-Distance.html" title="Manhattan-Distance">Manhattan-Distance</a> or number of orthogonal <a href="King.html" title="King">King</a> moves on the otherwise empty board from any square to the four squares {d4, d5, e4, e5} in the center of the board. In conjunction with <a href="Center Distance.html" title="Center Distance">Center Distance</a> a constant <a href="Array.html" title="Array">array</a> might be considered as the base of <a href="Piece-Square Tables.html" title="Piece-Square Tables">Piece-Square Tables</a>. Center Manhattan-Distance is used in various evaluation terms, for instance to encourage the king to centralize in the ending, as well in <a href="Mop-up Evaluation.html" title="Mop-up Evaluation">Mop-up Evaluation</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Lookup"><span class="tocnumber">1</span> <span class="toctext">Lookup</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Calculation"><span class="tocnumber">2</span> <span class="toctext">Calculation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Lookup">Lookup</span></h1>
+<p>Rather than to calculate the Center Manhattan-Distance from square coordinates, taking the sum from the file- and rank- Center Distance each, a lookup of a small array is appropriate. This is how the Center Manhattan-Distance might be defined in <a href="C.html" title="C">C</a> or <a href="Cpp.html" title="Cpp">C++</a>:
+</p>
+<pre>
+const int arrCenterManhattanDistance[64] = { // char is sufficient as well, also unsigned
+  6, 5, 4, 3, 3, 4, 5, 6,
+  5, 4, 3, 2, 2, 3, 4, 5,
+  4, 3, 2, 1, 1, 2, 3, 4,
+  3, 2, 1, 0, 0, 1, 2, 3,
+  3, 2, 1, 0, 0, 1, 2, 3,
+  4, 3, 2, 1, 1, 2, 3, 4,
+  5, 4, 3, 2, 2, 3, 4, 5,
+  6, 5, 4, 3, 3, 4, 5, 6
+};
+</pre>
+<h1><span class="mw-headline" id="Calculation">Calculation</span></h1>
+<p>Avoid Memory lookup purists may use following calculation. The routine first extracts file and rank. If either is less than 4, its ones' complement is used, to get the file or rank wise Manhattan Center Distance from the two lower bits each (while the third lowest bit 2, is always set).
+</p>
+<pre>
+file = sq  &amp; 7;             //  0  1  2  3  4  5  6  7
+if (file &lt; 4) file = ~file; // -1 -2 -3 -4  4  5  6  7  bit 2 is always set
+file &amp;= 3;                  //  3  2  1  0  0  1  2  3
+</pre>
+<p>The file and rank distances are added for the final Manhattan Center Distance. The slight optimization considers each summand has bit 2 set, to perform the 'add' with a final post-mask 7, rather than to add two pre-masks with 3.
+</p>
+<pre>
+/**
+ * manhattanCenterDistance
+ * @author Gerd Isenberg
+ * @param sq square 0..63
+ * @return Manhattan Center Distance
+ */
+int manhattanCenterDistance(int sq) {
+   int file, rank;
+   file  = sq  &amp; 7;
+   rank  = sq &gt;&gt; 3;
+   file ^= (file-4) &gt;&gt; 8;
+   rank ^= (rank-4) &gt;&gt; 8;
+   return (file + rank) &amp; 7;
+}
+</pre>
+<p>with following generated <a href="X86.html" title="X86">x86</a> <a href="Assembly.html" title="Assembly">Assembly</a>:
+</p>
+<pre>
+?manhattanCenterDistance PROC NEAR
+; _sq$ = ecx
+  00000	8b d1       mov  edx, ecx
+  00002	c1 f9 03    sar  ecx, 3
+  00005	8d 41 fc    lea  eax, DWORD PTR [ecx-4]
+  00008	c1 f8 08    sar  eax, 8
+  0000b	33 c1       xor  eax, ecx
+  0000d	83 e2 07    and  edx, 7
+  00010	8d 4a fc    lea  ecx, DWORD PTR [edx-4]
+  00013	c1 f9 08    sar  ecx, 8
+  00016	33 ca       xor  ecx, edx
+  00018	03 c1       add  eax, ecx
+  0001a	83 e0 07    and  eax, 7
+  0001d	c3          ret  0
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Avoiding Branches.html" title="Avoiding Branches">Avoiding Branches</a></li>
+<li> <a href="Center Distance.html" title="Center Distance">Center Distance</a></li>
+<li> <a href="KBNK Endgame.html#CornerDistance" title="KBNK Endgame">Corner-Distance</a> in <a href="KBNK Endgame.html" title="KBNK Endgame">KBNK Endgame</a></li>
+<li> <a href="Manhattan-Distance.html" title="Manhattan-Distance">Manhattan-Distance</a> </li>
+<li> <a href="Mop-up Evaluation.html" title="Mop-up Evaluation">Mop-up Evaluation</a></li>
+<li> <a href="Piece-Square Tables.html" title="Piece-Square Tables">Piece-Square Tables</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62257.html" rel="nofollow">Simple method for simple mates for programs without TBs</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2016 » <a href="Mop-up Evaluation.html" title="Mop-up Evaluation">Mop-up Evaluation</a>, <a href="KBNK Endgame.html" title="KBNK Endgame">KBNK Endgame</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a href="Category:CAB.html" title="Category:CAB">CAB</a> - Wah Wah, <a class="external text" href="https://en.wikipedia.org/wiki/Tony_MacAlpine" rel="nofollow">Tony MacAlpine</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Bunny_Brunel" rel="nofollow">Bunny Brunel</a>, <a href="Category:Dennis Chambers.html" title="Category:Dennis Chambers">Dennis Chambers</a>, <a href="Category:Brian Auger.html" title="Category:Brian Auger">Brian Auger</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/id-Kq4yN-VE?" width="640"></iframe></div></div></dd></dl>
+<p><b><a href="Squares.html" title="Squares">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722164229
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.005 seconds
+Real time usage: 0.006 seconds
+Preprocessor visited node count: 58/1000000
+Preprocessor generated node count: 136/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1181-0!canonical and timestamp 20240722164229 and revision id 15681
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Center_Manhattan-Distance&amp;oldid=15681">https://www.chessprogramming.org/index.php?title=Center_Manhattan-Distance&amp;oldid=15681</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:CAB.html" title="Category:CAB">CAB</a></li><li><a href="Category:Brian Auger.html" title="Category:Brian Auger">Brian Auger</a></li><li><a href="Category:Dennis Chambers.html" title="Category:Dennis Chambers">Dennis Chambers</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Center+Manhattan-Distance&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Center Manhattan-Distance.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Center Manhattan-Distance&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Center Manhattan-Distance.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Center Manhattan-Distance&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Center Manhattan-Distance&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Center Manhattan-Distance.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Center Manhattan-Distance.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Center Manhattan-Distance&amp;oldid=15681.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Center Manhattan-Distance&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 29 November 2019, at 00:21.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Center_Manhattan-Distance&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.005","walltime":"0.006","ppvisitednodes":{"value":58,"limit":1000000},"ppgeneratednodes":{"value":136,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722164229","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":54});});</script>
+</body>
+</html>

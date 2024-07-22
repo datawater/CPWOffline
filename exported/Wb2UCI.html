@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Wb2UCI - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Wb2UCI","wgTitle":"Wb2UCI","wgCurRevisionId":12074,"wgRevisionId":12074,"wgArticleId":5533,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Wb2UCI","wgRelevantArticleId":5533,"wgRequestId":"Zp7Dv--qaMe6EU8WbZGhYAAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Wb2UCI rootpage-Wb2UCI skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Wb2UCI</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Software.html" title="Software">Software</a> * <a href="Utilities.html" title="Utilities">Utilities</a> * Wb2UCI</b>
+</p><p><b>Wb2UCI</b>, (Wb2Uci, WB2UCI)<br/>
+a <a href="Protocols.html" title="Protocols">protocol</a> adapter by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a> to run <a href="Category:WinBoard.html" title="Category:WinBoard">WinBoard Engines</a> using the <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> under chess <a href="GUI.html" title="GUI">GUIs</a> supporting <a href="UCI.html" title="UCI">UCI</a>, such as the <a href="Shredder.html#GUI" title="Shredder">Shredder GUI</a>. Wb2UCI is a <a class="external text" href="https://en.wikipedia.org/wiki/Console_application" rel="nofollow">console application</a> running under <a href="Windows.html" title="Windows">Windows</a>. 
+Along with the executable <b>Wb2Uci.exe</b>, one must place a <b>Wb2Uci.eng</b> textfile into the engine folder <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Wb2Uci.eng"><span class="tocnumber">1</span> <span class="toctext">Wb2Uci.eng</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Engines"><span class="tocnumber">2</span> <span class="toctext">Engines</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#GUIs"><span class="tocnumber">3</span> <span class="toctext">GUIs</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Postings"><span class="tocnumber">5</span> <span class="toctext">Postings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#2001 ..."><span class="tocnumber">5.1</span> <span class="toctext">2001 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2005 ..."><span class="tocnumber">5.2</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2010 ..."><span class="tocnumber">5.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2015 ..."><span class="tocnumber">5.4</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Wb2Uci.eng">Wb2Uci.eng</span></h1>
+<p>The <b>Wb2Uci.eng</b> file consists of following mandatory <a class="external text" href="https://en.wikipedia.org/wiki/Attribute%E2%80%93value_pair" rel="nofollow">attribute–value pairs</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, and many more optional.
+</p>
+<pre>
+;---------------------------
+[ENGINE]
+Name=Name of engine
+Author=Name of engine author
+Filename=Wb2Uci.exe
+
+[OPTIONS]
+Program=engine.exe
+;---------------------------
+</pre>
+<h1><span class="mw-headline" id="Engines">Engines</span></h1>
+<ul><li> <a href="Category:WinBoard.html" title="Category:WinBoard">WinBoard Engines</a> </li></ul>
+<h1><span class="mw-headline" id="GUIs">GUIs</span></h1>
+<ul><li> <a href="UCI.html#GUI" title="UCI">UCI compatible GUIs</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a></li>
+<li> <a href="InBetween.html" title="InBetween">InBetween</a></li>
+<li> <a href="PolyGlot.html" title="PolyGlot">PolyGlot</a></li>
+<li> <a href="UCI.html" title="UCI">UCI</a></li>
+<li> <a href="UCI2WB.html" title="UCI2WB">UCI2WB</a></li>
+<li> <a href="WinBoard.html" title="WinBoard">WinBoard</a></li></ul>
+<h1><span class="mw-headline" id="Postings">Postings</span></h1>
+<h2><span class="mw-headline" id="2001_...">2001 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=33936.html" rel="nofollow">Help - The King; Chessbase/Fritz GUI</a> by John Hatcher, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, June 10, 2001</li></ul>
+<p><b>2002</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=215566" rel="nofollow">UCI2Wb by Odd Gunnar Malin</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 26, 2002 » <a href="UCI2WB.html" title="UCI2WB">UCI2WB</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=36342.html" rel="nofollow">Wb2Uci from Odd Gunnar Malin is working well on Shredder5 GUI</a> by Carlos E.A. Drake, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, March 06, 2002 » <a href="Shredder.html#GUI" title="Shredder">Shredder GUI</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=218644" rel="nofollow">The King and Wb2Uci</a> by Ralph Patriquin, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2002 » <a href="The King.html" title="The King">The King</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=36656.html" rel="nofollow">Wb2uci question</a> by Jouni, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, April 02, 2002</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=36819&amp;p=139614.html#p139734" rel="nofollow">Re: Fritz protocol</a> by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, April 14, 2002 » <a href="Fritz.html" title="Fritz">Fritz</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=39155.html" rel="nofollow">Wb2Uci</a> by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 23, 2002</li></ul>
+<p><b>2003</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=274600" rel="nofollow">Need help with CM 9000 and WB2UCI</a> by Ralph Patriquin, <a href="CCC.html" title="CCC">CCC</a>, January 02, 2003 » <a href="Chessmaster.html" title="Chessmaster">Chessmaster</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=284077" rel="nofollow">Wb2Uci and XP</a> by Chessfun, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=284985" rel="nofollow">Re: Can Gandalf 5 be run under Fritz GUI as an UCI engine w/ Wb2UCI ?</a> by <a class="new" href="index.php?title=Manfred Meiler&amp;action=edit&amp;redlink=1.html" title="Manfred Meiler (page does not exist)">Manfred Meiler</a>, <a href="CCC.html" title="CCC">CCC</a>, February 18, 2003 » <a href="Gandalf.html" title="Gandalf">Gandalf</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=41334.html" rel="nofollow">List of 31 not-working engines (Fritz-GUI, XP). Any help?</a> by Surak, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, February 20, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=306801" rel="nofollow">wb2uci,eng w comments</a> by <a href="Michael Byrne.html" title="Michael Byrne">Mike Byrne</a>, <a href="CCC.html" title="CCC">CCC</a>, July 16, 2003 » <a href="Rebel.html" title="Rebel">Rebel</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=43496.html" rel="nofollow">Wb2UCI and Problems with ExChess4.03a and GnuChess4.0.8</a> by <a href="Arturo Ochoa.html" title="Arturo Ochoa">Arturo Ochoa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 24, 2003 » <a href="EXchess.html" title="EXchess">EXchess</a>, <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=43805.html" rel="nofollow">Engine Gaviota + WB2UCI in Fritz7 don,t Work pondering</a> by Luis Andraschnik, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, August 15, 2003 » <a href="Gaviota.html" title="Gaviota">Gaviota</a></li></ul>
+<p><b>2004</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=45863.html" rel="nofollow">Crafty 19.08 SE 2004 released ...</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael Byrne</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, January 01, 2004 » <a href="Crafty.html" title="Crafty">Crafty</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=341498" rel="nofollow">The King's Wb2UCI file</a> by Darren Rushton, <a href="CCC.html" title="CCC">CCC</a>, January 10, 2004 » <a href="The King.html" title="The King">The King</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=48455.html" rel="nofollow">GLC and others when using wb2uci</a> by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, August 03, 2004 » <a href="Green Light Chess.html" title="Green Light Chess">Green Light Chess</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=407137" rel="nofollow">To Odd-Gunnar Malin: Bug in WB2UCI-adaptor</a> by <a class="new" href="index.php?title=Franz Huber&amp;action=edit&amp;redlink=1.html" title="Franz Huber (page does not exist)">Franz Huber</a>, <a href="CCC.html" title="CCC">CCC</a>, January 23, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=431484" rel="nofollow">Re: New Wb2Uci 1.3 B21</a> by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13045.html" rel="nofollow">Where is the latest wb2uci.exe file available from?</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2007 </li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=19&amp;t=50429.html" rel="nofollow">UCI protocol in winboard</a> by <a href="Engin %C3%9Cst%C3%BCn.html" title="Engin Üstün">Engin Üstün</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 24, 2009 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a>, <a href="UCI.html" title="UCI">UCI</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32256.html" rel="nofollow">n/s speed of search through Wb2Uci - need some clarification</a> by <a href="Martin Thoresen.html" title="Martin Thoresen">Martin Thoresen</a>, <a href="CCC.html" title="CCC">CCC</a>, February 01, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39426.html" rel="nofollow">Need help reading Arena debug and wb2uci logfiles</a> by <a href="Adam Hair.html" title="Adam Hair">Adam Hair</a>, <a href="CCC.html" title="CCC">CCC</a>, June 19, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47232.html" rel="nofollow">wb2uci adaptor,where can I get it? please!</a> by markchessman, <a href="CCC.html" title="CCC">CCC</a>, February 15, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51276.html" rel="nofollow">WB2UCI for Java executable chess engines too?</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, February 14, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52914.html" rel="nofollow">WB2UCI.EXE adapter</a> by Jim Logan, <a href="CCC.html" title="CCC">CCC</a>, July 08, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58982.html" rel="nofollow">wb2uci adapter - different results with different versions</a> by Wilhelm Hudetz, <a href="CCC.html" title="CCC">CCC</a>, January 20, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60699.html" rel="nofollow">WB2UCI</a> by <a class="new" href="index.php?title=Brendan J. Norman&amp;action=edit&amp;redlink=1.html" title="Brendan J. Norman (page does not exist)">Brendan J. Norman</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2016</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20120515104014/http://home.online.no:80/%7Emalin/sjakk/Wb2Uci/.html" rel="nofollow">Winboard as UCI engine</a> by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a>, hosted by the <a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">WaybackMachine</a></li>
+<li> <a class="external text" href="http://adamsccpages.blogspot.de/p/computer-chess-utility-programs.html.html#h" rel="nofollow">Adam's Computer Chess Pages: Computer Chess Utility Programs - WB2UCI</a> by <a href="Adam Hair.html" title="Adam Hair">Adam Hair</a></li>
+<li> <a class="external text" href="http://americanfoot.free.fr/echecs/suisse/fichiers.htm.html" rel="nofollow">Le Système du Suisse</a> has wbconf07.zip  with approximately 300 Wb2Uci.eng files </li>
+<li> <a class="external text" href="https://sourceforge.net/p/craftychessinterface/wiki/wb2uci%20with%20multiple%20engines/" rel="nofollow">Crafty Chess Interface / Wiki / wb2uci with multiple engines</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"> <a class="external text" href="http://adamsccpages.blogspot.de/p/computer-chess-utility-programs.html.html#h" rel="nofollow">Adam's Computer Chess Pages: Computer Chess Utility Programs - WB2UCI</a> by <a href="Adam Hair.html" title="Adam Hair">Adam Hair</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://americanfoot.free.fr/echecs/suisse/fichiers.htm.html" rel="nofollow">Le Système du Suisse</a> has wbconf07.zip  with approximately 300 Wb2Uci.eng files</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://web.archive.org/web/20120515104014/http://home.online.no:80/%7Emalin/sjakk/Wb2Uci/.html" rel="nofollow">Winboard as UCI engine</a> by <a href="Odd Gunnar Malin.html" title="Odd Gunnar Malin">Odd Gunnar Malin</a>, hosted by the <a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">WaybackMachine</a></span>
+</li>
+</ol></div>
+<p><b><a href="Utilities.html" title="Utilities">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722011549
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.012 seconds
+Real time usage: 0.013 seconds
+Preprocessor visited node count: 98/1000000
+Preprocessor generated node count: 182/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:5533-0!canonical and timestamp 20240722011549 and revision id 12074
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Wb2UCI&amp;oldid=12074">https://www.chessprogramming.org/index.php?title=Wb2UCI&amp;oldid=12074</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Wb2UCI&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Wb2UCI.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Wb2UCI&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Wb2UCI.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Wb2UCI&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Wb2UCI&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Wb2UCI.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Wb2UCI.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Wb2UCI&amp;oldid=12074.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Wb2UCI&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 10 May 2019, at 10:21.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Wb2UCI&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.012","walltime":"0.013","ppvisitednodes":{"value":98,"limit":1000000},"ppgeneratednodes":{"value":182,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722011549","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":42});});</script>
+</body>
+</html>

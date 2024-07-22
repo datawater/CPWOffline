@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ZChess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ZChess","wgTitle":"ZChess","wgCurRevisionId":14902,"wgRevisionId":14902,"wgArticleId":5031,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["WinBoard","Chess Suffix"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ZChess","wgRelevantArticleId":5031,"wgRequestId":"Zp7Dvk5Wo@-cHXK2v45VTgAAAA0","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ZChess rootpage-ZChess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">ZChess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * ZChess</b>
+</p><p><b>ZChess</b>,<br/>
+a <a href="WinBoard.html" title="WinBoard">WinBoard</a> compatible chess engine by <a href="Franck Zibi.html" title="Franck Zibi">Franck Zibi</a>, written in <a href="Cpp.html" title="Cpp">C++</a>, in April 2001 renamed to <a href="Pharaon.html" title="Pharaon">Pharaon</a>. ZChess evolved from a <a href="C.html" title="C">C</a> port of <a href="HpChess.html" title="HpChess">HpChess</a> incorporating <a class="external text" href="https://en.wikipedia.org/wiki/Object-oriented_programming" rel="nofollow">object oriented</a> paradigms, and using a <a href="Bitboards.html" title="Bitboards">bitboard</a> board representation <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> and in particular <a href="Rotated Bitboards.html" title="Rotated Bitboards">rotated bitboards</a> to generate sliding piece attacks. 
+ZChess applies <a href="Principal Variation Search.html" title="Principal Variation Search">PVS</a> with <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> and <a href="Aspiration Windows.html" title="Aspiration Windows">aspiration windows</a>, using a <a href="Transposition Table.html" title="Transposition Table">transposition table</a> with multiple probes, <a href="Pawn Hash Table.html" title="Pawn Hash Table">pawn-</a> and <a href="King Safety.html" title="King Safety">king safety</a> <a href="Hash Table.html" title="Hash Table">hash tables</a>, <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a> for <a href="Move Ordering.html" title="Move Ordering">move ordering</a> and <a href="Pruning.html" title="Pruning">pruning</a>, <a href="Null Move Pruning.html#AdaptiveNullMovePruning" title="Null Move Pruning">adaptive null move pruning</a> with <a href="Depth Reduction R.html" title="Depth Reduction R">R</a> = 2, 3, and heavily prunes not only in <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>. Move ordering considers <a href="Hash Move.html" title="Hash Move">hash-table move</a>, winning <a href="Captures.html" title="Captures">captures</a> by SEE, <a href="Killer Heuristic.html" title="Killer Heuristic">killer heuristic</a>, <a href="Countermove Heuristic.html" title="Countermove Heuristic">counter move heuristic</a>, and <a href="History Heuristic.html" title="History Heuristic">history heuristic</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tournaments"><span class="tocnumber">1</span> <span class="toctext">Tournaments</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Selected Games"><span class="tocnumber">2</span> <span class="toctext">Selected Games</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#FCCC 1998"><span class="tocnumber">2.1</span> <span class="toctext">FCCC 1998</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#WMCCC 2000"><span class="tocnumber">2.2</span> <span class="toctext">WMCCC 2000</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Tournaments">Tournaments</span></h1>
+<p>ZChess had its debut at the <a href="FCCC 1997.html" title="FCCC 1997">FCCC 1997</a> and became runner up behind <a href="Chess Wizard.html" title="Chess Wizard">Chess Wizard</a> at the <a href="FCCC 1998.html" title="FCCC 1998">FCCC 1998</a>. It further participated at the <a href="WMCCC 2000.html" title="WMCCC 2000">WMCCC 2000</a> in London, the <a href="IPCCC 2001.html" title="IPCCC 2001">IPCCC 2001</a> and <a href="CCT2.html" title="CCT2">CCT2</a> online tournament, before it was renamed to <a href="Pharaon.html" title="Pharaon">Pharaon</a>. Against humans, ZChess 1.2 played the <a href="Aubervilliers Rapid Open.html#1999" title="Aubervilliers Rapid Open">1999 Aubervilliers Tournament</a>, scoring 9½/12 (one loss) with a <a class="external text" href="https://en.wikipedia.org/wiki/Performance_rating_%28chess%29#Performance_rating" rel="nofollow">TPR</a> of 2300 <a class="external text" href="https://en.wikipedia.org/wiki/Elo_rating_system" rel="nofollow">Elo</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Selected_Games">Selected Games</span></h1>
+<h2><span class="mw-headline" id="FCCC_1998">FCCC 1998</span></h2>
+<p><a href="FCCC 1998.html" title="FCCC 1998">FCCC 1998</a>, round 10, <a class="mw-selflink selflink">ZChess</a> - <a href="Chess Guru.html" title="Chess Guru">Chess Guru</a>
+</p>
+<pre>
+[Event "6th French CCC"]
+[Site "Clichy, FRA"]
+[Date "1998.09.27"]
+[Round "10"]
+[White "ZChess"]
+[Black "Chess Guru"]
+[Result "1-0"]
+[ECO "B81"]
+
+1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e6 6.g4 h6 7.Rg1 Be7 8.Be3
+Nc6 9.Qf3 Bd7 10.O-O-O Nxd4 11.Rxd4 Qa5 12.Rd1 Bc6 13.g5 hxg5 14.Rxg5 
+d5 15.Rxg7 dxe4 16.Qf4 Kf8 17.Rg2 Nh5 18.Qg4 Bb4 19.Nb1 Nf6 20.Qg7+ 
+Ke7 21.Rg5 Bd5 22.Rg6 Nh7 23.Rh6 Rag8 24.Bg5+ Ke8 25.Qe5 f6 26.Bxf6 
+Nxf6 27.Rxf6 Ke7 28.a3 Bc4 29.Qf4 Qh5 30.axb4 e5 31.Qxe4 Kxf6 32.Bxc4 
+Rd8 33.Nd2 Rd7 34.f4 Ke7 35.Bb5 Rdd8 36.Qxb7+ Kf8 37.Qc7 Qh4 38.fxe5
+Rh7 39.Qc5+ Kg8 40.Rg1+ Kh8 41.e6 Qf6 42.Ne4 Qf4+ 43.Kb1 Qxe4 44.Qc3+ 
+Qd4 45.Rd1 1-0
+</pre>
+<h2><span class="mw-headline" id="WMCCC_2000">WMCCC 2000</span></h2>
+<p><a href="WMCCC 2000.html" title="WMCCC 2000">WMCCC 2000</a>, round 6, <a href="Junior.html" title="Junior">Junior</a> - <a class="mw-selflink selflink">ZChess</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+</p>
+<pre>
+[Event "WMCCC 2000"]
+[Site "London, UK"]
+[Date "2000.08.24"]
+[Round "6"]
+[White "Junior"]
+[Black "ZChess"]
+[Result "1/2-1/2"]
+
+1.e4 c6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Nd7 5.Ng5 Ngf6 6.Bd3 e6 7.N1f3 Bd6 
+8.Qe2 h6 9.Ne4 Nxe4 10.Qxe4 Qc7 11.Qg4 Kf8 12.O-O c5 13.Re1 b6 14.c3 
+Bb7 15.h4 Rd8 16.Qh3 Bf4 17.a4 Bxc1 18.Raxc1 Qf4 19.Qg3 Qxg3 20.fxg3 
+Ke7 21.Bb5 a5 22.Rcd1 g5 23.d5 Nf6 24.c4 Rhg8 25.Rd2 Rd6 26.b3 Rg7 
+27.Rde2 Ng4 28.Nd2 Nf6 29.hxg5 hxg5 30.Nf3 Ng4 31.Re4 Nh6 32.g4 Kd8 
+33.R4e2 Rg6 34.Ne5 Rf6 35.Re3 exd5 36.cxd5 Rxd5 37.Nc4 Kc8 38.Re8+ Rd8 
+39.Rxd8+ Kxd8 40.Rd1+ Kc7 41.Rd7+ Kb8 42.Rd8+ Kc7 43.Rd7+ Kb8 1/2-1/2 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Pharaon.html" title="Pharaon">Pharaon</a></li>
+<li> <a href="Z-Chess.html" title="Z-Chess">Z-Chess</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=127888" rel="nofollow">ANN : ZChess 2.0 (London) Released</a> by <a href="Franck Zibi.html" title="Franck Zibi">Franck Zibi</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=127895" rel="nofollow">ZChess 2.0 running the gauntlet</a> by CLiebert, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2000</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=32639.html" rel="nofollow">ZChess getting much stronger...</a> by CLiebert, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 10, 2000</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46037.html" rel="nofollow">ZChess 2.00 (London) in concerto !</a> by <a class="external text" href="http://www.talkchess.com/forum/profile.php?mode=viewprofile&amp;u=881.html" rel="nofollow">Ruxy Sylwyka</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2012</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=124" rel="nofollow">ZChess' ICGA Tournaments</a> (includes <a href="Pharaon.html" title="Pharaon">Pharaon</a>)</li>
+<li> <a class="external text" href="http://www.fzibi.com/pharaon/history.htm.html" rel="nofollow">Pharaon History</a></li>
+<li> <a class="external text" href="http://www.fzibi.com/pharaon/auber99.htm.html" rel="nofollow">ZChess at the 1999 Aubervilliers Tournament</a> » <a href="Aubervilliers Rapid Open.html#1999" title="Aubervilliers Rapid Open">Aubervilliers Rapid Open 1999</a></li>
+<li> <a class="external text" href="http://www.rebel.nl/authors.htm.html" rel="nofollow">Meet the Authors</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></li>
+<li> <a class="external text" href="http://www.365chess.com/players/Comp ZChess 1.2.html" rel="nofollow">Comp ZChess 1.2 chess games - 365Chess.com</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.fzibi.com/cchess/bitboards.htm.html" rel="nofollow">Introduction to Bitboards</a> by <a href="Franck Zibi.html" title="Franck Zibi">Franck Zibi</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.fzibi.com/pharaon/history.htm.html" rel="nofollow">Pharaon History</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.fzibi.com/pharaon/auber99.htm.html" rel="nofollow">ZChess at the 1999 Aubervilliers Tournament</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/round.php?tournament=31&amp;round=6&amp;id=5" rel="nofollow">London 2000 - Chess - Round 6 - Game 5 (ICGA Tournaments)</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=125984" rel="nofollow">Junior-zchess is going to be a draw</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, August, 24, 2000</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722173626
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.012 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 123/1000000
+Preprocessor generated node count: 254/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:5031-0!canonical and timestamp 20240722173625 and revision id 14902
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=ZChess&amp;oldid=14902">https://www.chessprogramming.org/index.php?title=ZChess&amp;oldid=14902</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:WinBoard.html" title="Category:WinBoard">WinBoard</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=ZChess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="ZChess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:ZChess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="ZChess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=ZChess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=ZChess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/ZChess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/ZChess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=ZChess&amp;oldid=14902.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=ZChess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 9 October 2019, at 11:11.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=ZChess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.012","walltime":"0.012","ppvisitednodes":{"value":123,"limit":1000000},"ppgeneratednodes":{"value":254,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722173626","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":49});});</script>
+</body>
+</html>

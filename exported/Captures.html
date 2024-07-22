@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Captures - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Captures","wgTitle":"Captures","wgCurRevisionId":20108,"wgRevisionId":20108,"wgArticleId":1151,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Jerry Bergonzi"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Captures","wgRelevantArticleId":1151,"wgRequestId":"Zp7DPLG9G67YuqUGxlgbZgAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Captures rootpage-Captures skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Captures</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Moves.html" title="Moves">Moves</a> * Captures</b>
+</p><p><b>Captures</b> are <a href="Tactical Moves.html" title="Tactical Moves">tactical moves</a> changing <a href="Material.html#Balance" title="Material">material balance</a> where an opponent <a href="Pieces.html" title="Pieces">piece</a> is removed from the <a href="Chessboard.html" title="Chessboard">board</a> as part of the completion of the move. This is either done by moving a piece to a <a href="Squares.html" title="Squares">square</a>, which is <a href="Occupancy.html" title="Occupancy">occupied</a> by the opponent captured piece - or as a special case of <a href="Pawn.html" title="Pawn">pawn</a> takes pawn, <a href="En passant.html" title="En passant">en passant</a>.
+</p><p>Winning captures are those with least valuable aggressor of most valuable victim, where even a recapture would win <a href="Material.html" title="Material">material</a>, and captures of pieces <a href="En prise.html" title="En prise">en prise</a>, that is the union of undefended (<a href="Hanging Piece.html" title="Hanging Piece">hanging</a>) pieces, as well as pieces defended inadequately. A <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">static exchange evaluation</a> might be applied to determine a victim is <i>en prise</i> or not. Equal captures are exchanges of equal valued pieces. Winning, as well as equal captures are subject of <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>. Some programs <a href="Capture Extensions.html" title="Capture Extensions">extend captures</a> or <a href="Recapture Extensions.html" title="Recapture Extensions">recaptures</a> under certain conditions, i.e. material becomes close to the root score again.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Capture Generation"><span class="tocnumber">1</span> <span class="toctext">Capture Generation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Six times Take Five"><span class="tocnumber">2</span> <span class="toctext">Six times Take Five</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Capture_Generation">Capture Generation</span></h1>
+<p>With <a href="Mailbox.html" title="Mailbox">mailbox</a> like square centric <a href="Board Representation.html" title="Board Representation">board representations</a>, capture <a href="Move Generation.html" title="Move Generation">generation</a> requires a so called <a href="Vector Attacks.html#NewArchitecture" title="Vector Attacks">blocker loop</a>, while <a href="Bitboards.html" title="Bitboards">bitboards</a> rely on attack generation and <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> with the set of opponent pieces.
+</p>
+<h1><span class="mw-headline" id="Six_times_Take_Five">Six times Take Five</span></h1>
+<table class="wikitable">
+<tr>
+<th> Capture
+</th>
+<th> Best case
+</th>
+<th> Worst case
+</th></tr>
+<tr>
+<td colspan="3"> capturing with the pawn
+</td></tr>
+<tr>
+<td>  pxQ
+</td>
+<td>  winning queen
+</td>
+<td>  pawn for queen
+</td></tr>
+<tr>
+<td>  pxR
+</td>
+<td>  winning rook
+</td>
+<td>  pawn for rook
+</td></tr>
+<tr>
+<td>  pxB
+</td>
+<td>  winning bishop
+</td>
+<td>  pawn for bishop
+</td></tr>
+<tr>
+<td>  pxN
+</td>
+<td>  winning knight
+</td>
+<td>  pawn for knight
+</td></tr>
+<tr>
+<td>  pxP
+</td>
+<td>  winning pawn
+</td>
+<td>  exchanging pawns
+</td></tr>
+<tr>
+<td colspan="3"> capturing with the knight
+</td></tr>
+<tr>
+<td>  nxQ
+</td>
+<td>  winning queen
+</td>
+<td>  knight for queen
+</td></tr>
+<tr>
+<td>  nxR
+</td>
+<td>  winning rook
+</td>
+<td>  winning the exchange
+</td></tr>
+<tr>
+<td>  nxB
+</td>
+<td>  winning bishop
+</td>
+<td>  exchanging minors
+</td></tr>
+<tr>
+<td>  nxN
+</td>
+<td>  winning knight
+</td>
+<td>  exchanging minors
+</td></tr>
+<tr>
+<td>  nxP
+</td>
+<td>  winning pawn
+</td>
+<td>  losing knight for pawn
+</td></tr>
+<tr>
+<td colspan="3"> capturing with the bishop
+</td></tr>
+<tr>
+<td>  bxQ
+</td>
+<td>  winning queen
+</td>
+<td>  bishop for queen
+</td></tr>
+<tr>
+<td>  bxR
+</td>
+<td>  winning rook
+</td>
+<td>  winning the exchange
+</td></tr>
+<tr>
+<td>  bxB
+</td>
+<td>  winning bishop
+</td>
+<td>  exchanging minors
+</td></tr>
+<tr>
+<td>  bxN
+</td>
+<td>  winning knight
+</td>
+<td>  exchanging minors
+</td></tr>
+<tr>
+<td>  bxP
+</td>
+<td>  winning pawn
+</td>
+<td>  losing bishop for pawn
+</td></tr>
+<tr>
+<td colspan="3"> capturing with the rook
+</td></tr>
+<tr>
+<td>  rxQ
+</td>
+<td>  winning queen
+</td>
+<td>  rook for queen
+</td></tr>
+<tr>
+<td>  rxR
+</td>
+<td>  winning rook
+</td>
+<td>  exchanging rooks
+</td></tr>
+<tr>
+<td>  rxB
+</td>
+<td>  winning bishop
+</td>
+<td>  losing exchange
+</td></tr>
+<tr>
+<td>  rxN
+</td>
+<td>  winning knight
+</td>
+<td>  losing exchange
+</td></tr>
+<tr>
+<td>  rxP
+</td>
+<td>  winning pawn
+</td>
+<td>  losing rook for pawn
+</td></tr>
+<tr>
+<td colspan="3"> capturing with the queen
+</td></tr>
+<tr>
+<td>  qxQ
+</td>
+<td>  winning queen
+</td>
+<td>  exchanging queens
+</td></tr>
+<tr>
+<td>  qxR
+</td>
+<td>  winning rook
+</td>
+<td>  losing queen for rook
+</td></tr>
+<tr>
+<td>  qxB
+</td>
+<td>  winning bishop
+</td>
+<td>  losing queen for bishop
+</td></tr>
+<tr>
+<td>  qxN
+</td>
+<td>  winning knight
+</td>
+<td>  losing queen for knight
+</td></tr>
+<tr>
+<td>  qxP
+</td>
+<td>  winning pawn
+</td>
+<td>  losing queen for pawn
+</td></tr>
+<tr>
+<td colspan="3"> capturing with the king, always winning captures
+</td></tr>
+<tr>
+<td>  kxQ
+</td>
+<td>  winning queen
+</td>
+<td>
+</td></tr>
+<tr>
+<td>  kxR
+</td>
+<td>  winning rook
+</td>
+<td>
+</td></tr>
+<tr>
+<td>  kxB
+</td>
+<td>  winning bishop
+</td>
+<td>
+</td></tr>
+<tr>
+<td>  kxN
+</td>
+<td>  winning knight
+</td>
+<td>
+</td></tr>
+<tr>
+<td>  kxP
+</td>
+<td>  winning pawn
+</td>
+<td>
+</td></tr></table>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Algebraic Chess Notation.html#Captures" title="Algebraic Chess Notation">Algebraic Chess Notation - Captures</a></li>
+<li> <a href="Capture Extensions.html" title="Capture Extensions">Capture Extensions</a></li>
+<li> <a href="Capture (program).html" title="Capture (program)">Capture (program)</a> by <a href="Sylvain Renard.html" title="Sylvain Renard">Sylvain Renard</a></li>
+<li> <a href="Material.html" title="Material">Material</a></li>
+<li> <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a></li>
+<li> <a href="Promotions.html" title="Promotions">Promotions</a></li>
+<li> <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="Recapture Extensions.html" title="Recapture Extensions">Recapture Extensions</a></li>
+<li> <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">Static Exchange Evaluation</a></li>
+<li> <a href="Tactical Moves.html" title="Tactical Moves">Tactical Moves</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=275173" rel="nofollow">a question about the definition of winning capture in Rebel(diagrams)</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2003</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40100.html" rel="nofollow">Reducing/Pruning Bad Captures (SEE &lt; 0)</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2011 » <a href="Pruning.html" title="Pruning">Pruning</a>, <a href="Reductions.html" title="Reductions">Reductions</a>, <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2238.html" rel="nofollow">Perft and Captures</a> by <a href="Christian Daley.html" title="Christian Daley">CDaley11</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 24, 2013 » <a href="Perft.html" title="Perft">Perft</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61021.html" rel="nofollow">Sorting Captures</a> by <a class="new" href="index.php?title=David Cimbalista&amp;action=edit&amp;redlink=1.html" title="David Cimbalista (page does not exist)">David Cimbalista</a>, <a href="CCC.html" title="CCC">CCC</a>, August 03, 2016 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65084.html" rel="nofollow">Ordering Capture Moves</a> by <a class="new" href="index.php?title=Jason Fernandez&amp;action=edit&amp;redlink=1.html" title="Jason Fernandez (page does not exist)">Jason Fernandez</a>, <a href="CCC.html" title="CCC">CCC</a>, September 06, 2017 » <a href="Move Ordering.html#Captures" title="Move Ordering">Move Ordering - Captures</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Capture" rel="nofollow">Capture (disambiguation) from Wikipedia</a> </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Dave_Brubeck" rel="nofollow">Dave Brubeck Quartet</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Take_Five" rel="nofollow">Take Five</a>, <a class="external text" href="http://www.davebrubeckjazz.com/Recordings/Detail/Dave-Brubeck,-Newport-Jazz-Festival/00277.html" rel="nofollow">Newport Jazz Festival, 1979</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat.: <a href="Category:Jerry Bergonzi.html" title="Category:Jerry Bergonzi">Jerry Bergonzi</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Chris_Brubeck" rel="nofollow">Chris Brubeck</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Randy_Jones_(drummer)" rel="nofollow">Randy Jones</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/zY20zgG_hQ8?" width="640"></iframe></div></div></dd></dl>
+<p><b><a href="Moves.html" title="Moves">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721233759
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 22/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1151-0!canonical and timestamp 20240721233759 and revision id 20108
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Captures&amp;oldid=20108">https://www.chessprogramming.org/index.php?title=Captures&amp;oldid=20108</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Jerry Bergonzi.html" title="Category:Jerry Bergonzi">Jerry Bergonzi</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Captures&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Captures.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Captures&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Captures.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Captures&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Captures&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Captures.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Captures.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Captures&amp;oldid=20108.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Captures&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 10 July 2020, at 14:19.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Captures&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.008","ppvisitednodes":{"value":22,"limit":1000000},"ppgeneratednodes":{"value":56,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721233759","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

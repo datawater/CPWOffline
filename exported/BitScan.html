@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>BitScan - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"BitScan","wgTitle":"BitScan","wgCurRevisionId":26466,"wgRevisionId":26466,"wgArticleId":1095,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["M. C. Escher","Frank Zappa"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"BitScan","wgRelevantArticleId":1095,"wgRequestId":"Zp7DMnSyvEVqw5pGTV6rEAAAABE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-BitScan rootpage-BitScan skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">BitScan</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * BitScan</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:189px;"><a href="http://www.mcescher.com/Gallery/back-bmp/LW344.jpg.html"><img alt="" class="thumbimage" height="141" src="images/5/5c/EschersEye.jpg" width="187"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:EschersEye.jpg.html" title="Enlarge"></a></div><a href="Category:M. C. Escher.html" title="Category:M. C. Escher">M. C. Escher</a> - Eye, 1946 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>BitScan</b>,<br/>
+a function that determines the bit-index of the least significant 1 <a href="Bit.html" title="Bit">bit</a> (<a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a>) or the most significant 1 <a href="Bit.html" title="Bit">bit</a> (<a href="General Setwise Operations.html#TheMostSignificantOneBitMS1B" title="General Setwise Operations">MS1B</a>) in an integer such as <a href="Bitboards.html" title="Bitboards">bitboards</a>. If exactly one bit is set in an unsigned integer, representing a numerical value of a <a class="external text" href="https://en.wikipedia.org/wiki/Power_of_two" rel="nofollow">power of two</a>, this is equivalent to a <a class="external text" href="https://en.wikipedia.org/wiki/Binary_logarithm" rel="nofollow">base-2 logarithm</a>. Many implementations have been devised since the advent of bitboards, as described on this page, and some <a href="BitScan.html#EngineSamples" title="BitScan">implementation samples</a> of concrete <a href="Category:Open Source.html" title="Category:Open Source">open source engines</a> listed for didactic purpose. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Hardware vs. Software"><span class="tocnumber">1</span> <span class="toctext">Hardware vs. Software</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Non Empty Sets"><span class="tocnumber">2</span> <span class="toctext">Non Empty Sets</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Bitscan forward"><span class="tocnumber">3</span> <span class="toctext">Bitscan forward</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Trailing Zero Count"><span class="tocnumber">3.1</span> <span class="toctext">Trailing Zero Count</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#De Bruijn Multiplication"><span class="tocnumber">3.2</span> <span class="toctext">De Bruijn Multiplication</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#With isolated LS1B"><span class="tocnumber">3.2.1</span> <span class="toctext">With isolated LS1B</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#With separated LS1B"><span class="tocnumber">3.2.2</span> <span class="toctext">With separated LS1B</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Matt Taylor.27s Folding trick"><span class="tocnumber">3.3</span> <span class="toctext">Matt Taylor's Folding trick</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Walter Faxon.27s magic Bitscan"><span class="tocnumber">3.4</span> <span class="toctext">Walter Faxon's magic Bitscan</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Bitscan by Modulo"><span class="tocnumber">3.5</span> <span class="toctext">Bitscan by Modulo</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Divide and Conquer"><span class="tocnumber">3.6</span> <span class="toctext">Divide and Conquer</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Double conversion of LS1B"><span class="tocnumber">3.7</span> <span class="toctext">Double conversion of LS1B</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Index of LS1B by Popcount"><span class="tocnumber">3.8</span> <span class="toctext">Index of LS1B by Popcount</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Bitscan reverse"><span class="tocnumber">4</span> <span class="toctext">Bitscan reverse</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Divide and Conquer 2"><span class="tocnumber">4.1</span> <span class="toctext">Divide and Conquer</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Tribute to Frank Zappa"><span class="tocnumber">4.2</span> <span class="toctext">Tribute to Frank Zappa</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#De Bruijn Multiplication 2"><span class="tocnumber">4.3</span> <span class="toctext">De Bruijn Multiplication</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Double conversion"><span class="tocnumber">4.4</span> <span class="toctext">Double conversion</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Leading Zero Count"><span class="tocnumber">4.5</span> <span class="toctext">Leading Zero Count</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Bitscan versus Zero Count"><span class="tocnumber">5</span> <span class="toctext">Bitscan versus Zero Count</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#Bitscan with Reset"><span class="tocnumber">6</span> <span class="toctext">Bitscan with Reset</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Generalized Bitscan"><span class="tocnumber">7</span> <span class="toctext">Generalized Bitscan</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Processor Instructions for Bitscans"><span class="tocnumber">8</span> <span class="toctext">Processor Instructions for Bitscans</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#x86"><span class="tocnumber">8.1</span> <span class="toctext">x86</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#Emulating Intrinsics"><span class="tocnumber">8.1.1</span> <span class="toctext">Emulating Intrinsics</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Intrinsics versus asm"><span class="tocnumber">8.1.2</span> <span class="toctext">Intrinsics versus asm</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#Bsf.2FBsr x86-64 Timings"><span class="tocnumber">8.1.3</span> <span class="toctext">Bsf/Bsr x86-64 Timings</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#Bsf.2FBsr behavior with zero source"><span class="tocnumber">8.1.4</span> <span class="toctext">Bsf/Bsr behavior with zero source</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="#ARM"><span class="tocnumber">8.2</span> <span class="toctext">ARM</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Engine Samples"><span class="tocnumber">9</span> <span class="toctext">Engine Samples</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#See also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="#Publications"><span class="tocnumber">11</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#Forum Posts"><span class="tocnumber">12</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#1996 ..."><span class="tocnumber">12.1</span> <span class="toctext">1996 ...</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#2000 ..."><span class="tocnumber">12.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#2005 ..."><span class="tocnumber">12.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#2010 ..."><span class="tocnumber">12.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#2015 ..."><span class="tocnumber">12.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#2020 ..."><span class="tocnumber">12.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="#External Links"><span class="tocnumber">13</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-41"><a href="#References"><span class="tocnumber">14</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Hardware_vs._Software">Hardware vs. Software</span></h1>
+<p>For recent <a href="X86-64.html" title="X86-64">x86-64</a> architectures like <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Core_2" rel="nofollow">Core 2 duo</a> and <a class="external text" href="https://en.wikipedia.org/wiki/AMD_K10" rel="nofollow">K10</a>, one should use the <a href="BitScan.html#bsfbsr" title="BitScan">Processor Instructions for Bitscans</a> via intrinsics or <a href="Assembly.html#InlineAssembly" title="Assembly">inline assembly</a>, see <a href="BitScan.html#x86Timing" title="BitScan">x86-64 timing</a>. <a class="external text" href="https://en.wikipedia.org/wiki/Pentium_4" rel="nofollow">P4</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Athlon_64" rel="nofollow">K8</a> have rather slow bitscan-instructions. K8 uses so called <i>vector path instructions</i> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> with 9 or 11 cycles latency, even blocking other processor resources. For these processors, specially K8 with already fast multiplication, the <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">De Bruijn Multiplication</a> (64-bit mode) or <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor's</a> <a href="BitScan.html#MattTaylorsFoldingtrick" title="BitScan">Folded 32-bit Multiplication</a> (32-bit mode) might be the right choice. Other routines mentioned might be advantageous on certain architectures, specially with slow integer multiplications.
+</p>
+<h1><span class="mw-headline" id="Non_Empty_Sets">Non Empty Sets</span></h1>
+<p>Bitscan is most often used in <a href="Bitboard Serialization.html" title="Bitboard Serialization"> serializing bitboards</a>, and is therefor - due to a leading while-condition - not called with empty sets. Until stated otherwise, most mentioned bitscan-routines in <a href="C.html" title="C">C</a>/<a href="Cpp.html" title="Cpp">C++</a> have the same prototype and assume none empty sets as actual parameter.
+<span id="Bitscanforward"></span>
+</p>
+<h1><span class="mw-headline" id="Bitscan_forward">Bitscan forward</span></h1>
+<p>A bitscan <b>forward</b> is used to find the index of the <b>least</b> significant 1 bit (<a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a>).
+<span id="TrailingZeroCount"></span>
+</p>
+<h2><span class="mw-headline" id="Trailing_Zero_Count">Trailing Zero Count</span></h2>
+<p>Bitscan forward is identical with a <b>Trailing Zero Count</b> for none empty sets, possibly available as machine instruction on some architectures, for instance the <a href="X86-64.html" title="X86-64">x86-64</a> bit-manipulation expansion set <a href="BMI1.html" title="BMI1">BMI1</a>, with some difficulties to use the <a href="BMI1.html#TZCNT" title="BMI1">_tzcnt_u64</a> intrisic with <a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Visual_Studio" rel="nofollow">Visual Studio</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+<span id="DeBruijnMultiplation"></span>
+</p>
+<h2><span class="mw-headline" id="De_Bruijn_Multiplication">De Bruijn Multiplication</span></h2>
+<p>The <b>De Bruijn</b> bitscan was devised in 1997, according to <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> by <a href="Mathematician.html#MartinLaeuter" title="Mathematician">Martin Läuter</a>, and independently by <a href="Charles Leiserson.html" title="Charles Leiserson">Charles Leiserson</a>, <a href="Harald Prokop.html" title="Harald Prokop">Harald Prokop</a> and <a href="Keith H. Randall.html" title="Keith H. Randall">Keith H. Randall</a> a few month later <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> , to determine the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> index by <a href="Hash Table.html#MinimalPerfectHashing" title="Hash Table">minimal perfect hashing</a>. <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn sequences</a> were named after the Dutch mathematician <a href="Nicolaas de Bruijn.html" title="Nicolaas de Bruijn">Nicolaas de Bruijn</a>. Interestingly sequences with the binary alphabet were already investigated by the French mathematician <b>Camille Flye Sainte-Marie</b> in 1894, but later "forgotten" and re-investigated and generalized by De Bruijn and <a href="Mathematician.html#Ehrenfest" title="Mathematician">Tanja van Ardenne-Ehrenfest</a> half a century later <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> .
+</p><p>A 64-bit De Bruijn Sequence contains 64-overlapped unique 6-bit sequences, thus a circle of 64 bits, where five leading zeros overlap five hidden "trailing" zeros. There are 2<span style="vertical-align: super; font-size: 80%;">26</span> = 67108864 odd sequences with 6 leading binary zeros and 2<span style="vertical-align: super; font-size: 80%;">26</span> even sequences with 5 leading binary zeros, which may be calculated from the odd ones by shifting left one. 
+</p>
+<h3><span class="mw-headline" id="With_isolated_LS1B">With isolated LS1B</span></h3>
+<p>A multiplication with a power of two value (the <a href="General Setwise Operations.html#LS1BIsolation" title="General Setwise Operations">isolated LS1B</a>) acts like a left shift by it's exponent. Thus, if we multiply a 64-bit De Bruijn Sequence with the isolated LS1B, we get a unique six bit subsequence inside the most significant bits. To obtain the bit-index we need to extract these upper six bits by shifting right the product, to lookup an <a href="Array.html" title="Array">array</a>.
+</p>
+<pre>
+const int index64[64] = {
+    0,  1, 48,  2, 57, 49, 28,  3,
+   61, 58, 50, 42, 38, 29, 17,  4,
+   62, 55, 59, 36, 53, 51, 43, 22,
+   45, 39, 33, 30, 24, 18, 12,  5,
+   63, 47, 56, 27, 60, 41, 37, 16,
+   54, 35, 52, 21, 44, 32, 23, 11,
+   46, 26, 40, 15, 34, 20, 31, 10,
+   25, 14, 19,  9, 13,  8,  7,  6
+};
+
+/**
+ * bitScanForward
+ * @author Martin Läuter (1997)
+ *         Charles E. Leiserson
+ *         Harald Prokop
+ *         Keith H. Randall
+ * "Using de Bruijn Sequences to Index a 1 in a Computer Word"
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 bb) {
+   const U64 debruijn64 = C64(0x03f79d71b4cb0a89);
+   assert (bb != 0);
+   return index64[((bb &amp; -bb) * debruijn64) &gt;&gt; 58];
+}
+</pre>
+<p>See also how to <a href="De Bruijn Sequence Generator.html" title="De Bruijn Sequence Generator">Generate your "private" De Bruijn Bitscan Routine</a>.
+<span id="KimWalisch"></span>
+</p>
+<h3><span class="mw-headline" id="With_separated_LS1B">With separated LS1B</span></h3>
+<p>Instead of the classical <a href="General Setwise Operations.html#LS1BIsolation" title="General Setwise Operations">LS1B isolation</a>, <a href="Kim Walisch.html" title="Kim Walisch">Kim Walisch</a> proposed the faster <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">xor</a> with the ones' decrement. The separation <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">bb ^ (bb-1)</a> contains all bits set including and below the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a>. The 2<span style="vertical-align: super; font-size: 80%;">22</span> (4,194,304) upper De Bruijn Sequences of the 2<span style="vertical-align: super; font-size: 80%;">26</span> available leave unique 6-bit indices. Using LS1B separation takes advantage of the x86 lea instruction, which saves the move instruction and unlike negate, has no data dependency on the flag register. Kim reported a 10 to 15 percent faster execution (compilers: g++-4.7 -O2, clang++-3.1 -O2, x86_64) than the traditional 64-bit De Bruijn bitscan on <a href="Intel.html" title="Intel">Intel</a> <a class="external text" href="https://en.wikipedia.org/wiki/Nehalem_%28microarchitecture%29" rel="nofollow">Nehalem</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Sandy_Bridge_%28microarchitecture%29" rel="nofollow">Sandy Bridge</a> CPUs. 
+</p>
+<pre>
+const int index64[64] = {
+    0, 47,  1, 56, 48, 27,  2, 60,
+   57, 49, 41, 37, 28, 16,  3, 61,
+   54, 58, 35, 52, 50, 42, 21, 44,
+   38, 32, 29, 23, 17, 11,  4, 62,
+   46, 55, 26, 59, 40, 36, 15, 53,
+   34, 51, 20, 43, 31, 22, 10, 45,
+   25, 39, 14, 33, 19, 30,  9, 24,
+   13, 18,  8, 12,  7,  6,  5, 63
+};
+
+/**
+ * bitScanForward
+ * @author Kim Walisch (2012)
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 bb) {
+   const U64 debruijn64 = C64(0x03f79d71b4cb0a89);
+   assert (bb != 0);
+   return index64[((bb ^ (bb-1)) * debruijn64) &gt;&gt; 58];
+}
+</pre>
+<p><span id="MattTaylorsFoldingtrick"></span>
+</p>
+<h2><span class="mw-headline" id="Matt_Taylor.27s_Folding_trick">Matt Taylor's Folding trick</span></h2>
+<p>A 32-bit friendly implementation to find the the bit-index of <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>. The <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">xor</a> with the ones' decrement, <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">bb ^ (bb-1)</a> contains all bits set including and below the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a>. The 32-bit xor-difference of both halves yields either the complement of the upper half, or the lower half otherwise. Some samples:
+</p>
+<table class="wikitable">
+<tr>
+<th> ls1b
+</th>
+<th> bb ^ (bb-1)
+</th>
+<th> folded
+</th></tr>
+<tr>
+<td style="text-align:center;"> 63
+</td>
+<td> <code>0xffffffffffffffff</code>
+</td>
+<td> <code>0x00000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 62
+</td>
+<td> <code>0x7fffffffffffffff</code>
+</td>
+<td> <code>0x80000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 59
+</td>
+<td> <code>0x0fffffffffffffff</code>
+</td>
+<td> <code>0xf0000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 32
+</td>
+<td> <code>0x00000001ffffffff</code>
+</td>
+<td> <code>0xfffffffe</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 31
+</td>
+<td> <code>0x00000000ffffffff</code>
+</td>
+<td> <code>0xffffffff</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 30
+</td>
+<td> <code>0x000000007fffffff</code>
+</td>
+<td> <code>0x7fffffff</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td> <code>0x0000000000000001</code>
+</td>
+<td> <code>0x00000001</code>
+</td></tr></table>
+<p>Even if this folded "LS1B" contains multiple consecutive one-bits, the multiplication is De Bruijn like. There are only two magic 32-bit constants with the combined property of 32- and 64-bit De Bruijn Sequences to apply this <a href="Hash Table.html#MinimalPerfectHashing" title="Hash Table">minimal perfect hashing</a>:
+</p>
+<pre>
+const int lsb_64_table[64] =
+{
+   63, 30,  3, 32, 59, 14, 11, 33,
+   60, 24, 50,  9, 55, 19, 21, 34,
+   61, 29,  2, 53, 51, 23, 41, 18,
+   56, 28,  1, 43, 46, 27,  0, 35,
+   62, 31, 58,  4,  5, 49, 54,  6,
+   15, 52, 12, 40,  7, 42, 45, 16,
+   25, 57, 48, 13, 10, 39,  8, 44,
+   20, 47, 38, 22, 17, 37, 36, 26
+};
+
+/**
+ * bitScanForward
+ * @author Matt Taylor (2003)
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 bb) {
+   unsigned int folded;
+   assert (bb != 0);
+   bb ^= bb - 1;
+   folded = (int) bb ^ (bb &gt;&gt; 32);
+   return lsb_64_table[folded * 0x78291ACF &gt;&gt; 26];
+}
+</pre>
+<p>A slightly modified version may take one <a href="X86.html" title="X86">x86</a>-register less in 32-bit mode, but calculates bb-1 twice:
+</p>
+<pre>
+int bitScanForwardM(BitBoard bb) {
+   unsigned int folded;
+   assert (bb != 0);
+   folded  = (int)((bb ^ (bb-1)) &gt;&gt; 32);
+   folded ^= (int)( bb ^ (bb-1)); // lea
+   return lsb_64_table[folded * 0x78291ACF &gt;&gt; 26];
+}
+</pre>
+<p>with this VC6 generated <a href="X86.html" title="X86">x86</a> <a href="Assembly.html" title="Assembly">assembly</a> to compare:
+</p>
+<pre>
+bitScanForward PROC NEAR                   bitScanForwardM PROC NEAR
+   mov  ecx, DWORD PTR _bb$[esp-4]            mov  eax, DWORD PTR _bb$[esp-4]
+   mov  eax, DWORD PTR _bb$[esp]              mov  ecx, eax
+   mov  edx, ecx                              add  ecx, -1
+   push esi                                   mov  ecx, DWORD PTR _bb$[esp]
+   add  edx, -1                               mov  edx, ecx
+   mov  esi, eax                              adc  edx, -1
+   adc  esi, -1                               xor  edx, ecx
+   xor  ecx, edx                              lea  ecx, DWORD PTR [eax-1]
+   xor  eax, esi                              xor  edx, ecx
+   pop  esi
+   xor  eax, ecx                              xor  edx, eax
+   imul eax, 78291acfH                        imul edx, 78291acfH
+   shr  eax, 26                               shr  edx, 26
+   mov  eax, DWORD PTR _lsb_64_table[eax*4]   mov  eax, DWORD PTR _lsb_64_table[edx*4]
+   ret  0                                     ret  0
+bitScanForward ENDP                        bitScanForward ENDP
+</pre>
+<p><span id="WalterFaxonsmagicBitscan"></span>
+</p>
+<h2><span class="mw-headline" id="Walter_Faxon.27s_magic_Bitscan">Walter Faxon's magic Bitscan</span></h2>
+<p><a href="Walter Faxon.html" title="Walter Faxon">Walter Faxon's</a> 32-bit friendly magic bitscan <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> uses a fast none minimal <a href="Hash Table.html#PerfectHashing" title="Hash Table">perfect hashing</a> function:
+</p>
+<pre>
+const char LSB_64_table[154] =
+{
+#define __ 0
+   22,__,__,__,30,__,__,38,18,__, 16,15,17,__,46, 9,19, 8, 7,10,
+   0, 63, 1,56,55,57, 2,11,__,58, __,__,20,__, 3,__,__,59,__,__,
+   __,__,__,12,__,__,__,__,__,__, 4,__,__,60,__,__,__,__,__,__,
+   __,__,__,__,21,__,__,__,29,__, __,37,__,__,__,13,__,__,45,__,
+   __,__, 5,__,__,61,__,__,__,53, __,__,__,__,__,__,__,__,__,__,
+   28,__,__,36,__,__,__,__,__,__, 44,__,__,__,__,__,27,__,__,35,
+   __,52,__,__,26,__,43,34,25,23, 24,33,31,32,42,39,40,51,41,14,
+   __,49,47,48,__,50, 6,__,__,62, __,__,__,54
+#undef __
+};
+
+/**
+ * bitScanForward
+ * @author Walter Faxon, slightly modified
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 bb)
+{
+   unsigned int t32;
+   assert(bb);
+   bb  ^= bb - 1;
+   t32  = (int)bb ^ (int)(bb &gt;&gt; 32);
+   t32 ^= 0x01C5FC81;
+   t32 +=  t32 &gt;&gt; 16;
+   t32 -= (t32 &gt;&gt; 8) + 51;
+   return LSB_64_table [t32 &amp; 255]; // 0..63
+}
+</pre>
+<p>A slightly modified version may take one <a href="X86.html" title="X86">x86</a>-register less in 32-bit mode, but calculates bb-1 twice:
+</p>
+<pre>
+int bitScanForward(U64 bb)
+{
+   int t32 = 0x01C5FC81;
+   assert(bb);
+   t32 ^= (int)((bb ^ (bb-1)) &gt;&gt; 32);
+   t32 ^= (int)( bb ^ (bb-1)); // lea
+   t32 += t32 &gt;&gt; 16;
+   t32 -=(t32 &gt;&gt;  8) + 51;
+   return LSB_64_table [t32 &amp; 255];
+}
+</pre>
+<p>The initial <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">LS1B separation</a> by bb ^ (bb-1) and folding is equivalent to <a href="BitScan.html#MattTaylorsFoldingtrick" title="BitScan">Matt's</a>,
+</p>
+<table class="wikitable">
+<tr>
+<th> ls1b
+</th>
+<th> bb ^ (bb-1)
+</th>
+<th> folded
+</th></tr>
+<tr>
+<td style="text-align:center;"> 63
+</td>
+<td> <code>0xffffffffffffffff</code>
+</td>
+<td> <code>0x00000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 62
+</td>
+<td> <code>0x7fffffffffffffff</code>
+</td>
+<td> <code>0x80000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 59
+</td>
+<td> <code>0x0fffffffffffffff</code>
+</td>
+<td> <code>0xf0000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 32
+</td>
+<td> <code>0x00000001ffffffff</code>
+</td>
+<td> <code>0xfffffffe</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 31
+</td>
+<td> <code>0x00000000ffffffff</code>
+</td>
+<td> <code>0xffffffff</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 30
+</td>
+<td> <code>0x000000007fffffff</code>
+</td>
+<td> <code>0x7fffffff</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td> <code>0x0000000000000001</code>
+</td>
+<td> <code>0x00000001</code>
+</td></tr></table>
+<p>while Walter originally resets the LS1B, yielding in a cyclic index wrap:
+</p>
+<table class="wikitable">
+<tr>
+<th> LS1B
+</th>
+<th> (bb &amp; (bb-1)) ^ (bb-1)
+</th>
+<th> folded
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td> <code>0x0000000000000000</code>
+</td>
+<td> <code>0x00000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 63
+</td>
+<td> <code>0x7fffffffffffffff</code>
+</td>
+<td> <code>0x80000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 60
+</td>
+<td> <code>0x0fffffffffffffff</code>
+</td>
+<td> <code>0xf0000000</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 33
+</td>
+<td> <code>0x00000001ffffffff</code>
+</td>
+<td> <code>0xfffffffe</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 32
+</td>
+<td> <code>0x00000000ffffffff</code>
+</td>
+<td> <code>0xffffffff</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 31
+</td>
+<td> <code>0x000000007fffffff</code>
+</td>
+<td> <code>0x7fffffff</code>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td> <code>0x0000000000000001</code>
+</td>
+<td> <code>0x00000001</code>
+</td></tr></table>
+<p><span id="BitscanByModulo"></span>
+</p>
+<h2><span class="mw-headline" id="Bitscan_by_Modulo">Bitscan by Modulo</span></h2>
+<p>Another idea is to apply a <a href="General Setwise Operations.html#Modulo" title="General Setwise Operations">modulo</a> (remainder of a division) operation of the isolated <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> by the prime number 67 <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> . The remainder 0..66 can be used to <a href="Hash Table.html#PerfectHashing" title="Hash Table">perfectly hash</a> the bit-index table. Three gaps are 0, 17, and 34, so the mod 67 can make a branchless trailing zero count:
+</p>
+<table class="wikitable">
+<tr>
+<th> Bit-Index
+</th>
+<th> Bitboard
+</th>
+<th> mod 67
+</th></tr>
+<tr>
+<td style="text-align:center;"> -
+</td>
+<td> <code>0x0000000000000000</code>
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td> <code>0x0000000000000001</code>
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td> <code>0x0000000000000002</code>
+</td>
+<td style="text-align:right;"> 2
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td> <code>0x0000000000000004</code>
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td> <code>0x0000000000000008</code>
+</td>
+<td style="text-align:right;"> 8
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td> <code>0x0000000000000010</code>
+</td>
+<td style="text-align:right;"> 16
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td> <code>0x0000000000000020</code>
+</td>
+<td style="text-align:right;"> 32
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td> <code>0x0000000000000040</code>
+</td>
+<td style="text-align:right;"> 64
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td> <code>0x0000000000000080</code>
+</td>
+<td style="text-align:right;"> 61
+</td></tr>
+<tr>
+<td style="text-align:center;"> 8
+</td>
+<td> <code>0x0000000000000100</code>
+</td>
+<td style="text-align:right;"> 55
+</td></tr>
+<tr>
+<td style="text-align:center;"> 9
+</td>
+<td> <code>0x0000000000000200</code>
+</td>
+<td style="text-align:right;"> 43
+</td></tr>
+<tr>
+<td style="text-align:center;"> 10
+</td>
+<td> <code>0x0000000000000400</code>
+</td>
+<td style="text-align:right;"> 19
+</td></tr>
+<tr>
+<td style="text-align:center;"> 11
+</td>
+<td> <code>0x0000000000000800</code>
+</td>
+<td style="text-align:right;"> 38
+</td></tr>
+<tr>
+<td style="text-align:center;"> 12
+</td>
+<td> <code>0x0000000000001000</code>
+</td>
+<td style="text-align:right;"> 9
+</td></tr>
+<tr>
+<td style="text-align:center;"> 13
+</td>
+<td> <code>0x0000000000002000</code>
+</td>
+<td style="text-align:right;"> 18
+</td></tr>
+<tr>
+<td style="text-align:center;"> 14
+</td>
+<td> <code>0x0000000000004000</code>
+</td>
+<td style="text-align:right;"> 36
+</td></tr>
+<tr>
+<td style="text-align:center;"> 15
+</td>
+<td> <code>0x0000000000008000</code>
+</td>
+<td style="text-align:right;"> 5
+</td></tr>
+<tr>
+<td style="text-align:center;"> 16
+</td>
+<td> <code>0x0000000000010000</code>
+</td>
+<td style="text-align:right;"> 10
+</td></tr>
+<tr>
+<td style="text-align:center;"> 17
+</td>
+<td> <code>0x0000000000020000</code>
+</td>
+<td style="text-align:right;"> 20
+</td></tr>
+<tr>
+<td style="text-align:center;"> 18
+</td>
+<td> <code>0x0000000000040000</code>
+</td>
+<td style="text-align:right;"> 40
+</td></tr>
+<tr>
+<td style="text-align:center;"> 19
+</td>
+<td> <code>0x0000000000080000</code>
+</td>
+<td style="text-align:right;"> 13
+</td></tr>
+<tr>
+<td style="text-align:center;"> 20
+</td>
+<td> <code>0x0000000000100000</code>
+</td>
+<td style="text-align:right;"> 26
+</td></tr>
+<tr>
+<td style="text-align:center;"> 21
+</td>
+<td> <code>0x0000000000200000</code>
+</td>
+<td style="text-align:right;"> 52
+</td></tr>
+<tr>
+<td style="text-align:center;"> 22
+</td>
+<td> <code>0x0000000000400000</code>
+</td>
+<td style="text-align:right;"> 37
+</td></tr>
+<tr>
+<td style="text-align:center;"> 23
+</td>
+<td> <code>0x0000000000800000</code>
+</td>
+<td style="text-align:right;"> 7
+</td></tr>
+<tr>
+<td style="text-align:center;"> 24
+</td>
+<td> <code>0x0000000001000000</code>
+</td>
+<td style="text-align:right;"> 14
+</td></tr>
+<tr>
+<td style="text-align:center;"> 25
+</td>
+<td> <code>0x0000000002000000</code>
+</td>
+<td style="text-align:right;"> 28
+</td></tr>
+<tr>
+<td style="text-align:center;"> 26
+</td>
+<td> <code>0x0000000004000000</code>
+</td>
+<td style="text-align:right;"> 56
+</td></tr>
+<tr>
+<td style="text-align:center;"> 27
+</td>
+<td> <code>0x0000000008000000</code>
+</td>
+<td style="text-align:right;"> 45
+</td></tr>
+<tr>
+<td style="text-align:center;"> 28
+</td>
+<td> <code>0x0000000010000000</code>
+</td>
+<td style="text-align:right;"> 23
+</td></tr>
+<tr>
+<td style="text-align:center;"> 29
+</td>
+<td> <code>0x0000000020000000</code>
+</td>
+<td style="text-align:right;"> 46
+</td></tr>
+<tr>
+<td style="text-align:center;"> 30
+</td>
+<td> <code>0x0000000040000000</code>
+</td>
+<td style="text-align:right;"> 25
+</td></tr>
+<tr>
+<td style="text-align:center;"> 31
+</td>
+<td> <code>0x0000000080000000</code>
+</td>
+<td style="text-align:right;"> 50
+</td></tr>
+<tr>
+<td style="text-align:center;"> 32
+</td>
+<td> <code>0x0000000100000000</code>
+</td>
+<td style="text-align:right;"> 33
+</td></tr>
+<tr>
+<td style="text-align:center;"> 33
+</td>
+<td> <code>0x0000000200000000</code>
+</td>
+<td style="text-align:right;"> 66
+</td></tr>
+<tr>
+<td style="text-align:center;"> 34
+</td>
+<td> <code>0x0000000400000000</code>
+</td>
+<td style="text-align:right;"> 65
+</td></tr>
+<tr>
+<td style="text-align:center;"> 35
+</td>
+<td> <code>0x0000000800000000</code>
+</td>
+<td style="text-align:right;"> 63
+</td></tr>
+<tr>
+<td style="text-align:center;"> 36
+</td>
+<td> <code>0x0000001000000000</code>
+</td>
+<td style="text-align:right;"> 59
+</td></tr>
+<tr>
+<td style="text-align:center;"> 37
+</td>
+<td> <code>0x0000002000000000</code>
+</td>
+<td style="text-align:right;"> 51
+</td></tr>
+<tr>
+<td style="text-align:center;"> 38
+</td>
+<td> <code>0x0000004000000000</code>
+</td>
+<td style="text-align:right;"> 35
+</td></tr>
+<tr>
+<td style="text-align:center;"> 39
+</td>
+<td> <code>0x0000008000000000</code>
+</td>
+<td style="text-align:right;"> 3
+</td></tr>
+<tr>
+<td style="text-align:center;"> 40
+</td>
+<td> <code>0x0000010000000000</code>
+</td>
+<td style="text-align:right;"> 6
+</td></tr>
+<tr>
+<td style="text-align:center;"> 41
+</td>
+<td> <code>0x0000020000000000</code>
+</td>
+<td style="text-align:right;"> 12
+</td></tr>
+<tr>
+<td style="text-align:center;"> 42
+</td>
+<td> <code>0x0000040000000000</code>
+</td>
+<td style="text-align:right;"> 24
+</td></tr>
+<tr>
+<td style="text-align:center;"> 43
+</td>
+<td> <code>0x0000080000000000</code>
+</td>
+<td style="text-align:right;"> 48
+</td></tr>
+<tr>
+<td style="text-align:center;"> 44
+</td>
+<td> <code>0x0000100000000000</code>
+</td>
+<td style="text-align:right;"> 29
+</td></tr>
+<tr>
+<td style="text-align:center;"> 45
+</td>
+<td> <code>0x0000200000000000</code>
+</td>
+<td style="text-align:right;"> 58
+</td></tr>
+<tr>
+<td style="text-align:center;"> 46
+</td>
+<td> <code>0x0000400000000000</code>
+</td>
+<td style="text-align:right;"> 49
+</td></tr>
+<tr>
+<td style="text-align:center;"> 47
+</td>
+<td> <code>0x0000800000000000</code>
+</td>
+<td style="text-align:right;"> 31
+</td></tr>
+<tr>
+<td style="text-align:center;"> 48
+</td>
+<td> <code>0x0001000000000000</code>
+</td>
+<td style="text-align:right;"> 62
+</td></tr>
+<tr>
+<td style="text-align:center;"> 49
+</td>
+<td> <code>0x0002000000000000</code>
+</td>
+<td style="text-align:right;"> 57
+</td></tr>
+<tr>
+<td style="text-align:center;"> 50
+</td>
+<td> <code>0x0004000000000000</code>
+</td>
+<td style="text-align:right;"> 47
+</td></tr>
+<tr>
+<td style="text-align:center;"> 51
+</td>
+<td> <code>0x0008000000000000</code>
+</td>
+<td style="text-align:right;"> 27
+</td></tr>
+<tr>
+<td style="text-align:center;"> 52
+</td>
+<td> <code>0x0010000000000000</code>
+</td>
+<td style="text-align:right;"> 54
+</td></tr>
+<tr>
+<td style="text-align:center;"> 53
+</td>
+<td> <code>0x0020000000000000</code>
+</td>
+<td style="text-align:right;"> 41
+</td></tr>
+<tr>
+<td style="text-align:center;"> 54
+</td>
+<td> <code>0x0040000000000000</code>
+</td>
+<td style="text-align:right;"> 15
+</td></tr>
+<tr>
+<td style="text-align:center;"> 55
+</td>
+<td> <code>0x0080000000000000</code>
+</td>
+<td style="text-align:right;"> 30
+</td></tr>
+<tr>
+<td style="text-align:center;"> 56
+</td>
+<td> <code>0x0100000000000000</code>
+</td>
+<td style="text-align:right;"> 60
+</td></tr>
+<tr>
+<td style="text-align:center;"> 57
+</td>
+<td> <code>0x0200000000000000</code>
+</td>
+<td style="text-align:right;"> 53
+</td></tr>
+<tr>
+<td style="text-align:center;"> 58
+</td>
+<td> <code>0x0400000000000000</code>
+</td>
+<td style="text-align:right;"> 39
+</td></tr>
+<tr>
+<td style="text-align:center;"> 59
+</td>
+<td> <code>0x0800000000000000</code>
+</td>
+<td style="text-align:right;"> 11
+</td></tr>
+<tr>
+<td style="text-align:center;"> 60
+</td>
+<td> <code>0x1000000000000000</code>
+</td>
+<td style="text-align:right;"> 22
+</td></tr>
+<tr>
+<td style="text-align:center;"> 61
+</td>
+<td> <code>0x2000000000000000</code>
+</td>
+<td style="text-align:right;"> 44
+</td></tr>
+<tr>
+<td style="text-align:center;"> 62
+</td>
+<td> <code>0x4000000000000000</code>
+</td>
+<td style="text-align:right;"> 21
+</td></tr>
+<tr>
+<td style="text-align:center;"> 63
+</td>
+<td> <code>0x8000000000000000</code>
+</td>
+<td style="text-align:right;"> 42
+</td></tr></table>
+<pre>
+/**
+ * trailingZeroCount
+ * @param bb bitboard to scan
+ * @return index (0..63) of least significant one bit, 64 if bb is zero
+ */
+int trailingZeroCount(U64 bb) {
+   static const int lookup67[67+1] = {
+      64,  0,  1, 39,  2, 15, 40, 23,
+       3, 12, 16, 59, 41, 19, 24, 54,
+       4, -1, 13, 10, 17, 62, 60, 28,
+      42, 30, 20, 51, 25, 44, 55, 47,
+       5, 32, -1, 38, 14, 22, 11, 58,
+      18, 53, 63,  9, 61, 27, 29, 50,
+      43, 46, 31, 37, 21, 57, 52,  8,
+      26, 49, 45, 36, 56,  7, 48, 35,
+       6, 34, 33, -1 };
+   return lookup67[(bb &amp; -bb) % 67];
+}
+</pre>
+<p>Since div/mod is an expensive instruction, a <a href="General Setwise Operations.html#Modulo" title="General Setwise Operations">modulo by a constant</a> is likely replaced by reciprocal fixed point multiplication to get the quotient and a second multiplication and difference to get the remainder. Compared with De Bruijn multiplication it is still too slow.
+</p>
+<h2><span class="mw-headline" id="Divide_and_Conquer">Divide and Conquer</span></h2>
+<p>This is a broad group of bitscans that test in succession, like the trailing zero count based on <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl's</a> proposal <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> :
+</p>
+<pre>
+/**
+ * trailingZeroCount
+ *  like bitScanForward for none empty sets
+ * @author Reinhard Scharnagl
+ * @param bb bitboard to scan
+ * @return index (0..64)
+ */
+unsigned char lsbRS[256] = {
+    8, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    5, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    6, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    5, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    7, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    5, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    6, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    5, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0,
+    4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0
+};
+
+int trailingZeroCount(U64 b) {
+  unsigned buf;
+  int acc = 0;
+
+  if ((buf = (unsigned)b) == 0) {
+    buf = (unsigned)(b &gt;&gt; 32);
+    acc = 32;
+  }
+  if ((unsigned short)buf == 0) {
+    buf &gt;&gt;= 16;
+    acc += 16;
+  }
+  if ((unsigned char)buf == 0) {
+    buf &gt;&gt;= 8;
+    acc += 8;
+  }
+  return acc + lsbRS[buf &amp; 0xff];
+}
+</pre>
+<p>What about direct calculation? On <a href="X86.html" title="X86">x86</a> this is a chain of test, set and lea instructions:
+</p>
+<pre>
+/**
+ * bitScanForward
+ * @author Gerd Isenberg
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 bb) {
+   unsigned int lsb;
+   assert (bb != 0);
+   bb &amp;= -bb; // LS1B-Isolation
+   lsb = (unsigned)bb
+       | (unsigned)(bb&gt;&gt;32);
+   return (((((((((((unsigned)(bb&gt;&gt;32) !=0)  * 2)
+                 + ((lsb &amp; 0xffff0000) !=0)) * 2)
+                 + ((lsb &amp; 0xff00ff00) !=0)) * 2)
+                 + ((lsb &amp; 0xf0f0f0f0) !=0)) * 2)
+                 + ((lsb &amp; 0xcccccccc) !=0)) * 2)
+                 + ((lsb &amp; 0xaaaaaaaa) !=0);
+}
+</pre>
+<p><span id="DoubleConversionofLS1B"></span>
+</p>
+<h2><span class="mw-headline" id="Double_conversion_of_LS1B">Double conversion of LS1B</span></h2>
+<p>Assuming 64-bit <a href="Double.html" title="Double">doubles</a> and <a href="Little-endian.html" title="Little-endian">little-endian</a> structure (<i>not portable</i>). We convert the isolated <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> to a double and interprete the exponent:
+</p>
+<pre>
+/**
+ * bitScanForward
+ * @author Gerd Isenberg
+ * @param bb bitboard to scan
+ * @return index (0..63) of least significant one bit
+ *         -1023 if passing zero
+ */
+int bitScanForward(U64 bb)
+{
+   union {
+      double d;
+      struct {
+         unsigned int mantissal : 32;
+         unsigned int mantissah : 20;
+         unsigned int exponent : 11;
+         unsigned int sign : 1;
+      };
+   } ud;
+   ud.d = (double)(bb &amp; -bb); // isolated LS1B to double
+   return ud.exponent - 1023;
+}
+</pre>
+<h2><span class="mw-headline" id="Index_of_LS1B_by_Popcount">Index of LS1B by Popcount</span></h2>
+<p>If we have a fast <a href="Population Count.html" title="Population Count">population-count</a> instruction, we can count the trailing zeros of <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> after subtracting one:
+</p>
+<pre>
+// precondition bb != 0
+int bitScanForward(U64 bb) {
+   assert (bb != 0);
+   return popCount( (bb &amp; -bb) - 1 );
+}
+</pre>
+<p><span id="Bitscanreverse"></span>
+</p>
+<h1><span class="mw-headline" id="Bitscan_reverse">Bitscan reverse</span></h1>
+<p>A bitscan <b>reverse</b> is used to find the index of the <b>most</b> significant 1 bit (<a href="General Setwise Operations.html#TheMostSignificantOneBitMS1B" title="General Setwise Operations">MS1B</a>). For non empty sets it is equivalent to <a class="external text" href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions" rel="nofollow">floor</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/Binary_logarithm" rel="nofollow">base-2 logarithm</a>. MS1B isolalation or separation is more expensive than LS1B isolalation or separation, due to the LS1B related <a href="General Setwise Operations.html#TheTwosComplement" title="General Setwise Operations">Two's complement</a> tricks are not applicable. However, beside Divide and Conquer and Double conversion, Bitscan reverse with MS1B separation is mentioned.
+</p>
+<h2><span class="mw-headline" id="Divide_and_Conquer_2">Divide and Conquer</span></h2>
+<p>As introduced by <a href="Eugene Nalimov.html" title="Eugene Nalimov">Eugene Nalimov</a> in 2000, for an <a href="Itanium.html" title="Itanium">IA-64</a> version of <a href="Crafty.html" title="Crafty">Crafty</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>
+</p>
+<pre>
+/**
+ * bitScanReverse
+ * @author Eugene Nalimov
+ * @param bb bitboard to scan
+ * @return index (0..63) of most significant one bit
+ */
+int bitScanReverse(U64 bb)
+{
+   int result = 0;
+   if (bb &gt; 0xFFFFFFFF) {
+      bb &gt;&gt;= 32;
+      result = 32;
+   }
+   if (bb &gt; 0xFFFF) {
+      bb &gt;&gt;= 16;
+      result += 16;
+   }
+   if (bb &gt; 0xFF) {
+      bb &gt;&gt;= 8;
+      result += 8;
+   }
+   return result + ms1bTable[bb];
+}
+</pre>
+<p><span id="FrankZappa"></span>
+</p>
+<h2><span class="mw-headline" id="Tribute_to_Frank_Zappa">Tribute to Frank Zappa</span></h2>
+<p>A branchless and little bit obfuscated version of the devide and conquer bitScanReverse with in-register-lookup <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup> - as tribute to <a href="Category:Frank Zappa.html" title="Category:Frank Zappa">Frank Zappa</a> with identifiers from <a class="external text" href="https://en.wikipedia.org/wiki/Freak_Out!" rel="nofollow">Freak Out!</a> (1966), <a class="external text" href="https://en.wikipedia.org/wiki/Hot_Rats" rel="nofollow">Hot Rats</a> (1969), <a class="external text" href="https://en.wikipedia.org/wiki/Waka/Jawaka" rel="nofollow">Waka/Jawaka</a> (1972), <a class="external text" href="https://en.wikipedia.org/wiki/Sofa_%28Frank_Zappa_song%29" rel="nofollow">Sofa</a> (1975), <a class="external text" href="https://en.wikipedia.org/wiki/One_Size_Fits_All_%28Frank_Zappa_album%29" rel="nofollow">One Size Fits All</a> (1975), <a class="external text" href="https://en.wikipedia.org/wiki/Sheik_Yerbouti" rel="nofollow">Sheik Yerbouti</a> (1979), and <a class="external text" href="https://en.wikipedia.org/wiki/Jazz_from_Hell" rel="nofollow">Jazz from Hell</a> (1986):
+</p>
+<pre>
+typedef unsigned __int64 OneSizeFits;
+typedef unsigned int HotRats;
+const HotRats s      =   0;
+const HotRats heik   = 457;
+const HotRats y      =   1;
+const HotRats e      =   2;
+const HotRats r      =   3;
+const HotRats b      =   4;
+const HotRats o      =   5;
+const HotRats u      =   8;
+const HotRats t      =  16;
+const HotRats i      =  32;
+const HotRats     ka = (1&lt;&lt; 4)-1;
+const HotRats   waka = (1&lt;&lt; 8)-1;
+const HotRats jawaka = (1&lt;&lt;16)-1;
+const HotRats jazzFromHell = 0-(16*3*heik);
+
+HotRats freakOut(OneSizeFits all) {
+   HotRats so,fa;
+   fa   = (HotRats)(all &gt;&gt; i);
+   so   = (fa!=s)       &lt;&lt; o;
+   fa  ^= (HotRats) all &amp; (fa!=s)-y;
+   so  ^= (jawaka &lt; fa) &lt;&lt; b;
+   fa &gt;&gt;= (jawaka &lt; fa) &lt;&lt; b;
+   so  ^= (  waka - fa) &gt;&gt; t    &amp; u;
+   fa &gt;&gt;= (  waka - fa) &gt;&gt; t    &amp; u;
+   so  ^= (    ka - fa) &gt;&gt; u    &amp; b;
+   fa &gt;&gt;= (    ka - fa) &gt;&gt; u    &amp; b;
+   so  ^=  jazzFromHell &gt;&gt; e*fa &amp; r;
+   return so;
+}
+</pre>
+<p><span id="FillDeBruijn"></span>
+</p>
+<h2><span class="mw-headline" id="De_Bruijn_Multiplication_2">De Bruijn Multiplication</span></h2>
+<p>While the <a href="BitScan.html#FrankZappa" title="BitScan">tribute</a> to <a href="Category:Frank Zappa.html" title="Category:Frank Zappa">Frank Zappa</a> is quite 32-bit friendly <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>, <a href="Kim Walisch.html" title="Kim Walisch">Kim Walisch</a> suggested to use the <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix fill</a> for a <a href="General Setwise Operations.html#TheMostSignificantOneBitMS1B" title="General Setwise Operations">MS1B</a> separation with the same <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn</a> multiplication and lookup as in his <a href="BitScan.html#KimWalisch" title="BitScan">bitScanForward</a> routine with <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">separated LS1B</a>, with less instructions in 64-bit mode. A log base 2 method was already devised by Eric Cole on January 8, 2006, and shaved off rounded up to one less than the next power of 2 by Mark Dickinson <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup> on December 10, 2009, as published in Sean Eron Anderson's <i>Bit Twiddling Hacks</i> for 32-bit integers <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>.
+</p>
+<pre>
+const int index64[64] = {
+    0, 47,  1, 56, 48, 27,  2, 60,
+   57, 49, 41, 37, 28, 16,  3, 61,
+   54, 58, 35, 52, 50, 42, 21, 44,
+   38, 32, 29, 23, 17, 11,  4, 62,
+   46, 55, 26, 59, 40, 36, 15, 53,
+   34, 51, 20, 43, 31, 22, 10, 45,
+   25, 39, 14, 33, 19, 30,  9, 24,
+   13, 18,  8, 12,  7,  6,  5, 63
+};
+
+/**
+ * bitScanReverse
+ * @authors Kim Walisch, Mark Dickinson
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of most significant one bit
+ */
+int bitScanReverse(U64 bb) {
+   const U64 debruijn64 = C64(0x03f79d71b4cb0a89);
+   assert (bb != 0);
+   bb |= bb &gt;&gt; 1; 
+   bb |= bb &gt;&gt; 2;
+   bb |= bb &gt;&gt; 4;
+   bb |= bb &gt;&gt; 8;
+   bb |= bb &gt;&gt; 16;
+   bb |= bb &gt;&gt; 32;
+   return index64[(bb * debruijn64) &gt;&gt; 58];
+}
+</pre>
+<p><span id="DoubleConversionBSR"></span>
+</p>
+<h2><span class="mw-headline" id="Double_conversion">Double conversion</span></h2>
+<p>Assuming 64-bit <a href="Double.html" title="Double">doubles</a> and <a href="Little-endian.html" title="Little-endian">little-endian</a> structure (<i>not portable</i>!). Conversion to a double, interpreting the exponent. To avoid possible rounding errors, some lower bits may be cleared.
+</p>
+<pre>
+/**
+ * bitScanReverse
+ * @author Gerd Isenberg
+ * @param bb bitboard to scan
+ * @return index (0..63) of most significant one bit
+ *         -1023 if passing zero
+ */
+int bitScanReverse(U64 bb)
+{
+   union {
+      double d;
+      struct {
+         unsigned int mantissal : 32;
+         unsigned int mantissah : 20;
+         unsigned int exponent : 11;
+         unsigned int sign : 1;
+      };
+   } ud;
+   ud.d = (double)(bb &amp; ~(bb &gt;&gt; 32));  // avoid rounding error
+   return ud.exponent - 1023;
+}
+</pre>
+<p><span id="LeadingZeroCount"></span>
+</p>
+<h2><span class="mw-headline" id="Leading_Zero_Count">Leading Zero Count</span></h2>
+<p>Some processors have a fast leading zero count instruction. The <a class="new" href="index.php?title=Motorola&amp;action=edit&amp;redlink=1.html" title="Motorola (page does not exist)">Motorola</a> <a href="68020.html" title="68020">68020</a> has a <i>bit field find first one</i> instruction (BFFFO), which actually performs an up to 32-bit <i>Leading Zero Count</i> <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup> . <a href="X86-64.html" title="X86-64">x86-64</a> <a href="AMD.html" title="AMD">AMD</a> <a class="external text" href="https://en.wikipedia.org/wiki/AMD_K10" rel="nofollow">K10</a> has <i>lzcnt</i> as part of the <a href="SSE4.html#SSE4a" title="SSE4">SSE4a</a> extension <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup> <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup> , <a href="BMI1.html" title="BMI1">BMI1</a> has <i>lzcnt</i> as well, while <a href="AVX-512.html#VPLZCNT" title="AVX-512">AVX-512CD</a> even features leading zero count on vectors of eight bitbaords.
+</p><p>One can replace bitScanReverse of non empty sets by leadingZeroCount xor 63. Like trailing zero count, it returns 64 for empty sets, and might therefor save the leading condition in some applications.
+</p><p><span id="BitscanversusZeroCount"></span>
+</p>
+<h1><span class="mw-headline" id="Bitscan_versus_Zero_Count">Bitscan versus Zero Count</span></h1>
+<p>While the presented bitscan routines are suited to work only on none empty sets and return a value-range from 0 to 63 as bit-index, leading or trailing zero-count instructions or routines leave 64 for empty sets. Zero-counting has a immanent property of dealing correctly with empty sets - while it likely takes a conditional branch to implement this semantic in bit-scanning.
+</p>
+<pre>
+int trailingZeroCount(U64 bb) {
+    if ( bb )
+       return bitScanForward(bb);
+    return 64;
+}
+
+int leadingZeroCount(U64 bb) {
+    if ( bb )
+       return bitScanReverse(bb) ^ 63;
+    return 64;
+}
+</pre>
+<p><span id="BitscanwithReset"></span>
+</p>
+<h1><span class="mw-headline" id="Bitscan_with_Reset">Bitscan with Reset</span></h1>
+<p>While <a href="Bitboard Serialization.html" title="Bitboard Serialization">traversing sets</a>, one may combine bitscanning with reset found bit. That implies passing the bitboard per reference or pointer, and tends to confuse compilers to keep all inside registers inside a typical serialization loop <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup> <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup>.
+</p>
+<pre>
+int bitScanForwardWithReset(U64 &amp;bb) { // also called dropForward
+    int idx = bitScanForward(bb);
+    bb &amp;= bb - 1; // reset bit outside
+    return idx;
+}
+</pre>
+<p><span id="GeneralizedBitscan"></span>
+</p>
+<h1><span class="mw-headline" id="Generalized_Bitscan">Generalized Bitscan</span></h1>
+<p>This generalized bitscan uses a boolean parameter to scan reverse or forward. It relies on bitScanReverse, but conditionally masks the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> in case of scanning forward. It might be used in the <a href="Classical Approach.html" title="Classical Approach">classical approach</a> to get positive or negative ray directions with one generalized routine.
+</p>
+<pre>
+ /**
+ * generalized bitScan
+ * @author Gerd Isenberg
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @param reverse, true bitScanReverse, false bitScanForward
+ * @return index (0..63) of least/most significant one bit
+ */
+ int bitScan(U64 bb, bool reverse) {
+    U64 rMask;
+    assert (bb != 0);
+    rMask = -(U64)reverse;
+    bb &amp;= -bb | rMask;
+    return bitScanReverse(bb);
+ }
+</pre>
+<p><span id="bsfbsr"></span>
+</p>
+<h1><span class="mw-headline" id="Processor_Instructions_for_Bitscans">Processor Instructions for Bitscans</span></h1>
+<h2><span class="mw-headline" id="x86">x86</span></h2>
+<p><a href="X86-64.html" title="X86-64">x86-64</a> processors have <a href="X86-64.html#gpinstructions" title="X86-64">bitscan instructions</a> and can be accessed with compilers today through either <a href="Assembly.html#InlineAssembly" title="Assembly">inline assembly</a> or compiler intrinsics. For the Microsoft/Intel C compiler, the intrinsics can be accessed by including and using the instructions <i>_BitScanForward64</i> <sup class="reference" id="cite_ref-25"><a href="#cite note-25">[25]</a></sup> , <i>_BitScanReverse64</i> <sup class="reference" id="cite_ref-26"><a href="#cite note-26">[26]</a></sup> or _lzcnt64 <sup class="reference" id="cite_ref-27"><a href="#cite note-27">[27]</a></sup> .
+</p>
+<pre>
+unsigned char_BitScanForward64(unsigned long * Index,  unsigned __int64 Mask);
+unsigned char _BitScanReverse64(unsigned long * Index,  unsigned __int64 Mask);
+unsigned __int64 __lzcnt64(unsigned __int64 value); // AMD K10 only see CPUID
+</pre>
+<p><a href="Linux.html" title="Linux">Linux</a> provides library functions <sup class="reference" id="cite_ref-28"><a href="#cite note-28">[28]</a></sup> , find first bit set (ffsll) in a word leaves an index of 1..64, and zero of no bit is set <sup class="reference" id="cite_ref-29"><a href="#cite note-29">[29]</a></sup> . <a href="Free Software Foundation.html#GCC" title="Free Software Foundation">GCC</a> 4.4.5 further has the Built-in Function <i>_builtin_ffsll</i> for finding the least significant one bit, <i>_builtin_ctzll</i> for trailing, and <i>_builtin_clzll</i> for leading zero count <sup class="reference" id="cite_ref-30"><a href="#cite note-30">[30]</a></sup> :
+</p>
+<pre>
+/* Returns one plus the index of the least significant 1-bit of x, or if x is zero, returns zero */
+int __builtin_ffsll (unsigned long long);
+
+/* Returns the number of trailing 0-bits in x, starting at the least significant bit position.
+   If x is 0, the result is undefined */
+int __builtin_ctzll (unsigned long long);
+
+/* Returns the number of leading 0-bits in x, starting at the most significant bit position.
+   If x is 0, the result is undefined */
+int __builtin_clzll (unsigned long long);
+</pre>
+<h3><span class="mw-headline" id="Emulating_Intrinsics">Emulating Intrinsics</span></h3>
+<p>For the GNU C compiler, the intrinsics can be emulated with <a href="Assembly.html#InlineAssembly" title="Assembly">inline assembly</a> <sup class="reference" id="cite_ref-31"><a href="#cite note-31">[31]</a></sup> .
+</p>
+<pre>
+//These processor instructions work only for 64-bit processors
+#ifdef _MSC_VER
+    #include &lt;intrin.h&gt;
+    #ifdef _WIN64
+        #pragma intrinsic(_BitScanForward64)
+        #pragma intrinsic(_BitScanReverse64)
+        #define USING_INTRINSICS
+    #endif
+#elif defined(__GNUC__) &amp;&amp; defined(__LP64__)
+    static INLINE unsigned char _BitScanForward64(unsigned long* Index, U64 Mask)
+    {
+        U64 Ret;
+        __asm__
+        (
+            "bsfq %[Mask], %[Ret]"
+            :[Ret] "=r" (Ret)
+            :[Mask] "mr" (Mask)
+        );
+        *Index = (unsigned long)Ret;
+        return Mask?1:0;
+    }
+    static INLINE unsigned char _BitScanReverse64(unsigned long* Index, U64 Mask)
+    {
+        U64 Ret;
+        __asm__
+        (
+            "bsrq %[Mask], %[Ret]"
+            :[Ret] "=r" (Ret)
+            :[Mask] "mr" (Mask)
+        );
+        *Index = (unsigned long)Ret;
+        return Mask?1:0;
+    }
+    #define USING_INTRINSICS
+#endif
+</pre>
+<h3><span class="mw-headline" id="Intrinsics_versus_asm">Intrinsics versus asm</span></h3>
+<p>Alternatively, rather than to emulate the intrinsics one might use the standard prototype, by using intrinsics or <a href="Assembly.html#InlineAssembly" title="Assembly">inline assembly</a> for <a href="Free Software Foundation.html#GCC" title="Free Software Foundation">GCC</a> <sup class="reference" id="cite_ref-32"><a href="#cite note-32">[32]</a></sup> :
+</p>
+<pre>
+#ifdef USE_X86INTRINSICS
+#include &lt;intrin.h&gt;
+#pragma intrinsic(_BitScanForward64)
+#pragma intrinsic(_BitScanReverse64)
+
+/**
+ * bitScanForward
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 x) {
+   unsigned long index;
+   assert (x != 0);
+   _BitScanForward64(&amp;index, x);
+   return (int) index;
+}
+
+/**
+ * bitScanReverse
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of most significant one bit
+ */
+int bitScanReverse(U64 x) {
+   unsigned long index;
+   assert (x != 0);
+   _BitScanReverse64(&amp;index, x);
+   return (int) index;
+}
+#else
+
+/**
+ * bitScanForward
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of least significant one bit
+ */
+int bitScanForward(U64 x) {
+   assert (x != 0);
+   asm ("bsfq %0, %0" : "=r" (x) : "0" (x));
+   return (int) x;
+}
+
+/**
+ * bitScanReverse
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of most significant one bit
+ */
+int bitScanReverse(U64 x) {
+   assert (x != 0);
+   asm ("bsrl %0, %0" : "=r" (x) : "0" (x));
+   return (int) x;
+}
+#endif
+</pre>
+<p><span id="x86Timing"></span>
+</p>
+<h3><span class="mw-headline" id="Bsf.2FBsr_x86-64_Timings">Bsf/Bsr x86-64 Timings</span></h3>
+<p>The instruction latency and reciprocal throughput <sup class="reference" id="cite_ref-33"><a href="#cite note-33">[33]</a></sup> heavily differs between various <a href="X86-64.html" title="X86-64">x86-64</a> architectures:
+</p>
+<table class="wikitable">
+<tr>
+<th> Architecture Stepping
+</th>
+<th> Instruction(s)
+</th>
+<th> Latency / Cycles
+</th>
+<th> Reciprocal Throughput
+</th></tr>
+<tr>
+<td colspan="4"> <a href="AMD.html" title="AMD">AMD</a>
+</td></tr>
+<tr>
+<td rowspan="2"> <a class="external text" href="https://en.wikipedia.org/wiki/Athlon_64" rel="nofollow">K8</a> <sup class="reference" id="cite_ref-34"><a href="#cite note-34">[34]</a></sup>
+</td>
+<td style="text-align:center;"> BSF reg16/32/64, mreg16/32/64
+</td>
+<td style="text-align:right;"> Vector Path 8/8/9
+</td>
+<td style="text-align:right;"> 8/8/9
+</td></tr>
+<tr>
+<td style="text-align:center;"> BSR reg16/32/64, mreg16/32/64
+</td>
+<td style="text-align:right;"> Vector Path 11
+</td>
+<td style="text-align:right;"> 11
+</td></tr>
+<tr>
+<td rowspan="3"> <a class="external text" href="https://en.wikipedia.org/wiki/AMD_K10" rel="nofollow">K10</a> <sup class="reference" id="cite_ref-35"><a href="#cite note-35">[35]</a></sup>
+</td>
+<td style="text-align:center;"> BSF reg, reg
+</td>
+<td style="text-align:right;"> Vector Path 4
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td style="text-align:center;"> BSR reg, reg
+</td>
+<td style="text-align:right;"> Vector Path 4
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td style="text-align:center;"> <a href="SSE4.html#ABM" title="SSE4">LZCNT</a> reg, reg
+</td>
+<td style="text-align:right;"> Direct Path single 2
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td colspan="4"> <a href="Intel.html" title="Intel">Intel</a> <sup class="reference" id="cite_ref-36"><a href="#cite note-36">[36]</a></sup>
+</td></tr>
+<tr>
+<td> <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Atom" rel="nofollow">ATOM</a>
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 16
+</td>
+<td style="text-align:right;"> 15
+</td></tr>
+<tr>
+<td> <a class="external text" href="https://en.wikipedia.org/wiki/NetBurst_%28microarchitecture%29" rel="nofollow">NetBurst</a> 0F_3H
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 16
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td>  NetBurst 0F_2H
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> 2
+</td></tr>
+<tr>
+<td> <a class="external text" href="https://en.wikipedia.org/wiki/Core_%28microarchitecture%29" rel="nofollow">Core</a> 06_0EH
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td>  65 nm Intel Core 06_0FH
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td>  Enhanced Intel Core 06_17H
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td>  Enhanced Intel Core 06_1DH
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td> <a class="external text" href="https://en.wikipedia.org/wiki/Nehalem_%28microarchitecture%29" rel="nofollow">Nehalem</a> 06_1AH
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td rowspan="3"><a class="external text" href="https://en.wikipedia.org/wiki/Sandy_Bridge" rel="nofollow">Sandy Bridge</a><br/>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Ivy_Bridge_%28microarchitecture%29" rel="nofollow">Ivy Bridge</a><br/>
+<a class="external text" href="https://en.wikipedia.org/wiki/Haswell_%28microarchitecture%29" rel="nofollow">Haswell</a>
+</p>
+</td>
+<td style="text-align:center;"> BSF/BSR
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:center;"> <a href="BMI1.html#LZCNT" title="BMI1">LZCNT</a>
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:center;"> <a href="BMI1.html#LZCNT" title="BMI1">TZCNT</a>
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 1
+</td></tr></table>
+<h3><span class="mw-headline" id="Bsf.2FBsr_behavior_with_zero_source">Bsf/Bsr behavior with zero source</span></h3>
+<p><a href="Intel.html" title="Intel">Intel</a> and <a href="AMD.html" title="AMD">AMD</a> specify different behavior. In praxis there seems no difference so far. However, as long as Intel docs explicitly state content undefined, it is recommend to don't rely on a pre-initialized content of that target register, if the source is zero.
+</p>
+<ul><li> Intel : If the content of the source operand is 0, the content of the destination operand is undefined. <sup class="reference" id="cite_ref-37"><a href="#cite note-37">[37]</a></sup></li>
+<li> AMD: If the second operand contains 0, the instruction sets ZF to 1 and does not change the contents of the destination register. <sup class="reference" id="cite_ref-38"><a href="#cite note-38">[38]</a></sup></li></ul>
+<h2><span class="mw-headline" id="ARM">ARM</span></h2>
+<p><a class="new" href="index.php?title=ARM&amp;action=edit&amp;redlink=1.html" title="ARM (page does not exist)">ARM</a> has <i>CLZ</i> (Count Leading Zeros) instruction for 32-bit integers. ARM instruction is available in <a class="external text" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0100i/index.html.html" rel="nofollow">ARMv5</a> and above, <a class="external text" href="https://en.wikipedia.org/wiki/ARM_architecture#Thumb" rel="nofollow">32-bit Thumb instruction</a> is available in <a class="external text" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0100i/index.html.html" rel="nofollow">ARMv6T2</a> and <a class="external text" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0100i/index.html.html" rel="nofollow">ARMv7</a> <sup class="reference" id="cite_ref-39"><a href="#cite note-39">[39]</a></sup> , the C-intrinsic is called <i>_builtin_clz</i> <sup class="reference" id="cite_ref-40"><a href="#cite note-40">[40]</a></sup> <sup class="reference" id="cite_ref-41"><a href="#cite note-41">[41]</a></sup> <sup class="reference" id="cite_ref-42"><a href="#cite note-42">[42]</a></sup> .
+<span id="EngineSamples"></span>
+</p>
+<h1><span class="mw-headline" id="Engine_Samples">Engine Samples</span></h1>
+<ul><li> <a href="Amundsen.html#BitScan" title="Amundsen">BitScan in Amundsen</a></li>
+<li> <a href="Chess 0.5.html#BitScan" title="Chess 0.5">BitScan in Chess 0.5</a></li>
+<li> <a href="CookieCat.html#BitScan" title="CookieCat">BitScan in CookieCat</a></li>
+<li> <a href="Crafty.html#BitScan" title="Crafty">BitScan in Crafty</a> (23.5)</li>
+<li> <a href="Gibbon.html#BitScan" title="Gibbon">BitScan in Gibbon</a></li>
+<li> <a href="Gk.html#BitScan" title="Gk">BitScan in Gk</a></li>
+<li> <a href="HeavyChess.html#BitScan" title="HeavyChess">BitScan in HeavyChess</a></li>
+<li> <a href="Kurt.html#BitScan" title="Kurt">BitScan in Kurt</a></li>
+<li> <a href="Murka.html#BitScan" title="Murka">BitScan in Murka</a></li>
+<li> <a href="Prophet.html#BitScan" title="Prophet">BitScan in Prophet</a></li>
+<li> <a href="RedQueen.html#BitScan" title="RedQueen">BitScan in RedQueen</a></li>
+<li> <a href="Spector.html#BitScan" title="Spector">BitScan in Spector</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li>
+<li> <a href="Pablo San Segundo.html#BITSCAN" title="Pablo San Segundo">BITSCAN</a>, a <a href="Cpp.html#Libraries" title="Cpp">C++ library</a> for bitstrings by <a href="Pablo San Segundo.html" title="Pablo San Segundo">Pablo San Segundo</a></li>
+<li> <a href="Bit-Twiddling.html" title="Bit-Twiddling">Bit-Twiddling</a></li>
+<li> <a href="De Bruijn Sequence Generator.html" title="De Bruijn Sequence Generator">De Bruijn Sequence Generator</a></li>
+<li> <a href="Java-Bitscan.html" title="Java-Bitscan">Java-Bitscan</a></li>
+<li> <a href="Population Count.html" title="Population Count">Population Count</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Alan Turing.html" title="Alan Turing">Alan Turing</a> (<b>1949</b>). <i><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=doc-431614f45472f.html" rel="nofollow">Alan Turing's Manual for the Ferranti Mk. I</a></i>. transcribed in 2000 by <a class="external text" href="http://www.panix.com/%7Erst/.html" rel="nofollow">Robert Thau</a>, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-1.Ferranti Mark 1 manual.Turing-Alan/2-1.Ferranti Mark 1 manual.Turing-Alan.1951.UNIVERSITY OF MANCHESTER.062303005.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a>, 9.4 The position of the most significant digit » <a href="Ferranti Mark 1.html" title="Ferranti Mark 1">Ferranti Mark 1</a></li>
+<li> <a href="Charles Leiserson.html" title="Charles Leiserson">Charles E. Leiserson</a>, <a href="Harald Prokop.html" title="Harald Prokop">Harald Prokop</a> and <a href="Keith H. Randall.html" title="Keith H. Randall">Keith H. Randall</a> (<b>1998</b>). <i>Using de Bruijn Sequences to Index a 1 in a Computer Word</i>, <a class="external text" href="http://supertech.csail.mit.edu/papers/debruijn.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Pablo San Segundo.html" title="Pablo San Segundo">Pablo San Segundo</a>, <a href="Ram%C3%B3n Gal%C3%A1n.html" title="Ramón Galán">Ramón Galán</a> (<b>2005</b>). <i><a class="external text" href="http://www.actapress.com/Abstract.aspx?paperId=18953.html" rel="nofollow">Bitboards: A New Approach</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/%7Eley/db/conf/aia/aia2005.html.html#SegundoG05" rel="nofollow">AIA 2005</a></li>
+<li> <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a>, p. 10</li>
+<li> <a class="external text" href="http://de.linkedin.com/pub/andreas-stiller/a/381/aa9.html" rel="nofollow">Andreas Stiller</a> (<b>2013</b>). <i><a class="external text" href="http://www.heise.de/ct/inhalt/2013/07/186/.html" rel="nofollow">Spezialkommando - Bits setzen, abfragen, scannen und mehr</a></i>. <a class="external text" href="http://www.heise.de/ct/.html" rel="nofollow">c't Magazin für Computertechnik</a> 7/2013, p. 186 (German)</li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1996_...">1996 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/bcb03df7630d6274.html" rel="nofollow">Bitboards: speeding up FirstOne</a> by Laurent Desnogues, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 10, 1996 » <a href="Othello.html" title="Othello">Othello</a></li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/d5dbf08c66e83517.html#" rel="nofollow">bitboard 2^i mod 67 is unique</a> by <a href="Stefan Plenkner.html" title="Stefan Plenkner">Stefan Plenkner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 6, 1996</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/9658009e315021fe.html#" rel="nofollow">bitboard 2^i mod 67 is unique</a> by <a href="Stefan Plenkner.html" title="Stefan Plenkner">Stefan Plenkner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 7, 1996</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/871851f83e2c429f.html#" rel="nofollow">bitboard 2^i mod 67 is unique</a> by <a href="Jo%C3%ABl Rivat.html" title="Joël Rivat">Joël Rivat</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, September 2, 1996</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=20057" rel="nofollow">Question to Bob: Crafty , Alpha and FindBit()</a> by <a href="Guido Schimmels.html" title="Guido Schimmels">Guido Schimmels</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 1998 » <a href="Crafty.html" title="Crafty">Crafty</a>, <a href="DEC Alpha.html" title="DEC Alpha">DEC Alpha</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=39619" rel="nofollow">To Nalimov and other programmers about BSF/BSR in VC</a> by <a class="new" href="index.php?title=Dezhi Zhao&amp;action=edit&amp;redlink=1.html" title="Dezhi Zhao (page does not exist)">Dezhi Zhao</a>, <a href="CCC.html" title="CCC">CCC</a>, January 16, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/browse_frm/thread/37efb792689be6b8" rel="nofollow">Re: TASM 5.0 versus BSF</a> by <a href="Frans Morsch.html" title="Frans Morsch">Frans Morsch</a>, <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/topics" rel="nofollow">comp.lang.asm.x86</a>, March 28, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=124638" rel="nofollow">Will the Itanium have a BSF or BSR instruction?</a> by  Larry Griffiths, <a href="CCC.html" title="CCC">CCC</a>, August 15, 2000</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=124712" rel="nofollow">Re: Will the Itanium have a BSF or BSR instruction?</a> by <a href="Eugene Nalimov.html" title="Eugene Nalimov">Eugene Nalimov</a>, <a href="CCC.html" title="CCC">CCC</a>, August 16, 2000</dd></dl>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=134077" rel="nofollow">Binary question</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 19, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=175203" rel="nofollow">Bitboards and Piece Lists</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, June 14, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=207080" rel="nofollow">FirstBit() in assembler</a> by <a href="David Rasmussen.html" title="David Rasmussen">David Rasmussen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=211203" rel="nofollow">Reply from Intel about BSF/BSR</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=212586" rel="nofollow">"Using de Bruijn Sequences to Index a 1 in a Computer Word"</a> by Oliver Roese, <a href="CCC.html" title="CCC">CCC</a>, February 08, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=265543" rel="nofollow">Extracting bits from a BitBoard...</a> by <a href="Joel Veness.html" title="Joel Veness">Joel Veness</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=265635" rel="nofollow">Another hacky method for bitboard bit extraction</a> by <a href="Walter Faxon.html" title="Walter Faxon">Walter Faxon</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=268065" rel="nofollow">Modulo verus BitScan and MMX-PopCount</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=268305" rel="nofollow">Fast 3DNow! BitScan</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, December 01, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=275160" rel="nofollow">Bitscan Conclusions</a> by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=283655" rel="nofollow">Bitscan</a> by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a href="CCC.html" title="CCC">CCC</a>, February 11, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=291062" rel="nofollow">FirstOne for Linux</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, March 29, 2003</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/comp.lang.asm.x86/3pVGzQGb1ys/fPpKBKNi848J" rel="nofollow">Bit magic</a> by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a class="external text" href="https://groups.google.com/forum/#!forum/comp.lang.asm.x86" rel="nofollow">comp.lang.asm.x86</a>, June 26, 2003</li></ul>
+<dl><dd> <a class="external text" href="https://groups.google.com/d/msg/comp.lang.asm.x86/3pVGzQGb1ys/230qffQJYvQJ" rel="nofollow">Re: Bit magic</a>  by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a class="external text" href="https://groups.google.com/forum/#!forum/comp.lang.asm.x86" rel="nofollow">comp.lang.asm.x86</a>, June 29, 2003</dd></dl>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=339225" rel="nofollow">Re: De Bruijn Sequence Generator</a> by <a href="Dieter B%C3%BCr%C3%9Fner.html" title="Dieter Bürßner">Dieter Bürßner</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2003 » <a href="De Bruijn Sequence Generator.html" title="De Bruijn Sequence Generator">De Bruijn Sequence Generator</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=348097" rel="nofollow">Determining location of LSB/MSB</a> by <a href="Jan Renze Steenhuisen.html" title="Jan Renze Steenhuisen">Renze Steenhuisen</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2004</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=388668" rel="nofollow">Nalimov: bsf/bsr intrinsics implementation still not optimal</a> by <a class="new" href="index.php?title=Dezhi Zhao&amp;action=edit&amp;redlink=1.html" title="Dezhi Zhao (page does not exist)">Dezhi Zhao</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2004</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=388787" rel="nofollow">Re: Nalimov: bsf/bsr intrinsics implementation still not optimal</a> by <a href="Eugene Nalimov.html" title="Eugene Nalimov">Eugene Nalimov</a>, <a href="CCC.html" title="CCC">CCC</a>, September 23, 2004</dd></dl>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=425020" rel="nofollow">A data point for PowerPC bitboard program authors</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, May 09, 2005 » <a href="PowerPC.html" title="PowerPC">PowerPC</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=3141.html" rel="nofollow">Best BitBoard LSB funktion?</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, July 20, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14151.html" rel="nofollow">Fastest bitboard compress routine when you can't use ASM</a> by mambofish, <a href="CCC.html" title="CCC">CCC</a>, May 31, 2007</li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=29333.html" rel="nofollow">Bit twiddling question, part 2: arbitrary bitscan order</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, August 11, 2009</li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=29482.html" rel="nofollow">32 bit versions for bitscan64</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30342.html" rel="nofollow">64-bit intrinsic performance</a> by <a href="Nathan Thom.html" title="Nathan Thom">Nathan Thom</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31228.html" rel="nofollow">Bit Scan (equivalent to ASM instructions bsr and bsf)</a> by <a href="Pascal Georges.html" title="Pascal Georges">Pascal Georges</a>, <a href="CCC.html" title="CCC">CCC</a>, December 24, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=32046.html" rel="nofollow">bitScanReverse32</a> by <a href="Luca Hemmerich.html" title="Luca Hemmerich">Luca Hemmerich</a>, <a href="CCC.html" title="CCC">CCC</a>, January 25, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39268.html" rel="nofollow">Introduction and (hopefully) contribution - bitboard methods</a> by <a href="Alcides Schulz.html" title="Alcides Schulz">Alcides Schulz</a>, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2011 » <a href="Population Count.html" title="Population Count">Population Count</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=43825.html" rel="nofollow">First One</a> by <a href="Jos%C3%A9 Carlos Mart%C3%ADnez Gal%C3%A1n.html" title="José Carlos Martínez Galán">José Carlos</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45188.html" rel="nofollow">Leading Zero Count Question</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46040.html" rel="nofollow">Optimizing bitboards for ARM</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54704.html" rel="nofollow">Symmetric move generation using bitboards</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54798.html" rel="nofollow">Stockfish 32-bit and hardware instructions on MSVC++</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2014 » <a href="Stockfish.html" title="Stockfish">Stockfish</a>, <a class="mw-selflink selflink">BitScan</a>, <a href="Population Count.html" title="Population Count">Population Count</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57400.html" rel="nofollow">Fun with De Bruijn</a> by <a class="new" href="index.php?title=Henk van den Belt&amp;action=edit&amp;redlink=1.html" title="Henk van den Belt (page does not exist)">Henk van den Belt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 27, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58230&amp;start=3.html" rel="nofollow">Re: Linux Version of Maverick 1.5</a> by <a href="Michael Dvorkin.html" title="Michael Dvorkin">Michael Dvorkin</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2015 » <a href="Mac OS.html" title="Mac OS">OS X</a>,  <a href="Maverick.html" title="Maverick">Maverick</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61559.html" rel="nofollow">syzygy users (and Ronald)</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2016 » <a href="Population Count.html" title="Population Count">Population Count</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70202.html" rel="nofollow">CPW bitscan with reset could someone explain this line?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 14, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74989.html" rel="nofollow">Looking for intrinsic "least significant bit" on Visual Studio</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, September 03, 2020 » <a href="BitScan.html#TrailingZeroCount" title="BitScan">Trailing Zero Count</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75818.html" rel="nofollow">C++20 standard bit operations</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, November 15, 2020 » <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a>, <a href="Population Count.html" title="Population Count">Population Count</a>, <a href="Cpp.html" title="Cpp">C++</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79739" rel="nofollow">Optimizing Matt Taylor's Folding trick</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, April 21, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Find_first_set" rel="nofollow">Find first set from Wikipedia</a></li>
+<li> <a class="external text" href="http://aggregate.org/MAGIC.html" rel="nofollow">The Aggregate Magic Algorithms</a> by <a href="Hank Dietz.html" title="Hank Dietz">Hank Dietz</a></li>
+<li> <a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html" rel="nofollow">Bit Twiddling Hacks</a> by <a class="external text" href="http://graphics.stanford.edu/%7Eseander/.html" rel="nofollow">Sean Eron Anderson</a></li>
+<li> <a class="external text" href="http://caladan.nanosoft.ca/c4/software/bitsort.php.html" rel="nofollow">An Efficient Bit-Reversal Sorting Algorithm for the Fast Fourier Transform</a> by <a class="external text" href="http://caladan.nanosoft.ca/index.php.html" rel="nofollow">Jennifer Elaan</a>, January 16, 2005</li>
+<li> <a class="external text" href="http://www.freepatentsonline.com/6172623.html.html" rel="nofollow">Efficient bit scan mechanism - United States Patent 6172623</a> from <a class="external text" href="http://www.freepatentsonline.com/.html" rel="nofollow">FreePatentsOnline.com</a></li>
+<li> <a href="Category:Frank Zappa.html" title="Category:Frank Zappa">Frank Zappa</a> &amp; <a class="external text" href="https://en.wikipedia.org/wiki/The_Mothers_of_Invention" rel="nofollow">the Mothers</a> - <a class="external text" href="https://en.wikipedia.org/wiki/King_Kong" rel="nofollow">King Kong</a> BBC Studio Recording 1968, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/kk8mPKROUS4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.mcescher.com/Gallery/gallery-back.htm.html" rel="nofollow">Picture gallery "Back in Holland 1941 - 1954"</a> from <a class="external text" href="http://www.mcescher.com/.html" rel="nofollow">The Official M.C. Escher Website</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chip-architect.com/news/2003 09 21 Detailed Architecture of AMDs 64bit Core.html.html#1.3" rel="nofollow">Chip Architect: Detailed Architecture of AMD's Opteron - 1.3 A third class of Instructions</a> by <a class="external text" href="http://www.chip-architect.com/.html" rel="nofollow">Hans de Vries</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74989.html" rel="nofollow">Looking for intrinsic "least significant bit" on Visual Studio</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, September 03, 2020</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a>, p 10</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Charles Leiserson.html" title="Charles Leiserson">Charles E. Leiserson</a>, <a href="Harald Prokop.html" title="Harald Prokop">Harald Prokop</a> and <a href="Keith H. Randall.html" title="Keith H. Randall">Keith H. Randall</a> (<b>1998</b>). <i>Using de Bruijn Sequences to Index a 1 in a Computer Word</i>, <a class="external text" href="http://supertech.csail.mit.edu/papers/debruijn.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=212586" rel="nofollow">"Using de Bruijn Sequences to Index a 1 in a Computer Word"</a> discussion in <a href="CCC.html" title="CCC">CCC</a>, February 08, 2002</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Nicolaas de Bruijn.html" title="Nicolaas de Bruijn">N. G. de Bruijn</a> (<b>1975</b>). <i>Acknowledgement of priority to C. Flye Sainte-Marie on the counting of circular arrangements of 2n zeros and ones that show each n-letter word exactly once</i>. Technical Report, Technische Hogeschool Eindhoven, available as <a class="external text" href="http://alexandria.tue.nl/repository/books/252901.pdf.html" rel="nofollow">pdf reprint</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/comp.lang.asm.x86/3pVGzQGb1ys/fPpKBKNi848J" rel="nofollow">Bit magic</a> by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a class="external text" href="https://groups.google.com/forum/#!forum/comp.lang.asm.x86" rel="nofollow">comp.lang.asm.x86</a>, June 26, 2003</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/comp.lang.asm.x86/3pVGzQGb1ys/230qffQJYvQJ" rel="nofollow">Re: Bit magic</a>  by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a class="external text" href="https://groups.google.com/forum/#!forum/comp.lang.asm.x86" rel="nofollow">comp.lang.asm.x86</a>, June 29, 2003</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=265635" rel="nofollow">Another hacky method for bitboard bit extraction</a> by <a href="Walter Faxon.html" title="Walter Faxon">Walter Faxon</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2002</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/d5dbf08c66e83517.html#" rel="nofollow">bitboard 2^i mod 67 is unique</a> by <a href="Stefan Plenkner.html" title="Stefan Plenkner">Stefan Plenkner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 6, 1996</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a href="Pablo San Segundo.html" title="Pablo San Segundo">Pablo San Segundo</a>, <a href="Ram%C3%B3n Gal%C3%A1n.html" title="Ramón Galán">Ramón Galán</a> (<b>2005</b>). <i><a class="external text" href="http://www.actapress.com/Abstract.aspx?paperId=18953.html" rel="nofollow">Bitboards: A New Approach</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/%7Eley/db/conf/aia/aia2005.html.html#SegundoG05" rel="nofollow">AIA 2005</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=3141.html" rel="nofollow">Best BitBoard LSB funktion?</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, July 20, 2005</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=124712" rel="nofollow">Re: Will the Itanium have a BSF or BSR instruction?</a> by <a href="Eugene Nalimov.html" title="Eugene Nalimov">Eugene Nalimov</a>, <a href="CCC.html" title="CCC">CCC</a>, August 16, 2000</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38777.html" rel="nofollow">ms1bTable array in Eugene Nalimovs bitScanReverse</a> by <a class="new" href="index.php?title=Stef Luijten&amp;action=edit&amp;redlink=1.html" title="Stef Luijten (page does not exist)">Stef Luijten</a>, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2011</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=472455" rel="nofollow">just another reverse bitscan</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, December 22, 2005</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=472762" rel="nofollow">final version - homage to FZ</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2005</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://ep2012.europython.eu/conference/p/mark-dickinson" rel="nofollow">EuroPython 2012: Florence, July 2–8 | Mark Dickinson</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://graphics.stanford.edu/~seander/bithacks.html.html#IntegerLogDeBruijn" rel="nofollow">Find the log base 2 of an N-bit integer in O(lg(N)) operations with multiply and lookup</a> from <a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html" rel="nofollow">Bit Twiddling Hacks</a> by <a class="external text" href="http://graphics.stanford.edu/%7Eseander/.html" rel="nofollow">Sean Eron Anderson</a></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="http://www-scm.tees.ac.uk/users/a.clements/BF/BF.htm.html" rel="nofollow">68020 Bit Field Instructions</a></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/SSE4#SSE4a" rel="nofollow">SSE4a from Wikipedia</a></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="http://msdn.microsoft.com/en-us/library/bb384809.aspx.html" rel="nofollow">__lzcnt16, __lzcnt, __lzcnt64</a> Visual C++ Language Reference</span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=283655" rel="nofollow">Bitscan</a> by <a href="Matt Taylor.html" title="Matt Taylor">Matt Taylor</a>, <a href="CCC.html" title="CCC">CCC</a>, February 11, 2003</span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70202.html" rel="nofollow">CPW bitscan with reset could someone explain this line?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 14, 2019</span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite ref-25">↑</a></span> <span class="reference-text"><a class="external text" href="https://docs.microsoft.com/en-us/cpp/intrinsics/bitscanforward-bitscanforward64" rel="nofollow">_BitScanForward, _BitScanForward64</a> Visual C++ Language Reference</span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><a href="#cite ref-26">↑</a></span> <span class="reference-text"><a class="external text" href="https://docs.microsoft.com/en-us/cpp/intrinsics/bitscanreverse-bitscanreverse64" rel="nofollow">_BitScanReverse, _BitScanReverse64</a> Visual C++ Language Reference</span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><a href="#cite ref-27">↑</a></span> <span class="reference-text"><a class="external text" href="https://msdn.microsoft.com/en-us/library/bb384809.aspx" rel="nofollow">__lzcnt16, __lzcnt, __lzcnt64</a> Visual C++ Language Reference</span>
+</li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><a href="#cite ref-28">↑</a></span> <span class="reference-text"><a class="external text" href="http://linux.die.net/man/3/.html" rel="nofollow">Section 3: library functions - Linux man pages</a></span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><a href="#cite ref-29">↑</a></span> <span class="reference-text"><a class="external text" href="http://linux.die.net/man/3/ffsll.html" rel="nofollow">ffsll(3): find first bit set in word - Linux man page</a></span>
+</li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><a href="#cite ref-30">↑</a></span> <span class="reference-text"><a class="external text" href="http://gcc.gnu.org/onlinedocs/gcc-4.4.5/gcc/Other-Builtins.html.html#Other-Builtins" rel="nofollow">Other Builtins - Using the GNU Compiler Collection (GCC)</a></span>
+</li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><a href="#cite ref-31">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=388787" rel="nofollow">Re: Nalimov: bsf/bsr intrinsics implementation still not optimal</a> by <a href="Eugene Nalimov.html" title="Eugene Nalimov">Eugene Nalimov</a>, <a href="CCC.html" title="CCC">CCC</a>, September 23, 2004</span>
+</li>
+<li id="cite_note-32"><span class="mw-cite-backlink"><a href="#cite ref-32">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.jjj.de/fxt/fxtbook.pdf.html" rel="nofollow">Matters Computational - ideas, algorithms, source code</a> (pdf) Ideas and Source Code by <a href="Mathematician.html#Arndt" title="Mathematician">Jörg Arndt</a></span>
+</li>
+<li id="cite_note-33"><span class="mw-cite-backlink"><a href="#cite ref-33">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.agner.org/optimize/instruction tables.pdf.html" rel="nofollow">Instruction tables, Lists of instruction latencies, throughputs and microoperation breakdowns for Intel and AMD CPU's</a> (pdf) by <a class="external text" href="http://www.agner.org/.html" rel="nofollow">Agner Fog</a></span>
+</li>
+<li id="cite_note-34"><span class="mw-cite-backlink"><a href="#cite ref-34">↑</a></span> <span class="reference-text"><a class="external text" href="http://support.amd.com/us/Processor TechDocs/25112.PDF.html" rel="nofollow">Software Optimization Guide for AMD64 Processors</a></span>
+</li>
+<li id="cite_note-35"><span class="mw-cite-backlink"><a href="#cite ref-35">↑</a></span> <span class="reference-text"><a class="external text" href="http://support.amd.com/us/Processor TechDocs/40546.pdf.html" rel="nofollow">Software Optimization Guide for AMD Family 10h and 12h Processors</a></span>
+</li>
+<li id="cite_note-36"><span class="mw-cite-backlink"><a href="#cite ref-36">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.intel.com/design/processor/manuals/248966.pdf.html" rel="nofollow">Intel 64 and IA32 Architectures Optimization Reference Manual</a></span>
+</li>
+<li id="cite_note-37"><span class="mw-cite-backlink"><a href="#cite ref-37">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.intel.com/Assets/PDF/manual/253666.pdf.html" rel="nofollow">Intel® 64 and IA-32 Architectures Software Developer’s Manual Volume 2A: Instruction Set Reference, A-M</a> (pdf) BSF—Bit Scan Forward 3-87</span>
+</li>
+<li id="cite_note-38"><span class="mw-cite-backlink"><a href="#cite ref-38">↑</a></span> <span class="reference-text"><a class="external text" href="http://support.amd.com/us/Processor TechDocs/24594 APM v3.pdf.html" rel="nofollow">AMD64 Architecture Programmer’s Manual Volume 3: General-Purpose and System Instructions</a> (pdf) Bit Scan Forward pg. 111</span>
+</li>
+<li id="cite_note-39"><span class="mw-cite-backlink"><a href="#cite ref-39">↑</a></span> <span class="reference-text"><a class="external text" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0379a/Cihjgjed.html.html" rel="nofollow">ARM Information Center &gt; General data processing instructions &gt; CLZ</a></span>
+</li>
+<li id="cite_note-40"><span class="mw-cite-backlink"><a href="#cite ref-40">↑</a></span> <span class="reference-text"><a class="external text" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0376a/CJAEJGJD.html.html" rel="nofollow">ARM Information Center &gt; Instruction intrinsics &gt; __builtin_clz</a></span>
+</li>
+<li id="cite_note-41"><span class="mw-cite-backlink"><a href="#cite ref-41">↑</a></span> <span class="reference-text"><a class="external text" href="http://developer.apple.com/mac/library/documentation/DeveloperTools/gcc-4.0.1/gcc/Other-Builtins.html.html" rel="nofollow">Other Builtins - Using the GNU Compiler Collection (GCC)</a></span>
+</li>
+<li id="cite_note-42"><span class="mw-cite-backlink"><a href="#cite ref-42">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31228.html" rel="nofollow">Bit Scan (equivalent to ASM instructions bsr and bsf)</a> by <a href="Pascal Georges.html" title="Pascal Georges">Pascal Georges</a>, <a href="CCC.html" title="CCC">CCC</a>, December 24, 2009</span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722131134
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.084 seconds
+Real time usage: 0.086 seconds
+Preprocessor visited node count: 990/1000000
+Preprocessor generated node count: 2068/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1095-0!canonical and timestamp 20240722131134 and revision id 26466
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=BitScan&amp;oldid=26466">https://www.chessprogramming.org/index.php?title=BitScan&amp;oldid=26466</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:M. C. Escher.html" title="Category:M. C. Escher">M. C. Escher</a></li><li><a href="Category:Frank Zappa.html" title="Category:Frank Zappa">Frank Zappa</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=BitScan&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="BitScan.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:BitScan&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="BitScan.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=BitScan&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=BitScan&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/BitScan.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/BitScan.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=BitScan&amp;oldid=26466.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=BitScan&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 28 April 2022, at 19:33.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=BitScan&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.084","walltime":"0.086","ppvisitednodes":{"value":990,"limit":1000000},"ppgeneratednodes":{"value":2068,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722131134","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

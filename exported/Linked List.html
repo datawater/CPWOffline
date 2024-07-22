@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Linked List - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Linked_List","wgTitle":"Linked List","wgCurRevisionId":20451,"wgRevisionId":20451,"wgArticleId":2652,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Kraan","Hellmut Hattler"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Linked_List","wgRelevantArticleId":2652,"wgRequestId":"Zp7DfV0xYjdSHhMDafgstwAAAAI","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Linked_List rootpage-Linked_List skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Linked List</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * Linked List</b>
+</p><p><b>Linked List</b>,<br/>
+a data structure to <a class="external text" href="https://en.wikipedia.org/wiki/Collection_%28abstract_data_type%29" rel="nofollow">collect</a> data entities in <a class="external text" href="https://en.wikipedia.org/wiki/Sequence" rel="nofollow">sequential</a> order. Unlike an <a href="Array.html" title="Array">array</a> or vector, where consecutive nodes or elements remain in sequential order in <a href="Memory.html" title="Memory">memory</a> for sequential as well as random access, each node of a linked list is composed of a datum and one or more explicit links, a <a class="external text" href="https://en.wikipedia.org/wiki/Pointer_%28computer_programming%29" rel="nofollow">pointer</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Reference_%28computer_science%29" rel="nofollow">reference</a> or index to the next and/or previous node of the sequence. This structure allows for efficient insertion or removal of elements from any position in the sequence, without copying other nodes around but only to update some references. The ratio of the pure data size to the complete size of a node with its references is somehow a measure of the lists data efficiency. In choosing data structures like arrays versus linked lists, one has to consider <a class="external text" href="https://en.wikipedia.org/wiki/Time_complexity" rel="nofollow">time complexity</a> issues in traversing and maintaining the collection, that is in <a class="external text" href="https://en.wikipedia.org/wiki/Big_O_notation" rel="nofollow">Big O notation</a> constant O(1) versus linear O(n). 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Forward List"><span class="tocnumber">1</span> <span class="toctext">Forward List</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Iteration"><span class="tocnumber">1.1</span> <span class="toctext">Iteration</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Lookup"><span class="tocnumber">1.2</span> <span class="toctext">Lookup</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Insertion"><span class="tocnumber">1.3</span> <span class="toctext">Insertion</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Removal"><span class="tocnumber">1.4</span> <span class="toctext">Removal</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Keeping a Tail"><span class="tocnumber">1.5</span> <span class="toctext">Keeping a Tail</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Doubly Linked List"><span class="tocnumber">2</span> <span class="toctext">Doubly Linked List</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Linked Lists in Programming Languages"><span class="tocnumber">3</span> <span class="toctext">Linked Lists in Programming Languages</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Lists in Computer Chess"><span class="tocnumber">4</span> <span class="toctext">Lists in Computer Chess</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#C.2B.2B"><span class="tocnumber">6.1</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Java"><span class="tocnumber">6.2</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Lisp"><span class="tocnumber">6.3</span> <span class="toctext">Lisp</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Perl"><span class="tocnumber">6.4</span> <span class="toctext">Perl</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Python"><span class="tocnumber">6.5</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Ruby"><span class="tocnumber">6.6</span> <span class="toctext">Ruby</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#TCL"><span class="tocnumber">6.7</span> <span class="toctext">TCL</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#.NET"><span class="tocnumber">6.8</span> <span class="toctext">.NET</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Misc"><span class="tocnumber">6.9</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Forward_List">Forward List</span></h1>
+<div class="floatnone"><a class="image" href="File:Singly-linked-list.svg.html"><img alt="Singly-linked-list.svg" class="thumbborder" height="41" src="wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/612px-Singly-linked-list.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/816px-Singly-linked-list.svg.png 2x" style="vertical-align: text-bottom" width="408"/></a></div> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>
+<p>A forward list or <b>singly linked</b> list consists of one reference per node to the next element. A <b>head</b> reference is used to indicate the first element of the list, and in linear lists the last node is linked to a terminator used to signify the end of the list, either a <a class="external text" href="https://en.wikipedia.org/wiki/Sentinel_value" rel="nofollow">sentinel value</a> like a <a class="external text" href="https://en.wikipedia.org/wiki/Null_pointer#Null_pointer" rel="nofollow">null-pointer</a> in <a href="C.html" title="C">C</a> or a <a class="external text" href="https://en.wikipedia.org/wiki/Sentinel_node" rel="nofollow">sentinel node</a> with a terminator symbol in its data field. Another convention is to refer the first node from the last node for a so called circular or circularly linked list, opposed to the open or linear list. 
+</p>
+<h2><span class="mw-headline" id="Iteration">Iteration</span></h2>
+<p><a href="Iteration.html" title="Iteration">Iteration</a> is the act of repeating instructions inside an <a href="Algorithms.html" title="Algorithms">algorithm</a> with associated <a href="Data.html" title="Data">data</a>, for instance all elements of a linked list.
+</p>
+<pre>
+TNode* pNode = m_pHead;
+while ( pNode ) {
+   doSomething( pNode );
+   pNode = pNode-&gt;pNext;
+}
+</pre>
+<h2><span class="mw-headline" id="Lookup">Lookup</span></h2>
+<p>To find a particular node requires traversal, that is iteration, starting from the head of the list. Since some actions require modifications on the previous node, not only the found node if any is returned, but also the pointer to the previous node if any.
+</p>
+<pre>
+TNode* TList::findNode(Property property, TNode **ppPrevious) {
+  TNode* pNode = m_pHead;
+  *ppPrevious = NULL
+  while ( pNode ) {
+    if ( pNode-&gt;hasProperty(property) )
+       return pNode;
+    *ppPrevious = pNode;
+    pNode = pNode-&gt;pNext;
+  }
+  return NULL; /* not found */
+}
+</pre>
+<h2><span class="mw-headline" id="Insertion">Insertion</span></h2>
+<p>To insert behind a found node requires modification of two references. The found node need to refer the new node, and the new node to refer the node which was previously the next node of the found node. If no node is found, the new node is appended at the end of the list. If the list is empty, the head is set accordantly, with the new node's next referring nil.
+</p>
+<pre>
+TNode* TList::insertBehind(TNode *pNewNode, Property property) {
+  TNode* pPrevious;
+  TNode* pNode = findNode(property, &amp;pPrevious);
+  if ( pNode ) {
+    pNewNode-&gt;pNext = pNode-&gt;pNext;
+    pNode-&gt;pNext = pNewNode;
+  } else if ( pPrevious ) {
+    pNewNode-&gt;pNext  = NULL;
+    pPrevious-&gt;pNext = pNewNode;
+  } else {
+    pNewNode-&gt;pNext = NULL;
+    m_pHead = pNewNode;
+  }
+  return pNewNode;
+}
+</pre>
+<div class="floatnone"><a class="image" href="File:CPT-LinkedLists-addingnode.svg.html"><img alt="CPT-LinkedLists-addingnode.svg" class="thumbborder" height="116" src="wikipedia/commons/thumb/4/4b/CPT-LinkedLists-addingnode.svg/474px-CPT-LinkedLists-addingnode.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/CPT-LinkedLists-addingnode.svg/711px-CPT-LinkedLists-addingnode.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/CPT-LinkedLists-addingnode.svg/948px-CPT-LinkedLists-addingnode.svg.png 2x" style="vertical-align: text-bottom" width="474"/></a></div> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>
+<h2><span class="mw-headline" id="Removal">Removal</span></h2>
+<p>The removal of a node requires to refer the previous node no longer to the found node to be removed, but to its next node. In case the found node is the first one, the head reference is modified to skip that node as well.
+</p>
+<pre>
+TNode* TList::remove(Property property) {
+  TNode* pPrevious;
+  TNode* pNode = findNode(property, &amp;pPrevious);
+  if ( pNode ) {
+    if ( pPrevious ) {
+      pPrevious-&gt;pNext = pNode-&gt;pNext;
+    } else {
+      m_pHead = pNode-&gt;pNext;
+    }
+  }
+  return pNode; /* if NULL, nothing was removed */
+}
+</pre>
+<div class="floatnone"><a class="image" href="File:CPT-LinkedLists-deletingnode.svg.html"><img alt="CPT-LinkedLists-deletingnode.svg" class="thumbborder" height="174" src="wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/570px-CPT-LinkedLists-deletingnode.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/760px-CPT-LinkedLists-deletingnode.svg.png 2x" style="vertical-align: text-bottom" width="380"/></a></div> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+<h2><span class="mw-headline" id="Keeping_a_Tail">Keeping a Tail</span></h2>
+<p>As demonstrated above, appending nodes at the end of the forward list has a <a class="external text" href="https://en.wikipedia.org/wiki/Asymptotic_computational_complexity" rel="nofollow">asymptotic computational complexity</a> of O(n), because one has to traverse the entire list from its head. Therefor to speed up appending, some implementations keep not only the head as reference the first element of the list, but also a reference to the last element, dubbed tail. In an video interview, <a class="external text" href="https://en.wikipedia.org/wiki/Anders_Hejlsberg" rel="nofollow">Anders Hejlsberg</a> elaborates on the question on his favorite data structure. Instead of a singly linked list with a head, he preferred a circularly linked list with a tail pointer only, to avoid traversal of the complete lists in order to append at the end, and to use tail-&gt;next to point to the head.
+</p>
+<div class="floatnone"><a href="C sharp.html#References" title="C sharp#References"><img alt="HejsbergLinkedList.JPG" class="thumbborder" height="381" src="images/7/72/HejsbergLinkedList.JPG" style="vertical-align: text-bottom" width="476"/></a></div>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Anders_Hejlsberg" rel="nofollow">Anders Hejlsberg</a> on his favorite data structure <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+<span id="Doubly"></span>
+</p>
+<h1><span class="mw-headline" id="Doubly_Linked_List">Doubly Linked List</span></h1>
+<div class="floatnone"><a class="image" href="File:Doubly-linked-list.svg.html"><img alt="Doubly-linked-list.svg" class="thumbborder" height="41" src="wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/915px-Doubly-linked-list.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/1220px-Doubly-linked-list.svg.png 2x" style="vertical-align: text-bottom" width="610"/></a></div> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+<p>A doubly linked list allows efficient list traversal in forward and backward direction, and therefor each node requires one forward and backward reference to both next and previous node with little bit more effort to insert and remove nodes.
+</p>
+<h1><span class="mw-headline" id="Linked_Lists_in_Programming_Languages">Linked Lists in Programming Languages</span></h1>
+<p>Programming languages such as the <a class="external text" href="https://en.wikipedia.org/wiki/Functional_programming" rel="nofollow">functional</a> <a class="new" href="index.php?title=Lisp&amp;action=edit&amp;redlink=1.html" title="Lisp (page does not exist)">Lisp</a> and <a class="new" href="index.php?title=Scheme&amp;action=edit&amp;redlink=1.html" title="Scheme (page does not exist)">Scheme</a> have singly linked lists built in along with <a class="external text" href="https://en.wikipedia.org/wiki/Cons" rel="nofollow">cons</a>. In fact, Lisp derives from "LISt Processing". <a class="external text" href="https://en.wikipedia.org/wiki/Imperative_programming" rel="nofollow">Imperative</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Object-oriented_programming" rel="nofollow">object oriented</a> programming languages such as <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a> or their libraries provide <a class="external text" href="https://en.wikipedia.org/wiki/Container_%28abstract_data_type%29" rel="nofollow">abstract</a> or <a href="Generic Programming.html" title="Generic Programming">generic</a> container with an <a class="external text" href="https://en.wikipedia.org/wiki/Protocol_%28object-oriented_programming%29" rel="nofollow">interface</a> to <a href="Iteration.html" title="Iteration">iterate</a> the elements of the container in sequential fashion. For instance <a href="Cpp.html" title="Cpp">C++</a> std::forward_list <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> with an iterator in a for-loop:
+</p>
+<pre>
+  std::forward_list&lt;TSquare&gt; knightTargetsd4 = {e6,f5,f3,e2,c2,b3,b5,c6};
+
+  std::cout &lt;&lt; "knight on d4 attacks:";
+  for ( auto it = mylist.begin(); it != mylist.end(); ++it )
+    std::cout &lt;&lt; " " &lt;&lt; *it;
+  std::cout &lt;&lt; std::endl;
+</pre>
+<p>or, alternatively with modifying or non-modifying sequence operation <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> :
+</p>
+<pre>
+  std::forward_list&lt;TSquare&gt; knightTargetsd4 = {e6,f5,f3,e2,c2,b3,b5,c6};
+  std::cout &lt;&lt; "knight on d4 attacks:";
+  for_each (knightTargetsd4.begin(), knightTargetsd4.end(), print);
+  std::cout &lt;&lt; std::endl;
+</pre>
+<h1><span class="mw-headline" id="Lists_in_Computer_Chess">Lists in Computer Chess</span></h1>
+<p>In chess programming lists are applied with <a href="Squares.html" title="Squares">squares</a>, <a href="Pieces.html" title="Pieces">pieces</a> and <a href="Moves.html" title="Moves">moves</a>, most often used within the <a href="Search.html" title="Search">search</a> algorithm, implemented as pre-allocated arrays on the <a class="external text" href="https://en.wikipedia.org/wiki/Memory_pool" rel="nofollow">heap</a>, <a href="Stack.html" title="Stack">stack</a> or as static list in the <a class="external text" href="https://en.wikipedia.org/wiki/Data_segment" rel="nofollow">data</a> or <a class="external text" href="https://en.wikipedia.org/wiki/.bss" rel="nofollow">bss</a> segment. Typical examples are <a href="Piece-Lists.html" title="Piece-Lists">piece-</a> and <a href="Move List.html" title="Move List">move-lists</a> inside the search, or move-lists inside a <a href="Chess Game.html" title="Chess Game">game record</a>. A <a href="Bitboards.html" title="Bitboards">bitboard</a> is a kind of <a class="external text" href="https://en.wikipedia.org/wiki/Encapsulation_%28object-oriented_programming%29" rel="nofollow">encapsulation</a> of a list of squares through an iterator interface, and requires <a href="Bitboard Serialization.html" title="Bitboard Serialization">serialization</a> to produce an explicit list.
+</p><p>Linked lists have applications in piece-lists, where due to <a href="Captures.html" title="Captures">captures</a> pieces are removed in <a href="Make Move.html" title="Make Move">make move</a>, and re-inserted in <a href="Unmake Move.html" title="Unmake Move">unmake move</a>, where modifying references is versatile rather than copying elements  of an array around, or to tag pieces as removed, and to traverse always 16 elements rather than a few in the late <a href="Endgame.html" title="Endgame">endgame</a> with most pieces captured. A sample declaration and code was given by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a> in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>. A special form of a linked list is the conditional <a class="external text" href="https://en.wikipedia.org/wiki/Skip_list" rel="nofollow">skip list</a>, as proposed in <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">table-driven move generation</a>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Array.html" title="Array">Array</a></li>
+<li> <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a></li>
+<li> <a href="Iteration.html" title="Iteration">Iteration</a></li>
+<li> <a href="Move List.html" title="Move List">Move List</a></li>
+<li> <a href="Piece-Lists.html" title="Piece-Lists">Piece-Lists</a></li>
+<li> <a class="new" href="index.php?title=Priority Queue&amp;action=edit&amp;redlink=1.html" title="Priority Queue (page does not exist)">Priority Queue</a></li>
+<li> <a href="Queue.html" title="Queue">Queue</a> (FIFO)</li>
+<li> <a href="Stack.html" title="Stack">Stack</a> (LIFO)</li>
+<li> <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">Table-driven Move Generation</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/List_%28abstract_data_type%29" rel="nofollow">List (abstract data type) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Linked_data_structure" rel="nofollow">Linked data structure from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">Linked list from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Doubly_linked_list" rel="nofollow">Doubly linked list from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Dancing_Links" rel="nofollow">Dancing Links from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Self-organizing_list" rel="nofollow">Self-organizing list from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Skip_list" rel="nofollow">Skip list from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Unrolled_linked_list" rel="nofollow">Unrolled linked listfrom Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/VList" rel="nofollow">VList from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/XOR_linked_list" rel="nofollow">XOR linked list from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="C.2B.2B"><a href="Cpp.html" title="Cpp">C++</a></span></h2>
+<ul><li> <a class="external text" href="http://www.cplusplus.com/reference/stl/forward list/.html" rel="nofollow">forward_list - C++ Reference</a></li>
+<li> <a class="external text" href="http://www.cplusplus.com/reference/stl/list/.html" rel="nofollow">list - C++ Reference</a></li>
+<li> <a class="external text" href="http://www.boost.org/doc/libs/1 51 0/doc/html/container/non standard containers.html.html#container.non standard containers.slist" rel="nofollow">Boost | Non-standard containers - 1.51.0 | slist</a></li>
+<li> <a class="external text" href="http://qt-project.org/doc/qt-4.8/qlist.html.html" rel="nofollow">QList | Documentation | Qt Developer Network</a></li>
+<li> <a class="external text" href="http://qt-project.org/doc/qt-4.8/qlinkedlist.html.html" rel="nofollow">QLinkedList | Documentation | Qt Developer Network</a></li>
+<li> <a class="external text" href="http://msdn.microsoft.com/de-de/library/bxde0zae%28v=vs.80%29.aspx.html" rel="nofollow">CList Class (MFC)</a></li>
+<li> <a class="external text" href="http://www.codeproject.com/Articles/662/A-Beginner-s-Guide-to-the-Linked-List.html" rel="nofollow">A Beginner's Guide to the Linked List - CodeProject</a></li></ul>
+<h2><span class="mw-headline" id="Java"><a href="Java.html" title="Java">Java</a></span></h2>
+<ul><li> <a class="external text" href="http://docs.oracle.com/javase/6/docs/api/java/util/LinkedList.html.html" rel="nofollow">LinkedList (Java Platform SE 6)</a></li></ul>
+<h2><span class="mw-headline" id="Lisp"><a class="new" href="index.php?title=Lisp&amp;action=edit&amp;redlink=1.html" title="Lisp (page does not exist)">Lisp</a></span></h2>
+<ul><li> <a class="external text" href="http://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node147.html.html" rel="nofollow">Common Lisp the Language, 2nd Edition | 15 Lists</a> by <a href="Mathematician.html#GSteele" title="Mathematician">Guy L. Steele Jr.</a>, 1989</li>
+<li> <a class="external text" href="http://www.gnu.org/software/emacs/emacs-lisp-intro/html node/Lisp-Lists.html.html" rel="nofollow">Lisp Lists - Programming in Emacs Lisp</a></li></ul>
+<h2><span class="mw-headline" id="Perl"><a class="new" href="index.php?title=Perl&amp;action=edit&amp;redlink=1.html" title="Perl (page does not exist)">Perl</a></span></h2>
+<ul><li> <a class="external text" href="http://www.cs.cmu.edu/afs/cs/usr/rgs/mosaic/pl-exp-arr.html.html" rel="nofollow">PERL -- Array and List Functions</a></li>
+<li> <a class="external text" href="http://www.misc-perl-info.com/perl-lists.html.html" rel="nofollow">Perl Lists</a></li>
+<li> <a class="external text" href="http://perldoc.perl.org/List/Util.html.html" rel="nofollow">List::Util - perldoc.perl.org</a></li></ul>
+<h2><span class="mw-headline" id="Python"><a href="Python.html" title="Python">Python</a></span></h2>
+<ul><li> <a class="external text" href="http://docs.python.org/tutorial/datastructures.html.html" rel="nofollow">5. Data Structures — Python v2.7.3 documentation</a></li>
+<li> <a class="external text" href="http://effbot.org/zone/python-list.htm.html" rel="nofollow">An Introduction to Python Lists</a> by Fredrik Lundh | August 2006</li>
+<li> <a class="external text" href="http://www.tutorialspoint.com/python/python lists.htm.html" rel="nofollow">Python - List Data Types</a></li>
+<li> <a class="external text" href="http://www.khanacademy.org/science/computer-science/v/python-lists.html" rel="nofollow">Python Lists | Computer Science | Khan Academy</a></li>
+<li> <a class="external text" href="http://www.diveintopython.net/native data types/lists.html.html" rel="nofollow">Dive Into Python | 3.2. Introducing Lists</a></li></ul>
+<h2><span class="mw-headline" id="Ruby"><a class="new" href="index.php?title=Ruby&amp;action=edit&amp;redlink=1.html" title="Ruby (page does not exist)">Ruby</a></span></h2>
+<ul><li> <a class="external text" href="http://langref.org/ruby/lists.html" rel="nofollow">angref.org - ruby - Lists</a></li></ul>
+<h2><span class="mw-headline" id="TCL"><a class="new" href="index.php?title=TCL-TK&amp;action=edit&amp;redlink=1.html" title="TCL-TK (page does not exist)">TCL</a></span></h2>
+<ul><li> <a class="external text" href="http://www.tcl.tk/man/tcl/tutorial/Tcl14.html.html" rel="nofollow">Tcl Data Structures 101 - The list</a></li>
+<li> <a class="external text" href="http://tmml.sourceforge.net/doc/tcl/.html" rel="nofollow">Tcl Reference Manual</a></li></ul>
+<h2><span class="mw-headline" id=".NET">.NET</span></h2>
+<ul><li> <a class="external text" href="http://msdn.microsoft.com/en-us/library/6sh2ey19.aspx.html" rel="nofollow">List(T) Class (System.Collections.Generic)</a> <a class="external text" href="https://en.wikipedia.org/wiki/MSDN_Library" rel="nofollow">MSDN Library</a></li>
+<li> <a class="external text" href="http://www.dotnetperls.com/list.html" rel="nofollow">C# List Examples</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a href="Category:Kraan.html" title="Category:Kraan">Kraan</a>  - Head, 1972, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/vNeq_C-P7ak?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">A linked list whose nodes contain two fields: an integer value and a link to the next node. The last node is linked to a terminator used to signify the end of the list, Diagram of a singly linked list made in <a class="external text" href="https://en.wikipedia.org/wiki/Inkscape" rel="nofollow">Inkscape</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">Linked list from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">Diagram of inserting a node into a singly linked list, for <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">linked list</a> article. Made and granted into the public domain by <a class="external text" href="https://en.wikipedia.org/wiki/User:Dcoetzee" rel="nofollow">Derrick Coetzee</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Adobe_Photoshop" rel="nofollow">Adobe Photoshop</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Adobe_Illustrator" rel="nofollow">Illustrator</a>, April 24, 2011, <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">Linked list from Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">Diagram of deleting a node from a singly linked list, for <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">linked list</a> article. Created and released into the public domain by <a class="external text" href="https://en.wikipedia.org/wiki/User:Dcoetzee" rel="nofollow">Derrick Coetzee</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Adobe_Photoshop" rel="nofollow">Adobe Photoshop</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Adobe_Illustrator" rel="nofollow">Illustrator</a>, April 24, 2011, <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">Linked list from Wikipedia</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text">image from <a href="C sharp.html#References" title="C sharp">Behind the Code</a> with <a class="external text" href="https://en.wikipedia.org/wiki/Anders_Hejlsberg" rel="nofollow">Anders Hejlsberg</a>, from 0:50:52, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text">Diagram of a doubly linked list made in <a class="external text" href="https://en.wikipedia.org/wiki/Inkscape" rel="nofollow">Inkscape</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Linked_list" rel="nofollow">Linked list from Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.cplusplus.com/reference/stl/forward list/begin/.html" rel="nofollow">forward_list::begin - C++ Reference</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.cplusplus.com/reference/algorithm/.html" rel="nofollow">STL Algorithms - C++ Reference</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=468678&amp;t=43971.html" rel="nofollow">Re: Is there such a thing as branchless move generation?</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, June 10, 2012</span>
+</li>
+</ol></div>
+<p><b><a href="Data.html" title="Data">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722125718
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.248 seconds
+Real time usage: 3.518 seconds
+Preprocessor visited node count: 259/1000000
+Preprocessor generated node count: 516/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2652-0!canonical and timestamp 20240722125714 and revision id 20451
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Linked_List&amp;oldid=20451">https://www.chessprogramming.org/index.php?title=Linked_List&amp;oldid=20451</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Kraan.html" title="Category:Kraan">Kraan</a></li><li><a href="Category:Hellmut Hattler.html" title="Category:Hellmut Hattler">Hellmut Hattler</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Linked+List&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Linked List.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Linked List&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Linked List.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Linked List&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Linked List&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Linked List.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Linked List.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Linked List&amp;oldid=20451.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Linked List&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 August 2020, at 23:18.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Linked_List&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.248","walltime":"3.518","ppvisitednodes":{"value":259,"limit":1000000},"ppgeneratednodes":{"value":516,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722125718","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

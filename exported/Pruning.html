@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Pruning - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pruning","wgTitle":"Pruning","wgCurRevisionId":25083,"wgRevisionId":25083,"wgArticleId":975,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pruning","wgRelevantArticleId":975,"wgRequestId":"Zp7Don1htEhTE3yaocy3owAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pruning rootpage-Pruning skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Pruning</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Selectivity.html" title="Selectivity">Selectivity</a> * Pruning</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:290px;"><a href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b7047d58ae0c54bf8bab.html#57f3b7277d58ae2139bf8baf"><img alt="" class="thumbimage" height="225" src="images/7/77/UnderTrees.jpg" width="288"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:UnderTrees.jpg.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - Under the Trees <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Pruning</b>, (as opposed to <a href="Reductions.html" title="Reductions">reductions</a>) <br/>
+a name for every heuristic that removes completely certain branches of the <a href="Search Tree.html" title="Search Tree">search tree</a>, assuming they have no bearing to the search result. <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> may be considered as backward pruning, because we found a refutation after searching <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. Forward pruning always involves some risks to overlook something, with influence on the root score. Some pruning techniques rely on a specialized, but reduced search, others rely only on static move properties. <a href="Type B Strategy.html" title="Type B Strategy">Shannon Type B</a> programs only consider some plausible mores, but all other moves are pruned. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Backward pruning"><span class="tocnumber">1</span> <span class="toctext">Backward pruning</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Forward pruning techniques"><span class="tocnumber">2</span> <span class="toctext">Forward pruning techniques</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Returning Beta"><span class="tocnumber">2.1</span> <span class="toctext">Returning Beta</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Returning Alpha"><span class="tocnumber">2.2</span> <span class="toctext">Returning Alpha</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Skipping Moves"><span class="tocnumber">2.3</span> <span class="toctext">Skipping Moves</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#1960 ..."><span class="tocnumber">4.1</span> <span class="toctext">1960 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#1970 ..."><span class="tocnumber">4.2</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#1980 ..."><span class="tocnumber">4.3</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#1990 ..."><span class="tocnumber">4.4</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2000 ..."><span class="tocnumber">4.5</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2010 ..."><span class="tocnumber">4.6</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#1995 ..."><span class="tocnumber">5.1</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2000 ... 2"><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2010 ... 2"><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2020 ..."><span class="tocnumber">5.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Backward_pruning">Backward pruning</span></h1>
+<p>sound pruning, not affecting the search result
+</p>
+<ul><li> <a href="Mate Distance Pruning.html" title="Mate Distance Pruning">Mate Distance Pruning</a></li></ul>
+<h1><span class="mw-headline" id="Forward_pruning_techniques">Forward pruning techniques</span></h1>
+<p>Forward pruning techniques are either applied at expected <a href="Node Types.html#CUT" title="Node Types">Cut-Nodes</a> or <a href="Node Types.html#ALL" title="Node Types">All-Nodes</a> and return either beta as <a href="Lower Bound.html" title="Lower Bound">lower bound</a> or alpha as <a href="Upper Bound.html" title="Upper Bound">upper bound</a>. The none <a href="Recursion.html" title="Recursion">recursive</a> <a href="ProbCut.html" title="ProbCut">ProbCut</a> is applied at both types of none <a href="Node Types.html#PV" title="Node Types">PV-nodes</a>. Rather than immediately returning alpha at strong expected <a href="Node Types.html#ALL" title="Node Types">All-Nodes</a> after a reduced or <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, pruning techniques near the horizon skip moves, which are very unlikely to exceed alpha, or in case of the quiescence search itself, all (most) <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a> as well as losing <a href="Captures.html" title="Captures">captures</a>.
+</p>
+<h2><span class="mw-headline" id="Returning_Beta">Returning Beta</span></h2>
+<p>at expected <a href="Node Types.html#CUT" title="Node Types">Cut-Nodes</a>:
+</p>
+<ul><li> <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a> - if reduced nullmove search fails high, return beta</li>
+<li> <a href="Multi-Cut.html" title="Multi-Cut">Multi-Cut</a> - if a reduced, specialized search has C cut-offs from N tried moves, return beta</li>
+<li> <a href="Enhanced Forward Pruning.html" title="Enhanced Forward Pruning">Enhanced Forward Pruning</a>, also applicable at expected <a href="Node Types.html#ALL" title="Node Types">All-Nodes</a></li>
+<li> <a href="ProbCut.html" title="ProbCut">ProbCut</a></li>
+<li> <a href="Reverse Futility Pruning.html" title="Reverse Futility Pruning">Reverse Futility Pruning</a></li>
+<li> <a href="Quiescence Search.html#StandPat" title="Quiescence Search">Standing Pat in Quiescence Search</a></li></ul>
+<h2><span class="mw-headline" id="Returning_Alpha">Returning Alpha</span></h2>
+<p>or below at expected <a href="Node Types.html#ALL" title="Node Types">All-Nodes</a> or expected <a href="Node Types.html#CUT" title="Node Types">Cut-Nodes</a> which turn out to become All-Nodes:
+</p>
+<ul><li> after trying <b>width[ply]</b> moves in <a href="Type B Strategy.html" title="Type B Strategy">Shannon Type-B</a> programs, return alpha</li>
+<li> <a href="Sibling Prediction Pruning.html" title="Sibling Prediction Pruning">Sibling Prediction Pruning</a> - return alpha, or depending on the implementation, only skip the move</li>
+<li> <a href="ProbCut.html" title="ProbCut">ProbCut</a></li>
+<li> <a href="Uncertainty Cut-Offs.html" title="Uncertainty Cut-Offs">Uncertainty Cut-Offs</a></li></ul>
+<h2><span class="mw-headline" id="Skipping_Moves">Skipping Moves</span></h2>
+<p>likely at <a href="Node Types.html#ALL" title="Node Types">All-Nodes</a>:
+</p>
+<ul><li> <a href="Bobby.html#StrategicQuiescenceSearch" title="Bobby">Bobby's Strategic Quiescence Search</a></li>
+<li> <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li></ul>
+<dl><dd> <a href="Futility Pruning.html#Extendedfutilitypruning" title="Futility Pruning">Extended Futility Pruning</a></dd>
+<dd> <a href="Futility Pruning.html#DeepFutilityPruning" title="Futility Pruning">Deep Futility Pruning</a></dd>
+<dd> <a href="Futility Pruning.html#MoveCountBasedPruning" title="Futility Pruning">Move Count Based Pruning</a></dd></dl>
+<ul><li> <a href="AEL-Pruning.html" title="AEL-Pruning">AEL-Pruning</a></li>
+<li> <a href="Delta Pruning.html" title="Delta Pruning">Delta Pruning</a> in <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="History Leaf Pruning.html" title="History Leaf Pruning">History Leaf Pruning</a></li>
+<li> <a href="Parity Pruning.html" title="Parity Pruning">Parity Pruning</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Extensions.html" title="Extensions">Extensions</a></li>
+<li> <a href="Razoring.html" title="Razoring">Razoring</a></li>
+<li> <a href="Reductions.html" title="Reductions">Reductions</a></li></ul>
+<dl><dd> <a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a> aka History Pruning <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></dd></dl>
+<ul><li> <a href="Nimzo.html#Pruning" title="Nimzo">Pruning in Nimzo 2.2.1</a></li>
+<li> <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="Type B Strategy.html" title="Type B Strategy">Shannon Type B Strategy</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1960_...">1960 ...</span></h2>
+<ul><li> <a href="Richard Greenblatt.html" title="Richard Greenblatt">Richard Greenblatt</a>, <a href="Donald Eastlake.html" title="Donald Eastlake">Donald Eastlake</a>, <a href="Stephen D. Crocker.html" title="Stephen D. Crocker">Stephen D. Crocker</a> (<b>1967</b>). <i>The Greenblatt Chess Program</i>. Proceedings of the AfiPs Fall Joint Computer Conference, Vol. 31, reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a>, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-4.Greenblatt Chess Program/The Greenblatt Chess Program.Greenblatt Eastlake Crocker.1967.Fall Joint Computer Conference.062303060.sm.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a> or as <a class="external text" href="http://dspace.mit.edu/handle/1721.1/6176.html" rel="nofollow">pdf or ps</a> from <a class="external text" href="http://libraries.mit.edu/dspace-mit/.html" rel="nofollow">DSpace</a> at <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">MIT</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="John Birmingham.html" title="John Birmingham">John Birmingham</a>, <a href="Peter Kent.html" title="Peter Kent">Peter Kent</a> (<b>1977</b>). <i>Tree-searching and tree-pruning techniques</i>. <a href="Advances in Computer Chess 1.html" title="Advances in Computer Chess 1">Advances in Computer Chess 1</a>, reprinted in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a> (<b>1983</b>). <i>The Alpha-Beta Algorithm: Incremental Updating, Well-Behaved Evaluation Functions, and Non-Speculative Forward Pruning</i>. Computer Game-Playing (ed. <a href="Max Bramer.html" title="Max Bramer">Max Bramer</a>), pp. 285-289. Ellis Horwood Limited Publishers, Chichester.</li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>1986</b>). <i>Experiments in Search and Knowledge</i>. Ph.D. thesis, <a href="University of Waterloo.html" title="University of Waterloo">University of Waterloo</a>. Reprinted as Technical Report TR 86-12, Department of Computing Science, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a></li>
+<li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Marcus Wagner.html" title="Marcus Wagner">Marcus Wagner</a>, <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a> (<b>1988</b>). <i>Comparing Various Pruning Algorithms on Very Strongly Ordered Game Trees: The Details.</i> Tech. Report #50, Department of Statistics and Computer Science, <a href="Vienna University of Technology.html" title="Vienna University of Technology">Vienna University of Technology</a></li>
+<li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Marcus Wagner.html" title="Marcus Wagner">Marcus Wagner</a>, <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a> (<b>1989</b>). <i>Comparing Various Pruning Algorithms on Very Strongly Ordered Game Trees</i>. <a href="WCCC 1989.html#Workshop" title="WCCC 1989">Workshop on New Directions in Game-Tree Search</a></li>
+<li> <a href="Liwu Li.html" title="Liwu Li">Liwu Li</a> (<b>1989</b>). <i><a class="external text" href="https://doi.org/10.7939/R3VX06F26" rel="nofollow">Probabilistic Analysis of Search</a></i>. Ph.D. thesis, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a>, advisor <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> </li>
+<li> <a href="Liwu Li.html" title="Liwu Li">Liwu Li</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1989</b>). <i>Probability-Based Game Tree Pruning</i>. <a class="external text" href="http://webdocs.cs.ualberta.ca/~tony/OldPapers/joa89.pdf.html" rel="nofollow">pdf</a> </li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Liwu Li.html" title="Liwu Li">Liwu Li</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1990</b>). <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/019667749090027C.html" rel="nofollow">Probability-Based Game Tree Pruning</a></i>. <a class="external text" href="ftp://ftp.math.utah.edu/pub/tex/bib/toc/jalg.html.html#11(1):March:1990" rel="nofollow">Journal of Algorithms, Vol. 11, No. 1</a></li>
+<li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1992</b>). <i>Experiments in Forward Pruning with Limited Extensions.</i> <a href="ICGA Journal.html#15 2" title="ICGA Journal">ICCA Journal, Vol. 15, No. 2</a></li>
+<li> <a href="Yi-Fan Ke.html" title="Yi-Fan Ke">Yi-Fan Ke</a>, <a href="Tai-Ming Parng.html" title="Tai-Ming Parng">Tai-Ming Parng</a> (<b>1993</b>). <i>The Guard Heuristic: Legal Move Ordering with Forward Game-Tree Pruning</i>. <a href="ICGA Journal.html#16 2" title="ICGA Journal">ICCA Journal, Vol. 16, No. 2</a></li>
+<li> <a href="Chrilly Donninger.html" title="Chrilly Donninger">Chrilly Donninger</a>. (<b>1993</b>). <i>Null Move and Deep Search: Selective-Search Heuristics for Obtuse Chess Programs.</i> <a href="ICGA Journal.html#16 3" title="ICGA Journal">ICCA Journal, Vol. 16, No. 3</a></li>
+<li> <a href="Stephen J.J. Smith.html" title="Stephen J.J. Smith">Stephen J.J. Smith</a>, <a href="Dana S. Nau.html" title="Dana S. Nau">Dana S. Nau</a> (<b>1994</b>). <i>An Analysis of Forward Pruning</i>. Proceedings <a href="AAAI.html" title="AAAI">AAAI</a> 1994, <a class="external text" href="http://www.aaai.org/Papers/AAAI/1994/AAAI94-213.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1995</b>). <i>ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm.</i> <a href="ICGA Journal.html#18 2" title="ICGA Journal">ICCA Journal, Vol. 18, No. 2</a>, <a class="external text" href="http://www.cs.ualberta.ca/~mburo/ps/probcut.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1998</b>). <i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node18.html.html" rel="nofollow">Extended Futility Pruning</a>.</i> <a href="ICGA Journal.html#21 3" title="ICGA Journal">ICCA Journal, Vol. 21, No. 3</a></li>
+<li> <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1998</b>). <i>Multi-Cut Pruning in Alpha-Beta Search</i>. <a href="CG 1998.html" title="CG 1998">CG 1998</a>, pp. 15-24. See also <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>2001</b>). <i>Multi-cut Alpha-Beta Pruning in Game Tree Search</i>. Theoretical Computer Science, Vol. 252, pp. 177-196 for an expanded version.</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>2000</b>). <i>AEL Pruning.</i> <a href="ICGA Journal.html#23 1" title="ICGA Journal">ICGA Journal, Vol. 23, No. 1</a></li>
+<li> <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>2000</b>). <i>Selective Depth-First Search Methods</i>. in <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (eds.) (<b>2000</b>). <i>Games in AI Research</i>. <a href="Maastricht University.html" title="Maastricht University">Universiteit Maastricht</a>, <a class="external text" href="http://www.cs.ualberta.ca/%7Etony/RecentPapers/nec97w.pdf.html" rel="nofollow">pdf preprint</a></li>
+<li> <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>2001</b>). <i>Multi-cut Alpha-Beta Pruning in Game Tree Search.</i> Theoretical Computer Science, Vol. 252, pp. 177-196. <a class="external text" href="http://www.ru.is/faculty/yngvi/pdf/BjornssonM01a.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a>, <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a>, <a href="Erik van der Werf.html" title="Erik van der Werf">Erik van der Werf</a> (<b>2003</b>). <i>Enhanced forward pruning.</i> Accepted for publication. <a class="external text" href="http://www.personeel.unimaas.nl/m-winands/documents/Enhanced%20forward%20pruning.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Qian Liang&amp;action=edit&amp;redlink=1.html" title="Qian Liang (page does not exist)">Qian Liang</a> (<b>2003</b>). <i>The Evolution of Mulan: Some Studies in Game-Tree Pruning and Evaluation Functions in the Game of Amanons</i>. M.Sc. thesis, Electronic Engineering, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_New_Mexico" rel="nofollow">The University of New Mexico</a>, <a class="external text" href="http://www.santafe.edu/~moore/QianThesis.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Yew Jin Lim.html" title="Yew Jin Lim">Yew Jin Lim</a>, <a href="Wee Sun Lee.html" title="Wee Sun Lee">Wee Sun Lee</a> (<b>2006</b>). <i>Properties of Forward Pruning in Game-Tree Search</i>, AAAI 2006, <a class="external text" href="http://www.yewjin.com/storage/papers/riskmanagement.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Yew Jin Lim.html" title="Yew Jin Lim">Yew Jin Lim</a>, <a href="Wee Sun Lee.html" title="Wee Sun Lee">Wee Sun Lee</a> (<b>2006</b>). <i>RankCut - A Domain Independent Forward Pruning Method for Games</i>, AAAI 2006, <a class="external text" href="http://www.yewjin.com/storage/papers/rankcut.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Jeroen Carolus.html" title="Jeroen Carolus">Jeroen Carolus</a> (<b>2006</b>). <i>Alpha-Beta with Sibling Prediction Pruning in Chess</i>.  Masters thesis, <a class="external text" href="http://homepages.cwi.nl/%7Epaulk/theses/Carolus.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Yew Jin Lim.html" title="Yew Jin Lim">Yew Jin Lim</a> (<b>2007</b>). <i>On Forward Pruning in Game-Tree Search</i>. Ph.D. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/National_University_of_Singapore" rel="nofollow">National University of Singapore</a>, <a class="external text" href="http://www.yewjin.com/storage/papers/PhDThesisLimYewJin.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Masakazu Muramatsu.html" title="Masakazu Muramatsu">Masakazu Muramatsu</a>  (<b>2012</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Efficiency-of-three-forward-pruning-techniques-in-Hoki-Muramatsu/206099961f401c8693e071c2b739f164ae5ffa6c" rel="nofollow">Efficiency of three Forward-Pruning Techniques in Shogi: Futility Pruning, Null-move Pruning, and Late Move Reduction (LMR)</a></i>. <a class="external text" href="https://www.journals.elsevier.com/entertainment-computing" rel="nofollow">Entertainment Computing</a>, Vol. 3, No. 3</li>
+<li> <a href="Kieran Greer.html" title="Kieran Greer">Kieran Greer</a> (<b>2012</b>). <i><a class="external text" href="http://www.hindawi.com/journals/aai/2013/357068/.html" rel="nofollow">Tree Pruning for New Search Techniques in Computer Games</a></i>. Advances in Artificial Intelligence, Vol. 2013 </li>
+<li> <a href="Kieran Greer.html" title="Kieran Greer">Kieran Greer</a> (<b>2013</b>). <i>Dynamic Move Chains – a Forward Pruning Approach to Tree Search in Computer Chess</i>. <a class="external text" href="http://arxiv.org/abs/1403.0778.html" rel="nofollow">arXiv:1403.0778</a></li>
+<li> <a class="new" href="index.php?title=Naoyuki Sato&amp;action=edit&amp;redlink=1.html" title="Naoyuki Sato (page does not exist)">Naoyuki Sato</a>, <a href="Kokolo Ikeda.html" title="Kokolo Ikeda">Kokolo Ikeda</a> (<b>2016</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/7860427" rel="nofollow">Three types of forward pruning techniques to apply the alpha beta algorithm to turn-based strategy games</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/cig/cig2016.html" rel="nofollow">CIG 2016</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=73649" rel="nofollow">Forward pruning</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, October 16, 1999</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=73701" rel="nofollow">Re: Forward pruning</a> by <a href="Andrew Williams.html" title="Andrew Williams">Andrew Williams</a>, <a href="CCC.html" title="CCC">CCC</a>, October 16, 1999</dd></dl>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=144854" rel="nofollow">Alpha beta fail soft, pruning &amp; hash bounds?</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 14, 2000 » <a href="Fail-Soft.html" title="Fail-Soft">Fail-Soft</a>, <a href="Bound.html" title="Bound">Bound</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=148308" rel="nofollow">Correct values if all moves are pruned?</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2001</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/iECalt6Tzug/GWNOLzFQyk8J" rel="nofollow">An interesting forward pruning experiment - with pseudo description</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 08, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=296689" rel="nofollow">Testing the reliability of forward pruning</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 15, 2003 » <a href="Engine Testing.html" title="Engine Testing">Engine Testing</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=351949" rel="nofollow">Forward Pruning...</a> by <a class="new" href="index.php?title=Joshua Haglund&amp;action=edit&amp;redlink=1.html" title="Joshua Haglund (page does not exist)">Joshua Haglund</a>, <a href="CCC.html" title="CCC">CCC</a>, February 29, 2004 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=352384" rel="nofollow">Forward pruning and some related techniques</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, March 02, 2004 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=359342" rel="nofollow">Bayesian Forward Pruning</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, April 09, 2004 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=389135" rel="nofollow">Forward/HB/Null move pruning ideas</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, September 25, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=457846" rel="nofollow">About history pruning...</a> by Svein Bjørnar Myrvang, <a href="CCC.html" title="CCC">CCC</a>, October 26, 2005 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=480380" rel="nofollow">Fail-low pruning</a> by Tommi Rimpiläinen, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2006</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=489978" rel="nofollow">History pruning</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a> from <a href="CCC.html" title="CCC">CCC</a>, February 27, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=4435&amp;p=23839.html" rel="nofollow">history pruning/ late move pruning</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, March 02, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13791.html" rel="nofollow">avoidrep-pruning</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, May 15, 2007 » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19316.html" rel="nofollow">Toga/Glaurung/Strelka Prunings/Reductions</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2008 » <a href="Toga.html" title="Toga">Toga</a>, <a href="Glaurung.html" title="Glaurung">Glaurung</a>, <a href="Strelka.html" title="Strelka">Strelka</a>, <a href="Reductions.html" title="Reductions">Reductions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22359.html" rel="nofollow">Fruit 2.1 pruning</a> by <a href="Chua Kong Sian.html" title="Chua Kong Sian">kongsian</a>, <a href="CCC.html" title="CCC">CCC</a>, July 15, 2008 » <a href="Fruit.html" title="Fruit">Fruit</a></li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37012.html" rel="nofollow">What program first used hard pruning?</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2010</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=807.html" rel="nofollow">Hard pruning history</a> by <a href="Mark Watkins.html" title="Mark Watkins">Mark Watkins</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Open Chess Programming Forum</a>, December 10, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37514.html" rel="nofollow">Using SEE to prune in main search</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2011 » <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">Static Exchange Evaluation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38407.html" rel="nofollow">Bad Pruning</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, March 13, 2011 » <a href="Onno.html" title="Onno">Onno</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40100.html" rel="nofollow">Reducing/Pruning Bad Captures (SEE &lt; 0)</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2011 » <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=40456.html" rel="nofollow">Over-aggressive pruning</a> by FlavusSnow, <a href="CCC.html" title="CCC">CCC</a>, September 18, 2011</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2173.html" rel="nofollow">Relationship between move ordering and pruning</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, December 17, 2012 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46503.html" rel="nofollow">Adjustable search pruning depending on time control</a> by <a class="new" href="index.php?title=Jerry Donald&amp;action=edit&amp;redlink=1.html" title="Jerry Donald (page does not exist)">Jerry Donald</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2012 » <a href="Time Management.html" title="Time Management">Time Management</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47423.html" rel="nofollow">Pruning in QS</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 06, 2013 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49342.html" rel="nofollow">Pruning in today's top engines</a> by Gordon Robertson, <a href="CCC.html" title="CCC">CCC</a>, September 13, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49429.html" rel="nofollow">stalemate detection and pruning</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2013 » <a href="Stalemate.html" title="Stalemate">Stalemate</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51075.html" rel="nofollow">pruning statistics</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2014 » <a href="Search Statistics.html" title="Search Statistics">Search Statistics</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57843.html" rel="nofollow">Verification of pruning techniques</a> by <a href="Shawn Chidester.html" title="Shawn Chidester">Shawn Chidester</a>, <a href="CCC.html" title="CCC">CCC</a>, October 04, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60868.html" rel="nofollow">EMR &amp; EMP</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, July 19, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66135.html" rel="nofollow">Transposition table based pruning idea</a> by <a class="new" href="index.php?title=Jerry Donald&amp;action=edit&amp;redlink=1.html" title="Jerry Donald (page does not exist)">Jerry Donald</a>, <a href="CCC.html" title="CCC">CCC</a>, December 25, 2017 » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69510.html" rel="nofollow">Pruning at PV nodes?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, January 06, 2019 » <a href="Node Types.html#PV" title="Node Types">PV-Nodes</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70165.html" rel="nofollow">delaying tactics: prune or extend?</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2019 » <a href="Selectivity.html" title="Selectivity">Selectivity</a>, <a href="Tactics.html" title="Tactics">Tactics</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72981.html" rel="nofollow">Pruning / reduction depending on king safety</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, February 02, 2020 » <a href="King Safety.html" title="King Safety">King Safety</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74425.html" rel="nofollow">Questions on Razoring and Code Structure for Pruning</a> by Cheney, <a href="CCC.html" title="CCC">CCC</a>, July 09, 2020 » <a href="Razoring.html" title="Razoring">Razoring</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77483.html" rel="nofollow">Problems with pruning non-PV nodes</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, June 13, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Decision_tree_pruning" rel="nofollow">Pruning from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Under the Trees, Oil on Canvas, 160 x 200 cm,  <a class="external text" href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b7047d58ae0c54bf8bab.html#57f3b7277d58ae2139bf8baf" rel="nofollow">Return to Vilna Series</a>, <a class="external text" href="http://www.chgs.umn.edu/.html" rel="nofollow">Center for Holocaust &amp; Genocide Studies</a>, <a href="University of Minnesota.html" title="University of Minnesota">University of Minnesota</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">Better Alpha-Beta algorithm than pruning, to don't confuse it with the mentioned forward pruning</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=434817" rel="nofollow">Re: What is History Pruning?</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2005</span>
+</li>
+</ol></div>
+<p><b><a href="Selectivity.html" title="Selectivity">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722033516
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.028 seconds
+Real time usage: 0.031 seconds
+Preprocessor visited node count: 133/1000000
+Preprocessor generated node count: 206/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:975-0!canonical and timestamp 20240722033516 and revision id 25083
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Pruning&amp;oldid=25083">https://www.chessprogramming.org/index.php?title=Pruning&amp;oldid=25083</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Pruning&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Pruning.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Pruning&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Pruning.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Pruning&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Pruning&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Pruning.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Pruning.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Pruning&amp;oldid=25083.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Pruning&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 16 June 2021, at 11:35.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Pruning&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.028","walltime":"0.031","ppvisitednodes":{"value":133,"limit":1000000},"ppgeneratednodes":{"value":206,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722033516","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

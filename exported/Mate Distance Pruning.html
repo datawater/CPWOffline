@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Mate Distance Pruning - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mate_Distance_Pruning","wgTitle":"Mate Distance Pruning","wgCurRevisionId":1753,"wgRevisionId":1753,"wgArticleId":976,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Mate_Distance_Pruning","wgRelevantArticleId":976,"wgRequestId":"Zp7DoP-qaMe6EU8WbZGhEwAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.FenTT.styles":"ready","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Mate_Distance_Pruning rootpage-Mate_Distance_Pruning skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Mate Distance Pruning</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Selectivity.html" title="Selectivity">Selectivity</a> * <a href="Pruning.html" title="Pruning">Pruning</a> * Mate Distance Pruning</b>
+</p><p>If a forced <a href="Checkmate.html" title="Checkmate">mate</a> has been found, <b>Mate Distance Pruning</b> (MDP) will cut trees and adjust <a href="Bound.html" title="Bound">bounds</a> of lines where no shorter mate is possible. Mate Distance Pruning is a safe type of pruning, as it only cuts irrelevant nodes. It will not add much to a programs <a href="Playing Strength.html" title="Playing Strength">playing strength</a> as this pruning only comes into effect when a position is already decided, still it helps with analysis and solving "Mate in n" problems.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Mating Value"><span class="tocnumber">1</span> <span class="toctext">Mating Value</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Upper Bound"><span class="tocnumber">2</span> <span class="toctext">Upper Bound</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Lower Bound"><span class="tocnumber">3</span> <span class="toctext">Lower Bound</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#In Practice"><span class="tocnumber">4</span> <span class="toctext">In Practice</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Mating_Value">Mating Value</span></h1>
+<p>The prerequisite for Mate Distance Pruning is that decided positions are properly <a href="Score.html" title="Score">scored</a>. So a position where the opponent is mated is scored SCORE_MATE (a very high value), a position where the victory is one move away is worth less SCORE_MATE - 1, Mate in 2 plies is scored SCORE_MATE - 2 and so on. On the other side, a position where the side to move is mated in n plies is evaluated -SCORE_MATE + n. The difference between the actual value and SCORE_MATE is always the number of plies the mate is away from the root position.
+</p>
+<h1><span class="mw-headline" id="Upper_Bound">Upper Bound</span></h1>
+<p>Assume we are in a winning position. Through another line we have already found a forced mate in n plies. Thus our alpha is SCORE_MATE - n. From this information we can take that should we be searching a line that already is equal to or longer than n, we can impossibly increase alpha even if another mate was found. This means we could safely prune that tree.
+</p><p>Furthermore we can lower the upper bound. If we are n plies away from the root, the opponent can impossibly be evaluated &gt; SCORE_MATE - n. Thus beta can be set to this value should it be higher.
+</p>
+<pre>
+mating_value = SCORE_MATE - RootDistance;
+
+if (mating_value &lt; beta) {
+   beta = mating_value;
+   if (alpha &gt;= mating_value) return mating_value;
+}
+</pre>
+<h1><span class="mw-headline" id="Lower_Bound">Lower Bound</span></h1>
+<p>Contrary to the pruning if we are in a winning position, scores can also be adjusted and trees pruned if we are in a loosing position.
+</p>
+<pre>
+mating_value = -SCORE_MATE + RootDistance;
+
+if (mating_value &gt; alpha) {
+   alpha = mating_value;
+   if (beta &lt;= mating_value) return mating_value;
+}
+</pre>
+<h1><span class="mw-headline" id="In_Practice">In Practice</span></h1>
+<p>Using the Chess Engine <a href="Glass.html" title="Glass">Glass</a> 1.0 the treesize of a search without Mate Distance Pruning is compared to one with this feature enabled.
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">        <br/>       <br/>        <br/>        <br/>        <br/>        <br/>       <br/>       <br/></div><div class="pcfg">        <br/>       ♔<br/>        <br/>        <br/>        <br/>        <br/>♖       <br/>       ♚<br/></div></div></td></tr></table>
+<p>8/7K/8/8/8/8/R7/7k w - - 0 1 
+</p><p><br/>
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> MDP Disabled
+<p>(Score / Nodes) <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>
+</p>
+</th>
+<th> MDP Enabled
+<p>(Score / Nodes) 
+</p>
+</th></tr>
+<tr>
+<th> 1
+</th>
+<td style="text-align:center;"> 1041 / 3
+</td>
+<td style="text-align:center;"> 1041 / 3
+</td></tr>
+<tr>
+<th> 2
+</th>
+<td style="text-align:center;"> 1041 / 23
+</td>
+<td style="text-align:center;"> 1041 / 23
+</td></tr>
+<tr>
+<th> 3
+</th>
+<td style="text-align:center;"> 1051 / 103
+</td>
+<td style="text-align:center;"> 1051 / 103
+</td></tr>
+<tr>
+<th> 4
+</th>
+<td style="text-align:center;"> 1051 / 551
+</td>
+<td style="text-align:center;"> 1051 / 551
+</td></tr>
+<tr>
+<th> 5
+</th>
+<td style="text-align:center;"> 1055 / 2151
+</td>
+<td style="text-align:center;"> 1055 / 2151
+</td></tr>
+<tr>
+<th> 6
+</th>
+<td style="text-align:center;"> 1051 / 7638
+</td>
+<td style="text-align:center;"> 1051 / 7638
+</td></tr>
+<tr>
+<th> 7
+</th>
+<td style="text-align:center;"> 1055 / 24353
+</td>
+<td style="text-align:center;"> 1055 / 24353
+</td></tr>
+<tr>
+<th> 8
+</th>
+<td style="text-align:center;"> 1065 / 62692
+</td>
+<td style="text-align:center;"> 1065 / 62692
+</td></tr>
+<tr>
+<th> 9
+</th>
+<td style="text-align:center;"> 1065 / 139241
+</td>
+<td style="text-align:center;"> 1065 / 139241
+</td></tr>
+<tr>
+<th> 10
+</th>
+<td style="text-align:center;"> 1085 / 253338
+</td>
+<td style="text-align:center;"> 1085 / 253338
+</td></tr>
+<tr>
+<th> 11
+</th>
+<td style="text-align:center;"> 1085 / 409101
+</td>
+<td style="text-align:center;"> 1085 / 409101
+</td></tr>
+<tr>
+<th> 12
+</th>
+<td style="text-align:center;"> 1105 / 610285
+</td>
+<td style="text-align:center;"> 1105 / 610285
+</td></tr>
+<tr>
+<th> 13
+</th>
+<td style="text-align:center;"> 1105 / 873959
+</td>
+<td style="text-align:center;"> 1105 / 873959
+</td></tr>
+<tr>
+<th> 14
+</th>
+<td style="text-align:center;"> 1105 / 1417047
+</td>
+<td style="text-align:center;"> 1105 / 1417047
+</td></tr>
+<tr>
+<th> 15
+</th>
+<td style="text-align:center;"> 1105 / 1907578
+</td>
+<td style="text-align:center;"> 1105 / 1907578
+</td></tr>
+<tr>
+<th> 16
+</th>
+<td style="text-align:center;"> M8 / 2846864
+</td>
+<td style="text-align:center;"> M8 / 2547293
+</td></tr>
+<tr>
+<th> 17
+</th>
+<td style="text-align:center;"> M8 / 3715208
+</td>
+<td style="text-align:center;"> M8 / 2819164
+</td></tr>
+<tr>
+<th> 18
+</th>
+<td style="text-align:center;"> M8 / 4842666
+</td>
+<td style="text-align:center;"> M8 / 3092833
+</td></tr>
+<tr>
+<th> 19
+</th>
+<td style="text-align:center;"> M8 / 6181827
+</td>
+<td style="text-align:center;"> M8 / 3368068
+</td></tr>
+<tr>
+<th> 20
+</th>
+<td style="text-align:center;"> M8 / 7774698
+</td>
+<td style="text-align:center;"> M8 / 3643489
+</td></tr></table>
+<p>From this table one can see that the treesize is equal for the first 15 plies, but then the Version with Mate Distance Pruning enabled found the exact mating line about 10% smaller. Furthermore the risk of treesize explosion for further iterations is greatly decreased. In this example the treesize of the Version with this type of Pruning enabled is less than half as big.
+</p>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6665.html" rel="nofollow">Search questions</a> by <a href="Sven Sch%C3%BCle.html" title="Sven Schüle">Sven Schüle</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 17, 2007» <a href="Fail-Soft.html" title="Fail-Soft">Fail-Soft</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26995.html" rel="nofollow">Discussion about Mate Distance Pruning</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, March 14, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41337.html" rel="nofollow">mate distance pruning problems and static null move pruning</a> by Pierre Bokma, <a href="CCC.html" title="CCC">CCC</a>, December 04, 2011 » <a href="Reverse Futility Pruning.html" title="Reverse Futility Pruning">Reverse Futility Pruning</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Nodes until <a href="Principal Variation.html" title="Principal Variation">PV</a> is found</span>
+</li>
+</ol></div>
+<p><b><a href="Pruning.html" title="Pruning">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722004344
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 138/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:976-0!canonical and timestamp 20240722004344 and revision id 1753
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Mate_Distance_Pruning&amp;oldid=1753">https://www.chessprogramming.org/index.php?title=Mate_Distance_Pruning&amp;oldid=1753</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Mate+Distance+Pruning&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Mate Distance Pruning.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Mate Distance Pruning&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Mate Distance Pruning.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Mate Distance Pruning&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Mate Distance Pruning&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Mate Distance Pruning.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Mate Distance Pruning.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Mate Distance Pruning&amp;oldid=1753.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Mate Distance Pruning&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 May 2018, at 11:57.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Mate_Distance_Pruning&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.008","ppvisitednodes":{"value":68,"limit":1000000},"ppgeneratednodes":{"value":138,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722004344","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":41});});</script>
+</body>
+</html>

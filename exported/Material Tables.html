@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Material Tables - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Material_Tables","wgTitle":"Material Tables","wgCurRevisionId":4758,"wgRevisionId":4758,"wgArticleId":1556,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Material_Tables","wgRelevantArticleId":1556,"wgRequestId":"Zp7DfUKfcgdPZR8tVSrq8wAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Material_Tables rootpage-Material_Tables skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Material Tables</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * <a href="Material.html" title="Material">Material</a> * Material Tables</b>
+</p><p><b>Material Tables</b> contain precomputed material values for all possible material constellations of both sides, considering not only the dot-product of the piece values times number of pieces, but material imbalance features and even <a href="Material.html#InsufficientMaterial" title="Material">insufficient material</a>. The up to ten piece counters of <span style="background-color: #c0c0c0; font-family: 'Courier New',Courier,monospace;">{white, black} x {pawns, knights, bishops, rooks, queen(s)}</span> act as index into a 10-dimensional <a href="Array.html" title="Array">array</a>, where each dimension covers one piece kind and color. However, since there are up to eight pawns (0..8), rarely up to ten pieces and nine queens per side, the size of such an array would be with
+</p>
+<pre>(9 * 11 * 11 * 11 * 10)² = 119790² = 14,349,644,100
+</pre>
+<p>much to huge, which was the main reason to use a smaller <a href="Material Hash Table.html" title="Material Hash Table">material hash table</a> instead, to cache the once calculated values. A material key needs only <a href="Incremental Updates.html" title="Incremental Updates">incremental update</a> if <a href="Captures.html" title="Captures">captures</a> or <a href="Promotions.html" title="Promotions">promotions</a> occur, so that even small tables are sufficient for a hit-rate of 99% or greater. A compromise for precomputed tables is to consider only "usual" material constellations, that is no more than two knights, bishops or rooks and one queen per side, ...
+</p>
+<pre>(9 * 3 * 3 * 3 * 2)² = 486² = 236,196
+</pre>
+<p>... which makes a reasonable size for todays computers below 1/4 MByte entries.
+</p>
+<pre>
+value_t matValue[9][9][3][3][3][3][3][3][2][2];
+</pre>
+<p>or better a one dimensional error with an <a href="Incremental Updates.html" title="Incremental Updates">incremental updated</a> material key.
+</p>
+<pre>
+value_t matValue[9*9*3*3*3*3*3*3*2*2];
+</pre>
+<p>Material tables along with imbalance tables, first appeared in <a href="Jury Osipov.html" title="Jury Osipov">Jury Osipov's</a> disputed <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> <a href="Category:Open Source.html" title="Category:Open Source">open source engine</a> <a href="Strelka.html" title="Strelka">Strelka 2.0</a>, apparently <a class="external text" href="https://en.wikipedia.org/wiki/Reverse_engineering" rel="nofollow">reverse engineered</a> from  <a href="Rybka.html" title="Rybka">Rybka 1.0</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. Indices were initialized that way - with <a href="Bitboards.html" title="Bitboards">bitboards</a> even the <a href="Population Count.html" title="Population Count">population count</a> of a <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">board-definition</a> is used:
+</p>
+<pre>
+  materialSum_key =
+    pieceCount[WhiteQueen]  +
+    pieceCount[BlackQueen]  * 2 +
+    pieceCount[WhiteRook]   * 2*2 +
+    pieceCount[BlackRook]   * 2*2*3 +
+    pieceCount[WhiteBishop] * 2*2*3*3 +
+    pieceCount[BlackBishop] * 2*2*3*3*3 +
+    pieceCount[WhiteKnight] * 2*2*3*3*3*3 +
+    pieceCount[BlackKnight] * 2*2*3*3*3*3*3 +
+    pieceCount[WhitePawn]   * 2*2*3*3*3*3*3*3 +
+    pieceCount[BlackPawn]   * 2*2*3*3*3*3*3*3*9;
+
+  materialDiff_key =
+    (pieceCount[WhiteQueen]  - pieceCount[BlackQueen])  * 10 +
+    (pieceCount[WhiteRook]   - pieceCount[BlackRook])   * 5  +
+    (pieceCount[WhiteBishop] - pieceCount[BlackBishop]) * 3  +
+    (pieceCount[WhiteKnight] - pieceCount[BlackKnight]) * 3  +
+    (pieceCount[WhitePawn]   - pieceCount[BlackPawn]);
+</pre>
+<p>An array of ten <a href="Nibble.html" title="Nibble">nibble</a> piece counters can be interpreted as 40-bit number where each piece count is multiplied with consecutive power of sixteen factors with exponents of 0 to 9, the materialSum_key key has minimal population factors which result in only a 18-bit word. While this dot-product and its incremental update looks like a reversible <a href="Hash Table.html#PerfectHashing" title="Hash Table">perfect hashing-function</a>, is more like a multi-dimensional array-lookup. 
+</p><p>In 2010, <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> proposed a similar, cache friendlier scheme for common minor piece exchanges, by altering rooks, bishops and knights with appropriate offsets <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> .
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#See also"><span class="tocnumber">1</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Forum Posts"><span class="tocnumber">2</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#2000 ..."><span class="tocnumber">2.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#2010 ..."><span class="tocnumber">2.2</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">3</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Material Hash Table.html" title="Material Hash Table">Material Hash Table</a></li>
+<li> <a href="Rookie.html#Evaluation" title="Rookie">Evaluation in Rookie 2.0</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5377.html" rel="nofollow">Piece Cooperation and Penalties</a> by <a href="Mark Lefler.html" title="Mark Lefler">mjlef</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, August 14, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15679.html" rel="nofollow">Why material imbalance tables are needed</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, August 09, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20659.html" rel="nofollow">Material Tables and Indexing</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, April 14, 2008</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=185340.html" rel="nofollow">Re: Material Tables and Indexing</a> by <a href="Lance Perkins.html" title="Lance Perkins">Lance Perkins</a>, <a href="CCC.html" title="CCC">CCC</a>, April 22, 2008</dd></dl>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33021.html" rel="nofollow">Material tables</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 03, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33035.html" rel="nofollow">Efficiently index material signatures and lookup</a> by <a href="Mathieu Pag%C3%A9.html" title="Mathieu Pagé">Mathieu Pagé</a>, <a href="CCC.html" title="CCC">CCC</a>, March 03, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47713.html" rel="nofollow">An experiment with material imbalances and game-phase</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, April 06, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50550.html" rel="nofollow">Accessing Material Imbalance Information?</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 19, 2013</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.danheisman.com/evaluation-of-material-imbalances.html.html" rel="nofollow">The Evaluation of Material Imbalances</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a> (first published in <a class="external text" href="https://en.wikipedia.org/wiki/Chess_Life" rel="nofollow">Chess Life</a> March 1999, on-line version edited by <a href="Dan Heisman.html" title="Dan Heisman">Dan Heisman</a>)</li>
+<li> <a class="external text" href="http://www.top-5000.nl/mb.htm.html" rel="nofollow">A Material Base for everybody</a> from <a class="external text" href="http://www.top-5000.nl/.html" rel="nofollow">Home of the Dutch Rebel</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Rybka#Strelka_controversy" rel="nofollow">Strelka controversy from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=3006.html" rel="nofollow">Strelka 2.0</a> by <a href="Vasik Rajlich.html" title="Vasik Rajlich">Vasik Rajlich</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, January 11, 2008</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.top-5000.nl/mb.htm.html" rel="nofollow">A Material Base for everybody</a> from <a class="external text" href="http://www.top-5000.nl/.html" rel="nofollow">Home of the Dutch Rebel</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33561.html" rel="nofollow">Cache-friendier material index</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 31, 2010</span>
+</li>
+</ol></div>
+<p><b><a href="Material.html" title="Material">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722084546
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.011 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 111/1000000
+Preprocessor generated node count: 236/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1556-0!canonical and timestamp 20240722084546 and revision id 4758
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Material_Tables&amp;oldid=4758">https://www.chessprogramming.org/index.php?title=Material_Tables&amp;oldid=4758</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Material+Tables&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Material Tables.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Material Tables&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Material Tables.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Material Tables&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Material Tables&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Material Tables.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Material Tables.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Material Tables&amp;oldid=4758.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Material Tables&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 26 June 2018, at 14:26.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Material_Tables&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.011","walltime":"0.012","ppvisitednodes":{"value":111,"limit":1000000},"ppgeneratednodes":{"value":236,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722084546","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":42});});</script>
+</body>
+</html>

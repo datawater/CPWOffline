@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Bitboards - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Bitboards","wgTitle":"Bitboards","wgCurRevisionId":26290,"wgRevisionId":26290,"wgArticleId":10,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak","Flottmann","Industrial Heritage Trail","Music"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Bitboards","wgRelevantArticleId":10,"wgRequestId":"Zp7DNeWZo7QkwsW0UTn42AAAAAw","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Bitboards rootpage-Bitboards skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Bitboards</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * Bitboards</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:202px;"><a class="image" href="File:BoardsMeeting.jpg.html"><img alt="" class="thumbimage" height="240" src="images/7/75/BoardsMeeting.jpg" width="200"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:BoardsMeeting.jpg.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - Boards Meeting <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Bitboards</b>,<br/>
+also called bitsets or bitmaps, or better <b>Square Sets</b>, are among other things used to represent the <a href="Chessboard.html" title="Chessboard">board</a> inside a chess program in a <b>piece centric</b> manner. Bitboards, are in essence, <a class="external text" href="https://en.wikipedia.org/wiki/Finite_set" rel="nofollow">finite sets</a> of up to <a class="external text" href="https://en.wikipedia.org/wiki/64_%28number%29" rel="nofollow">64</a> <a class="external text" href="https://en.wikipedia.org/wiki/Element_%28mathematics%29" rel="nofollow">elements</a> - all the <a href="Squares.html" title="Squares">squares</a> of a <a href="Chessboard.html" title="Chessboard">chessboard</a>, one <a href="Bit.html" title="Bit">bit</a> per square. Other board <a href="Games.html" title="Games">games</a> with greater board sizes may be use set-wise representations as well <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, but classical chess has the advantage that one <a href="Quad Word.html" title="Quad Word">64-bit word</a> or register covers the whole board. Even more bitboard friendly is <a href="Checkers.html" title="Checkers">Checkers</a> with 32-bit bitboards and less <a href="Pieces.html#PieceTypeCoding" title="Pieces">piece-types</a> than chess <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The Board of Sets"><span class="tocnumber">1</span> <span class="toctext">The Board of Sets</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Bitboard Basics"><span class="tocnumber">2</span> <span class="toctext">Bitboard Basics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#General Bitboard Techniques"><span class="tocnumber">2.1</span> <span class="toctext">General Bitboard Techniques</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Pattern and Attacks"><span class="tocnumber">2.2</span> <span class="toctext">Pattern and Attacks</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Move Generation Issues"><span class="tocnumber">2.3</span> <span class="toctext">Move Generation Issues</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Miscellaneous"><span class="tocnumber">2.4</span> <span class="toctext">Miscellaneous</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Defining Bitboards"><span class="tocnumber">2.5</span> <span class="toctext">Defining Bitboards</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Bitboard-History"><span class="tocnumber">3</span> <span class="toctext">Bitboard-History</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Analysis"><span class="tocnumber">4</span> <span class="toctext">Analysis</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#1970 ..."><span class="tocnumber">5.1</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#1980 ..."><span class="tocnumber">5.2</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#1990 ..."><span class="tocnumber">5.3</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2000 ..."><span class="tocnumber">5.4</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2010 ..."><span class="tocnumber">5.5</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#1994"><span class="tocnumber">6.1</span> <span class="toctext">1994</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#1995 ..."><span class="tocnumber">6.2</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2000 ... 2"><span class="tocnumber">6.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2005 ..."><span class="tocnumber">6.4</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2010 ... 2"><span class="tocnumber">6.5</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2015 ..."><span class="tocnumber">6.6</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#2020 ..."><span class="tocnumber">6.7</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Viewer .26 Calculator"><span class="tocnumber">7</span> <span class="toctext">Viewer &amp; Calculator</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#Descriptions"><span class="tocnumber">8.1</span> <span class="toctext">Descriptions</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Libraries"><span class="tocnumber">8.2</span> <span class="toctext">Libraries</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Misc"><span class="tocnumber">8.3</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="The_Board_of_Sets">The Board of Sets</span></h1>
+<p>To <a href="Board Representation.html" title="Board Representation">represent the board</a> we typically need one bitboard for each <a href="Pieces.html#PieceTypeCoding" title="Pieces">piece-type</a> and <a href="Color.html" title="Color">color</a> - likely encapsulated inside a class or structure, or as an <a href="Array.html" title="Array">array</a> of bitboards as part of a position object. A one-bit inside a bitboard implies the existence of a piece of this piece-type on a certain square - one to one associated by the bit-position.
+</p>
+<ul><li> <a href="Square Mapping Considerations.html" title="Square Mapping Considerations">Square Mapping Considerations</a></li>
+<li> <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">Standard Board-Definition</a></li></ul>
+<h1><span class="mw-headline" id="Bitboard_Basics">Bitboard Basics</span></h1>
+<p>Of course bitboards are not only about the existence of pieces - it is a general purpose, <b>set-wise</b> data-structure fitting in one 64-bit register. For example, a bitboard can represent things like attack- and defend sets, move-target sets and so on.
+</p>
+<h2><span class="mw-headline" id="General_Bitboard_Techniques">General Bitboard Techniques</span></h2>
+<p>The fundamental bitboard basics.
+</p>
+<ul><li> <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a></li>
+<li> <a href="Population Count.html" title="Population Count">Population Count</a></li>
+<li> <a href="BitScan.html" title="BitScan">BitScan</a></li>
+<li> <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">Flipping Mirroring and Rotating</a></li>
+<li> <a href="Fill Algorithms.html" title="Fill Algorithms">Fill Algorithms</a></li></ul>
+<h2><span class="mw-headline" id="Pattern_and_Attacks"><span id="Pattern"></span>Pattern and Attacks</span></h2>
+<p>This is basically about chess, how to calculate attack-sets and various pattern for <a href="Evaluation.html" title="Evaluation">evaluation</a> and <a href="Move Generation.html" title="Move Generation">move generation</a> purposes.
+</p>
+<ul><li> <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Pawn Pattern and Properties</a></li>
+<li> <a href="Knight Pattern.html" title="Knight Pattern">Knight Pattern</a></li>
+<li> <a href="King Pattern.html" title="King Pattern">King Pattern</a></li>
+<li> <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> including <a href="Rotated Bitboards.html" title="Rotated Bitboards">rotated</a> and <a href="Magic Bitboards.html" title="Magic Bitboards">magic bitboards</a></li>
+<li> <a href="Square Attacked By.html" title="Square Attacked By">Square Attacked By</a></li>
+<li> <a href="X-ray Attacks (Bitboards).html" title="X-ray Attacks (Bitboards)">X-ray Attacks</a></li>
+<li> <a href="Checks and Pinned Pieces (Bitboards).html" title="Checks and Pinned Pieces (Bitboards)">Checks and Pinned Pieces</a></li>
+<li> <a href="Design Principles.html" title="Design Principles">Design Principles</a></li></ul>
+<h2><span class="mw-headline" id="Move_Generation_Issues">Move Generation Issues</span></h2>
+<p>Bitboard aspects on <a href="Move Generation.html" title="Move Generation">move generation</a> and <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">static exchange evaluation</a> (SEE).
+</p>
+<ul><li> <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li>
+<li> <a href="Pieces versus Directions.html" title="Pieces versus Directions">Pieces versus Directions</a></li>
+<li> <a href="DirGolem.html" title="DirGolem">DirGolem</a></li>
+<li> <a href="SEE - The Swap Algorithm.html" title="SEE - The Swap Algorithm">SEE - The Swap Algorithm</a></li>
+<li> <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">Attack and Defend Maps</a></li></ul>
+<h2><span class="mw-headline" id="Miscellaneous">Miscellaneous</span></h2>
+<ul><li> <a href="Backtracking.html#8QinBitboards" title="Backtracking">Backtracking - Eight Queens puzzle with Bitboards</a></li>
+<li> <a href="De Bruijn Sequence Generator.html" title="De Bruijn Sequence Generator">De Bruijn Sequence Generator</a></li>
+<li> <a href="Quad-Bitboards.html" title="Quad-Bitboards">Quad-Bitboards</a></li>
+<li> <a href="Traversing Subsets of a Set.html" title="Traversing Subsets of a Set">Traversing Subsets of a Set</a></li></ul>
+<h2><span class="mw-headline" id="Defining_Bitboards"><span id="DefiningBitboards"></span>Defining Bitboards</span></h2>
+<p><i>To be aware of their scalar 64-bit origin, we use so far a type defined unsigned integer U64 in our <a href="C.html" title="C">C</a> or <a href="Cpp.html" title="Cpp">C++</a> source snippets, the scalar 64-bit long in <a href="Java.html" title="Java">Java</a>. Feel free to define a distinct type or wrap U64 into classes for better abstraction and type-safety during compile time. The macro C64 will append a suffix to 64-bit constants as required by some compilers</i>:
+</p>
+<pre>typedef unsigned __int64 U64;    // for the old microsoft compilers 
+typedef unsigned long long  U64; // supported by MSC 13.00+ and C99 
+#define C64(constantU64) constantU64##ULL
+</pre>
+<h1><span class="mw-headline" id="Bitboard-History"><span id="BitboardHistory"></span>Bitboard-History</span></h1>
+<p>The general approach of <a href="Mikhail R. Shura-Bura.html#Bitsets" title="Mikhail R. Shura-Bura">bitsets</a> was proposed by <a href="Mikhail R. Shura-Bura.html" title="Mikhail R. Shura-Bura">Mikhail R. Shura-Bura</a> in 1952 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>. The bitboard method for holding a board game appears to have been invented also in 1952 by <a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a> using White, Black and King bitboards in his checkers program for the <a href="Ferranti Mark 1.html" title="Ferranti Mark 1">Ferranti Mark 1</a>, and in the mid 1950's by <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> in his checkers program as well. In computer chess, bitboards were first described by <a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a> et al. in 1967 <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>, reprinted 1970 <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> . Bitboards were used in <a href="Kaissa.html" title="Kaissa">Kaissa</a> and in <a href="Chess (Program).html" title="Chess (Program)">Chess</a>. The invention and publication of <a href="Rotated Bitboards.html" title="Rotated Bitboards">Rotated Bitboards</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> and <a href="Peter Gillgasch.html" title="Peter Gillgasch">Peter Gillgasch</a> with <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> in the 90s was another milestone in the history of bitboards. <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott's</a> innovations, too expensive on 32-bit <a href="X86.html" title="X86">x86</a> processors, should be revisited with <a href="X86-64.html" title="X86-64">x86-64</a> and <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD instructions</a> in mind. With the advent of fast 64-bit multiplication along with faster <a href="Memory.html" title="Memory">memory</a>, <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> as proposed by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> and refined by <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> have surpassed Rotated.
+</p>
+<h1><span class="mw-headline" id="Analysis">Analysis</span></h1>
+<p>The use of bitboards has spawned numerous discussions about their costs and benefits. The major points to consider are:
+</p>
+<ul><li> Bitboards can have a high information density.</li>
+<li> Single populated or even empty Bitboards have a low information density.</li>
+<li> <span id="getPiece"></span>Bitboards are weak in answering questions like what piece if any resides on square x. One reason to keep a redundant <a href="Mailbox.html" title="Mailbox">mailbox</a> board representation with some additional <a href="Incremental Updates.html" title="Incremental Updates">update</a> costs during <a href="Make Move.html" title="Make Move">make</a>/<a href="Unmake Move.html" title="Unmake Move">unmake</a>.</li>
+<li> Bitboards can operate on all squares in parallel using bitwise instructions. This is one of the main arguments used by proponents of bitboards, because it allows for a flexibility in <a href="Evaluation.html" title="Evaluation">evaluation</a>.</li>
+<li> Bitboards are rather handicapped on 32 bit processors, as each bitwise computation must be split into two or more instructions <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> . As most modern processors are now 64 bit, this point is somewhat diminished <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> .</li>
+<li> Bitboards often rely on <a href="Bit-Twiddling.html" title="Bit-Twiddling">bit-twiddling</a> and various optimization tricks and special instructions for certain hardware architectures, such as <a href="BitScan.html" title="BitScan">bitscan</a> and <a href="Population Count.html" title="Population Count">population count</a>. Optimal code requires machine dependent <a class="external text" href="http://en.wikipedia.org/wiki/Header file.html" rel="nofollow">header-files</a> in <a href="C.html" title="C">C</a>/<a href="Cpp.html" title="Cpp">C++</a>. Portable code is likely not optimal for all processors.</li>
+<li> Some operations on bitboards are less general, f.i. shifts. This requires additional code overhead.</li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a>, <a href="Vladimir Arlazarov.html" title="Vladimir Arlazarov">Vladimir Arlazarov</a>, <a href="Alexander Bitman.html" title="Alexander Bitman">Alexander Bitman</a>, <a href="Alexander Zhivotovsky.html" title="Alexander Zhivotovsky">Alexander Zhivotovsky</a>, <a href="Anatoly Uskov.html" title="Anatoly Uskov">Anatoly Uskov</a> (<b>1970</b>). <i><a class="external text" href="http://iopscience.iop.org/0036-0279/25/2/R07.html" rel="nofollow">Programming a Computer to Play Chess</a></i>. <a class="external text" href="http://iopscience.iop.org/0036-0279/25/2.html" rel="nofollow">Russian Mathematical Surveys, Vol. 25</a>, pp. 221-262.</li>
+<li> <a href="David Slate.html" title="David Slate">David Slate</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1977</b>). <i>CHESS 4.5 - The Northwestern University Chess Program.</i> <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a>, reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a> » <a href="Chess (Program).html" title="Chess (Program)">Chess</a></li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Zdenek Zdrahal.html" title="Zdenek Zdrahal">Zdenek Zdráhal</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a>, <a href="Alen Shapiro.html" title="Alen Shapiro">Alen Shapiro</a> (<b>1981</b>). <i><a class="external text" href="http://comjnl.oxfordjournals.org/content/24/3/263.abstract.html" rel="nofollow">Recognition of Complex Patterns Using Cellular Arrays</a></i>. <a class="external text" href="http://comjnl.oxfordjournals.org/content/24/3.toc.html" rel="nofollow">The Computer Journal, Vol. 24, No. 3</a>, pp. 263-270</li>
+<li> <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a> (<b>1984</b>). <i>Bitmap move generation in Chess</i>. <a href="ICGA Journal.html#7 3" title="ICGA Journal">ICCA Journal, Vol. 7, No. 3</a></li>
+<li> <a href="Burton Wendroff.html" title="Burton Wendroff">Burton Wendroff</a> (<b>1985</b>). <i>Attack Detection and Move Generation on the X-MP/48</i>. <a href="ICGA Journal.html#8 2" title="ICGA Journal">ICCA Journal, Vol. 8, No. 2</a></li>
+<li> <a class="new" href="index.php?title=Arch D. Robison&amp;action=edit&amp;redlink=1.html" title="Arch D. Robison (page does not exist)">Arch D. Robison</a>, <a class="new" href="index.php?title=Brian J. Hafner&amp;action=edit&amp;redlink=1.html" title="Brian J. Hafner (page does not exist)">Brian J. Hafner</a>, <a href="Steven Skiena.html" title="Steven Skiena">Steven Skiena</a> (<b>1989</b>). <i><a class="external text" href="http://comjnl.oxfordjournals.org/content/32/6/567.abstract.html" rel="nofollow">Eight Pieces Cannot Cover a Chess Board</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/The_Computer_Journal" rel="nofollow">The Computer Journal</a>, Vol. 32, No. 6, <a class="external text" href="http://comjnl.oxfordjournals.org/content/32/6/567.full.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1997</b>). <i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node2.html.html" rel="nofollow">How DarkThought Plays Chess</a></i>. <a href="ICGA Journal.html#20 3" title="ICGA Journal">ICCA Journal, Vol. 20, No. 3</a> » <a href="DarkThought.html" title="DarkThought">DarkThought</a></li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>1999</b>). <i><a class="external text" href="http://www.craftychess.com/hyatt/bitmaps.html.html" rel="nofollow">Rotated Bitmaps, a New Twist on an Old Idea</a></i>. <a href="ICGA Journal.html#22 4" title="ICGA Journal">ICCA Journal, Vol. 22, No. 4</a> » <a href="Rotated Bitboards.html" title="Rotated Bitboards">Rotated Bitboards</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="David Rasmussen.html" title="David Rasmussen">David Rasmussen</a> (<b>2004</b>). <i>Parallel Chess Searching and Bitboards</i>. Master's thesis, <a class="external text" href="http://www2.imm.dtu.dk/pubdb/views/edoc download.php/3267/ps/imm3267.ps.html" rel="nofollow">ps</a> » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="Borko Bo%C5%A1kovi%C4%87.html" title="Borko Bošković">Borko Bošković</a>, <a href="Sa%C5%A1o Greiner.html" title="Sašo Greiner">Sašo Greiner</a>, <a href="Janez Brest.html" title="Janez Brest">Janez Brest</a>, <a href="Viljem %C5%BDumer.html" title="Viljem Žumer">Viljem Žumer</a> (<b>2005</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/freeabs all.jsp?arnumber=1491153.html" rel="nofollow">The Representation of Chess Game</a></i>. Proceedings of the 27th International Conference on Information Technology Interfaces</li>
+<li> <a href="Pablo San Segundo.html" title="Pablo San Segundo">Pablo San Segundo</a>, <a href="Ram%C3%B3n Gal%C3%A1n.html" title="Ramón Galán">Ramón Galán</a> (<b>2005</b>). <i><a class="external text" href="http://www.actapress.com/Abstract.aspx?paperId=18953.html" rel="nofollow">Bitboards: A New Approach</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/aia/aia2005.html.html#SegundoG05" rel="nofollow">AIA 2005</a></li>
+<li> <a href="Pablo San Segundo.html" title="Pablo San Segundo">Pablo San Segundo</a>, <a href="Ram%C3%B3n Gal%C3%A1n.html" title="Ramón Galán">Ramón Galán</a>, <a href="Fernando Mat%C3%ADa.html" title="Fernando Matía">Fernando Matía</a>, <a href="Diego Rodr%C3%ADguez-Losada.html" title="Diego Rodríguez-Losada">Diego Rodríguez-Losada</a>, <a href="Agust%C3%ADn Jim%C3%A9nez.html" title="Agustín Jiménez">Agustín Jiménez</a> (<b>2006</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=1191130.html" rel="nofollow">Efficient Search Using Bitboard Models</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/ictai/ictai2006.html.html#SegundoGMRJ06" rel="nofollow">ICTAI 2006</a>, <a class="external text" href="http://www.intelligentcontrol.es/diego/publications/SanSegundo Ictai06.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Fridel Fainshtein.html" title="Fridel Fainshtein">Fridel Fainshtein</a> (<b>2006</b>). <i>An Orthodox k-Move Problem-Composer for Chess Directmates</i>. M.Sc. thesis, <a href="Bar-Ilan University.html" title="Bar-Ilan University">Bar-Ilan University</a>, <a class="external text" href="http://www.problemschach.de/KMOVEComposer.pdf.html" rel="nofollow">pdf</a>, Appendix D - 64-bit Representation, pp. 105</li>
+<li> <a href="Fridel Fainshtein.html" title="Fridel Fainshtein">Fridel Fainshtein</a>, <a href="Yaakov HaCohen-Kerner.html" title="Yaakov HaCohen-Kerner">Yaakov HaCohen-Kerner</a> (<b>2006</b>). <i>A Chess Composer of Two-Move Mate Problems</i>. <a href="ICGA Journal.html#29 1" title="ICGA Journal">ICGA Journal, Vol. 29, No. 1</a>, <a class="external text" href="http://homedir.jct.ac.il/~kerner/pdf docs/ICGA computer composer.pdf.html" rel="nofollow">pdf</a>, Appendix E: 64-bit representation, pp. 22</li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2007</b>). <i>Using Bitboards for Move Generation in Shogi</i>. <a href="ICGA Journal.html#30 1" title="ICGA Journal">ICGA Journal, Vol. 30, No. 1</a>, <a class="external text" href="http://www2.teu.ac.jp/gamelab/RESEARCH/ICGAJournal2007.pdf.html" rel="nofollow">pdf</a> » <a href="Move Generation.html" title="Move Generation">Move Generation</a>, <a href="Shogi.html" title="Shogi">Shogi</a></li>
+<li> <a href="James Glenn.html" title="James Glenn">James Glenn</a>, <a class="external text" href="http://www.cs.loyola.edu/~binkley/.html" rel="nofollow">David Binkley</a> (<b>2008</b>) <i>An Investigation of Hierarchical Bit Vectors</i>. <a class="external text" href="https://www.novapublishers.com/catalog/product_info.php?products_id=6555" rel="nofollow">New Topics in Theoretical Computer Science</a>, <a class="external text" href="http://www.cs.loyola.edu/~binkley/papers/tcsrt08-hbit-vectors.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a href="Jung-Kuei Yang.html" title="Jung-Kuei Yang">Jung-Kuei Yang</a> (<b>2009</b>). <i>The Bitboard Design and Bitwise Computing in Connect Six</i>. <a href="Conferences.html#GPW" title="Conferences">14th Game Programming Workshop</a> » <a href="Connect6.html" title="Connect6">Connect6</a></li>
+<li> <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul</a> (<b>2009</b>). <i>New Architectures in Computer Chess</i>. Ph.D. Thesis, <a class="external text" href="https://pure.uvt.nl/ws/files/1098572/Proefschrift_Fritz_Reul_170609.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Stefano Carlini&amp;action=edit&amp;redlink=1.html" title="Stefano Carlini (page does not exist)">Stefano Carlini</a> (<b>2010</b>). <i>Arimaa, a New Challenge for Artificial Intelligence</i>. M.Sc. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Modena_and_Reggio_Emilia" rel="nofollow">University of Modena and Reggio Emilia</a>, <a class="external text" href="http://arimaa.com/arimaa/papers/StefanoCarlini/Arimaa2.pdf.html" rel="nofollow">pdf</a> » Chapter 4, Bitboards in <a href="Arimaa.html" title="Arimaa">Arimaa</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a href="Jung-Kuei Yang.html" title="Jung-Kuei Yang">Jung-Kuei Yang</a>, <a href="Kuo-Yuan Kao.html" title="Kuo-Yuan Kao">Kuo-Yuan Kao</a>, <a class="new" href="index.php?title=Tai-Ning Yang&amp;action=edit&amp;redlink=1.html" title="Tai-Ning Yang (page does not exist)">Tai-Ning Yang</a> (<b>2012</b>). <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/S0950705112001293.html" rel="nofollow">Bitboard Knowledge Base System and Elegant Search Architectures for Connect6</a></i>. <a class="external text" href="https://www.journals.elsevier.com/knowledge-based-systems/" rel="nofollow">Knowledge-Based Systems</a>, Vol. 34 » <a href="Connect6.html" title="Connect6">Connect6</a></li>
+<li> <a href="Cameron Browne.html" title="Cameron Browne">Cameron Browne</a>, <a class="new" href="index.php?title=Stephen Tavener&amp;action=edit&amp;redlink=1.html" title="Stephen Tavener (page does not exist)">Stephen Tavener</a> (<b>2013</b>). <i><a class="external text" href="http://www.aifactory.co.uk/newsletter/2012 02 fast lane.htm.html" rel="nofollow">Life in the Fast Lane</a></i>. <a href="AI Factory.html" title="AI Factory">AI Factory</a> »  <a class="external text" href="http://en.wikipedia.org/wiki/Conway%27s Game of Life.html" rel="nofollow">Conway's Game of Life</a> within a <a class="mw-selflink selflink">Bitboard</a></li>
+<li> <a href="Jung-Kuei Yang.html" title="Jung-Kuei Yang">Jung-Kuei Yang</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/t/Tseng:Ping=Jung" rel="nofollow">Ping-Jung Tseng</a> (<b>2013</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/6783902" rel="nofollow">Bitboard Connection Code Design for Connect6</a></i>. <a class="new" href="index.php?title=TAAI 2013&amp;action=edit&amp;redlink=1.html" title="TAAI 2013 (page does not exist)">TAAI 2013</a> » <a href="Connect6.html" title="Connect6">Connect6</a></li>
+<li> <a href="Cameron Browne.html" title="Cameron Browne">Cameron Browne</a> (<b>2014</b>). <i>Bitboard Methods for Games</i>. <a href="ICGA Journal.html#37 2" title="ICGA Journal">ICGA Journal, Vol. 37, No. 2</a></li>
+<li> <a href="Yen-Chi Chen.html" title="Yen-Chi Chen">Yen-Chi Chen</a>, <a href="Shun-Shii Lin.html" title="Shun-Shii Lin">Shun-Shii Lin</a> (<b>2019</b>). <i>A fast nonogram solver that won the TAAI 2017 and ICGA 2018 tournaments</i>. <a href="ICGA Journal.html#41 1" title="ICGA Journal">ICGA Journal, Vol. 41, No. 1</a> » <a href="Nonogram.html" title="Nonogram">Nonogram</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1994">1994</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/vvl1nLv1MD8/oHVKdLXuiaUJ" rel="nofollow">bitboard move generation</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, October 25, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/106wKFeI8BA/zNuzu-2aMowJ" rel="nofollow">bitboard move generator</a> by <a href="Jo%C3%ABl Rivat.html" title="Joël Rivat">Joël Rivat</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, November 13, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/M4CKCmqDNkI/TjVJEQY0GC0J" rel="nofollow">bitboard position evaluations</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, November 17, 1994 » <a href="Evaluation.html" title="Evaluation">Evaluation</a></li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/71f7b5ee3764f082.html" rel="nofollow">Chess programming using bitboards</a> by <a href="Jo%C3%ABl Rivat.html" title="Joël Rivat">Joël Rivat</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 18, 1995</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/834fa3c273fafffe/cab7c12ea99e9a35.html" rel="nofollow">Bit Board Bonkers??</a> by Dave, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rec.games.chess.computer</a>, July 28, 1997</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=30562.html" rel="nofollow">Efficient Bitboard Implementation on 32-bit Architecture</a> by <a href="Roberto Waldteufel.html" title="Roberto Waldteufel">Roberto Waldteufel</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 1998</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=34506.html" rel="nofollow">Bitboard question</a> by <a href="Werner Inmann.html" title="Werner Inmann">Werner Inmann</a>, <a href="CCC.html" title="CCC">CCC</a>, December 02, 1998</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=34852.html" rel="nofollow">Bitboards</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, December 05, 1998</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=48176.html" rel="nofollow">bitboards in java?</a> by vitor, <a href="CCC.html" title="CCC">CCC</a>, April 06, 1999 » <a href="Java.html" title="Java">Java</a></li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=53446.html" rel="nofollow">BitBoards</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 1999</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=71880.html" rel="nofollow">Bitboard user's information request</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, October 05, 1999 » <a href="Rotated Bitboards.html" title="Rotated Bitboards">Rotated Bitboards</a> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=313504.html" rel="nofollow">To bitboard or not to bitboard?</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2003</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=352040.html" rel="nofollow">How important are Bitboards?</a> by <a class="new" href="index.php?title=Martin Schreiber&amp;action=edit&amp;redlink=1.html" title="Martin Schreiber (page does not exist)">Martin Schreiber</a>, <a href="CCC.html" title="CCC">CCC</a>, February 29, 2004</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=516Two.html" rel="nofollow">questions for bitboard experts</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 06, 2004 » <a href="Square Attacked By.html#InBetween" title="Square Attacked By">In Between</a>, <a href="Piece-Lists.html" title="Piece-Lists">Piece-Lists</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=4521.html" rel="nofollow">Bitboard question</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, March 14, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5623.html" rel="nofollow">Yet another new bitboard move generation method</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 22, 2006 » <a href="Titboards.html" title="Titboards">Titboards</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5623&amp;start=6.html" rel="nofollow">Re: Yet another new bitboard move generation method</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 01, 2006 <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13426.html" rel="nofollow">Speedup with bitboards on 64-bit CPUs</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, April 27, 2007</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6651.html" rel="nofollow">Speedup by bitboards</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 13, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17138.html" rel="nofollow">BitBoard representations of the board</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=19837.html" rel="nofollow">compact bitboard move generator</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, February 25, 2008 » <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a>, <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=25917.html" rel="nofollow">Bitboards / move generation on larger boards</a> by <a href="Gregory Strong.html" title="Gregory Strong">Gregory Strong</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26527.html" rel="nofollow">Bitboard techniques in Xiangqi</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, February 12, 2009 » <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=28207.html" rel="nofollow">Bitboards using 2 DOUBLE's ?</a> by <a href="Carey Bloodworth.html" title="Carey Bloodworth">Carey</a>, <a href="CCC.html" title="CCC">CCC</a>, June 02, 2009 » <a href="Double.html" title="Double">Double</a></li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42108.html" rel="nofollow">Bitboard implementation, how much time?</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, January 22, 2012</li>
+<li> <a class="external text" href="http://macechess.blogspot.de/2013/04/64-bits-for-64-squares.html.html" rel="nofollow">64 bits for 64 squares ?</a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a>, <a class="external text" href="http://macechess.blogspot.de/.html" rel="nofollow">mACE Chess</a>, April 28, 2013 » <a href="Population Count.html" title="Population Count">Population Count</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54208.html" rel="nofollow">Bitboard Tricks for Large Chess Variants</a> by <a class="new" href="index.php?title=Ed Trice&amp;action=edit&amp;redlink=1.html" title="Ed Trice (page does not exist)">Ed Trice</a>, <a href="CCC.html" title="CCC">CCC</a>, November 01, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56476.html" rel="nofollow">Bitboard database code samples</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, May 25, 2015 » <a href="Symbolic.html" title="Symbolic">Symbolic</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60007.html" rel="nofollow">M42 - A C++ library for Bitboard attack mask generation</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2016 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64487.html" rel="nofollow">Checkers Bitboard representation</a> by Pranav Deshpande, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2017 » <a href="Checkers.html" title="Checkers">Checkers</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65724.html" rel="nofollow">Bitboards and Java</a> by <a class="new" href="index.php?title=Fred Hamilton&amp;action=edit&amp;redlink=1.html" title="Fred Hamilton (page does not exist)">Fred Hamilton</a>, <a href="CCC.html" title="CCC">CCC</a>, November 14, 2017 » <a href="Java.html" title="Java">Java</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72461&amp;start=3.html" rel="nofollow">Re: Pawn move generation in bitboards</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, December 05, 2019 » <a href="Cpp.html" title="Cpp">C++</a>, <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Pawn Pattern and Properties</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73830.html" rel="nofollow">M42 - C++ Library for Bitboard Attack Mask Generation</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 2020 <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76083.html" rel="nofollow">Bitboard board representation</a> by <a class="new" href="index.php?title=Elias Nilsson&amp;action=edit&amp;redlink=1.html" title="Elias Nilsson (page does not exist)">Elias Nilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, December 17, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76548.html" rel="nofollow">Thought bitboards was faster :-)</a> by <a href="Daniel Anulliero.html" title="Daniel Anulliero">Daniel Anulliero</a>, <a href="CCC.html" title="CCC">CCC</a>, February 10, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76690.html" rel="nofollow">Are Bitboards More Intoxicating Than They Are Good?</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Mike Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77299.html" rel="nofollow">Best bitboard design?</a> by <a href="Martin Bryant.html" title="Martin Bryant">Martin Bryant</a>, <a href="CCC.html" title="CCC">CCC</a>, May 13, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?t=78160" rel="nofollow">The cost of check &amp; discovered check in bitboards</a> by Bill Beame, <a href="CCC.html" title="CCC">CCC</a>, September 13, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78680" rel="nofollow">Bitboards ?: C# vs C++</a> by Bill Beame, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2021 » <a href="C sharp.html" title="C sharp">C#</a>, <a href="Cpp.html" title="Cpp">C++</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79365" rel="nofollow">Move generation for bitboards</a> by <a class="new" href="index.php?title=Elias Nilsson&amp;action=edit&amp;redlink=1.html" title="Elias Nilsson (page does not exist)">Elias Nilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, February 16, 2022</li></ul>
+<h1><span class="mw-headline" id="Viewer_.26_Calculator">Viewer &amp; Calculator</span></h1>
+<ul><li> <a href="Bibob.html" title="Bibob">Bibob</a></li>
+<li> <a class="external text" href="https://gekomad.github.io/Cinnamon/BitboardCalculator" rel="nofollow">Bitboard Calculator</a> by <a href="Giuseppe Cannella.html" title="Giuseppe Cannella">Giuseppe Cannella</a></li>
+<li> <a class="external text" href="http://www.chessprogramming.net/computerchess/free-chess-bitboard-viewer/.html" rel="nofollow">Free Chess Bitboard Viewer - Computer Chess Programming</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a></li>
+<li> <a class="external text" href="http://www.chess2u.com/t2159-new-free-tool-bitboards-helper.html" rel="nofollow">New free tool : Bitboards Helper</a> by <a href="Julien Marcel.html" title="Julien Marcel">Julien Marcel</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Descriptions">Descriptions</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Bitboard" rel="nofollow">Bitboards from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Bit_array" rel="nofollow">Bit-Array from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Bitboard#History" rel="nofollow">Bitboard-History from Wikipedia</a></li>
+<li> <a class="external text" href="https://craftychess.com/hyatt/boardrep.html" rel="nofollow">Chess board representations</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a></li>
+<li> <a class="external text" href="https://web.archive.org/web/20081007034904/http://webpages.charter.net/tlikens/bitmaps/bit_intro.html" rel="nofollow">Bitboards (aka bitmaps)</a> by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>, 2008)</li>
+<li> <a class="external text" href="http://www.fzibi.com/cchess/bitboards.htm.html" rel="nofollow">An Introduction to BITBOARDS</a> by <a href="Franck Zibi.html" title="Franck Zibi">Franck Zibi</a></li>
+<li> <a class="external text" href="https://web.archive.org/web/20050205014648/http://www.onjava.com/pub/a/onjava/2005/02/02/bitsets.html" rel="nofollow">Bitwise Optimization in Java: Bitfields, Bitboards, and Beyond</a> by <a href="Glen Pepicelli.html" title="Glen Pepicelli">Glen Pepicelli</a>, (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>, 2005), <a class="external text" href="http://en.wikipedia.org/wiki/O%27Reilly Media.html" rel="nofollow">O'Reilly's</a> <a class="external text" href="https://web.archive.org/web/20050203015229/http://onjava.com/" rel="nofollow">OnJava.com</a> » <a href="Java.html" title="Java">Java</a>, <a href="Bit-Twiddling.html" title="Bit-Twiddling">Bit-Twiddling</a></li>
+<li> <a class="external text" href="https://pages.cs.wisc.edu/~psilord/blog/data/chess-pages/index.html" rel="nofollow">Chess and Bitboards</a> by <a class="external text" href="https://pages.cs.wisc.edu/~psilord/" rel="nofollow">Peter Keller</a></li>
+<li> <a class="external text" href="https://labraj.feri.um.si/en/Position_Representation" rel="nofollow">Position Representation - Computer Architecture and Languages Laboratory</a>, <a href="University of Maribor.html" title="University of Maribor">University of Maribor</a></li>
+<li> <a class="external text" href="https://stackoverflow.com/questions/tagged/bitboard" rel="nofollow">Newest 'bitboard' Questions</a> - <a class="external text" href="http://en.wikipedia.org/wiki/Stack Overflow.html" rel="nofollow">Stack Overflow</a></li></ul>
+<h2><span class="mw-headline" id="Libraries">Libraries</span></h2>
+<ul><li> <a class="external text" href="https://github.com/sinandredemption/M42" rel="nofollow">GitHub - sinandredemption/M42: C++ Library for Bitboard Attack Mask Generation</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a></li>
+<li> <a class="external text" href="https://github.com/kz04px/libchess" rel="nofollow">GitHub - kz04px/libchess: C++ chess library</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://www.halloherne.de/artikel/1-september-setunion-in-den-flottmann-hallen-38570.htm?k=tick" rel="nofollow">Setunion</a> - <a class="external text" href="https://inherne.net/weltspitze-des-vibraphon-jazz/" rel="nofollow">Malletmania</a>, <a href="Category:Flottmann.html" title="Category:Flottmann">Flottmann-Hallen</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>, March 10, 2019, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a class="external text" href="http://www.saxophonquartett-quattro-venti.de/.html#about" rel="nofollow">Kerstin Fabry</a>, <a class="external text" href="https://www.lokalkompass.de/tag/christian-ribbe" rel="nofollow">Christian Ribbe</a>, <a class="external text" href="https://www.folkwang-uni.de/home/theater/studiengaenge/physical-theatre/lehrende/detail-lehrende/personen-detail/elmar-dissinger/" rel="nofollow">Elmar Dissinger</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Pee_Wee_Bluesgang" rel="nofollow">Martin Siehoff</a>, <a class="external text" href="https://www.halloherne.de/artikel/carlotta-ribbe-und-setunion-31511.htm" rel="nofollow">Carlotta Ribbe</a>, <a class="external text" href="http://guitartist-quartett.com/quartett ludger.htm.html" rel="nofollow">Ludger Bollinger</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/srfRiWZcCg4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"> <a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a>  - Boards Meeting, Oil on Canvas, 39 x 32". <a class="external text" href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bcf" rel="nofollow">Chess in the Art of Samuel Bak</a>, <a class="external text" href="http://chgs.elevator.umn.edu/.html" rel="nofollow">Center for Holocaust &amp; Genocide Studies</a>, <a href="University of Minnesota.html" title="University of Minnesota">University of Minnesota</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2007</b>). <i>Using Bitboards for Move Generation in Shogi</i>. <a href="ICGA Journal.html#30 1" title="ICGA Journal">ICGA Journal, Vol. 30, No. 1</a>, <a class="external text" href="http://www2.teu.ac.jp/gamelab/RESEARCH/ICGAJournal2007.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.3dkingdoms.com/checkers/bitboards.htm.html" rel="nofollow">Checker Bitboards Tutorial</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64487.html" rel="nofollow">Checkers Bitboard representation</a> by Pranav Deshpande, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2017</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Lazar_Lyusternik" rel="nofollow">Lazar A. Lyusternik</a>, <a class="external text" href="http://www.mathnet.ru/php/person.phtml?personid=30351&amp;option lang=eng.html" rel="nofollow">Aleksandr A. Abramov</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Victor_Shestakov" rel="nofollow">Victor I. Shestakov</a>, <a href="Mikhail R. Shura-Bura.html" title="Mikhail R. Shura-Bura">Mikhail R. Shura-Bura</a> (<b>1952</b>). <i>Programming for High-Speed Electronic Computers</i>. (Программирование для электронных счетных машин)</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Mathematician.html#Ershov" title="Mathematician">Andrey Ershov</a>, <a href="Mikhail R. Shura-Bura.html" title="Mikhail R. Shura-Bura">Mikhail R. Shura-Bura</a> (<b>1980</b>). <i><a class="external text" href="http://ershov.iis.nsk.su/archive/eaindex.asp?lang=2&amp;gid=910.html" rel="nofollow">The Early Development of Programming in the USSR</a></i>. in <a class="external text" href="http://en.wikipedia.org/wiki/Nicholas C. Metropolis.html" rel="nofollow">Nicholas C. Metropolis</a> (ed.) <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=578384.html" rel="nofollow">A History of Computing in the Twentieth Century</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Academic_Press" rel="nofollow">Academic Press</a>, <a class="external text" href="http://ershov.iis.nsk.su/archive/eaimage.asp?did=28792&amp;fileid=173670.html" rel="nofollow">preprint pp. 43</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://groups.google.com/group/rec.games.chess/browse frm/thread/0e3a93f45ff07d31.html#" rel="nofollow">Early Reference on Bit-Boards</a> by <a href="Tony Warnock.html" title="Tony Warnock">Tony Warnock</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rec.games.chess</a>, October 29, 1994</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a>, <a href="Vladimir Arlazarov.html" title="Vladimir Arlazarov">Vladimir Arlazarov</a>, <a href="Alexander Bitman.html" title="Alexander Bitman">Alexander Bitman</a>, <a href="Alexander Zhivotovsky.html" title="Alexander Zhivotovsky">Alexander Zhivotovsky</a>, <a href="Anatoly Uskov.html" title="Anatoly Uskov">Anatoly Uskov</a> (<b>1970</b>). <i><a class="external text" href="http://iopscience.iop.org/0036-0279/25/2/R07.html" rel="nofollow">Programming a Computer to Play Chess</a></i>. <a class="external text" href="http://iopscience.iop.org/0036-0279/25/2.html" rel="nofollow">Russian Mathematical Surveys, Vol. 25</a>, pp. 221-262.</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>1999</b>). <i><a class="external text" href="http://www.craftychess.com/hyatt/bitmaps.html.html" rel="nofollow">Rotated Bitmaps, a New Twist on an Old Idea</a></i>. <a href="ICGA Journal.html#22 4" title="ICGA Journal">ICCA Journal, Vol. 22, No. 4</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=5015.html" rel="nofollow">Fast(er) bitboard move generator</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, June 14, <a href="Timeline.html#2006" title="Timeline">2006</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=5441.html" rel="nofollow">List of magics for bitboard move generation</a> by <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, August 23, <a href="Timeline.html#2006" title="Timeline">2006</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.stmintz.com/ccc/index.php?id=30562.html" rel="nofollow">Efficient Bitboard Implementation on 32-bit Architecture</a> by <a href="Roberto Waldteufel.html" title="Roberto Waldteufel">Roberto Waldteufel</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 1998</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6651.html" rel="nofollow">Speedup by bitboards</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 13, 2007</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.stmintz.com/ccc/index.php?id=71880.html" rel="nofollow">Bitboard user's information request</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, October 05, 1999</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>1999</b>). <i><a class="external text" href="http://www.craftychess.com/hyatt/bitmaps.html.html" rel="nofollow">Rotated Bitmaps, a New Twist on an Old Idea</a></i>. <a href="ICGA Journal.html#22 4" title="ICGA Journal">ICCA Journal, Vol. 22, No. 4</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=52861&amp;start=8.html" rel="nofollow">Re: multi-dimensional piece/square tables</a> by Tony P., <a href="CCC.html" title="CCC">CCC</a>, January 28, 2020</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/sinandredemption/M42" rel="nofollow">GitHub - sinandredemption/M42: C++ Library for Bitboard Attack Mask Generation</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a href="Category:Flottmann.html" title="Category:Flottmann">Flottmann-Hallen</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Herne,_North_Rhine-Westphalia" rel="nofollow">Herne</a>, <a class="external text" href="https://en.wikipedia.org/wiki/North_Rhine-Westphalia" rel="nofollow">North Rhine-Westphalia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Germany" rel="nofollow">Germany</a>, part of <a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">The Industrial Heritage Trail</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/Ruhr" rel="nofollow">Ruhr area</a></span>
+</li>
+</ol></div>
+<p><b><a href="Board Representation.html" title="Board Representation">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722041918
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.047 seconds
+Real time usage: 0.049 seconds
+Preprocessor visited node count: 380/1000000
+Preprocessor generated node count: 754/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:10-0!canonical and timestamp 20240722041918 and revision id 26290
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Bitboards&amp;oldid=26290">https://www.chessprogramming.org/index.php?title=Bitboards&amp;oldid=26290</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li><li><a href="Category:Flottmann.html" title="Category:Flottmann">Flottmann</a></li><li><a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">Industrial Heritage Trail</a></li><li><a href="Category:Music.html" title="Category:Music">Music</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Bitboards&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Bitboards.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Bitboards&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Bitboards.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Bitboards&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Bitboards&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Bitboards.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Bitboards.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Bitboards&amp;oldid=26290.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Bitboards&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 March 2022, at 18:37.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Bitboards&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.047","walltime":"0.049","ppvisitednodes":{"value":380,"limit":1000000},"ppgeneratednodes":{"value":754,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722041918","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

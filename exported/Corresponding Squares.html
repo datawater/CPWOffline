@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Corresponding Squares - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Corresponding_Squares","wgTitle":"Corresponding Squares","wgCurRevisionId":8282,"wgRevisionId":8282,"wgArticleId":2622,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Marcel Duchamp"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Corresponding_Squares","wgRelevantArticleId":2622,"wgRequestId":"Zp7DTLG9G67YuqUGxlgbkAAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Corresponding_Squares rootpage-Corresponding_Squares skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Corresponding Squares</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * <a href="Game Phases.html" title="Game Phases">Game Phases</a> * <a href="Endgame.html" title="Endgame">Endgame</a> * <a href="Pawn Endgame.html" title="Pawn Endgame">Pawn Endgame</a> * Corresponding Squares</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:286px;"><a class="image" href="File:CoSq.jpg.png.html"><img alt="" class="thumbimage" height="262" src="images/b/b4/CoSq.jpg.png" width="284"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:CoSq.jpg.png.html" title="Enlarge"></a></div>6k1/3p4/3p4/3P4/4P1p1/6P1/8/K7 w - -</div></div></div>
+<p><b>Corresponding Squares</b>, also called <b>Co-ordinate Squares</b> is a concept to analyse pawn endgames. Using <a href="Retrograde Analysis.html" title="Retrograde Analysis">retrograde analysis</a>, <a href="Zugzwang.html" title="Zugzwang">Zugzwang</a> positions and Critical Squares are found. Corresponding Squares Systems were one of the first human attempts of finding formulas and finally solving certain chess positions. This concept is only possible due to the limited mobility in pawn endgames. King-oppositions and Zugzwangs are the main motives arising.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Theory"><span class="tocnumber">1</span> <span class="toctext">Theory</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Finding Critical Squares"><span class="tocnumber">1.1</span> <span class="toctext">Finding Critical Squares</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Constructing Corresponding Square System"><span class="tocnumber">1.2</span> <span class="toctext">Constructing Corresponding Square System</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Using the Corresponding Square System"><span class="tocnumber">1.3</span> <span class="toctext">Using the Corresponding Square System</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Computer Chess Implementation"><span class="tocnumber">2</span> <span class="toctext">Computer Chess Implementation</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Algorithm by Moshammer"><span class="tocnumber">3</span> <span class="toctext">Algorithm by Moshammer</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Postings"><span class="tocnumber">5</span> <span class="toctext">Postings</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Theory">Theory</span></h1>
+<p>To get an idea, the concept is described using an example position by <a class="external text" href="https://en.wikipedia.org/wiki/Charles_Dealtry_Locock" rel="nofollow">Charles Dealtry Lockock</a>, 1892 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> :
+</p>
+<h2><span class="mw-headline" id="Finding_Critical_Squares">Finding Critical Squares</span></h2>
+<p>In the presented position there exist two critical squares. First when the white king reaches d4, white threatens 1. e5 dxe5 2. Kxe5 (threatening attacking both Pd7 and Pg4 in the next move). To defend this threat the black king must be able to move to f6 after Kd4. Secondly when the white king reaches e3, white threatens 1. Kf4 ... 2. Kxg4. In order to avoid this the black king must stand on g5.
+</p><p>To summarize, the two critical squares are e5 and f4. The according corresponding squares where both sides have mutual zugzwang are Kd4 - Kf6 and Ke3 - Kg5.
+</p>
+<h2><span class="mw-headline" id="Constructing_Corresponding_Square_System">Constructing Corresponding Square System</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:286px;"><a class="image" href="File:CoSq2.png.html"><img alt="CoSq2.png" class="thumbimage" height="262" src="images/3/3a/CoSq2.png" width="284"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:CoSq2.png.html" title="Enlarge"></a></div></div></div></div>
+<p>This particular example, where two Corresponding Squares are connected diagonally and there is enough space for a 3x3 square, <a class="external text" href="https://en.wikipedia.org/wiki/Yuri_Averbakh" rel="nofollow">Averbakh</a> called the eight-square system. The construction of this Corresponding Square System starts with numbering the first two Corresponding Squares 1 and 2 accordingly. The square connecting the two receives the number 3. The outer squares of the 3x3 field receive the numbers 4 to 8. Further outside the numbering can continue by using the number of a square exactly two squares away either diagonally, horizontally or vertically. The image below should exemplify this process.
+</p>
+<h2><span class="mw-headline" id="Using_the_Corresponding_Square_System">Using the Corresponding Square System</span></h2>
+<p>The numbers tell us that if the white king manages to step on a square with the same number as the square on which the black king is standing, he automatically wins the fight for the critical squares. The same case occurs if the white king can step on a square the black king can not reach in the next move. The contrary is also possible. As soon as the black king moves on the same numbered square as the white king he can automatically defend the Corresponding Squares.
+</p><p>The way to take advantage of the Corresponding Square System is easy now. White must move towards the critical squares, never stepping on squares the black king can defend.
+</p>
+<pre>1. Kb1! (steps on 3, the black king can not reach any 3-squares) Kg7
+2. Kc1 (steps on the same number as the black king: 5) Kg6
+3. Kd1 Kg5 4. Kc2 Kh5 5. Kc3 Kg5 6. Kc4 Kg6 7. Kd3 Kg5 8. Ke3
+</pre>
+<h1><span class="mw-headline" id="Computer_Chess_Implementation">Computer Chess Implementation</span></h1>
+<p>First of all it must be noted that the concept of Corresponding Squares was designed to give the human chess player a tool to efficiently analyze a complex pawn endgame. Computers can very easily solve such positions using their Transposition Tables. Just as an example it takes Computers only a couple of seconds to reach &gt; depth 20 in the <a href="Lasker-Reichhelm Position.html" title="Lasker-Reichhelm Position">Lasker-Reichhelm position</a>, also referred as <a class="external text" href="https://en.wikipedia.org/wiki/Reuben_Fine" rel="nofollow">Fine</a> #70 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> and thus find the opponent's Zugzwang. Nevertheless Computers also have some disadvantages. The main problem is the point where the chess engine has to decide whether to enter a certain pawn ending or not. Usually these positions offer a lot more mobility, thus conducting a deep enough search seems infeasible.
+</p><p>The first attempt of tackling Corresponding Squares with a computer chess engine was made by <a href="Rafael B. Andrist.html" title="Rafael B. Andrist">Rafael B. Andrist</a> and his chess program <a href="Wilhelm.html" title="Wilhelm">Wilhelm</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. More recent research was done by <a href="Edmund Moshammer.html" title="Edmund Moshammer">Edmund Moshammer</a>:
+</p>
+<h1><span class="mw-headline" id="Algorithm_by_Moshammer">Algorithm by Moshammer</span></h1>
+<p>In principle this approach is quite similar to an <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebase</a> Generation process. The main difference is its optimization to be used on the fly in chess engines. To represent the Corresponding Squares 64 <a href="Bitboards.html" title="Bitboards">bitboards</a> are used, which for every position of the attacking king represent the squares where the opponent king must stand to prevent the attacker from achieving a predefined objective.
+</p><p>Definitions:
+</p>
+<pre>
+U64 legalSq[2]; // stores the squares where attacking/defending king may move to
+                //     (ie.: not attacked by a pawn or occupied by a own pawn)
+U64 coSq[64];   // stores the Corresponding Squares for each attacking king position
+U64 bbSQ[64];   // bbSQ[i] = 1 &lt;&lt; i;
+int kingmoves[8] = {-9, -8, -7, -1, 1, 7, 8, 9};  // used for move generation later
+
+U64 mgen_fill_KING(U64 squares);  // shifts squares one step in all 8 directions
+</pre>
+<p>The main retrograde routine to build the Corresponding Square system:
+</p>
+<ul><li> initialize coSq: for every position of the attacking king, the defending one may not stand on neighboring squares or squares previously defined illegal (attacked by attacker's pawns or occupied by own pawns)</li>
+<li> set changes to a full bitboard - ie: all squares have to be looked at in the first pass</li>
+<li> loop until all Zugzwang situations have been resolved:changes == 0</li>
+<li> loop through all unresolved positions of the board
+<ul><li> reset the square on 'changes', as the position is being examined now</li>
+<li> initialize Katt: squares from which the attacking King can move to attack the current square</li>
+<li> initialize Kdef: squares from which the defending King can defend the attacking king to reach the current square - ie: the neighboring squares of the current square and the squares one king move away from the corresponding squares of the current position</li>
+<li> for each of the attacking king moves
+<ul><li> checks that the move is on the board and is part of the legal moves (Katt)</li>
+<li> if coSq is changed on the resulting position, set 'changes' accordingly, so that the changes are considered in the next pass</li>
+<li> the Corresponding Squares of each neighboring attacking King position have to collide with the Corresponding Squares one Kingmove away from this position</li></ul></li></ul></li></ul>
+<pre>
+// attacker .. attacking side
+// coSq ...... pointer to the Corresponding Squares Bitboards
+
+void coSq_setupSystem(int attacker, U64 * coSq) {
+  for (int i=0; i&lt;64; i++) 
+    coSq[i] &amp;= ~mgen_fill_KING(bbSQ[i]) &amp; ~bbSQ[i] &amp; legalSq[!attacker];
+
+  U64 changes = 0xFFFFFFFFFFFFFFFF;
+  while (changes) {
+    for (int i=0; i&lt;64; i++) {
+      if (changes &amp; bbSQ[i]) {
+        changes ^= bbSQ[i];
+        U64 Katt = mgen_fill_KING(bbSQ[i]) &amp; legalSq[attacker];
+        U64 Kdef = mgen_fill_KING(bbSQ[i]) | mgen_fill_KING(coSq[i]);
+
+        for (int j=0; j&lt;8; j++) {
+          int Ksq = i + kingmoves[j];
+          if (!(Ksq &amp; ~0x3F) &amp;&amp; (bbSQ[Ksq] &amp; Katt)) {
+            changes |= bbSQ[Ksq] * ((coSq[Ksq] &amp; ~Kdef) != 0);
+            coSq[Ksq] &amp;= Kdef;
+          }
+        }
+      }
+    }
+  }
+}
+</pre>
+<p>Before the function above is called, the Corresponding Squares must be initialized. Therefore all bits in the coSq-bitboards get set. Then the first Critical Squares are defined by setting the bitboard of the attacking king at the Critical Square to 0. In other words, if the king manages to occupy the square the defending king has no squares to stand on from which he can defend the threat.
+</p><p>The setupSystem function itself does nothing else than looping through the bitboards and uses the rule that the defending king may only stand on a square from which he can reach all corresponding squares the attacking king may create within one move. This is done as long as no further changes are made to the bitboard.
+</p><p>The time it takes to analyze a position is about linear. For the <a href="Lasker-Reichhelm Position.html" title="Lasker-Reichhelm Position">Lasker-Reichhelm position</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Reuben_Fine" rel="nofollow">Fine</a> #70), it took 10 cycles through the 64 squares of the board to find out that the black king can impossibly defend all of its pawns.
+</p><p>There is however one open question - the definition of the Critical Square. A straight forward approach would be to set the critical Squares to capturing the opponent's pawns. If in the end alpha &gt; 0 and the defending king is standing on a Corresponding Square one can safely fail low at that point. A more complex approach would be necessary to find out whether a position is won or drawn.
+</p>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Vitaly_Halberstadt" rel="nofollow">Vitaly Halberstadt</a>, <a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a> (<b>1932</b>). <i>L'opposition et les cases conjuguées sont réconciliées</i>.</li></ul>
+<dl><dd> Paris-Brussels 1932, German Edition 2001 <i><a class="external text" href="http://www.buecher-nach-isbn.info/3-608/3608500359-Opposition-und-Schwesterfelder-Marcel-Duchamp-Vitali-Halberstadt-3-608-50035-9.html.html" rel="nofollow">Opposition und Schwesterfelder</a></i>, ISBN 3-932170-35-0</dd></dl>
+<ul><li> <a href="Kenneth W. Church.html" title="Kenneth W. Church">Kenneth W. Church</a> (<b>1978</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=67030.html" rel="nofollow">Co-ordinate Squares: A Solution to Many Chess Pawn Endgames</a></i>. B.Sc. thesis, <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</a>, reprinted 1988 in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li>
+<li> <a href="Kenneth W. Church.html" title="Kenneth W. Church">Kenneth W. Church</a> (<b>1979</b>). <i>Co-ordinate Squares: A Solution to Many Chess Pawn Endgames</i>. abbreviated version of B.Sc. thesis, <a href="Conferences.html#IJCAI1979" title="Conferences">IJCAI-79</a>, Tokyo, Japan</li>
+<li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1979</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1979-01/1979_01_BYTE_04-01_Life_Algorithms#page/n127/mode/2up" rel="nofollow">Creating a Chess-Player, Part 4: Thoughts on Strategy</a></i>. In <a class="external text" href="http://cs.millersville.edu/~liffick/.html" rel="nofollow">Blaise W. Liffick</a> (ed.), <a class="external text" href="http://books.google.com/books/about/The BYTE book of Pascal.html?id=ofpfQgAACAAJ.html" rel="nofollow">The Byte Book of Pascal</a>, pp. 143-155. Byte Publications, also <a href="Byte Magazine.html#BYTE401" title="Byte Magazine">BYTE, Vol. 4, No. 1</a></li>
+<li> <a href="Mike Clarke.html" title="Mike Clarke">Mike Clarke</a> (<b>1980</b>). <i>The Theory of Coordinate Squares</i>. <a href="Advances in Computer Chess 2.html" title="Advances in Computer Chess 2">Advances in Computer Chess 2</a>, pp. 97-102</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Yuri_Averbakh" rel="nofollow">Yuri Averbakh</a>, <a class="external text" href="http://de.wikipedia.org/wiki/Ilja Lwowitsch Maiselis.html" rel="nofollow">Ilia Maizelis</a> (<b>1987</b>). <i>Comprehensive Chess Endings Vol 4: Pawn Endings</i>. Cadogan Books 1987</li>
+<li> <a href="Karsten M%C3%BCller.html" title="Karsten Müller">Karsten Müller</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Frank_Lamprecht" rel="nofollow">Frank Lamprecht</a> (<b>2000</b>). <i>Secrets of Pawn Endings</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Everyman_Chess" rel="nofollow">Everyman Chess</a>,  (<b>2007</b>). <a class="external text" href="http://dev.jeremysilman.com/shop/pc/Secrets-of-Pawn-Endings-p3748.htm.html" rel="nofollow">re-issue</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Gambit_Publications" rel="nofollow">Gambit Publications</a> </li>
+<li> <a href="Karsten M%C3%BCller.html" title="Karsten Müller">Karsten Müller</a> (<b>2004</b>). <i>Endgame Corner - The Mystical Sister Squares</i>, <a class="external text" href="http://www.chesscafe.com/text/mueller38.pdf.html" rel="nofollow">pdf</a> from <a class="external text" href="https://en.wikipedia.org/wiki/ChessCafe.com" rel="nofollow">ChessCafe.com</a></li>
+<li> <a href="Eli David.html" title="Eli David">Omid David</a>, <a href="Ariel Felner.html" title="Ariel Felner">Ariel Felner</a>, <a href="Nathan S. Netanyahu.html" title="Nathan S. Netanyahu">Nathan S. Netanyahu</a> (<b>2004</b>). <i>Blockage Detection in Pawn Endgames</i>. <a href="ICGA Journal.html#27 3" title="ICGA Journal">ICGA Journal, Vol. 27, No. 3</a></li></ul>
+<h1><span class="mw-headline" id="Postings">Postings</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=184365" rel="nofollow">chess program "Wilhelm" released</a> by <a href="Rafael B. Andrist.html" title="Rafael B. Andrist">Rafael B. Andrist</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=188245" rel="nofollow">Re: Fine 70 same 7 engines (more)</a> by <a href="Rafael B. Andrist.html" title="Rafael B. Andrist">Rafael B. Andrist</a>, <a href="CCC.html" title="CCC">CCC</a>, September 10, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=233270" rel="nofollow">A new(?) technique to recognize draws</a> by <a href="Heiner Marxen.html" title="Heiner Marxen">Heiner Marxen</a>, <a href="CCC.html" title="CCC">CCC</a>, June 01, 2002 » <a href="Chest.html" title="Chest">Chest</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45238.html" rel="nofollow">Corresponding squares, easy position</a> by <a class="new" href="index.php?title=Vincent Lejeune&amp;action=edit&amp;redlink=1.html" title="Vincent Lejeune (page does not exist)">Vincent Lejeune</a>, <a href="CCC.html" title="CCC">CCC</a>, September 20, 2012</li>
+<li> <a class="external text" href="http://ruszchessstudies.blogspot.com/2016/11/corresponding-squares-1.html.html" rel="nofollow">Corresponding Squares 1</a> by <a href="%C3%81rp%C3%A1d Rusz.html" title="Árpád Rusz">Árpád Rusz</a>, <a class="external text" href="http://ruszchessstudies.blogspot.com/.html" rel="nofollow">Chess Endgame Study Composition</a>, November 24, 2016</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Corresponding_squares" rel="nofollow">Corresponding squares from Wikipedia</a></li>
+<li> <a class="external text" href="http://temposchlucker.blogspot.com/2006/02/corresponding-squares.html.html" rel="nofollow">Chess improvement by effort: Corresponding squares</a></li>
+<li> <a class="external text" href="http://chess-training.blogspot.com/2006/11/corresponding-squares-and-triangulation.html.html" rel="nofollow">Chess Training: Corresponding Squares and Triangulation</a></li>
+<li> <a class="external text" href="http://chess-training.blogspot.com/2006/11/endgame-lab-king-and-pawn-endings 24.html.html" rel="nofollow">Chess Training: Endgame Lab - King and Pawn Endings</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Position by <a class="external text" href="https://en.wikipedia.org/wiki/Charles_Dealtry_Locock" rel="nofollow">Charles Dealtry Lockock</a>, 1892, from <a class="external text" href="https://en.wikipedia.org/wiki/Yuri_Averbakh" rel="nofollow">Yuri Averbakh</a>, <a class="external text" href="https://lv.wikipedia.org/wiki/I%C4%BCja_Maizelis" rel="nofollow">Ilia Maizelis</a> (<b>1987</b>). <i>Comprehensive Chess Endings Vol 4: PawnEndings</i>. Cadogan Books</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Reuben_Fine" rel="nofollow">Reuben Fine</a> (<b>1941</b>). <i><a class="external text" href="https://en.wikipedia.org/wiki/Basic_Chess_Endings" rel="nofollow">Basic Chess Endings</a></i></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=184365" rel="nofollow">chess program "Wilhelm" released</a> by <a href="Rafael B. Andrist.html" title="Rafael B. Andrist">Rafael B. Andrist</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2001</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.mysnip.de/forum-archiv/thema/1578/299490/Gegenfeldsysteme+und+Schachprogramm.html.html" rel="nofollow">Gegenfeldsysteme und Schachprogramm</a> by <a href="Rafael B. Andrist.html" title="Rafael B. Andrist">Rafael B. Andrist</a>, <a href="ChessBits.html" title="ChessBits">ChessBits Forum</a>, August 19, 2001 (German)</span>
+</li>
+</ol></div>
+<p><b><a href="Pawn Endgame.html" title="Pawn Endgame">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722114115
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.020 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 117/1000000
+Preprocessor generated node count: 230/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2622-0!canonical and timestamp 20240722114115 and revision id 8282
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Corresponding_Squares&amp;oldid=8282">https://www.chessprogramming.org/index.php?title=Corresponding_Squares&amp;oldid=8282</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Corresponding+Squares&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Corresponding Squares.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Corresponding Squares&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Corresponding Squares.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Corresponding Squares&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Corresponding Squares&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Corresponding Squares.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Corresponding Squares.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Corresponding Squares&amp;oldid=8282.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Corresponding Squares&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 November 2018, at 12:07.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Corresponding_Squares&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.020","walltime":"0.022","ppvisitednodes":{"value":117,"limit":1000000},"ppgeneratednodes":{"value":230,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722114115","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

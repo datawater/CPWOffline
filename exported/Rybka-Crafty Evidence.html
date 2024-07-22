@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Rybka-Crafty Evidence - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rybka-Crafty_Evidence","wgTitle":"Rybka-Crafty Evidence","wgCurRevisionId":9267,"wgRevisionId":9267,"wgArticleId":4836,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Rybka-Crafty_Evidence","wgRelevantArticleId":4836,"wgRequestId":"Zp7Dso2xCJ5uo1xYemabLgAAAAg","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Rybka-Crafty_Evidence rootpage-Rybka-Crafty_Evidence skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Rybka-Crafty Evidence</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Organizations.html" title="Organizations">Organizations</a> * <a href="ICGA.html" title="ICGA">ICGA</a> * <a href="ICGA Investigations.html" title="ICGA Investigations">Investigations</a> * <a href="Rybka Controversy.html" title="Rybka Controversy">Rybka Controversy</a> * <a href="Pre-Fruit Rybka and Crafty.html" title="Pre-Fruit Rybka and Crafty">Pre-Fruit Rybka and Crafty</a> * Rybka-Crafty Evidence</b>
+</p><p><b><a href="Rybka-Crafty Evidence II.html" title="Rybka-Crafty Evidence II">Next &gt;</a></b>
+</p><p>by <a href="Mark Watkins.html" title="Mark Watkins">Mark Watkins</a>
+</p><p>Code to avoid en passant when using obsolete <a href="Edwards%27 Tablebases.html" title="Edwards' Tablebases">Edwards tablebases</a>.
+</p><p><a href="Crafty.html" title="Crafty">Crafty</a> 19.0 __iterate.c__
+</p>
+<pre>
+  TB_use_ok=1;
+  if (TotalWhitePawns &amp;&amp; TotalBlackPawns) {
+    wpawn=FirstOne(WhitePawns);
+    bpawn=FirstOne(BlackPawns);
+    if (FileDistance(wpawn,bpawn) == 1) {
+      if(((Rank(wpawn)==RANK2) &amp;&amp; (Rank(bpawn)&gt;RANK3)) ||
+         ((Rank(bpawn)==RANK7) &amp;&amp; (Rank(wpawn)&lt;RANK6)) ||
+         EnPassant(1)) TB_use_ok=0;
+    }
+  }
+</pre>
+<p>Note that the above code is quite particular to KP vs KP (it will fail for KPP vs KP due to FirstOne usage) and avoiding <i>en passant</i> troubles.
+</p><p>Here is disassembly from a pre-Beta Rybka by Mark Watkins, as a <a href="File:RYBKA16.EdwardsTBep.txt.html" title="File:RYBKA16.EdwardsTBep.txt">File:RYBKA16.EdwardsTBep.txt</a> or here directly:
+</p>
+<pre>
+0x0044cad2:  mov    0x6b8d54,%eax     # global pointer
+0x0044cad7:  mov    0xb10(%eax),%cl   # load TotalWhitePawns
+0x0044cadd:  add    $0x4,%esp
+0x0044cae2*  movl   $0x1,-0x1c(%ebp)  # set TB_use_OK to 1
+0x0044cae0:  test   %cl,%cl           # if TotalWhitePawns
+0x0044cae9:  je     0x44cbab
+0x0044caef:  mov    0xb11(%eax),%cl   #    &amp;&amp; TotalBlackPawns
+0x0044caf5:  test   %cl,%cl
+0x0044caf7:  je     0x44cbab
+0x0044cafd:  mov    0xa78(%eax),%edx    # load WhitePawns (32 bits)
+0x0044cb03:  mov    0xa7c(%eax),%eax    # load WhitePawns (other 32)
+0x0044cb09:  mov    %edx,-0x8(%ebp)
+0x0044cb0c:  mov    %eax,-0x4(%ebp)
+0x0044cb0f:  bsf    -0x8(%ebp),%edx     # FirstOne for WhitePawns
+0x0044cb13:  mov    $0x0,%eax
+0x0044cb18:  jne    0x44cb2a
+0x0044cb1a:  bsf    -0x4(%ebp),%edx
+0x0044cb1e:  mov    $0x20,%eax
+0x0044cb23:  jne    0x44cb2a
+0x0044cb25:  mov    $0x20,%edx
+0x0044cb2a:  add    %edx,%eax
+0x0044cb2c:  mov    %eax,%ebx           # store FirstOne in ebx (wpawn)
+0x0044cb2e:  mov    0x6b8d54,%eax       # reload global pointer
+0x0044cb33:  mov    0xa80(%eax),%ecx    # load Black Pawns (32 bits)
+0x0044cb39:  mov    0xa84(%eax),%edx    # load Black Pawns (other 32)
+0x0044cb3f:  mov    %ecx,-0x8(%ebp)
+0x0044cb42:  mov    %edx,-0x4(%ebp)
+0x0044cb45:  bsf    -0x8(%ebp),%edx     # FirstOne for BlackPawns
+0x0044cb49:  mov    $0x0,%eax
+0x0044cb4e:  jne    0x44cb60
+0x0044cb50:  bsf    -0x4(%ebp),%edx
+0x0044cb54:  mov    $0x20,%eax
+0x0044cb59:  jne    0x44cb60
+0x0044cb5b:  mov    $0x20,%edx
+0x0044cb60:  add    %edx,%eax
+0x0044cb62:  mov    %eax,%ecx           # store FirstOne in ecx (bpawn)
+0x0044cb64:  mov    %ecx,%edx
+0x0044cb66:  and    $0x7,%edx           # file of bpawn
+0x0044cb69:  mov    %ebx,%eax
+0x0044cb6b:  and    $0x7,%eax           # file of wpawn
+0x0044cb6e:  sub    %edx,%eax           # compute distance
+0x0044cb70:  cltd
+0x0044cb71:  xor    %edx,%eax
+0x0044cb73:  sub    %edx,%eax           # absolute value of distance
+0x0044cb75:  cmp    $0x1,%eax           # if FileDistance is 1
+0x0044cb78:  mov    0x6b8d54,%eax [rereload global pointer]
+0x0044cb7d:  jne    0x44cbab
+0x0044cb7f:  sar    $0x3,%ebx           # get Rank of wpawn
+0x0044cb82:  cmp    $0x1,%ebx           # if rank is RANK2
+0x0044cb85:  jne    0x44cb91
+0x0044cb87:  mov    %ecx,%edx           # copy bpawn to edx
+0x0044cb89:  and    $0xfffffff8,%edx    # get the rank of it
+0x0044cb8c:  cmp    $0x10,%edx          # if the rank exceeds RANK3
+0x0044cb8f:  jg     0x44cba8            # set TB_use_ok = 0 (@0x44cba8)
+0x0044cb91:  and    $0xfffffff8,%ecx    # get Rank of bpawn
+0x0044cb94:  cmp    $0x30,%ecx          # if rank is RANK7
+0x0044cb97:  jne    0x44cb9e
+0x0044cb99:  cmp    $0x5,%ebx           # and Rank(wpawn) is &lt; RANK6
+0x0044cb9c:  jl     0x44cba8            # set TB_use_ok = 0 (@0x44cba8)
+0x0044cb9e:  mov    0x10b(%eax),%cl     # load EnPassant(1) [1 is the ply]
+0x0044cba4:  test   %cl,%cl             # if there is no ep target
+0x0044cba6:  je     0x44cbab            # skip the next instruction
+0x0044cba8:  mov    %esi,-0x1c(%ebp)    # [sets TB_use_ok = 0]
+0x0044cbab:  mov    0x6b0951,%cl
+</pre>
+<p><b><a href="Pre-Fruit Rybka and Crafty.html" title="Pre-Fruit Rybka and Crafty">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722195943
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.006 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 7/1000000
+Preprocessor generated node count: 44/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4836-0!canonical and timestamp 20240722195943 and revision id 9267
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Rybka-Crafty_Evidence&amp;oldid=9267">https://www.chessprogramming.org/index.php?title=Rybka-Crafty_Evidence&amp;oldid=9267</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Rybka-Crafty+Evidence&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Rybka-Crafty Evidence.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Rybka-Crafty Evidence&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Rybka-Crafty Evidence.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Rybka-Crafty Evidence&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Rybka-Crafty Evidence&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Rybka-Crafty Evidence.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Rybka-Crafty Evidence.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Rybka-Crafty Evidence&amp;oldid=9267.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Rybka-Crafty Evidence&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 17 December 2018, at 16:35.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Rybka-Crafty_Evidence&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.006","walltime":"0.008","ppvisitednodes":{"value":7,"limit":1000000},"ppgeneratednodes":{"value":44,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722195943","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":58});});</script>
+</body>
+</html>

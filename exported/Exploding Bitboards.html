@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Exploding Bitboards - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Exploding_Bitboards","wgTitle":"Exploding Bitboards","wgCurRevisionId":2213,"wgRevisionId":2213,"wgArticleId":1633,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Exploding_Bitboards","wgRelevantArticleId":1633,"wgRequestId":"Zp7DcIY8AD1K7zdlkfzdswAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Exploding_Bitboards rootpage-Exploding_Bitboards skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Exploding Bitboards</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> * Exploding Bitboards</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:NTS - BEEF - WATUSI.jpg.html"><img alt="" class="thumbimage" height="186" src="wikipedia/commons/thumb/3/31/NTS_-_BEEF_-_WATUSI.jpg/300px-NTS_-_BEEF_-_WATUSI.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NTS_-_BEEF_-_WATUSI.jpg/450px-NTS_-_BEEF_-_WATUSI.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NTS_-_BEEF_-_WATUSI.jpg/600px-NTS_-_BEEF_-_WATUSI.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:NTS - BEEF - WATUSI.jpg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/Nevada_Test_Site#Area_4" rel="nofollow">Nevada Test Site - Big Explosives Experimental Facility</a> (BEEF) <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>The expanding or <b>exploding bitboards</b> were created by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a> with some help from other people in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . The idea is to generate the attacks of a sliding piece from its square outside on all its rays in parallel like the waves of a stone thrown into water. This is done in some steps with multiplications and shifts like in the <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">kindergarten bitboards</a>. At each step or distance from the original square the rays can be expanded or stopped by other pieces from an occupied bitboard. There are some nasty overflow problems at the border of the board that must be solved. This approach is slower than other techniques. The code below is taken from the chess engine <a href="Elephant.html" title="Elephant">Elephant</a> which is known for some bitboard comparisons but not for <a href="Playing Strength.html" title="Playing Strength">playing strength</a>.
+</p><p>In the example this <a href="Square Mapping Considerations.html" title="Square Mapping Considerations">big-endian file-mapping</a> is used:
+</p>
+<pre>
+    directions and shifts
+    +-----+-----+-----+
+    |&lt;&lt;= 9|&lt;&lt;= 8|&lt;&lt;= 7|
+    +-----+-----+-----+
+    |&lt;&lt;= 1|     |&gt;&gt;= 1|
+    +-----+-----+-----+
+    |&gt;&gt;= 7|&gt;&gt;= 8|&gt;&gt;= 9|
+    +-----+-----+-----+
+
+    +-------------------------+
+    | 63 62 61 60 59 58 57 56 | 8
+    | 55 54 53 52 51 50 49 48 | 7
+    | 47 46 45 44 43 42 41 40 | 6
+    | 39 38 37 36 35 35 33 32 | 5
+    | 31 30 29 28 27 26 25 24 | 4
+    | 23 22 21 20 19 18 17 16 | 3
+    | 15 14 13 12 11 10  9  8 | 2
+    |  7  6  5  4  3  2  1  0 | 1
+    +-------------------------+
+       a  b  c  d  e  f  g  h
+
+</pre>
+<p>The general trick of chasing and pushing around the bits on the board is this: First shift down and sideways far enough to get a good start. Then multiply with 2 to shift one square to the side (left in this mapping) and multiply with 2^8 = 0x100 to move the bit upwards. Use any power of 2 that helps you. Build the sum of all the multiplication factors of all moves for all bits and multiply with that number. There will probably be more bits in the result than there should be because the multiplication works on all original bits. Use a mask to get rid of all the bad bits.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bishops"><span class="tocnumber">1</span> <span class="toctext">Bishops</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Rooks"><span class="tocnumber">2</span> <span class="toctext">Rooks</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Results"><span class="tocnumber">3</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Bishops">Bishops</span></h1>
+<p>For each square there is an ignition of the explosion.
+</p>
+<pre>
+/*
+First expanding step (explosion) for a bishop
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+ . . 1 . 1 . . .
+ . . .sq . . . .
+ . . 1 . 1 . . .
+ . . . . . . . .
+ . . . . . . . .
+*/
+Bitboard initB[64];
+void makeInitB()
+{
+    for ( int sq = 0; sq &lt; 64; ++sq )
+    {
+        Bitboard bb = C64(1) &lt;&lt; sq;
+        initB[sq]  = (bb &gt;&gt; 9) &amp; C64(0x7f7f7f7f7f7f7f7f);
+        initB[sq] |= (bb &gt;&gt; 7) &amp; C64(0xfefefefefefefefe);
+        initB[sq] |= (bb &lt;&lt; 9) &amp; C64(0xfefefefefefefefe);
+        initB[sq] |= (bb &lt;&lt; 7) &amp; C64(0x7f7f7f7f7f7f7f7f);
+    }
+}
+
+</pre>
+<p>The explosion is only allowed along the rays.
+</p>
+<pre>
+/*
+Mask for bishop attack rays
+ . . . . . . . 1
+ 1 . . . . . 1 .
+ . 1 . . . 1 . .
+ . . 1 . 1 . . .
+ . . .sq . . . .
+ . . 1 . 1 . . .
+ . 1 . . . 1 . .
+ 1 . . . . . 1 .
+*/
+Bitboard maskB[64];
+void makeMaskB()
+{
+    int sq;
+    for ( sq = 0; sq &lt; 64; ++sq )
+    {
+        maskB[sq] = 0;
+        int i;
+        for ( i = sq - 9; i &gt;= 0 &amp;&amp; i % 8 != 7; i -= 9 )
+            maskB[sq] |= C64(1) &lt;&lt; i;
+        for ( i = sq - 7; i &gt;= 0 &amp;&amp; i % 8 != 0; i -= 7 )
+            maskB[sq] |= C64(1) &lt;&lt; i;
+        for ( i = sq + 9; i &lt; 64 &amp;&amp; i % 8 != 0; i += 9 )
+            maskB[sq] |= C64(1) &lt;&lt; i;
+        for ( i = sq + 7; i &lt; 64 &amp;&amp; i % 8 != 7; i += 7 )
+            maskB[sq] |= C64(1) &lt;&lt; i;
+    }
+}
+
+</pre>
+<p>For each square there is a maximum number of steps to take.
+</p>
+<pre>
+/*
+Number of expanding steps (explosions) for a bishop
+*/
+const int repsB[64] =
+{
+    6, 5, 4, 3, 3, 4, 5, 6,
+    5, 5, 4, 3, 3, 4, 5, 5,
+    4, 4, 4, 3, 3, 4, 4, 4,
+    3, 3, 3, 3, 3, 3, 3, 3,
+    3, 3, 3, 3, 3, 3, 3, 3,
+    4, 4, 4, 3, 3, 4, 4, 4,
+    5, 5, 4, 3, 3, 4, 5, 5,
+    6, 5, 4, 3, 3, 4, 5, 6,
+};
+
+</pre>
+<p>This does one step of the explosion.
+</p>
+<pre>
+/*
+= init               &gt;&gt;= 9               *= 0x5005          &amp;= mask            at |= bb
+ . . . . . . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . . . . . . .
+ . . . . . . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . . . . . . .
+ . . . . . . . .     . . . . . . . .     . 1 1 . . 1 . .    . 1 . . . 1 . .    . 1 . . . 1 . .
+ . . 1 . 1 . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . 1 . 1 . . .
+ . . . s . . . .     . . . 1 . 1 . .     1 1 . . 1 . . .    . . . s . . . .    . . . s . . . .
+ . . 1 . 1 . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . 1 . 1 . . .
+ . . . . . . . .     . . . 1 . 1 . .     . 1 1 . . 1 . .    . 1 . . . 1 . .    . 1 . . . 1 . .
+ . . . . . . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . . . . . . .
+*/
+Bitboard bishopAttacks( int sq, const Bitboard &amp;free )
+{
+    Bitboard msk = maskB[sq];
+    Bitboard bb  = initB[sq];
+    Bitboard at  = bb;
+    bb &amp;= free;
+    switch ( repsB[sq] )
+    {
+      case 6:
+        bb &gt;&gt;= 9; bb *= 0x00050005; bb &amp;= msk; at |= bb; bb &amp;= free;
+      case 5:
+        bb &gt;&gt;= 9; bb *= 0x00050005; bb &amp;= msk; at |= bb; bb &amp;= free;
+      case 4:
+        bb &gt;&gt;= 9; bb *= 0x00050005; bb &amp;= msk; at |= bb; bb &amp;= free;
+      case 3:
+        bb &gt;&gt;= 9; bb *= 0x00050005; bb &amp;= msk; at |= bb; bb &amp;= free;
+        bb &gt;&gt;= 9; bb *= 0x00050005; bb &amp;= msk; at |= bb; bb &amp;= free;
+        bb &gt;&gt;= 9; bb *= 0x00050005; bb &amp;= msk; at |= bb;
+    }
+    return at;
+}
+
+</pre>
+<p>There are some possible optimisations when the repsB[] array is modified in the corners during
+the game or search. Some numbers 7, 8, 9 combined with additional switch cases can work
+as a shortcut for bishops in the corners behind pawns.
+</p>
+<h1><span class="mw-headline" id="Rooks">Rooks</span></h1>
+<p>For each square there is an ignition of the explosion.
+</p>
+<pre>
+/*
+First expanding step (explosion) for a rook
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+ . . . 1 . . . .
+ . . 1sq 1 . . .
+ . . . 1 . . . .
+ . . . . . . . .
+ . . . . . . . .
+*/
+Bitboard initR[64];
+void makeInitR()
+{
+    for ( int sq = 0; sq &lt; 64; ++sq )
+    {
+        Bitboard bb = C64(1) &lt;&lt; sq;
+        initR[sq]  = (bb &gt;&gt; 8);
+        initR[sq] |= (bb &gt;&gt; 1) &amp; C64(0x7f7f7f7f7f7f7f7f);
+        initR[sq] |= (bb &lt;&lt; 1) &amp; C64(0xfefefefefefefefe);
+        initR[sq] |= (bb &lt;&lt; 8);
+        //logf &lt;&lt; "initR[sq] " &lt;&lt; sq &lt;&lt; endl;
+        //logf &lt;&lt; initR[sq].txt8lines() &lt;&lt; endl;
+    }
+}
+
+</pre>
+<p>The explosion is only allowed along the rays.
+</p>
+<pre>
+/*
+Mask for rook attack rays
+ . . . 1 . . . .
+ . . . 1 . . . .
+ . . . 1 . . . .
+ . . . 1 . . . .
+ 1 1 1sq 1 1 1 1
+ . . . 1 . . . .
+ . . . 1 . . . .
+ . . . 1 . . . .
+*/
+Bitboard maskR[64];
+void makeMaskR()
+{
+    int sq;
+    for ( sq = 0; sq &lt; 64; ++sq )
+    {
+        maskR[sq] = 0;
+        int i;
+        for ( i = sq - 8; i &gt;= 0; i -= 8 )
+            maskR[sq] |= C64(1) &lt;&lt; i;
+        for ( i = sq - 1; i &gt;= 0 &amp;&amp; (i &amp; 7) != 7; --i )
+            maskR[sq] |= C64(1) &lt;&lt; i;
+        for ( i = sq + 1; i &lt; 64 &amp;&amp; (i &amp; 7) != 0; ++i )
+            maskR[sq] |= C64(1) &lt;&lt; i;
+        for ( i = sq + 8; i &lt; 64; i += 8 )
+            maskR[sq] |= C64(1) &lt;&lt; i;
+    }
+}
+</pre>
+<p>For each square there is a maximum number of steps to take. The number 8 is just a variant of the 7th step.
+</p>
+<pre>
+/**
+Number of expanding steps (explosions) for a rook
+*/
+const int repsR[64] =
+{
+    7, 6, 6, 6, 6, 6, 6, 8,
+    7, 5, 5, 5, 5, 5, 5, 8,
+    7, 5, 4, 4, 4, 4, 5, 8,
+    7, 5, 4, 3, 3, 4, 5, 8,
+    7, 5, 4, 3, 3, 4, 5, 8,
+    7, 5, 4, 4, 4, 4, 5, 8,
+    7, 5, 5, 5, 5, 5, 5, 8,
+    7, 6, 6, 6, 6, 6, 6, 8,
+};
+</pre>
+<p>This does one step of the explosion.
+We have a lot of work to avoid overflows, wrap around the unwanted bits.
+</p>
+<pre>
+/*
+= init               &gt;&gt;= 8               *= 0x10281         &amp;= mask            at |= bb
+ . . . . . . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . . . . . . .
+ . . . . . . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . . . . . . .
+ . . . . . . . .     . . . . . . . .     . . . 1 . . . .    . . . 1 . . . .    . . . 1 . . . .
+ . . . 1 . . . .     . . . . . . . .     . . 1 . 1 . . .    . . . . . . . .    . . . 1 . . . .
+ . . 1 s 1 . . .     . . . 1 . . . .     . 1 . 1 . 1 . .    . 1 . s . 1 . .    . 1 1 s 1 1 . .
+ . . . 1 . . . .     . . 1 . 1 . . .     . . 1 . 1 . . .    . . . . . . . .    . . . 1 . . . .
+ . . . . . . . .     . . . 1 . . . .     . . . 1 . . . .    . . . 1 . . . .    . . . 1 . . . .
+ . . . . . . . .     . . . . . . . .     . . . . . . . .    . . . . . . . .    . . . . . . . .
+                                       and nasty overflows
+*/
+Bitboard rookAttacks( int sq, const Bitboard &amp;free )
+{
+    Bitboard msk = maskR[sq];   // The mask kills scattered bits
+    Bitboard bb  = initR[sq];   // This drives the expansion/explosion. Here is the start.
+    Bitboard at  = bb;          // Collecting the resulting attacks
+    Bitboard cl  = at;          // Clears some intermediate overflows
+    Bitboard ov;                // A nasty overflow bit when 4 directions in first step are possible.
+                                // Not nessessary on left side of board for repsR[sq] = 4 or 5.
+                                // Invent new numbers?
+    // Perhaps it would be easier and faster to use rankR[][] on all ranks.
+    // But I like the 'explosive' algorithm. And I want to show that it works.
+int repsLeft = 0; // will be overwritten
+    bb &amp;= free;
+    bb &gt;&gt;= 8;
+    switch ( repsR[sq] )
+    {
+      case 8:
+        bb *= 0x00010081;
+        repsLeft = 5;
+        break;
+      case 7:
+        bb *= 0x00010201;
+        repsLeft = 5;
+        break;
+      case 6:
+        bb *= 0x00010281;
+        bb &amp;= ~(C64(1) &lt;&lt; (sq - 6));      // Clears for b-squares a nasty overflow from south-west-first-step to h file
+        repsLeft = 5;
+        break;
+      case 5:
+        bb *= 0x00010281;
+        ov = (C64(1) &lt;&lt; (sq + 3));
+        bb |= (bb &amp; ov) &gt;&gt; 1;
+        bb &amp;= ~ov;
+        bb &amp;= ~(C64(1) &lt;&lt; (sq - 6));      // Clears for b-squares a nasty overflow from south-west-first-step to h file
+        repsLeft = 4;
+        break;
+      case 4:
+        bb *= 0x00010281;
+        ov = (C64(1) &lt;&lt; (sq + 3));
+        bb |= (bb &amp; ov) &gt;&gt; 1;
+        bb &amp;= ~ov;
+        repsLeft = 3;
+        break;
+      case 3:
+        bb *= 0x00010281;
+        ov = (C64(1) &lt;&lt; (sq + 3));
+        bb |= (bb &amp; ov) &gt;&gt; 1;
+        bb &amp;= ~ov;
+        repsLeft = 2;
+        break;
+      }
+      default:
+      /* reaching here is an error */
+      break;
+    }
+    bb &amp;= msk; at |= bb;
+    while(repsLeft-- &gt; 0)
+    {
+        bb &amp;= free; bb &amp;= ~cl;
+        cl = at;
+        bb &gt;&gt;= 8; bb *= 0x00010281; bb &amp;= msk; at |= bb;
+    }
+    if ( sq &lt; 8 ) // or do this before the switch
+    {
+        int a1a8 = free ;
+        at |= rankR[sq][a1a8 &amp; 0x7e];
+    }
+    return at;
+}
+</pre>
+<p>There are some possible optimisations when the repsR[] array is modified in the corners during
+the game or search. Some numbers 9, 10, 11 combined with additional switch cases can work
+as a shortcut for rooks in the corners behind pawns.
+</p><p>In the function rookAttacks() rankR is the well know simple lookup table from other bitboard algorithms.
+</p>
+<pre>
+int rankR[8][128];
+void makeRankR()
+{
+    for ( int sq = 0; sq &lt; 8; ++sq )
+    {
+        for ( int i = 0; i &lt; 128; i += 2 )
+        {
+            int rr = 0;
+            int j;
+            for ( j = sq - 1; j &gt;= 0; --j )
+            {
+                rr |= (1 &lt;&lt; j);
+                if ( !(i &amp; (1 &lt;&lt; j)) )  // the 1 bits are the free squares
+                    break;
+            }
+            for ( j = sq + 1; j &lt; 8; ++j )
+            {
+                rr |= (1 &lt;&lt; j);
+                if ( !(i &amp; (1 &lt;&lt; j)) )  // the 1 bits are the free squares
+                    break;
+            }
+            rankR[sq][i  ] = rr;
+            rankR[sq][i+1] = rr;
+        }
+    }
+}
+</pre>
+<h1><span class="mw-headline" id="Results">Results</span></h1>
+<p>The results can be masked or combined just like in other attack bitboards.
+</p>
+<pre>
+/*
+Get a bitboard with all positions set to 1 which can be attacked
+from a rook or queen on the square.
+*/
+Bitboard Board::orthogonal_attacks( byte square ) const
+{
+    Bitboard free = ~(wpieces_ | bpieces_); // from the board representation in the board class
+    Bitboard result = rookAttacks( square, free );
+    return result;
+}
+
+/*
+Get a bitboard with all positions set to 1 which can be attacked
+from a bishop or queen on the square.
+*/
+Bitboard Board::diagonal_attacks( byte square ) const
+{
+    Bitboard free = ~(wpieces_ | bpieces_); // from the board representation in the board class
+    Bitboard result = bishopAttacks( square, free );
+    return result;
+}
+</pre>
+<p>Another usage requires masks
+</p>
+<pre>
+const Bitboard dirMaskRight[8] =
+{
+    // 0, line_h, line_gh, line_fh, line_eh, line_dh, line_ch, line_bh,
+    0, C64(0x0101010101010101), C64(0x0303030303030303), C64(0x0707070707070707), C64(0x0f0f0f0f0f0f0f0f),
+    C64(0x1f1f1f1f1f1f1f1f), C64(0x3f3f3f3f3f3f3f3f), C64(0x7f7f7f7f7f7f7f7f)
+};
+
+const Bitboard dirMaskLeft[8] =
+{
+    // line_ag, line_af, line_ae, line_ad, line_ac, line_ab, line_a, 0,
+    C64(0xfefefefefefefefe), C64(0xfcfcfcfcfcfcfcfc), C64(0xf8f8f8f8f8f8f8f8), C64(0xf0f0f0f0f0f0f0f0),
+    C64(0xe0e0e0e0e0e0e0e0), C64(0xc0c0c0c0c0c0c0c0), C64(0x8080808080808080), 0
+};
+
+const Bitboard dirMaskUp[8] =
+{
+    // row_28, row_38, row_48, row_58, row_68, row_78, row_8, 0,
+    C64(0xffffffffffffff00), C64(0xffffffffffff0000), C64(0xffffffffff000000), C64(0xffffffff00000000),
+    C64(0xffffff0000000000), C64(0xffff000000000000), C64(0xff00000000000000), 0
+};
+
+const Bitboard dirMaskDown[8] =
+{
+    // 0, row_1, row_12, row_13, row_14, row_15, row_16, row_17,
+    0, C64(0x00000000000000ff), C64(0x000000000000ffff), C64(0x0000000000ffffff), C64(0x00000000ffffffff),
+    C64(0x000000ffffffffff), C64(0x0000ffffffffffff), C64(0x00ffffffffffffff)
+};
+</pre>
+<p>to generate attacks in one direction.
+</p>
+<pre>
+/*
+Get a bitboard with all positions set to 1 which can be attacked
+from a bishop, rook or queen on the square moving in the direction.
+*/
+Bitboard Board::direction_attacks( byte square, byte dir ) const
+{
+    Bitboard result;
+    Bitboard free = ~(wpieces_ | bpieces_); // from the board representation in the board class
+    // 4 3 2
+    // 5 0 1
+    // 6 7 8
+    switch ( dir )
+    {
+      case 1:
+        result = rookAttacks( square, free );
+        result &amp;= dirMaskRight[square &amp; 7];
+        break;
+      case 5:
+        result = rookAttacks( square, free );
+        result &amp;= dirMaskLeft[square &amp; 7];
+        break;
+      case 7:
+        result = rookAttacks( square, free );
+        result &amp;= dirMaskDown[square &gt;&gt; 3];
+        break;
+      case 3:
+        result = rookAttacks( square, free );
+        result &amp;= dirMaskUp[square &gt;&gt; 3];
+        break;
+      case 8:
+        result = bishopAttacks( square, free );
+        result &amp;= dirMaskRight[square &amp; 7];
+        result &amp;= dirMaskDown[square &gt;&gt; 3];
+        break;
+      case 4:
+        result = bishopAttacks( square, free );
+        result &amp;= dirMaskLeft[square &amp; 7];
+        result &amp;= dirMaskUp[square &gt;&gt; 3];
+        break;
+      case 2:
+        result = bishopAttacks( square, free );
+        result &amp;= dirMaskRight[square &amp; 7];
+        result &amp;= dirMaskUp[square &gt;&gt; 3];
+        break;
+      case 6:
+        result = bishopAttacks( square, free );
+        result &amp;= dirMaskLeft[square &amp; 7];
+        result &amp;= dirMaskDown[square &gt;&gt; 3];
+        break;
+      default:
+        result = 0;
+        break;
+    }
+    return result;
+}
+</pre>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Explosion" rel="nofollow">Explosion from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=4523&amp;start=80.html" rel="nofollow">Re: Compact Bitboard Attacks</a> by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 13, 2006</span>
+</li>
+</ol></div>
+<p><b><a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722005851
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.064 seconds
+Real time usage: 0.767 seconds
+Preprocessor visited node count: 164/1000000
+Preprocessor generated node count: 362/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1633-0!canonical and timestamp 20240722005850 and revision id 2213
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Exploding_Bitboards&amp;oldid=2213">https://www.chessprogramming.org/index.php?title=Exploding_Bitboards&amp;oldid=2213</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Exploding+Bitboards&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Exploding Bitboards.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Exploding Bitboards&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Exploding Bitboards.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Exploding Bitboards&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Exploding Bitboards&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Exploding Bitboards.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Exploding Bitboards.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Exploding Bitboards&amp;oldid=2213.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Exploding Bitboards&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 May 2018, at 15:53.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Exploding_Bitboards&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.064","walltime":"0.767","ppvisitednodes":{"value":164,"limit":1000000},"ppgeneratednodes":{"value":362,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722005851","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

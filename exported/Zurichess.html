@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Zurichess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Zurichess","wgTitle":"Zurichess","wgCurRevisionId":19326,"wgRevisionId":19326,"wgArticleId":4666,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UCI","Open Source","Go Proglanguage","NN","X86","X64","PC","Linux","Windows","ARM","Pi","Geography","Chess Suffix"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Zurichess","wgRelevantArticleId":4666,"wgRequestId":"Zp7D0V0xYjdSHhMDafgtiAAAAAI","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Zurichess rootpage-Zurichess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Zurichess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Zurichess</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Z%C3%BCrich German monophthongs chart.svg.html"><img alt="" class="thumbimage" height="221" src="wikipedia/commons/thumb/8/8c/Z%C3%BCrich_German_monophthongs_chart.svg/300px-Z%C3%BCrich_German_monophthongs_chart.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Z%C3%BCrich_German_monophthongs_chart.svg/450px-Z%C3%BCrich_German_monophthongs_chart.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Z%C3%BCrich_German_monophthongs_chart.svg/600px-Z%C3%BCrich_German_monophthongs_chart.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Z%C3%BCrich German monophthongs chart.svg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/Zurich_German" rel="nofollow">Zurich German</a> <a class="external text" href="https://en.wikipedia.org/wiki/Monophthong" rel="nofollow">monophthongs</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Zurichess</b>,<br/>
+an <a href="UCI.html" title="UCI">UCI</a> compliant <a href="Category:Open Source.html" title="Category:Open Source">open source chess engine</a> and chess library by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Moșoi</a>, written in the <a href="Go (Programming Language).html" title="Go (Programming Language)">Go</a> programming language <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> , first released in January 2015. The name Zurichess is in dependence on <a class="external text" href="https://en.wikipedia.org/wiki/Zurich_German" rel="nofollow">Züritüütsch</a>, the <a class="external text" href="https://en.wikipedia.org/wiki/High_Alemannic_German" rel="nofollow">High Alemannic dialect</a> spoken in the <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Z%C3%BCrich" rel="nofollow">Canton of Zurich</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Switzerland" rel="nofollow">Switzerland</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. Versions are named after <a class="external text" href="https://en.wikipedia.org/wiki/Cantons_of_Switzerland" rel="nofollow">Swiss Cantons</a> in alphabetical order <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Description"><span class="tocnumber">1</span> <span class="toctext">Description</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#A-B"><span class="tocnumber">1.1</span> <span class="toctext">A-B</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Fribourg"><span class="tocnumber">1.2</span> <span class="toctext">Fribourg</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Geneva"><span class="tocnumber">1.3</span> <span class="toctext">Geneva</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Glarus"><span class="tocnumber">1.4</span> <span class="toctext">Glarus</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Graubuenden"><span class="tocnumber">1.5</span> <span class="toctext">Graubuenden</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Jura"><span class="tocnumber">1.6</span> <span class="toctext">Jura</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Luzern"><span class="tocnumber">1.7</span> <span class="toctext">Luzern</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Neuch.C3.A2tel"><span class="tocnumber">1.8</span> <span class="toctext">Neuchâtel</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Forum Posts"><span class="tocnumber">3</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#2015"><span class="tocnumber">3.1</span> <span class="toctext">2015</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2016"><span class="tocnumber">3.2</span> <span class="toctext">2016</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2017"><span class="tocnumber">3.3</span> <span class="toctext">2017</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2018 ..."><span class="tocnumber">3.4</span> <span class="toctext">2018 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2019"><span class="tocnumber">3.5</span> <span class="toctext">2019</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Chess Engine"><span class="tocnumber">4.1</span> <span class="toctext">Chess Engine</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Misc"><span class="tocnumber">4.2</span> <span class="toctext">Misc</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#Aargau"><span class="tocnumber">4.2.1</span> <span class="toctext">Aargau</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Appenzell"><span class="tocnumber">4.2.2</span> <span class="toctext">Appenzell</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#Basel"><span class="tocnumber">4.2.3</span> <span class="toctext">Basel</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Bern"><span class="tocnumber">4.2.4</span> <span class="toctext">Bern</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Fribourg 2"><span class="tocnumber">4.2.5</span> <span class="toctext">Fribourg</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#Geneva 2"><span class="tocnumber">4.2.6</span> <span class="toctext">Geneva</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Glarus 2"><span class="tocnumber">4.2.7</span> <span class="toctext">Glarus</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#Graub.C3.BCnden"><span class="tocnumber">4.2.8</span> <span class="toctext">Graubünden</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#Jura 2"><span class="tocnumber">4.2.9</span> <span class="toctext">Jura</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Luzern 2"><span class="tocnumber">4.2.10</span> <span class="toctext">Luzern</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#Neuch.C3.A2tel 2"><span class="tocnumber">4.2.11</span> <span class="toctext">Neuchâtel</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Zurich"><span class="tocnumber">4.2.12</span> <span class="toctext">Zurich</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<h2><span class="mw-headline" id="A-B">A-B</span></h2>
+<p>Zurichess uses <a href="Bitboards.html" title="Bitboards">bitboards</a> with <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">De Bruijn bitscan</a> for <a href="Bitboard Serialization.html" title="Bitboard Serialization">serialization</a>, and <a href="Magic Bitboards.html#Fancy" title="Magic Bitboards">fancy magic bitboards</a> to determine <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">sliding piece attacks</a>. The <a href="Search.html" title="Search">search</a>  applies <a href="Fail-Soft.html" title="Fail-Soft">fail soft</a> <a href="Negamax.html" title="Negamax">negamax</a> <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> plus <a href="Transposition Table.html" title="Transposition Table">transposition table</a> inside the <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> loop with <a href="Aspiration Windows.html" title="Aspiration Windows">aspiration windows</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. <a href="Move Ordering.html" title="Move Ordering">Move ordering</a> is improved by the <a href="Killer Heuristic.html" title="Killer Heuristic">killer heuristic</a> and considers <a href="MVV-LVA.html" title="MVV-LVA">MVV/LVA</a> for <a href="Captures.html" title="Captures">captures</a>. <a href="Evaluation.html" title="Evaluation">Evaluation</a> relies on the <a class="new" href="index.php?title=Simplified evaluation function&amp;action=edit&amp;redlink=1.html" title="Simplified evaluation function (page does not exist)">simplified evaluation function</a> using a <a href="Tapered Eval.html" title="Tapered Eval">tapered eval</a> interpolating between <a href="Opening.html" title="Opening">opening</a> and <a href="Endgame.html" title="Endgame">endgame</a> <a href="Score.html" title="Score">scores</a> of <a href="Material.html" title="Material">material</a> and <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a>. While the first  public release <b>Aargau</b> lacked all kinds of <a href="Pruning.html" title="Pruning">forward pruning</a>, <a href="Reductions.html" title="Reductions">reductions</a> and <a href="Extensions.html" title="Extensions">extensions</a>, subsequent versions, <b>Appenzeller</b> and <b>Basel</b> improved on various search and evaluation topics, now addressing <a href="Null Move Pruning.html" title="Null Move Pruning">null move pruning</a> and <a href="Mobility.html" title="Mobility">mobility</a> beside a lot of other things and optimizations, not to mention fixing bugs <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>. <b>Bern</b> release in June 2015 is about 130 Elo stronger than Basel <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>.  
+<span id="Fribourg"></span>
+</p>
+<h2><span class="mw-headline" id="Fribourg">Fribourg</span></h2>
+<p>Zurichess <b>Fribourg</b>, released on August 30, 2015, now has <a href="Passed Pawn.html" title="Passed Pawn">passed pawn</a> evaluation, considering <a href="Connected Passed Pawns.html" title="Connected Passed Pawns">connected</a> and <a href="Isolated Pawn.html" title="Isolated Pawn">isolated</a> pawns. <a href="Automated Tuning.html" title="Automated Tuning">Tuning</a> was done using <a href="Texel%27s Tuning Method.html" title="Texel's Tuning Method">Texel's tuning method</a> implemented by <b>txt</b> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>. <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> was added, as well as <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">static exchange evaluation</a> (SEE) to sort <a href="Captures.html" title="Captures">captures</a>, to <a href="Pruning.html" title="Pruning">prune</a> bad captures (SEE &lt; 0) in <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a> and to aggressively <a href="Reductions.html" title="Reductions">reduce</a> bad <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a> (SEE &lt; 0) at higher depths. Further, <a href="Move Generation.html#Staged" title="Move Generation">staged move generation</a> and <a href="Pondering.html" title="Pondering">pondering</a> were added, and <a href="Repetitions.html" title="Repetitions">two-fold repetitions</a> at non-root nodes pruned. Zurichess Fribourg is about 200 Elo stronger than Bern <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> .
+<span id="Geneva"></span>
+</p>
+<h2><span class="mw-headline" id="Geneva">Geneva</span></h2>
+<p>Zurichess <b>Geneva</b>, released on November 29, 2015, and now aware of the <a href="Fifty-move Rule.html" title="Fifty-move Rule">fifty-move draw rule</a>, has added basic <a href="Futility Pruning.html" title="Futility Pruning">futility pruning</a> and relaxed <a href="Null Move Pruning.html" title="Null Move Pruning">null move conditions</a> allowing <a href="Double Null Move.html" title="Double Null Move">double null moves</a>. In eval, <a href="Automated Tuning.html" title="Automated Tuning">tuning</a> switched from <b>txt</b> to <a class="external text" href="https://en.wikipedia.org/wiki/TensorFlow" rel="nofollow">TensorFlow</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> - a two layers <a href="Neural Networks.html" title="Neural Networks">neural network</a> is used, where the second layer is responsible for a <a href="Tapered Eval.html" title="Tapered Eval">tapered eval</a> to phase <a href="Endgame.html" title="Endgame">endgame</a> and <a href="Middlegame.html" title="Middlegame">middlegame</a> <a href="Score.html" title="Score">scores</a> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>. Rooks were evaluated on <a href="Rook on Open File.html" title="Rook on Open File">open and half-open files</a>, and <a href="Mobility.html" title="Mobility">mobility</a> calculation was improved. Zurichess Geneva is about 100 Elo stronger than Fribourg <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>.
+<span id="Glarus"></span>
+</p>
+<h2><span class="mw-headline" id="Glarus">Glarus</span></h2>
+<p>Announced and released on April 17, 2016, Zurichess <b>Glarus</b> has improved <a href="Futility Pruning.html" title="Futility Pruning">futility conditions</a> and added <a href="History Leaf Pruning.html" title="History Leaf Pruning">history leaf pruning</a>, further improving <a href="Pawn Hash Table.html" title="Pawn Hash Table">pawn hash table</a> utilization by caching <a href="King Safety.html#PawnShield" title="King Safety">pawn shelter</a>, <a href="King Safety.html" title="King Safety">king safety</a> by considering number of simultaneous attackers, and <a href="Time Management.html" title="Time Management">time control</a>. Glarus is about 80 Elo stronger than Geneva in self-play <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>. 
+<span id="Graubuenden"></span>
+</p>
+<h2><span class="mw-headline" id="Graubuenden">Graubuenden</span></h2>
+<p>Zurichess <b>Graubuenden</b> was released on August 16, 2016 with various tweaks, search and evaluation improvements such as <a href="Transposition Table.html" title="Transposition Table">hashing</a> in <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, and new features like skill levels and <a href="Principal Variation.html#MultiPV" title="Principal Variation">multi-PV</a>. Further, a new version of the Go compiler yields in increased search speed. In self-play Graubuenden is about 110 Elo stronger than Glarus <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>.
+<span id="Jura"></span>
+</p>
+<h2><span class="mw-headline" id="Jura">Jura</span></h2>
+<p>Zurichess <b>Jura</b> appeared on February 18, 2017 with improved <a href="Selectivity.html" title="Selectivity">selectivity</a>, <a href="Move Ordering.html" title="Move Ordering">move ordering</a> and evaluation, introducing <a href="Razoring.html" title="Razoring">razoring</a>, <a href="Countermove Heuristic.html" title="Countermove Heuristic">countermove heuristic</a>, <a href="King Safety.html#KingTropism" title="King Safety">king-queen tropism</a> and <a href="Piece-Square Tables.html" title="Piece-Square Tables">rook-square tables</a> plus various tweaks and re-tuning. In self play at fast time controls Jura is about 85 Elo stronger than Graubuenden <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup>. 
+<span id="Luzern"></span>
+</p>
+<h2><span class="mw-headline" id="Luzern">Luzern</span></h2>
+<p>Zurichess <b>Luzern</b>, released on May 08, 2017, further enhanced its search and evaluation, in particular a 16% faster search and considering defended minors, <a href="Pawn Attacks (Bitboards).html" title="Pawn Attacks (Bitboards)">pawn attacks</a> an potential pawn attacks. In self play Luzern is about 64 Elo stronger than Jura <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>.
+<span id="Neuchatel"></span>
+</p>
+<h2><span class="mw-headline" id="Neuch.C3.A2tel">Neuchâtel</span></h2>
+<p>Zurichess <b>Neuchâtel</b> became a stable release in September 2017 <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup> with an expected gain of 50 Elo <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="ETH Zurich.html" title="ETH Zurich">ETH Zurich</a></li>
+<li> <a href="Winter.html" title="Winter">Winter</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2015">2015</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54990.html" rel="nofollow">zurichess - new chess engine</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 16, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55404.html" rel="nofollow">zurichess appenzeller - new version</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, February 21, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55696&amp;start=81.html" rel="nofollow">Re: txt: automated chess engine tuning</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, April 11, 2015 » <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56136.html" rel="nofollow">zurichess basel released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, April 27, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56617.html" rel="nofollow">zurichess bern released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57440.html" rel="nofollow">zurichess fribourg released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58415.html" rel="nofollow">zurichess geneva released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2015</li></ul>
+<h2><span class="mw-headline" id="2016">2016</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58826.html" rel="nofollow">hacking on zurichess</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 06, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59600.html" rel="nofollow">trivia: ELO boost from a better compiler</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2016 » <a href="Go (Programming Language).html" title="Go (Programming Language)">Go (Programming Language)</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59647.html" rel="nofollow">king safety: hard positions for zurichess</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 27, 2016 » <a href="King Safety.html" title="King Safety">King Safety</a>, <a href="Test-Positions.html" title="Test-Positions">Test-Positions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59885.html" rel="nofollow">zurichess glarus released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60883&amp;start=1.html" rel="nofollow">Re: Deep Learning Chess Engine ?</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2016</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60883&amp;start=4.html" rel="nofollow">Re: Deep Learning Chess Engine ?</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2016</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61141.html" rel="nofollow">zurichess graubuenden released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 16, 2016</li></ul>
+<h2><span class="mw-headline" id="2017">2017</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62875.html" rel="nofollow">zurichess jura - preview release</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 19, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63202.html" rel="nofollow">zurichess jura released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, February 18, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63408.html" rel="nofollow">improved evaluation function</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 11, 2017 » <a href="Texel%27s Tuning Method.html" title="Texel's Tuning Method">Texel's Tuning Method</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63502.html" rel="nofollow">speed up or avoiding move sorting</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2017 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63931.html" rel="nofollow">zurichess - new version release</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65033.html" rel="nofollow">zurichess neuchatel - preview release</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65886.html" rel="nofollow">need some help assessing the evaluation</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, December 02, 2017</li></ul>
+<h2><span class="mw-headline" id="2018_...">2018 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68561.html" rel="nofollow">Zurichess Nidwalden</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, October 03, 2018</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68561&amp;start=8.html" rel="nofollow">Re: Zurichess Nidwalden</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2018</dd></dl>
+<h2><span class="mw-headline" id="2019">2019</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69612.html" rel="nofollow">MCTS: How to deal with extreme imbalances</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 16, 2019 » <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Engine">Chess Engine</span></h2>
+<ul><li> <a class="external text" href="https://bitbucket.org/brtzsnr/zurichess/" rel="nofollow">brtzsnr / zurichess — Bitbucket</a></li>
+<li> <a class="external text" href="https://bitbucket.org/zurichess/zurichess" rel="nofollow">zurichess / zurichess — Bitbucket</a></li>
+<li> <a class="external text" href="http://www.computerchess.org.uk/ccrl/4040/cgi/compare engines.cgi?family=Zurichess&amp;print=Rating+list&amp;print=Results+table&amp;print=LOS+table&amp;print=Ponder+hit+table&amp;print=Eval+difference+table&amp;print=Comopp+gamenum+table&amp;print=Overlap+table&amp;print=Score+with+common+opponents.html" rel="nofollow">Zurichess</a> in <a href="CCRL.html" title="CCRL">CCRL 40/40</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<h3><span class="mw-headline" id="Aargau">Aargau</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Aargau" rel="nofollow">Aargau from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Appenzell">Appenzell</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Appenzell_%28disambiguation%29" rel="nofollow">Appenzell (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Appenzell_%28town%29" rel="nofollow">Appenzell (town) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Appenzeller_cheese" rel="nofollow">Appenzeller cheese from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Basel">Basel</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Basel_%28disambiguation%29" rel="nofollow">Basel (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Basel" rel="nofollow">Basel from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Basel" rel="nofollow">Canton of Basel from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Bern">Bern</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Bern_%28disambiguation%29" rel="nofollow">Bern (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Bern" rel="nofollow">Bern from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Bern" rel="nofollow">Canton of Bern from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Fribourg_2">Fribourg</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Freiburg_%28disambiguation%29" rel="nofollow">Fribourg (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fribourg" rel="nofollow">Fribourg from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Fribourg" rel="nofollow">Canton of Fribourg from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Geneva_2">Geneva</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Geneva_%28disambiguation%29" rel="nofollow">Geneva (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Geneva" rel="nofollow">Geneva from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Geneva" rel="nofollow">Canton of Geneva from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Geneva_Conventions" rel="nofollow">Geneva Conventions from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Geneva_Protocol" rel="nofollow">Geneva Protocol from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Glarus_2">Glarus</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Glarus" rel="nofollow">Glarus from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Glarus" rel="nofollow">Canton of Glarus from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Glarus_Alps" rel="nofollow">Glarus Alps from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Glarus_thrust" rel="nofollow">Glarus thrust from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Graub.C3.BCnden">Graubünden</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Grisons" rel="nofollow">Graubünden (Grisons) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Three_Leagues" rel="nofollow">Three Leagues from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Jura_2">Jura</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Jura" rel="nofollow">Canton of Jura from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Jura_Mountains" rel="nofollow">Jura Mountains from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Luzern_2">Luzern</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Lucerne" rel="nofollow">Lucerne from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Lucerne" rel="nofollow">Canton of Lucerne from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Neuch.C3.A2tel_2">Neuchâtel</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Neuch%C3%A2tel_(disambiguation)" rel="nofollow">Neuchâtel (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Neuch%C3%A2tel" rel="nofollow">Neuchâtel from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Neuch%C3%A2tel" rel="nofollow">Canton of Neuchâtel from Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Zurich">Zurich</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Zurich_%28disambiguation%29" rel="nofollow">Zurich (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Z%C3%BCrich" rel="nofollow">Zürich from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Canton_of_Z%C3%BCrich" rel="nofollow">Canton of Zürich from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.uni-marburg.de/fb09/igs/mitarbeiter/fleischer/index html.html" rel="nofollow">Jürg Fleischer</a>, <a class="external text" href="https://www.philosophie.hu-berlin.de/institut/lehrbereiche/theorie/mitarbeiter/schmid" rel="nofollow">Stephan Schmid</a> (<b>2006</b>). <i> <a class="external text" href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=591416&amp;fileId=S0025100306002441.html" rel="nofollow">Illustrations of the IPA: Zurich German</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Journal_of_the_International_Phonetic_Association" rel="nofollow">Journal of the International Phonetic Association</a>, Vol. 36, No. 2, page 256; doi:10.1017/S0025100306002441, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Zurich_German" rel="nofollow">Zurich German from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://bitbucket.org/brtzsnr/zurichess/" rel="nofollow">brtzsnr / zurichess — Bitbucket</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54990&amp;start=17.html" rel="nofollow">Re: Mr.Ruxy versus Zurichess</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2015</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://bitbucket.org/zurichess/zurichess/src/d80fadb47a1ecac6692cd582554d806b8e95ed62/CHANGELOG.md?at=master&amp;fileviewer=file-view-default" rel="nofollow">zurichess / zurichess / source / CHANGELOG.md — Bitbucket</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=499768&amp;t=46624.html" rel="nofollow">Re: Aspiration window - effect? Issue with hashtables?! LONG POST</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, December 29, 2012</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56136.html" rel="nofollow">zurichess basel released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, April 27, 2015</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56617.html" rel="nofollow">zurichess bern released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2015</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55696.html" rel="nofollow">txt: automated chess engine tuning</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 18, 2015</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://bitbucket.org/zurichess/txt" rel="nofollow">zurichess / txt — Bitbucket</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57440.html" rel="nofollow">zurichess fribourg released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2015</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58211.html" rel="nofollow">tensorflow</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, November 10, 2015</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60883&amp;start=1.html" rel="nofollow">Re: Deep Learning Chess Engine ?</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2016</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58415.html" rel="nofollow">zurichess geneva released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2015</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59885.html" rel="nofollow">zurichess glarus released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2016</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61141.html" rel="nofollow">zurichess graubuenden released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 16, 2016</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63202.html" rel="nofollow">zurichess jura released</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, February 18, 2017</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63931.html" rel="nofollow">zurichess - new version release</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2017</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://bitbucket.org/zurichess/zurichess/commits/f5f1b02de17478f3166c06d138d95178ea0c7941" rel="nofollow">zurichess / zurichess / commit / f5f1b02de174 — Bitbucket</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65033.html" rel="nofollow">zurichess neuchatel - preview release</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2017</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722005605
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.089 seconds
+Real time usage: 0.868 seconds
+Preprocessor visited node count: 404/1000000
+Preprocessor generated node count: 772/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4666-0!canonical and timestamp 20240722005604 and revision id 19326
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Zurichess&amp;oldid=19326">https://www.chessprogramming.org/index.php?title=Zurichess&amp;oldid=19326</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:Go Proglanguage.html" title="Category:Go Proglanguage">Go Proglanguage</a></li><li><a href="Category:NN.html" title="Category:NN">NN</a></li><li><a href="Category:X86.html" title="Category:X86">X86</a></li><li><a href="Category:X64.html" title="Category:X64">X64</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Linux.html" title="Category:Linux">Linux</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a class="new" href="index.php?title=Category:ARM&amp;action=edit&amp;redlink=1.html" title="Category:ARM (page does not exist)">ARM</a></li><li><a href="Category:Pi.html" title="Category:Pi">Pi</a></li><li><a href="Category:Geography.html" title="Category:Geography">Geography</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Zurichess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Zurichess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Zurichess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Zurichess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Zurichess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Zurichess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Zurichess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Zurichess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Zurichess&amp;oldid=19326.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Zurichess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 June 2020, at 10:24.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Zurichess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.089","walltime":"0.868","ppvisitednodes":{"value":404,"limit":1000000},"ppgeneratednodes":{"value":772,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722005605","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":47});});</script>
+</body>
+</html>

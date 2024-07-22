@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Float - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Float","wgTitle":"Float","wgCurRevisionId":11775,"wgRevisionId":11775,"wgArticleId":3807,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Float","wgRelevantArticleId":3807,"wgRequestId":"Zp7DVar3TkUYSeSKrHxdKgAAAA8","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Float rootpage-Float skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Float</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * Float</b>
+</p><p><b>Float</b> is a 32-bit data type representing the <a class="external text" href="https://en.wikipedia.org/wiki/Single_precision_floating-point_format" rel="nofollow">single precision floating-point format</a>, in <a class="external text" href="https://en.wikipedia.org/wiki/IEEE_754-1985" rel="nofollow">IEEE 754-1985</a> called single, in <a class="external text" href="https://en.wikipedia.org/wiki/IEEE_754-2008" rel="nofollow">IEEE 754-2008</a> the 32-bit base 2 format is officially referred to as binary32. Due to <a class="external text" href="https://en.wikipedia.org/wiki/Normal_number_%28computing%29" rel="nofollow">normalization</a> the true <a class="external text" href="https://en.wikipedia.org/wiki/Significand" rel="nofollow">significand</a> includes an implicit leading one bit unless the exponent is stored with all bits zeros (0x00) or ones (0xff) which are reserved for <a class="external text" href="https://en.wikipedia.org/wiki/Subnormal_numbers" rel="nofollow">Denormal numbers</a>. Thus only 23 bits of the significand are stored but the total precision is 24 bits (≈7.225 decimal digits). <a class="external text" href="https://en.wikipedia.org/wiki/Exponent_bias" rel="nofollow">Exponent bias</a> is 0x7f.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Format"><span class="tocnumber">1</span> <span class="toctext">Format</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#x86 Float Instruction Sets"><span class="tocnumber">2</span> <span class="toctext">x86 Float Instruction Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Integer to Float Conversion"><span class="tocnumber">2.1</span> <span class="toctext">Integer to Float Conversion</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#X87"><span class="tocnumber">2.1.1</span> <span class="toctext">X87</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#SSE"><span class="tocnumber">2.1.2</span> <span class="toctext">SSE</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#3DNow.21"><span class="tocnumber">2.1.3</span> <span class="toctext">3DNow!</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#BitScan Purpose"><span class="tocnumber">3</span> <span class="toctext">BitScan Purpose</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Format">Format</span></h1>
+<div class="floatnone"><a class="image" href="File:Float example.svg.html"><img alt="Float example.svg" class="thumbborder" height="75" src="wikipedia/commons/thumb/d/d2/Float_example.svg/590px-Float_example.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Float_example.svg/885px-Float_example.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Float_example.svg/1180px-Float_example.svg.png 2x" style="vertical-align: text-bottom" width="590"/></a></div>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Single_precision_floating-point_format" rel="nofollow">Single precision floating-point format</a>
+</p>
+<h1><span class="mw-headline" id="x86_Float_Instruction_Sets">x86 Float Instruction Sets</span></h1>
+<p>Recent <a href="X86.html" title="X86">x86</a> and <a href="X86-64.html" title="X86-64">x86-64</a> processors provide <a class="external text" href="https://en.wikipedia.org/wiki/X87" rel="nofollow">x87</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions" rel="nofollow">SSE</a> and <a class="external text" href="https://en.wikipedia.org/wiki/3DNow%21" rel="nofollow">3DNow!</a> (<a href="AMD.html" title="AMD">AMD</a> only, shared with <a href="MMX.html" title="MMX">MMX</a>/x87) floating point instruction sets. 3DNow! and SSE are <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD</a> instructions with vectors of two or four floats. Since SSE is not obligatory for x86-32, 32-bit operating systems rely on x87. x86-64 64-bit operating systems may use the faster SSE instructions, but so far only 64-bit compiler for 64-bit <a href="Windows.html" title="Windows">Windows</a> emit those instructions implicitly for floating point operations <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> . SSE instructions can be mixed with x87 or 3DNow! and are explicitly available through (inline) <a href="Assembly.html" title="Assembly">Assembly</a> or intrinsics of various <a href="C.html" title="C">C</a>-Compilers.
+</p>
+<h2><span class="mw-headline" id="Integer_to_Float_Conversion">Integer to Float Conversion</span></h2>
+<h3><span class="mw-headline" id="X87">X87</span></h3>
+<p>To convert a signed or unsigned integer to float, two x87 instructions are needed, FILD and FSTP working on the x87 floating point stack <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> .
+</p><p><b>FILD</b>
+The FILD instruction converts a signed-integer in memory to <a class="external text" href="https://en.wikipedia.org/wiki/Extended_precision" rel="nofollow">double-extended-precision</a> (80-bit) format and pushes the value onto the x87 register stack. The value can be a 16-bit, 32-bit, or 64- bit integer value. Signed values from memory can always be represented exactly in x87 registers without rounding.
+</p><p><b>FSTP</b>
+The FSTP instruction pops the x87 stack after copying the value. The instruction FSTP ST(0) is the same as popping the stack with no data transfer. If the specified destination is a single-precision or double-precision memory location, the instruction converts the value to the appropriate precision format. It does this by rounding the significand of the source value as specified by the rounding mode determined by the RC field of the x87 control word and then converting to the format of destination. It also converts the exponent to the width and bias of the destination format.
+</p>
+<h3><span class="mw-headline" id="SSE">SSE</span></h3>
+<p><b>CVTDQ2PS</b>
+Converts four packed signed doubleword integers in the source operand (second operand) to four packed single-precision floating-point values in the destination operand (first operand).
+</p>
+<ul><li> Mnemonic: CVTDQ2PS xmm1, xmm2</li>
+<li> Intrinsic: <a class="external text" href="http://msdn.microsoft.com/en-us/library/36bwxcx5.aspx.html" rel="nofollow">_mm_cvtepi32_ps</a></li></ul>
+<p><b>CVTPI2PS</b>
+Converts two packed signed doubleword integers in the source operand (second operand) to two packed single-precision floating-point values in the destination operand (first operand).
+</p>
+<ul><li> Mnemonic: CVTPI2PS xmm, mm</li>
+<li> Intrinsic: <a class="external text" href="http://msdn.microsoft.com/de-de/library/ae2ksssb.aspx.html" rel="nofollow">_mm_cvtpd_ps</a></li></ul>
+<h3><span class="mw-headline" id="3DNow.21">3DNow!</span></h3>
+<p><b>PI2FD</b>
+Converts packed 32-bit integer values to packed floating-point, single-precision values
+</p>
+<ul><li> Mnemonic: PI2FD mm1, mm2</li>
+<li> Intrinsic: <a class="external text" href="http://msdn.microsoft.com/en-us/library/72a8t1hy.aspx.html" rel="nofollow">_m_pi2fd</a></li></ul>
+<p><span id="BitScan"></span>
+</p>
+<h1><span class="mw-headline" id="BitScan_Purpose">BitScan Purpose</span></h1>
+<p>Integer to Float conversion can be used as base 2 logarithm of a power of two value of a 32-bit signed or unsigned integer, which might even base of a 64-bit <a href="BitScan.html" title="BitScan">bitscan</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . The 23 lower significant bits are always zero, the exponent contains the biased bitindex: 
+</p>
+<table class="wikitable">
+<tr>
+<th> i
+</th>
+<th> 2^i as hexstring
+</th>
+<th> tofloat as hexstring
+</th>
+<th> exponent - 127
+</th></tr>
+<tr>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0x00000001
+</td>
+<td style="text-align:right;"> 0x3f800000
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 0x00000002
+</td>
+<td style="text-align:right;"> 0x40000000
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 0x00000004
+</td>
+<td style="text-align:right;"> 0x40800000
+</td>
+<td style="text-align:right;"> 2
+</td></tr>
+<tr>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 0x00000008
+</td>
+<td style="text-align:right;"> 0x41000000
+</td>
+<td style="text-align:right;"> 3
+</td></tr>
+<tr>
+<td style="text-align:right;"> 4
+</td>
+<td style="text-align:right;"> 0x00000010
+</td>
+<td style="text-align:right;"> 0x41800000
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td style="text-align:right;"> 5
+</td>
+<td style="text-align:right;"> 0x00000020
+</td>
+<td style="text-align:right;"> 0x42000000
+</td>
+<td style="text-align:right;"> 5
+</td></tr>
+<tr>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:right;"> 0x00000040
+</td>
+<td style="text-align:right;"> 0x42800000
+</td>
+<td style="text-align:right;"> 6
+</td></tr>
+<tr>
+<td style="text-align:right;"> 7
+</td>
+<td style="text-align:right;"> 0x00000080
+</td>
+<td style="text-align:right;"> 0x43000000
+</td>
+<td style="text-align:right;"> 7
+</td></tr>
+<tr>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> 0x00000100
+</td>
+<td style="text-align:right;"> 0x43800000
+</td>
+<td style="text-align:right;"> 8
+</td></tr>
+<tr>
+<td style="text-align:right;"> 9
+</td>
+<td style="text-align:right;"> 0x00000200
+</td>
+<td style="text-align:right;"> 0x44000000
+</td>
+<td style="text-align:right;"> 9
+</td></tr>
+<tr>
+<td style="text-align:right;"> 10
+</td>
+<td style="text-align:right;"> 0x00000400
+</td>
+<td style="text-align:right;"> 0x44800000
+</td>
+<td style="text-align:right;"> 10
+</td></tr>
+<tr>
+<td style="text-align:right;"> 11
+</td>
+<td style="text-align:right;"> 0x00000800
+</td>
+<td style="text-align:right;"> 0x45000000
+</td>
+<td style="text-align:right;"> 11
+</td></tr>
+<tr>
+<td style="text-align:right;"> 12
+</td>
+<td style="text-align:right;"> 0x00001000
+</td>
+<td style="text-align:right;"> 0x45800000
+</td>
+<td style="text-align:right;"> 12
+</td></tr>
+<tr>
+<td style="text-align:right;"> 13
+</td>
+<td style="text-align:right;"> 0x00002000
+</td>
+<td style="text-align:right;"> 0x46000000
+</td>
+<td style="text-align:right;"> 13
+</td></tr>
+<tr>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> 0x00004000
+</td>
+<td style="text-align:right;"> 0x46800000
+</td>
+<td style="text-align:right;"> 14
+</td></tr>
+<tr>
+<td style="text-align:right;"> 15
+</td>
+<td style="text-align:right;"> 0x00008000
+</td>
+<td style="text-align:right;"> 0x47000000
+</td>
+<td style="text-align:right;"> 15
+</td></tr>
+<tr>
+<td style="text-align:right;"> 16
+</td>
+<td style="text-align:right;"> 0x00010000
+</td>
+<td style="text-align:right;"> 0x47800000
+</td>
+<td style="text-align:right;"> 16
+</td></tr>
+<tr>
+<td style="text-align:right;"> 17
+</td>
+<td style="text-align:right;"> 0x00020000
+</td>
+<td style="text-align:right;"> 0x48000000
+</td>
+<td style="text-align:right;"> 17
+</td></tr>
+<tr>
+<td style="text-align:right;"> 18
+</td>
+<td style="text-align:right;"> 0x00040000
+</td>
+<td style="text-align:right;"> 0x48800000
+</td>
+<td style="text-align:right;"> 18
+</td></tr>
+<tr>
+<td style="text-align:right;"> 19
+</td>
+<td style="text-align:right;"> 0x00080000
+</td>
+<td style="text-align:right;"> 0x49000000
+</td>
+<td style="text-align:right;"> 19
+</td></tr>
+<tr>
+<td style="text-align:right;"> 20
+</td>
+<td style="text-align:right;"> 0x00100000
+</td>
+<td style="text-align:right;"> 0x49800000
+</td>
+<td style="text-align:right;"> 20
+</td></tr>
+<tr>
+<td style="text-align:right;"> 21
+</td>
+<td style="text-align:right;"> 0x00200000
+</td>
+<td style="text-align:right;"> 0x4a000000
+</td>
+<td style="text-align:right;"> 21
+</td></tr>
+<tr>
+<td style="text-align:right;"> 22
+</td>
+<td style="text-align:right;"> 0x00400000
+</td>
+<td style="text-align:right;"> 0x4a800000
+</td>
+<td style="text-align:right;"> 22
+</td></tr>
+<tr>
+<td style="text-align:right;"> 23
+</td>
+<td style="text-align:right;"> 0x00800000
+</td>
+<td style="text-align:right;"> 0x4b000000
+</td>
+<td style="text-align:right;"> 23
+</td></tr>
+<tr>
+<td style="text-align:right;"> 24
+</td>
+<td style="text-align:right;"> 0x01000000
+</td>
+<td style="text-align:right;"> 0x4b800000
+</td>
+<td style="text-align:right;"> 24
+</td></tr>
+<tr>
+<td style="text-align:right;"> 25
+</td>
+<td style="text-align:right;"> 0x02000000
+</td>
+<td style="text-align:right;"> 0x4c000000
+</td>
+<td style="text-align:right;"> 25
+</td></tr>
+<tr>
+<td style="text-align:right;"> 26
+</td>
+<td style="text-align:right;"> 0x04000000
+</td>
+<td style="text-align:right;"> 0x4c800000
+</td>
+<td style="text-align:right;"> 26
+</td></tr>
+<tr>
+<td style="text-align:right;"> 27
+</td>
+<td style="text-align:right;"> 0x08000000
+</td>
+<td style="text-align:right;"> 0x4d000000
+</td>
+<td style="text-align:right;"> 27
+</td></tr>
+<tr>
+<td style="text-align:right;"> 28
+</td>
+<td style="text-align:right;"> 0x10000000
+</td>
+<td style="text-align:right;"> 0x4d800000
+</td>
+<td style="text-align:right;"> 28
+</td></tr>
+<tr>
+<td style="text-align:right;"> 29
+</td>
+<td style="text-align:right;"> 0x20000000
+</td>
+<td style="text-align:right;"> 0x4e000000
+</td>
+<td style="text-align:right;"> 29
+</td></tr>
+<tr>
+<td style="text-align:right;"> 30
+</td>
+<td style="text-align:right;"> 0x40000000
+</td>
+<td style="text-align:right;"> 0x4e800000
+</td>
+<td style="text-align:right;"> 30
+</td></tr>
+<tr>
+<td style="text-align:right;"> 31
+</td>
+<td style="text-align:right;"> 0x80000000
+</td>
+<td style="text-align:right;"> 0x4f000000
+</td>
+<td style="text-align:right;"> 31
+</td></tr>
+<tr>
+<td style="text-align:right;"> 31
+</td>
+<td style="text-align:right;"> 0x80000000
+</td>
+<td style="text-align:right;"> 0xcf000000
+</td>
+<td style="text-align:right;"> 31
+</td></tr></table>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Double Word.html" title="Double Word">Double Word</a></li>
+<li> <a href="SSE.html" title="SSE">SSE</a></li>
+<li> <a href="SSE2.html" title="SSE2">SSE2</a></li>
+<li> <a href="Double.html" title="Double">Double</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a class="new" href="index.php?title=David Goldberg&amp;action=edit&amp;redlink=1.html" title="David Goldberg (page does not exist)">David Goldberg</a> (<b>1991</b>). <i>What every computer scientist should know about floating-point arithmetic</i>. <a href="ACM.html#Surveys" title="ACM">ACM Computing Surveys</a>, <a class="external text" href="https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Ward Douglas Maurer.html" title="Ward Douglas Maurer">Ward Douglas Maurer</a> (<b>1996</b>). <i><a class="external text" href="http://www.researchgate.net/publication/221014653 Relative Precision in the Inductive Assertion Method.html" rel="nofollow">Relative Precision in the Inductive Assertion Method</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/naa/wnaa1996.html.html" rel="nofollow">WNAA 1996</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li>
+<li> <a href="Jacek Ma%C5%84dziuk.html" title="Jacek Mańdziuk">Jacek Mańdziuk</a>, <a class="new" href="index.php?title=Daniel Osman&amp;action=edit&amp;redlink=1.html" title="Daniel Osman (page does not exist)">Daniel Osman</a> (<b>2004</b>). <i>Alpha-Beta Search Enhancements with a Real-Value Game-State Evaluation Function</i>. <a href="ICGA Journal.html#27 1" title="ICGA Journal">ICGA Journal, Vol. 27, No. 1</a>, <a class="external text" href="http://www.mini.pw.edu.pl/~mandziuk/PRACE/ICGA.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="http://www.ece.ncsu.edu/people.php/wwedmons.html" rel="nofollow">William W. Edmonson</a>, <a href="Maarten van Emden.html" title="Maarten van Emden">Maarten H. van Emden</a> (<b>2008</b>). <i>Interval Semantics for Standard Floating-Point Arithmetic</i>. <a class="external text" href="https://arxiv.org/abs/0810.4196" rel="nofollow">arXiv:0810.4196</a> </li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/cbd402de3b07b976/b31333d734e8a6cc.html" rel="nofollow">Re: Which is better, IYHO</a> by <a href="Ian Kennedy.html" title="Ian Kennedy">Ian Kennedy</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 20, 1995</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=18674" rel="nofollow">Re: Floating point VS Integer Math</a> by <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a>, <a href="CCC.html" title="CCC">CCC</a>, May 14, 1998</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22817.html" rel="nofollow">Evaluation functions. Why integer?</a> by oysteijo, <a href="CCC.html" title="CCC">CCC</a>, August 06, 2008 » <a href="Evaluation.html" title="Evaluation">Evaluation</a>, <a href="Score.html" title="Score">Score</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44841.html" rel="nofollow">OT: denormals</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50472.html" rel="nofollow">floating point SSE eval</a> by <a href="Marco Belli.html" title="Marco Belli">Marco Belli</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 2013 » <a href="Evaluation.html" title="Evaluation">Evaluation</a>, <a href="Score.html" title="Score">Score</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70504.html" rel="nofollow">Google's bfloat for neural networks</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, April 16, 2019 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Floating_point" rel="nofollow">Floating point from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Single_precision_floating-point_format" rel="nofollow">Single precision floating-point format from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format" rel="nofollow">Half-precision floating-point format from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format" rel="nofollow">bfloat16 floating-point format from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.mrob.com/pub/math/floatformats.html.html" rel="nofollow">Survey of Floating-Point Formats</a> by <a class="external text" href="http://www.mrob.com/pub/index.html.html" rel="nofollow">Robert Munafo</a></li>
+<li> <a class="external text" href="http://info.uptrend.ch/uptrend/page/display/numerische-probleme-mit-reals?v=54.html" rel="nofollow">About Floating Point Arithmetic</a> from <a href="Johann Joss.html#Blog" title="Johann Joss">Johanns Blog</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.agner.org/optimize/calling conventions.pdf.html" rel="nofollow">Calling conventions for different C++ compilers and operating systems</a> (pdf) by <a class="external text" href="http://www.agner.org/.html" rel="nofollow">Agner Fog</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.amd.com/us-en/assets/content type/white papers and tech docs/26569.pdf.html" rel="nofollow">AMD64 ArchitectureProgrammer’s Manual Volume 5: 64-Bit Media and x87 Floating-Point Instructions</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=268305" rel="nofollow">Fast 3DNow! BitScan</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a> from <a href="Computer Chess Forums.html" title="Computer Chess Forums">CCC</a>, December 01, 2002</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Hoare_logic" rel="nofollow">Floyd–Hoare logic from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Data.html" title="Data">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722112815
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.076 seconds
+Real time usage: 0.856 seconds
+Preprocessor visited node count: 108/1000000
+Preprocessor generated node count: 200/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:3807-0!canonical and timestamp 20240722112815 and revision id 11775
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Float&amp;oldid=11775">https://www.chessprogramming.org/index.php?title=Float&amp;oldid=11775</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Float&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Float.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Float&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Float.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Float&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Float&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Float.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Float.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Float&amp;oldid=11775.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Float&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 25 April 2019, at 12:01.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Float&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.076","walltime":"0.856","ppvisitednodes":{"value":108,"limit":1000000},"ppgeneratednodes":{"value":200,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722112815","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":50});});</script>
+</body>
+</html>

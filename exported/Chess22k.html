@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chess22k - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chess22k","wgTitle":"Chess22k","wgCurRevisionId":18937,"wgRevisionId":18937,"wgArticleId":3843,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UCI","Open Source","Java"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chess22k","wgRelevantArticleId":3843,"wgRequestId":"Zp7DPkKfcgdPZR8tVSrqTAAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chess22k rootpage-Chess22k skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chess22k</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * chess22k</b>
+</p><p><b>chess22k</b>,<br/>
+an <a href="UCI.html" title="UCI">UCI</a> compliant <a href="Category:Open Source.html" title="Category:Open Source">open source chess engine</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, written in <a href="Java.html" title="Java">Java</a> first released in January 2017 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. While already in the 2400 Elo range using a 64-bit <a class="external text" href="https://en.wikipedia.org/wiki/Java_virtual_machine" rel="nofollow">Java Runtime Environment (JRE)</a>, it has not initially implemented a <a href="Tapered Eval.html" title="Tapered Eval">tapered evaluation</a>, but abrupt transition based on piece counts per side to distinguish between <a href="Middlegame.html" title="Middlegame">middlegame</a> and <a href="Endgame.html" title="Endgame">endgame</a> terms <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. However, tapered evaluation was implemented in chess22k <b>1.5</b> along with new evaluation terms adjusted by <a href="Texel%27s Tuning Method.html" title="Texel's Tuning Method">Texel's tuning method</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. In November 2017, chess22k had its over the board tournament debut, version <b>1.6</b> played the <a href="CSVN.html" title="CSVN">CSVN</a> <a href="PT 52.html" title="PT 52">PT 52</a> in Leiden, quite successful - shared 4th place with 6/9. Soon released afterwards, chess22k <b>1.6</b> requires <a href="Java.html#9" title="Java">Java 9</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Features"><span class="tocnumber">1</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Board Representation"><span class="tocnumber">1.1</span> <span class="toctext">Board Representation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Search"><span class="tocnumber">1.2</span> <span class="toctext">Search</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Evaluation"><span class="tocnumber">1.3</span> <span class="toctext">Evaluation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">2</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#2017"><span class="tocnumber">2.1</span> <span class="toctext">2017</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2018"><span class="tocnumber">2.2</span> <span class="toctext">2018</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2019"><span class="tocnumber">2.3</span> <span class="toctext">2019</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2020"><span class="tocnumber">2.4</span> <span class="toctext">2020</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#External Links"><span class="tocnumber">3</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Features">Features</span></h1>
+<p><sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</p>
+<h2><span class="mw-headline" id="Board_Representation"><a href="Board Representation.html" title="Board Representation">Board Representation</a></span></h2>
+<ul><li> <a href="Bitboards.html" title="Bitboards">Bitboards</a></li>
+<li> <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li></ul>
+<h2><span class="mw-headline" id="Search"><a href="Search.html" title="Search">Search</a></span></h2>
+<ul><li> <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a> (1.10)</li>
+<li> <a href="Iterative Deepening.html" title="Iterative Deepening">Iterative Deepening</a></li>
+<li> <a href="Aspiration Windows.html" title="Aspiration Windows">Aspiration Windows</a></li>
+<li> <a href="Principal Variation Search.html" title="Principal Variation Search">Principal Variation Search</a></li>
+<li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a>
+<ul><li> <a href="History Heuristic.html" title="History Heuristic">History Heuristic</a></li>
+<li> <a href="Internal Iterative Deepening.html" title="Internal Iterative Deepening">Internal Iterative Deepening</a></li>
+<li> <a href="Killer Heuristic.html" title="Killer Heuristic">Killer Heuristic</a></li></ul></li>
+<li> <a href="Selectivity.html" title="Selectivity">Selectivity</a>
+<ul><li> <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a></li>
+<li> <a href="Razoring.html" title="Razoring">Razoring</a></li>
+<li> <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE Pruning</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Evaluation"><a href="Evaluation.html" title="Evaluation">Evaluation</a></span></h2>
+<ul><li> <a href="Evaluation Hash Table.html" title="Evaluation Hash Table">Evaluation Hash Table</a></li>
+<li> <a href="Tapered Eval.html" title="Tapered Eval">Tapered Eval</a> 1.5</li>
+<li> <a href="Material.html" title="Material">Material</a></li>
+<li> <a href="Bishop Pair.html" title="Bishop Pair">Bishop Pair</a></li>
+<li> <a href="Piece-Square Tables.html" title="Piece-Square Tables">Piece-Square Tables</a></li>
+<li> <a href="Mobility.html" title="Mobility">Mobility</a>
+<ul><li> <a href="Trapped Pieces.html" title="Trapped Pieces">Trapped Pieces</a></li>
+<li> <a href="Rook on Open File.html" title="Rook on Open File">Rooks on (Semi) Open Files</a></li></ul></li>
+<li> <a href="Outposts.html" title="Outposts">Outposts</a></li>
+<li> <a href="Pawn Hash Table.html" title="Pawn Hash Table">Pawn Hash Table</a></li>
+<li> <a href="Pawn Structure.html" title="Pawn Structure">Pawn Structure</a>
+<ul><li> <a href="Doubled Pawn.html" title="Doubled Pawn">Doubled Pawn</a></li>
+<li> <a href="Isolated Pawn.html" title="Isolated Pawn">Isolated Pawn</a></li>
+<li> <a href="Passed Pawn.html" title="Passed Pawn">Passed Pawn</a></li></ul></li>
+<li> <a href="King Safety.html" title="King Safety">King Safety</a>
+<ul><li> <a href="King Safety.html#PawnShield" title="King Safety">Pawn Shelter</a></li></ul></li>
+<li> <a href="Tactics.html" title="Tactics">Tactical Penalties</a>
+<ul><li> <a href="Check.html" title="Check">In Check</a></li>
+<li> <a href="Hanging Piece.html" title="Hanging Piece">Hanging Pieces</a></li>
+<li> <a href="Pin.html" title="Pin">Pinnned Pieces</a></li></ul></li>
+<li> <a href="Texel%27s Tuning Method.html" title="Texel's Tuning Method">Texel's Tuning Method</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2017">2017</span></h2>
+<ul><li> <a class="external text" href="http://open-chess.org/viewtopic.php?t=3068.html" rel="nofollow">chess22k v1.0</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">sandermvdb</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 13, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63118.html" rel="nofollow">New release: chess22k v1.1</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63496.html" rel="nofollow">chess22k 1.2 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63835.html" rel="nofollow">chess22k 1.3 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, April 26, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64189.html" rel="nofollow">Texel tuning method question</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 2017 » <a href="Texel%27s Tuning Method.html" title="Texel's Tuning Method">Texel's Tuning Method</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64310.html" rel="nofollow">Impressive Texel-tuning results</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64337.html" rel="nofollow">chess22k 1.4 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, June 18, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64869.html" rel="nofollow">chess22k 1.5 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, August 12, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65714.html" rel="nofollow">chess22k 1.6 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, November 13, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66171.html" rel="nofollow">chess22k 1.7 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, December 28, 2017</li></ul>
+<h2><span class="mw-headline" id="2018">2018</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66282.html" rel="nofollow">chess22k progress overview</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, January 09, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66727.html" rel="nofollow">chess22k 1.8 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, March 04, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67206.html" rel="nofollow">chess22k 1.9 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, April 23, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67941.html" rel="nofollow">chess22k 1.10 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, July 09, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69139.html" rel="nofollow">chess22k 1.12 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, December 03, 2018</li></ul>
+<h2><span class="mw-headline" id="2019">2019</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71396.html" rel="nofollow">chess22k 1.13 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, July 28, 2019</li></ul>
+<h2><span class="mw-headline" id="2020">2020</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=73773.html" rel="nofollow">chess22k 1.14 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, April 26, 2020</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://github.com/sandermvdb/chess22k" rel="nofollow">GitHub - sandermvdb/chess22k</a></li>
+<li> <a class="external text" href="http://www.computerchess.org.uk/ccrl/404/cgi/engine details.cgi?print=Details&amp;eng=chess22k%201.4%2064-bit.html" rel="nofollow">chess22k 1.4 64-bit</a> in <a href="CCRL.html" title="CCRL">CCRL 40/4</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"> <a class="external text" href="http://open-chess.org/viewtopic.php?t=3068.html" rel="nofollow">chess22k v1.0</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">sandermvdb</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 13, 2017</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">public boolean isEndGame(int color) in <a class="external text" href="https://github.com/sandermvdb/chess22k/blob/master/src/main/java/nl/s22k/chess/ChessBoard.java" rel="nofollow">chess22k/ChessBoard.java at master · sandermvdb/chess22k · GitHub</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">isEndGame used in <a class="external text" href="https://github.com/sandermvdb/chess22k/blob/master/src/main/java/nl/s22k/chess/eval/EvalUtil.java" rel="nofollow">chess22k/EvalUtil.java at master · sandermvdb/chess22k · GitHub</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64869.html" rel="nofollow">chess22k 1.5 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, August 12, 2017</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65714.html" rel="nofollow">chess22k 1.6 released</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, November 13, 2017</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text">Based on readme and <a class="external text" href="https://github.com/sandermvdb/chess22k" rel="nofollow">GitHub - sandermvdb/chess22k</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722033234
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.015 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 131/1000000
+Preprocessor generated node count: 258/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:3843-0!canonical and timestamp 20240722033234 and revision id 18937
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chess22k&amp;oldid=18937">https://www.chessprogramming.org/index.php?title=Chess22k&amp;oldid=18937</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:Java.html" title="Category:Java">Java</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chess22k&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chess22k.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chess22k&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chess22k.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chess22k&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chess22k&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chess22k.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chess22k.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chess22k&amp;oldid=18937.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chess22k&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 27 April 2020, at 17:51.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chess22k&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.015","walltime":"0.016","ppvisitednodes":{"value":131,"limit":1000000},"ppgeneratednodes":{"value":258,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722033234","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

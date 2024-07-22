@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Branching Factor - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Branching_Factor","wgTitle":"Branching Factor","wgCurRevisionId":23975,"wgRevisionId":23975,"wgArticleId":1085,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Led Zeppelin"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Branching_Factor","wgRelevantArticleId":1085,"wgRequestId":"Zp7DUQMLGU3EphdnCkJWFQAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Branching_Factor rootpage-Branching_Factor skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Branching Factor</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Search Tree.html" title="Search Tree">Tree</a> * Branching Factor</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Red-black tree example.svg.html"><img alt="" class="thumbimage" height="147" src="wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/300px-Red-black_tree_example.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/450px-Red-black_tree_example.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/600px-Red-black_tree_example.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Red-black tree example.svg.html" title="Enlarge"></a></div>A <a class="external text" href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree" rel="nofollow">red-black tree</a> with branching factor 2 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Computing" rel="nofollow">computing</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Tree_(data_structure)" rel="nofollow">tree data structures</a>, and <a class="external text" href="https://en.wikipedia.org/wiki/Game_theory" rel="nofollow">game theory</a>, the <b>Branching Factor</b> is the number of children at each <a href="Node.html" title="Node">node</a>, the <a class="external text" href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree" rel="nofollow">outdegree</a>. If this value is not uniform, an <b>average branching factor</b> can be calculated <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Average Branching Factor"><span class="tocnumber">1</span> <span class="toctext">Average Branching Factor</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Effective Branching Factor"><span class="tocnumber">2</span> <span class="toctext">Effective Branching Factor</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Mean Branching Factor"><span class="tocnumber">3</span> <span class="toctext">Mean Branching Factor</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#1997 ..."><span class="tocnumber">5.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2020 ..."><span class="tocnumber">5.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Average_Branching_Factor">Average Branching Factor</span></h1>
+<p>In <a href="Chess.html" title="Chess">chess</a>, in average there are about 35-38 <a href="Moves.html" title="Moves">moves</a> per <a href="Chess Position.html" title="Chess Position">position</a>. One additional cycle of growth expands each <a href="Leaf Node.html" title="Leaf Node">leaf</a> so far accordantly. This is called the average branching factor of the <a class="external text" href="https://en.wikipedia.org/wiki/Game_tree" rel="nofollow">game tree</a>.
+<span id="EffectiveBranchingFactor"></span><span id="EBF"></span>
+</p>
+<h1><span class="mw-headline" id="Effective_Branching_Factor">Effective Branching Factor</span></h1>
+<p>The effective branching factor (EBF), related to <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> of <a href="Depth-First.html" title="Depth-First">depth-first search</a>, is conventionally defined as average ratio of <a href="Node.html" title="Node">nodes</a> (or time used) revisited of the current <a href="Iteration.html" title="Iteration">iteration</a> N versus the previous iteration N-1 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<ul><li> In pure <a href="Minimax.html" title="Minimax">Minimax</a>, the effective branching factor is equal to the average branching factor</li>
+<li> In <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a>, assuming good <a href="Move Ordering.html" title="Move Ordering">move ordering</a>, the branching factor is reduced to about square root of the average branching factor <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup><sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup></li>
+<li> Alpha-beta enhancements, <a href="Transposition Table.html" title="Transposition Table">transposition tables</a>, <a href="Null Move Pruning.html" title="Null Move Pruning">null move pruning</a> and <a href="Late Move Reductions.html" title="Late Move Reductions">late move reductions</a> further reduce the EBF below three, strong programs even near or below two <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li></ul>
+<pre>EBF(N-1) ::= nodes(N-1) / nodes(N-2)
+EBF(N)   ::= nodes(N)   / nodes(N-1)
+</pre>
+<p>Due to the <a href="Odd-Even Effect.html" title="Odd-Even Effect">odd-even effect</a> of <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> as described by <a href="Michael Levin.html#Theorem" title="Michael Levin">Michael Levin's Theorem</a>, this is lower if 'N' is even, and higher if 'N' is odd. Due to <a href="Extensions.html" title="Extensions">extensions</a>, <a href="Reductions.html" title="Reductions">reductions</a> and various <a href="Pruning.html" title="Pruning">pruning techniques</a>, this odd-even effect is diminishing accordantly. One may also use the square root of the ratio of two odd or even iterations. 
+</p>
+<pre>EBF ::= √(nodes(N) / nodes(N-2));
+</pre>
+<p>However, with all kind of extensions, reductions, and forward pruning applied to the tree, it is not at all clear that the average branch is searched precisely one ply deeper at iteration N+1 than at iteration N, which makes such an effective branching factor quite useless to compare between programs <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>, despite some programs even perform ID depth increments of <a href="Depth.html#FractionalPlies" title="Depth">fractions</a> of one ply.
+</p>
+<h1><span class="mw-headline" id="Mean_Branching_Factor">Mean Branching Factor</span></h1>
+<p><a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> made following reasonable proposal of a Mean Branching Factor <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>:
+</p>
+<pre>MBF ::= count of all nodes / count of non terminal nodes
+</pre>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="G%C3%A9rard M. Baudet.html" title="Gérard M. Baudet">Gérard M. Baudet</a> (<b>1978</b>). <i>On the branching factor of the alpha-beta pruning algorithm</i>. <a href="Artificial Intelligence.html#Journals" title="Artificial Intelligence">Artificial Intelligence</a> 10</li>
+<li> <a href="Judea Pearl.html" title="Judea Pearl">Judea Pearl</a> (<b>1982</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=358616&amp;dl=ACM&amp;coll=DL&amp;CFID=27355608&amp;CFTOKEN=40935826.html" rel="nofollow">The Solution for the Branching Factor of the Alpha-Beta Pruning Algorithm and its Optimality</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 25, No. 8</li>
+<li> <a class="new" href="index.php?title=Stefan Edelkamp&amp;action=edit&amp;redlink=1.html" title="Stefan Edelkamp (page does not exist)">Stefan Edelkamp</a>, <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> (<b>1998</b>). <i>The Branching Factor of Regular Search Spaces</i>. <a href="Conferences.html#AAAI-98" title="Conferences">AAAI-98</a>, <a class="external text" href="https://pdfs.semanticscholar.org/1a71/184c9432957427399435b8cde7e2d1977955.pdf" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/21c702f358784af.html" rel="nofollow">branching factor question</a> by vince, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 04, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=69483" rel="nofollow">Please, say in few words what can reduce the "branching factor"</a> by <a href="Leonid Liberman.html" title="Leonid Liberman">Leonid</a>, <a href="CCC.html" title="CCC">CCC</a>, September 19, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=104182" rel="nofollow">Branching factor, make me confuse more that ever</a> by <a href="Leonid Liberman.html" title="Leonid Liberman">Leonid</a>, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=152665" rel="nofollow">Definition of branching factor?</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 30, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=198563" rel="nofollow">Branching Factor = q/p ?</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, November 23, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=259843" rel="nofollow">Measured min-max branching factor</a> by <a href="James Swafford.html" title="James Swafford">James Swafford</a>, <a href="CCC.html" title="CCC">CCC</a>, October 17, 2002 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=289795" rel="nofollow">What's best low BF or good WAC result?</a> by <a href="Albert Bertilsson.html" title="Albert Bertilsson">Albert Bertilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, March 18, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=301402" rel="nofollow">PVS and MTD(f) branching factor</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2003 » <a href="Principal Variation Search.html" title="Principal Variation Search">PVS</a>, <a href="MTD(f).html" title="MTD(f)">MTD(f)</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=303316" rel="nofollow">Improvements in BF makes my MoveGen suck =(</a> by <a href="Albert Bertilsson.html" title="Albert Bertilsson">Albert Bertilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2003 » <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=311344" rel="nofollow">To Ed: Branching factor formula in Rebel 12</a> by <a href="Federico Andr%C3%A9s Corigliano.html" title="Federico Andrés Corigliano">Federico Corigliano</a>, <a href="CCC.html" title="CCC">CCC</a>, August 15, 2003 » <a href="Rebel.html" title="Rebel">Rebel</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=328924" rel="nofollow">Question about evaluation and branch factor</a> by <a href="Marcus Prewarski.html" title="Marcus Prewarski">Marcus Prewarski</a>, <a href="CCC.html" title="CCC">CCC</a>, November 20, 2003 » <a href="Evaluation.html" title="Evaluation">Evaluation</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14963.html" rel="nofollow">iterative deepening and branching factor</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, July 09, 2007 » <a href="Iterative Deepening.html" title="Iterative Deepening">Iterative Deepening</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20301.html" rel="nofollow">Calculation of branching factor</a> by PK-4, <a href="CCC.html" title="CCC">CCC</a>, March 23, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=24535.html" rel="nofollow">Reducing branching factor</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, October 26, 2008</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37205.html" rel="nofollow">effective branching factor of chess programs</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, December 21, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37910.html" rel="nofollow">EBF question</a> by <a class="new" href="index.php?title=Clemens Pruell&amp;action=edit&amp;redlink=1.html" title="Clemens Pruell (page does not exist)">Clemens Pruell</a>, <a href="CCC.html" title="CCC">CCC</a>, February 01, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39073.html" rel="nofollow">EBF definition problem in chess wiki</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, May 13, 2011</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=1403.html" rel="nofollow">Node counts at a given depth/iteration in search</a> by <a href="Mark Watkins.html" title="Mark Watkins">BB+</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, May 23, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41001.html" rel="nofollow">Bigger steps when branching factor &lt; 2?</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2011 » <a href="Iterative Deepening.html" title="Iterative Deepening">Iterative Deepening</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48281.html" rel="nofollow">Branching Factor of top engines</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, June 15, 2013 » <a href="Houdini.html" title="Houdini">Houdini 3</a>, <a href="Stockfish.html" title="Stockfish">Stockfish 3</a>, <a href="Komodo.html" title="Komodo">Komodo 5 CCT</a>, <a href="Shredder.html" title="Shredder">Shredder 6</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53807.html" rel="nofollow">Some fun with Komodo 8</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, September 23, 2014 » <a href="Komodo.html#8" title="Komodo">Komodo 8</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63467.html" rel="nofollow">High branching factor when mate score is found</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, March 16, 2017</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73655.html" rel="nofollow">EBF</a> by lauriet, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76529.html" rel="nofollow">Effective branching factor question</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, February 08, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Branching_factor" rel="nofollow">Branching factor from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Combinatorial_explosion" rel="nofollow">Combinatorial explosion from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.fastgm.de/branching-factor.html.html" rel="nofollow">Branching Factor</a> from <a href="FGRL.html" title="FGRL">FGRL</a> by <a href="Andreas Strangm%C3%BCller.html" title="Andreas Strangmüller">Andreas Strangmüller</a></li>
+<li> <a href="Category:Led Zeppelin.html" title="Category:Led Zeppelin">Led Zeppelin</a> - <a class="external text" href="https://en.wikipedia.org/wiki/How_Many_More_Times" rel="nofollow">How Many More Times</a> (Danish TV 1969) , <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/wEPog_WdPE4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Example of red-black tree by <a class="external text" href="https://en.wikipedia.org/wiki/User:Cburnett" rel="nofollow">Cburnett</a>, December 30, 2006, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Branching_factor" rel="nofollow">Branching factor from Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39073.html" rel="nofollow">EBF definition problem in chess wiki</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, May 13, 2011</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="G%C3%A9rard M. Baudet.html" title="Gérard M. Baudet">Gérard M. Baudet</a> (<b>1978</b>). <i>On the branching factor of the alpha-beta pruning algorithm</i>. <a href="Artificial Intelligence.html#Journals" title="Artificial Intelligence">Artificial Intelligence</a> 10</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Judea Pearl.html" title="Judea Pearl">Judea Pearl</a> (<b>1982</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=358616&amp;dl=ACM&amp;coll=DL&amp;CFID=27355608&amp;CFTOKEN=40935826.html" rel="nofollow">The Solution for the Branching Factor of the Alpha-Beta Pruning Algorithm and its Optimality</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 25, No. 8</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48281.html" rel="nofollow">Branching Factor of top engines</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, June 15, 2013 » <a href="Houdini.html" title="Houdini">Houdini 3</a>, <a href="Stockfish.html" title="Stockfish">Stockfish 3</a>, <a href="Komodo.html" title="Komodo">Komodo 5 CCT</a>, <a href="Shredder.html" title="Shredder">Shredder 6</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=181822&amp;t=20301.html" rel="nofollow">Re: Calculation of branching factor</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, March 28, 2008</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=181617&amp;t=20301.html" rel="nofollow">Re: Calculation of branching factor</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, March 27, 2008</span>
+</li>
+</ol></div>
+<p><b><a href="Search Tree.html" title="Search Tree">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175341
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.078 seconds
+Real time usage: 0.811 seconds
+Preprocessor visited node count: 173/1000000
+Preprocessor generated node count: 366/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1085-0!canonical and timestamp 20240722175340 and revision id 23975
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Branching_Factor&amp;oldid=23975">https://www.chessprogramming.org/index.php?title=Branching_Factor&amp;oldid=23975</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Led Zeppelin.html" title="Category:Led Zeppelin">Led Zeppelin</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Branching+Factor&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Branching Factor.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Branching Factor&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Branching Factor.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Branching Factor&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Branching Factor&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Branching Factor.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Branching Factor.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Branching Factor&amp;oldid=23975.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Branching Factor&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 March 2021, at 18:22.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Branching_Factor&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.078","walltime":"0.811","ppvisitednodes":{"value":173,"limit":1000000},"ppgeneratednodes":{"value":366,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175341","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Evaluation Overlap - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Evaluation_Overlap","wgTitle":"Evaluation Overlap","wgCurRevisionId":9241,"wgRevisionId":9241,"wgArticleId":4822,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Evaluation_Overlap","wgRelevantArticleId":4822,"wgRequestId":"Zp7DX31htEhTE3yaocy3BQAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Evaluation_Overlap rootpage-Evaluation_Overlap skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Evaluation Overlap</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Organizations.html" title="Organizations">Organizations</a> * <a href="ICGA.html" title="ICGA">ICGA</a> * <a href="ICGA Investigations.html" title="ICGA Investigations">Investigations</a> * Evaluation Overlap</b>
+</p><p>by <a href="Mark Watkins.html" title="Mark Watkins">Mark Watkins</a>
+</p><p>Here might be a historical perspective. From page 62 of <a href="Jean Hayes Michie.html" title="Jean Hayes Michie">Hayes</a> and <a href="David Levy.html" title="David Levy">Levy</a>, <i>World Computer Chess</i>, Stockholm 1974 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Numerical Evaluation of Positions"><span class="tocnumber">1</span> <span class="toctext">Numerical Evaluation of Positions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#CHAOS"><span class="tocnumber">1.1</span> <span class="toctext">CHAOS</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#The Ostrich"><span class="tocnumber">1.2</span> <span class="toctext">The Ostrich</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Chess 4.0"><span class="tocnumber">1.3</span> <span class="toctext">Chess 4.0</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Kaissa"><span class="tocnumber">1.4</span> <span class="toctext">Kaissa</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Analyse"><span class="tocnumber">2</span> <span class="toctext">Analyse</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Center Control"><span class="tocnumber">2.1</span> <span class="toctext">Center Control</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Levy Development"><span class="tocnumber">2.2</span> <span class="toctext">Levy Development</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Queen Bonus"><span class="tocnumber">2.3</span> <span class="toctext">Queen Bonus</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Rook Bonus"><span class="tocnumber">2.4</span> <span class="toctext">Rook Bonus</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Bishop Bonus"><span class="tocnumber">2.5</span> <span class="toctext">Bishop Bonus</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Knight Mobility"><span class="tocnumber">2.6</span> <span class="toctext">Knight Mobility</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#King.27s mobility"><span class="tocnumber">2.7</span> <span class="toctext">King's mobility</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Attack.2FDefence"><span class="tocnumber">2.8</span> <span class="toctext">Attack/Defence</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Final Definition"><span class="tocnumber">3</span> <span class="toctext">Final Definition</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Numerical_Evaluation_of_Positions">Numerical Evaluation of Positions</span></h1>
+<p>In the section devoted to notes on the competing programs, the respective <a href="Evaluation.html" title="Evaluation">evaluation</a> functions for <a href="CHAOS.html" title="CHAOS">CHAOS</a> and <a href="Ostrich.html" title="Ostrich">The Ostrich</a> are discussed in some detail. <i>CHAOS</i> uses nineteen features and <i>The Ostrich</i> only thirteen, but the latter plans to increase this number in later incarnations. They have approximately eleven features in common: 'approximately', because the concepts are divided differently. The overlap here is not surprising since all scoring functions aim to embody 'reliable' chess heuristics: the weightings may differ, but the features themselves are similar. One of the eleven concepts shared by <i>CHAOS</i> and <i>The Ostrich</i> is <a href="Material.html" title="Material">material</a>: this is the dominant factor no only in these two programs but also in the majority of chess playing programs. Exceptions are <a href="Freedom.html" title="Freedom">Freedom</a>, which stresses <a href="Mobility.html" title="Mobility">mobility</a>, and <a href="Papa.html" title="Papa">Papa</a>, which concentrates on 'entropy' (basically a mobility measure). Other shared concepts include mobility, control of the centre, <a href="Castling.html" title="Castling">castling</a>, <a href="King Safety.html" title="King Safety">king safety</a> and assorted terms concerned with <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a>: the latter include bonus points for occupancy of the centre, advancement, <a href="Passed Pawn.html" title="Passed Pawn">passed pawns</a>, a bonus for <a href="Doubled Pawn.html" title="Doubled Pawn">doubling opponents' pawns</a> with a penalty for doubling one's own, and a penalty for blocking development of one's own pieces. The delicate matter of handling pawn structures has not been mastered satisfactorily by any current program [...] For instance, all seem to place disproportionate faith in the concept of doubling the opponent's pawns (see records of games 1 and 4). <a href="CHAOS.html" title="CHAOS">CHAOS</a> also considers the number of threatened pieces, <a href="Pin.html" title="Pin">pins</a> and <a href="Discovered Check.html" title="Discovered Check">discovered checks</a>, king end-game position, and capturing and mobility <i>potential</i>.
+</p><p><i>The Ostrich</i> has an interesting term, concerned with <i><a href="Tempo.html" title="Tempo">tempi</a></i>, which aims to penalize time-wasting moves such as taking two moves to reach a square that could be reached in one, or repeating a move (see game 24, where the Swiss program <a href="Tell.html" title="Tell">Tell</a> causes a <a href="Repetitions.html" title="Repetitions">draw by repetition</a>). [...]
+<span id="Chaos"></span>
+</p>
+<h2><span class="mw-headline" id="CHAOS">CHAOS</span></h2>
+<p><b>4. Evaluation function.</b> [...] Nineteen factors are taken into account, and their weights modified according to the stage reached in the game.
+</p>
+<ul><li> Threatened pieces, the sum of the value of all pieces which have enemy pieces bearing down on them, but not necessarily <i>en prise</i>.</li>
+<li> Capturing potential, an 'adjusted' sum of the value of capturing potentials on all squares on the board.</li>
+<li> Mobility, defined as the number of legal moves.</li>
+<li> Centre control, which covers both occupancy and attack on centre squares and reduces in importance as the game progresses.</li>
+<li> Pins and discovered checks.</li>
+<li> Material, which contributes the greatest amount to the evaluation. Values are the conventional ones with no values assigned for the king.</li>
+<li> Queen development, a penalty for developing early.</li>
+<li> Double threats and captures. Double threats carry the value of the second most valuable piece able to be captured by the moving side, on the grounds that if two pieces can be attacked, the lower valued one will be captured. Captures represent the total value of piece more strongly attacked than defended. This is also an 'adjusted' value which attempts to approximate the net value to the side moving, after an exchange has taken place.</li>
+<li> Attacked pieces, the total number of pieces attacked more strongly than defended.</li>
+<li> Rook usage, which rewards castling, doubling of rooks, occupation of open files, and rooks behind passed pawns.</li>
+<li> Mobility potential, a measurement of the legal moves as well as the 'not quite legal' moves (e.g. moves which guard, or would have been legal if out of check, or which bear through and along the line of attack of another piece, etc.). This carries less weight than mobility proper.</li>
+<li> Pawn usage, which includes pawn advancement, totally or partially unblocked pawns, connectedness, doubled pawns, etc.</li>
+<li> King endgame position. There are rewards for forcing the enemy king to the edge, stopping an opposing unblocked pawn, staying with the 'square' of the opponent's passed pawn, and king opposition, etc.</li>
+<li> Development. The early development of minor pieces is encouraged.</li>
+<li> Queen pins, which counts pieces pinned against the queen as well as discovered attacks on the queen.</li>
+<li> Attack on king. There is a reward for attacking close to the opponent's king.</li>
+<li> Best capture, the value of the highest valued piece left <i>en prise</i> after a move.</li>
+<li> King safety. There are incentives for attacking close to one's own king.</li></ul>
+<p>The evaluation function has been based as far as possible on general principles, avoiding special cases. For testing purposes the weights of these factors were set differently for each side while the program played against itself. This yielded valuable information about best settings.
+<span id="Ostrich"></span>
+</p>
+<h2><span class="mw-headline" id="The_Ostrich">The Ostrich</span></h2>
+<p><b>The static evaluation function.</b> This consists of thirteen subroutines each corresponding to a basic chess heuristic:
+</p>
+<ul><li> Material. The subroutine which computes the difference between White's and Black's material the greatest single value to the overall scoring function. The pieces have their conventional values.</li>
+<li> Material ratio term, which computes whether an even exchange of material has occurred between the top node of the tree and the bottom position being evaluated; a bonus goes to the side ahead in material.</li>
+<li> Castling.</li>
+<li> Board control, which is intended to increase one's own mobility and restrict one's opponent's. There is a small bonus for each square controlled, centre squares and squares near the enemy king have the greatest score. 'Control' is defined as the ability of the piece in question to capture a hypothetical enemy piece on that square.</li>
+<li> Tempi. Moving the same piece twice in the opening, moving a king or rook before castling, moving a piece back to its immediately previous position and moving to a square in two moves when it could be done in one, all attract penalties.</li>
+<li> Early queen moves. These attract a penalty before the eighth move of the game; by which time most minor pieces are developed and the king has castled.</li>
+<li> Blocking central pawns. 'Clogging' a position is penalised.</li>
+<li> Development of pieces. Rapid development is encouraged by giving a penalty to unmoved minor pieces or central pawns.</li>
+<li> Central pawns. These carry a bonus</li>
+<li> Pawn structure. Advancement of pawns is encouraged and doubled pawns penalised.</li>
+<li> King safety. To guard against king-side pressure on the part of the opponent the program encourages its own pieces in its own king-sector.</li>
+<li> Passed pawns. The goal is to encourage the advancement and queening of pawns along with trading off the opponent's passed pawns before they become too advanced. A passed pawn receives credit according to its advancement.</li></ul>
+<p><span id="Chess"></span>
+</p>
+<h2><span class="mw-headline" id="Chess_4.0">Chess 4.0</span></h2>
+<p>[...] In addition to material score in <a href="Chess (Program).html" title="Chess (Program)">Chess</a>, terms are added which express in a primitive way, notions of mobility (number of squares attacked), pawn structure (passed, <a href="Isolated Pawn.html" title="Isolated Pawn">isolated</a>, doubled, <a href="Backward Pawn.html" title="Backward Pawn">backward</a>, etc.), piece placement (e.g. <a href="Rook on Seventh.html" title="Rook on Seventh">rooks on seventh rank</a>), and king safety (king in castled position, adequate pawn cover). [...]
+</p>
+<h2><span class="mw-headline" id="Kaissa">Kaissa</span></h2>
+<p>One of the papers which is available (<a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Adelson-Velskii</a> <i>et al</i>. 1970 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>) describes the program as it was in the late 1960s and from the evidence available it is likely that <a href="Kaissa.html" title="Kaissa">Kaissa</a> has many of the same features.
+[...]
+This paper has notes on the evaluation function; the present function is likely to be similar, if not identical. Bonus points are given for:
+</p>
+<ul><li> 'A phalanx', i.e. two pawns side by side, on ranks 4-7 for White, and ranks 5-2 for Black. Three pawns side by side count as two phalanxes.</li>
+<li> Centre pawns.</li>
+<li> Pawn attack on the centre.</li>
+<li> Passed pawns.</li>
+<li> 'Scope', which is the calculation of the influence that each piece exerts on all squares, occupied or unoccupied by either own or enemy pieces.</li>
+<li> Attack on undefended pieces and pawns on squares adjacent to the king.</li>
+<li> Attack by a minor piece on a 'hole' (weak square). A hole is defined as a square, on [ranks] 1-5 for white and 8-4 for black, under attack by an enemy pawn, undefended by own pawn and with no chance of defence even after pawn advance.</li>
+<li> Minor pieces standing in an opponent's hole.</li>
+<li> Knights in the centre.</li>
+<li> Rook on an open file, or threatening an open file.</li>
+<li> Castling.</li></ul>
+<p>Penalties are incurred by
+</p>
+<ul><li> A hole.</li>
+<li> A weak pawn (one behind a hole).</li>
+<li> Isolated pawns.</li>
+<li> Doubled pawns.</li>
+<li> Pawns which are isolated and doubled.</li>
+<li> Forfeiture of castling.</li>
+<li> Opponent's castling.</li></ul>
+<h1><span class="mw-headline" id="Analyse">Analyse</span></h1>
+<p>Another thing to discuss could be Chapter 6 of <a href="Dap Hartmann.html" title="Dap Hartmann">Hartmann's</a> <i>Notions of Evaluation Functions tested against Grandmaster Games</i> in <i><a href="Advances in Computer Chess 5.html" title="Advances in Computer Chess 5">Advances in Computer Chess 5</a></i> (1989) <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p><p>Here is a brief synopsis. First there are three notions of mobility: Legal Moves, Pseudo Moves, and de Groot Moves. These should be self-explanatory.
+</p>
+<h2><span class="mw-headline" id="Center_Control">Center Control</span></h2>
+<p>With B as a bonus for a given square, this is B*[AT+2*OC] where AT is #attackers and OC is #occupants.
+</p>
+<h2><span class="mw-headline" id="Levy_Development">Levy Development</span></h2>
+<p>This is a rather complicated construct, that doesn't seem of much direct relevant here.
+</p>
+<h2><span class="mw-headline" id="Queen_Bonus">Queen Bonus</span></h2>
+<p>CHESS 4.5 uses 0.8*AT-0.8*DI where AT is #squares attacked that are not attacked by enemy pawns or minor,
+and DI is the minimum of the rank/file differences to the enemy king. ANALYSE rescaled this to AT-DI (so as to make everything integral).
+</p>
+<h2><span class="mw-headline" id="Rook_Bonus">Rook Bonus</span></h2>
+<p><i>Chess 4.5</i> used 1.6*AT-1.6*DI+8*DR+8*op+3*SO+22*SR where AT is #squares attacked, DI as above, DR is #rooks in file or rank w/o intervening pieces, SR is #rooks on 7th rank, OP is #rooks on open files, SO is #rooks on semi-open file (defined as File in which there is no [own] Pawn, and at least one enemy Pawn that is no defended by a Pawn and that cannot move one single square w/o being attacked by a Pawn). ANALYSE rescaled to make it integral.
+</p>
+<h2><span class="mw-headline" id="Bishop_Bonus">Bishop Bonus</span></h2>
+<p><a class="new" href="index.php?title=Jaap Herman&amp;action=edit&amp;redlink=1.html" title="Jaap Herman (page does not exist)">Jaap Herman</a> helped with this, as PS+EM+OM+DL+OB+OW, where PS #pseudomoves, EM is sum of enemy material on diagonals of the Bishop (unclear if it includes x-rays, even for blocked pawns?) where P=0,NB=3,R=5,Q=9,K=10, OM is sum of own material forwards on diagonal of the Bishop, P=0,NB=3,R=5,Q=9,K=0, DL is length of diagonals [#pseudomoves on empty board] minus 7, OB is pawn obstruction of enemy pawns (-25,-15,-10,-5,+1 according to specific characteristics), OW is own pawns, every pawn on diagonal in front of bishop is -5 if rank &lt; 4 and +1 otherwise, and every pawn on diagonal behind the bishop is +1.
+</p>
+<h2><span class="mw-headline" id="Knight_Mobility">Knight Mobility</span></h2>
+<p>Hartmann discusses having this, and then points out that it doesn't seem to contribute one way or the other, so he concludes "It is therefore no use to have a separate mobility component for the knight, detached from the Pseudo Mobility."
+</p>
+<h2><span class="mw-headline" id="King.27s_mobility">King's mobility</span></h2>
+<p>Again Hartmann points out that this might be useless, but it seems OK in the endgame.
+</p>
+<h2><span class="mw-headline" id="Attack.2FDefence">Attack/Defence</span></h2>
+<ul><li> Different Attacked Squares: A number from 3 to 64 for each side.</li>
+<li> Attacked Own Squares: Only count those squares on ranks 1-4.</li>
+<li> Attacked Opponent Squares: Only count squares on ranks 5-8.</li></ul>
+<h1><span class="mw-headline" id="Final_Definition">Final Definition</span></h1>
+<pre>
+MAT+PS+DIF+0.5*CEN+LD+2*RB+QB+2*BB+0.5*DEF+OFF
+</pre>
+<p>MAT is material, PS is #pseudo-legal moves, DIF is #different attacked squares, CEN is centre control, LD is Levy development, RB is rook bonus, QB is queen bonus, BB is bishop bonus, DEF is #attacked own squares, OFF is #attacked opp squares.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Quantifying Evaluation Features.html" title="Quantifying Evaluation Features">Quantifying Evaluation Features</a></li>
+<li> <a href="Rybka Controversy.html" title="Rybka Controversy">Rybka Controversy</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Jean Hayes Michie.html" title="Jean Hayes Michie">Jean E. Hayes</a>, <a href="David Levy.html" title="David Levy">David Levy</a> (<b>1976</b>). <i><a class="external text" href="http://www.getcited.org/pub/101724802.html" rel="nofollow">The world computer chess championship, Stockholm 1974</a></i>. University Press  (Edinburgh) ISBN 0852242859</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a>, <a href="Vladimir Arlazarov.html" title="Vladimir Arlazarov">Vladimir Arlazarov</a>, <a href="Alexander Bitman.html" title="Alexander Bitman">Alexander Bitman</a>, <a href="Alexander Zhivotovsky.html" title="Alexander Zhivotovsky">Alexander Zhivotovsky</a> and <a href="Anatoly Uskov.html" title="Anatoly Uskov">Anatoly Uskov</a> (<b>1970</b>). <i>Programming a Computer to Play Chess</i>. Russian Mathematical Surveys, Vol. 25, pp. 221-262</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Dap Hartmann.html" title="Dap Hartmann">Dap Hartmann</a> (<b>1989</b>). <i>Notions of Evaluation Functions Tested against Grandmaster Games</i>. <a href="Advances in Computer Chess 5.html" title="Advances in Computer Chess 5">Advances in Computer Chess 5</a></span>
+</li>
+</ol></div>
+<p><b><a href="ICGA Investigations.html" title="ICGA Investigations">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175354
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.012 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 143/1000000
+Preprocessor generated node count: 252/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4822-0!canonical and timestamp 20240722175354 and revision id 9241
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Evaluation_Overlap&amp;oldid=9241">https://www.chessprogramming.org/index.php?title=Evaluation_Overlap&amp;oldid=9241</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Evaluation+Overlap&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Evaluation Overlap.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Evaluation Overlap&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Evaluation Overlap.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Evaluation Overlap&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Evaluation Overlap&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Evaluation Overlap.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Evaluation Overlap.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Evaluation Overlap&amp;oldid=9241.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Evaluation Overlap&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 17 December 2018, at 15:13.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Evaluation_Overlap&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.012","walltime":"0.012","ppvisitednodes":{"value":143,"limit":1000000},"ppgeneratednodes":{"value":252,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175354","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":51});});</script>
+</body>
+</html>

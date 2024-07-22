@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>EXchess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"EXchess","wgTitle":"EXchess","wgCurRevisionId":10826,"wgRevisionId":10826,"wgArticleId":5077,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Open Source","GPL","WinBoard","XBoard","Mac","Acronym","Chess Suffix"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"EXchess","wgRelevantArticleId":5077,"wgRequestId":"Zp7DPxyNUS9uSkBTB6KS-AAAAAY","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-EXchess rootpage-EXchess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">EXchess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * EXchess</b>
+</p><p><b>EXchess</b>, (Experimental Chess Program)<br/>
+a <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> compatible experimental <a href="Category:Open Source.html" title="Category:Open Source">open source chess engine</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>,
+written  in <a href="Cpp.html" title="Cpp">C++</a>, released under the <a href="Free Software Foundation.html#GPL" title="Free Software Foundation">GNU Public License</a>. 
+EXchess may optionally use an own <a href="GUI.html" title="GUI">GUI</a> based on the <a class="external text" href="https://en.wikipedia.org/wiki/FLTK" rel="nofollow">Fast Light Tool Kit (FLTK)</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Board Representation"><span class="tocnumber">1</span> <span class="toctext">Board Representation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Search"><span class="tocnumber">2</span> <span class="toctext">Search</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Lazy SMP"><span class="tocnumber">3</span> <span class="toctext">Lazy SMP</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#TD-leaf"><span class="tocnumber">4</span> <span class="toctext">TD-leaf</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#1997 ..."><span class="tocnumber">5.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Board_Representation">Board Representation</span></h1>
+<p>EXchess utilizes an <a href="8x8 Board.html" title="8x8 Board">8x8 Board</a> and <a href="Piece-Lists.html" title="Piece-Lists">piece lists</a> as demonstrated in its <a href="Move Generation.html" title="Move Generation">move generation routine</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> :
+</p>
+<pre>
+// Typedef for square using unsigned 8 bits...  
+//  -- first 3 bits for piece type (0-6)
+//  -- next bit for side of piece (1 = white, 0 = black)
+// See define.h for marcos and definitions to handle these
+
+typedef uint8_t square;
+
+struct position {
+   square sq[64];
+   ...
+   uint8_t plist[2][7][10];
+   ...
+};
+
+void position::allmoves(move_list *list, ts_thread_data *tdata) {
+   ...
+  for(i=1;i&lt;=plist[wtm][PAWN][0];i++) 
+    pawn_moves(list, plist[wtm][PAWN][i], tdata);
+  for(i=1;i&lt;=plist[wtm][KNIGHT][0];i++) 
+    knight_moves(list, plist[wtm][KNIGHT][i], tdata);
+  for(i=1;i&lt;=plist[wtm][BISHOP][0];i++) 
+    bishop_moves(list, plist[wtm][BISHOP][i], tdata);
+  for(i=1;i&lt;=plist[wtm][ROOK][0];i++) 
+    rook_moves(list, plist[wtm][ROOK][i], tdata);
+  for(i=1;i&lt;=plist[wtm][QUEEN][0];i++) {
+    bishop_moves(list, plist[wtm][QUEEN][i], tdata);
+    rook_moves(list, plist[wtm][QUEEN][i], tdata);
+  }
+  for(i=1;i&lt;=plist[wtm][KING][0];i++) 
+    king_moves(list, plist[wtm][KING][i], tdata);
+}
+</pre>
+<h1><span class="mw-headline" id="Search">Search</span></h1>
+<p>The ches engine performs advanced <a href="Search.html" title="Search">search</a> algorithms including <a href="Principal Variation Search.html" title="Principal Variation Search">principle variation search</a>, 
+<a href="Null Move Pruning.html" title="Null Move Pruning">null move</a>, <a href="Null Move Pruning.html#ZugzwangVerification" title="Null Move Pruning">null move verification</a>, <a href="Extensions.html" title="Extensions">dynamic search extensions</a>, <a href="Futility Pruning.html" title="Futility Pruning">futility pruning</a>, <a href="Hash Table.html" title="Hash Table">hash tables</a>, <a href="History Heuristic.html" title="History Heuristic">history tables</a>, <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, and a <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">material swap function</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. 
+<span id="LazySMP"></span>
+</p>
+<h1><span class="mw-headline" id="Lazy_SMP">Lazy SMP</span></h1>
+<p><a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a> in July 2013 on his <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a> implementation and work sharing <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>:
+</p>
+<pre>I changed the work-sharing approach to Lazy SMP in EXchess to be closer to the <a href="ABDADA.html" title="ABDADA">ABDADA</a> model after <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul's</a> posts about his tests on the subject <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. However, I didn't want to use a <a href="Transposition Table.html" title="Transposition Table">hash table</a> to keep a counter for the <a href="Thread.html" title="Thread">threads</a> working on a given position. My hash table already had a 16 byte long entry, so I didn't want to expand it, and I also didn't like the idea of having to make each move before seeing whether another thread was searching it.
+</pre>
+<pre>So as an alternative to the hash table, I made a simple work sharing data structure. In the end, it was just a single hash key for a position which is OR'd with the move being searched and the depth of the search. I use this to keep track of the move being searched at each ply of the tree for a given thread. Then, before I search a move at a given ply, I can just check the same ply in the other threads to see that the move is not already being worked on at that depth. If it is, then the move get placed at the end of the move list to be searched last. This doesn't allow for <a href="Transposition.html" title="Transposition">transpositions</a> , but I expected the most likely work collisions to be as the threads are walking the <a href="Principal Variation.html" title="Principal Variation">PV</a> where they will initially all be the same. Indeed, this scheme only helps in the PV, and if I check for work sharing in <a href="Node Types.html" title="Node Types">non-PV nodes</a>, it only slows things down a bit.
+</pre>
+<pre>My previous Lazy SMP work sharing was just to alternate moves (odd-even) in the root node for the odd-even threads. The above approach is about 10% faster than my previous scheme, and I get a time-to-depth improvement of roughly 1.65 for 2 threads compared to 1 thread and roughly 2.5 for 4 threads compared to 1 thread. Maybe not quite as good as ABDADA with a hash table counter, but not too bad for the simplicity.  
+</pre>
+<h1><span class="mw-headline" id="TD-leaf">TD-leaf</span></h1>
+<p>EXchess applies <a href="Evaluation.html" title="Evaluation">evaluation</a> <a href="Learning.html" title="Learning">learning</a> using the <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">Temporal Difference Learning</a> (TD-leaf) <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=13011" rel="nofollow">First win against a crafty clone</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 16, 1997 » <a href="Crafty.html" title="Crafty">Crafty</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=16657" rel="nofollow">New version of EXchess released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 08, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=20450" rel="nofollow">EXchess 2.37</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, June 13, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=31385" rel="nofollow">New EXchess Version</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, November 02, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=82280" rel="nofollow">EXchess pre-release testers sought</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=108784" rel="nofollow">version 3.14 of EXchess released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 02, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=117970" rel="nofollow">Pseudo-code for TD learning</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, July 06, 2000 » <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">Temporal Difference Learning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=139716" rel="nofollow">New version of EXchess</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=162704" rel="nofollow">EXchess v4.02 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2001</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=43496.html" rel="nofollow">Wb2UCI and Problems with ExChess4.03a and GnuChess4.0.8</a> by <a href="Arturo Ochoa.html" title="Arturo Ochoa">Arturo Ochoa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 24, 2003 » <a href="Wb2UCI.html" title="Wb2UCI">Wb2UCI</a>, <a href="InBetween.html" title="InBetween">InBetween</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=483082" rel="nofollow">New Version of EXchess</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, Januaray 29, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27266.html" rel="nofollow">Insanity... or Tal style?</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2009 (refers EXchess) » <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41666.html" rel="nofollow">EXchess v6.01</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 29, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42202.html" rel="nofollow">EXchess v6.10 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 29, 2012 » <a href="CLOP.html" title="CLOP">CLOP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44842.html" rel="nofollow">EXchess v6.50 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46513.html" rel="nofollow">EXchess v6.70 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2012</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46858.html" rel="nofollow">Lazy SMP, part 2</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2013 » <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47473.html" rel="nofollow">EXchess v7.01 Released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47528.html" rel="nofollow">EXchess v7.02 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, March 16, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47643.html" rel="nofollow">EXchess v7.03 released (bugfix + speed improved version</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, March 29, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48448.html" rel="nofollow">EXchess v7.11 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, June 27, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48536.html" rel="nofollow">Lazy SMP and Work Sharing</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2013 » <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49356.html" rel="nofollow">EXchess v7.17 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2013</li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52241.html" rel="nofollow">EXchess v7.26 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 07, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53319.html" rel="nofollow">EXchess v7.31 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, August 17, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54756.html" rel="nofollow">EXchess v7.51 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 26, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56519.html" rel="nofollow">EXchess v7.71 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58737.html" rel="nofollow">EXchess v7.88 Released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60121.html" rel="nofollow">EXchess v7.91 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 10, 2016</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60121&amp;start=2.html" rel="nofollow">EXchess v7.92 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 11, 2016</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61650.html" rel="nofollow">EXchess v7.92 and AMD Processors</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, October 08, 2016</li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62995.html" rel="nofollow">EXchess v7.96</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63044.html" rel="nofollow">EXchess v7.97</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, February 04, 2017</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://sites.google.com/site/experimentalchessprogram/" rel="nofollow">Experimental Chess Program</a></li>
+<li> <a class="external text" href="http://computerchess.org.uk/ccrl/4040/cgi/compare engines.cgi?family=EXchess&amp;print=Rating+list&amp;print=Results+table&amp;print=LOS+table&amp;print=Ponder+hit+table&amp;print=Eval+difference+table&amp;print=Comopp+gamenum+table&amp;print=Overlap+table&amp;print=Score+with+common+opponents.html" rel="nofollow">EXchess</a> in <a href="CCRL.html" title="CCRL">CCRL 40/40</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">EXchess v7.97 beta source code, chess.h, moves.cpp</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=161209" rel="nofollow">SEE and possible EXChess bug</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2001</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=162704" rel="nofollow">EXchess v4.02 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2001</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48536.html" rel="nofollow">Lazy SMP and Work Sharing</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2013 </span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47887.html" rel="nofollow">ABDADA speedup results</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, May 01, 2013</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=117970" rel="nofollow">Pseudo-code for TD learning</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, July 06, 2000</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=139716" rel="nofollow">New version of EXchess</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2000</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722041202
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.018 seconds
+Real time usage: 0.019 seconds
+Preprocessor visited node count: 159/1000000
+Preprocessor generated node count: 316/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:5077-0!canonical and timestamp 20240722041202 and revision id 10826
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=EXchess&amp;oldid=10826">https://www.chessprogramming.org/index.php?title=EXchess&amp;oldid=10826</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:GPL.html" title="Category:GPL">GPL</a></li><li><a href="Category:WinBoard.html" title="Category:WinBoard">WinBoard</a></li><li><a href="Category:XBoard.html" title="Category:XBoard">XBoard</a></li><li><a href="Category:Mac.html" title="Category:Mac">Mac</a></li><li><a href="Category:Acronym.html" title="Category:Acronym">Acronym</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=EXchess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="EXchess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:EXchess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="EXchess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=EXchess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=EXchess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/EXchess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/EXchess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=EXchess&amp;oldid=10826.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=EXchess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 27 February 2019, at 11:12.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=EXchess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.018","walltime":"0.019","ppvisitednodes":{"value":159,"limit":1000000},"ppgeneratednodes":{"value":316,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722041202","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

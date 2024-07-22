@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Perft Results - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Perft_Results","wgTitle":"Perft Results","wgCurRevisionId":26924,"wgRevisionId":26924,"wgArticleId":1331,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Perft_Results","wgRelevantArticleId":1331,"wgRequestId":"Zp7DpUKfcgdPZR8tVSrrWQAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.FenTT.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Perft_Results rootpage-Perft_Results skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Perft Results</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Move Generation.html" title="Move Generation">Move Generation</a> * <a href="Perft.html" title="Perft">Perft</a> * Results</b>
+</p><p>This page contains detailed <a href="Perft.html" title="Perft">perft</a> results for several positions that are useful for <a href="Debugging.html" title="Debugging">debugging</a>, beginning with the start position. <a href="Captures.html" title="Captures">Captures</a>, <a href="Checkmate.html" title="Checkmate">checkmates</a>, and other information have been included along with the node counts (<a href="Leaf Node.html" title="Leaf Node">leaf nodes</a>, excluding internal or <a href="Interior Node.html" title="Interior Node">interior nodes</a>) or movepath enumerations. The move counters consider moves to the leaf positions only.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Initial Position"><span class="tocnumber">1</span> <span class="toctext">Initial Position</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Perft 10"><span class="tocnumber">1.1</span> <span class="toctext">Perft 10</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Perft 11"><span class="tocnumber">1.2</span> <span class="toctext">Perft 11</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Perft 12"><span class="tocnumber">1.3</span> <span class="toctext">Perft 12</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Perft 13"><span class="tocnumber">1.4</span> <span class="toctext">Perft 13</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Summary"><span class="tocnumber">1.5</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Position 2"><span class="tocnumber">2</span> <span class="toctext">Position 2</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Position 3"><span class="tocnumber">3</span> <span class="toctext">Position 3</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Position 4"><span class="tocnumber">4</span> <span class="toctext">Position 4</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Position 5"><span class="tocnumber">5</span> <span class="toctext">Position 5</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Position 6"><span class="tocnumber">6</span> <span class="toctext">Position 6</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#2000 ..."><span class="tocnumber">8.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2010 ..."><span class="tocnumber">8.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2015 ..."><span class="tocnumber">8.3</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2020 ..."><span class="tocnumber">8.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Initial_Position">Initial Position</span></h1>
+<p>Obviously, Perft(1) of the <a href="Initial Position.html" title="Initial Position">initial position</a> is 20, Perft(2) 400. Data of Perft(10) up to Perft(13) was provided by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, generated by <a href="Symbolic.html" title="Symbolic">Symbolic</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, when Perft(14)<sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> and Perft(15)<sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> were provided by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>.
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg"><br/><br/>        <br/>        <br/>        <br/>        <br/><br/><br/></div><div class="pcfg">♜♞♝♛♚♝♞♜<br/>♟♟♟♟♟♟♟♟<br/>        <br/>        <br/>        <br/>        <br/>♙♙♙♙♙♙♙♙<br/>♖♘♗♕♔♗♘♖<br/></div></div></td></tr></table>
+<p>rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th>
+<th> Captures
+</th>
+<th> E.p.
+</th>
+<th> Castles
+</th>
+<th> Promotions
+</th>
+<th> Checks
+</th>
+<th> Discovery Checks
+</th>
+<th> Double Checks
+</th>
+<th> Checkmates
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 20
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 400
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 8,902
+</td>
+<td style="text-align:right;"> 34
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 12
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 197,281
+</td>
+<td style="text-align:right;"> 1576
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 469
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 8
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 4,865,609
+</td>
+<td style="text-align:right;"> 82,719
+</td>
+<td style="text-align:right;"> 258
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 27,351
+</td>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 347
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 119,060,324
+</td>
+<td style="text-align:right;"> 2,812,008
+</td>
+<td style="text-align:right;"> 5248
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 809,099
+</td>
+<td style="text-align:right;"> 329
+</td>
+<td style="text-align:right;"> 46
+</td>
+<td style="text-align:right;"> 10,828
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 3,195,901,860
+</td>
+<td style="text-align:right;"> 108,329,926
+</td>
+<td style="text-align:right;"> 319,617
+</td>
+<td style="text-align:right;"> 883,453
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 33,103,848
+</td>
+<td style="text-align:right;"> 18,026
+</td>
+<td style="text-align:right;"> 1628
+</td>
+<td style="text-align:right;"> 435,767
+</td></tr>
+<tr>
+<td style="text-align:center;"> 8
+</td>
+<td style="text-align:right;"> 84,998,978,956
+</td>
+<td style="text-align:right;"> 3,523,740,106
+</td>
+<td style="text-align:right;"> 7,187,977
+</td>
+<td style="text-align:right;"> 23,605,205
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 968,981,593
+</td>
+<td style="text-align:right;"> 847,039
+</td>
+<td style="text-align:right;"> 147,215
+</td>
+<td style="text-align:right;"> 9,852,036
+</td></tr>
+<tr>
+<td style="text-align:center;"> 9
+</td>
+<td style="text-align:right;"> 2,439,530,234,167
+</td>
+<td style="text-align:right;"> 125,208,536,153
+</td>
+<td style="text-align:right;"> 319,496,827
+</td>
+<td style="text-align:right;"> 1,784,356,000
+</td>
+<td style="text-align:right;"> 17,334,376
+</td>
+<td style="text-align:right;"> 36,095,901,903
+</td>
+<td style="text-align:right;"> 37,101,713
+</td>
+<td style="text-align:right;"> 5,547,231
+</td>
+<td style="text-align:right;"> 400,191,963
+</td></tr>
+<tr>
+<td style="text-align:center;"> 10
+</td>
+<td style="text-align:right;"> 69,352,859,712,417
+</td></tr>
+<tr>
+<td style="text-align:center;"> 11
+</td>
+<td style="text-align:right;"> 2,097,651,003,696,806
+</td></tr>
+<tr>
+<td style="text-align:center;"> 12
+</td>
+<td style="text-align:right;"> 62,854,969,236,701,747  <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 13
+</td>
+<td style="text-align:right;"> 1,981,066,775,000,396,239
+</td></tr>
+<tr>
+<td style="text-align:center;"> 14
+</td>
+<td style="text-align:right;"> 61,885,021,521,585,529,237 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+</td></tr>
+<tr>
+<td style="text-align:center;"> 15
+</td>
+<td style="text-align:right;"> 2,015,099,950,053,364,471,960 <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</td></tr></table>
+<h2><span class="mw-headline" id="Perft_10">Perft 10</span></h2>
+<ul><li> <a href="Perft(10) 20 draft 9 Positions.html" title="Perft(10) 20 draft 9 Positions">Perft(10) 20 draft 9 Positions</a></li>
+<li> <a href="Perft(10) 400 draft 8 Positions.html" title="Perft(10) 400 draft 8 Positions">Perft(10) 400 draft 8 Positions</a></li></ul>
+<h2><span class="mw-headline" id="Perft_11">Perft 11</span></h2>
+<ul><li> <a href="Perft(11) 20 draft 10 Positions.html" title="Perft(11) 20 draft 10 Positions">Perft(11) 20 draft 10 Positions</a></li>
+<li> <a href="Perft(11) 400 draft 9 Positions.html" title="Perft(11) 400 draft 9 Positions">Perft(11) 400 draft 9 Positions</a></li></ul>
+<h2><span class="mw-headline" id="Perft_12">Perft 12</span></h2>
+<ul><li> <a href="Perft(12) 20 draft 11 Positions.html" title="Perft(12) 20 draft 11 Positions">Perft(12) 20 draft 11 Positions</a></li>
+<li> <a href="Perft(12) 400 draft 10 Positions.html" title="Perft(12) 400 draft 10 Positions">Perft(12) 400 draft 10 Positions</a></li></ul>
+<h2><span class="mw-headline" id="Perft_13">Perft 13</span></h2>
+<ul><li> <a href="Perft(13) 20 draft 12 Positions.html" title="Perft(13) 20 draft 12 Positions">Perft(13) 20 draft 12 Positions</a></li>
+<li> <a href="Perft(13) 400 draft 11 Positions.html" title="Perft(13) 400 draft 11 Positions">Perft(13) 400 draft 11 Positions</a></li></ul>
+<h2><span class="mw-headline" id="Summary">Summary</span></h2>
+<ul><li> <a href="Initial Position Summary.html" title="Initial Position Summary">Initial Position Summary</a></li>
+<li> <a href="Perft.html#15" title="Perft">Perft(15)</a></li></ul>
+<p><span id="kiwipete"></span>
+</p>
+<h1><span class="mw-headline" id="Position_2">Position 2</span></h1>
+<p>also known as <b>Kiwipete</b> by <a href="Peter McKenzie.html" title="Peter McKenzie">Peter McKenzie</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>. The number of double-checks in depth 5 is discussed in <a href="CCC.html" title="CCC">Talkchess</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> and may be 2645 instead of 2637.
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">     <br/>  <br/>   <br/>      <br/>      <br/>     <br/><br/>     <br/></div><div class="pcfg">♜   ♚  ♜<br/>♟ ♟♟♛♟♝ <br/>♝♞  ♟♞♟ <br/>   ♙♘   <br/> ♟  ♙   <br/>  ♘  ♕ ♟<br/>♙♙♙♗♗♙♙♙<br/>♖   ♔  ♖<br/></div></div></td></tr></table>
+<pre>r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 
+</pre>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th>
+<th> Captures
+</th>
+<th> E.p.
+</th>
+<th> Castles
+</th>
+<th> Promotions
+</th>
+<th> Checks
+</th>
+<th> Discovery Checks
+</th>
+<th> Double Checks
+</th>
+<th> Checkmates
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 48
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 2039
+</td>
+<td style="text-align:right;"> 351
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 91
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 97862
+</td>
+<td style="text-align:right;"> 17102
+</td>
+<td style="text-align:right;"> 45
+</td>
+<td style="text-align:right;"> 3162
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 993
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 4085603
+</td>
+<td style="text-align:right;"> 757163
+</td>
+<td style="text-align:right;"> 1929
+</td>
+<td style="text-align:right;"> 128013
+</td>
+<td style="text-align:right;"> 15172
+</td>
+<td style="text-align:right;"> 25523
+</td>
+<td style="text-align:right;"> 42
+</td>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:right;"> 43
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 193690690
+</td>
+<td style="text-align:right;"> 35043416
+</td>
+<td style="text-align:right;"> 73365
+</td>
+<td style="text-align:right;"> 4993637
+</td>
+<td style="text-align:right;"> 8392
+</td>
+<td style="text-align:right;"> 3309887
+</td>
+<td style="text-align:right;"> 19883
+</td>
+<td style="text-align:right;"> 2637
+</td>
+<td style="text-align:right;"> 30171
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 8031647685
+</td>
+<td style="text-align:right;"> 1558445089
+</td>
+<td style="text-align:right;"> 3577504
+</td>
+<td style="text-align:right;"> 184513607
+</td>
+<td style="text-align:right;"> 56627920
+</td>
+<td style="text-align:right;"> 92238050
+</td>
+<td style="text-align:right;"> 568417
+</td>
+<td style="text-align:right;"> 54948
+</td>
+<td style="text-align:right;"> 360003
+</td></tr></table>
+<p><span id="Position3"></span>
+</p>
+<h1><span class="mw-headline" id="Position_3">Position 3</span></h1>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">        <br/>       <br/>       <br/>     <br/>     <br/>        <br/>      <br/>        <br/></div><div class="pcfg">        <br/>  ♟     <br/>   ♟    <br/>♔♙     ♜<br/> ♖   ♟ ♚<br/>        <br/>    ♙ ♙ <br/>        <br/></div></div></td></tr></table>
+<pre>8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 
+</pre>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th>
+<th> Captures
+</th>
+<th> E.p.
+</th>
+<th> Castles
+</th>
+<th> Promotions
+</th>
+<th> Checks
+</th>
+<th> Discovery Checks
+</th>
+<th> Double Checks
+</th>
+<th> Checkmates
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 191
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 10
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 2812
+</td>
+<td style="text-align:right;"> 209
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 267
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 43238
+</td>
+<td style="text-align:right;"> 3348
+</td>
+<td style="text-align:right;"> 123
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 1680
+</td>
+<td style="text-align:right;"> 106
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 17
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> 674624
+</td>
+<td style="text-align:right;"> 52051
+</td>
+<td style="text-align:right;"> 1165
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 52950
+</td>
+<td style="text-align:right;"> 1292
+</td>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 11030083
+</td>
+<td style="text-align:right;"> 940350
+</td>
+<td style="text-align:right;"> 33325
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 7552
+</td>
+<td style="text-align:right;"> 452473
+</td>
+<td style="text-align:right;"> 26067
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 2733
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 178633661
+</td>
+<td style="text-align:right;"> 14519036
+</td>
+<td style="text-align:right;"> 294874
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 140024
+</td>
+<td style="text-align:right;"> 12797406
+</td>
+<td style="text-align:right;"> 370630
+</td>
+<td style="text-align:right;"> 3612
+</td>
+<td style="text-align:right;"> 87
+</td></tr>
+<tr>
+<td style="text-align:center;"> 8
+</td>
+<td style="text-align:right;"> 3009794393
+</td>
+<td style="text-align:right;"> 267586558
+</td>
+<td style="text-align:right;"> 8009239
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 6578076
+</td>
+<td style="text-align:right;"> 135626805
+</td>
+<td style="text-align:right;"> 7181487
+</td>
+<td style="text-align:right;"> 1630
+</td>
+<td style="text-align:right;"> 450410
+</td></tr></table>
+<p><span id="Position4"></span>
+</p>
+<h1><span class="mw-headline" id="Position_4">Position 4</span></h1>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">     <br/> <br/>    <br/>      <br/>    <br/>      <br/>   <br/>    <br/></div><div class="pcfg">♜   ♚  ♜<br/>♙♟♟♟ ♟♟♟<br/> ♝   ♞♝♘<br/>♞♙      <br/>♗♗♙ ♙   <br/>♛    ♘  <br/>♙♟ ♙  ♙♙<br/>♖  ♕ ♖♔ <br/></div></div></td></tr></table>
+<pre>r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1
+</pre>
+<p>Or mirrored (with the same perft results):
+</p>
+<pre>r2q1rk1/pP1p2pp/Q4n2/bbp1p3/Np6/1B3NBn/pPPP1PPP/R3K2R b KQ - 0 1 
+</pre>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th>
+<th> Captures
+</th>
+<th> E.p.
+</th>
+<th> Castles
+</th>
+<th> Promotions
+</th>
+<th> Checks
+</th>
+<th> Checkmates
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 264
+</td>
+<td style="text-align:right;"> 87
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:right;"> 48
+</td>
+<td style="text-align:right;"> 10
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 9467
+</td>
+<td style="text-align:right;"> 1021
+</td>
+<td style="text-align:right;"> 4
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 120
+</td>
+<td style="text-align:right;"> 38
+</td>
+<td style="text-align:right;"> 22
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 422333
+</td>
+<td style="text-align:right;"> 131393
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 7795
+</td>
+<td style="text-align:right;"> 60032
+</td>
+<td style="text-align:right;"> 15492
+</td>
+<td style="text-align:right;"> 5
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 15833292
+</td>
+<td style="text-align:right;"> 2046173
+</td>
+<td style="text-align:right;"> 6512
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 329464
+</td>
+<td style="text-align:right;"> 200568
+</td>
+<td style="text-align:right;"> 50562
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 706045033
+</td>
+<td style="text-align:right;"> 210369132
+</td>
+<td style="text-align:right;"> 212
+</td>
+<td style="text-align:right;"> 10882006
+</td>
+<td style="text-align:right;"> 81102984
+</td>
+<td style="text-align:right;"> 26973664
+</td>
+<td style="text-align:right;"> 81076
+</td></tr></table>
+<p><span id="Position5"></span>
+</p>
+<h1><span class="mw-headline" id="Position_5">Position 5</span></h1>
+<p>This position was discussed on <a href="CCC.html" title="CCC">Talkchess</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> and caught bugs in engines several years old at depth 3 <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> and was also reported wrong here <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>, hopefully now corrected with the results given by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, July 18, 2015 <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">  <br/> <br/>       <br/>        <br/>       <br/>        <br/> <br/>  <br/></div><div class="pcfg">♜♞♝♛ ♚ ♜<br/>♟♟ ♙♝♟♟♟<br/>  ♟     <br/>        <br/>  ♗     <br/>        <br/>♙♙♙ ♘♞♙♙<br/>♖♘♗♕♔  ♖<br/></div></div></td></tr></table>
+<pre>rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8  
+</pre>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 44
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 1,486
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 62,379
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 2,103,487
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 89,941,194
+</td></tr></table>
+<p><span id="Position6"></span>
+</p>
+<h1><span class="mw-headline" id="Position_6">Position 6</span></h1>
+<p>An alternative Perft given by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">     <br/>  <br/>    <br/>     <br/>     <br/>    <br/>  <br/>     <br/></div><div class="pcfg">♜    ♜♚ <br/> ♟♟ ♛♟♟♟<br/>♟ ♞♟ ♞  <br/>  ♝ ♟ ♗ <br/>  ♗ ♙ ♝ <br/>♙ ♘♙ ♘  <br/> ♙♙ ♕♙♙♙<br/>♖    ♖♔ <br/></div></div></td></tr></table>
+<pre>r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10 
+</pre>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 46
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 2,079
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 89,890
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 3,894,594
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 164,075,551
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 6,923,051,137
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 287,188,994,746
+</td></tr>
+<tr>
+<td style="text-align:center;"> 8
+</td>
+<td style="text-align:right;"> 11,923,589,843,526
+</td></tr>
+<tr>
+<td style="text-align:center;"> 9
+</td>
+<td style="text-align:right;"> 490,154,852,788,714
+</td></tr></table>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chess960 Perft Results.html" title="Chess960 Perft Results">Chess960 Perft Results</a></li>
+<li> <a href="Chinese Chess Perft Results.html" title="Chinese Chess Perft Results">Chinese Chess Perft Results</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=274926" rel="nofollow">kiwipete perft position</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2003 » <a href="Peter McKenzie.html" title="Peter McKenzie">Peter McKenzie</a>, <a href="Perft Results.html#kiwipete" title="Perft Results">Kiwipete</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=388806" rel="nofollow">perft results (how accurate is accurate enough ?)</a> by <a href="Roman Hartmann.html" title="Roman Hartmann">Roman Hartmann</a>, <a href="CCC.html" title="CCC">CCC</a>, September 23, 2004</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42463.html" rel="nofollow">REPORT: wrong perft result by qperft</a> by <a class="new" href="index.php?title=Jes%C3%BAs Mu%C3%B1oz&amp;action=edit&amp;redlink=1.html" title="Jesús Muñoz (page does not exist)">Jesús Muñoz</a>, <a href="CCC.html" title="CCC">CCC</a>, February 14, 2012 » <a href="Perft Results.html#Position5" title="Perft Results">Position 5</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45099.html" rel="nofollow">Perft and en_passant</a> by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a>, <a href="CCC.html" title="CCC">CCC</a>, September 11, 2012 » <a href="En passant.html" title="En passant">En passant</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47335.html" rel="nofollow">Perft(14) estimates thread</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, February 26, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47740.html" rel="nofollow">Perft(15) estimates thread</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48616.html" rel="nofollow">An altenative perft() initial FEN</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, July 11, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48811.html" rel="nofollow">Impossible perft question</a> by <a class="new" href="index.php?title=Andy Duplain&amp;action=edit&amp;redlink=1.html" title="Andy Duplain (page does not exist)">Andy Duplain</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2013 » <a href="Perft Results.html#Position3" title="Perft Results">Position 3</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49000.html" rel="nofollow">Wide open perft()</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 18, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53224.html" rel="nofollow">Perft(14) revisited</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 08, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53406.html" rel="nofollow">Perft(14) Weekly Status Report</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54767.html" rel="nofollow">Perft(14) verification</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54853.html" rel="nofollow">Perft(14) Weekly Status Reports for 2015</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54995.html" rel="nofollow">Perft for various positions</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55274.html" rel="nofollow">Some Chess960/FRC positions to be confirmed</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2015 » <a href="Chess960.html" title="Chess960">Chess960</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55787.html" rel="nofollow">kiwipete perft position</a> by <a class="new" href="index.php?title=Henk van den Belt&amp;action=edit&amp;redlink=1.html" title="Henk van den Belt (page does not exist)">Henk van den Belt</a>, <a href="CCC.html" title="CCC">CCC</a>, March 26, 2015 » <a href="Perft Results.html#kiwipete" title="Perft Results">Kiwipete</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58726.html" rel="nofollow">Perft(14) Weekly Status Reports for 2016</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, December 29, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59781.html" rel="nofollow">A perft(7) challenge position</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2016 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59818.html" rel="nofollow">Another perft(7) challenge position</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 13, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59915.html" rel="nofollow">Perft(7) challenge position #3</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 20, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59957.html" rel="nofollow">Perft(7) challenge position #4</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 25, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59961.html" rel="nofollow">Perft(7) challenge position #5</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 25, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60102.html" rel="nofollow">Another perft(7) challenge</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60114.html" rel="nofollow">Perft(7) challenge position #6</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, May 10, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60242.html" rel="nofollow">Perft(7) 64 bit hash mismatch set 8</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, May 22, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60942.html" rel="nofollow">Twenty-nine perft(7) mismatches from work unit 528</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, July 25, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61119.html" rel="nofollow">yet another attempt on Perft(14)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 13, 2016</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61119&amp;start=30.html" rel="nofollow">Re: yet another attempt on Perft(14)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2016 </dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61329.html" rel="nofollow">Two perft(7) mismatches from work unit 571</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, September 04, 2016</li></ul>
+<p><b>2017 ...</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64983.html" rel="nofollow">perft(15)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2017 »  <a href="Perft.html#15" title="Perft">Perft(15)</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64983&amp;start=4.html" rel="nofollow">Re: perft(15)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2017 </dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70543.html" rel="nofollow">Contrived position for perft</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, April 21, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71379.html" rel="nofollow">You gotta love Perft... just not too much!</a> by <a href="Martin Bryant.html" title="Martin Bryant">Martin Bryant</a>, <a href="CCC.html" title="CCC">CCC</a>, July 27, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71841&amp;p=812577.html" rel="nofollow">Level 11 Perft statistics</a> by <a class="new" href="index.php?title=Andreas %C3%98verland&amp;action=edit&amp;redlink=1.html" title="Andreas Øverland (page does not exist)">Andreas Øverland</a>, <a href="CCC.html" title="CCC">CCC</a>, September 17, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75877.html" rel="nofollow">Place to find correct perft result from a fen position</a> by <a class="new" href="index.php?title=Elias Nilsson&amp;action=edit&amp;redlink=1.html" title="Elias Nilsson (page does not exist)">Elias Nilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, November 20, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021 » <a href="Chinese Chess Perft Results.html" title="Chinese Chess Perft Results">Chinese Chess Perft Results</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77069.html" rel="nofollow">Perft 7 -&gt; 1.6 trillion moves</a> by <a href="Michael Byrne.html" title="Michael Byrne">MikeB</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77350.html" rel="nofollow">Being silly with perft and legal move generation</a> by <a class="new" href="index.php?title=Jakob Progsch&amp;action=edit&amp;redlink=1.html" title="Jakob Progsch (page does not exist)">Jakob Progsch</a>, <a href="CCC.html" title="CCC">CCC</a>, May 19, 2021 » <a href="Move Generation.html#Legal" title="Move Generation">Legal Move Generation</a>, <a href="En passant.html" title="En passant">En passant</a></li>
+<li> <a class="external text" href="https://talkchess.com/viewtopic.php?t=83392" rel="nofollow">Perft(16) estimate after averaging MC samples.</a> by Ajedrecista, <a href="CCC.html" title="CCC">CCC</a>, February 26, 2024</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://oeis.org/A048987" rel="nofollow">A048987</a> from <a class="external text" href="https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences" rel="nofollow">On-Line Encyclopedia of Integer Sequences (OEIS)</a></li>
+<li> <a class="external text" href="https://home.hccnet.nl/h.g.muller/dwnldpage.html" rel="nofollow">µ-Max Dowload Page - qperft</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a></li>
+<li> <a class="external text" href="https://marcelk.net/rookie/nostalgia/v3/perft-random.epd" rel="nofollow">perft-random.epd</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a></li>
+<li> <a class="external text" href="https://craftychess.com/documentation/craftydoc.html" rel="nofollow">Crafty Command Documentation</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, see <a href="Crafty.html" title="Crafty">Crafty</a> perft &lt;depth&gt;</li>
+<li> <a class="external text" href="https://web.archive.org/web/20060430011809/http://www.albert.nu/programs/sharper/perft.htm" rel="nofollow">Sharper - Perft calculation</a> by <a href="Albert Bertilsson.html" title="Albert Bertilsson">Albert Bertilsson</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="https://web.archive.org/web/20130517080941/http://www.albert.nu/programs/dperft/default.asp" rel="nofollow">Distributed Perft Project</a> by <a href="Albert Bertilsson.html" title="Albert Bertilsson">Albert Bertilsson</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="http://www.rocechess.ch/perft.html.html" rel="nofollow">perft, divide, debugging a move generator</a> from <a href="ROCE.html" title="ROCE">ROCE</a> by <a href="Roman Hartmann.html" title="Roman Hartmann">Roman Hartmann</a></li>
+<li> <a class="external text" href="https://sites.google.com/site/numptychess/perft" rel="nofollow">Perft - sample test positions</a> used by <a href="Numpty chess.html" title="Numpty chess">Numpty chess</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?terms=perft&amp;search=1" rel="nofollow">Perft</a>, search the <a href="Computer Chess Forums.html" title="Computer Chess Forums">CCC Archives</a></li>
+<li> <a class="external text" href="https://wismuth.com/chess/statistics-games.html" rel="nofollow">Statistics on chess games</a> by <a href="Mathematician.html#FLabelle" title="Mathematician">François Labelle</a></li>
+<li> <a class="external text" href="https://github.com/elcabesa/vajolet/blob/master/tests/perft.txt" rel="nofollow">vajolet/perft.txt at master · elcabesa/vajolet · GitHub</a> by <a href="Marco Belli.html" title="Marco Belli">Marco Belli</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46055.html" rel="nofollow">Perft FEN data</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2012</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61119&amp;start=30.html" rel="nofollow">Re: yet another attempt on Perft(14)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2016</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64983&amp;start=4.html" rel="nofollow">Re: perft(15)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2017</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38862.html" rel="nofollow">Perft(12) count confirmed</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">CCC</a>, April 25, 2011</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61119&amp;start=30.html" rel="nofollow">Re: yet another attempt on Perft(14)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2016</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64983&amp;start=4.html" rel="nofollow">Re: perft(15)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2017</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=274926" rel="nofollow">kiwipete perft position</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2003</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://talkchess.com/forum3/viewtopic.php?f=7&amp;t=78402.html" rel="nofollow">Perft statistics - chessprogrammingwiki</a> by <a class="new" href="index.php?title=Murat Yirci&amp;action=edit&amp;redlink=1.html" title="Murat Yirci (page does not exist)">Murat Yirci</a>, <a href="CCC.html" title="CCC">CCC</a>, October 10, 2021</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48811.html" rel="nofollow">Impossible perft question</a> by <a class="new" href="index.php?title=Andy Duplain&amp;action=edit&amp;redlink=1.html" title="Andy Duplain (page does not exist)">Andy Duplain</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2013</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42463.html" rel="nofollow">REPORT: wrong perft result by qperft</a> by <a class="new" href="index.php?title=Jes%C3%BAs Mu%C3%B1oz&amp;action=edit&amp;redlink=1.html" title="Jesús Muñoz (page does not exist)">Jesús Muñoz</a>, <a href="CCC.html" title="CCC">CCC</a>, February 14, 2012</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=450535&amp;t=42463.html" rel="nofollow">Re: REPORT: wrong perft result by qperft</a> by <a href="Julien Marcel.html" title="Julien Marcel">Julien Marcel</a>, <a href="CCC.html" title="CCC">CCC</a>, February 14, 2012</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42463&amp;start=18.html" rel="nofollow">Re: Correction of my error</a> by <a class="new" href="index.php?title=Eugene Kotlov&amp;action=edit&amp;redlink=1.html" title="Eugene Kotlov (page does not exist)">Eugene Kotlov</a>, <a href="CCC.html" title="CCC">CCC</a>, July 17, 2015</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42463&amp;start=21.html" rel="nofollow">Re: Correction of my error</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, July 18, 2015</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48616.html" rel="nofollow">An altenative perft() initial FEN</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, July 11, 2013</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49118.html" rel="nofollow">Some perft() results for that alternative test position</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2013</span>
+</li>
+</ol></div>
+<p><b><a href="Perft.html" title="Perft">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722160116
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.039 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 348/1000000
+Preprocessor generated node count: 708/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1331-0!canonical and timestamp 20240722160116 and revision id 26924
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Perft_Results&amp;oldid=26924">https://www.chessprogramming.org/index.php?title=Perft_Results&amp;oldid=26924</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Perft+Results&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Perft Results.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Perft Results&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Perft Results.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Perft Results&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Perft Results&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Perft Results.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Perft Results.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Perft Results&amp;oldid=26924.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Perft Results&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 15 March 2024, at 18:00.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Perft_Results&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.039","walltime":"0.040","ppvisitednodes":{"value":348,"limit":1000000},"ppgeneratednodes":{"value":708,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722160116","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":49});});</script>
+</body>
+</html>

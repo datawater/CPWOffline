@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Persistent Hash Table - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Persistent_Hash_Table","wgTitle":"Persistent Hash Table","wgCurRevisionId":26379,"wgRevisionId":26379,"wgArticleId":1651,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Salvador Dalí"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Persistent_Hash_Table","wgRelevantArticleId":1651,"wgRequestId":"Zp7Dp31htEhTE3yaocy3tAAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Persistent_Hash_Table rootpage-Persistent_Hash_Table skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Persistent Hash Table</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Learning.html" title="Learning">Learning</a> * Persistent Hash Table</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://en.wikipedia.org/wiki/The_Disintegration_of_the_Persistence_of_Memory"><img alt="" class="thumbimage" height="229" src="images/thumb/7/7c/DisintegrationofPersistence.jpg/300px-DisintegrationofPersistence.jpg" srcset="/images/7/7c/DisintegrationofPersistence.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:DisintegrationofPersistence.jpg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/The_Disintegration_of_the_Persistence_of_Memory" rel="nofollow">The Disintegration of the Persistence of Memory</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Persistent Hash Table</b>, (<a class="external text" href="https://en.wikipedia.org/wiki/Persistence_%28computer_science%29" rel="nofollow">persistent</a> <a href="Transposition Table.html" title="Transposition Table">transposition table</a>)<br/>
+a form of long-term <a href="Memory.html" title="Memory">memory</a>, to remember "important" nodes from earlier analyzed <a href="Chess Position.html" title="Chess Position">positions</a> or played <a href="Chess Game.html" title="Chess Game">games</a> with its <a href="Exact Score.html" title="Exact Score">exact score</a> and <a href="Depth.html" title="Depth">depth</a>, in order to avoid repeating unsuccessful book lines. So called <a class="external text" href="https://en.wikipedia.org/wiki/Persistence_%28computer_science%29#Orthogonal_or_transparent_persistence" rel="nofollow">orthogonal or transparent</a> persistent hash tables preserve their contents with focus on <a href="Node Types.html#PV" title="Node Types">PV-nodes</a> between moves while playing a game, between games, and even during interactive analysis while playing variations forward and backward <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. <b>Non-orthogonal</b> persistence, primary topic of this page, requires data to be written or read to or from storage devices using specific instructions in a program and have to provide mappings from or to the native data structures to or from the storage device data structures.
+</p><p>Inspired by the <a class="external text" href="https://en.wikipedia.org/wiki/Rote_learning" rel="nofollow">rote learning</a> as used in <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel's</a> <a href="Checkers.html" title="Checkers">Checkers</a> program from 1959 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, <a href="David Slate.html" title="David Slate">David Slate</a> first described a persistent transposition table in computer chess for accumulating selected information from many games and then utilizing it subsequently via the transposition table <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. In his article, Slate mentions personal communication with <a href="Tony Scherzer.html" title="Tony Scherzer">Tony Scherzer</a> and <a href="Tony Warnock.html" title="Tony Warnock">Tony Warnock</a> regarding learning in <a href="Bebe.html" title="Bebe">Bebe</a> and <a href="Lachex.html" title="Lachex">Lachex</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Learning in Mouse"><span class="tocnumber">1</span> <span class="toctext">Learning in Mouse</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Transposition Table"><span class="tocnumber">1.1</span> <span class="toctext">Transposition Table</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Algorithm"><span class="tocnumber">1.2</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Learning in Bebe"><span class="tocnumber">2</span> <span class="toctext">Learning in Bebe</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Short Term Memory"><span class="tocnumber">2.1</span> <span class="toctext">Short Term Memory</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Long Term Memory"><span class="tocnumber">2.2</span> <span class="toctext">Long Term Memory</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Algorithm 2"><span class="tocnumber">2.3</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Position Learning in Crafty"><span class="tocnumber">3</span> <span class="toctext">Position Learning in Crafty</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Selected Publications"><span class="tocnumber">5</span> <span class="toctext">Selected Publications</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#1990 ..."><span class="tocnumber">6.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2000 ..."><span class="tocnumber">6.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ..."><span class="tocnumber">6.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2020 ..."><span class="tocnumber">6.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Learning_in_Mouse">Learning in Mouse</span></h1>
+<p>Slate's simple <a href="Brute-Force.html" title="Brute-Force">brute-force</a> program <i>Mouse</i>, a <a href="Depth-First.html" title="Depth-First">depth-first</a>, full-width <a href="Iterative Deepening.html" title="Iterative Deepening">iterated</a> <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> searcher with an <a href="Evaluation.html" title="Evaluation">evaluation</a> purely based on <a href="Material.html" title="Material">material</a> was used as a learning <a class="external text" href="https://en.wikipedia.org/wiki/Testbed" rel="nofollow">testbed</a>, only remembering positions where a significant <a href="Score.html" title="Score">score</a> drop occurred at the root. 
+</p>
+<h2><span class="mw-headline" id="Transposition_Table">Transposition Table</span></h2>
+<p>A relative small <a href="Transposition Table.html" title="Transposition Table">transposition table</a> of 4096 buckets (8192 entries) was used for the examples in his paper:
+</p>
+<pre>
+ 6   bytes Hash code
+ 2x2 bytes Score window
+ 2   bytes Best Move, if any
+ 10  bits  Game ply
+ 6   bits  Ply from root node
+ 1   byte  Search height
+ 1   byte  Origin indication
+</pre>
+<p><i>Score window</i> holds the current <a href="Lower Bound.html" title="Lower Bound">lower</a> and <a href="Upper Bound.html" title="Upper Bound">upper bounds</a>. Although some programs use only a single value and a flag for <i>good, lower or upper bound</i>, there are occasions and algorithms <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> that fix the score between unequal bounds neither of which is infinite.
+</p><p><i>Origin indication</i> holds the explanation of the origin for the entry. There are values for <i>current search, human advice, learned in previous session,</i> etc.
+</p>
+<h2><span class="mw-headline" id="Algorithm">Algorithm</span></h2>
+<p>The basic learning <a href="Algorithms.html" title="Algorithms">algorithm</a> stores root entries to disk, if the final score of the chosen move is significantly worse than the best score in any of the previous iterations. Between searches during the playing session, relevant portions of the retained entries were loaded into their slots in the TT-table, adjusting bounds by a fuzz term, and to flag their origin to secure them from being indiscriminately overwritten.
+<span id="LearninginBebe"></span>
+</p>
+<h1><span class="mw-headline" id="Learning_in_Bebe">Learning in Bebe</span></h1>
+<p><a href="Tony Scherzer.html" title="Tony Scherzer">Tony</a> and <a href="Linda Scherzer.html" title="Linda Scherzer">Linda Scherzer</a>, and <a class="new" href="index.php?title=Dean Tjaden&amp;action=edit&amp;redlink=1.html" title="Dean Tjaden (page does not exist)">Dean Tjaden</a> further elaborate on the persistent hash table in their <a href="Bebe.html#Award" title="Bebe">award winning paper</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> concerning <a href="Learning.html" title="Learning">Learning</a> in <a href="Bebe.html" title="Bebe">Bebe</a>:
+</p>
+<h2><span class="mw-headline" id="Short_Term_Memory">Short Term Memory</span></h2>
+<p>The short term memory (STM) or <a href="Transposition Table.html" title="Transposition Table">transposition table</a> slot consists of 16 bytes, of which 12 are stored, and 4 bytes are implicit as a memory address. <a href="Upper Bound.html" title="Upper Bound">Upper</a> and <a href="Lower Bound.html" title="Lower Bound">lower limit</a> of the score are needed for the easiest implementation of the learning algorithm:
+</p>
+<pre>
+ 4 bytes Hash code used as STM memory address
+ 4 bytes Hash code used for match verification
+ 2 bytes Search height
+ 2 bytes Position-score lower limit
+ 2 bytes Position-score upper limit
+ 2 bytes The move
+</pre>
+<h2><span class="mw-headline" id="Long_Term_Memory">Long Term Memory</span></h2>
+<p>The long term memory (LTM) entries are stored on disk and therefor retained between games. The structure is similar, however all 16 bytes were stored:
+</p>
+<pre>
+ 4 bytes Hash code used as STM memory address
+ 4 bytes Hash code used for match verification
+ 2 bytes Depth of search
+ 2 bytes Move number
+ 2 bytes Position-score
+ 2 bytes The move
+</pre>
+<p>One LTM entry is created for each root node during the game.
+</p>
+<h2><span class="mw-headline" id="Algorithm_2">Algorithm</span></h2>
+<p>The algorithm consists of two phases. One creates (or overwrites) the LTM entries at the end of each search considering a <a href="Contempt Factor.html" title="Contempt Factor">contempt factor</a>, while the second transforms and copies LTM entries to STM at the start of each search:
+</p>
+<pre>
+ Position-score lower limit = Position-score - fuzzy tolerance (up to 0.2 pawn units for none draw or mate scores)
+ Position-score upper limit = Position-score + fuzzy tolerance
+</pre>
+<h1><span class="mw-headline" id="Position_Learning_in_Crafty">Position Learning in Crafty</span></h1>
+<p>Quote from <i><a href="Crafty.html" title="Crafty">Crafty</a> Command Documentation</i> (version 18) by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>:
+</p><p><b>What is this new Position Learning I've heard about?</b>
+</p><p>Crafty now has a "permanent" hash table that is kept from game to game. A position gets into this "hash file" when Crafty executes a search and the search value is significantly lower than the last search value.
+</p><p>When this happens, Crafty stores the current information for this position in the permanent hash file, which can hold up to 65536 positions. Once it fills up, the positions are replaced on a FIFO basis, always keeping the most recent 64K entries.
+</p><p>Each time Crafty starts a search, the positions/scores from this file are stuffed into the normal transposition table, and used during the search just like any other table entry...
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Book Learning.html" title="Book Learning">Book Learning</a></li>
+<li> <a href="Hash Table.html" title="Hash Table">Hash Table</a></li>
+<li> <a href="Memory.html" title="Memory">Memory</a></li>
+<li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li></ul>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<ul><li> <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> (<b>1959</b>). <i><a class="external text" href="http://domino.watson.ibm.com/tchjr/journalindex.nsf/600cc5649e2871db852568150060213c/39a870213169f45685256bfa00683d74!OpenDocument.html" rel="nofollow">Some Studies in Machine Learning Using the Game of Checkers</a></i>. IBM Journal July 1959</li>
+<li> <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> (<b>1967</b>). <i>Some Studies in Machine Learning. Using the Game of Checkers. II-Recent Progress</i>. <a class="external text" href="http://pages.cs.wisc.edu/~dyer/cs540/handouts/samuel-checkers.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="David Slate.html" title="David Slate">David Slate</a> (<b>1987</b>). <i>A Chess Program that uses its Transposition Table to Learn from Experience.</i> <a href="ICGA Journal.html#10 2" title="ICGA Journal">ICCA Journal, Vol. 10, No. 2</a></li>
+<li> <a href="Tony Scherzer.html" title="Tony Scherzer">Tony Scherzer</a>, <a href="Linda Scherzer.html" title="Linda Scherzer">Linda Scherzer</a>, <a class="new" href="index.php?title=Dean Tjaden&amp;action=edit&amp;redlink=1.html" title="Dean Tjaden (page does not exist)">Dean Tjaden</a> (<b>1990</b>). <i>Learning in Bebe.</i> <a href="Computers, Chess, and Cognition.html" title="Computers, Chess, and Cognition">Computers, Chess, and Cognition</a> » <a href="Bebe.html#Award" title="Bebe">Mephisto Best-Publication Award</a></li>
+<li> <a href="Tony Scherzer.html" title="Tony Scherzer">Tony Scherzer</a>, <a href="Linda Scherzer.html" title="Linda Scherzer">Linda Scherzer</a>, <a class="new" href="index.php?title=Dean Tjaden&amp;action=edit&amp;redlink=1.html" title="Dean Tjaden (page does not exist)">Dean Tjaden</a> (<b>1991</b>). <i>Learning in Bebe.</i> <a href="ICGA Journal.html#14 4" title="ICGA Journal">ICCA Journal, Vol. 14, No. 4</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/wkTUUFfEvIE/RyFnJTjyQq4J" rel="nofollow">Machine Learning Experience</a> by <a href="Michael Valvo.html" title="Michael Valvo">Mike Valvo</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, January 22, 1990 » <a href="Persistent Hash Table.html#LearninginBebe" title="Persistent Hash Table">Learning in Bebe</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=150687" rel="nofollow">Simple Learning Technique and Random Play</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, January 18, 2001 » <a href="Search with Random Leaf Values.html" title="Search with Random Leaf Values">Search with Random Leaf Values</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=484765" rel="nofollow">Re: Rybka 1.01 Beta14 - persistent hash table</a> by <a href="Vasik Rajlich.html" title="Vasik Rajlich">Vasik Rajlich</a>, <a href="CCC.html" title="CCC">CCC</a>, February 06, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5293&amp;p=26451.html#p26434" rel="nofollow">Re: Idea for opening book</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, August 02, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=128388&amp;t=14831.html" rel="nofollow">Re: Ed Does it Again! (and a question for Ed)</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21754.html" rel="nofollow">A simple book learning method</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, June 12, 2008 » <a href="Book Learning.html" title="Book Learning">Book Learning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22546.html" rel="nofollow">Persistent Hash</a> by <a href="Ted Summers.html" title="Ted Summers">Ted Summers</a>, <a href="CCC.html" title="CCC">CCC</a>, July 24, 2008</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62639.html" rel="nofollow">Cumulative building of a shared search tree</a> by <a href="Bojun Guo.html" title="Bojun Guo">Bojun Guo</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2016 » <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a>, <a href="Opening Book.html" title="Opening Book">Opening Book</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64517.html" rel="nofollow">My "official" request to top engine programmers</a> by <a class="new" href="index.php?title=Rodolfo Leoni&amp;action=edit&amp;redlink=1.html" title="Rodolfo Leoni (page does not exist)">Rodolfo Leoni</a>, <a href="CCC.html" title="CCC">CCC</a>, July 04, 2017</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64517&amp;start=2.html" rel="nofollow">Re: My "official" request to top engine programmers</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2017</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64522.html" rel="nofollow">Improving hash replacing schema for analysis mode</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2017 » <a href="Transposition Table.html#ReplacementStrategies" title="Transposition Table">Replacement Strategy</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64557.html" rel="nofollow">Andscacs new PH feature: first impressions</a> by <a class="new" href="index.php?title=Rodolfo Leoni&amp;action=edit&amp;redlink=1.html" title="Rodolfo Leoni (page does not exist)">Rodolfo Leoni</a>, <a href="CCC.html" title="CCC">CCC</a>, July 08, 2017 » <a href="Andscacs.html" title="Andscacs">Andscacs</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64720.html" rel="nofollow">Stockfish version with hash saving capability</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, July 25, 2017 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64759.html" rel="nofollow">Will you use hash saving?</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, July 30, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65914.html" rel="nofollow">Persistent hashes - performance</a> by <a class="new" href="index.php?title=Rodolfo Leoni&amp;action=edit&amp;redlink=1.html" title="Rodolfo Leoni (page does not exist)">Rodolfo Leoni</a>, <a href="CCC.html" title="CCC">CCC</a>, December 06, 2017</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=79567" rel="nofollow">Most recent implementation of Persistent Hash Table</a> by Giovanni Lavorgna, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.cis.uab.edu/hyatt/craftydoc.html.html" rel="nofollow">Crafty Command Documentation (version 18)</a> - What is this new Position Learning I've heard about?</li>
+<li> <a class="external text" href="http://www.rybkachess.com/index.php?auswahl=Persistent+hash.html" rel="nofollow">Rybka 3 Persistent Hash</a> from <a class="external text" href="http://www.rybkachess.com/index.php.html" rel="nofollow">Rybka - for the serious chess player</a></li>
+<li> <a class="external text" href="http://www.developer.com/java/ent/article.php/600531/The-Persistent-Hashtable-A-Quick-and-Dirty-Database.htm.html" rel="nofollow">The Persistent Hashtable: A Quick-and-Dirty Database</a> by <a class="external text" href="http://www.developer.com/author.php/5023/Greg-Travis.htm.html" rel="nofollow">Greg Travis</a>, <a class="external text" href="http://www.developer.com/.html" rel="nofollow">Developer.com</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Persistence_%28computer_science%29" rel="nofollow">Persistence (computer science) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Rote_learning" rel="nofollow">Rote learning from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Category:Salvador Dal%C3%AD.html" title="Category:Salvador Dalí">Salvador Dalí</a>, <a class="external text" href="https://en.wikipedia.org/wiki/The_Disintegration_of_the_Persistence_of_Memory" rel="nofollow">The Disintegration of the Persistence of Memory from Wikipedia</a>, 1952-1954</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64517&amp;start=2.html" rel="nofollow">Re: My "official" request to top engine programmers</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2017</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> (<b>1959</b>). <i><a class="external text" href="http://domino.watson.ibm.com/tchjr/journalindex.nsf/600cc5649e2871db852568150060213c/39a870213169f45685256bfa00683d74%21OpenDocument.html" rel="nofollow">Some Studies in Machine Learning Using the Game of Checkers</a></i>. IBM Journal July 1959</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> (<b>1967</b>). <i>Some Studies in Machine Learning. Using the Game of Checkers. II-Recent Progress</i>. <a class="external text" href="http://pages.cs.wisc.edu/%7Edyer/cs540/handouts/samuel-checkers.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="David Slate.html" title="David Slate">David Slate</a> (<b>1987</b>). <i>A Chess Program that uses its Transposition Table to Learn from Experience.</i> <a href="ICGA Journal.html#10 2" title="ICGA Journal">ICCA Journal, Vol. 10, No. 2</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="David Slate.html" title="David Slate">David Slate</a> (<b>1984</b>). <i>Interior-node Score Bounds in a Brute-force Chess Program.</i> <a href="ICGA Journal.html#7 4" title="ICGA Journal">ICCA Journal, Vol. 7, No. 4</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Tony Scherzer.html" title="Tony Scherzer">Tony Scherzer</a>, <a href="Linda Scherzer.html" title="Linda Scherzer">Linda Scherzer</a>, <a class="new" href="index.php?title=Dean Tjaden&amp;action=edit&amp;redlink=1.html" title="Dean Tjaden (page does not exist)">Dean Tjaden</a> (<b>1990</b>). <i>Learning in Bebe.</i> <a href="Computers, Chess, and Cognition.html" title="Computers, Chess, and Cognition">Computers, Chess, and Cognition</a> » <a href="Bebe.html#Award" title="Bebe">Mephisto Best-Publication Award</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.cis.uab.edu/hyatt/craftydoc.html.html" rel="nofollow">Crafty Command Documentation (version 18)</a> - What is this new Position Learning I've heard about?</span>
+</li>
+</ol></div>
+<p><b><a href="Learning.html" title="Learning">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721233413
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.025 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 220/1000000
+Preprocessor generated node count: 428/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1651-0!canonical and timestamp 20240721233413 and revision id 26379
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Persistent_Hash_Table&amp;oldid=26379">https://www.chessprogramming.org/index.php?title=Persistent_Hash_Table&amp;oldid=26379</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Salvador Dal%C3%AD.html" title="Category:Salvador Dalí">Salvador Dalí</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Persistent+Hash+Table&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Persistent Hash Table.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Persistent Hash Table&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Persistent Hash Table.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Persistent Hash Table&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Persistent Hash Table&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Persistent Hash Table.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Persistent Hash Table.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Persistent Hash Table&amp;oldid=26379.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Persistent Hash Table&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 24 March 2022, at 23:54.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Persistent_Hash_Table&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.025","walltime":"0.027","ppvisitednodes":{"value":220,"limit":1000000},"ppgeneratednodes":{"value":428,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721233413","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

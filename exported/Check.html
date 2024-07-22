@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Check - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Check","wgTitle":"Check","wgCurRevisionId":26198,"wgRevisionId":26198,"wgArticleId":1134,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Check","wgRelevantArticleId":1134,"wgRequestId":"Zp7DL8@utCIUdSQUVimlEgAAAAU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Check rootpage-Check skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Check</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * Check</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:211px;"><a href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bb9"><img alt="" class="thumbimage" height="284" src="images/b/b8/BakLighthouse.JPG" width="209"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:BakLighthouse.JPG.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - Lighthouse  <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>Inside a <a href="Chess Game.html" title="Chess Game">game of chess</a>, a <b>check</b> occurs if a <a href="King.html" title="King">king</a> is under immediate <a href="Attacks.html" title="Attacks">attack</a> by one (or two) opponent <a href="Pieces.html" title="Pieces">pieces</a>. If the king has no way to remove it from attack on the next move, the check is even <a href="Checkmate.html" title="Checkmate">checkmate</a>. Since check is crucial concerning the outcome of game and the <a href="Horizon Effect.html" title="Horizon Effect">horizon effect</a>, <a href="Check Extensions.html" title="Check Extensions">check extensions</a> might be applied to evade the check. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Kind of Checks"><span class="tocnumber">1</span> <span class="toctext">Kind of Checks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Single Check"><span class="tocnumber">1.1</span> <span class="toctext">Single Check</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Double Check"><span class="tocnumber">1.2</span> <span class="toctext">Double Check</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#In Check Detection"><span class="tocnumber">2</span> <span class="toctext">In Check Detection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#By last Move"><span class="tocnumber">2.1</span> <span class="toctext">By last Move</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Attack Tables"><span class="tocnumber">2.2</span> <span class="toctext">Attack Tables</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#On the Fly"><span class="tocnumber">2.3</span> <span class="toctext">On the Fly</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Getting out of check"><span class="tocnumber">3</span> <span class="toctext">Getting out of check</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Double Check 2"><span class="tocnumber">3.1</span> <span class="toctext">Double Check</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Single Check 2"><span class="tocnumber">3.2</span> <span class="toctext">Single Check</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Perpetual Check"><span class="tocnumber">4</span> <span class="toctext">Perpetual Check</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Publications"><span class="tocnumber">6</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#1997 ..."><span class="tocnumber">7.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2000 ..."><span class="tocnumber">7.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2005 ..."><span class="tocnumber">7.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2010 ..."><span class="tocnumber">7.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2015 ..."><span class="tocnumber">7.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2020 ..."><span class="tocnumber">7.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Kind_of_Checks">Kind of Checks</span></h1>
+<h2><span class="mw-headline" id="Single_Check">Single Check</span></h2>
+<p>The king is attacked by one opponent piece, either by the piece which just moved directly attacking the king, or alternatively a <a href="Discovered Check.html" title="Discovered Check">discovered check</a> where a distant sliding piece attacks the king by opening the <a href="Rays.html" title="Rays">ray</a> in opponent king <a href="Direction.html" title="Direction">direction</a> with another piece.
+</p>
+<h2><span class="mw-headline" id="Double_Check">Double Check</span></h2>
+<p>A <a href="Double Check.html" title="Double Check">double check</a> occurs if the moving piece directly attacks the king but also discovers a distant sliding attacker.
+<span id="Detection"></span>
+</p>
+<h1><span class="mw-headline" id="In_Check_Detection">In Check Detection</span></h1>
+<p>Whether the side to move is in check is essential to know inside the <a href="Search.html" title="Search">search</a> for various reasons. It might be <a href="Checkmate.html" title="Checkmate">checkmate</a>, and most <a href="Pseudo-Legal Move.html" title="Pseudo-Legal Move">pseudo-legal moves</a> <a href="Move Generation.html" title="Move Generation">generated</a> may be illegal, leaving the king attacked. <a href="Null Move.html" title="Null Move">Null move</a> would yield in an illegal position as well, at or below the <a href="Horizon Node.html" title="Horizon Node">horizon</a> we don't want to <a href="Quiescence Search.html#StandPat" title="Quiescence Search">stand pat</a> if <a href="Material.html" title="Material">material balance</a> or static <a href="Evaluation.html" title="Evaluation">evaluation</a> is far greater than <a href="Beta.html" title="Beta">beta</a>.
+</p>
+<h2><span class="mw-headline" id="By_last_Move">By last Move</span></h2>
+<p>The cheapest and most straightforward way to detect checks is to consider the previous move just made by the opponent. It might be a direct check or discovered check, so one has to test whether piece on <a href="Target Square.html" title="Target Square">target square</a> attacks the king, or whether piece on <a href="Origin Square.html" title="Origin Square">origin square</a> is attacked by an own sliding piece on an otherwise open <a href="Rays.html" title="Rays">ray</a> in opponent king direction <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. If the last move was an <a href="En passant.html" title="En passant">en passant</a> capture, one has to consider a few more complicated cases of possible discovered checks, since the captured pawn is not on the target square, and two pawns disappear from the 4th (5th) rank.
+</p>
+<h2><span class="mw-headline" id="Attack_Tables">Attack Tables</span></h2>
+<p>Based on the design and data structure of a chess program, an <a href="Incremental Updates.html" title="Incremental Updates">incremental updated</a> <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">attack and defend map</a> may immedeatly answer whether the king is under attack of one or even two opponent pieces.
+</p>
+<h2><span class="mw-headline" id="On_the_Fly">On the Fly</span></h2>
+<p>With <a href="Bitboards.html" title="Bitboards">bitboards</a> one may determine a <a href="Square Attacked By.html#AnyAttackBySide" title="Square Attacked By">square attacked</a> as mentioned in <a href="Checks and Pinned Pieces (Bitboards).html" title="Checks and Pinned Pieces (Bitboards)">checks and pinned pieces</a>.
+<span id="CheckEvasion"></span>
+</p>
+<h1><span class="mw-headline" id="Getting_out_of_check">Getting out of check</span></h1>
+<p>While in check, it is recommended to perform a specialized <a href="Move Generation.html" title="Move Generation">Move Generation</a> for check evasion of either a reasonable subset of all <a href="Pseudo-Legal Move.html" title="Pseudo-Legal Move">pseudo-legal moves</a> or even a strict <a href="Legal Move.html" title="Legal Move">legal move</a> generation:
+<span id="DoubleCheck"></span>
+</p>
+<h2><span class="mw-headline" id="Double_Check_2">Double Check</span></h2>
+<ul><li> Only king moves to non attacked squares, sliding check x-rays the king</li></ul>
+<h2><span class="mw-headline" id="Single_Check_2">Single Check</span></h2>
+<ul><li> Capture of checking piece. The capturing piece is not <a href="Pin.html#AbsolutePin" title="Pin">absolutely pinned</a></li>
+<li> King moves to non attacked squares, sliding check x-rays the king</li>
+<li> Interposing moves in case of distant sliding check. The moving piece is not absolutely pinned.</li></ul>
+<p><span id="Perpetual"></span>
+</p>
+<h1><span class="mw-headline" id="Perpetual_Check">Perpetual Check</span></h1>
+<p>A perpetual check occurs if one player forces an "endless" series of checks with repeated <a href="Reversible Moves.html" title="Reversible Moves">reversible moves</a>, finally resulting in a draw by <a href="Repetitions.html" title="Repetitions">threefold repetitions</a>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Check Extensions.html" title="Check Extensions">Check Extensions</a></li>
+<li> <a href="Checkmate.html" title="Checkmate">Checkmate</a></li>
+<li> <a href="Checks and Pinned Pieces (Bitboards).html" title="Checks and Pinned Pieces (Bitboards)">Checks and Pinned Pieces (Bitboards)</a></li>
+<li> <a href="Quiescence Search.html#Checks" title="Quiescence Search">Checks</a> in <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="Stalemate.html#Desperado" title="Stalemate">Desperado</a></li>
+<li> <a href="DirGolem.html" title="DirGolem">DirGolem</a></li>
+<li> <a href="Horizon Effect.html" title="Horizon Effect">Horizon Effect</a></li>
+<li> <a href="Stalemate.html" title="Stalemate">Stalemate</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a class="new" href="index.php?title=Richard L. Smith&amp;action=edit&amp;redlink=1.html" title="Richard L. Smith (page does not exist)">Richard L. Smith</a>, <a href="Fernand Gobet.html" title="Fernand Gobet">Fernand Gobet</a>, <a class="new" href="index.php?title=Peter Lane&amp;action=edit&amp;redlink=1.html" title="Peter Lane (page does not exist)">Peter Lane</a> (<b>2009</b>). <i><a class="external text" href="http://bura.brunel.ac.uk/handle/2438/3503.html" rel="nofollow">Checking chess checks with chunks: A model of simple check detection</a></i>. <a class="external text" href="http://sideshow.psyc.bbk.ac.uk/rcooper/iccm2009/proceedings/.html" rel="nofollow">ICCM 2009</a> » <a href="CHREST.html" title="CHREST">CHREST</a>, <a href="Chunking.html" title="Chunking">Chunking</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/group/rec.games.chess.computer/browse_frm/thread/ca0300b50438a388" rel="nofollow">quiescence search</a> by <a href="Andrew Tridgell.html" title="Andrew Tridgell">Andrew Tridgell</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 16, 1997 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a>, <a href="Crafty.html" title="Crafty">Crafty</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=237893" rel="nofollow">Checks in the Qsearch</a> by <a href="Scott Gasch.html" title="Scott Gasch">Scott Gasch</a>, <a href="CCC.html" title="CCC">CCC</a>, June 28, 2002 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=265069" rel="nofollow">Idea for check function</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, November 14, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334869" rel="nofollow">Fast check detection in bitboard engine</a> by <a href="Jean-Francois Romang.html" title="Jean-Francois Romang">Jean-Francois Romang</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=344282" rel="nofollow">Rebel's long checks concept in QS</a> by <a href="Anastasios Milikas.html" title="Anastasios Milikas">milix</a>, <a href="CCC.html" title="CCC">CCC</a>, January 23, 2004 » <a href="Rebel.html" title="Rebel">Rebel</a>, <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=385027" rel="nofollow">Qsearch Checks</a> by <a href="Tor Lattimore.html" title="Tor Lattimore">Tor Lattimore</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2004 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=702&amp;p=2642.html" rel="nofollow">Checks in QSearch</a> by <a href="Dan Honeycutt.html" title="Dan Honeycutt">Dan Honeycutt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, November 23, 2004 » <a href="Quiescence Search.html#Checks" title="Quiescence Search">Checks in Quiescence Search</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=3034.html" rel="nofollow">in check test</a> by Anonymous , <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 07, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=139285.html" rel="nofollow">How to Best Limit Checks in the Quiescence ?</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, August 20, 2007 » <a href="Quiescence Search.html#Checks" title="Quiescence Search">Checks in Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=16414.html" rel="nofollow">discovered check definition</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2007 » <a href="Discovered Check.html" title="Discovered Check">Discovered Check</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=23447.html" rel="nofollow">checks in q-search</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2008</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32424.html" rel="nofollow">Standpat and check</a> by <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a>, <a href="CCC.html" title="CCC">CCC</a>, February 06, 2010 » <a href="Quiescence Search.html#StandPat" title="Quiescence Search">Standing Pat</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51343&amp;sid=2384b91c58dc091e82cef3abd2a4f3f4.html" rel="nofollow">Detecting Checks</a> by beneficii, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, November 27, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38387.html" rel="nofollow">out of check move ordering</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, March 12, 2011 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42971.html" rel="nofollow">checks in quies</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2012 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2599.html" rel="nofollow">What is (in your opinion) the best check validation method?</a> by goodgame0111, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 24, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52309.html" rel="nofollow">Spite checks</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, May 13, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55874.html" rel="nofollow">Check-extension in QS</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 03, 2015 » <a href="Quiescence Search.html#Checks" title="Quiescence Search">Checks in Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56517.html" rel="nofollow">Ostrich tactics and pointless checks</a> by <a href="Colin Jenkins.html" title="Colin Jenkins">Colin Jenkins</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2015 » <a href="Horizon Effect.html" title="Horizon Effect">Horizon Effect</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59529.html" rel="nofollow">Checks in qsearch - must-have or optional?</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2016 » <a href="Quiescence Search.html#Checks" title="Quiescence Search">Checks in Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61140.html" rel="nofollow">perpetual check position</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, August 16, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61803.html" rel="nofollow">Spite checks, again</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 23, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=65479.html" rel="nofollow">check evasions</a> by <a href="Tam%C3%A1s Kuzmics.html" title="Tamás Kuzmics">Tamás Kuzmics</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 2017</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79128" rel="nofollow">Efficiently Detect Whether a Move Gives Check</a> by ori yonay, <a href="CCC.html" title="CCC">CCC</a>, January 16, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Check_%28chess%29" rel="nofollow">Check (chess) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Double_check" rel="nofollow">Double check from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Perpetual_check" rel="nofollow">Perpetual check from Wikipedia</a> » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cross-check" rel="nofollow">Cross-check from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Check" rel="nofollow">Check (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Checkbox" rel="nofollow">Checkbox from Wikipedia</a> » <a href="GUI.html" title="GUI">GUI</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bb9" rel="nofollow">Chess in the Art of Samuel Bak</a>, <a class="external text" href="http://www.chgs.umn.edu/.html" rel="nofollow">Center for Holocaust &amp; Genocide Studies</a>, <a href="University of Minnesota.html" title="University of Minnesota">University of Minnesota</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=265069" rel="nofollow">Idea for check function</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, November 14, 2002</span>
+</li>
+</ol></div>
+<p><b><a href="Chess.html" title="Chess">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722142552
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.020 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 123/1000000
+Preprocessor generated node count: 182/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1134-0!canonical and timestamp 20240722142552 and revision id 26198
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Check&amp;oldid=26198">https://www.chessprogramming.org/index.php?title=Check&amp;oldid=26198</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Check&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Check.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Check&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Check.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Check&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Check&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Check.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Check.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Check&amp;oldid=26198.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Check&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 16 January 2022, at 23:33.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Check&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.020","walltime":"0.022","ppvisitednodes":{"value":123,"limit":1000000},"ppgeneratednodes":{"value":182,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722142552","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

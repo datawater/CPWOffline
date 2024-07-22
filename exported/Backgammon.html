@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Backgammon - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Backgammon","wgTitle":"Backgammon","wgCurRevisionId":12295,"wgRevisionId":12295,"wgArticleId":1872,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Backgammon","wgRelevantArticleId":1872,"wgRequestId":"Zp7DSwZUIzne983r89wxQQAAAA4","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Backgammon rootpage-Backgammon skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Backgammon</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Games.html" title="Games">Games</a> * Backgammon</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Backgammon lg.png.html"><img alt="" class="thumbimage" height="195" src="wikipedia/commons/thumb/3/30/Backgammon_lg.png/300px-Backgammon_lg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Backgammon_lg.png/450px-Backgammon_lg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Backgammon_lg.png/600px-Backgammon_lg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Backgammon lg.png.html" title="Enlarge"></a></div>A Backgammon Set <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Backgammon</b>,<br/>
+a turn-based two-player <a class="external text" href="https://en.wikipedia.org/wiki/Tables_%28board_game%29" rel="nofollow">tables</a> board game of <a class="external text" href="https://en.wikipedia.org/wiki/Game_of_chance" rel="nofollow">chance</a> and strategy with 15 checkers each on a board of 24 spaces or points. One moves according to rolls of a pair of dice, trying to bring own checkers home and bear them off before the opponent does <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. Opponent checkers can be "hit" and returned to the start.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Computer Backgammon"><span class="tocnumber">1</span> <span class="toctext">Computer Backgammon</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Computer Olympiads"><span class="tocnumber">2</span> <span class="toctext">Computer Olympiads</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Photos"><span class="tocnumber">3</span> <span class="toctext">Photos</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Evaluation"><span class="tocnumber">4</span> <span class="toctext">Evaluation</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Learning"><span class="tocnumber">5</span> <span class="toctext">Learning</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Publications"><span class="tocnumber">6</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#1977 ..."><span class="tocnumber">6.1</span> <span class="toctext">1977 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1980 ..."><span class="tocnumber">6.2</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#1985 ..."><span class="tocnumber">6.3</span> <span class="toctext">1985 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#1990 ..."><span class="tocnumber">6.4</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#1995 ..."><span class="tocnumber">6.5</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2000 ..."><span class="tocnumber">6.6</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2005 ..."><span class="tocnumber">6.7</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ..."><span class="tocnumber">6.8</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2015 ..."><span class="tocnumber">6.9</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Computer Backgammon 2"><span class="tocnumber">8.1</span> <span class="toctext">Computer Backgammon</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Backgammon Programs"><span class="tocnumber">8.2</span> <span class="toctext">Backgammon Programs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Computer_Backgammon">Computer Backgammon</span></h1>
+<p>Backgammon programs were pioneered in the late 70s by <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> with focus on <a href="Tapered Eval.html" title="Tapered Eval">smooth evaluation</a>, and by <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> from the late 80s, who successfully applied <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a> and <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">Temporal Difference Learning</a> to his Backgammon playing programs. Computer backgammon is regularly played at <a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiads</a>, organized by the <a href="ICGA.html" title="ICGA">ICGA</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. 
+</p>
+<h1><span class="mw-headline" id="Computer_Olympiads"><a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiads</a><span id="Olympiad"></span></span></h1>
+<ul><li> <a href="1st Computer Olympiad.html#Backgammon" title="1st Computer Olympiad">1st Computer Olympiad, London 1989</a></li>
+<li> <a href="2nd Computer Olympiad.html#Backgammon" title="2nd Computer Olympiad">2nd Computer Olympiad, London 1990</a></li>
+<li> <a href="4th Computer Olympiad.html#Backgammon" title="4th Computer Olympiad">4th Computer Olympiad, London 1992</a></li>
+<li> <a href="7th Computer Olympiad.html#Backgammon" title="7th Computer Olympiad">7th Computer Olympiad, Maastricht 2002</a></li>
+<li> <a href="8th Computer Olympiad.html#Backgammon" title="8th Computer Olympiad">8th Computer Olympiad, Graz 2003</a></li>
+<li> <a href="11th Computer Olympiad.html#Backgammon" title="11th Computer Olympiad">11th Computer Olympiad, Turin 2006</a></li>
+<li> <a href="12th Computer Olympiad.html#Backgammon" title="12th Computer Olympiad">12th Computer Olympiad, Amsterdam 2007</a></li>
+<li> <a href="16th Computer Olympiad.html#Backgammon" title="16th Computer Olympiad">16th Computer Olympiad, Tilburg 2011</a></li>
+<li> <a href="18th Computer Olympiad.html#Backgammon" title="18th Computer Olympiad">18th Computer Olympiad, Leiden 2015</a></li>
+<li> <a href="19th Computer Olympiad.html#Backgammon" title="19th Computer Olympiad">19th Computer Olympiad, Leiden 2016</a></li></ul>
+<h1><span class="mw-headline" id="Photos">Photos</span></h1>
+<div class="floatnone"><a href="https://icga.leidenuniv.nl/?page_id=1467" rel="nofollow"><img alt="Backgammon2015.jpg" class="thumbborder" height="424" src="images/thumb/6/62/Backgammon2015.jpg/640px-Backgammon2015.jpg" srcset="/images/6/62/Backgammon2015.jpg 1.5x" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="18th Computer Olympiad.html#Backgammon" title="18th Computer Olympiad">18th Computer Olympiad 2015</a>, Backgammon medalists: <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (Bronze for <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=63" rel="nofollow">BGBlitz</a>), <br/><a class="new" href="index.php?title=Nikolaos Papahristou&amp;action=edit&amp;redlink=1.html" title="Nikolaos Papahristou (page does not exist)">Nikolaos Papahristou</a> (Gold for <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=712" rel="nofollow">Palamedes</a>), and <a class="new" href="index.php?title=Nardy Pillards&amp;action=edit&amp;redlink=1.html" title="Nardy Pillards (page does not exist)">Nardy Pillards</a> (Silver for <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=62" rel="nofollow">GNU Backgammon</a>) <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+</p>
+<h1><span class="mw-headline" id="Evaluation">Evaluation</span></h1>
+<p>In the late 70s at <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a>, <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> developed the <a class="mw-selflink selflink">Backgammon</a> playing program <b>BKG 9.8</b> for the <a href="PDP-10.html" title="PDP-10">PDP-10</a> to research the principles of <a href="Evaluation.html" title="Evaluation">evaluation</a> for another game than chess with a much higher <a href="Branching Factor.html" title="Branching Factor">branching factor</a> of more than 800 at every node <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. Early versions of BKG played badly even against weak players, but Berliner noticed that its critical mistakes were always at transitions apparently due to <a href="Evaluation Discontinuity.html" title="Evaluation Discontinuity">evaluation discontinuity</a>. He applied principles of <a class="external text" href="https://en.wikipedia.org/wiki/Fuzzy_logic" rel="nofollow">fuzzy logic</a> to <a href="Tapered Eval.html" title="Tapered Eval">smooth out</a> the transition between phases, and by July 1979, BKG 9.8 was strong enough to play against the ruling world champion <a class="external text" href="https://en.wikipedia.org/wiki/Luigi_Villa" rel="nofollow">Luigi Villa</a>. It won the match 7–1, becoming the first computer program to defeat a world champion in any game. Berliner states that the victory was largely a matter of luck, as the computer received more favorable dice rolls <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Learning">Learning</span></h1>
+<p>In the late 80s, <a class="new" href="index.php?title=IBM&amp;action=edit&amp;redlink=1.html" title="IBM (page does not exist)">IBM</a> researcher <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> pioneered in applying <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a> to Backgammon - first within his program <a class="external text" href="https://en.wikipedia.org/wiki/Neurogammon" rel="nofollow">Neurogammon</a>, which won the Gold medal at the <a href="1st Computer Olympiad.html#Backgammon" title="1st Computer Olympiad">1st Computer Olympiad</a> 1989 - and further improved by <i>TD-Lambda</i> based <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">Temporal Difference Learning</a> within <a class="external text" href="https://en.wikipedia.org/wiki/TD-Gammon" rel="nofollow">TD-Gammon</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1977_...">1977 ...</span></h2>
+<ul><li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1977</b>). <i>BKG - A Program that Plays Backgammon</i>. Technical Report, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a></li>
+<li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1977</b>). <i><a class="external text" href="http://www.bkgm.com/articles/Berliner/ExperiencesInEvaluationWithBKG/index.html.html" rel="nofollow">Experiences in Evaluation with BKG, a Program That Plays Backgammon</a></i>. <a href="Conferences.html#IJCAI1977" title="Conferences">IJCAI, 1977</a>, hosted by <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li>
+<li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1979</b>). <i><a class="external text" href="http://www.bkgm.com/articles/Berliner/EvaluationFunctionsLargeDomains/.html" rel="nofollow">On the Construction of Evaluation Functions for Large Domains</a></i>. <a href="Conferences.html#IJCAI1979" title="Conferences">IJCAI 1979</a>, Vol. 1, hosted by <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li>
+<li> Editor (<b>1979</b>). <i>Computer Backgammon</i>. <a href="Personal Computing.html#3 8" title="Personal Computing">Personal Computing, Vol. 3, No. 8</a>, pp. 81</li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1980</b>). <i><a class="external text" href="http://www.bkgm.com/articles/Berliner/BackgammonProgramBeatsWorldChamp/.html" rel="nofollow">Backgammon Computer Program Beats World Champion</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 14, hosted by <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li>
+<li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1980</b>). <i><a class="external text" href="http://www.bkgm.com/articles/Berliner/ComputerBackgammon/index.html.html" rel="nofollow">Computer Backgammon</a></i>. <a href="Scientific American.html" title="Scientific American">Scientific American</a>, Vol. 242, No. 6, hosted by <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li></ul>
+<h2><span class="mw-headline" id="1985_...">1985 ...</span></h2>
+<ul><li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a>, <a href="Terrence J. Sejnowski.html" title="Terrence J. Sejnowski">Terrence J. Sejnowski</a> (<b>1987</b>). <i>A 'Neural' Network that Learns to Play Backgammon</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/nips/nips1987.html.html#TesauroS87" rel="nofollow">NIPS 1987</a></li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1988</b>). <i>Connectionist Learning of Expert Backgammon Evaluations</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/icml/ml1988.html.html#Tesauro88" rel="nofollow">ML, 1988</a></li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1988</b>). <i>Neural network defeats creator in backgammon match</i>. Technical report no. CCSR-88-6, Center for Complex Systems Research, <a href="University of Illinois at Urbana-Champaign.html" title="University of Illinois at Urbana-Champaign">University of Illinois at Urbana-Champaign</a></li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1989</b>). <i>NEUROGAMMON: A Neural-Network Backgammon Learning Program</i>. <a href="1st Computer Olympiad.html#Workshop" title="1st Computer Olympiad">Heuristic Programming in Artificial Intelligence 1</a></li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1989</b>). <i><a class="external text" href="http://www.mitpressjournals.org/doi/abs/10.1162/neco.1989.1.3.321?journalCode=neco.html" rel="nofollow">Neurogammon Wins Computer Olympiad</a></i>. Neural Computation Vol. 1, No. 3</li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a>, <a href="Terrence J. Sejnowski.html" title="Terrence J. Sejnowski">Terrence J. Sejnowski</a> (<b>1989</b>). <i>A Parallel Network that Learns to Play Backgammon</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 39, No. 3</li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1992</b>). <i>Temporal Difference Learning of Backgammon Strategy</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/icml/ml1992.html.html#Tesauro92" rel="nofollow">ML 1992</a></li>
+<li> <a href="Justin A. Boyan.html" title="Justin A. Boyan">Justin A. Boyan</a> (<b>1992</b>). <i>Modular Neural Networks for Learning Context-Dependent Game Strategies</i>. Master's thesis, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Cambridge" rel="nofollow">University of Cambridge</a>, <a class="external text" href="http://www.cs.cmu.edu/~jab/cv/pubs/boyan.backgammon-thesis.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1994</b>). <i>TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/neco/neco6.html.html#Tesauro94" rel="nofollow">Neural Computation Vol. 6, No. 2</a></li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>1995</b>). <i>Temporal Difference Learning and TD-Gammon</i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 38, No. 3</li>
+<li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1999</b>). <i>Efficient Approximation of Backgammon Race Equities.</i> <a href="ICGA Journal.html#22 3" title="ICGA Journal">ICCA Journal, Vol 22, No. 3</a>,<a class="external text" href="http://www.cs.ualberta.ca/~mburo/ps/book.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>2001</b>). <i>Efficient Approximation of Backgammon Race Equities.</i> <a href="Advances in Computer Games 9.html" title="Advances in Computer Games 9">Advances in Computer Games 9</a>, <a class="external text" href="http://www.cs.ualberta.ca/~mburo/ps/bgequ.pdf.html" rel="nofollow">pdf</a> </li>
+<li> <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> (<b>2002</b>). <i>Programming backgammon using self-teaching neural nets</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/ai/ai134.html.html#Tesauro02" rel="nofollow">Artificial Intelligence Vol. 134 No. 1-2</a></li>
+<li> <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (<b>2002</b>). <i>BGBlitz wins Backgammon tournament</i>. <a href="ICGA Journal.html#25 3" title="ICGA Journal">ICGA Journal, Vol. 25, No. 3</a> » <a href="7th Computer Olympiad.html#Backgammon" title="7th Computer Olympiad">7th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (<b>2002</b>). <i>Backgammon at the 7th Computer Olympiad</i>. <a href="ICGA Journal.html#25 4" title="ICGA Journal">ICGA Journal, Vol. 25, No. 4</a> » <a href="7th Computer Olympiad.html#Backgammon" title="7th Computer Olympiad">7th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (<b>2003</b>). <i>BGBlitz wins Backgammon tournament</i>. <a href="ICGA Journal.html#26 4" title="ICGA Journal">ICGA Journal, Vol. 26, No. 4</a> » <a href="8th Computer Olympiad.html#Backgammon" title="8th Computer Olympiad">8th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Thomas Hauk&amp;action=edit&amp;redlink=1.html" title="Thomas Hauk (page does not exist)">Thomas Hauk</a>, <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>2004</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/11674399 4.html" rel="nofollow">*-Minimax Performance in Backgammon</a></i>. <a href="CG 2004.html" title="CG 2004">CG 2004</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (<b>2006</b>). <i>GnuBG wins Backgammon tournament</i>. <a href="ICGA Journal.html#29 3" title="ICGA Journal">ICGA Journal, Vol. 29, No. 3</a> » <a href="11th Computer Olympiad.html#Backgammon" title="11th Computer Olympiad">11th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Fran%C3%A7ois van Lishout&amp;action=edit&amp;redlink=1.html" title="François van Lishout (page does not exist)">François van Lishout</a>, <a href="Guillaume Chaslot.html" title="Guillaume Chaslot">Guillaume Chaslot</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a> (<b>2007</b>). <i><a class="external text" href="https://www.researchgate.net/publication/228378473_Monte-Carlo_tree_search_in_backgammon" rel="nofollow">Monte-Carlo Tree Search in Backgammon</a></i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a></li>
+<li> <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (<b>2007</b>). <i>BGBlitz wins Backgammon tournament</i>.  <a href="ICGA Journal.html#30 2" title="ICGA Journal">ICGA Journal, Vol. 30, No. 2</a> » <a href="12th Computer Olympiad.html#Backgammon" title="12th Computer Olympiad">12th Computer Olympiad</a></li>
+<li> <a href="Wee-Chong Oon.html" title="Wee-Chong Oon">Wee-Chong Oon</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/h/Henz:Martin" rel="nofollow">Martin Henz</a> (<b>2007</b>). <i><a class="external text" href="http://www.aaai.org/Library/AAAI/2007/aaai07-098.php.html" rel="nofollow">M2ICAL Analyses HC-Gammon</a></i>. <a href="Conferences.html#AAAI-2007" title="Conferences">AAAI 2007</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Marco Wiering.html" title="Marco Wiering">Marco Wiering</a> (<b>2010</b>). <i><a class="external text" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=xVas0I8AAAAJ&amp;cstart=20&amp;citation_for_view=xVas0I8AAAAJ:_kc_bZDykSQC" rel="nofollow">Self-play and using an expert to learn to play backgammon with temporal difference learning</a></i>. <a class="external text" href="http://www.scirp.org/journal/jilsa/.html" rel="nofollow">Journal of Intelligent Learning Systems and Applications</a>, Vol. 2, No. 2</li>
+<li> <a class="new" href="index.php?title=Nikolaos Papahristou&amp;action=edit&amp;redlink=1.html" title="Nikolaos Papahristou (page does not exist)">Nikolaos Papahristou</a>, <a class="new" href="index.php?title=Ioannis Refanidis&amp;action=edit&amp;redlink=1.html" title="Ioannis Refanidis (page does not exist)">Ioannis Refanidis</a> (<b>2011</b>). <i>Training Neural Networks to Play Backgammon Variants Using Reinforcement Learning</i>. Proceedings of <a class="external text" href="http://conference.researchbib.com/?eventid=6400.html" rel="nofollow">Evogames 2011</a>, Part I, LNCS 6624, <a class="external text" href="http://ai.uom.gr/nikpapa/publications/Training%20NN%20to%20Play%20Backgammon%20Variants%20Using%20RL.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Nikolaos Papahristou&amp;action=edit&amp;redlink=1.html" title="Nikolaos Papahristou (page does not exist)">Nikolaos Papahristou</a>, <a class="new" href="index.php?title=Ioannis Refanidis&amp;action=edit&amp;redlink=1.html" title="Ioannis Refanidis (page does not exist)">Ioannis Refanidis</a> (<b>2011</b>). <i><a class="external text" href="https://www.conftool.net/acg13/index.php?page=browseSessions&amp;form_session=5" rel="nofollow">Improving Temporal Difference Performance in Backgammon Variants</a></i>. <a href="Advances in Computer Games 13.html" title="Advances in Computer Games 13">Advances in Computer Games 13</a>, <a class="external text" href="http://ai.uom.gr/nikpapa/publications/Improving%20Temporal%20Difference%20Learning%20in%20Backgammon%20Variants ACG13.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Frank Berger&amp;action=edit&amp;redlink=1.html" title="Frank Berger (page does not exist)">Frank Berger</a> (<b>2012</b>). <i>Palamedes wins Backgammon Tournament</i>. <a href="ICGA Journal.html#35 1" title="ICGA Journal">ICGA Journal, Vol. 35, No. 1</a> » <a href="16th Computer Olympiad.html#Backgammon" title="16th Computer Olympiad">16th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Nikolaos Papahristou&amp;action=edit&amp;redlink=1.html" title="Nikolaos Papahristou (page does not exist)">Nikolaos Papahristou</a>, <a class="new" href="index.php?title=Ioannis Refanidis&amp;action=edit&amp;redlink=1.html" title="Ioannis Refanidis (page does not exist)">Ioannis Refanidis</a> (<b>2013</b>). <i>AnyGammon: Playing backgammon variants using any board size</i>. <a class="external text" href="http://dblp.uni-trier.de/db/conf/fdg/fdg2013.html.html" rel="nofollow">FDG-2013</a>, <a class="external text" href="http://www.fdg2013.org/program/festival/anygammon.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Nikolaos Papahristou&amp;action=edit&amp;redlink=1.html" title="Nikolaos Papahristou (page does not exist)">Nikolaos Papahristou</a>, <a class="new" href="index.php?title=Ioannis Refanidis&amp;action=edit&amp;redlink=1.html" title="Ioannis Refanidis (page does not exist)">Ioannis Refanidis</a> (<b>2015</b>). <i>Constructing Pin Endgame Databases for the Backgammon Variant Plakoto</i>. <a href="Advances in Computer Games 14.html" title="Advances in Computer Games 14">Advances in Computer Games 14</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=25139" rel="nofollow">Chess, Backgammon and Neural Nets (NN)</a> by <a class="new" href="index.php?title=Torsten Schoop&amp;action=edit&amp;redlink=1.html" title="Torsten Schoop (page does not exist)">Torsten Schoop</a>, <a href="CCC.html" title="CCC">CCC</a>, August 20, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=359097" rel="nofollow">Neural nets in backgammon</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2004</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15442.html" rel="nofollow">A SNAC, anyone?</a> by <a href="Jan Brouwer.html" title="Jan Brouwer">Jan Brouwer</a>, <a href="CCC.html" title="CCC">CCC</a>, July 30, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=24403.html" rel="nofollow">What is the best backgammon software?</a> by M. Ansari, <a href="CCC.html" title="CCC">CCC</a>, October 15, 2008</li>
+<li> <a class="external text" href="http://www.bgonline.org/forums/webbbs config.pl?noframes;read=138559.html" rel="nofollow">Backgammon is not chess!</a> by Joe Russell, <a class="external text" href="http://www.bgonline.org/forums/.html" rel="nofollow">BGonline.org Forums</a>, March 08, 2013</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Backgammon" rel="nofollow">Backgammon from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.bkgm.com/rules.html.html" rel="nofollow">Rules of Backgammon</a></dd></dl>
+<h2><span class="mw-headline" id="Computer_Backgammon_2">Computer Backgammon</span></h2>
+<ul><li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/game.php?id=11" rel="nofollow">Backgammon (ICGA Tournaments)</a></li>
+<li> <a class="external text" href="http://www.bkgm.com/articles/page07.html.html#programming" rel="nofollow">Backgammon Articles: Using Computers to Improve Your Game</a> hosted by the <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li>
+<li> <a class="external text" href="http://satirist.org/learn-game/systems/gammon/.html" rel="nofollow">the neural net backgammon programs</a> from <a class="external text" href="http://satirist.org/learn-game/.html" rel="nofollow">Machine Learning in Games</a> by <a href="Jay Scott.html" title="Jay Scott">Jay Scott</a></li>
+<li> <a class="external text" href="http://www.cs.cornell.edu/boom/2001sp/Tsinteris/gammon.htm.html" rel="nofollow">Neural Network learns Backgammon</a> by <a class="external text" href="http://kimtsi.com/.html" rel="nofollow">Kimon Tsinteris</a> and David Wilson</li>
+<li> <a class="external text" href="http://www.fibs.com/.html" rel="nofollow">FIBS, the First Internet Backgammon Server</a></li></ul>
+<h2><span class="mw-headline" id="Backgammon_Programs">Backgammon Programs</span></h2>
+<ul><li> <a class="external text" href="http://www.bkgm.com/software.html.html" rel="nofollow">Backgammon Software</a> from <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></li>
+<li> <a class="external text" href="https://www.bgblitz.com/index.html" rel="nofollow">BGBlitz</a></li>
+<li> <a class="external text" href="http://www.gnubg.org/.html" rel="nofollow">GNU Backgammon</a></li>
+<li> <a class="external text" href="http://www.backgammoned.net/all-about-backgammon/jellyfish.html.html" rel="nofollow">Jellyfish</a></li>
+<li> <a class="external text" href="http://ai.uom.gr/nikpapa/Palamedes/.html" rel="nofollow">Palamedes</a></li>
+<li> <a class="external text" href="https://www.bgsnowie.com/" rel="nofollow">Snowie</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">A backgammon set, consisting of a board, two sets of 15 checkers, two pairs of dice, a <a class="external text" href="https://en.wikipedia.org/wiki/Backgammon#Doubling_cube" rel="nofollow">doubling cube</a>, and dice cups, Image by <a class="external text" href="https://commons.wikimedia.org/wiki/User:Ptkfgs" rel="nofollow">Ptkfgs</a>, March 6, 2013, <a class="external text" href="https://en.wikipedia.org/wiki/Backgammon" rel="nofollow">Backgammon from Wikipedia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/game.php?id=11" rel="nofollow">Backgammon (ICGA Tournaments)</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://icga.leidenuniv.nl/?page_id=1467" rel="nofollow">18th Computer Olympiad - Day 6 Photos</a> by <a href="Jan Krabbenbos.html" title="Jan Krabbenbos">Jan Krabbenbos</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1977</b>). <i><a class="external text" href="http://www.bkgm.com/articles/Berliner/ExperiencesInEvaluationWithBKG/index.html.html" rel="nofollow">Experiences in Evaluation with BKG, a Program That Plays Backgammon</a></i>. <a href="Conferences.html#IJCAI1977" title="Conferences">IJCAI, 1977</a>, hosted by <a class="external text" href="http://www.bkgm.com/.html" rel="nofollow">Backgammon Galore</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Hans_Berliner" rel="nofollow">Hans Berliner from Wikipedia</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1980</b>). <i><a class="external text" href="http://www.bkgm.com/articles/Berliner/BackgammonProgramBeatsWorldChamp/.html" rel="nofollow">Backgammon Computer Program Beats World Champion</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 14</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Richard Sutton.html" title="Richard Sutton">Richard Sutton</a>, <a href="Andrew Barto.html" title="Andrew Barto">Andrew Barto</a> (<b>1998</b>). <i><a class="external text" href="http://www.incompleteideas.net/sutton/book/the-book.html.html" rel="nofollow">Reinforcement Learning: An Introduction</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Press" rel="nofollow">MIT Press</a>, <a class="external text" href="http://www.incompleteideas.net/sutton/book/ebook/node108.html.html" rel="nofollow">11.1 TD-Gammon</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://satirist.org/learn-game/systems/gammon/hc-gammon.html.html" rel="nofollow">The hillclimbing HC-Gammon</a> from <a class="external text" href="http://satirist.org/learn-game/.html" rel="nofollow">Machine Learning in Games</a> by <a href="Jay Scott.html" title="Jay Scott">Jay Scott</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Plakoto" rel="nofollow">Plakoto from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Games.html" title="Games">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722095747
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.088 seconds
+Real time usage: 1.000 second
+Preprocessor visited node count: 224/1000000
+Preprocessor generated node count: 424/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1872-0!canonical and timestamp 20240722095746 and revision id 12295
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Backgammon&amp;oldid=12295">https://www.chessprogramming.org/index.php?title=Backgammon&amp;oldid=12295</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Backgammon&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Backgammon.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Backgammon&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Backgammon.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Backgammon&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Backgammon&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Backgammon.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Backgammon.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Backgammon&amp;oldid=12295.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Backgammon&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 23 May 2019, at 20:34.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Backgammon&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.088","walltime":"1.000","ppvisitednodes":{"value":224,"limit":1000000},"ppgeneratednodes":{"value":424,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722095747","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":51});});</script>
+</body>
+</html>

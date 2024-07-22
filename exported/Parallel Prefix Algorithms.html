@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Parallel Prefix Algorithms - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Parallel_Prefix_Algorithms","wgTitle":"Parallel Prefix Algorithms","wgCurRevisionId":24281,"wgRevisionId":24281,"wgArticleId":1271,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Trilok Gurtu","Joe Zawinul"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Parallel_Prefix_Algorithms","wgRelevantArticleId":1271,"wgRequestId":"Zp7DmP-qaMe6EU8WbZGg-gAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Parallel_Prefix_Algorithms rootpage-Parallel_Prefix_Algorithms skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Parallel Prefix Algorithms</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Algorithms.html" title="Algorithms">Algorithms</a> * Parallel Prefix Algorithms</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.toves.org/books/distalg/.html"><img alt="" class="thumbimage" height="145" src="images/thumb/e/e0/Parallelprefixsum.png/300px-Parallelprefixsum.png" srcset="/images/e/e0/Parallelprefixsum.png 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Parallelprefixsum.png.html" title="Enlarge"></a></div>Parallel Prefix Sum <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Parallel prefix algorithms</b> compute all <a class="external text" href="https://en.wikipedia.org/wiki/Prefix_sum" rel="nofollow">prefixes</a> of a input sequence in <a class="external text" href="https://en.wikipedia.org/wiki/Time_complexity#Logarithmic_time" rel="nofollow">logarithmic time</a>, and are topic of various <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD and SWAR techniques</a> applied to <a href="Bitboards.html" title="Bitboards">bitboards</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . This page provides some basics on simple parallel prefix problems, like parity words and <a class="external text" href="https://en.wikipedia.org/wiki/Gray_code" rel="nofollow">Gray code</a> with some interesting properties, followed by some theoretical background on more complex parallel prefix problems, like <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone</a> by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a>, and a comparison of three similar Kogge-Stone routines for different purpose. 
+<span id="ParityWords"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parity Words"><span class="tocnumber">1</span> <span class="toctext">Parity Words</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Gray Code"><span class="tocnumber">2</span> <span class="toctext">Gray Code</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Fill Stuff"><span class="tocnumber">3</span> <span class="toctext">Fill Stuff</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Elaborations on Kogge-Stone"><span class="tocnumber">4</span> <span class="toctext">Elaborations on Kogge-Stone</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Add.2FSub versus Attacks"><span class="tocnumber">5</span> <span class="toctext">Add/Sub versus Attacks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Add"><span class="tocnumber">5.1</span> <span class="toctext">Add</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Sub"><span class="tocnumber">5.2</span> <span class="toctext">Sub</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#East Attacks"><span class="tocnumber">5.3</span> <span class="toctext">East Attacks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Publications"><span class="tocnumber">7</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Parity_Words">Parity Words</span></h1>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Parity_bit#Parity" rel="nofollow">Parity</a> is often related to <a class="external text" href="https://en.wikipedia.org/wiki/Error_detection_and_correction" rel="nofollow">error detection and correction</a>. The modulo 2 sum aka <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">exclusive or</a> (xor) of any number of inputs is sufficient to determine even or odd parity. On a bitboard for each bit 0..63 we like to know, whether the number of ones including all trailing bits is odd or even, xi is the bit in x with bit-index i:
+</p>
+<pre>
+p0  = x0;
+p1  = x0 ^ x1;
+p2  = x0 ^ x1 ^ x2;
+...
+p63 = x0 ^ x1 ^ x2 ^ .... ^ x63;
+</pre>
+<p>Or <a href="Recursion.html" title="Recursion">recursively</a>
+</p>
+<pre>
+p[i] = p[i-1] ^ x[i];
+</pre>
+<p>p63 indicates whether the whole cardinality is odd or even. The parallel prefix solution looks that way:
+</p>
+<pre>
+x ^= x &lt;&lt;  1;
+x ^= x &lt;&lt;  2;
+x ^= x &lt;&lt;  4;
+x ^= x &lt;&lt;  8;
+x ^= x &lt;&lt; 16;
+x ^= x &lt;&lt; 32;
+</pre>
+<p>and only need <code>log2(64) == 6</code> steps to perform all the xor instructions.
+</p><p>Surprisingly, thanks to xor, we can restore the initial value by a final:
+</p>
+<pre>
+x ^= x &lt;&lt; 1;
+</pre>
+<p><span id="GrayCode"></span>
+</p>
+<h1><span class="mw-headline" id="Gray_Code">Gray Code</span></h1>
+<p>The reflected binary code, or <a class="external text" href="https://en.wikipedia.org/wiki/Gray_code" rel="nofollow">Gray code</a> has some similar properties <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. The Gray code is defined by the modulo 2 sum or <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">exclusive or</a> of a word with its value shifted right by one.
+</p>
+<pre>
+gray = x ^ (x &gt;&gt; 1);
+</pre>
+<p>This ensures that consecutive Gray codes have only one bit changed, that is a <a href="Population Count.html#HammingDistance" title="Population Count">Hamming distance</a> of one. For instance for a 4-bit or <a href="Nibble.html" title="Nibble">nibble</a> Gray code:
+</p>
+<table class="wikitable">
+<tr>
+<th> x decimal
+</th>
+<th> x binary
+</th>
+<th> x&gt;&gt;1
+</th>
+<th> Gray bin
+</th>
+<th> decimal
+</th></tr>
+<tr>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:center;"> 0001
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:center;"> 0001
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:center;"> 0010
+</td>
+<td style="text-align:center;"> 0001
+</td>
+<td style="text-align:center;"> 0011
+</td>
+<td style="text-align:right;"> 3
+</td></tr>
+<tr>
+<td style="text-align:right;"> 3
+</td>
+<td style="text-align:center;"> 0011
+</td>
+<td style="text-align:center;"> 0001
+</td>
+<td style="text-align:center;"> 0010
+</td>
+<td style="text-align:right;"> 2
+</td></tr>
+<tr>
+<td style="text-align:right;"> 4
+</td>
+<td style="text-align:center;"> 0100
+</td>
+<td style="text-align:center;"> 0010
+</td>
+<td style="text-align:center;"> 0110
+</td>
+<td style="text-align:right;"> 6
+</td></tr>
+<tr>
+<td style="text-align:right;"> 5
+</td>
+<td style="text-align:center;"> 0101
+</td>
+<td style="text-align:center;"> 0010
+</td>
+<td style="text-align:center;"> 0111
+</td>
+<td style="text-align:right;"> 7
+</td></tr>
+<tr>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:center;"> 0110
+</td>
+<td style="text-align:center;"> 0011
+</td>
+<td style="text-align:center;"> 0101
+</td>
+<td style="text-align:right;"> 5
+</td></tr>
+<tr>
+<td style="text-align:right;"> 7
+</td>
+<td style="text-align:center;"> 0111
+</td>
+<td style="text-align:center;"> 0011
+</td>
+<td style="text-align:center;"> 0100
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:center;"> 1000
+</td>
+<td style="text-align:center;"> 0100
+</td>
+<td style="text-align:center;"> 1100
+</td>
+<td style="text-align:right;"> 12
+</td></tr>
+<tr>
+<td style="text-align:right;"> 9
+</td>
+<td style="text-align:center;"> 1001
+</td>
+<td style="text-align:center;"> 0100
+</td>
+<td style="text-align:center;"> 1101
+</td>
+<td style="text-align:right;"> 13
+</td></tr>
+<tr>
+<td style="text-align:right;"> 10
+</td>
+<td style="text-align:center;"> 1010
+</td>
+<td style="text-align:center;"> 0101
+</td>
+<td style="text-align:center;"> 1111
+</td>
+<td style="text-align:right;"> 15
+</td></tr>
+<tr>
+<td style="text-align:right;"> 11
+</td>
+<td style="text-align:center;"> 1011
+</td>
+<td style="text-align:center;"> 0101
+</td>
+<td style="text-align:center;"> 1110
+</td>
+<td style="text-align:right;"> 14
+</td></tr>
+<tr>
+<td style="text-align:right;"> 12
+</td>
+<td style="text-align:center;"> 1100
+</td>
+<td style="text-align:center;"> 0110
+</td>
+<td style="text-align:center;"> 1010
+</td>
+<td style="text-align:right;"> 10
+</td></tr>
+<tr>
+<td style="text-align:right;"> 13
+</td>
+<td style="text-align:center;"> 1101
+</td>
+<td style="text-align:center;"> 0110
+</td>
+<td style="text-align:center;"> 1011
+</td>
+<td style="text-align:right;"> 11
+</td></tr>
+<tr>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:center;"> 1110
+</td>
+<td style="text-align:center;"> 0111
+</td>
+<td style="text-align:center;"> 1001
+</td>
+<td style="text-align:right;"> 9
+</td></tr>
+<tr>
+<td style="text-align:right;"> 15
+</td>
+<td style="text-align:center;"> 1111
+</td>
+<td style="text-align:center;"> 0111
+</td>
+<td style="text-align:center;"> 1000
+</td>
+<td style="text-align:right;"> 8
+</td></tr>
+<tr>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:center;"> 0000
+</td>
+<td style="text-align:right;"> 0
+</td></tr></table>
+<p>Decoding Gray code is a parallel prefix problem similar to the ring-wise operations of the <a href="#ParityWords">Parity words</a>. For a nibble Gray code:
+</p>
+<pre>
+x  = gray;
+x ^= x &gt;&gt;  2;
+x ^= x &gt;&gt;  1;
+</pre>
+<p>Or for 64-bit Gray-Codes:
+</p>
+<pre>
+x  = gray;
+x ^= x &gt;&gt; 32;
+x ^= x &gt;&gt; 16;
+x ^= x &gt;&gt;  8;
+x ^= x &gt;&gt;  4;
+x ^= x &gt;&gt;  2;
+x ^= x &gt;&gt;  1;
+</pre>
+<h1><span class="mw-headline" id="Fill_Stuff">Fill Stuff</span></h1>
+<p>Parallel prefix <a href="Pawn Fills.html" title="Pawn Fills">front and rear-fills</a>, for instance to determine <a href="Pawn Spans.html" title="Pawn Spans">pawn spans</a> in <a href="Bitboards.html" title="Bitboards">bitboards</a>, are quite simple to understand.
+</p>
+<pre>
+U64 nortFill(U64 gen) {
+   gen |= (gen &lt;&lt;  8);
+   gen |= (gen &lt;&lt; 16);
+   gen |= (gen &lt;&lt; 32);
+   return gen;
+}
+
+U64 soutFill(U64 gen) {
+   gen |= (gen &gt;&gt;  8);
+   gen |= (gen &gt;&gt; 16);
+   gen |= (gen &gt;&gt; 32);
+   return gen;
+}
+</pre>
+<p>This is actually a simplified <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone algorithm</a>, whose general form even considers a second bitboard to occlude the flood accordantly.
+</p><p><span id="FurtherElaborationsOnKoggeStone"></span>
+</p>
+<h1><span class="mw-headline" id="Elaborations_on_Kogge-Stone">Elaborations on Kogge-Stone</span></h1>
+<p>Elaborations on <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone</a> parallel prefix algorithm by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> :
+</p><p>A <b>parallel prefix</b> problem is of the sort:
+</p>
+<pre>
+   Given the terms x1, x2, x3, ... , xN and an associative operator #
+   find the values q1 = x1
+                   q2 = x1 # x2
+                   q3 = x1 # x2 # x3
+                   .
+                   .
+                   .
+                   qN = x1 # x2 # x3 # ... # xN
+</pre>
+<p>Associative expressions can be bracketed any way you like, the result is the same. To see why this is interesting for chess programming, let's define x1, x2, ... and # to be
+</p>
+<pre>
+    xI = &lt; gI, pI &gt;     (a two element tuple)
+         where gI = square aI has a rook on it
+         and   pI = square aI is empty
+         for all I = 1, 2, 3, ... , 8
+
+and xI # xJ = &lt; gI, pI &gt;  #  &lt; gJ, pJ &gt;
+            = &lt; ((gI &amp;&amp; pJ) || gJ),  (pI &amp;&amp; pJ) &gt;
+</pre>
+<p>All this algebra looks very scary at first, so here's an example:
+</p>
+<pre>
+  q2 = x1 # x2 = &lt; rook_on_a1, a1_is_empty &gt; # &lt; rook_on_a2, a2_is_empty &gt;
+               = &lt; ((rook_on_a1 &amp;&amp; a2_is_empty) || rook_on_a2),
+                   (a1_is_empty &amp;&amp; a2_is_empty) &gt;
+</pre>
+<ul><li> The first tuple of q2 tells us if a rook is on a2 or can move up to a2 along empty squares.</li>
+<li> The second tuple of q2 tells us if a rook could move up freely through a1-a2 ie. a1-a2 are empty.</li></ul>
+<p>In general,
+</p>
+<pre>
+  xI # x(I+1) # ... # xJ =
+    &lt; a_rook_somewhere_on_aI_to_aJ_is_either_on_aJ_or_can_move_up_to_aJ,
+      all_squares_aI_to_aJ_are_empty &gt;
+</pre>
+<p>and so
+</p>
+<pre>
+  qJ = &lt; a_rook_somewhere_in_file_a_is_either_on_aJ_or_can_move_up_to_aJ,
+         all_squares_a1_to_aJ_are_empty &gt;
+</pre>
+<p>The tuples g and p are known as the "generator" and "propagator" terms in the literature of fast carry propagation circuits. But we are not dealing with carry bits in a carry propagate adder! Here, we are generating and propagating upward rook attacks along a file of a chessboard.
+</p><p>Why all this theory? Well, prefix computation is a heavily researched area, researched by many folk smarter than me :) Its of interest because it has many applications, such as VLSI design, pattern matching, and others. There are many different ways of going about it, with different implementation characteristics.
+</p>
+<pre>
+U64 FillUpOccluded(U64 g, U64 p) {
+           g |= p &amp; (g &lt;&lt;  8);
+           p &amp;=     (p &lt;&lt;  8);
+           g |= p &amp; (g &lt;&lt; 16);
+           p &amp;=     (p &lt;&lt; 16);
+    return g |= p &amp; (g &lt;&lt; 32);
+}
+
+U64 RookAttacksUp(U64 rooks, U64 empty_squares) {
+    return ShiftUp(FillUpOccluded(rooks, empty_squares));
+}
+</pre>
+<p>The method chosen in FillUpOccluded() is based on a Kogge-Stone parallel prefix network, because it can be implemented very easily in software. The diagram below (trust me, it really _is_ supposed to look like that) is an illustration of how it works. The corresponding lines of program code are shown on the right. The inputs are fed into the network at the top, pass along the connecting lines, are combined by the # operator at various points, and the outputs appear at the bottom.
+</p>
+<pre>
+x1 x2 x3 x4 x5 x6 x7 x8         Input : g, p
+|  |  |  |  |  |  |  |
+V  V  V  V  V  V  V  V
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|\ |\ |\ |\ |\ |\ |\ |
+| \| \| \| \| \| \| \|
+|  #  #  #  #  #  #  #          g |= p &amp; (g &lt;&lt;  8);
+|  |  |  |  |  |  |  |          p &amp;=     (p &lt;&lt;  8);
+|\ |\ |\ |\ |\ |\ |  |
+| \: \: \: \: \: \:  |
+|  \  \  \  \  \  \  |
+|  :\ :\ :\ :\ :\ :\ |
+|  | \| \| \| \| \| \|
+|  |  #  #  #  #  #  #          g |= p &amp; (g &lt;&lt; 16);
+|  |  |  |  |  |  |  |          p &amp;=     (p &lt;&lt; 16);
+|\ |\ |\ |\ |  |  |  |
+| \: \: \: \:  |  |  |
+|  \  \  \  \  |  |  |
+|  :\ :\ :\ :\ |  |  |
+|  | \: \: \: \:  |  |
+|  |  \  \  \  \  |  |
+|  |  :\ :\ :\ :\ |  |
+|  |  | \: \: \: \:  |
+|  |  |  \  \  \  \  |
+|  |  |  ;\ ;\ :\ :\ |
+|  |  |  | \| \| \| \|
+|  |  |  |  #  #  #  #          g |= p &amp; (g &lt;&lt; 32);
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+V  V  V  V  V  V  V  V
+q1 q2 q3 q4 q5 q6 q7 q8         Output : g
+</pre>
+<p>To convince yourself this works, select any output qI and trace upwards from the bottom of the diagram. You'll see it leads back to x1, x2, ... , xI, so qI is formed by some computation of x1 # x2 # ... # xI.
+</p><p>[Implementor's note : The 2 program lines that assign to variable p are not strictly correct. By the end of the routine, p1 and p2 have been trashed (reset). However, they are trashed after they can affect the correctness of the routine result.]
+</p><p><span id="KoggeStoneAdder"></span>
+</p>
+<h1><span class="mw-headline" id="Add.2FSub_versus_Attacks">Add/Sub versus Attacks</span></h1>
+<p>As a comparison three Kogge-Stone routines. A "classical" byte-wise <a href="SIMD and SWAR Techniques.html#SWAR" title="SIMD and SWAR Techniques">SWAR</a> adder, byte-wise subtraction, and byte-wise rook-attacks in east direction. Note that the inner parallel prefix instructions are the same in all three routines:
+</p>
+<pre>
+   gen |= pro &amp; (gen &lt;&lt; 1);
+   pro &amp;=       (pro &lt;&lt; 1);
+   gen |= pro &amp; (gen &lt;&lt; 2);
+   pro &amp;=       (pro &lt;&lt; 2);
+   gen |= pro &amp; (gen &lt;&lt; 4);
+</pre>
+<p>The difference are the assignments of generator and propagator, and the final result.
+</p>
+<h2><span class="mw-headline" id="Add">Add</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:4 bit Kogge Stone Adder Example new.png.html"><img alt="" class="thumbimage" height="409" src="wikipedia/commons/thumb/1/1c/4_bit_Kogge_Stone_Adder_Example_new.png/300px-4_bit_Kogge_Stone_Adder_Example_new.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/4_bit_Kogge_Stone_Adder_Example_new.png/450px-4_bit_Kogge_Stone_Adder_Example_new.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/4_bit_Kogge_Stone_Adder_Example_new.png/600px-4_bit_Kogge_Stone_Adder_Example_new.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:4 bit Kogge Stone Adder Example new.png.html" title="Enlarge"></a></div>4-bit Kogge-Stone adder</div></div></div>
+<p>The software approach of a <a class="external text" href="https://en.wikipedia.org/wiki/Kogge-Stone_adder" rel="nofollow">Kogge-Stone</a> <a href="Combinatorial Logic.html#Adder" title="Combinatorial Logic">hardware adder</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> , requires the initial carry bits as generator, thus the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of both summands, while the propagator is the modulo 2 sum, the <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">exclusive or</a> of both summands. To avoid inter byte overflows, the propagator has the least significant bits of each byte cleared. However the final carries need one further masked shift and the modulo two sum with the initial propagator.
+</p>
+<pre>
+// SIMD bytewise add a + b
+U64 koggeStoneByteAdd(U64 a, U64 b) {
+   const U64 aFile = C64(0x0101010101010101);
+   U64 gen, pro;
+   gen  = a &amp; b;
+   pro  = a ^ b;
+   pro &amp;= ~aFile;
+   gen |= pro   &amp; (gen &lt;&lt; 1);
+   pro &amp;=         (pro &lt;&lt; 1);
+   gen |= pro   &amp; (gen &lt;&lt; 2);
+   pro &amp;=         (pro &lt;&lt; 2);
+   gen |= pro   &amp; (gen &lt;&lt; 4);
+   gen  =~aFile &amp; (gen &lt;&lt; 1);
+   return gen ^ a ^ b;
+}
+</pre>
+<h2><span class="mw-headline" id="Sub">Sub</span></h2>
+<p>Subtraction is based on the <a href="General Setwise Operations.html#TheTwosComplement" title="General Setwise Operations">two's complement</a> which is <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">ones' complement</a> plus one aka the A-File assuming <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">little-endian rank-file mapping</a>. Thus, it is actually the sum of {a, ~b, one}, which is considered in calculating propagator and generator, which is the <a href="General Setwise Operations.html#Majority" title="General Setwise Operations">majority</a> of all three inputs. Note that
+</p>
+<pre>
+   gen  =~aFile &amp; (gen &lt;&lt; 1);
+   return gen ^ a ^ ~b ^ aFile;
+</pre>
+<p>can be re-written like in following routine:
+</p>
+<pre>
+// SIMD bytewise sub a - b
+U64 koggeStoneByteSub(U64 a, U64 b) {
+   const U64 aFile  = C64(0x0101010101010101);
+   U64 gen, pro;
+   gen  = a &amp; ~b;      // based on -b = ~b + 1
+   pro  = a ^ ~b;
+   gen |= aFile &amp; pro; // majority
+   gen |= pro   &amp; (gen &lt;&lt; 1);
+   pro &amp;=         (pro &lt;&lt; 1);
+   gen |= pro   &amp; (gen &lt;&lt; 2);
+   pro &amp;=         (pro &lt;&lt; 2);
+   gen |= pro   &amp; (gen &lt;&lt; 4);
+   gen  = aFile | (gen &lt;&lt; 1);
+   return gen ^ a ^ ~b;
+}
+</pre>
+<h2><span class="mw-headline" id="East_Attacks">East Attacks</span></h2>
+<p>Here the Kogge-Stone algorithm generates the sliding piece attacks along the empty squares. Generator are the rooks or queens, propagator the empty squares without the A-file to avoid wraps.
+</p>
+<pre>
+U64 eastAttacks(U64 occ, U64 rooks) {
+   const U64 aFile = C64(0x0101010101010101);
+   U64 gen, pro;
+   pro  = ~occ  &amp; ~aFile;
+   gen  = rooks;
+   gen |= pro   &amp; (gen &lt;&lt; 1);
+   pro &amp;=         (pro &lt;&lt; 1);
+   gen |= pro   &amp; (gen &lt;&lt; 2);
+   pro &amp;=         (pro &lt;&lt; 2);
+   gen |= pro   &amp; (gen &lt;&lt; 4);
+   gen  =~aFile &amp; (gen &lt;&lt; 1);
+   return gen;
+}
+</pre>
+<p>The mentioned routines also demonstrate, that this east attacking direction may cheaper implemented with <a href="Fill by Subtraction.html" title="Fill by Subtraction">Fill by Subtraction</a> based on <a href="SIMD and SWAR Techniques.html#SWAR" title="SIMD and SWAR Techniques">SWAR-wise techniques</a> and <a href="Subtracting a Rook from a Blocking Piece.html" title="Subtracting a Rook from a Blocking Piece">subtracting a rook from a blocking piece</a>:
+</p>
+<pre>
+U64 byteAdd(U64 a, U64 b) {return ((a &amp; ~hFile) + (b &amp; ~hFile)) ^ ((a ^  b) &amp; hFile);}
+U64 byteSub(U64 a, U64 b) {return ((a |  hFile) - (b &amp; ~hFile)) ^ ((a ^ ~b) &amp; hFile);}
+</pre>
+<p>However, due to various left and right shifts, Kogge-Stone can deal with all other seven sliding directions as well.
+</p><p><span id="Seealso"></span>
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="General Setwise Operations.html#parallelPrefixMSB" title="General Setwise Operations">Parallel prefix MSB</a></li>
+<li> <a href="Population Count.html#SWARPopcount" title="Population Count">SWAR population count</a> of <a href="Population Count.html#TooSlow" title="Population Count">the too slow loop approach</a></li>
+<li> <a href="Flipping Mirroring and Rotating.html#parallelPrefixFlip" title="Flipping Mirroring and Rotating">Flipping and Mirroring</a></li>
+<li> <a href="Pawn Fills.html" title="Pawn Fills">Pawn Fills</a></li>
+<li> <a href="Occupancy of any Line.html" title="Occupancy of any Line">Occupancy of any Line</a></li>
+<li> <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Mathematician.html#PMKogge" title="Mathematician">Peter M. Kogge</a>, <a href="Mathematician.html#HSStone" title="Mathematician">Harold S. Stone</a> (<b>1972</b>). <i><a class="external text" href="https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/PB212080.xhtml" rel="nofollow">A Parallel Algorithm for the Efficient Solution of a General Class of Recurrence Equations</a></i>. Technical Report 25, <a href="Stanford University.html" title="Stanford University">Stanford University</a></li>
+<li> <a href="Mathematician.html#PMKogge" title="Mathematician">Peter M. Kogge</a> (<b>1973</b>). <i>Parallel Solution of Recurrence Problems</i>. Ph.D. thesis, <a href="Stanford University.html" title="Stanford University">Stanford University</a>, advisor <a href="Mathematician.html#HSStone" title="Mathematician">Harold S. Stone</a>, <a class="external text" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.84.2724&amp;rep=rep1&amp;type=pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Mathematician.html#PMKogge" title="Mathematician">Peter M. Kogge</a>, <a href="Mathematician.html#HSStone" title="Mathematician">Harold S. Stone</a> (<b>1973</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/5009159" rel="nofollow">A Parallel Algorithm for the Efficient Solution of a General Class of Recurrence Equations</a></i>. <a href="IEEE.html#TOC" title="IEEE">IEEE Transactions on Computers</a>, Vol. C-22, No. 8</li>
+<li> <a href="Mathematician.html#RELadner" title="Mathematician">Richard E. Ladner</a>, <a href="Mathematician.html#MJFischer" title="Mathematician">Michael J. Fischer</a> (<b>1980</b>). <i><a class="external text" href="https://dl.acm.org/doi/abs/10.1145/322217.322232?download=true" rel="nofollow">Parallel Prefix Computation</a></i>. <a href="ACM.html#Journal" title="ACM">Journal of the ACM</a>, Vol. 27, No. 4</li>
+<li> <a href="Clyde Kruskal.html" title="Clyde Kruskal">Clyde Kruskal</a>, <a href="Mathematician.html#LRudolph" title="Mathematician">Larry Rudolph</a>, <a href="Mathematician.html#MSnir" title="Mathematician">Marc Snir</a>  (<b>1985</b>). <i><a class="external text" href="https://www.computer.org/csdl/journal/tc/1985/10/06312202/13rRUy0HYQl" rel="nofollow">The power of parallel prefix</a></i>. <a href="IEEE.html#TOC" title="IEEE">IEEE Transactions on Computers</a>, Vol. C-34, No. 10</li>
+<li> <a href="Peter Sanders.html" title="Peter Sanders">Peter Sanders</a>, <a class="external text" href="http://www.traff-industries.de/.html" rel="nofollow">Jesper Larsson Träff</a> (<b>2006</b>). <i>Parallel Prefix (Scan) Algorithms for MPI</i>. in EuroPVM/MPI 2006, LNCS, <a class="external text" href="http://algo2.iti.uni-karlsruhe.de/sanders/papers/scan.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Mathematician.html#CBurch" title="Mathematician">Carl Burch</a> (<b>2009</b>). <i><a class="external text" href="http://www.toves.org/books/distalg/.html" rel="nofollow">Introduction to parallel &amp; distributed algorithms</a></i>. On-line Book</li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=252289" rel="nofollow">flood fill attack bitboards</a> by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a> from <a href="Computer Chess Forums.html" title="Computer Chess Forums">CCC</a>, September 15, 2002</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?start=0&amp;t=25979&amp;start=10.html" rel="nofollow">Re: Hyperbola Quiesscene: hardly any improvement</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Bala Jr.</a>, <a href="CCC.html" title="CCC">CCC</a>, January 14, 2009 » <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.aoki.ecei.tohoku.ac.jp/arith/mg/algorithm.html.html#fsa pfx" rel="nofollow">Hardware algorithms for arithmetic modules</a> from the ARITH research group, Aoki lab., <a class="external text" href="https://en.wikipedia.org/wiki/Tohoku_University" rel="nofollow">Tohoku University</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Prefix_sum" rel="nofollow">Prefix sum from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.itl.nist.gov/div897/sqg/dads/HTML/parallelPrefix.html.html" rel="nofollow">parallel prefix computation</a> from <a class="external text" href="http://www.nist.gov/index.html.html" rel="nofollow">National Institute of Standards and Technology</a></li>
+<li> <a class="external text" href="http://everything2.com/title/parallel+prefix+algorithm.html" rel="nofollow">parallel prefix algorithm</a> from <a class="external text" href="http://everything2.com/.html" rel="nofollow">Everything2.com</a></li>
+<li> <a class="external text" href="http://charm.cs.uiuc.edu/tutorial/ParallelPrefix.htm.html" rel="nofollow">Charm++ Tutorial - Parallel Prefix Program</a></li>
+<li> <a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a>, <a href="Category:Trilok Gurtu.html" title="Category:Trilok Gurtu">Trilok Gurtu</a> - Orient Express Part1, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/922LumI2ilo?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Mathematician.html#CBurch" title="Mathematician">Carl Burch</a> (<b>2009</b>). <i><a class="external text" href="http://www.toves.org/books/distalg/.html" rel="nofollow">Introduction to parallel &amp; distributed algorithms</a></i>. On-line Book</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="#Seealso">See also</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://aggregate.org/MAGIC/.html#Gray%20Code%20Conversion" rel="nofollow">Gray Code Conversion</a> from <a class="external text" href="http://aggregate.org/MAGIC.html" rel="nofollow">The Aggregate Magic Algorithms</a> by <a href="Hank Dietz.html" title="Hank Dietz">Hank Dietz</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=252289" rel="nofollow">flood fill attack bitboards</a> by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a> from <a href="Computer Chess Forums.html" title="Computer Chess Forums">CCC</a>, September 15, 2002</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.aoki.ecei.tohoku.ac.jp/arith/mg/algorithm.html.html#fsa pfx" rel="nofollow">Hardware algorithms for arithmetic modules</a> from the ARITH research group, Aoki lab., <a class="external text" href="https://en.wikipedia.org/wiki/Tohoku_University" rel="nofollow">Tohoku University</a></span>
+</li>
+</ol></div>
+<p><b><a href="Algorithms.html" title="Algorithms">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722063532
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.082 seconds
+Real time usage: 0.862 seconds
+Preprocessor visited node count: 324/1000000
+Preprocessor generated node count: 696/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1271-0!canonical and timestamp 20240722063531 and revision id 24281
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Parallel_Prefix_Algorithms&amp;oldid=24281">https://www.chessprogramming.org/index.php?title=Parallel_Prefix_Algorithms&amp;oldid=24281</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Trilok Gurtu.html" title="Category:Trilok Gurtu">Trilok Gurtu</a></li><li><a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Parallel+Prefix+Algorithms&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Parallel Prefix Algorithms.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Parallel Prefix Algorithms&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Parallel Prefix Algorithms.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Parallel Prefix Algorithms&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Parallel Prefix Algorithms&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Parallel Prefix Algorithms.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Parallel Prefix Algorithms.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Parallel Prefix Algorithms&amp;oldid=24281.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Parallel Prefix Algorithms&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 April 2021, at 00:13.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Parallel_Prefix_Algorithms&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.082","walltime":"0.862","ppvisitednodes":{"value":324,"limit":1000000},"ppgeneratednodes":{"value":696,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722063532","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":47});});</script>
+</body>
+</html>

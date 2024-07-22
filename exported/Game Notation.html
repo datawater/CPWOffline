@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Game Notation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Game_Notation","wgTitle":"Game Notation","wgCurRevisionId":25965,"wgRevisionId":25965,"wgArticleId":1173,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Game_Notation","wgRelevantArticleId":1173,"wgRequestId":"Zp7DXv-qaMe6EU8WbZGgcAAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Game_Notation rootpage-Game_Notation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Game Notation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Chess Game.html" title="Chess Game">Game</a> * Notation</b>
+</p><p><b>Game Notation</b> refers to the recording of <a href="Moves.html" title="Moves">moves</a> of the chess game including players or programs names, date, name of event and site - in human competitive chess each side is required to fill and sign a <a class="external text" href="https://en.wikipedia.org/wiki/Scoresheet_%28chess%29#Score_sheet" rel="nofollow">score sheet</a>. In official computer chess over the board <a href="Tournaments and Matches.html" title="Tournaments and Matches">tournaments</a>, it was required for human operators as well, but was practically relaxed since programs keep their internal <a href="Move List.html" title="Move List">move list</a> persistent and were able to restart for instance after a power failure <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. In Chess <a href="GUI.html" title="GUI">GUIs</a>, the game notation is presented inside a <a href="GUI.html#NotationWindow" title="GUI">notation window</a>, which may allow certain interactions, like scrolling the list, or replaying the game. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Chess Notation"><span class="tocnumber">1</span> <span class="toctext">Chess Notation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Sample Score sheet"><span class="tocnumber">2</span> <span class="toctext">Sample Score sheet</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Image"><span class="tocnumber">2.1</span> <span class="toctext">Image</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#PGN"><span class="tocnumber">2.2</span> <span class="toctext">PGN</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Notations"><span class="tocnumber">3</span> <span class="toctext">Notations</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Chess_Notation">Chess Notation</span></h1>
+<p>While the move numeration is quite obvious, starting with move number one, there are various <a class="external text" href="https://en.wikipedia.org/wiki/Chess_notation" rel="nofollow">Chess notations</a> with different move <a class="external text" href="https://en.wikipedia.org/wiki/Syntax" rel="nofollow">syntax</a> defined. Most common in printed and electronic chess media, also in chess programs and <a href="Databases.html" title="Databases">databases</a>, is the <a href="Algebraic Chess Notation.html" title="Algebraic Chess Notation">Algebraic Chess Notation</a>, especially its short form called <a href="Algebraic Chess Notation.html#SAN" title="Algebraic Chess Notation">SAN</a>. <a class="external text" href="https://en.wikipedia.org/wiki/Descriptive_chess_notation" rel="nofollow">Descriptive chess notation</a> was used in English and Spanish-language literature until the late 20th century, but is today somehow obsolete. 
+</p><p>Algebraic <a href="Algebraic Chess Notation.html#FAN" title="Algebraic Chess Notation">figurine notation</a> (FAN) uses graphical <a href="Pieces.html" title="Pieces">piece</a> symbols rather than national language dependent letters for pieces, early promoted by <a class="external text" href="https://en.wikipedia.org/wiki/Chess_Informant" rel="nofollow">Chess Informant</a>. In an attempt of <a class="external text" href="https://en.wikipedia.org/wiki/Computer_vision" rel="nofollow">Computer vision</a>, <a href="Mathematician.html#HSBaird" title="Mathematician">Henry S. Baird</a> and <a href="Ken Thompson.html" title="Ken Thompson">Ken Thompson</a> used <a class="external text" href="https://en.wikipedia.org/wiki/Optical_character_recognition" rel="nofollow">optical character recognition</a> along with various heuristics and applying the rules of chess, to "read" the games of Informant's <a class="external text" href="https://en.wikipedia.org/wiki/Encyclopaedia_of_Chess_Openings" rel="nofollow">Encyclopaedia of Chess Openings</a> with high accuracy and a success rate of 99.995% on approximately one million characters (2850 games, 945 pages) <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. FAN is supported by various <a href="GUI.html" title="GUI">chess GUIs</a>, corresponding <a class="external text" href="https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode" rel="nofollow">chess symbols</a> are available in <a class="external text" href="https://en.wikipedia.org/wiki/Unicode" rel="nofollow">Unicode</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>.
+<span id="Scoresheet"></span>
+</p>
+<h1><span class="mw-headline" id="Sample_Score_sheet">Sample Score sheet</span></h1>
+<h2><span class="mw-headline" id="Image">Image</span></h2>
+<p>Game Notation of <a class="external text" href="https://en.wikipedia.org/wiki/Bobby_Fischer" rel="nofollow">Bobby Fischer</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Miguel_Najdorf" rel="nofollow">Miguel Najdorf</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Descriptive_chess_notation" rel="nofollow">Descriptive chess notation</a>:
+</p>
+<table class="wikitable">
+<tr>
+<td> <div class="floatnone"><a href="https://de.wikipedia.org/wiki/Schachnotation" rel="nofollow"><img alt="Fischer Score Card.jpg" class="thumbborder" height="479" src="wikipedia/commons/thumb/9/91/Fischer_Score_Card.jpg/682px-Fischer_Score_Card.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Fischer_Score_Card.jpg/1023px-Fischer_Score_Card.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Fischer_Score_Card.jpg/1364px-Fischer_Score_Card.jpg 2x" style="vertical-align: text-bottom" width="682"/></a></div>
+</td></tr>
+<tr>
+<td> <a class="external text" href="https://en.wikipedia.org/wiki/Bobby_Fischer" rel="nofollow">Bobby Fischer</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Miguel_Najdorf" rel="nofollow">Miguel Najdorf</a>, <a class="external text" href="https://en.wikipedia.org/wiki/19th_Chess_Olympiad" rel="nofollow">19th Chess Olympiad</a>, 1970, <a class="external text" href="https://en.wikipedia.org/wiki/Siegen" rel="nofollow">Siegen</a>, <a class="external text" href="https://en.wikipedia.org/wiki/West_Germany" rel="nofollow">West Germany</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</td></tr></table>
+<h2><span class="mw-headline" id="PGN">PGN</span></h2>
+<p>The above Game Notation in <a href="Algebraic Chess Notation.html#SAN" title="Algebraic Chess Notation">SAN</a> as <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a>:
+</p>
+<pre>
+[Event "19th Chess Olympiad"]
+[Site "Siegen, Germany"]
+[Date "1970.??.??"]
+[Round "3"]
+[Result "1-0"]
+[White "Robert James Fischer"]
+[Black "Miguel Najdorf"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Bd3 Nf6 6. O-O d6
+7. c4 Bd7 8. Nc3 Nc6 9. Be3 Be7 10. h3 Ne5 11. Be2 Rc8 12. Qb3
+Qc7 13. Rac1 O-O 14. f4 Nc6 15. Nf3 Qb8 16. Qd1 Be8 17. Qd2
+Na5 18. b3 b6 19. Bd3 Nc6 20. Qf2 b5 21. Rfd1 Nb4 22. Bf1 bxc4
+23. bxc4 a5 24. Nd4 Qa8 25. Qf3 Na6 26. Ndb5 Nc5 27. e5 dxe5
+28. Qxa8 Rxa8 29. fxe5 Nfe4 30. Nd6 Bc6 31. Ncxe4 Nxe4 32. c5
+Ng3 33. Bc4 h5 34. Bf2 h4 35. Bxg3 hxg3 36. Bb5 Bxb5 37. Nxb5
+f6 38. Rd7 Bd8 39. Rc3 fxe5 40. Rxg3 Rf7 41. Rxf7 Kxf7 42. c6
+Bb6+ 43. Kf1 Kf8 44. c7 Rc8 45. a4 e4 46. Ke2 e5 47. Rg6 Bd4
+48. h4 Bb2 1-0
+</pre>
+<h1><span class="mw-headline" id="Notations">Notations</span></h1>
+<ul><li> <a href="Algebraic Chess Notation.html" title="Algebraic Chess Notation">Algebraic Chess Notation</a></li>
+<li> <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Encoding Moves.html" title="Encoding Moves">Encoding Moves</a></li>
+<li> <a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">Forsyth-Edwards Notation</a></li>
+<li> <a href="Databases.html" title="Databases">Chess Databases</a></li>
+<li> <a href="GUI.html" title="GUI">Graphical User Interface</a></li>
+<li> <a href="Move List.html" title="Move List">Move List</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Mathematician.html#HSBaird" title="Mathematician">Henry S. Baird</a>, <a href="Ken Thompson.html" title="Ken Thompson">Ken Thompson</a> (<b>1990</b>). <i><a class="external text" href="http://doc.cat-v.org/bell labs/reading chess/.html" rel="nofollow">Reading Chess</a></i>. <a href="IEEE.html#TPAMI" title="IEEE">IEEE Transactions on Pattern Analysis and Machine Intelligence</a>, Vol. 12, No. 6, <a class="external text" href="http://doc.cat-v.org/bell labs/reading chess/reading chess.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Christian Wirth&amp;action=edit&amp;redlink=1.html" title="Christian Wirth (page does not exist)">Christian Wirth</a>, <a href="Johannes F%C3%BCrnkranz.html" title="Johannes Fürnkranz">Johannes Fürnkranz</a> (<b>2015</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/document/6861960/.html" rel="nofollow">On Learning From Game Annotations</a></i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 7, No. 3</li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61723.html" rel="nofollow">Chess Artist</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, October 15, 2016 » <a href="Ferdinand Mosca.html#ChessArtist" title="Ferdinand Mosca">Chess Artist</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66297.html" rel="nofollow">PGN score annotation tags wv and bv</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, January 10, 2018 » <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78626" rel="nofollow">JGN: A PGN Replacement</a> by <a href="Dominik Klein.html" title="Dominik Klein">Dominik Klein</a>, <a href="CCC.html" title="CCC">CCC</a>, November 09, 2021 <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Scoresheet_%28chess%29#Score_sheet" rel="nofollow">Score sheet - Glossary of chess from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_notation" rel="nofollow">Chess notation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Algebraic_chess_notation" rel="nofollow">Algebraic chess notation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Descriptive_chess_notation" rel="nofollow">Descriptive chess notation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/ICCF_numeric_notation" rel="nofollow">ICCF numeric notation from Wikipedia</a></li>
+<li> <a class="external text" href="https://web.archive.org/web/20160117212352/https://www.chessclub.com/chessviewer/smith.html" rel="nofollow">Smith notation</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>) by <a href="Warren D. Smith.html" title="Warren D. Smith">Warren D. Smith</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode" rel="nofollow">Chess symbols in Unicode from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Punctuation_%28chess%29" rel="nofollow">Punctuation (chess) from Wikipedia</a></li>
+<li> <a class="external text" href="https://github.com/fsmosca/chess-artist" rel="nofollow">GitHub - fsmosca/chess-artist: A python script that can annotate chess games in pgn file ...</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> » <a href="Ferdinand Mosca.html#ChessArtist" title="Ferdinand Mosca">Chess Artist</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">really?</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Mathematician.html#HSBaird" title="Mathematician">Henry S. Baird</a>, <a href="Ken Thompson.html" title="Ken Thompson">Ken Thompson</a> (<b>1990</b>). <i><a class="external text" href="http://doc.cat-v.org/bell labs/reading chess/.html" rel="nofollow">Reading Chess</a></i>. <a href="IEEE.html#TPAMI" title="IEEE">IEEE Transactions on Pattern Analysis and Machine Intelligence</a>, Vol. 12, No. 6, <a class="external text" href="http://doc.cat-v.org/bell labs/reading chess/reading chess.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38318.html" rel="nofollow">Unicode values for chessmen</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, March 07, 2011</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.alanwood.net/unicode/miscellaneous symbols.html.html" rel="nofollow">Miscellaneous Symbols – Test for Unicode support in Web browsers</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.echecs-photos.be/BobbyFischer-photos/index10.html.html" rel="nofollow">JPEG BOBBY</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chessgames.com/perl/chessgame?gid=1044320.html" rel="nofollow">Robert James Fischer vs Miguel Najdorf (1970)</a> from <a class="external text" href="http://www.chessgames.com/index.html.html" rel="nofollow">chessgames.com</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/JSON" rel="nofollow">JSON from Wikipedia</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61723.html" rel="nofollow">Chess Artist</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, October 15, 2016</span>
+</li>
+</ol></div>
+<p><b><a href="Chess Game.html" title="Chess Game">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722100629
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.072 seconds
+Real time usage: 0.873 seconds
+Preprocessor visited node count: 165/1000000
+Preprocessor generated node count: 340/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1173-0!canonical and timestamp 20240722100629 and revision id 25965
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Game_Notation&amp;oldid=25965">https://www.chessprogramming.org/index.php?title=Game_Notation&amp;oldid=25965</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Game+Notation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Game Notation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Game Notation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Game Notation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Game Notation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Game Notation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Game Notation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Game Notation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Game Notation&amp;oldid=25965.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Game Notation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 November 2021, at 18:49.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Game_Notation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.072","walltime":"0.873","ppvisitednodes":{"value":165,"limit":1000000},"ppgeneratednodes":{"value":340,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722100629","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Leela Chess Zero - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Leela_Chess_Zero","wgTitle":"Leela Chess Zero","wgCurRevisionId":27045,"wgRevisionId":27045,"wgArticleId":101,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UCI","Open Source","GPL","GPU","DCNN","MCTS","PC","Windows","Linux","Mac","Fiction","Given Name","Soft Machine","Roy Babbington","John Marshall"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Leela_Chess_Zero","wgRelevantArticleId":101,"wgRequestId":"Zp7DbAAL2SoIDHtirCviwQAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Leela_Chess_Zero rootpage-Leela_Chess_Zero skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Leela Chess Zero</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Leela Chess Zero</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://twitter.com/leelachesszero"><img alt="" class="thumbimage" height="300" src="images/thumb/3/31/LC0-Logo.jpg/300px-LC0-Logo.jpg" srcset="/images/3/31/LC0-Logo.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:LC0-Logo.jpg.html" title="Enlarge"></a></div>Lc0 logo <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Leela Chess Zero</b>, (LCZero, lc0)<br/>
+an adaption of <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto's</a> <a class="new" href="index.php?title=Leela Zero&amp;action=edit&amp;redlink=1.html" title="Leela Zero (page does not exist)">Leela Zero</a> <a href="Go.html" title="Go">Go</a> project <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> to <a href="Chess.html" title="Chess">Chess</a>, initiated and announced by <a href="Stockfish.html" title="Stockfish">Stockfish</a> co-author <a href="Gary Linscott.html" title="Gary Linscott">Gary Linscott</a>, who was already responsible for the Stockfish <a href="Stockfish.html#TestingFramework" title="Stockfish">Testing Framework</a> called <i>Fishtest</i>. Leela Chess is <a href="Category:Open Source.html" title="Category:Open Source">open source</a>, released under the terms of <a href="Free Software Foundation.html#GPL" title="Free Software Foundation">GPL version 3</a> or later, and supports <a href="UCI.html" title="UCI">UCI</a>. 
+The goal is to build a strong chess playing entity following the same type of <a href="Deep Learning.html" title="Deep Learning">deep learning</a> along with <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo tree search</a> (MCTS) techniques of <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a> as described in <a class="new" href="index.php?title=DeepMind&amp;action=edit&amp;redlink=1.html" title="DeepMind (page does not exist)">DeepMind's</a> 2017 and 2018 papers 
+<sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+<sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+<sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>, 
+but using distributed training for the weights of the <a href="Neural Networks.html#Deep" title="Neural Networks">deep</a> <a href="Neural Networks.html#Convolutional" title="Neural Networks">convolutional neural network</a> (CNN, DNN, DCNN). 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Lc0"><span class="tocnumber">1</span> <span class="toctext">Lc0</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Description"><span class="tocnumber">2</span> <span class="toctext">Description</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Board Representation"><span class="tocnumber">2.1</span> <span class="toctext">Board Representation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Network"><span class="tocnumber">2.2</span> <span class="toctext">Network</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Training"><span class="tocnumber">2.3</span> <span class="toctext">Training</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Structure Diagrams"><span class="tocnumber">3</span> <span class="toctext">Structure Diagrams</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Tournament Play"><span class="tocnumber">4</span> <span class="toctext">Tournament Play</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#First Experience"><span class="tocnumber">4.1</span> <span class="toctext">First Experience</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Breakthrough"><span class="tocnumber">4.2</span> <span class="toctext">Breakthrough</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Release Dates"><span class="tocnumber">5</span> <span class="toctext">Release Dates</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#2018"><span class="tocnumber">5.1</span> <span class="toctext">2018</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2019"><span class="tocnumber">5.2</span> <span class="toctext">2019</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2020"><span class="tocnumber">5.3</span> <span class="toctext">2020</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2021"><span class="tocnumber">5.4</span> <span class="toctext">2021</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2022"><span class="tocnumber">5.5</span> <span class="toctext">2022</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2023"><span class="tocnumber">5.6</span> <span class="toctext">2023</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Authors"><span class="tocnumber">6</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Publications"><span class="tocnumber">8</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Forum Posts"><span class="tocnumber">9</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#2018 2"><span class="tocnumber">9.1</span> <span class="toctext">2018</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2019 2"><span class="tocnumber">9.2</span> <span class="toctext">2019</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#2020 2"><span class="tocnumber">9.3</span> <span class="toctext">2020</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#2021 2"><span class="tocnumber">9.4</span> <span class="toctext">2021</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#External Links"><span class="tocnumber">10</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#Chess Engine"><span class="tocnumber">10.1</span> <span class="toctext">Chess Engine</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#GitHub"><span class="tocnumber">10.2</span> <span class="toctext">GitHub</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Rating Lists"><span class="tocnumber">10.3</span> <span class="toctext">Rating Lists</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#ChessBase"><span class="tocnumber">10.4</span> <span class="toctext">ChessBase</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Chessdom"><span class="tocnumber">10.5</span> <span class="toctext">Chessdom</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Tuning"><span class="tocnumber">10.6</span> <span class="toctext">Tuning</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Misc"><span class="tocnumber">10.7</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Lc0">Lc0</span></h1>
+<p>Leela Chess Zero consists of an executable to play or analyze <a href="Chess Game.html" title="Chess Game">games</a>, initially dubbed <b>LCZero</b>, soon rewritten by a team around <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a> for better performance and then called <b>Lc0</b> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>. This executable, the actual chess engine, performs the <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a> and reads the self-taught <a href="Neural Networks.html#Convolutional" title="Neural Networks">CNN</a>, which weights are persistent in a separate file.
+Lc0 is written in <a href="Cpp.html" title="Cpp">C++</a> (started with <a href="Cpp.html#14" title="Cpp">C++14</a> then upgraded to <a href="Cpp.html#17" title="Cpp">C++17</a>) and may be compiled for various platforms and backends. Since deep CNN approaches are best suited to run massively in parallel on <a href="GPU.html" title="GPU">GPUs</a> to perform all the <a href="Float.html" title="Float">floating point</a> <a class="external text" href="https://en.wikipedia.org/wiki/Dot_product" rel="nofollow">dot products</a> for thousands of neurons, 
+the preferred target platforms are <a href="Nvidia.html" title="Nvidia">Nvidia</a> <a href="GPU.html" title="GPU">GPUs</a> supporting <a class="external text" href="https://en.wikipedia.org/wiki/CUDA" rel="nofollow">CUDA</a> and <a class="external text" href="https://en.wikipedia.org/wiki/cuDNN" rel="nofollow">cuDNN</a> libraries <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>. <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a> wrote the cuDNN backend (also shared by <a href="Deus X.html" title="Deus X">Deus X</a> and <a href="Allie.html" title="Allie">Allie</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>) and DX12 backend code. There exist different Lc0 backends to be used with different hardware, not all neural network architectures/features are supported on all backends. Different backends and different network architectures with different net size give different nodes per second and Elo. CPUs can be utilized for example via BLAS and DNNL and GPUs via CUDA, cuDNN, OpenCL, DX12, Metal, ONNX, oneDNN backends.
+</p>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<p>Like <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a>, Lc0's <a href="Evaluation.html" title="Evaluation">evaluates</a> <a href="Chess Position.html" title="Chess Position">positions</a> using non-linear function approximation based on a <a href="Neural Networks.html" title="Neural Networks">deep neural network</a>, rather than the <a href="Evaluation.html#Linear" title="Evaluation">linear function approximation</a> as used in classical chess programs. 
+This neural network takes the board position as input and outputs position evaluation (QValue) and a vector of move probabilities (PValue, policy). 
+Once trained, these network is combined with a <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a> (MCTS) using the policy to narrow down the search to high­probability moves, 
+and using the value in conjunction with a fast rollout policy to evaluate positions in the tree. The MCTS selection is done by a variation of <a href="Christopher D. Rosin.html" title="Christopher D. Rosin">Rosin's</a> <a href="UCT.html" title="UCT">UCT</a> improvement dubbed <a href="Christopher D. Rosin.html#PUCT" title="Christopher D. Rosin">PUCT</a> (Predictor + UCT).
+</p>
+<h2><span class="mw-headline" id="Board_Representation"><a href="Board Representation.html" title="Board Representation">Board Representation</a></span></h2>
+<p>Lc0's color agnostic board is represented by five <a href="Bitboards.html" title="Bitboards">bitboards</a> (own pieces, opponent pieces, orthogonal sliding pieces, diagonal sliding pieces, and pawns including <a href="En passant.html" title="En passant">en passant</a> target information coded as pawns on rank 1 and 8), two king squares, <a href="Castling Rights.html" title="Castling Rights">castling rights</a>, and a flag whether the board is <a href="Color Flipping.html" title="Color Flipping">color flipped</a>. Getting individual piece bitboards requires some <a href="General Setwise Operations.html" title="General Setwise Operations">setwise operations</a> such as <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> and <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">set theoretic difference</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>.
+</p>
+<h2><span class="mw-headline" id="Network">Network</span></h2>
+<p>While <a class="new" href="index.php?title=AlphaGo&amp;action=edit&amp;redlink=1.html" title="AlphaGo (page does not exist)">AlphaGo</a> used two disjoint networks for policy and value, <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a> as well as Leela Chess Zero, share a common "body" connected to disjoint policy and value "heads". The “body” consists of spatial 8x8 planes, using B <a href="Neural Networks.html#Residual" title="Neural Networks">residual</a> blocks with F filters of kernel size 3x3, stride 1. So far, model sizes FxB of 64x6, 128x10, 192x15, and 256x20 were used. 
+</p><p>Concerning <a href="Nodes per Second.html" title="Nodes per Second">nodes per second</a> of the MCTS, smaller models are faster to calculate than larger models. They are faster to train and will earlier recognize progress, but they will also saturate earlier so that at some point more training will no longer improve the engine. Larger and deeper network models will improve the receptivity, the amount of knowledge and pattern to extract from the training samples, with potential for a <a href="Playing Strength.html" title="Playing Strength">stronger</a> engine. 
+As a further improvement, Leele Chess Zero applies the <i>Squeeze and Excite</i> (SE) extension to the residual block architecture <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>. The body is connected to both the policy "head" for the move probability distribution, and the value "head" for the evaluation score aka <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">winning probability</a> of the current position and up to seven predecessor positions on the input planes.
+</p>
+<h2><span class="mw-headline" id="Training">Training</span></h2>
+<p>Like in <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a>, the <b>Zero</b> suffix implies no other initial knowledge than the rules of the game, to build a superhuman player, starting with truly random self-play games to apply <a href="Reinforcement Learning.html" title="Reinforcement Learning">reinforcement learning</a> based on the outcome of that games. However, there are derived approaches, such as <a href="Albert Silver.html" title="Albert Silver">Albert Silver's</a> <a href="Deus X.html" title="Deus X">Deus X</a>, trying to take a short-cut by initially using <a href="Supervised Learning.html" title="Supervised Learning">supervised learning</a> techniques, such as feeding in high quality games played by other strong chess playing entities, or huge records of positions with a given preferred move.
+The unsupervised training of the NN is about to minimize the <a class="external text" href="https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm" rel="nofollow">L2-norm</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/Mean_squared_error" rel="nofollow">mean squared error</a> loss of the value output and the policy loss. Further there are experiments to train the value head against not the game outcome, but against the accumulated value for a position after exploring some number of nodes with <a href="UCT.html" title="UCT">UCT</a> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>.
+</p><p>The distributed training is realized with an sophisticated <a class="external text" href="https://en.wikipedia.org/wiki/Client%E2%80%93server_model" rel="nofollow">client-server model</a>. The client, written entirely in the <a href="Go (Programming Language).html" title="Go (Programming Language)">Go programming language</a>, incorporates Lc0 to produce self-play games.Controlled by the server, the client may download the latest network, will start self-playing, and uploading games to the server, who on the other hand will regularly produce and distribute new neural network weights after a certain amount of games available from contributors. The training software consists of <a href="Python.html" title="Python">Python</a> code, the pipeline requires <a class="external text" href="https://en.wikipedia.org/wiki/NumPy" rel="nofollow">NumPy</a> and <a class="external text" href="https://en.wikipedia.org/wiki/TensorFlow" rel="nofollow">TensorFlow</a> running on <a href="Linux.html" title="Linux">Linux</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>. 
+The server is written in <a href="Go (Programming Language).html" title="Go (Programming Language)">Go</a> along with <a href="Python.html" title="Python">Python</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Shell_script" rel="nofollow">shell scripts</a>.
+</p>
+<h1><span class="mw-headline" id="Structure_Diagrams">Structure Diagrams</span></h1>
+<div class="floatnone"><a class="image" href="File:Lc0diagram.png.html"><img alt="Lc0diagram.png" class="thumbborder" height="802" src="images/2/20/Lc0diagram.png" style="vertical-align: text-bottom" width="669"/></a></div>
+<p>Related to <a href="TCEC.html" title="TCEC">TCEC</a> clone discussions concerning <a href="Deus X.html" title="Deus X">Deus X</a> and <a href="Allie.html" title="Allie">Allie</a> aka <a href="Allie.html#AllieStein" title="Allie">AllieStein</a>,<br/>
+<a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a> published diagrams with all components of the affected engines,<br/>
+The above shows the common legend, and the structure of all Leela Chess Zero's components based on current Lc0 engine <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>
+</p>
+<div class="floatnone"><a class="image" href="File:Lczero.png.html"><img alt="Lczero.png" class="thumbborder" height="472" src="images/4/40/Lczero.png" style="vertical-align: text-bottom" width="670"/></a></div>
+<p>Same diagram, but initial LCZero engine, which played <a href="TCEC Season 12.html" title="TCEC Season 12">TCEC Season 12</a> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup>
+</p>
+<h1><span class="mw-headline" id="Tournament_Play">Tournament Play</span></h1>
+<h2><span class="mw-headline" id="First_Experience">First Experience</span></h2>
+<p>LCZero gained first tournament experience in April 2018 at <a href="TCEC Season 12.html" title="TCEC Season 12">TCEC Season 12</a> and over the board at the <a href="WCCC 2018.html" title="WCCC 2018">WCCC 2018</a>
+in <a class="external text" href="https://en.wikipedia.org/wiki/Stockholm" rel="nofollow">Stockholm</a>, July 2018. It won the <a href="TCEC Season 13.html#Fourth" title="TCEC Season 13">fourth division</a> of <a href="TCEC Season 13.html" title="TCEC Season 13">TCEC Season 13</a> in August 2018, <a href="#Lc0">Lc0</a> finally coming in third in the <a href="TCEC Season 13.html#Third" title="TCEC Season 13">third division</a>.
+</p>
+<h2><span class="mw-headline" id="Breakthrough">Breakthrough</span></h2>
+<p><a href="TCEC Season 14.html" title="TCEC Season 14">TCEC Season 14</a> from November 2018 until February 2019 became a breakthrough, Lc0 winning the <a href="TCEC Season 14.html#Third" title="TCEC Season 14">third</a>, <a href="TCEC Season 14.html#Second" title="TCEC Season 14">second</a> and <a href="TCEC Season 14.html#First" title="TCEC Season 14">first</a> division, 
+to even <a href="TCEC Season 14.html#Premier" title="TCEC Season 14">qualify</a> for the <a href="TCEC Season 14.html#Superfinal" title="TCEC Season 14">superfinal</a>, losing by the narrow margin of +10 =81 -9, <b>50½ - 49½</b> versus <a href="Stockfish.html" title="Stockfish">Stockfish</a>.
+Again runner-up at the <a href="TCEC Season 15.html#Premier" title="TCEC Season 15">TCEC Season 15 premier division</a> in April 2019,
+Lc0 aka <b>LCZero v0.21.1-nT40.T8.610</b> won the <a href="TCEC Season 15.html#Superfinal" title="TCEC Season 15">superfinal</a> in May 2019 versus Stockfish with +14 =79 -7, <b>53½-46½</b> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>.
+At the <a href="TCEC Season 16.html#Premier" title="TCEC Season 16">TCEC Season 16 premier division</a> in September 2019, Lc0 became in third behind Stockfish and the <a href="Supervised Learning.html" title="Supervised Learning">supervised</a> trained <a href="Allie.html#AllieStein" title="Allie">AllieStein</a>,
+but Lc0 took revenge by winning the <a href="TCEC Season 17.html#Premier" title="TCEC Season 17">TCEC Season 17 premier division</a> in spring 2020, as <b>LCZero v0.24-sv-t60-3010</b> fighting down Stockfish in a thrilling <a href="TCEC Season 17.html#Superfinal" title="TCEC Season 17">superfinal</a> in April 2020 with +17 =71 -12, <b>52½-47½</b> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>, but tables turned again in <a href="TCEC Season 18.html#Premier" title="TCEC Season 18">TCEC Season 18</a>, when Stockfish won the <a href="TCEC Season 18.html#Superfinal" title="TCEC Season 18">superfinal</a>.
+</p>
+<h1><span class="mw-headline" id="Release_Dates">Release Dates</span></h1>
+<h2><span class="mw-headline" id="2018">2018</span></h2>
+<ul><li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.14.1 - July 08, 2018</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.16.0 - July 20, 2018</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.17.0 - August 27, 2018</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.18.0 - September 30, 2018</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.18.1 - October 02, 2018</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.19.0 - November 19, 2018</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.19.1.1 - December 10, 2018</li></ul>
+<h2><span class="mw-headline" id="2019">2019</span></h2>
+<ul><li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.20.9 - January 01, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.20.1 - January 07, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.20.2 - February 01, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.21.1 - March 23, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.21.2 - June 09, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.21.4 - July 28, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.22.0 - August 05, 2019</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.23.2 - December 31, 2019</li></ul>
+<h2><span class="mw-headline" id="2020">2020</span></h2>
+<ul><li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.23.3 - February 18, 2020</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.24.1 - March 15, 2020</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.25.1 - April 30, 2020</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.26.0 - July 02, 2020</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.26.1 - July 15, 2020</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.26.2 - September 02, 2020</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> v0.26.3 - October 10, 2020</li></ul>
+<h2><span class="mw-headline" id="2021">2021</span></h2>
+<ul><li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> <a class="external text" href="https://github.com/LeelaChessZero/lc0/releases/tag/v0.27.0" rel="nofollow">v0.27.0</a> - February 21, 2021</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> <a class="external text" href="https://github.com/LeelaChessZero/lc0/releases/tag/v0.28.0" rel="nofollow">v0.28.0</a> - August 26, 2021</li>
+<li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> <a class="external text" href="https://github.com/LeelaChessZero/lc0/releases/tag/v0.28.2" rel="nofollow">v0.28.2</a> - December 13, 2021</li></ul>
+<h2><span class="mw-headline" id="2022">2022</span></h2>
+<ul><li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> <a class="external text" href="https://github.com/LeelaChessZero/lc0/releases/tag/v0.29.0" rel="nofollow">v0.29.0</a> - December 13, 2022</li></ul>
+<h2><span class="mw-headline" id="2023">2023</span></h2>
+<ul><li> <a class="mw-selflink selflink">Leela Chess Zero</a> / <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> <a class="external text" href="https://github.com/LeelaChessZero/lc0/releases/tag/v0.30.0" rel="nofollow">v0.30.0</a> - July 21, 2023</li></ul>
+<h1><span class="mw-headline" id="Authors">Authors</span></h1>
+<ul><li> <a href="Category:Leela Chess Contributor.html" title="Category:Leela Chess Contributor">Leela Chess Contributors</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Allie.html" title="Allie">Allie</a></li>
+<li> <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a href="Ceres.html" title="Ceres">Ceres</a></li>
+<li> <a href="Fat Fritz.html" title="Fat Fritz">Fat Fritz</a></li>
+<li> <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a></li>
+<li> <a href="Deus X.html" title="Deus X">Deus X</a></li>
+<li> <a class="new" href="index.php?title=Leela Zero&amp;action=edit&amp;redlink=1.html" title="Leela Zero (page does not exist)">Leela Zero</a></li>
+<li> <a href="Leila.html" title="Leila">Leila</a></li>
+<li> <a href="Maia Chess.html" title="Maia Chess">Maia Chess</a></li>
+<li> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a></li></ul>
+<dl><dd> <a href="UCT.html" title="UCT">UCT</a></dd>
+<dd> <a href="Christopher D. Rosin.html#PUCT" title="Christopher D. Rosin">PUCT</a></dd></dl>
+<ul><li> <a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish NNUE</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Bill Jordan.html" title="Bill Jordan">Bill Jordan</a> (<b>2020</b>). <i>Calculation versus Intuition: Stockfish versus Leela</i>. <a class="external text" href="https://www.amazon.com/Calculation-versus-Intuition-Stockfish-Leela-ebook/dp/B08LYBQDMB/" rel="nofollow">amazon</a> » <a href="TCEC.html" title="TCEC">TCEC</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a href="Dominik Klein.html" title="Dominik Klein">Dominik Klein</a> (<b>2021</b>). <i><a class="external text" href="https://github.com/asdfjkl/neural_network_chess" rel="nofollow">Neural Networks For Chess</a></i>. <a class="external text" href="https://github.com/asdfjkl/neural_network_chess/releases/tag/v1.1" rel="nofollow">Release Version 1.1 · GitHub</a> <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup></li>
+<li> <a class="new" href="index.php?title=Rejwana Haque&amp;action=edit&amp;redlink=1.html" title="Rejwana Haque (page does not exist)">Rejwana Haque</a>, <a class="new" href="index.php?title=Ting Han Wei&amp;action=edit&amp;redlink=1.html" title="Ting Han Wei (page does not exist)">Ting Han Wei</a>, <a href="Martin M%C3%BCller.html" title="Martin Müller">Martin Müller</a> (<b>2021</b>). <i>On the Road to Perfection? Evaluating Leela Chess Zero Against Endgame Tablebases</i>. <a href="Advances in Computer Games 17.html" title="Advances in Computer Games 17">Advances in Computer Games 17</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2018_2">2018</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66280.html" rel="nofollow">Announcing lczero</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2018</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66280&amp;start=67.html" rel="nofollow">Re: Announcing lczero</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2018 » <a href="Bojun Huang.html#Rollout" title="Bojun Huang">Rollout Paradigm</a></dd></dl>
+<ul><li> <a class="external text" href="https://github.com/glinscott/leela-chess/issues/47" rel="nofollow">Policy and value heads are from AlphaGo Zero, not Alpha Zero Issue #47</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a class="external text" href="https://github.com/glinscott/leela-chess" rel="nofollow">glinscott/leela-chess · GitHub</a>, January 24, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66452.html" rel="nofollow">LCZero is learning</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, January 30, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66824.html" rel="nofollow">LCZero update</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, March 14, 2018</li></ul>
+<dl><dd> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=66929.html" rel="nofollow">LCZero update (2)</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>, March 25, 2018</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66945.html" rel="nofollow">LCZero: Progress and Scaling. Relation to CCRL Elo</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, March 28, 2018 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67013.html" rel="nofollow">What does LCzero learn?</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, April 05, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67044.html" rel="nofollow">How to play vs LCZero with Cute Chess gui</a> by Hai, <a href="CCC.html" title="CCC">CCC</a>, April 08, 2018 » <a href="Cute Chess.html" title="Cute Chess">Cute Chess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67075.html" rel="nofollow">LCZero in Aquarium / Fritz</a> by <a class="new" href="index.php?title=Carl Bicknell&amp;action=edit&amp;redlink=1.html" title="Carl Bicknell (page does not exist)">Carl Bicknell</a>, <a href="CCC.html" title="CCC">CCC</a>, April 11, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67087.html" rel="nofollow">LCZero on 10x128 now</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2018 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67092.html" rel="nofollow">lczero faq</a> by Duncan Roberts, <a href="CCC.html" title="CCC">CCC</a>, April 13, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67104.html" rel="nofollow">Run LC Zero in LittleBlitzerGUI</a> by <a class="new" href="index.php?title=Stefan Pohl&amp;action=edit&amp;redlink=1.html" title="Stefan Pohl (page does not exist)">Stefan Pohl</a>, <a href="CCC.html" title="CCC">CCC</a>, April 14, 2018 » <a href="LittleBlitzer.html" title="LittleBlitzer">LittleBlitzer</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67121.html" rel="nofollow">LC0 - how to catch up?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, April 16, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67300.html" rel="nofollow">Leela on more then one GPU?</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Balla</a>, <a href="CCC.html" title="CCC">CCC</a>, May 01, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67357.html" rel="nofollow">GPU contention</a> by <a href="Ian Kennedy.html" title="Ian Kennedy">Ian Kennedy</a>, <a href="CCC.html" title="CCC">CCC</a>, May 07, 2018 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67646.html" rel="nofollow">New CLOP settings give Leela huge tactics boost</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>, <a href="CCC.html" title="CCC">CCC</a>, June 04, 2018 » <a href="CLOP.html" title="CLOP">CLOP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67668.html" rel="nofollow">First Win by Leela Chess Zero against Stockfish dev</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2018 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67718.html" rel="nofollow">what may be two firsts...</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, June 13, 2018 » <a href="DGT Pi.html" title="DGT Pi">DGT Pi</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67728.html" rel="nofollow">LcZero and STS</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, June 14, 2018 » <a href="Strategic Test Suite.html" title="Strategic Test Suite">Strategic Test Suite</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/S-rhiPLnbHg/XY9-Z1LWCAAJ" rel="nofollow">Who entered Leela into WCCC? Bad idea!!</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, June  23, 2018 » <a href="WCCC 2018.html" title="WCCC 2018">WCCC 2018</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67949.html" rel="nofollow">how will Leela fare at the WCCC?</a> by dannyb, <a href="CCC.html" title="CCC">CCC</a>, July 10, 2018 » <a href="WCCC 2018.html" title="WCCC 2018">WCCC 2018</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/EgEslxR04wg/6zY7sLiQAwAJ" rel="nofollow">Lc0 will participate at the WCCC? Wow!</a> by Martin Renneke, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, July 10, 2018</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/KUwypuefNdY/DDV8hfwCBQAJ" rel="nofollow">How Leela uses history planes</a> by Tristrom Cooke, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, July 19, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68072.html" rel="nofollow">Why Lc0 eval (in cp) is asymmetric against AB engines?</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, July 25, 2018 » <a href="Asymmetric Evaluation.html" title="Asymmetric Evaluation">Asymmetric Evaluation</a>, <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Pawn Advantage, Win Percentage, and Elo</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68094.html" rel="nofollow">TCEC season 13, 2 NN engines will be participating, Leela and Deus X</a> by Nay Lin Tun, <a href="CCC.html" title="CCC">CCC</a>, July 28, 2018</li></ul>
+<dl><dd> <a class="external text" href="http://talkchess.com/forum3/viewtopic.php?f=2&amp;t=68094&amp;start=90.html#p770006" rel="nofollow">Re: TCEC season 13, 2 NN engines will be participating, Leela and Deus X</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, August 03, 2018</dd></dl>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/lczero/vGdNYW-Ou58/Kh0GCj2OCgAJ" rel="nofollow">Has Silver written any code for "his" ZeusX?</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, July 31, 2018 </li></ul>
+<dl><dd> <a class="external text" href="https://groups.google.com/d/msg/lczero/vGdNYW-Ou58/-icwb0pjDAAJ" rel="nofollow">Re: Has Silver written any code for "his" ZeusX?</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, August 02, 2018 </dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68441.html" rel="nofollow">Some properties of Lc0 playing</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2018 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448.html" rel="nofollow">How good is the RTX 2080 Ti for Leela?</a> by Hai, September 15, 2018 <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448&amp;start=2.html" rel="nofollow">Re: How good is the RTX 2080 Ti for Leela?</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2018</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448&amp;start=9.html" rel="nofollow">Re: How good is the RTX 2080 Ti for Leela?</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, September 17, 2018 <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup></dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448&amp;start=37.html" rel="nofollow">Re: How good is the RTX 2080 Ti for Leela?</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2018</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448&amp;start=44.html" rel="nofollow">Re: How good is the RTX 2080 Ti for Leela?</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, November 15, 2018</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68511.html" rel="nofollow">LC0 0.18rc1 released</a> by <a href="G%C3%BCnther Simon.html" title="Günther Simon">Günther Simon</a>, <a href="CCC.html" title="CCC">CCC</a>, September 25, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68973.html" rel="nofollow">My non-OC RTX 2070 is very fast with Lc0</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2018 <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69045.html" rel="nofollow">2900 Elo points progress, 10 million games, 330 nets</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2018</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69045&amp;start=8.html" rel="nofollow">Re: 2900 Elo points progress, 10 million games, 330 nets</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">crem</a>, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2018</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69068.html" rel="nofollow">Scaling of Lc0 at high Leela Ratio</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69175&amp;start=75.html" rel="nofollow">Re: Alphazero news</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, December 07, 2018 » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69306.html" rel="nofollow">Policy training in Alpha Zero, LC0 ..</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="CCC.html" title="CCC">CCC</a>, December 18, 2018 » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69400.html" rel="nofollow">LC0 using 4 x 2080 Ti GPU's on Chess.com tourney?</a> by M. Ansari, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69318.html" rel="nofollow">Smallnet (128x10) run1 progresses remarkably well</a> by  <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, December 19, 2018</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/EGcJSrZYLiw/netJ4S38CgAJ" rel="nofollow">use multiple neural nets?</a> by <a href="Warren D. Smith.html" title="Warren D. Smith">Warren D. Smith</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, December 25, 2018</li></ul>
+<h2><span class="mw-headline" id="2019_2">2019</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69478.html" rel="nofollow">LCZero FAQ is missing one important fact</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2019 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/CrMiK3OR1og/mcFd0NDKDQAJ" rel="nofollow">"boosting" endgames in leela training? Simple change to learning process proposed: "forked" training games</a> by <a href="Warren D. Smith.html" title="Warren D. Smith">Warren D. Smith</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, January 03, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69552.html" rel="nofollow">Leela on a weak pc, question</a> by chessico, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2019</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/I0lTgR-fFFU/NGC3kJDzAwAJ" rel="nofollow">Michael Larabel benches lc0 on various GPUs</a> by <a href="Warren D. Smith.html" title="Warren D. Smith">Warren D. Smith</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, January 14, 2019 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69622.html" rel="nofollow">Can somebody explain what makes Leela as strong as Komodo?</a> by Chessqueen, <a href="CCC.html" title="CCC">CCC</a>, January 16, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69668.html" rel="nofollow">A0 policy head ambiguity</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2019 » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69672.html" rel="nofollow">Schizophrenic rating model for Leela</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2019 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a class="external text" href="http://forum.computerschach.de/cgi-bin/mwf/topic show.pl?tid=10194.html" rel="nofollow">Leela Zero (Lc0) - NVIDIA Geforce RTX 2060</a> by <a href="Andreas Strangm%C3%BCller.html" title="Andreas Strangmüller">Andreas Strangmüller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">CSS Forum</a>, January 29, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69820.html" rel="nofollow">11258-32x4-se distilled network released</a> by <a href="Dietrich Kappe.html" title="Dietrich Kappe">Dietrich Kappe</a>, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2019</li>
+<li> <a class="external text" href="http://forum.computerschach.de/cgi-bin/mwf/topic show.pl?tid=10213.html" rel="nofollow">Lc0 setup Hilfe</a> by <a class="new" href="index.php?title=Clemens Keck&amp;action=edit&amp;redlink=1.html" title="Clemens Keck (page does not exist)">Clemens Keck</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">CSS Forum</a>, February 07, 2019 (German)</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69852.html" rel="nofollow">Lc0 - macOS binary requested</a> by Steppenwolf, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2019 » <a href="Mac OS.html" title="Mac OS">Mac OS</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69957.html" rel="nofollow">Thanks for LC0</a> by <a href="Peter Berger.html" title="Peter Berger">Peter Berger</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70069&amp;start=10.html" rel="nofollow">Re: Training the trainer: how is it done for Stockfish?</a> by Graham Jones, <a href="CCC.html" title="CCC">CCC</a>, March 03, 2019 » <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70350.html" rel="nofollow">Lc0 51010</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 29, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70362.html" rel="nofollow">Using LC0 with one or two GPUs - a guide</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 30, 2019 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70451.html" rel="nofollow">32930 Boost network available</a> by <a href="Dietrich Kappe.html" title="Dietrich Kappe">Dietrich Kappe</a>, <a href="CCC.html" title="CCC">CCC</a>, April 09, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71209.html" rel="nofollow">Lc0 question</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, July 06, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71651.html" rel="nofollow">Some newbie questions about lc0</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71686.html" rel="nofollow">Lc0 Evaluation Explanation</a> by Hamster, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2019</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71686&amp;start=14.html" rel="nofollow">Re: Lc0 Evaluation Explanation</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a>, <a href="CCC.html" title="CCC">CCC</a>, September 03, 2019</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71822.html" rel="nofollow">My failed attempt to change TCEC NN clone rules</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2019 » <a href="TCEC.html" title="TCEC">TCEC</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72640.html" rel="nofollow">Best Nets for Lc0 Page</a> by <a href="Ted Summers.html" title="Ted Summers">Ted Summers</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2019 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72685.html" rel="nofollow">Correct LC0 syntax for multiple GPUs</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2019 </li></ul>
+<h2><span class="mw-headline" id="2020_2">2020</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=73684.html" rel="nofollow">Lc0 soon to support chess960 ?</a> by Modern Times, <a href="CCC.html" title="CCC">CCC</a>, April 18, 2020 » <a href="Chess960.html" title="Chess960">Chess960</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=73714.html" rel="nofollow">How to run rtx 2080ti for leela optimally?</a> by h1a8, <a href="CCC.html" title="CCC">CCC</a>, April 20, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74092.html" rel="nofollow">Total noob Leela question</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2020</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/BvhCa-muLt0/ZzINQk_vCQAJ" rel="nofollow">How strong is Stockfish NNUE compared to Leela..</a> by OmenhoteppIV, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, July 13, 2020 » <a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish NNUE</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=74607.html" rel="nofollow">LC0 vs. NNUE - some tech details...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, July 29, 2020 » <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=74915.html" rel="nofollow">The next step for LC0?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, August 28, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75262.html" rel="nofollow">Checking the backends with the new lc0 binary</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, October 01, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75950.html" rel="nofollow">ZZ-tune conclusively better than the Kiudee default for Lc0</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, December 01, 2020 <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2021_2">2021</span></h2>
+<ul><li> <a class="external text" href="https://lczero.org/blog/2021/01/announcing-ceres/" rel="nofollow">Announcing Ceres</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">crem</a>, <a class="mw-selflink selflink">LCZero blog</a>, January 01, 2021 » <a href="Ceres.html" title="Ceres">Ceres</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76948.html" rel="nofollow">leela</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, March 29, 2021 » <a href="Banksia GUI.html" title="Banksia GUI">Banksia GUI</a>, <a class="new" href="index.php?title=IPhone&amp;action=edit&amp;redlink=1.html" title="IPhone (page does not exist)">iPhone</a></li>
+<li> <a class="external text" href="https://lczero.org/blog/2021/04/joking-ftw-seriously/" rel="nofollow">Joking FTW, Seriously</a> by borg, <a class="mw-selflink selflink">LCZero blog</a>, April 25, 2021</li>
+<li> <a class="external text" href="https://lczero.org/blog/2021/06/the-importance-of-open-data/" rel="nofollow">The importance of open data</a> by borg, <a class="mw-selflink selflink">LCZero blog</a>, June 15, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77496.html" rel="nofollow">Leela data publicly available for use</a> by Madeleine Birchfield, <a href="CCC.html" title="CCC">CCC</a>, June 15, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77503.html" rel="nofollow">will Tcec allow Stockfish with a Leela net to play?</a> by Wilson, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2021 » <a href="TCEC Season 21.html" title="TCEC Season 21">TCEC Season 21</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Engine">Chess Engine</span></h2>
+<ul><li> <a class="external text" href="https://lczero.org/" rel="nofollow">Leela Chess Zero</a></li>
+<li> <a class="external text" href="https://lczero.org/blog/" rel="nofollow">Blog - Leela Chess Zero</a></li>
+<li> <a class="external text" href="https://groups.google.com/forum/#!forum/lczero" rel="nofollow">LCZero – Forum</a></li>
+<li> <a class="external text" href="https://training.lczero.org/" rel="nofollow">Testing instance of LCZero server</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela_Chess_Zero" rel="nofollow">Leela Chess Zero from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela_(software)" rel="nofollow">Leela (software) from Wikipedia</a></li>
+<li> <a class="external text" href="https://www.facebook.com/LeelaChessZero/" rel="nofollow">Leela Chess Zero - Facebook</a></li>
+<li> <a class="external text" href="https://twitter.com/leelachesszero" rel="nofollow">Leela Chess Zero (@LeelaChessZero) | Twitter</a></li>
+<li> <a class="external text" href="https://slides.com/crem/lc0#/logo" rel="nofollow">Lc0 Slides</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a></li></ul>
+<h2><span class="mw-headline" id="GitHub">GitHub</span></h2>
+<ul><li> <a class="external text" href="https://github.com/LeelaChessZero/" rel="nofollow">LCZero · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lczero" rel="nofollow">GitHub - LeelaChessZero/lczero: A chess adaption of GCP's Leela Zero</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0" rel="nofollow">GitHub - LeelaChessZero/lc0: The rewritten engine, originally for tensorflow. Now all other backends have been ported here</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki" rel="nofollow">Home · LeelaChessZero/lc0 Wiki · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki/Getting-Started" rel="nofollow">Getting Started · LeelaChessZero/lc0 Wiki · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki/FAQ" rel="nofollow">FAQ · LeelaChessZero/lc0 Wiki · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki/Technical-Explanation-of-Leela-Chess-Zero" rel="nofollow">Technical Explanation of Leela Chess Zero · LeelaChessZero/lc0 Wiki · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0/graphs/contributors" rel="nofollow">Contributors to LeelaChessZero/lc0 · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero/lc0/commit/62741d56252b23f74e8a7200a42812f27fe32b7d" rel="nofollow">Use NHCW layout for fused winograd residual block (#1567) · LeelaChessZero/lc0@62741d5 · GitHub</a>, commit by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, June 10, 2021</li>
+<li> <a class="external text" href="https://github.com/mooskagh/lc0" rel="nofollow">GitHub - mooskagh/lc0: The rewritten engine, originally for cudnn. Now all other backends have been ported here</a></li>
+<li> <a class="external text" href="https://github.com/dkappe/leela-chess-weights/wiki/Distilled-Networks" rel="nofollow">Distilled Networks · dkappe/leela-chess-weights Wiki · GitHub</a></li></ul>
+<h2><span class="mw-headline" id="Rating_Lists">Rating Lists</span></h2>
+<ul><li> <a class="external text" href="http://computerchess.org.uk/ccrl/404/cgi/compare engines.cgi?family=Leela%20Chess&amp;print=Rating+list&amp;print=Results+table&amp;print=LOS+table&amp;print=Ponder+hit+table&amp;print=Eval+difference+table&amp;print=Comopp+gamenum+table&amp;print=Overlap+table&amp;print=Score+with+common+opponents.html" rel="nofollow">Leela Chess Zero</a> in <a href="CCRL.html" title="CCRL">CCRL Blitz</a></li>
+<li> <a class="external text" href="http://computerchess.org.uk/ccrl/4040/cgi/compare engines.cgi?family=Leela%20Chess&amp;print=Rating+list&amp;print=Results+table&amp;print=LOS+table&amp;print=Ponder+hit+table&amp;print=Eval+difference+table&amp;print=Comopp+gamenum+table&amp;print=Overlap+table&amp;print=Score+with+common+opponents.html" rel="nofollow">Leela Chess Zero</a> in <a href="CCRL.html" title="CCRL">CCRL 40/15</a></li></ul>
+<h2><span class="mw-headline" id="ChessBase">ChessBase</span></h2>
+<ul><li> <a class="external text" href="https://en.chessbase.com/post/leela-chess-zero-alphazero-for-the-pc" rel="nofollow">Leela Chess Zero: AlphaZero for the PC</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, April 26, 2018</li>
+<li> <a class="external text" href="https://en.chessbase.com/post/standing-on-the-shoulders-of-giants" rel="nofollow">Standing on the shoulders of giants</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, September 18, 2019</li>
+<li> <a class="external text" href="https://en.chessbase.com/post/running-leela-and-fat-fritz-on-your-notebook" rel="nofollow">Running Leela and Fat Fritz on your notebook</a> by <a class="external text" href="https://ratings.fide.com/card.phtml?event=2099713" rel="nofollow">Evelyn Zhu</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, June 14, 2020 » <a href="Fat Fritz.html" title="Fat Fritz">Fat Fritz</a></li></ul>
+<h2><span class="mw-headline" id="Chessdom">Chessdom</span></h2>
+<ul><li> <a class="external text" href="http://www.chessdom.com/interview-with-alexander-lyashuk-about-the-recent-success-of-lc0/.html" rel="nofollow">Interview with Alexander Lyashuk about the recent success of Lc0</a>, <a class="new" href="index.php?title=Chessdom&amp;action=edit&amp;redlink=1.html" title="Chessdom (page does not exist)">Chessdom</a>, February 6, 2019 » <a href="TCEC Season 14.html" title="TCEC Season 14">TCEC Season 14</a></li></ul>
+<h2><span class="mw-headline" id="Tuning">Tuning</span></h2>
+<ul><li> <a class="external text" href="https://github.com/kiudee/bayes-skopt" rel="nofollow">GitHub - kiudee/bayes-skopt: A fully Bayesian implementation of sequential model-based optimization</a> by <a href="Karlson Pfannschmidt.html" title="Karlson Pfannschmidt">Karlson Pfannschmidt</a> » <a href="Fat Fritz.html" title="Fat Fritz">Fat Fritz</a> <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup></li>
+<li> <a class="external text" href="https://github.com/kiudee/chess-tuning-tools" rel="nofollow">GitHub - kiudee/chess-tuning-tools</a> by <a href="Karlson Pfannschmidt.html" title="Karlson Pfannschmidt">Karlson Pfannschmidt</a> <sup class="reference" id="cite_ref-25"><a href="#cite note-25">[25]</a></sup></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela" rel="nofollow">Leela from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela_(game)" rel="nofollow">Leela (game) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela_(name)" rel="nofollow">Leela (name) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela_(Doctor_Who)" rel="nofollow">Leela (Doctor Who) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Leela_(Futurama)" rel="nofollow">Leela (Futurama) from Wikipedia</a></li>
+<li> <a href="Category:Soft Machine.html" title="Category:Soft Machine">Soft Machine</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Hidden_Details" rel="nofollow">Hidden Details</a>, 2018, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> Lineup: <a class="external text" href="https://en.wikipedia.org/wiki/Theo_Travis" rel="nofollow">Theo Travis</a>, <a href="Category:Roy Babbington.html" title="Category:Roy Babbington">Roy Babbington</a>, <a class="external text" href="https://en.wikipedia.org/wiki/John_Etheridge" rel="nofollow">John Etheridge</a>, <a href="Category:John Marshall.html" title="Category:John Marshall">John Marshall</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/uGIf97m243M?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://twitter.com/leelachesszero" rel="nofollow">Leela Chess Zero (@LeelaChessZero) | Twitter</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/gcp/leela-zero" rel="nofollow">GitHub - gcp/leela-zero: Go engine with no human-provided knowledge, modeled after the AlphaGo Zero paper</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2017</b>). <i>Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</i>. <a class="external text" href="https://arxiv.org/abs/1712.01815" rel="nofollow">arXiv:1712.01815</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2018</b>). <i><a class="external text" href="http://science.sciencemag.org/content/362/6419/1140.html" rel="nofollow">A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_(journal)" rel="nofollow">Science</a>, Vol. 362, No. 6419</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://blog.lczero.org/2018/12/alphazero-paper-and-lc0-v0191.html.html" rel="nofollow">AlphaZero paper, and Lc0 v0.19.1</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">crem</a>, <a class="mw-selflink selflink">LCZero blog</a>, December 07, 2018</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki/lc0-transition" rel="nofollow">lc0 transition · LeelaChessZero/lc0 Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68094&amp;start=91.html" rel="nofollow">Re: TCEC season 13, 2 NN engines will be participating, Leela and Deus X</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, August 03, 2018</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://developer.nvidia.com/cudnn" rel="nofollow">NVIDIA cuDNN | NVIDIA Developer</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71822&amp;start=48.html" rel="nofollow">Re: My failed attempt to change TCEC NN clone rules</a> by <a href="Adam Treat.html" title="Adam Treat">Adam Treat</a>, <a href="CCC.html" title="CCC">CCC</a>, September 19, 2019</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/LeelaChessZero/lc0/blob/master/src/chess/board.h" rel="nofollow">lc0/board.h at master · LeelaChessZero/lc0 · GitHub</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki/Technical-Explanation-of-Leela-Chess-Zero" rel="nofollow">Technical Explanation of Leela Chess Zero · LeelaChessZero/lc0 Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://towardsdatascience.com/squeeze-and-excitation-networks-9ef5e71eacd7" rel="nofollow">Squeeze-and-Excitation Networks – Towards Data Science</a> by <a class="external text" href="http://plpp.de/.html" rel="nofollow">Paul-Louis Pröve</a>, October 17, 2017</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="https://medium.com/oracledevs/lessons-from-alphazero-part-4-improving-the-training-target-6efba2e71628" rel="nofollow">Lessons From AlphaZero (part 4): Improving the Training Target</a> by <a class="external text" href="https://blogs.oracle.com/author/vish-abrams" rel="nofollow">Vish Abrams</a>, <a class="external text" href="https://blogs.oracle.com/" rel="nofollow">Oracle Blog</a>, June 27, 2018</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/LeelaChessZero/lczero-training" rel="nofollow">GitHub - LeelaChessZero/lczero-training: For code etc relating to the network training process.</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71822.html" rel="nofollow">My failed attempt to change TCEC NN clone rules</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2019 » <a href="TCEC.html" title="TCEC">TCEC</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71822.html" rel="nofollow">My failed attempt to change TCEC NN clone rules</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">Alexander Lyashuk</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2019 » <a href="TCEC.html" title="TCEC">TCEC</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://blog.lczero.org/2019/05/lc0-won-tcec-15.html" rel="nofollow">Lc0 won TCEC 15</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">crem</a>, <a class="mw-selflink selflink">LCZero blog</a>, May 28, 2019</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://lczero.org/blog/2020/04/tcec-s17-super-final-report/" rel="nofollow">TCEC S17 SUper FInal report</a> by @glbchess64, <a class="mw-selflink selflink">LCZero blog</a>, April 21, 2020</span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=78283" rel="nofollow">Book about Neural Networks for Chess</a> by dkl, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2021</span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/GeForce_20_series" rel="nofollow">GeForce 20 series from Wikipedia</a></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation" rel="nofollow">Multiply–accumulate operation - Wikipedia</a></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.nvidia.com/en-us/geforce/graphics-cards/rtx-2070/" rel="nofollow">GeForce RTX 2070 Graphics Card | NVIDIA</a></span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/kiudee/chess-tuning-tools" rel="nofollow">GitHub - kiudee/chess-tuning-tools</a> by <a href="Karlson Pfannschmidt.html" title="Karlson Pfannschmidt">Karlson Pfannschmidt</a></span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.chessbase.com/post/fat-fritz-update-and-fat-fritz-jr" rel="nofollow">Fat Fritz 1.1 update and a small gift</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>. <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, March 05, 2020</span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite ref-25">↑</a></span> <span class="reference-text"><a class="external text" href="https://chess-tuning-tools.readthedocs.io/en/latest/" rel="nofollow">Welcome to Chess Tuning Tools’s documentation!</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722075757
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.061 seconds
+Real time usage: 0.065 seconds
+Preprocessor visited node count: 490/1000000
+Preprocessor generated node count: 986/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:101-0!canonical and timestamp 20240722075757 and revision id 27045
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Leela_Chess_Zero&amp;oldid=27045">https://www.chessprogramming.org/index.php?title=Leela_Chess_Zero&amp;oldid=27045</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:GPL.html" title="Category:GPL">GPL</a></li><li><a href="Category:GPU.html" title="Category:GPU">GPU</a></li><li><a href="Category:DCNN.html" title="Category:DCNN">DCNN</a></li><li><a href="Category:MCTS.html" title="Category:MCTS">MCTS</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a href="Category:Linux.html" title="Category:Linux">Linux</a></li><li><a href="Category:Mac.html" title="Category:Mac">Mac</a></li><li><a href="Category:Fiction.html" title="Category:Fiction">Fiction</a></li><li><a href="Category:Given Name.html" title="Category:Given Name">Given Name</a></li><li><a href="Category:Soft Machine.html" title="Category:Soft Machine">Soft Machine</a></li><li><a href="Category:Roy Babbington.html" title="Category:Roy Babbington">Roy Babbington</a></li><li><a href="Category:John Marshall.html" title="Category:John Marshall">John Marshall</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Leela+Chess+Zero&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Leela Chess Zero.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Leela Chess Zero&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Leela Chess Zero.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Leela Chess Zero&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Leela Chess Zero&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Leela Chess Zero.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Leela Chess Zero.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Leela Chess Zero&amp;oldid=27045.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Leela Chess Zero&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 8 July 2024, at 09:52.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Leela_Chess_Zero&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.061","walltime":"0.065","ppvisitednodes":{"value":490,"limit":1000000},"ppgeneratednodes":{"value":986,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722075757","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

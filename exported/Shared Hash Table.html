@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Shared Hash Table - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Shared_Hash_Table","wgTitle":"Shared Hash Table","wgCurRevisionId":25813,"wgRevisionId":25813,"wgArticleId":1299,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Nucleus","Ian Carr","Karl Jenkins","John Marshall","Jeff Clyne"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Shared_Hash_Table","wgRelevantArticleId":1299,"wgRequestId":"Zp7DvoY8AD1K7zdlkfzedgAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Shared_Hash_Table rootpage-Shared_Hash_Table skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Shared Hash Table</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * <a href="Hash Table.html" title="Hash Table">Hash Table</a> * Shared Hash Table</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:An illustration of the dining philosophers problem.png.html"><img alt="" class="thumbimage" height="311" src="wikipedia/commons/thumb/7/7b/An_illustration_of_the_dining_philosophers_problem.png/300px-An_illustration_of_the_dining_philosophers_problem.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/An_illustration_of_the_dining_philosophers_problem.png/450px-An_illustration_of_the_dining_philosophers_problem.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/An_illustration_of_the_dining_philosophers_problem.png/600px-An_illustration_of_the_dining_philosophers_problem.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:An illustration of the dining philosophers problem.png.html" title="Enlarge"></a></div>Dining philosophers problem <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Shared Hash Table</b>,<br/>
+a Hash table or <a href="Transposition Table.html" title="Transposition Table">Transposition table</a> which is accessed by various <a href="Process.html" title="Process">processes</a> or <a href="Thread.html" title="Thread">threads</a> simultaneously, running on <a class="external text" href="https://en.wikipedia.org/wiki/Multiprocessing" rel="nofollow">multiple processors</a> or <a class="external text" href="https://en.wikipedia.org/wiki/Multi-core_processor" rel="nofollow">processor cores</a>. Shared hash tables are most often implemented as dynamically allocated <a href="Memory.html" title="Memory">memory</a> treated as global <a href="Array.html" title="Array">array</a>. Due to <a class="external text" href="https://en.wikipedia.org/wiki/Memory_protection" rel="nofollow">memory protection</a> between processes, they require an <a class="external text" href="https://en.wikipedia.org/wiki/Application_programming_interface" rel="nofollow">Application programming interface</a> provided by the <a class="external text" href="https://en.wikipedia.org/wiki/Operating_system" rel="nofollow">operating system</a> to allocate <a class="external text" href="https://en.wikipedia.org/wiki/Shared_memory" rel="nofollow">shared memory</a>. Threads may share global memory from the process they are belonging to. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parallel Search"><span class="tocnumber">1</span> <span class="toctext">Parallel Search</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#ABDADA"><span class="tocnumber">1.1</span> <span class="toctext">ABDADA</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Lazy SMP"><span class="tocnumber">1.2</span> <span class="toctext">Lazy SMP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Concurrent Access"><span class="tocnumber">2</span> <span class="toctext">Concurrent Access</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Locks"><span class="tocnumber">2.1</span> <span class="toctext">Locks</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#CilkChess"><span class="tocnumber">2.1.1</span> <span class="toctext">CilkChess</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Granularity"><span class="tocnumber">2.1.2</span> <span class="toctext">Granularity</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Lock-less"><span class="tocnumber">2.2</span> <span class="toctext">Lock-less</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Xor"><span class="tocnumber">2.2.1</span> <span class="toctext">Xor</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Checksum"><span class="tocnumber">2.2.2</span> <span class="toctext">Checksum</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#SSE2"><span class="tocnumber">2.2.3</span> <span class="toctext">SSE2</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Allocation"><span class="tocnumber">3</span> <span class="toctext">Allocation</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#1980 ..."><span class="tocnumber">5.1</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#1990 ..."><span class="tocnumber">5.2</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2000 ..."><span class="tocnumber">5.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#1997 ..."><span class="tocnumber">6.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2000 ... 2"><span class="tocnumber">6.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2005 ..."><span class="tocnumber">6.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#2010 ... 2"><span class="tocnumber">6.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#2015 ..."><span class="tocnumber">6.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#2020 ..."><span class="tocnumber">6.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="#Shared Memory"><span class="tocnumber">7.1</span> <span class="toctext">Shared Memory</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Cache"><span class="tocnumber">7.2</span> <span class="toctext">Cache</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Concurrency and Synchronization"><span class="tocnumber">7.3</span> <span class="toctext">Concurrency and Synchronization</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Distributed memory"><span class="tocnumber">7.4</span> <span class="toctext">Distributed memory</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Misc"><span class="tocnumber">7.5</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Parallel_Search">Parallel Search</span></h1>
+<p>Almost all <a href="Parallel Search.html" title="Parallel Search">parallel search</a> algorithms on <a href="SMP.html" title="SMP">SMP</a>- or <a href="NUMA.html" title="NUMA">NUMA</a> systems profit from probing hash entries written by other instances of the search, in its most simple form by instances of a sequential search algorithm which simultaneously search the same root position. The gains come from the effect of nondeterminism. Each processor will finish the various subtrees in varying amounts of time, and as the search continues, these effects grow making the search trees diverge. The <a class="external text" href="https://en.wikipedia.org/wiki/Speedup" rel="nofollow">speedup</a> is then based on how many nodes the main processor is able to skip from transposition table entries. It had the reputation of little speedup on a mere 2 processors, and to scale quite badly after this. However, the <a href="Nodes per Second.html" title="Nodes per Second">NPS</a> scaling is nearly perfect.
+</p>
+<h2><span class="mw-headline" id="ABDADA">ABDADA</span></h2>
+<p><i>see Main page: <a href="ABDADA.html" title="ABDADA">ABDADA</a></i>
+</p><p><a href="ABDADA.html" title="ABDADA">ABDADA</a>, Alpha-Bêta Distribué avec Droit d'Anesse (Distributed Alpha-Beta Search with Eldest Son Right) is a loosely synchronized, distributed search algorithm by <a href="Jean-Christophe Weill.html" title="Jean-Christophe Weill">Jean-Christophe Weill</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . It is based on the <a class="mw-selflink selflink">Shared Hash Table</a>, and adds the number of processors searching this node inside the hash-table entry for better utilization - considering the <a href="Young Brothers Wait Concept.html" title="Young Brothers Wait Concept">Young Brothers Wait Concept</a>.
+</p>
+<h2><span class="mw-headline" id="Lazy_SMP">Lazy SMP</span></h2>
+<p><i>see Main page: <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></i>
+</p><p>Recent improvements by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> and others on <b>Lazy</b> SMP indicate that the algorithm scales quite well up to 8 cores and beyond <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Concurrent_Access">Concurrent Access</span></h1>
+<p>Due to its size, i.e. 16 or more bytes, writing and reading hash entries are none <a class="external text" href="https://en.wikipedia.org/wiki/Linearizability" rel="nofollow">atomic</a> and require multiple write- and read-cycles. It may and will happen that <a class="external text" href="https://en.wikipedia.org/wiki/Concurrency_%28computer_science%29" rel="nofollow">concurrent</a> writes and reads at the same table address and almost same time results in corrupt data retrieved that causes significant problems to the search. <a class="external text" href="https://en.wikipedia.org/wiki/Interrupt" rel="nofollow">Interrupts</a> may occur between accesses, and there are further nondeterministic issues involved <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> which may cause one thread to read two or more atomic data items, which were written by different threads, searching different positions with the same hash-index due to <a href="Transposition Table.html#IndexCollisions" title="Transposition Table">type-2</a> errors.
+</p>
+<h2><span class="mw-headline" id="Locks">Locks</span></h2>
+<p>One common solution to avoid such errors is <a class="external text" href="https://en.wikipedia.org/wiki/Synchronization_%28computer_science%29" rel="nofollow">synchronization</a> using <a class="external text" href="https://en.wikipedia.org/wiki/Lock_%28computer_science%29" rel="nofollow">atomic locks</a>, and to implement a <a class="external text" href="https://en.wikipedia.org/wiki/Critical_section" rel="nofollow">critical section</a> or <a class="external text" href="https://en.wikipedia.org/wiki/Mutual_exclusion" rel="nofollow">mutual exclusion</a>. 
+</p>
+<h3><span class="mw-headline" id="CilkChess">CilkChess</span></h3>
+<p>As an example, <a href="CilkChess.html" title="CilkChess">CilkChess</a> used <a href="Cilk.html" title="Cilk">Cilk's</a> support for atomicity <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>. It uses one lock per hash entry:
+</p>
+<pre>
+typedef struct
+{
+   Cilk_lockvar lock;
+   U64 key;
+   U64 data;
+} ttentry;
+
+ttentry hashtable[TABLESIZE];
+
+void ttinit ( ) {
+   for (int i = 0; i &lt; TABLESIZE; ++i)
+      Cilk_lock_init( hashtable[i].lock);
+}
+
+void update_entry ( ttentry *e, U64 key, U64 data ) {
+   Cilk_lock (e-&gt;lock); /* begin critical section */
+   e-&gt;key = key;
+   e-&gt;data = data;
+   ...
+   Cilk_unlock (e-&gt;lock); /* end critical section */
+}
+</pre>
+<h3><span class="mw-headline" id="Granularity">Granularity</span></h3>
+<p>An important property of a lock is its <a class="external text" href="https://en.wikipedia.org/wiki/Lock_%28computer_science%29#Granularity" rel="nofollow">granularity</a>, which is a measure of the amount of data the lock is protecting. In general, choosing a coarse granularity (a small number of locks, each protecting a large segment of data) results in less lock overhead when a single process is accessing the protected data, but worse performance when multiple processes are running concurrently. This is because of increased lock contention. The more coarse the lock, the higher the likelihood that the lock will stop an unrelated process from proceeding, i.e. in the extreme case, one lock for the whole table. Conversely, using a fine granularity (a larger number of locks, each protecting a fairly small amount of data), like in the CilkChess sample above, increases the overhead of the locks themselves but reduces lock contention. For a huge transposition table with millions of fairly small entries locks incur a significant performance penalty on many architectures. 
+<span id="Lockless"></span>
+</p>
+<h2><span class="mw-headline" id="Lock-less">Lock-less</span></h2>
+<h3><span class="mw-headline" id="Xor">Xor</span></h3>
+<p><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> and <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> proposed a lock-less transposition table implementation <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> for 128 bit entries with two atomic <a href="Quad Word.html" title="Quad Word">quad words</a>, one qword for storing the key or signature, the 64-bit <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist-</a> or <a href="BCH Hashing.html" title="BCH Hashing">BCH-key</a> of the position, and one qword for the other information stored, <a href="Hash Move.html" title="Hash Move">move</a>, <a href="Score.html" title="Score">score</a>, <a href="Depth.html" title="Depth">draft</a> and that like (data). Rather than to store two disjoint items, the key is stored <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">xored</a> with data, while data is stored additionally as usual. According to Robert Hyatt, the original idea came from <a href="Harry Nelson.html" title="Harry Nelson">Harry Nelson</a> somewhere in 1990-1992 <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>.
+</p>
+<pre>
+index = key % TABLESIZE;
+hashtable[index].key  = key ^ data;
+hashtable[index].data = data;
+</pre>
+<p>Since the retrieving position requires the same key for a probing hit, the stored key xored by the retrieved key must match the stored data. 
+</p>
+<pre>
+index = key % TABLESIZE;
+if (( hashtable[index].key ^ hashtable[index].data) == key )
+{
+   /* entry matches key */
+}
+</pre>
+<p>If key and data were written simultaneously by different search instances with different keys, the error will usually yield in a mismatch of the comparison, except the rare but inherent <a href="Transposition Table.html#KeyCollisions" title="Transposition Table">Key collisions</a> or type-1 errors <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>. As pointed out by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>, the XOR technique might be applied for any size. 
+</p>
+<h3><span class="mw-headline" id="Checksum">Checksum</span></h3>
+<p>For a lock-less shared Hash table with (much) larger entry sizes such as the <a href="Pawn Hash Table.html" title="Pawn Hash Table">Pawn Hash Table</a>, one may store an additional <a class="external text" href="https://en.wikipedia.org/wiki/Checksum" rel="nofollow">checksum</a> of the data, to likely detect errors after retrieving, and to safe the consistence of an entry. 
+</p>
+<h3><span class="mw-headline" id="SSE2">SSE2</span></h3>
+<p><a href="X86.html" title="X86">x86</a> and <a href="X86-64.html" title="X86-64">x86-64</a> <a href="SSE2.html" title="SSE2">SSE2</a> 128-bit read/write instructions might in practice <a class="external text" href="https://en.wikipedia.org/wiki/Linearizability" rel="nofollow">atomic</a>, but they are not guaranteed even if properly aligned <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>. If the processor implements a 16-byte store instruction internally as 2 8-byte stores in the store pipeline, it's perfectly possible for another processor to "steal" the cache line in between the two stores <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>. However, <a href="Intel.html" title="Intel">Intel</a> states any locked instruction (either the XCHG instruction or another read-modify-write instruction with a <a class="external text" href="https://en.wikipedia.org/wiki/Fetch-and-add#x86_implementation" rel="nofollow">LOCK prefix</a>) appears to execute as an indivisible and uninterruptible sequence of load(s) followed by store(s) regardless of alignment <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Allocation">Allocation</span></h1>
+<p>Multiple threads inside one process can share its <a class="external text" href="https://en.wikipedia.org/wiki/Global_variable" rel="nofollow">global variables</a> or heap. Processes require special <a class="external text" href="https://en.wikipedia.org/wiki/Application_programming_interface" rel="nofollow">API</a> calls to create shared memory and to pass a handle to other processes around for <a class="external text" href="https://en.wikipedia.org/wiki/Inter-process_communication" rel="nofollow">interprocess communication</a>. <a class="external text" href="https://en.wikipedia.org/wiki/POSIX" rel="nofollow">POSIX</a> provides a standardized API for using shared memory <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup> . <a href="Linux.html" title="Linux">Linux</a> kernel builds since 2.6 offer /dev/shm as shared memory in the form of a <a class="external text" href="https://en.wikipedia.org/wiki/RAM_disk" rel="nofollow">RAM disk</a>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="ABDADA.html" title="ABDADA">ABDADA</a></li>
+<li> <a href="AVX.html" title="AVX">AVX</a></li>
+<li> <a href="Cilk.html" title="Cilk">Cilk</a></li>
+<li> <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a href="Linux.html" title="Linux">Linux</a></li>
+<li> <a href="Memory.html" title="Memory">Memory</a></li>
+<li> <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="SSE2.html" title="SSE2">SSE2</a></li>
+<li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a href="Unix.html" title="Unix">Unix</a></li>
+<li> <a href="Windows.html" title="Windows">Windows</a></li>
+<li> <a href="XOP.html" title="XOP">XOP</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<p><sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>
+</p>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Clyde Kruskal.html" title="Clyde Kruskal">Clyde Kruskal</a>, <a href="Mathematician.html#LRudolph" title="Mathematician">Larry Rudolph</a>, <a href="Mathematician.html#MSnir" title="Mathematician">Marc Snir</a> (<b>1988</b>). <i><a class="external text" href="https://dl.acm.org/citation.cfm?id=48024" rel="nofollow">Efficient Synchronization on Multiprocessors with Shared Memory</a></i>. <a href="ACM.html#TOPLAS" title="ACM">ACM TOPLAS</a>, Vol. 10, No. 4</li>
+<li> <a href="Henri Bal.html" title="Henri Bal">Henri Bal</a> (<b>1989</b>). <i><a class="external text" href="http://dare.ubvu.vu.nl/handle/1871/12760?mode=full&amp;submit simple=Show+full+item+record.html" rel="nofollow">The shared data-object model as a paradigm for programming distributed systems</a></i>. Ph.D. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/Vrije_Universiteit" rel="nofollow">Vrije Universiteit</a> </li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.cs.brown.edu/~mph/.html" rel="nofollow">Maurice Herlihy</a> (<b>1991</b>). <i>Wait-free synchronization</i>. <a class="external text" href="https://en.wikipedia.org/wiki/ACM_Transactions_on_Programming_Languages_and_Systems" rel="nofollow">ACM Transactions on Programming Languages and Systems</a> Vol. 13 No. 1, <a class="external text" href="http://www.cs.brown.edu/~mph/Herlihy91/p124-herlihy.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Vincent David.html" title="Vincent David">Vincent David</a> (<b>1993</b>). <i><a class="external text" href="http://cat.inist.fr/?aModele=afficheN&amp;cpsidt=161774.html" rel="nofollow">Algorithmique parallèle sur les arbres de décision et raisonnement en temps contraint. Etude et application au Minimax</a></i> = Parallel algorithm for heuristic tree searching and real-time reasoning. Study and application to the Minimax, Ph.D. Thesis, <a class="external text" href="https://en.wikipedia.org/wiki/%C3%89cole_nationale_sup%C3%A9rieure_de_l%27a%C3%A9ronautique_et_de_l%27espace" rel="nofollow">École nationale supérieure de l'aéronautique et de l'espace</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Toulouse" rel="nofollow">Toulouse</a>, <a class="external text" href="https://en.wikipedia.org/wiki/France" rel="nofollow">France</a></li></ul>
+<dl><dd> <b>Abstract</b>: <i>The method of parallelization is based on a suppression of control between the search processes, in favor of a speculative parallelism and full sharing of information achieved through a physically distributed but virtually shared memory. The contribution of our approach for real-time distributed systems and fault-tolerant is evaluated through experimental results</i>.</dd></dl>
+<ul><li> <a class="external text" href="http://www.research.ibm.com/people/m/michael/.html" rel="nofollow">Maged M. Michael</a>, <a class="external text" href="http://www.cs.rochester.edu/%7Escott/.html" rel="nofollow">Michael L. Scott</a> (<b>1995</b>). <i>Implementation of Atomic Primitives on Distributed Shared Memory Multiprocessors</i>. <a class="external text" href="http://www-2.cs.cmu.edu/%7Escandal/conf/pro-HPCA-950122.txt.html" rel="nofollow">HPCA'95</a>, <a class="external text" href="http://www.research.ibm.com/people/m/michael/hpca-1995.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a> (<b>1997</b>). <i>Aurora: Scoped Behaviour for Per-Context Optimized Distributed Data Sharing</i>. 11th International Parallel Processing Symposium (IPPS) <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup></li>
+<li> <a href="John Romein.html" title="John Romein">John Romein</a>, <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a>, <a href="Henri Bal.html" title="Henri Bal">Henri Bal</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>  (<b>1999</b>). <i>Transposition Table Driven Work Scheduling in Distributed Search</i>. <a href="AAAI.html" title="AAAI">AAAI-99</a>, <a class="external text" href="https://www.aaai.org/Papers/AAAI/1999/AAAI99-103.pdf" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup> <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a> (<b>2000</b>). <i><a class="external text" href="http://webdocs.cs.ualberta.ca/~paullu/PhDThesis/thesis.html.html" rel="nofollow">Scoped Behaviour for Optimized Distributed Data Sharing</a></i>. Ph.D. thesis, <a href="University of Toronto.html" title="University of Toronto">University of Toronto</a></li>
+<li> <a href="Valavan Manohararajah.html" title="Valavan Manohararajah">Valavan Manohararajah</a> (<b>2001</b>) <i>Parallel Alpha-Beta Search on Shared Memory Multiprocessors</i>. Masters Thesis, <a class="external text" href="http://www.valavan.net/mthesis.pdf.html" rel="nofollow">pdf</a> </li>
+<li> <a href="John Romein.html" title="John Romein">John Romein</a>, <a href="Henri Bal.html" title="Henri Bal">Henri Bal</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a> (<b>2002</b>). <i>A Performance Analysis of Transposition-Table-Driven Scheduling in Distributed Search</i>. IEEE Transactions on Parallel and Distributed Systems, Vol. 13, No. 5, pp. 447–459. <a class="external text" href="http://www.cs.vu.nl/~bal/Papers/tds.pdf.html" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup> </li>
+<li> <a class="external text" href="http://www.research.ibm.com/people/m/michael/.html" rel="nofollow">Maged M. Michael</a> (<b>2002</b>). <i>High Performance Dynamic Lock-Free Hash Tables and List-Based Sets</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Thomas_J._Watson_Research_Center" rel="nofollow">IBM Thomas J. Watson Research Center</a>, <a class="external text" href="http://www.research.ibm.com/people/m/michael/spaa-2002.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> (<b>2002</b>). <i><a class="external text" href="http://www.craftychess.com/hyatt/hashing.html.html" rel="nofollow">A lock-less transposition table implementation for parallel search chess engines</a></i>. <a href="ICGA Journal.html#25 1" title="ICGA Journal">ICGA Journal, Vol. 25, No. 1</a></li>
+<li> <a class="external text" href="http://www.fi.muni.cz/%7Exbarnat/.html" rel="nofollow">Jiří Barnat</a>, <a class="external text" href="http://www.behindkde.org/node/625.html" rel="nofollow">Petr Ročkai</a> (<b>2007</b>). <i>Shared Hash Tables in Parallel Model Checking</i>. Faculty of Informatics, <a class="external text" href="https://en.wikipedia.org/wiki/Masaryk_University" rel="nofollow">Masaryk University</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Brno" rel="nofollow">Brno</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Czech_Republic" rel="nofollow">Czech Republic</a>, PDMC 2007, Preliminary Version as <a class="external text" href="http://anna.fi.muni.cz/papers/src/public/168699cd5787307ee3c8c1a509327e6f.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="http://www.cs.rice.edu/%7Evs3/home/Vivek Sarkar.html.html" rel="nofollow">Vivek Sarkar</a> (<b>2008</b>). <i>Shared-Memory Parallel Programming with OpenMP</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Rice_University" rel="nofollow">Rice University</a>, <a class="external text" href="http://www.cs.rice.edu/%7Evs3/comp422/lecture-notes/comp422-lec7-s08-v1.pdf.html" rel="nofollow">slides as pdf</a></li>
+<li> <a class="external text" href="http://offcode.fi/.html" rel="nofollow">Jouni Leppäjärvi</a> (<b>2008</b>). <i>A pragmatic, historically oriented survey on the universality of synchronization primitives</i>. <a class="external text" href="http://www.oamk.fi/~joleppaj/personal/jleppaja gradu 080511.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.vf.utwente.nl/%7Elaarman/.html" rel="nofollow">Alfons Laarman</a>, <a class="external text" href="http://wwwhome.ewi.utwente.nl/%7Evdpol/.html" rel="nofollow">Jaco van de Pol</a>, <a class="external text" href="http://wwwhome.cs.utwente.nl/%7Emichaelw/.html" rel="nofollow">Michael Weber</a> (<b>2010</b>). <i><a class="external text" href="http://doc.utwente.nl/73119/.html" rel="nofollow">Boosting Multi-Core Reachability Performance with Shared Hash Tables</a></i>. Formal Methods and Tools, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Twente" rel="nofollow">University of Twente</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Netherlands" rel="nofollow">The Netherlands</a>, <a class="external text" href="http://fmcad10.iaik.tugraz.at/Papers/papers/12Session11/033Laarman.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="http://www.cs.rice.edu/%7Ejohnmc/.html" rel="nofollow">John Mellor-Crummey</a> (<b>2011</b>). <i>Shared-memory Parallel Programming with Cilk</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Rice_University" rel="nofollow">Rice University</a>, <a class="external text" href="http://www.clear.rice.edu/comp422/lecture-notes/comp422-2011-Lecture4-Cilk.pdf.html" rel="nofollow">slides as pdf</a> » <a href="Cilk.html" title="Cilk">Cilk</a></li>
+<li> <a class="external text" href="http://stackoverflow.com/users/5597/anthony-williams.html" rel="nofollow">Anthony Williams</a> (<b>2012</b>). <i><a class="external text" href="http://www.cplusplusconcurrencyinaction.com/.html" rel="nofollow">C++ Concurrency in Action: Practical Multithreading</a></i>. <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/m/Maier:Tobias" rel="nofollow">Tobias Maier</a>, <a href="Peter Sanders.html" title="Peter Sanders">Peter Sanders</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/d/Dementiev:Roman" rel="nofollow">Roman Dementiev</a> (<b>2016</b>). <i>Concurrent Hash Tables: Fast and General?(!)</i>. <a class="external text" href="https://arxiv.org/abs/1601.04017" rel="nofollow">arXiv:1601.04017</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/Wl7A-v-gWYQ/QLuvAp0l4_gJ" rel="nofollow">Parallel searching</a> by <a href="Andrew Tridgell.html" title="Andrew Tridgell">Andrew Tridgell</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, March 22, 1997 » <a href="KnightCap.html" title="KnightCap">KnightCap</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=41708" rel="nofollow">CilkChess question for Don</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 1999 » <a href="CilkChess.html" title="CilkChess">CilkChess</a></li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/browse_frm/thread/ab55c5d57a3a1fd1" rel="nofollow">Re: Atomic write of 64 bits</a> by <a href="Frans Morsch.html" title="Frans Morsch">Frans Morsch</a>, <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/topics" rel="nofollow">comp.lang.asm.x86</a>, September 25, 2000</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15662.html" rel="nofollow">multithreading questions</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, August 08, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19446.html" rel="nofollow">If making an SMP engine, do NOT use processes</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, February 07, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22398.html" rel="nofollow">threads vs processes</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, July 16, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22799.html" rel="nofollow">threads vs processes again</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 05, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26208.html" rel="nofollow">SMP hashing problem</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, January 24, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26223.html" rel="nofollow">Interlock clusters</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, January 25, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=34606.html" rel="nofollow">Crafty Transpostion Table Question</a> by <a class="new" href="index.php?title=Eric Stock&amp;action=edit&amp;redlink=1.html" title="Eric Stock (page does not exist)">Eric Stock</a>, <a href="CCC.html" title="CCC">CCC</a>, May 30, 2010 » <a href="Crafty.html" title="Crafty">Crafty</a>, <a href="#Lockless">Lockless Hashing</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37976.html" rel="nofollow">lockless hashing</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, February 07, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38411.html" rel="nofollow">On parallelization</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, March 13, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42833.html" rel="nofollow">cache alignment of tt</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, March 11, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46346.html" rel="nofollow">Speaking of the hash table</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46597.html" rel="nofollow">Lazy SMP</a> by <a href="Julien Marcel.html" title="Julien Marcel">Julien Marcel</a>, <a href="CCC.html" title="CCC">CCC</a>, December 27, 2012 » <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46858.html" rel="nofollow">Lazy SMP, part 2</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2013</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2262.html" rel="nofollow">Multi-threaded memory access</a> by <a href="ThinkingALot.html" title="ThinkingALot">ThinkingALot</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 10, 2013 » <a href="Memory.html" title="Memory">Memory</a>, <a href="Thread.html" title="Thread">Thread</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47455.html" rel="nofollow">Lazy SMP, part 3</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, March 09, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47568.html" rel="nofollow">Shared hash table smp result</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>,  March 21, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47700.html" rel="nofollow">Transposition driven scheduling</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, April 04, 2013 <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48536.html" rel="nofollow">Lazy SMP and Work Sharing</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2013 » <a href="EXchess.html#LazySMP" title="EXchess">Lazy SMP</a> in <a href="EXchess.html" title="EXchess">EXchess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49099.html" rel="nofollow">Lockless hash: Thank you Bob Hyatt!</a> by <a href="Julien Marcel.html" title="Julien Marcel">Julien Marcel</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50388.html" rel="nofollow">How could a compiler break the lockless hashing method?</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51755.html" rel="nofollow">Parallel Search with Transposition Table</a> by <a href="Daylen Yang.html" title="Daylen Yang">Daylen Yang</a>, <a href="CCC.html" title="CCC">CCC</a>, March 27, 2014 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54666.html" rel="nofollow">Two hash functions for distributed transposition table</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, December 16, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55188.html" rel="nofollow">Lazy SMP in Cheng</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, February 02, 2015 » <a href="Cheng.html" title="Cheng">Cheng</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55970.html" rel="nofollow">Trying to improve lazy smp</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, April 11, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57572.html" rel="nofollow">lazy smp questions</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2015 » <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57634.html" rel="nofollow">atomic TT</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, September 13, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58645.html" rel="nofollow">lazy smp questions</a> by <a href="Marco Belli.html" title="Marco Belli">Marco Belli</a>, <a href="CCC.html" title="CCC">CCC</a>, December 21, 2015 » <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58830.html" rel="nofollow">NUMA 101</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2016 » <a href="NUMA.html" title="NUMA">NUMA</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59389.html" rel="nofollow">Lazy SMP - how it works</a> by <a class="new" href="index.php?title=Kalyankumar Ramaseshan&amp;action=edit&amp;redlink=1.html" title="Kalyankumar Ramaseshan (page does not exist)">Kalyankumar Ramaseshan</a>, <a href="CCC.html" title="CCC">CCC</a>, February 29, 2016 » <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60122.html" rel="nofollow">lockless hashing</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, May 10, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61472.html" rel="nofollow">What do you do with NUMA?</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, September 19, 2016 » <a href="NUMA.html" title="NUMA">NUMA</a></li></ul>
+<p><b>2017 ...</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65134.html" rel="nofollow">Question about parallel search and race conditions</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, September 11, 2017 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70586.html" rel="nofollow">Prefetch and Threading</a> by <a href="Dennis Sceviour.html" title="Dennis Sceviour">Dennis Sceviour</a>, <a href="CCC.html" title="CCC">CCC</a>, April 25, 2019 » <a href="Thread.html" title="Thread">Thread</a>, <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72684.html" rel="nofollow">RMO - Randomized Move Order - yet another Lazy SMP derivate</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72932.html" rel="nofollow">hash collisions</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2020 » <a href="Transposition Table.html#KeyCollisions" title="Transposition Table">Key Collisions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76483.html" rel="nofollow">Transposition table and multithreaded search</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Shared_Memory">Shared Memory</span></h2>
+<p><a href="Template:Shared Memory.html" title="Template:Shared Memory">Shared Memory</a>: 
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Shared_memory" rel="nofollow">Shared memory from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory_model_%28computing%29" rel="nofollow">Memory model from Wikipedia</a></li>
+<li> <a class="external text" href="http://scottmeyers.blogspot.co.uk/2012/04/information-on-c11-memory-model.html.html" rel="nofollow">Information on the C++11 Memory Model</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Scott_Meyers" rel="nofollow">Scott Meyers</a>, April 24, 2012</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Volatile_variable" rel="nofollow">Volatile variable from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory_ordering" rel="nofollow">Memory ordering from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.linuxjournal.com/article/8211.html" rel="nofollow">Memory Ordering in Modern Microprocessors, Part I</a> by <a class="external text" href="https://plus.google.com/113202287320302059445/about" rel="nofollow">Paul E. McKenney</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Linux_Journal" rel="nofollow">Linux Journal</a>, June 30, 2005 </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory_barrier" rel="nofollow">Memory barrier from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Parallel_Random_Access_Machine" rel="nofollow">Parallel Random Access Machine from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.inf.pucrs.br/%7Epinho/shared memory library.htm.html" rel="nofollow">The Shared Memory Library (SharedMemoryLib) FAQ</a> by <a class="external text" href="http://www.inf.pucrs.br/%7Epinho/.html" rel="nofollow">Márcio Serolli Pinho</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Transactional_memory" rel="nofollow">Transactional memory from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Software_transactional_memory" rel="nofollow">Software transactional memory from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_coherence" rel="nofollow">Cache coherence from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/False_sharing" rel="nofollow">False sharing from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Distributed_shared_memory" rel="nofollow">Distributed shared memory from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory-mapped_file" rel="nofollow">Memory-mapped file from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory_disambiguation" rel="nofollow">Memory disambiguation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory_dependence_prediction" rel="nofollow">Memory dependence prediction from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/OpenMP" rel="nofollow">OpenMP from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/POSIX" rel="nofollow">POSIX from Wikipedia</a></li>
+<li> <a class="external text" href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/shm open.html.html" rel="nofollow">shm_open</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Single_UNIX_Specification#1997:_Single_UNIX_Specification_version_2" rel="nofollow">The Single UNIX Specification version 2</a>, Copyright © 1997 <a class="external text" href="https://en.wikipedia.org/wiki/The_Open_Group" rel="nofollow">The Open Group</a></li>
+<li> <a class="external text" href="http://linux.die.net/man/2/shmget.html" rel="nofollow">shmget(2): allocates shared memory segment - Linux man page</a> » <a href="Linux.html" title="Linux">Linux</a></li>
+<li> <a class="external text" href="http://www.pkill.info/linux/man/3-mm/.html" rel="nofollow">mm(3): Shared Memory Allocation - Linux man page</a></li>
+<li> <a class="external text" href="http://msdn.microsoft.com/en-us/library/aa374778.aspx.html" rel="nofollow">CreateSharedMemory</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Developer_Network" rel="nofollow">MSDN</a> » <a href="Windows.html" title="Windows">Windows</a></li>
+<li> <a class="external text" href="http://www.boost.org/doc/libs/1 36 0/doc/html/interprocess.html.html" rel="nofollow">Chapter 9. Boost.Interprocess - Boost 1.36.0</a> by Ion Gaztañaga</li>
+<li> <a class="external text" href="http://hboehm.info/c++mm/.html" rel="nofollow">Threads and memory model for C++</a> by <a class="external text" href="http://www.hpl.hp.com/personal/Hans Boehm/.html" rel="nofollow">Hans J. Boehm</a></li>
+<li> <a class="external text" href="http://www.cs.cf.ac.uk/Dave/C/node27.html.html" rel="nofollow">IPC:Shared Memory</a> by <a class="external text" href="http://www.cs.cf.ac.uk/Dave/.html" rel="nofollow">Dave Marshall</a>, 1999</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Symmetric_multiprocessing" rel="nofollow">Symmetric Multi-Processing (SMP) from Wikipedia</a> » <a href="SMP.html" title="SMP">SMP</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Asymmetric_multiprocessing" rel="nofollow">Asymmetric multiprocessing from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Uniform_Memory_Access" rel="nofollow">Uniform Memory Access from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Non-Uniform_Memory_Access" rel="nofollow">Non-Uniform Memory Access (NUMA) from Wikipedia</a> » <a href="NUMA.html" title="NUMA">NUMA</a></li>
+<li> <a class="external text" href="http://software.intel.com/en-us/articles/optimizing-applications-for-numa.html" rel="nofollow">Optimizing Applications for NUMA | Intel® Developer Zone</a></li>
+<li> <a class="external text" href="https://doc.xdevs.com/doc/AMD/_Performance/Performance%20Guidelines%20for%20AMD%20Athlon%2064%20and%20AMD%20Opteron%20ccNUMA%20Multiprocessor%20Systems.%20rev.3.00%5D.%5B2006-06%5D.pdf" rel="nofollow">Performance Guidelines for AMD Athlon™ 64 and AMD Opteron™ ccNUMA Multiprocessor Systems</a> (pdf)</li></ul>
+<h2><span class="mw-headline" id="Cache">Cache</span></h2>
+<p><a href="Template:Cache.html" title="Template:Cache">Cache</a>: 
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache" rel="nofollow">Cache from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_(computing)" rel="nofollow">Cache (computing) from Wikipedia</a></li>
+<li> <a class="external text" href="http://alasir.com/articles/cache principles/.html" rel="nofollow">Functional Principles of Cache Memory</a> by <a class="external text" href="http://alasir.com/articles/.html" rel="nofollow">Paul V. Bolotoff</a>, April 2007 </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/CPU_cache" rel="nofollow">CPU cache from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache-only_memory_architecture" rel="nofollow">Cache-only memory architecture (COMA) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_coherence" rel="nofollow">Cache coherence from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/MSI_protocol" rel="nofollow">MSI protocol from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/MESI_protocol" rel="nofollow">MESI protocol from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/MOESI_protocol" rel="nofollow">MOESI protocol from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/False_sharing" rel="nofollow">False sharing from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_coloring" rel="nofollow">Cache coloring from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_hierarchy" rel="nofollow">Cache hierarchy from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache-oblivious_algorithm" rel="nofollow">Cache-oblivious algorithm from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_pollution" rel="nofollow">Cache pollution from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_prefetching" rel="nofollow">Cache prefetching from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Prefetching" rel="nofollow">Prefetching from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="http://stackoverflow.com/questions/3122915/the-prefetch-instruction.html" rel="nofollow">assembly - The prefetch instruction - Stack Overflow</a></dd>
+<dd> <a class="external text" href="http://gcc.gnu.org/projects/prefetch.html.html" rel="nofollow">Data Prefetch Support - GNU Project - Free Software Foundation (FSF)</a></dd>
+<dd> <a class="external text" href="http://lwn.net/Articles/444344/.html" rel="nofollow">Software prefetching considered harmful</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Linus_Torvalds" rel="nofollow">Linus Torvalds</a>, <a class="external text" href="https://en.wikipedia.org/wiki/LWN.net" rel="nofollow">LWN.net</a>, May 19, 2011</dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Cache_replacement_policies" rel="nofollow">Cache replacement policies from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Page_cache" rel="nofollow">Page cache from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Acumem_SlowSpotter" rel="nofollow">Acumem SlowSpotter from Wikipedia</a></li>
+<li> <a class="external text" href="http://ixbtlabs.com/articles2/cpu/rmmt-l2-cache.html.html" rel="nofollow">Analyzing Efficiency of Shared and Dedicated L2 Cache in Modern Dual-Core Processors</a> from <a class="external text" href="http://ixbtlabs.com/.html" rel="nofollow">iXBT Labs - Computer Hardware In Detail</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Scratchpad_memory" rel="nofollow">Scratchpad memory from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Concurrency_and_Synchronization">Concurrency and Synchronization</span></h2>
+<p><a href="Template:Synchronization.html" title="Template:Synchronization">Synchronization</a>: 
+</p>
+<ul><li> <a href="Mathematician.html#EWDijkstra" title="Mathematician">Edsger W. Dijkstra</a> <a class="external text" href="http://www.cs.utexas.edu/users/EWD/.html" rel="nofollow">Archive</a>:</li></ul>
+<dl><dd> <a class="external text" href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD01xx/EWD123.html.html" rel="nofollow">Cooperating sequential processes (EWD 123)</a></dd>
+<dd> <a class="external text" href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD497.html.html" rel="nofollow">A challenge to memory designers? (EWD 497)</a></dd></dl>
+<ul><li> <a class="external text" href="http://vanemden.wordpress.com/2008/05/06/i-remember-edsger-dijkstra-1930-2002/.html" rel="nofollow">I remember Edsger Dijkstra (1930 – 2002) « A Programmers Place</a> by <a href="Maarten van Emden.html" title="Maarten van Emden">Maarten van Emden</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Concurrency_%28computer_science%29" rel="nofollow">Concurrency from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Category:Concurrency" rel="nofollow">Category:Concurrency from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Concurrency_control" rel="nofollow">Concurrency control from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Optimistic_concurrency_control" rel="nofollow">Optimistic concurrency control from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Synchronization_%28computer_science%29" rel="nofollow">Synchronization from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Inter-process_communication" rel="nofollow">Inter-process communication from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Non-blocking_algorithm" rel="nofollow">Non-blocking algorithm from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Linearizability" rel="nofollow">Linearizability from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Monitor_%28synchronization%29" rel="nofollow">Monitor (synchronization)</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Lock_%28computer_science%29" rel="nofollow">Lock from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Busy_waiting" rel="nofollow">Busy waiting from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Seqlock" rel="nofollow">Seqlock from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Spinlock" rel="nofollow">Spinlock from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Double-checked_locking" rel="nofollow">Double-checked locking from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Compare-and-swap" rel="nofollow">Compare-and-swap from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Test-and-set" rel="nofollow">Test-and-set from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Test_and_Test-and-set" rel="nofollow">Test and Test-and-set from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fetch-and-add" rel="nofollow">Fetch-and-add from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Barrier_%28computer_science%29" rel="nofollow">Barrier from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Memory_barrier" rel="nofollow">Memory barrier from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Critical_section" rel="nofollow">Critical section from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Mutual_exclusion" rel="nofollow">Mutual exclusion from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Semaphore_%28programming%29" rel="nofollow">Semaphore from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Transactional_Synchronization_Extensions" rel="nofollow">Transactional Synchronization Extensions from Wikipedia</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Haswell_%28microarchitecture%29" rel="nofollow">Haswell</a>)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Readers-writers_problem" rel="nofollow">Readers-writers problem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Readers-writer_lock" rel="nofollow">Readers-writer lock from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Read-copy-update" rel="nofollow">Read-copy-update from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Producers-consumers_problem" rel="nofollow">Producer-consumer problem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Dining_philosophers_problem" rel="nofollow">Dining philosophers problem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cigarette_smokers_problem" rel="nofollow">Cigarette smokers problem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Sleeping_barber_problem" rel="nofollow">Sleeping barber problem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Resource_starvation" rel="nofollow">Resource starvation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Deadlock" rel="nofollow">Deadlock from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.ibm.com/developerworks/linux/library/l-linux-synchronization.html.html" rel="nofollow">Anatomy of Linux synchronization methods</a> by <a class="external text" href="http://www.mtjones.com/.html" rel="nofollow">M. Tim Jones</a>, <a class="external text" href="http://www.ibm.com/developerworks/.html" rel="nofollow">IBM developerWorks</a>, October 31, 2007</li>
+<li> <a class="external text" href="http://greenteapress.com/semaphores/.html" rel="nofollow">The Little Book of Semaphores</a> by <a class="external text" href="http://allendowney.com/.html" rel="nofollow">Allen B. Downey</a></li></ul>
+<h2><span class="mw-headline" id="Distributed_memory">Distributed memory</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Distributed_memory" rel="nofollow">Distributed memory from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Distributed_hash_table" rel="nofollow">Distributed hash table from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Koorde" rel="nofollow">Koorde</a> based on <a class="external text" href="https://en.wikipedia.org/wiki/Chord_%28peer-to-peer%29" rel="nofollow">Chord</a> and <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Transposition-driven_scheduling" rel="nofollow">Transposition-driven scheduling - Wikipedia</a></li>
+<li> <a class="external text" href="http://webdocs.cs.ualberta.ca/~paullu/Aurora/aurora.html.html" rel="nofollow">The Aurora Distributed Shared Data System</a> by <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Cilk" rel="nofollow">Cilk from Wikipedia</a> » <a href="Cilk.html" title="Cilk">Cilk</a></li>
+<li> <a class="external text" href="http://supertech.csail.mit.edu/cilk/.html" rel="nofollow">The Cilk Project</a> from <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">MIT</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fetch-and-add" rel="nofollow">Fetch-and-add from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Cilk_Plus" rel="nofollow">Intel Cilk Plus from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/XMTC" rel="nofollow">XMTC from Wikipedia</a></li>
+<li> <a href="Category:Ian Carr.html" title="Category:Ian Carr">Ian Carr</a> with <a href="Category:Nucleus.html" title="Category:Nucleus">Nucleus</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Nucleus_(band)#Discography" rel="nofollow">Solar Plexus 1971</a>, feat. <a href="Category:Karl Jenkins.html" title="Category:Karl Jenkins">Karl Jenkins</a>, <a href="Category:Jeff Clyne.html" title="Category:Jeff Clyne">Jeff Clyne</a> and <a href="Category:John Marshall.html" title="Category:John Marshall">John Marshall</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/gHwuo1eGouw?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Dining_philosophers_problem" rel="nofollow">Dining philosophers problem from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Jean-Christophe Weill.html" title="Jean-Christophe Weill">Jean-Christophe Weill</a> (<b>1996</b>). <i>The ABDADA Distributed Minimax Search Agorithm</i>. Proceedings of the 1996 ACM Computer Science Conference, pp. 131-138. ACM, New York, N.Y, reprinted <a href="ICGA Journal.html#19 1" title="ICGA Journal">ICCA Journal, Vol. 19, No. 1</a>, <a class="external text" href="http://www.recherche.enac.fr/%7Eweill/publications/acm.ps.gz.html" rel="nofollow">zipped postscript</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46858.html" rel="nofollow">Lazy SMP, part 2</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2013</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55188.html" rel="nofollow">Lazy SMP in Cheng</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, February 02, 2015</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55170&amp;start=11.html" rel="nofollow">Re: A new chess engine : m8 (comming not so soon)</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, February 01, 2015</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Memory_disambiguation" rel="nofollow">Memory disambiguation from Wikipedia</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="Charles Leiserson.html" title="Charles Leiserson">Charles E. Leiserson</a> (<b>2001</b>). <i>Using Cilk to Write Multiprocessor Chess Programs</i>. <a href="Advances in Computer Games 9.html" title="Advances in Computer Games 9">Advances in Computer Games 9</a>, <a class="external text" href="http://supertech.csail.mit.edu/papers/icca99.pdf.html" rel="nofollow">pdf</a>, 5 Other parallel programming issues, Cilk support for atomicity, pp. 17-18</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> (<b>2002</b>). <i><a class="external text" href="http://www.craftychess.com/hyatt/hashing.html.html" rel="nofollow">A lock-less transposition table implementation for parallel search chess engines</a></i>. <a href="ICGA Journal.html#25 1" title="ICGA Journal">ICGA Journal, Vol. 25, No. 1</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=531603&amp;t=49099.html" rel="nofollow">Re: Lockless hash: Thank you Bob Hyatt!</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2013</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Anthony Cozzie.html" title="Anthony Cozzie">Anthony Cozzie</a> (<b>2005</b>). <i><a class="external text" href="http://www.craftychess.com/hyatt/collisions.html.html" rel="nofollow">The Effect of Hash Signature Collisions in a Chess Program</a></i>. <a href="ICGA Journal.html#28 3" title="ICGA Journal">ICGA Journal, Vol. 28, No. 3</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=393348&amp;t=37976.html" rel="nofollow">Re: lockless hashing</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">H.G.Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, February 07, 2011</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/lock-free/hXtlgYrJj7M/j5mTHsaWYo0J" rel="nofollow">Re: Effectively atomic read of 16 bytes on x86_64 without cmpxchg16b?</a> by <a class="external text" href="http://stackoverflow.com/users/5597/anthony-williams.html" rel="nofollow">Anthony Williams</a>, <a class="external text" href="https://groups.google.com/forum/#!forum/lock-free" rel="nofollow">groups.google.lock-free</a>, February 08, 2012</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46346&amp;start=44.html" rel="nofollow">Re: Speaking of the hash table</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2012</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://stackoverflow.com/questions/7646018/sse-instructions-single-memory-access.html" rel="nofollow">SSE instructions: single memory access</a> by Atom, <a class="external text" href="http://de.wikipedia.org/wiki/Stack Overflow %28Website%29.html" rel="nofollow">Stack overflow</a>, October 04, 2011</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.html.html" rel="nofollow">Intel® 64 and IA-32 Architectures Developer's Manual: Vol. 3A</a>, section 8.2.3.1.</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"> <a class="external text" href="https://en.wikipedia.org/wiki/Fetch-and-add" rel="nofollow">Fetch-and-add from Wikipedia</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/shm open.html.html" rel="nofollow">shm_open</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Single_UNIX_Specification#1997:_Single_UNIX_Specification_version_2" rel="nofollow">The Single UNIX Specification version 2</a>, Copyright © 1997 <a class="external text" href="https://en.wikipedia.org/wiki/The_Open_Group" rel="nofollow">The Open Group</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.research.ibm.com/people/m/michael/pubs.htm.html" rel="nofollow">Maged Michael - Selected Publications</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://webdocs.cs.ualberta.ca/~paullu/Aurora/aurora.html.html" rel="nofollow">The Aurora Distributed Shared Data System</a></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57343&amp;start=5.html" rel="nofollow">Re: scorpio can run on 8192 cores</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2015</span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Transposition-driven_scheduling" rel="nofollow">Transposition-driven scheduling - Wikipedia</a></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47700.html" rel="nofollow">Transposition driven scheduling</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, April 04, 2013</span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="http://scottmeyers.blogspot.co.uk/2012/04/information-on-c11-memory-model.html.html" rel="nofollow">Information on the C++11 Memory Model</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Scott_Meyers" rel="nofollow">Scott Meyers</a>, April 24, 2012</span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a href="John Romein.html" title="John Romein">John Romein</a>, <a href="Henri Bal.html" title="Henri Bal">Henri Bal</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a> (<b>2002</b>). <i>A Performance Analysis of Transposition-Table-Driven Scheduling in Distributed Search</i>. IEEE Transactions on Parallel and Distributed Systems, Vol. 13, No. 5, pp. 447–459. <a class="external text" href="http://www.cs.vu.nl/~bal/Papers/tds.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+</ol></div>
+<p><b><a href="Hash Table.html" title="Hash Table">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722063316
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.106 seconds
+Real time usage: 0.915 seconds
+Preprocessor visited node count: 512/1000000
+Preprocessor generated node count: 1042/1000000
+Post‐expand include size: 10306/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.422      1 -total
+ 34.36%    1.176      1 Template:Shared_Memory
+ 30.80%    1.054      1 Template:Synchronization
+ 27.65%    0.946      1 Template:Cache
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1299-0!canonical and timestamp 20240722063315 and revision id 25813
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Shared_Hash_Table&amp;oldid=25813">https://www.chessprogramming.org/index.php?title=Shared_Hash_Table&amp;oldid=25813</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Nucleus.html" title="Category:Nucleus">Nucleus</a></li><li><a href="Category:Ian Carr.html" title="Category:Ian Carr">Ian Carr</a></li><li><a href="Category:Karl Jenkins.html" title="Category:Karl Jenkins">Karl Jenkins</a></li><li><a href="Category:John Marshall.html" title="Category:John Marshall">John Marshall</a></li><li><a href="Category:Jeff Clyne.html" title="Category:Jeff Clyne">Jeff Clyne</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Shared+Hash+Table&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Shared Hash Table.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Shared Hash Table&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Shared Hash Table.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Shared Hash Table&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Shared Hash Table&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Shared Hash Table.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Shared Hash Table.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Shared Hash Table&amp;oldid=25813.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Shared Hash Table&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 October 2021, at 09:42.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Shared_Hash_Table&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.106","walltime":"0.915","ppvisitednodes":{"value":512,"limit":1000000},"ppgeneratednodes":{"value":1042,"limit":1000000},"postexpandincludesize":{"value":10306,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    3.422      1 -total"," 34.36%    1.176      1 Template:Shared_Memory"," 30.80%    1.054      1 Template:Synchronization"," 27.65%    0.946      1 Template:Cache"]},"cachereport":{"timestamp":"20240722063316","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":58});});</script>
+</body>
+</html>

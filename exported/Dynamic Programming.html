@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Dynamic Programming - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Dynamic_Programming","wgTitle":"Dynamic Programming","wgCurRevisionId":13396,"wgRevisionId":13396,"wgArticleId":1655,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Dynamic_Programming","wgRelevantArticleId":1655,"wgRequestId":"Zp7DNuWZo7QkwsW0UTn42gAAAAw","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dynamic_Programming rootpage-Dynamic_Programming skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Dynamic Programming</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Algorithms.html" title="Algorithms">Algorithms</a> * Dynamic Programming</b>
+</p><p><b>Dynamic Programming</b>, (DP)<br/>
+a mathematical, algorithmic optimization method of <a href="Recursion.html" title="Recursion">recursively</a> nesting <a class="external text" href="https://en.wikipedia.org/wiki/Overlapping_subproblems" rel="nofollow">overlapping sub problems</a> of <a class="external text" href="https://en.wikipedia.org/wiki/Optimal_substructure" rel="nofollow">optimal substructure</a> inside larger decision problems. The term DP was coined by <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> in the 50s not as programming in the sense of producing computer code, but mathematical programming, planning or optimization similar to <a class="external text" href="https://en.wikipedia.org/wiki/Linear_programming" rel="nofollow">linear programming</a>, devoted to the study of multistage processes. These processes are composed of sequences of operations in which the outcome of those preceding may be used to guide the course of future ones <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#DP in Computer Chess"><span class="tocnumber">1</span> <span class="toctext">DP in Computer Chess</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Selected Publications"><span class="tocnumber">3</span> <span class="toctext">Selected Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#1953 ..."><span class="tocnumber">3.1</span> <span class="toctext">1953 ...</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#1960 ..."><span class="tocnumber">3.2</span> <span class="toctext">1960 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#1970 ..."><span class="tocnumber">3.3</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#1980 ..."><span class="tocnumber">3.4</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1990 ..."><span class="tocnumber">3.5</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">3.6</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ..."><span class="tocnumber">3.7</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="DP_in_Computer_Chess">DP in Computer Chess</span></h1>
+<p>In computer chess, dynamic programming is applied in <a href="Depth-First.html" title="Depth-First">depth-first</a> <a href="Search.html" title="Search">search</a> with <a class="external text" href="https://en.wikipedia.org/wiki/Memoization" rel="nofollow">memoization</a> aka using a <a href="Transposition Table.html" title="Transposition Table">transposition table</a> and/or other <a href="Hash Table.html" title="Hash Table">hash tables</a> while traversing a <a href="Search Tree.html" title="Search Tree">tree</a> of overlapping sub problems aka child positions after making a move by one side in top-down manner, gaining from stored <a href="Chess Position.html" title="Chess Position">positions</a> of sibling subtrees due to <a href="Transposition.html" title="Transposition">transpositions</a> and/or common aspects of positions, in particular effective inside an <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> framework. Another approach of dynamic programming in computer chess or computer games is the application of <a href="Retrograde Analysis.html" title="Retrograde Analysis">retrograde analysis</a>, to solve a problem by solving subproblems in bottom-up manner starting from terminal nodes <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Michael L. Littman.html#MarkovModels" title="Michael L. Littman">Markov Models</a> by <a href="Michael L. Littman.html" title="Michael L. Littman">Michael L. Littman</a></li>
+<li> <a href="Reinforcement Learning.html" title="Reinforcement Learning">Reinforcement Learning</a></li>
+<li> <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">Temporal Difference Learning</a></li></ul>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<h2><span class="mw-headline" id="1953_...">1953 ...</span></h2>
+<ul><li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1953</b>). <i><a class="external text" href="http://www.rand.org/pubs/reports/R245.html.html" rel="nofollow">An Introduction to the Theory of Dynamic Programming</a></i>. R-245, <a class="external text" href="https://en.wikipedia.org/wiki/RAND_Corporation" rel="nofollow">RAND Corporation</a></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1954</b>). <i>The Theory of Dynamic Programming</i>. P-550, <a class="external text" href="https://en.wikipedia.org/wiki/RAND_Corporation" rel="nofollow">RAND Corporation</a>, <a class="external text" href="http://www.rand.org/content/dam/rand/pubs/papers/2008/P550.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1954</b>). <i>On a new Iterative Algorithm for Finding the Solutions of Games and Linear Programming Problems</i>. Technical Report P-473, <a class="external text" href="https://en.wikipedia.org/wiki/RAND_Corporation" rel="nofollow">RAND Corporation</a>, U. S. Air Force Project RAND</li>
+<li> <a href="Mathematician.html#SKarlin" title="Mathematician">Samuel Karlin</a> (<b>1955</b>). <i><a class="external text" href="http://onlinelibrary.wiley.com/doi/10.1002/nav.3800020408/abstract.html" rel="nofollow">The Stucture of Dynamic Programming Models</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Naval_Research_Logistics" rel="nofollow">Naval Research Logistics</a>, Vol. 2</li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1957</b>). <i>Dynamic Programming</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Princeton_University_Press" rel="nofollow">Princeton University Press</a></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1958</b>). <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/S0019995858800030.html" rel="nofollow">Dynamic Programming and Stochastic Control Processes</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/RAND_Corporation" rel="nofollow">RAND Corporation</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Santa_Monica,_California" rel="nofollow">Santa Monica, CA</a>, <a class="external text" href="http://www.sciencedirect.com/science/journal/00199958/1/3.html" rel="nofollow">Information and Control 1</a></li></ul>
+<h2><span class="mw-headline" id="1960_...">1960 ...</span></h2>
+<ul><li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1960</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=321011.html" rel="nofollow">Sequential Machines, Ambiguity, and Dynamic Programming</a></i>. <a href="ACM.html#Journal" title="ACM">Journal of the ACM</a>, Vol. 7, No. 1</li>
+<li> <a href="Mathematician.html#RAHoward" title="Mathematician">Ronald A. Howard</a> (<b>1960</b>).  <i>Dynamic Programming and Markov Processes</i>. <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Press" rel="nofollow">MIT Press</a>, <a class="external text" href="https://www.amazon.com/Programming-Processes-Technology-Research-Monographs/dp/0262080095" rel="nofollow">amazon</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a>, <a href="Mathematician.html#SEDreyfus" title="Mathematician">Stuart E. Dreyfus</a> (<b>1962</b>). <i>Applied Dynamic Programming</i>. <a class="external text" href="https://en.wikipedia.org/wiki/RAND_Corporation" rel="nofollow">RAND Corporation</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Princeton_University_Press" rel="nofollow">Princeton University Press</a>, <a class="external text" href="https://www.rand.org/content/dam/rand/pubs/reports/2006/R352.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1962</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=321111.html" rel="nofollow">Dynamic Programming Treatment of the Travelling Salesman Problem</a></i>. <a href="ACM.html#Journal" title="ACM">Journal of the ACM</a>, Vol. 9, No. 1, <a class="external text" href="http://www.akira.ruc.dk/~keld/teaching/algoritmedesign f08/Artikler/05/Bellman61.pdf.html" rel="nofollow">1961 pdf preprint</a></li>
+<li> <a href="Mathematician.html#DHBlackwell" title="Mathematician">David Blackwell</a> (<b>1962</b>). <i><a class="external text" href="https://projecteuclid.org/euclid.aoms/1177704593" rel="nofollow">Discrete Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Annals_of_Mathematical_Statistics" rel="nofollow">Annals of Mathematical Statistics</a>, Vol. 33, No. 2 </li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1965</b>). <i><a class="external text" href="http://www.rand.org/pubs/papers/P3013/.html" rel="nofollow">On the Application of Dynamic Programming to the Determination of Optimal Play in Chess and Checkers</a>.</i> <a class="external text" href="https://en.wikipedia.org/wiki/Proceedings_of_the_National_Academy_of_Sciences_of_the_United_States_of_America" rel="nofollow">PNAS</a></li>
+<li> <a href="Mathematician.html#DHBlackwell" title="Mathematician">David Blackwell</a> (<b>1965</b>). <i><a class="external text" href="https://projecteuclid.org/euclid.aoms/1177700285" rel="nofollow">Discounted Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Annals_of_Mathematical_Statistics" rel="nofollow">Annals of Mathematical Statistics</a>, Vol. 36, No. 1 <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li>
+<li> <a href="Mathematician.html#DHBlackwell" title="Mathematician">David Blackwell</a> (<b>1967</b>). <i><a class="external text" href="https://projecteuclid.org/euclid.bsmsp/1200513001" rel="nofollow">Positive Dynamic Programming</a></i>. <a class="external text" href="https://projecteuclid.org/euclid.bsmsp/1200512974" rel="nofollow">Proc. 5th Berkeley Symposium on Mathematical Statistics and Probability</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Mathematician.html#DHBlackwell" title="Mathematician">David Blackwell</a> (<b>1976</b>). <i><a class="external text" href="https://projecteuclid.org/euclid.aos/1176343412" rel="nofollow">The Stochastic Processes of Borel Gambling and Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Annals_of_Statistics" rel="nofollow">Annals of Statistics</a>, Vol. 4, No. 2</li>
+<li> <a href="Mathematician.html#SEDreyfus" title="Mathematician">Stuart E. Dreyfus</a>, <a class="external text" href="http://www.averill-law.com/about/.html" rel="nofollow">Averill M. Law</a> (<b>1977</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=578655.html" rel="nofollow">Art and Theory of Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Academic_Press" rel="nofollow">Academic Press</a></li>
+<li> <a href="Mathematician.html#SEShreve" title="Mathematician">Steven E. Shreve</a>, <a href="Mathematician.html#DBertsekas" title="Mathematician">Dimitri Bertsekas</a> (<b>1979</b>). <i><a class="external text" href="http://pubsonline.informs.org/doi/abs/10.1287/moor.4.1.15?journalCode=moor.html" rel="nofollow">Universally Measurable Policies in Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Mathematics_of_Operations_Research" rel="nofollow">Mathematics of Operations Research</a>, Vol. 4, No. 1</li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="David Eppstein.html" title="David Eppstein">David Eppstein</a>, <a href="Mathematician.html#ZviGalil" title="Mathematician">Zvi Galil</a>, <a href="Mathematician.html#RGiancarlo" title="Mathematician">Raffaele Giancarlo</a> (<b>1988</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/21965" rel="nofollow">Speeding up Dynamic Programming</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/focs/focs88.html" rel="nofollow">FOCS 1988</a></li>
+<li> <a href="Andrew Barto.html" title="Andrew Barto">Andrew Barto</a>, <a href="Richard Sutton.html" title="Richard Sutton">Richard Sutton</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/w/Watkins:Christopher_J=_C=_H=" rel="nofollow">Christopher J. C. H. Watkins</a> (<b>1989</b>). <i><a class="external text" href="https://papers.nips.cc/paper/194-sequential-decision-problems-and-neural-networks" rel="nofollow">Sequential Decision Problems and Neural Networks</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/nips/nips1989.html" rel="nofollow">NIPS 1989</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="David Eppstein.html" title="David Eppstein">David Eppstein</a>, <a href="Mathematician.html#ZviGalil" title="Mathematician">Zvi Galil</a>, <a href="Mathematician.html#RGiancarlo" title="Mathematician">Raffaele Giancarlo</a>, <a href="Mathematician.html#GFItaliano" title="Mathematician">Giuseppe F. Italiano</a> (<b>1990</b>). <i>Sparse Dynamic Programming</i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/soda/soda90.html" rel="nofollow">SODA 1990</a>, <a class="external text" href="http://www.cs.ust.hk/mjg lib/bibs/DPSu/DPSu.Files/p513-eppstein.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Mathematician.html#DBertsekas" title="Mathematician">Dimitri Bertsekas</a> (<b>1996, 2017</b>). <i><a class="external text" href="http://www.athenasc.com/dpbook.html.html" rel="nofollow">Dynamic Programming and Optimal Control</a></i>. <a class="external text" href="http://www.athenasc.com/index.html.html" rel="nofollow">Athena Scientific</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Mathematician.html#DBertsekas" title="Mathematician">Dimitri Bertsekas</a> (<b>2001</b>).  <i>Neuro-Dynamic Programming: An Overview</i>. <a class="external text" href="http://link.springer.com/referencework/10.1007%2F0-306-48332-7.html" rel="nofollow">Encyclopedia of Optimization</a>, <a class="external text" href="http://web.mit.edu/people/dimitrib/NDP Encycl.pdf.html" rel="nofollow">pdf</a>, <a class="external text" href="http://www.math.s.chiba-u.ac.jp/~yasuda/open2all/Neuro/NDP Overview.pdf.html" rel="nofollow">slides as pdf</a></li>
+<li> <a href="Mathematician.html#SEDreyfus" title="Mathematician">Stuart E. Dreyfus</a> (<b>2002</b>). <i>Richard Bellman on the Birth of Dynamic Programming</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Operations_Research:_A_Journal_of_the_Institute_for_Operations_Research_and_the_Management_Sciences" rel="nofollow">Operations Research</a>, Vol. 50, No. 1, <a class="external text" href="http://www.cas.mcmaster.ca/~se3c03/journal papers/dy birth.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>2003</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=862270.html" rel="nofollow">Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Dover_Publications" rel="nofollow">Dover Publications</a></li>
+<li> <a href="Mathematician.html#SDasgupta" title="Mathematician">Sanjoy Dasgupta</a>, <a href="Mathematician.html#CHPapadimitriou" title="Mathematician">Christos H. Papadimitriou</a>, <a href="Mathematician.html#UVVazirani" title="Mathematician">Umesh Vazirani</a> (<b>2006</b>). <i><a class="external text" href="http://www.cs.berkeley.edu/%7Evazirani/algorithms.html.html" rel="nofollow">Algorithms</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/McGraw-Hill" rel="nofollow">McGraw-Hill</a>, <a class="external text" href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap6.pdf" rel="nofollow">Chapter 6 Dynamic programming</a> (pdf)</li>
+<li> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="J%C3%A9r%C3%A9mie Mary.html" title="Jérémie Mary">Jérémie Mary</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a> (<b>2006</b>). <i>Learning for stochastic dynamic programming</i>. <a class="external text" href="http://www.lri.fr/%7Egelly/paper/lfordp.pdf.html" rel="nofollow">pdf</a>, <a class="external text" href="http://www.grappa.univ-lille3.fr/~mary/paper/lfordp.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a href="J%C3%A9r%C3%A9mie Mary.html" title="Jérémie Mary">Jérémie Mary</a> (<b>2007</b>). <i>Active learning in regression, with application to stochastic dynamic programming</i>. ICINCO and CAP, 2007, <a class="external text" href="http://www.grappa.univ-lille3.fr/~mary/paper/ldsfordp.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="http://dblp.uni-trier.de/pers/hd/p/Powell:Warren B=.html" rel="nofollow">Warren B. Powell</a> (<b>2007</b>). <i>Approximate Dynamic Programming - Solving the Curses of Dimensionality</i>. <a class="external text" href="https://en.wikipedia.org/wiki/John_Wiley_%26_Sons" rel="nofollow">Wiley</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>2010</b>). <i><a class="external text" href="http://press.princeton.edu/titles/9234.html.html" rel="nofollow">Dynamic Programming</a></i>. With a new introduction by <a href="Mathematician.html#SEDreyfus" title="Mathematician">Stuart E. Dreyfus</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Princeton_University_Press" rel="nofollow">Princeton University Press</a></li>
+<li> <a href="Andrew Barto.html" title="Andrew Barto">Andrew Barto</a> (<b>2010</b>). <i>Adaptive Real-Time Dynamic Programming</i>. Encyclopedia of Machine Learning 2010, Springer</li>
+<li> <a href="R%C3%A9mi Munos.html" title="Rémi Munos">Rémi Munos</a> (<b>2010</b>). <i>Approximate dynamic programming</i>. In <a class="external text" href="http://www.isir.upmc.fr/?op=view profil&amp;id=28&amp;old=N&amp;lang=en.html" rel="nofollow">Olivier Sigaud</a> and <a class="external text" href="http://www.loria.fr/~buffet/.html" rel="nofollow">Olivier Buffet</a>, editors, <a class="external text" href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1848211678.html.html" rel="nofollow">Markov Decision Processes in Artificial Intelligence</a>, chapter 3, ISTE Ltd and <a class="external text" href="http://eu.wiley.com/WileyCDA/.html" rel="nofollow">John Wiley &amp; Sons Inc.</a>, <a class="external text" href="http://researchers.lille.inria.fr/~munos/papers/files/MDPIA chap3.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="http://dblp.uni-trier.de/pers/hd/p/Powell:Warren B=.html" rel="nofollow">Warren B. Powell</a> (<b>2011</b>). <i><a class="external text" href="http://adp.princeton.edu/.html" rel="nofollow">Approximate Dynamic Programming - Solving the Curses of Dimensionality</a></i>. 2nd edition, <a class="external text" href="https://en.wikipedia.org/wiki/John_Wiley_%26_Sons" rel="nofollow">Wiley</a></li>
+<li> <a href="Mathematician.html#DBertsekas" title="Mathematician">Dimitri Bertsekas</a> (<b>2013</b>). <i><a class="external text" href="http://www.athenasc.com/abstractdp.html.html" rel="nofollow">Abstract Dynamic Programming</a></i>. <a class="external text" href="http://www.athenasc.com/index.html.html" rel="nofollow">Athena Scientific</a></li>
+<li> <a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a>, <a href="Mathematician.html#SEDreyfus" title="Mathematician">Stuart E. Dreyfus</a> (<b>2015</b>). <i><a class="external text" href="http://press.princeton.edu/titles/100.html.html" rel="nofollow">Applied Dynamic Programming</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Princeton_University_Press" rel="nofollow">Princeton University Press</a></li>
+<li> <a href="Andrew Barto.html" title="Andrew Barto">Andrew Barto</a> (<b>2017</b>). <i>Adaptive Real-Time Dynamic Programming</i>. <a class="external text" href="https://link.springer.com/referencework/10.1007%2F978-1-4899-7687-1" rel="nofollow">Encyclopedia of Machine Learning and Data Mining 2017</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Dynamic_programming" rel="nofollow">Dynamic programming from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Dynamic_programming#Algorithms_that_use_dynamic_programming" rel="nofollow">Algorithms that use dynamic programming</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Bellman_equation" rel="nofollow">Bellman equation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikibooks.org/wiki/Algorithms/Dynamic_Programming" rel="nofollow">Algorithms/Dynamic Programming - Wikibooks</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Stochastic_dynamic_programming" rel="nofollow">Stochastic dynamic programming from Wikipedia</a></li>
+<li> <a class="external text" href="https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/" rel="nofollow">Dynamic Programming – From Novice to Advanced – topcoder</a></li>
+<li> <a class="external text" href="https://www.codechef.com/wiki/tutorial-dynamic-programming" rel="nofollow">Tutorial for Dynamic Programming | CodeChef</a></li>
+<li> <a class="external text" href="http://www.geeksforgeeks.org/category/dynamic-programming/.html" rel="nofollow">Dynamic Programming Archives - GeeksforGeeks</a></li>
+<li> <a class="external text" href="https://people.cs.clemson.edu/~bcdean/dp_practice/" rel="nofollow">Dynamic Programming Practice Problems</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1953</b>). <i><a class="external text" href="http://www.rand.org/pubs/reports/R245.html.html" rel="nofollow">An Introduction to the Theory of Dynamic Programming</a></i>. R-245, <a class="external text" href="https://en.wikipedia.org/wiki/RAND_Corporation" rel="nofollow">RAND Corporation</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Richard E. Bellman.html" title="Richard E. Bellman">Richard E. Bellman</a> (<b>1965</b>). <i><a class="external text" href="http://www.rand.org/pubs/papers/P3013/.html" rel="nofollow">On the Application of Dynamic Programming to the Determination of Optimal Play in Chess and Checkers</a>.</i> <a class="external text" href="https://en.wikipedia.org/wiki/Proceedings_of_the_National_Academy_of_Sciences_of_the_United_States_of_America" rel="nofollow">PNAS</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Markov_chain" rel="nofollow">Markov chain from Wikipedia</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://users.stat.umn.edu/~sudde001/personal page/DBDP.pdf.html" rel="nofollow">David Blackwell and Dynamic Programming</a> (pdf) by <a href="Mathematician.html#WSudderth" title="Mathematician">William Sudderth</a></span>
+</li>
+</ol></div>
+<p><b><a href="Algorithms.html" title="Algorithms">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175317
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.015 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 107/1000000
+Preprocessor generated node count: 198/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1655-0!canonical and timestamp 20240722175317 and revision id 13396
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Dynamic_Programming&amp;oldid=13396">https://www.chessprogramming.org/index.php?title=Dynamic_Programming&amp;oldid=13396</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Dynamic+Programming&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Dynamic Programming.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Dynamic Programming&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Dynamic Programming.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Dynamic Programming&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Dynamic Programming&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Dynamic Programming.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Dynamic Programming.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Dynamic Programming&amp;oldid=13396.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Dynamic Programming&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 20 July 2019, at 11:19.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Dynamic_Programming&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.015","walltime":"0.016","ppvisitednodes":{"value":107,"limit":1000000},"ppgeneratednodes":{"value":198,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175317","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":47});});</script>
+</body>
+</html>

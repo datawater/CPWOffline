@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Iterative Search - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Iterative_Search","wgTitle":"Iterative Search","wgCurRevisionId":23014,"wgRevisionId":23014,"wgArticleId":1289,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Flottmann","Industrial Heritage Trail","Irmgard Potthoff"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Iterative_Search","wgRelevantArticleId":1289,"wgRequestId":"Zp7DaUKfcgdPZR8tVSrqwQAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Iterative_Search rootpage-Iterative_Search skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Iterative Search</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * Iterative Search</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:SpaghettiCode.JPG.html"><img alt="" class="thumbimage" height="225" src="images/thumb/2/2c/SpaghettiCode.JPG/300px-SpaghettiCode.JPG" srcset="/images/2/2c/SpaghettiCode.JPG 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:SpaghettiCode.JPG.html" title="Enlarge"></a></div>Spaghetti Code <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>The more common search structure is the <a href="Recursion.html" title="Recursion">recursive</a> <a href="Depth-First.html" title="Depth-First">depth-first search</a>, as used in the <a href="Negamax.html" title="Negamax">Negamax algorithm</a> example. The function calls itself with a decremented depth parameter until depth reaches zero. Opposed to that the <b>Iterative Search</b> always remains on the same layer on the call <a href="Stack.html" title="Stack">stack</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Considerations"><span class="tocnumber">2</span> <span class="toctext">Considerations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Parallel Search"><span class="tocnumber">2.1</span> <span class="toctext">Parallel Search</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Implementations"><span class="tocnumber">3</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Goto"><span class="tocnumber">3.1</span> <span class="toctext">Goto</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Switch"><span class="tocnumber">3.2</span> <span class="toctext">Switch</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forums Posts"><span class="tocnumber">5</span> <span class="toctext">Forums Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2005 ..."><span class="tocnumber">5.1</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ..."><span class="tocnumber">5.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2015 ..."><span class="tocnumber">5.3</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Introduction">Introduction</span></h1>
+<p><a href="Donald Knuth.html" title="Donald Knuth">Knuth</a> and Moore already introduced an <a href="Knuth-iterative.html" title="Knuth-iterative">iterative solution</a> of <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> in 1975 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>: 
+</p>
+<pre>It is interesting to convert this recursive procedure to an iterative (non-recursive) form by a sequence of mechanical transformations, and to apply simple optimizations which preserve program correctness. The resulting procedure is surprisingly simple, but not as easy to prove correct as the recursive form.
+</pre>
+<h1><span class="mw-headline" id="Considerations">Considerations</span></h1>
+<p>Generally every Recursive Function can also be converted into an Iterative Search by means of replacing the function calls by jumps (<a href="C.html#Goto" title="C">goto</a>, break, continue) within the function itself <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. The result is usually more efficient as the calling of a function is slower than just jumps within the function. The main downside however is the increased complexity and decreased readability <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>.
+</p><p>In the Recursive Search the function can store local values, this doesn't work for the Iterative Structure, as all plies are using the same function. As a result a separate structure has to be maintained with all the relevant information for each ply. <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> (<b>2008</b>) <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> also pointed out that this gives more control to the programmer as to where the stack data maps in cache, allowing for more efficient implementations. Furthermore <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a> (<b>2010</b>) <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> said that the Iterative Search favors <a class="new" href="index.php?title=Profiling&amp;action=edit&amp;redlink=1.html" title="Profiling (page does not exist)">Profiling</a>, as avoids all the cycles in the call tree.
+</p>
+<h2><span class="mw-headline" id="Parallel_Search">Parallel Search</span></h2>
+<p>Especially for the <a href="Parallel Search.html" title="Parallel Search">Parallel Search Algorithm</a> <a href="Dynamic Tree Splitting.html" title="Dynamic Tree Splitting">Dynamic Tree Splitting</a> having an Iterative Search Structure is essential. It relies on threads frequently changing ownership of certain nodes, which requires full control over search stacks <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>. Furthermore it gives more flexibility in the selection of Split Points as the information on nodes in the current search branch is freely available.
+</p>
+<h1><span class="mw-headline" id="Implementations">Implementations</span></h1>
+<h2><span class="mw-headline" id="Goto">Goto</span></h2>
+<p><span id="Onno"></span><a href="Onno Garms.html" title="Onno Garms">Onno Garms</a> suggests the use of <a href="C.html#Goto" title="C">goto</a> with a <a href="C.html#Switch" title="C">switch</a> at the bottom to jump to the label specified in ret_addr as applied in his engine <a href="Onno.html" title="Onno">Onno</a>:
+</p>
+<pre>
+namespace Label
+{
+  enum _ {after_scout, after_research, ...};
+}
+
+class Node
+{
+  int alpha, beta;
+  Move move;
+  MoveList moves;
+  int value;
+  Label::_ ret_addr;
+};
+
+search ()
+{
+  Node* node = &amp;d_nodes[0];
+  Node* child = node+1;
+
+recurse:
+  node-&gt;moves.init();
+  while ((node-&gt;move = node-&gt;moves.next()))
+  {
+    child-&gt;alpha = ...
+    child-&gt;beta = ...
+    child-&gt;ret_addr = Label::after_scout;
+    ++node;
+    ++child;
+    goto recurse;
+    // when we return here, node and child have their original values
+    // and child is evaluated
+after_scout:
+    if (child-&gt;value &lt; -node-&gt;alpha)
+    {
+      child-&gt;alpha = ...
+      child-&gt;beta = ...
+      child-&gt;ret_addr = Label::after_research;
+      ++node
+      ++child;
+      goto recurse;
+    after_research:
+      ...
+    }
+    if (cutoff)
+    {
+      node-&gt;value = ...
+      goto node_done;
+    }
+  }
+node_done:
+  --node;
+  --child;
+  switch (child-&gt;ret_addr)
+  {
+    case Label::after_research:
+      goto after_research;
+    ...
+  }
+}
+</pre>
+<p><a href="Edmund Moshammer.html" title="Edmund Moshammer">Edmund Moshammer</a> suggested to use a branch table, which at the beginning gets filled with addresses of all return points. The difference to the code shown by Onno Garms is that this would avoid the additional indirection of the switch statement in the end.
+</p>
+<h2><span class="mw-headline" id="Switch">Switch</span></h2>
+<p><a href="Teemu Pudas.html" title="Teemu Pudas">Teemu Pudas</a> suggests a way how to use switch statements hiding behinds macros that emulate the typical function calls <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>:
+</p>
+<pre>
+enum { RETURN, NEW_NODE };
+
+#define be_recursive() \
+   switch (state) { \
+   case NEW_NODE
+#define end_recursion() \
+   default:assert(false); return best; }
+
+#define return(foo) return best = foo, RETURN
+#define recurse() return(best), NEW_NODE
+
+#define search(depth,alpha,beta) do { \
+   next-&gt;init(NEW_NODE,depth,alpha,beta); \
+   state = __LINE__; \
+   recurse(); \
+   case __LINE__:; } while (0)
+
+
+inline int Node::do_search() {
+
+// any variable not declared inside this function is a member of Node
+
+Node *const next = this + 1;
+
+be_recursive(): // Please.
+
+   gen_moves(list);
+   if (list.empty()) return(in_check ? MATE_IN_ONE : DRAW);
+
+   while (move = list.next()) {
+      make(move);
+      search(depth-1,-beta,-alpha);
+      unmake();
+      if (ret_val &gt; best) {
+         best = ret_val;
+         if (best &gt;= beta) return(best);
+      }
+   }
+   return(best);
+
+end_recursion();
+}
+
+int drive_search(int depth, int alpha, int beta) { // called from root_search()
+   Node stack[MaxPly];
+   Node *node = &amp;stack[1]; // stack[0] would be root
+   node-&gt;init(NEW_NODE,depth,alpha,beta);
+   while (true) {
+      switch (node-&gt;do_search()) {
+      case RETURN:
+         node--;
+         node-&gt;ret_val = -node[1].best;
+         if (node == stack) return node-&gt;ret_val;
+         break;
+      case NEW_NODE:
+         node++;
+      }
+   }
+}
+</pre>
+<p><a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, the author of <a href="ZCT.html" title="ZCT">ZCT</a> uses a large switch branch spanning across the search function with labels for every return point <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="ABDADA.html" title="ABDADA">ABDADA</a></li></ul>
+<dl><dd> <a href="ABDADA.html#Recursion" title="ABDADA">Recursive vs. Iterative Search</a></dd></dl>
+<ul><li> <a href="Backtracking.html#8QinBitboards" title="Backtracking">Backtracking - Eight Queens puzzle with Bitboards</a></li>
+<li> <a href="Donald Knuth.html" title="Donald Knuth">Knuth's</a> <a href="Knuth-iterative.html" title="Knuth-iterative">Iterative Solution</a> of <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a></li>
+<li> <a href="Iteration.html" title="Iteration">Iteration</a></li>
+<li> <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="Recursion.html" title="Recursion">Recursion</a></li></ul>
+<h1><span class="mw-headline" id="Forums_Posts">Forums Posts</span></h1>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=2071.html" rel="nofollow">recusive null move in iterative search</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, March 25, 2005 » <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=478627" rel="nofollow">Iterative alpha-beta search?</a> by <a class="new" href="index.php?title=Andrew Wagner&amp;action=edit&amp;redlink=1.html" title="Andrew Wagner (page does not exist)">Andrew Wagner</a>, <a href="CCC.html" title="CCC">CCC</a>, January 11, 2006 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14832.html" rel="nofollow">Iterative DTS</a> by <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul</a>, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2007</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=49618&amp;p=187476.html" rel="nofollow">Interesting Scorpio design</a> by <a href="Kerwin Medina.html" title="Kerwin Medina">Kerwin Medina</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 05, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=264977.html" rel="nofollow">Iterative version of Alpha-beta instead recursive</a> by Samuele Giraudo, <a href="CCC.html" title="CCC">CCC</a>, May 02, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34561.html" rel="nofollow">DTS Structure</a> by <a href="Edmund Moshammer.html" title="Edmund Moshammer">Edmund Moshammer</a>, <a href="CCC.html" title="CCC">CCC</a>, May 28, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46175.html" rel="nofollow">True iterative search...</a> by <a href="Jens B%C3%A6k Nielsen.html" title="Jens Bæk Nielsen">Jens Bæk Nielsen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48812&amp;start=6.html" rel="nofollow">Re: goto thread (split)</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2013 » <a href="Symbolic.html" title="Symbolic">Symbolic</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53408.html" rel="nofollow">Non recursive perft()</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2014 » <a href="Perft.html" title="Perft">Perft</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55563.html" rel="nofollow">Parallel iterative search function</a> by <a href="Fabio Gobbato.html" title="Fabio Gobbato">Fabio Gobbato</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2015 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Category:Irmgard Potthoff&amp;action=edit&amp;redlink=1.html" title="Category:Irmgard Potthoff (page does not exist)">Irmgard Potthoff</a> - Keine Schonkost, 2010, Überschriften aus Tageszeitungen, Teller, Messer, Gabel, Tisch (headlines from daily newspapers, plate, knife, fork, table), <a class="external text" href="http://flottmann-hallen.de/event/884/flottmann-30-hoch.html" rel="nofollow">Flottmann 30 hoch</a> - 30 years anniversary exhibition, <a href="Category:Flottmann.html" title="Category:Flottmann">Flottmann-Hallen</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Herne,_North_Rhine-Westphalia" rel="nofollow">Herne</a>, <a class="external text" href="https://en.wikipedia.org/wiki/North_Rhine-Westphalia" rel="nofollow">North Rhine-Westphalia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Germany" rel="nofollow">Germany</a>, part of <a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">The Industrial Heritage Trail</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/Ruhr" rel="nofollow">Ruhr area</a>, Photo by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, September 18, 2016</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a>, <a class="external text" href="http://dblp.uni-trier.de/pers/hd/m/Moore:Ronald W=.html" rel="nofollow">Ronald W. Moore</a> (<b>1975</b>). <i>An analysis of alpha-beta pruning.</i> <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, 6:293–326</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://c-faq.com/style/stylewars.html.html" rel="nofollow">comp.lang.c FAQ list · Question 17.10</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Spaghetti_code" rel="nofollow">Spaghetti code from Wikipedia</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=49618&amp;p=187476.html#p187458" rel="nofollow">Re: Interesting Scorpio design</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">H.G. Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 05, 2008</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=351576&amp;t=34561.html" rel="nofollow">Re: DTS Structure</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, May 28, 2010</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="ABDADA.html#Recursion" title="ABDADA">See remark on Recursion</a> by <a href="Jean-Christophe Weill.html" title="Jean-Christophe Weill">Jean-Christophe Weill</a> on <a href="Recursion.html" title="Recursion">recursive</a> versus <a href="Iteration.html" title="Iteration">iterative</a> implementation of <a href="ABDADA.html" title="ABDADA">ABDADA</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=49618&amp;p=187476.html#p187476" rel="nofollow">Re: Interesting Scorpio design</a> by <a href="Teemu Pudas.html" title="Teemu Pudas">Teemu Pudas</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 05, 2008</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=351606&amp;t=34561.html" rel="nofollow">Re: DTS Structure</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2010</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Considered_harmful" rel="nofollow">Considered harmful from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722151403
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.025 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 210/1000000
+Preprocessor generated node count: 432/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1289-0!canonical and timestamp 20240722151403 and revision id 23014
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Iterative_Search&amp;oldid=23014">https://www.chessprogramming.org/index.php?title=Iterative_Search&amp;oldid=23014</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Flottmann.html" title="Category:Flottmann">Flottmann</a></li><li><a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">Industrial Heritage Trail</a></li><li><a class="new" href="index.php?title=Category:Irmgard Potthoff&amp;action=edit&amp;redlink=1.html" title="Category:Irmgard Potthoff (page does not exist)">Irmgard Potthoff</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Iterative+Search&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Iterative Search.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Iterative Search&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Iterative Search.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Iterative Search&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Iterative Search&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Iterative Search.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Iterative Search.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Iterative Search&amp;oldid=23014.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Iterative Search&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 25 December 2020, at 15:30.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Iterative_Search&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.025","walltime":"0.027","ppvisitednodes":{"value":210,"limit":1000000},"ppgeneratednodes":{"value":432,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722151403","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

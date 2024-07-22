@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Static Exchange Evaluation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Static_Exchange_Evaluation","wgTitle":"Static Exchange Evaluation","wgCurRevisionId":26496,"wgRevisionId":26496,"wgArticleId":1014,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Wassily Kandinsky","Joo Kraus","Wolfgang Schmid","Marco Minnemann"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Static_Exchange_Evaluation","wgRelevantArticleId":1014,"wgRequestId":"Zp7DtI2xCJ5uo1xYemabMwAAAAg","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Static_Exchange_Evaluation rootpage-Static_Exchange_Evaluation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Static Exchange Evaluation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a> * Static Exchange Evaluation</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Kleine Welten IX (Small Worlds IX) MET DP855300.jpg.html"><img alt="" class="thumbimage" height="340" src="wikipedia/commons/thumb/1/1b/Kleine_Welten_IX_%28Small_Worlds_IX%29_MET_DP855300.jpg/300px-Kleine_Welten_IX_%28Small_Worlds_IX%29_MET_DP855300.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Kleine_Welten_IX_%28Small_Worlds_IX%29_MET_DP855300.jpg/450px-Kleine_Welten_IX_%28Small_Worlds_IX%29_MET_DP855300.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Kleine_Welten_IX_%28Small_Worlds_IX%29_MET_DP855300.jpg/600px-Kleine_Welten_IX_%28Small_Worlds_IX%29_MET_DP855300.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Kleine Welten IX (Small Worlds IX) MET DP855300.jpg.html" title="Enlarge"></a></div><a href="Category:Wassily Kandinsky.html" title="Category:Wassily Kandinsky">Wassily Kandinsky</a> - Small Worlds IX <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>A <b>Static Exchange Evaluation (SEE)</b> examines the consequence of a series of exchanges on a single <a href="Squares.html" title="Squares">square</a> after a given <a href="Moves.html" title="Moves">move</a>, and calculates the likely evaluation change (<a href="Material.html" title="Material">material</a>) to be lost or gained, <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> coined the term <a href="SOMA.html#SwapOff" title="SOMA">swap-off value</a>. A positive static exchange indicates a "winning" move. For example, PxQ will always be a win, since the Pawn side can choose to stop the exchange after its Pawn is recaptured, and still be ahead. Some programs optimize the SEE function to only return a losing or equal/winning flag, since they only use SEE to determine if a move is worth searching and do not need the actual value. SEE is useful in <a href="Move Ordering.html" title="Move Ordering">move ordering</a>, <a href="Futility Pruning.html" title="Futility Pruning">futility pruning</a> and especially in <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a> in conjunction with <a href="Delta Pruning.html" title="Delta Pruning">delta pruning</a>, as well to <a href="Reductions.html" title="Reductions">reduce</a> "bad" <a href="Captures.html" title="Captures">captures</a> and <a href="Check.html" title="Check">checks</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Implementation"><span class="tocnumber">1</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Seeing a Capture"><span class="tocnumber">2</span> <span class="toctext">Seeing a Capture</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#SOMA"><span class="tocnumber">3</span> <span class="toctext">SOMA</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#1990 ..."><span class="tocnumber">6.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1995 ..."><span class="tocnumber">6.2</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">6.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2005 ..."><span class="tocnumber">6.4</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2010 ..."><span class="tocnumber">6.5</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2015 ..."><span class="tocnumber">6.6</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2020 ..."><span class="tocnumber">6.7</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Test suites"><span class="tocnumber">7.1</span> <span class="toctext">Test suites</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Implementation">Implementation</span></h1>
+<p>A <a class="external text" href="https://en.wikipedia.org/wiki/Didactic_method" rel="nofollow">didactic</a> <a href="Recursion.html" title="Recursion">recursive</a> implementation of SEE is shown below <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . In most programs, however, an <a href="Iteration.html" title="Iteration">iterative</a> version is used, as demonstrated in <a href="SEE - The Swap Algorithm.html" title="SEE - The Swap Algorithm">SEE - The Swap Algorithm</a> with <a href="Bitboards.html" title="Bitboards">bitboards</a>. In <a href="CCC.html" title="CCC">CCC</a>, <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> deduced an iterative SEE approach directly from <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> .
+</p>
+<pre>
+int see(int square, int side)
+{
+   value = 0;
+   piece = get_smallest_attacker(square, side);
+   /* skip if the square isn't attacked anymore by this side */
+   if ( piece )
+   {
+      make_capture(piece, square);
+      /* Do not consider captures if they lose material, therefor max zero */
+      value = max (0, piece_just_captured() -see(square, other(side)) );
+      undo_capture(piece, square);
+   }
+   return value;
+}
+</pre>
+<p>This uses a trick, equivalent to <a href="Negamax.html" title="Negamax">negamax</a> in tree search, where the loss for the current side is the gain for the opposite side. This can be seen in the expression piece_just_captured() - see(square); which is the value of the piece captured (piece_just_captured()) minus the gain that the opponent might make after the move by recapturing. If that term becomes negative, one would better choose <a href="Quiescence Search.html#StandPat" title="Quiescence Search">standing pat</a> rather than to capture, which can be done by a conditional assignment, or by a <a href="Avoiding Branches.html#Max" title="Avoiding Branches">max</a> function with zero as second argument.
+</p>
+<h1><span class="mw-headline" id="Seeing_a_Capture">Seeing a Capture</span></h1>
+<p>To statically evaluate a <a href="Captures.html" title="Captures">capture</a>, that particular capture should be forced, because it might not be the lowest attacker that makes the capture, and must not allow the option of standing pat <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> .
+</p>
+<pre>
+int seeCapture(int from, int to, int side)
+{
+   value = 0;
+   piece = board[from];
+
+   make_capture(piece, to);
+   value = piece_just_captured() - see(to, other(side));
+   undo_capture(piece, to);
+   return value;
+}
+</pre>
+<h1><span class="mw-headline" id="SOMA">SOMA</span></h1>
+<p>Instead of using a <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, some (early) chess programs aimed to determine the material balance of a position by a static analysis of <b>all</b> possible capture-move sequences. These routines are often referred to as <a href="SOMA.html#SOMAALGO" title="SOMA">SOMA</a> (<b>S</b>wapping <b>O</b>ff <b>M</b>aterial <b>A</b>nalyzer) <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> based on the <a href="SOMA.html#SwapOff" title="SOMA">swap-off algorithm</a> used in the one-ply analyzing "paper machine" <a href="SOMA.html" title="SOMA">SOMA</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Evolutionary_biologist" rel="nofollow">evolutionary biologist</a> <a href="John Maynard Smith.html" title="John Maynard Smith">John Maynard Smith</a>, the <b>S</b>mith <b>O</b>ne-<b>M</b>ove <b>A</b>nalyzer designed in the early 60s <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> .
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Negamax.html" title="Negamax">Negamax</a></li>
+<li> <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a href="Delta Pruning.html" title="Delta Pruning">Delta Pruning</a></li>
+<li> <a href="Guard Heuristic.html" title="Guard Heuristic">Guard Heuristic</a></li>
+<li> <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a></li>
+<li> <a href="Attack and Defend Maps.html#EDsLookup" title="Attack and Defend Maps">Ed's Lookup</a> from <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">Attack and Defend Maps</a></li>
+<li> <a href="SEE - The Swap Algorithm.html" title="SEE - The Swap Algorithm">SEE - The Swap Algorithm</a> with <a href="Bitboards.html" title="Bitboards">Bitboards</a></li>
+<li> <a href="SOMA.html" title="SOMA">SOMA</a></li></ul>
+<dl><dd> <a href="SOMA.html#Swapoff" title="SOMA">Swap-off algorithm</a></dd></dl>
+<ul><li> <a href="Helmut Richter.html#Swapoff" title="Helmut Richter">Swap-off</a> by <a href="Helmut Richter.html" title="Helmut Richter">Helmut Richter</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="John Maynard Smith.html" title="John Maynard Smith">John Maynard Smith</a>, <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1961</b>). <i>Machines that play games</i>. <a class="external text" href="https://en.wikipedia.org/wiki/New_Scientist" rel="nofollow">New Scientist</a>, 12, 367-9. <a class="external text" href="http://books.google.com/books?id=lo7r0zX T0sC&amp;lpg=PA369&amp;dq=Machines%20that%20play%20games.%201961%2C%20New%20Scientist%2C%2012&amp;pg=PA367.html#v=onepage&amp;q&amp;f=false" rel="nofollow">google books</a> » <a href="SOMA.html" title="SOMA">SOMA</a></li>
+<li> <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1966</b>). <i>Game Playing and Game Learning Automata.</i> Advances in Programming and Non-Numerical Computation, <a class="external text" href="https://en.wikipedia.org/wiki/Leslie_Fox" rel="nofollow">Leslie Fox</a> (ed.), pp. 183-200. Oxford, Pergamon. » Includes Appendix: <i>Rules of SOMAC</i> by <a href="John Maynard Smith.html" title="John Maynard Smith">John Maynard Smith</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></li>
+<li> <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1974</b>). <i>On Machine Intelligence</i>. Edinburgh: University Press, ISBN 10: 085224262X, ISBN 13: 9780852242629, <a class="external text" href="http://www.abebooks.com/servlet/SearchResults?isbn=085224262X.html" rel="nofollow">abebooks.com</a>, <a class="external text" href="http://www.alibris.com/search/books/qwork/4836304/used/On%20machine%20intelligence.html" rel="nofollow">alibris.com</a>, <a class="external text" href="http://www.biblio.com/isbn/9780852242629.html.html" rel="nofollow">biblio.com</a></li>
+<li> <a href="Dan Spracklen.html" title="Dan Spracklen">Dan Spracklen</a>, <a href="Kathe Spracklen.html" title="Kathe Spracklen">Kathe Spracklen</a> (<b>1978</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1978-11/1978_11_BYTE_03-11_The_Sky_is_the_Limit#page/n17/mode/2up" rel="nofollow">An Exchange Evaluator for Computer Chess</a></i>. <a href="Byte Magazine.html#BYTE311" title="Byte Magazine">BYTE, Vol. 3, No. 11</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li>
+<li> <a href="David Levy.html" title="David Levy">David Levy</a> (<b>1979</b>). <i>Chess Programming - Before You Begin</i>. <a href="Personal Computer World.html" title="Personal Computer World">Personal Computer World</a>, May 1979 </li>
+<li> <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2000</b>). <i>SUPER-SOMA - Solving Tactical Exchanges in Shogi without Tree Searching</i>. Lecture Notes In Computer Science; Vol. 2063, <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="http://www.aifactory.co.uk/downloads/SUPER-SOMA.doc.html" rel="nofollow">Word preprint</a><sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li>
+<li> <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Makoto Sakuta.html" title="Makoto Sakuta">Makoto Sakuta</a>, <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2002</b>). <i>Computer Shogi</i>. Artificial Intelligence, Vol. 134, <a class="external text" href="https://en.wikipedia.org/wiki/Elsevier" rel="nofollow">Elsevier</a>, <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.130.2727.html" rel="nofollow">CiteSeerX</a></li>
+<li> <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul</a> (<b>2009</b>). <i>New Architectures in Computer Chess</i>, Ph.D. Thesis, Chapter 4, Static Exchange Evaluation, <a class="external text" href="http://www.personeel.unimaas.nl/uiterwijk/Theses/PhD/Reul thesis.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul</a> (<b>2010</b>). <i>Static Exchange Evaluation with αβ-Approach</i>. <a href="ICGA Journal.html#33 1" title="ICGA Journal">ICGA Journal, Vol. 33, No. 1</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess/browse frm/thread/638ca70e88930bb4.html" rel="nofollow">efficient algorithm for safety of pieces</a> by <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, March 18, 1993</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess/browse frm/thread/dd1c55ecc9f48717.html" rel="nofollow">Computer Chess: swap down evaluators vs capture search</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, October 24, 1994</li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/1fa5e36362f5dde4.html" rel="nofollow">mvv/lva vs SEE capture ordering test results</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 10, 1995</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/645f44f84102e450.html" rel="nofollow">MVV/LVA vs SEE move ordering - more test results</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 25, 1995</li></ul>
+<dl><dd> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/msg/1951744da404fc33.html" rel="nofollow">Re: MVV/LVA vs SEE move ordering - more test results</a> by <a href="Brian Sheppard.html" title="Brian Sheppard">Brian Sheppard</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 27, 1995</dd></dl>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/5byhl_6Jmc8/D1QAR146VLIJ" rel="nofollow">MVV/LVA and SEE - what do they mean?</a> by <a href="Peter Kappler.html" title="Peter Kappler">Peter Kappler</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 28, 1995 » <a href="MVV-LVA.html" title="MVV-LVA">MVV/LVA</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=17016" rel="nofollow">Quiescence vs swapoff</a> by <a href="Peter Fendrich.html" title="Peter Fendrich">Peter Fendrich</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=32703" rel="nofollow">Question about static exchange evaluation</a> by Larry Coon, <a href="CCC.html" title="CCC">CCC</a>, November 12, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=60880" rel="nofollow">Help with Static Exchange Evaluator</a> by <a href="William Bryant.html" title="William Bryant">William Bryant</a>, <a href="CCC.html" title="CCC">CCC</a>, July 18, 1999</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=63511" rel="nofollow">SEE for forward pruning in Q. Search</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, August 04, 1999 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=64357" rel="nofollow">SEE for forward pruning in the Q. search - I'm confused!</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, August 11, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=134986" rel="nofollow">Re: Explain SEE (static exchange evaluator)?</a> by <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=141230" rel="nofollow">Qsearch problems...(about sorting and SEE)</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 26, 2000 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=141813" rel="nofollow">MVV/LVA or SEE - liability?</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2000 » <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a></li></ul>
+<p><b>2001</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=147977" rel="nofollow">About SEE</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=152256" rel="nofollow">Should an engine using SEE beat another not using it?</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=161209" rel="nofollow">SEE and possible EXChess bug</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2001 » <a href="EXchess.html" title="EXchess">EXchess</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=179023" rel="nofollow">Static Exchange Eval (SEE)</a> by <a href="Leen Ammeraal.html" title="Leen Ammeraal">Leen Ammeraal</a>, <a href="CCC.html" title="CCC">CCC</a>, July 10, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=178979" rel="nofollow">Static Exchange Eval</a> by <a href="Artem Petakov.html" title="Artem Petakov">Artem Pyatakov</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=202931" rel="nofollow">I want to SEE</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 21, 2001</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=202933" rel="nofollow">Re: I want to SEE</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 21, 2001</dd></dl>
+<p><b>2002</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=206056" rel="nofollow">Value of King in SEE</a> by <a href="David Rasmussen.html" title="David Rasmussen">David Rasmussen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=262577" rel="nofollow">Static exchange evaluator and 0x88</a> by Pierre Bokma, <a href="CCC.html" title="CCC">CCC</a>, October 30, 2002</li></ul>
+<p><b>2003</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=311899" rel="nofollow">Static Exchange Evaluation (SEE) for pruning in quiescence (?)</a> by <a href="Eli David.html" title="Eli David">Omid David</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=330947" rel="nofollow">table-based SEE or "evaluation in rebel (hanging pieces)"</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2003 » <a href="Hanging Piece.html" title="Hanging Piece">Hanging Piece</a>, <a href="Rebel.html" title="Rebel">Rebel</a></li></ul>
+<p><b>2004</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=343790" rel="nofollow">A SIMD idea, eg. Piece/Gain of a capture target</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2004</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=357382" rel="nofollow">SEE and FH-%</a> by <a href="Jan Renze Steenhuisen.html" title="Jan Renze Steenhuisen">Renze Steenhuisen</a>, <a href="CCC.html" title="CCC">CCC</a>, March 30, 2004</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=381606" rel="nofollow">SEE results</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, August 10, 2004</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=385126" rel="nofollow">SEE and pin detection</a> by <a href="Dan Honeycutt.html" title="Dan Honeycutt">Dan Honeycutt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2004 » <a href="Pin.html" title="Pin">Pin</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=390108" rel="nofollow">Pin aware SEE</a> by <a href="Dan Honeycutt.html" title="Dan Honeycutt">Dan Honeycutt</a>, <a href="CCC.html" title="CCC">CCC</a>, October 03, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=410423" rel="nofollow">Help on how to implement move ordering with a Static Exchange Evaluator</a> by Carlos Magno, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2005</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=1961.html" rel="nofollow">Static Exchange Evaluation Methods</a> by <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, March 14, 2005</li></ul>
+<p><b>2007</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=6104.html" rel="nofollow">SEE with magic bitboards</a> by <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, January 24, 2007 » <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=12706.html" rel="nofollow">SEE on non-capture moves in main search</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, March 28, 2007 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6421.html" rel="nofollow">How good is your SEE?</a> by <a href="Mark Lefler.html" title="Mark Lefler">mjlef</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, April 24, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=123511&amp;t=14168.html" rel="nofollow">Re: Movei added to Crafty vs Rybka comparison data</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, June 06, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=18163.html" rel="nofollow">SEE algorithm</a> by <a href="Robert Pope.html" title="Robert Pope">Robert Pope</a>, <a href="CCC.html" title="CCC">CCC</a>, December 02, 2007</li></ul>
+<p><b>2008</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20646.html" rel="nofollow">SEE problem</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, April 13, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=24357.html" rel="nofollow">How is SEE used?</a> by <a href="Mathieu Pag%C3%A9.html" title="Mathieu Pagé">Mathieu Pagé</a>, <a href="CCC.html" title="CCC">CCC</a>,  October 13, 2008</li></ul>
+<p><b>2009</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=29216.html" rel="nofollow">SEE Observation</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2009 » <a href="Tinker.html" title="Tinker">Tinker</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30905.html" rel="nofollow">SEE algorithm on chessprogramming wiki</a> by <a href="Sven Sch%C3%BCle.html" title="Sven Schüle">Sven Schüle</a>, <a href="CCC.html" title="CCC">CCC</a>, December 02, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31464.html" rel="nofollow">SEE Improvement Idea</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=31776.html" rel="nofollow">GetSmallestAttacker() in 16x12 board representation</a> by metax, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2010 » <a href="Piece-Lists.html" title="Piece-Lists">Piece-Lists</a></li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37514.html" rel="nofollow">Using SEE to prune in main search</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2011 » <a href="Pruning.html" title="Pruning">Pruning</a>, <a href="Reductions.html" title="Reductions">Reductions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37582.html" rel="nofollow">Simple question about SEE</a> by <a href="Andres Valverde.html" title="Andres Valverde">Andres Valverde</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40046.html" rel="nofollow">Implementing SEE</a> by colin, <a href="CCC.html" title="CCC">CCC</a>, Aug 12, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40054.html" rel="nofollow">SEE with alpha beta</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, August 14, 2011 » <a href="Onno.html" title="Onno">Onno</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40100.html" rel="nofollow">Reducing/Pruning Bad Captures (SEE &lt; 0)</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2011 » <a href="Reductions.html" title="Reductions">Reductions</a>, <a href="Pruning.html" title="Pruning">Pruning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40283.html" rel="nofollow">question about SEE</a> by <a href="Alberto Sanjuan.html" title="Alberto Sanjuan">Alberto Sanjuan</a>, <a href="CCC.html" title="CCC">CCC</a>, September 05, 2011</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47330.html" rel="nofollow">SEE</a> by <a href="Rasjid Chan.html" title="Rasjid Chan">Rasjid Chan</a>, <a href="CCC.html" title="CCC">CCC</a>, February 25, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48609.html" rel="nofollow">Static Exchange Evaluation...</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, July 10, 2013 <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48899.html" rel="nofollow">SEE() is slow and SEE() is fast</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 09, 2013</li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51272.html" rel="nofollow">SEE</a> by <a href="Richard Delorme.html" title="Richard Delorme">Richard Delorme</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51518.html" rel="nofollow">SEE logic</a> by <a href="Youri Matiounine.html" title="Youri Matiounine">Youri Matiounine</a>, <a href="CCC.html" title="CCC">CCC</a>, March 08, 2014 » <a href="Piece-Square Tables.html" title="Piece-Square Tables">Piece-Square Tables</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57045.html" rel="nofollow">SEE Map</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, July 20, 2015 <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57548.html" rel="nofollow">Magic SEE</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, September 07, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64166.html" rel="nofollow">Problems with SEE</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=64827.html" rel="nofollow">Evasion (capture) moves ordering by See</a> by <a href="Tam%C3%A1s Kuzmics.html" title="Tamás Kuzmics">Tamás Kuzmics</a>, <a href="CCC.html" title="CCC">CCC</a>, August 06, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65836.html" rel="nofollow">see</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, November 28, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65982.html" rel="nofollow">Poor man's SEE</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 11, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69301.html" rel="nofollow">Fast SEE (Ed's lookup revisited)</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 17, 2018 » <a href="Attack and Defend Maps.html#EDsLookup" title="Attack and Defend Maps">Ed's lookup</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72862.html" rel="nofollow">SEE versus SEE_GE</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2020 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76750.html" rel="nofollow">SEE (Static Exchange Evaluation) pruning nodes</a> by <a href="Marcel Vanthoor.html" title="Marcel Vanthoor">Marcel Vanthoor</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77787.html" rel="nofollow">Static exchange evaluation with promotion</a> by Guido Flohr, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78477" rel="nofollow">Static Exchange Evaluation without bitboards</a> by Jonathan McDermid, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79077" rel="nofollow">Move ordering using SEE</a> by Christian Dean, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2022</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79936" rel="nofollow">Request for thoughts: SEE "Test Set"</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://web.archive.org/web/20071027170528/http://www.brucemo.com/compchess/programming/quiescent.htm#SEE" rel="nofollow">SEE</a> from <a class="external text" href="https://web.archive.org/web/20071026090003/http://www.brucemo.com/compchess/programming/index.htm" rel="nofollow">Bruce Moreland's Programming Topics</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="http://mediocrechess.blogspot.com/2007/03/guide-static-exchange-evaluation-see.html.html" rel="nofollow">Static exchange evaluation (SEE)</a> from <a class="external text" href="http://mediocrechess.varten.org/index.html.html" rel="nofollow">Mediocre Chess</a> by <a href="Jonatan Pettersson.html" title="Jonatan Pettersson">Jonatan Pettersson</a></li>
+<li> <a class="external text" href="http://www.chessprogramming.net/computerchess/static-exchange-evaluation-in-chess/.html" rel="nofollow">Static Exchange Evaluation in Chess</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a class="external text" href="http://www.chessprogramming.net/.html" rel="nofollow">Chess Programming Blog</a>, July 9, 2013</li>
+<li> <a href="Category:Wolfgang Schmid.html" title="Category:Wolfgang Schmid">Wolfgang Schmid</a> - Ringading Dang, <a class="external text" href="https://play.google.com/store/music/album?id=B4j7q7gplpdq4ibqno2twclf7si&amp;tid=song-Trie7zbkahun3mi7yaz4hynimze&amp;hl=en" rel="nofollow">Special Kick</a> (2002),  <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat.: <a href="Category:Joo Kraus.html" title="Category:Joo Kraus">Joo Kraus</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Libor_%C5%A0%C3%ADma" rel="nofollow">Libor Shima</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Peter_W%C3%B6lpl" rel="nofollow">Peter Wölpl</a>, <a href="Category:Marco Minnemann.html" title="Category:Marco Minnemann">Marco Minnemann</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/GVGZe69X8K0?" width="640"></iframe></div></div></dd></dl>
+<p><br/>
+</p>
+<h2><span class="mw-headline" id="Test_suites">Test suites</span></h2>
+<ul><li> [<a class="external free" href="https://github.com/jdart1/arasan-chess/blob/master/src/unit.cpp" rel="nofollow">https://github.com/jdart1/arasan-chess/blob/master/src/unit.cpp</a> unit.cpp by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a></li>
+<li> [<a class="external free" href="https://github.com/lithander/Leorik/blob/master/Leorik.Test/see.epd" rel="nofollow">https://github.com/lithander/Leorik/blob/master/Leorik.Test/see.epd</a> see.epd by <a href="Thomas Jahn.html" title="Thomas Jahn">Thomas Jahn</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Category:Wassily Kandinsky.html" title="Category:Wassily Kandinsky">Wassily Kandinsky</a> - <a class="external text" href="https://commons.wikimedia.org/wiki/File:Kleine_Welten_IX_(Small_Worlds_IX)_MET_DP855300.jpg?uselang=en" rel="nofollow">Small Worlds IX</a>, 1922, <a class="external text" href="https://en.wikipedia.org/wiki/Metropolitan_Museum_of_Art" rel="nofollow">Metropolitan Museum of Art</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40100.html" rel="nofollow">Reducing/Pruning Bad Captures (SEE &lt; 0)</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 2011</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30905.html" rel="nofollow">SEE algorithm on chessprogramming wiki</a> by <a href="Sven Sch%C3%BCle.html" title="Sven Schüle">Sven Schüle</a>, <a href="CCC.html" title="CCC">CCC</a>, December 02, 2009</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=310782&amp;t=30905.html" rel="nofollow">Re: SEE algorithm on chessprogramming wiki</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2009</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=387694&amp;t=37582.html" rel="nofollow">Re: Simple question about SEE</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2011</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Makoto Sakuta.html" title="Makoto Sakuta">Makoto Sakuta</a>, <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2002</b>). <i>Computer Shogi</i>. Artificial Intelligence, Vol. 134, <a class="external text" href="https://en.wikipedia.org/wiki/Elsevier" rel="nofollow">Elsevier</a>, <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.130.2727.html" rel="nofollow">CiteSeerX</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="John Maynard Smith.html" title="John Maynard Smith">John Maynard Smith</a>, <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1961</b>). <i>Machines that play games</i>. <a class="external text" href="https://en.wikipedia.org/wiki/New_Scientist" rel="nofollow">New Scientist</a>, 12, 367-9. <a class="external text" href="http://books.google.com/books?id=lo7r0zX T0sC&amp;lpg=PA369&amp;dq=Machines%20that%20play%20games.%201961%2C%20New%20Scientist%2C%2012&amp;pg=PA367.html#v=onepage&amp;q&amp;f=false" rel="nofollow">google books</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text">see <a href="Helmut Richter.html#Swapoff" title="Helmut Richter">Swap-off</a> by <a href="Helmut Richter.html" title="Helmut Richter">Helmut Richter</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.andreadrian.de/schach/sargon.asm.html" rel="nofollow">Sargon Z80 assembly listing</a> by <a href="Dan Spracklen.html" title="Dan Spracklen">Dan</a> and <a href="Kathe Spracklen.html" title="Kathe Spracklen">Kathe Spracklen</a>, hosted by <a href="Andre Adrian.html" title="Andre Adrian">Andre Adrian</a>, see XCHNG</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.aifactory.co.uk/newsletter/2006 03 quiescence alts.htm.html" rel="nofollow">Looking for Alternatives to Quiescence Search</a> by <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a>, <a href="AI Factory.html" title="AI Factory">AI Factory</a>, December 2006</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=162704" rel="nofollow">EXchess v4.02 released</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2001</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chessprogramming.net/computerchess/static-exchange-evaluation-in-chess/.html" rel="nofollow">Static Exchange Evaluation in Chess</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a class="external text" href="http://www.chessprogramming.net/.html" rel="nofollow">Chess Programming Blog</a>, July 9, 2013</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Russell M. Church&amp;action=edit&amp;redlink=1.html" title="Russell M. Church (page does not exist)">Russell M. Church</a>, <a href="Kenneth W. Church.html" title="Kenneth W. Church">Kenneth W. Church</a> (<b>1977</b>). <i>Plans, Goals, and Search Strategies for the Selection of a Move in Chess</i>. <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a></span>
+</li>
+</ol></div>
+<p><b><a href="Move Ordering.html" title="Move Ordering">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722080716
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.088 seconds
+Real time usage: 0.856 seconds
+Preprocessor visited node count: 272/1000000
+Preprocessor generated node count: 574/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1014-0!canonical and timestamp 20240722080715 and revision id 26496
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Static_Exchange_Evaluation&amp;oldid=26496">https://www.chessprogramming.org/index.php?title=Static_Exchange_Evaluation&amp;oldid=26496</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Wassily Kandinsky.html" title="Category:Wassily Kandinsky">Wassily Kandinsky</a></li><li><a href="Category:Joo Kraus.html" title="Category:Joo Kraus">Joo Kraus</a></li><li><a href="Category:Wolfgang Schmid.html" title="Category:Wolfgang Schmid">Wolfgang Schmid</a></li><li><a href="Category:Marco Minnemann.html" title="Category:Marco Minnemann">Marco Minnemann</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Static+Exchange+Evaluation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Static Exchange Evaluation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Static Exchange Evaluation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Static Exchange Evaluation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Static Exchange Evaluation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Static Exchange Evaluation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Static Exchange Evaluation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Static Exchange Evaluation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Static Exchange Evaluation&amp;oldid=26496.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Static Exchange Evaluation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 August 2022, at 10:43.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Static_Exchange_Evaluation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.088","walltime":"0.856","ppvisitednodes":{"value":272,"limit":1000000},"ppgeneratednodes":{"value":574,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722080716","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":55});});</script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Sliding Piece Attacks - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Sliding_Piece_Attacks","wgTitle":"Sliding Piece Attacks","wgCurRevisionId":26384,"wgRevisionId":26384,"wgArticleId":1107,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Carina Jørgensen","Cymande"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Sliding_Piece_Attacks","wgRelevantArticleId":1107,"wgRequestId":"Zp7Dvo2xCJ5uo1xYemabTQAAAAg","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Sliding_Piece_Attacks rootpage-Sliding_Piece_Attacks skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Sliding Piece Attacks</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * Sliding Piece Attacks</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:269px;"><a href="http://www.carinajorgensen.com/Chess/queensstar.php.html"><img alt="" class="thumbimage" height="262" src="images/5/59/Queen%27s_Star.jpg" width="267"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Queen%27s Star.jpg.html" title="Enlarge"></a></div><a href="Category:Carina J%C3%B8rgensen.html" title="Category:Carina Jørgensen">Carina Jørgensen</a>, Queen's Star <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>This is basically about how to calculate <a href="Attacks.html" title="Attacks">attack-sets</a> of <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a> for <a href="Evaluation.html" title="Evaluation">evaluation</a> and <a href="Move Generation.html" title="Move Generation">move-generation</a> purposes. While the attack-sets of <a href="Pawn.html" title="Pawn">pawn</a>, <a href="King.html" title="King">king</a> and <a href="Knight.html" title="Knight">knight</a> are only dependent on their <a href="Origin Square.html" title="Origin Square">origin square</a>, sliding pieces like <a href="Rook.html" title="Rook">rook</a>, <a href="Bishop.html" title="Bishop">bishop</a> or <a href="Queen.html" title="Queen">queen</a> have to consider <a href="Occupancy.html" title="Occupancy">occupancy</a>, as <a href="Pieces.html" title="Pieces">pieces</a> may block the attack-ray in one particular <a href="Direction.html" title="Direction">direction</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Move targets"><span class="tocnumber">1</span> <span class="toctext">Move targets</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Single Sliding Piece Attacks"><span class="tocnumber">2</span> <span class="toctext">Single Sliding Piece Attacks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#On an empty Board"><span class="tocnumber">2.1</span> <span class="toctext">On an empty Board</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Tinker.27s Approach"><span class="tocnumber">2.2</span> <span class="toctext">Tinker's Approach</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#By Calculation"><span class="tocnumber">2.3</span> <span class="toctext">By Calculation</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#By Occupancy Lookup"><span class="tocnumber">2.4</span> <span class="toctext">By Occupancy Lookup</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Miscellaneous"><span class="tocnumber">2.5</span> <span class="toctext">Miscellaneous</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Multiple Sliding Pieces"><span class="tocnumber">3</span> <span class="toctext">Multiple Sliding Pieces</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#1999"><span class="tocnumber">5.1</span> <span class="toctext">1999</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2020 ..."><span class="tocnumber">5.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Move_targets">Move targets</span></h1>
+<p>Move target sets from attack-sets require <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>
+</p>
+<ul><li> with opponent pieces for <a href="Captures.html" title="Captures">captures</a></li>
+<li> with all empty squares for <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a></li></ul>
+<p><span id="SingleSlidingPieceAttacks"></span>
+</p>
+<h1><span class="mw-headline" id="Single_Sliding_Piece_Attacks">Single Sliding Piece Attacks</span></h1>
+<p>The single sliding piece, a rook, bishop or queen is determined by square index, likely from a <a href="BitScan.html" title="BitScan">bitscan</a> of a piece-wise <a href="Bitboard Serialization.html" title="Bitboard Serialization">bitboard serialization</a> of a sliding piece bitboard from a <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">standard board-definition</a>.
+</p>
+<h2><span class="mw-headline" id="On_an_empty_Board">On an empty Board</span></h2>
+<p>Sliding piece attack sets or their disjoint subsets on lines or rays on an otherwise empty board are that simple than none sliding pieces. They are often base of further attack calculations. 
+</p>
+<ul><li> <a href="On an empty Board.html" title="On an empty Board">Attacks on the otherwise empty Board</a></li></ul>
+<h2><span class="mw-headline" id="Tinker.27s_Approach">Tinker's Approach</span></h2>
+<p><a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a> proposed a move generation approach as used in <a href="Tinker.html" title="Tinker">Tinker</a> based on rook or bishop attacks on the otherwise empty board <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. While <a href="Bitboard Serialization.html" title="Bitboard Serialization">serializing</a> all potential targets, he tests for legality inside the loop body, that is whether the <a href="Square Attacked By.html#InBetween" title="Square Attacked By">inbetween squares</a> of <a href="Origin Square.html" title="Origin Square">origin</a> and <a href="Target Square.html" title="Target Square">target</a> are empty. This is not in the "real" bitboard spirit to determine attack sets in advance rather than to test individual elements of a superset belonging to a set, but at least it allows traversing disjoint target sets i.e. for captures in <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>. 
+</p>
+<h2><span class="mw-headline" id="By_Calculation">By Calculation</span></h2>
+<p>Some <a href="Bit-Twiddling.html" title="Bit-Twiddling">bit-twiddling</a> ray-wise and line-wise approaches, unfortunately not always for all directions.
+</p>
+<ul><li> <a href="Blockers and Beyond.html" title="Blockers and Beyond">Blockers and Beyond</a></li>
+<li> <a href="Classical Approach.html" title="Classical Approach">Classical Approach</a></li></ul>
+<dl><dd> <a href="Bitfoot.html#ABBitboards" title="Bitfoot">Bitfoot - A/B Bitboards</a></dd>
+<dd> <a href="CFish.html#AVX2 Attacks" title="CFish">CFish - AVX2 Attacks</a></dd></dl>
+<ul><li> <a href="Exploding Bitboards.html" title="Exploding Bitboards">Exploding Bitboards</a></li>
+<li> <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a></li>
+<li> <a href="Leorik.html#LeorikAttacks" title="Leorik">Leorik Attacks</a></li>
+<li> <a href="Obstruction Difference.html" title="Obstruction Difference">Obstruction Difference</a></li>
+<li> <a href="Reverse Bitboards.html" title="Reverse Bitboards">Reverse Bitboards</a></li>
+<li> <a href="SBAMG.html" title="SBAMG">SBAMG</a></li>
+<li> <a href="Shifted Bitboards.html" title="Shifted Bitboards">Shifted Bitboards</a></li>
+<li> <a href="Subtracting a Rook from a Blocking Piece.html" title="Subtracting a Rook from a Blocking Piece">Subtracting a Rook from a Blocking Piece</a></li></ul>
+<p><span id="AttacksbyOccupancyLookup"></span>
+</p>
+<h2><span class="mw-headline" id="By_Occupancy_Lookup">By Occupancy Lookup</span></h2>
+<p>Covering line-attacks in one run, <a href="Magic Bitboards.html" title="Magic Bitboards">magic bitboards</a> even covers rook- and bishop-attacks in one run.
+</p>
+<ul><li> <a href="First Rank Attacks.html" title="First Rank Attacks">First Rank Attacks</a></li>
+<li> <a href="Occupancy of any Line.html" title="Occupancy of any Line">Occupancy of any Line</a></li>
+<li> <a href="Rotated Bitboards.html" title="Rotated Bitboards">Rotated Bitboards</a></li>
+<li> <a href="Rotated Indices.html" title="Rotated Indices">Rotated Indices</a></li>
+<li> <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">Kindergarten Bitboards</a></li></ul>
+<dl><dd> <a href="OliThink.html#SlidingPieceAttacks" title="OliThink">Sliding Piece Attacks</a> in <a href="OliThink.html" title="OliThink">OliThink</a></dd></dl>
+<ul><li> <a href="Hashing Dictionaries.html" title="Hashing Dictionaries">Hashing Dictionaries</a></li>
+<li> <a href="Congruent Modulo Bitboards.html" title="Congruent Modulo Bitboards">Congruent Modulo Bitboards</a></li>
+<li> <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li></ul>
+<dl><dd> <a href="BMI2.html#PEXTBitboards" title="BMI2">BMI2 - PEXT Bitboards</a></dd></dl>
+<ul><li> <a href="Sherwin Bitboards.html" title="Sherwin Bitboards">Sherwin Bitboards</a></li></ul>
+<dl><dd> <a href="SISSY Bitboards.html" title="SISSY Bitboards">SISSY Bitboards</a></dd></dl>
+<ul><li> <a href="Titboards.html" title="Titboards">Titboards</a></li></ul>
+<h2><span class="mw-headline" id="Miscellaneous">Miscellaneous</span></h2>
+<ul><li> <a href="The Switch Approach.html" title="The Switch Approach">The Switch Approach</a></li>
+<li> <a href="SIMD Techniques.html" title="SIMD Techniques">SIMD Techniques</a></li>
+<li> <a href="Hiding the Implementation.html" title="Hiding the Implementation">Hiding the Implementation</a></li></ul>
+<p><span id="Multiple"></span>
+</p>
+<h1><span class="mw-headline" id="Multiple_Sliding_Pieces">Multiple Sliding Pieces</span></h1>
+<p>For bitsets with multiple sliding pieces one can apply a <a href="Fill Algorithms.html" title="Fill Algorithms">fill algorithm</a> in each of the eight <a href="Rays.html#RayDirections" title="Rays">ray-directions</a> to determine attacks. Since we keep disjoint directions, there is still a unique 1:1 relation from each bit of the target set to it's source square. This approach is great to determine target sets we may reach in two or more moves. One may use the union of rooks and queen(s), respectively bishops or queen(s) though.
+</p>
+<ul><li> <a href="Dumb7Fill.html" title="Dumb7Fill">Dumb7Fill</a></li></ul>
+<dl><dd> <a href="AVX2.html#Dumb7Fill" title="AVX2">AVX2 Dumb7Fill</a></dd></dl>
+<ul><li> <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li>
+<li> <a href="Fill by Subtraction.html" title="Fill by Subtraction">Fill by Subtraction</a></li></ul>
+<p>If applied for <a href="Move Generation.html" title="Move Generation">move generation</a> we better traverse directions rather than sliding pieces. Naturally this approach becomes less efficient, the less sliders are processed in parallel. Of course, one should avoid processing empty sets.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Efficient Generation of Sliding Piece Attacks.html" title="Efficient Generation of Sliding Piece Attacks">Efficient Generation of Sliding Piece Attacks</a>, a Summary of selected attack generation techniques, a short Talk by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a> from the <a href="Workshop Chess and Mathematics.html" title="Workshop Chess and Mathematics">Workshop Chess and Mathematics</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Dresden" rel="nofollow">Dresden</a>, November 21st and 22nd, 2008</li>
+<li> <a href="Combinatorial Logic.html#CombinatorialAttackandDefendMap" title="Combinatorial Logic">Combinatorial Logic - Combinatorial Attacks</a></li>
+<li> <a href="Sequential Logic.html#SequentialRookAttack" title="Sequential Logic">Sequential Logic - Sequential Rook Attack</a></li>
+<li> <a href="Vector Attacks.html" title="Vector Attacks">Vector Attacks</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1999">1999</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=71016" rel="nofollow">Re: How do you represent chess boards in your chess programms</a> by <a href="Sven Reichard.html" title="Sven Reichard">Sven Reichard</a>, <a href="CCC.html" title="CCC">CCC</a>, September 29, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=107485" rel="nofollow">Movegen Re: Bitmap Type Re: Tinker 81 secs Re: Testing speed</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, April 24, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=134490" rel="nofollow">An idea to generate rook moves without rotated BBs</a> by <a href="Severi Salminen.html" title="Severi Salminen">Severi Salminen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=359243" rel="nofollow">sliding attacks in three #define</a> by <a href="Rasjid Chan.html" title="Rasjid Chan">Rasjid Chan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 09, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=16002.html" rel="nofollow">BitBoard Tests Magic v Non-Rotated 32 Bits v 64 Bits</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2007</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=140111&amp;t=16002.html" rel="nofollow">Re: BitBoard Tests Magic v Non-Rotated 32 Bits v 64 Bits</a> by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2007</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30356.html" rel="nofollow">Yet another bitboard attack generator</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30369.html" rel="nofollow">Other attack generator just for good measure ... C++ only...</a> by <a class="new" href="index.php?title=Filip Tvrzsky&amp;action=edit&amp;redlink=1.html" title="Filip Tvrzsky (page does not exist)">Filip Tvrzsky</a>, <a href="CCC.html" title="CCC">CCC</a>, October 29, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30542.html" rel="nofollow">Caching AttackSets</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, November 09, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51076.html" rel="nofollow">Bitboards</a> by Jeroen de Bruin, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 07, 2010</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51996.html" rel="nofollow">Low memory usage attack bitboard generation</a> by crystalclear, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 06, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=446380.html" rel="nofollow">Re: Bitboard implementation, how much time?</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, January 26, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=49562.html" rel="nofollow">Simplest bitboard attack generation</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, October 03, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49611.html" rel="nofollow">152k rook and bishop attacks using PEXT and PDEP</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 06, 2013 » <a href="BMI2.html" title="BMI2">BMI2</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55418.html" rel="nofollow">On Rook tables in magic move generation</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, February 22, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55604.html" rel="nofollow">Yet another way of generating sliding attack masks</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, March 09, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=55739.html" rel="nofollow">New idea for Rook magic moves storage</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56468.html" rel="nofollow">Slider attack mask generation without table lookup</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58795.html" rel="nofollow">Comparison of bitboard attack-getter variants</a> by <a href="Sven Sch%C3%BCle.html" title="Sven Schüle">Sven Schüle</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59845.html" rel="nofollow">SBAMG - Completing Hyperbola Quintessence</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68741.html" rel="nofollow">very small bitboard move/attack generator</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2018</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73063.html" rel="nofollow">New RookAttacks() - possibly</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, February 12, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73082.html" rel="nofollow">scan-cut slider attack generation</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2020  » <a href="Bitfoot.html#ABBitboards" title="Bitfoot">A/B Bitboards</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73083.html" rel="nofollow">Split Index Super Set Yielding (SISSY) Bitboards</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2020 » <a href="SISSY Bitboards.html" title="SISSY Bitboards">SISSY Bitboards</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77133.html" rel="nofollow">I did some magic bitboard "science" and mostly learned not to worry about it</a> by  <a class="new" href="index.php?title=Jakob Progsch&amp;action=edit&amp;redlink=1.html" title="Jakob Progsch (page does not exist)">Jakob Progsch</a>, <a href="CCC.html" title="CCC">CCC</a>, April 20, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78693" rel="nofollow">Combining two of Bob's classic bitboard attack getters</a> by  <a href="Michael Sherwin.html" title="Michael Sherwin">Mike Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78843" rel="nofollow">Faster than Fancy magic: Hypercube Slider lookup [TEASER]</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79004" rel="nofollow">Hypercube Slider Lookup - New Sliding Piece Algorithm [RELEASE]</a>  by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, December 31, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79005" rel="nofollow">Comparison of all known Sliding lookup algorithms</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, December 31, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79078" rel="nofollow">Comparison of all known Sliding lookup algorithms [CUDA]</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2022 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79332" rel="nofollow">Binary Neural Networks Sliding Piece Inference [Release]</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, February 10, 2022 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Slide_attack" rel="nofollow">Slide attack from Wikipedia</a></li>
+<li> <a href="Category:Cymande.html" title="Category:Cymande">Cymande</a> - Brothers On The Slide, <a class="external text" href="https://en.wikipedia.org/wiki/KCRW" rel="nofollow">KCRW</a> session, <a class="external text" href="https://en.wikipedia.org/wiki/Santa_Monica,_California" rel="nofollow">Santa Monica</a>, 2016, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/RCCSQtRXCnU?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.carinajorgensen.com/Chess/queensstar.php.html" rel="nofollow">Queen's Star</a> 2009 by <a href="Category:Carina J%C3%B8rgensen.html" title="Category:Carina Jørgensen">Carina Jørgensen</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=107485" rel="nofollow">Movegen Re: Bitmap Type Re: Tinker 81 secs Re: Testing speed</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, April 24, 2000</span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722153838
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.022 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 147/1000000
+Preprocessor generated node count: 276/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1107-0!canonical and timestamp 20240722153838 and revision id 26384
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Sliding_Piece_Attacks&amp;oldid=26384">https://www.chessprogramming.org/index.php?title=Sliding_Piece_Attacks&amp;oldid=26384</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Carina J%C3%B8rgensen.html" title="Category:Carina Jørgensen">Carina Jørgensen</a></li><li><a href="Category:Cymande.html" title="Category:Cymande">Cymande</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Sliding+Piece+Attacks&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Sliding Piece Attacks.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Sliding Piece Attacks&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Sliding Piece Attacks.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Sliding Piece Attacks&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Sliding Piece Attacks&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Sliding Piece Attacks.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Sliding Piece Attacks.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Sliding Piece Attacks&amp;oldid=26384.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Sliding Piece Attacks&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 25 March 2022, at 12:42.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Sliding_Piece_Attacks&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.022","walltime":"0.024","ppvisitednodes":{"value":147,"limit":1000000},"ppgeneratednodes":{"value":276,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722153838","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

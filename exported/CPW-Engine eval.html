@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CPW-Engine eval - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"CPW-Engine_eval","wgTitle":"CPW-Engine eval","wgCurRevisionId":9310,"wgRevisionId":9310,"wgArticleId":4856,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"CPW-Engine_eval","wgRelevantArticleId":4856,"wgRequestId":"Zp7DSQAL2SoIDHtirCviaQAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CPW-Engine_eval rootpage-CPW-Engine_eval skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">CPW-Engine eval</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * <a href="CPW-Engine.html" title="CPW-Engine">CPW-Engine</a> * Eval</b>
+</p>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<p>Using this evaluation function CPW-Engine should be aware of the following principles:
+</p>
+<ol><li> develop the pieces</li>
+<li> castle if possible</li>
+<li> need some minimal level of assistance to disrupt its own castling position</li>
+<li> care for doubled, weak and passed pawns</li>
+<li> know a thing or two about the changes of piece values as pawns dissappear</li>
+<li> try to attack squares around enemy king</li></ol>
+<p>For function definitions, see <a href="CPW-Engine eval h.html" title="CPW-Engine eval h">CPW-Engine_eval_h</a>
+</p>
+<h1><span class="mw-headline" id="Code">Code</span></h1>
+<pre>
+#include "stdafx.h"
+#include "0x88_math.h"
+#include "eval.h"
+#include "transposition.h"
+
+/* adjustements of piece value based on the number of own pawns */
+int knight_adj[9] = { -20, -16, -12, -8, -4,  0,  4,  8, 12 };
+int rook_adj[9] = { 15,  12,   9,  6,  3,  0, -3, -6, -9 };
+
+static const int SafetyTable[100] = {
+  0,  0,   1,   2,   3,   5,   7,   9,  12,  15,
+  18,  22,  26,  30,  35,  39,  44,  50,  56,  62,
+  68,  75,  82,  85,  89,  97, 105, 113, 122, 131,
+  140, 150, 169, 180, 191, 202, 213, 225, 237, 248,
+  260, 272, 283, 295, 307, 319, 330, 342, 354, 366,
+  377, 389, 401, 412, 424, 436, 448, 459, 471, 483,
+  494, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+  500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+  500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+  500, 500, 500, 500, 500, 500, 500, 500, 500, 500
+};
+
+/*******************************************************************
+*  This struct holds data about certain aspects of evaluation,     *
+*  which allows program to print them if desired.                  *
+*******************************************************************/
+
+struct eval_vector {
+  int gamePhase;
+  int mgMob[2];
+  int egMob[2];
+  int attCnt[2];
+  int attWeight[2];
+  int kingShield[2];
+  int MaterialAdjustement[2];
+  int Blockages[2];
+  int PositionalThemes[2];
+} v;
+
+int eval(int alpha, int beta, int use_hash) {
+  int result = 0, mgScore = 0, egScore = 0;
+  int stronger, weaker;
+
+  /***********************************************************
+  /  Probe the evaluatinon hashtable, unless we call eval()  /
+  /  only in order to display detailed result                /
+  ***********************************************************/
+
+  int probeval = tteval_probe();
+  if (probeval != INVALID &amp;&amp; use_hash)
+    return probeval;
+
+  /***********************************************************
+  /  Clear all eval data                                     /
+  ***********************************************************/
+
+  v.gamePhase = 0;
+  v.mgMob[WHITE] = 0;      v.mgMob[BLACK] = 0;
+  v.egMob[WHITE] = 0;      v.egMob[BLACK] = 0;
+  v.attCnt[WHITE] = 0;     v.attCnt[BLACK] = 0;
+  v.attWeight[WHITE] = 0;  v.attWeight[BLACK] = 0;
+  v.MaterialAdjustement[WHITE] = 0; v.MaterialAdjustement[BLACK] = 0;
+  v.Blockages[WHITE] = 0; v.Blockages[BLACK] = 0;
+  v.PositionalThemes[WHITE] = 0; v.PositionalThemes[BLACK] = 0;
+  v.kingShield[WHITE] = 0; v.kingShield[BLACK] = 0;
+
+  /* sum the incrementally counted material and pcsq values */
+  mgScore = b.PieceMaterial[WHITE] + b.PawnMaterial[WHITE] + b.PcsqMg[WHITE]
+    - b.PieceMaterial[BLACK] - b.PawnMaterial[BLACK] - b.PcsqMg[BLACK];
+  egScore = b.PieceMaterial[WHITE] + b.PawnMaterial[WHITE] + b.PcsqEg[WHITE]
+    - b.PieceMaterial[BLACK] - b.PawnMaterial[BLACK] - b.PcsqEg[BLACK];
+
+  /* add king's pawn shield score and evaluate part of piece blockage score
+  (the rest of the latter will be done via piece eval) */
+  v.kingShield[WHITE] = wKingShield();
+  v.kingShield[BLACK] = bKingShield();
+  blockedPieces();
+  mgScore += (v.kingShield[WHITE] - v.kingShield[BLACK]);
+
+  /* tempo bonus */
+  if (b.stm == WHITE) result += e.TEMPO;
+  else                  result -= e.TEMPO;
+
+  /*******************************************************************
+  * Adjusting material value for the various combinations of pieces. *
+  * Currently it scores bishop, knight and rook pairs. The first one *
+  * gets a bonus, the latter two - a penalty. Please also note that  *
+  * adjustements of knight and rook value based on the number of own *
+  * pawns on the board are done within the piece-specific routines.  *
+  *******************************************************************/
+
+  if (b.PieceCount[WHITE][BISHOP] &gt; 1) result += e.BISHOP_PAIR;
+  if (b.PieceCount[BLACK][BISHOP] &gt; 1) result -= e.BISHOP_PAIR;
+  if (b.PieceCount[WHITE][KNIGHT] &gt; 1) result -= e.P_KNIGHT_PAIR;
+  if (b.PieceCount[BLACK][KNIGHT] &gt; 1) result += e.P_KNIGHT_PAIR;
+  if (b.PieceCount[WHITE][ROOK] &gt; 1) result -= e.P_ROOK_PAIR;
+  if (b.PieceCount[BLACK][ROOK] &gt; 1) result += e.P_ROOK_PAIR;
+
+  result += getPawnScore();
+
+  /*******************************************************************
+  *  Evaluate pieces                                                 *
+  *******************************************************************/
+
+  for (U8 row = 0; row &lt; 8; row++)
+    for (U8 col = 0; col &lt; 8; col++) {
+
+      S8 sq = SET_SQ(row, col);
+
+      if (b.color[sq] != COLOR_EMPTY) {
+        switch (b.pieces[sq]) {
+        case PAWN: // pawns are evaluated separately
+          break;
+        case KNIGHT:
+          EvalKnight(sq, b.color[sq]);
+          break;
+        case BISHOP:
+          EvalBishop(sq, b.color[sq]);
+          break;
+        case ROOK:
+          EvalRook(sq, b.color[sq]);
+          break;
+        case QUEEN:
+          EvalQueen(sq, b.color[sq]);
+          break;
+        case KING:
+          break;
+        }
+      }
+    }
+
+  /********************************************************************
+  *  Merge midgame and endgame score. We interpolate between these    *
+  *  two values, using a gamePhase value, based on remaining piece    *
+  *  material on both sides. With less pieces, endgame score beco-    *
+  *  mes more influential.                                            *
+  ********************************************************************/
+
+  mgScore += (v.mgMob[WHITE] - v.mgMob[BLACK]);
+  egScore += (v.egMob[WHITE] - v.egMob[BLACK]);
+  if (v.gamePhase &gt; 24) v.gamePhase = 24;
+  int mgWeight = v.gamePhase;
+  int egWeight = 24 - mgWeight;
+  result += ((mgScore * mgWeight) + (egScore * egWeight)) / 24;
+
+  /********************************************************************
+  *  Add phase-independent score components.                          *
+  ********************************************************************/
+
+  result += (v.Blockages[WHITE] - v.Blockages[BLACK]);
+  result += (v.PositionalThemes[WHITE] - v.PositionalThemes[BLACK]);
+  result += (v.MaterialAdjustement[WHITE] - v.MaterialAdjustement[BLACK]);
+
+  /********************************************************************
+  *  Merge king attack score. We don't apply this value if there are *
+  *  less than two attackers or if the attacker has no queen.        *
+  *******************************************************************/
+
+  if (v.attCnt[WHITE] &lt; 2 || b.PieceCount[WHITE][QUEEN] == 0) v.attWeight[WHITE] = 0;
+  if (v.attCnt[BLACK] &lt; 2 || b.PieceCount[BLACK][QUEEN] == 0) v.attWeight[BLACK] = 0;
+  result += SafetyTable[v.attWeight[WHITE]];
+  result -= SafetyTable[v.attWeight[BLACK]];
+
+  /********************************************************************
+  *  Low material correction - guarding against an illusory material  *
+  *  advantage. Full blown program should have more such rules,  but  *
+  *  the current set ought to be useful enough. Please note that our  *
+  *  code  assumes different material values for bishop and  knight.  *
+  *                                                                   *
+  *  - a single minor piece cannot win                                *
+  *  - two knights cannot checkmate bare king                         *
+  *  - bare rook vs minor piece is drawish                            *
+  *  - rook and minor vs rook is drawish                              *
+  ********************************************************************/
+
+  if (result &gt; 0) { stronger = WHITE; weaker = BLACK; }
+  else { stronger = BLACK; weaker = WHITE; }
+
+  if (b.PawnMaterial[stronger] == 0) {
+
+    if (b.PieceMaterial[stronger] &lt; 400) return 0;
+
+    if (b.PawnMaterial[weaker] == 0
+      &amp;&amp; (b.PieceMaterial[stronger] == 2 * e.PIECE_VALUE[KNIGHT]))
+      return 0;
+
+    if (b.PieceMaterial[stronger] == e.PIECE_VALUE[ROOK]
+      &amp;&amp; b.PieceMaterial[weaker] == e.PIECE_VALUE[BISHOP]) result /= 2;
+
+    if (b.PieceMaterial[stronger] == e.PIECE_VALUE[ROOK]
+      &amp;&amp; b.PieceMaterial[weaker] == e.PIECE_VALUE[KNIGHT]) result /= 2;
+
+    if (b.PieceMaterial[stronger] == e.PIECE_VALUE[ROOK] + e.PIECE_VALUE[BISHOP]
+      &amp;&amp; b.PieceMaterial[stronger] == e.PIECE_VALUE[ROOK]) result /= 2;
+
+    if (b.PieceMaterial[stronger] == e.PIECE_VALUE[ROOK] + e.PIECE_VALUE[KNIGHT]
+      &amp;&amp; b.PieceMaterial[stronger] == e.PIECE_VALUE[ROOK]) result /= 2;
+  }
+
+  /*******************************************************************
+  *  Finally return the score relative to the side to move.          *
+  *******************************************************************/
+
+  if (b.stm == BLACK) result = -result;
+
+  tteval_save(result);
+
+  return result;
+}
+
+void EvalKnight(S8 sq, S8 side) {
+  int att = 0;
+  int mob = 0;
+  int pos;
+  v.gamePhase += 1;
+
+  if (side == WHITE) {
+    switch (sq) {
+    case A8: if (isPiece(BLACK, PAWN, A7) || isPiece(BLACK, PAWN, C7)) v.Blockages[WHITE] -= e.P_KNIGHT_TRAPPED_A8; break;
+    case H8: if (isPiece(BLACK, PAWN, H7) || isPiece(BLACK, PAWN, F7)) v.Blockages[WHITE] -= e.P_KNIGHT_TRAPPED_A8; break;
+    case A7: if (isPiece(BLACK, PAWN, A6) &amp;&amp; isPiece(BLACK, PAWN, B7)) v.Blockages[WHITE] -= e.P_KNIGHT_TRAPPED_A7; break;
+    case H7: if (isPiece(BLACK, PAWN, H6) &amp;&amp; isPiece(BLACK, PAWN, G7)) v.Blockages[WHITE] -= e.P_KNIGHT_TRAPPED_A7; break;
+    case C3: if (isPiece(WHITE, PAWN, C2) &amp;&amp; isPiece(WHITE, PAWN, D4) &amp;&amp; !isPiece(WHITE, PAWN, E4)) v.Blockages[WHITE] -= e.P_C3_KNIGHT; break;
+    }
+  }
+  else
+  {
+    switch (sq) {
+    case A1: if (isPiece(WHITE, PAWN, A2) || isPiece(WHITE, PAWN, C2)) v.Blockages[BLACK] -= e.P_KNIGHT_TRAPPED_A8; break;
+    case H1: if (isPiece(WHITE, PAWN, H2) || isPiece(WHITE, PAWN, F2)) v.Blockages[BLACK] -= e.P_KNIGHT_TRAPPED_A8; break;
+    case A2: if (isPiece(WHITE, PAWN, A3) &amp;&amp; isPiece(WHITE, PAWN, B2)) v.Blockages[BLACK] -= e.P_KNIGHT_TRAPPED_A7; break;
+    case H2: if (isPiece(WHITE, PAWN, H3) &amp;&amp; isPiece(WHITE, PAWN, G2)) v.Blockages[BLACK] -= e.P_KNIGHT_TRAPPED_A7; break;
+    case C6: if (isPiece(BLACK, PAWN, C7) &amp;&amp; isPiece(BLACK, PAWN, D5) &amp;&amp; !isPiece(BLACK, PAWN, E5)) v.Blockages[BLACK] -= e.P_C3_KNIGHT; break;
+    }
+  }
+
+  /***************************************************************
+  *  Material value adjustement based on the no. of own pawns.   *
+  *  Knights lose value as pawns disappear.                      *
+  ***************************************************************/
+
+  v.MaterialAdjustement[side] += knight_adj[b.PieceCount[side][PAWN]];
+
+  /****************************************************************
+  *  Collect data about mobility and king attacks. This resembles *
+  *  move generation code, except that we are just incrementing   *
+  *  the counters instead of adding actual moves.                 *
+  ****************************************************************/
+
+  for (U8 dir = 0; dir&lt;8; dir++) {
+    pos = sq + vector[KNIGHT][dir];
+    if (IS_SQ(pos) &amp;&amp; b.color[pos] != side) {
+      ++mob;
+      if (e.sqNearK[!side][b.KingLoc[!side]][pos])
+        ++att; // this knight is attacking zone around enemy king
+    }
+  }
+
+  /****************************************************************
+  *  Evaluate mobility. We try to do it in such a way             *
+  *  that  zero represents average mobility, but  our             *
+  *  formula of doing so is a puer guess.                         *
+  ****************************************************************/
+
+  v.mgMob[side] += 4 * (mob - 4);
+  v.egMob[side] += 4 * (mob - 4);
+
+  /****************************************************************
+  *  Save data about king attacks                                 *
+  ****************************************************************/
+
+  if (att) {
+    v.attCnt[side]++;
+    v.attWeight[side] += 2 * att;
+  }
+}
+
+void EvalBishop(S8 sq, S8 side) {
+  int att = 0;
+  int mob = 0;
+  v.gamePhase += 1;
+
+  if (side == WHITE) {
+    switch (sq) {
+    case A7: if (isPiece(BLACK, PAWN, B6)) v.Blockages[WHITE] -= e.P_BISHOP_TRAPPED_A7; break;
+    case H7: if (isPiece(BLACK, PAWN, G6)) v.Blockages[WHITE] -= e.P_BISHOP_TRAPPED_A7; break;
+    case B8: if (isPiece(BLACK, PAWN, C7)) v.Blockages[WHITE] -= e.P_BISHOP_TRAPPED_A7; break;
+    case G8: if (isPiece(BLACK, PAWN, F7)) v.Blockages[WHITE] -= e.P_BISHOP_TRAPPED_A7; break;
+    case A6: if (isPiece(BLACK, PAWN, B5)) v.Blockages[WHITE] -= e.P_BISHOP_TRAPPED_A6; break;
+    case H6: if (isPiece(BLACK, PAWN, G5)) v.Blockages[WHITE] -= e.P_BISHOP_TRAPPED_A6; break;
+    case F1: if (isPiece(WHITE, KING, G1)) v.PositionalThemes[WHITE] += e.RETURNING_BISHOP; break;
+    case C1: if (isPiece(WHITE, KING, B1)) v.PositionalThemes[WHITE] += e.RETURNING_BISHOP; break;
+    }
+  }
+  else {
+    switch (sq) {
+    case A2: if (isPiece(WHITE, PAWN, B3)) v.Blockages[BLACK] -= e.P_BISHOP_TRAPPED_A7; break;
+    case H2: if (isPiece(WHITE, PAWN, G3)) v.Blockages[BLACK] -= e.P_BISHOP_TRAPPED_A7; break;
+    case B1: if (isPiece(WHITE, PAWN, C2)) v.Blockages[BLACK] -= e.P_BISHOP_TRAPPED_A7; break;
+    case G1: if (isPiece(WHITE, PAWN, F2)) v.Blockages[BLACK] -= e.P_BISHOP_TRAPPED_A7; break;
+    case A3: if (isPiece(WHITE, PAWN, B4)) v.Blockages[BLACK] -= e.P_BISHOP_TRAPPED_A6; break;
+    case H3: if (isPiece(WHITE, PAWN, G4)) v.Blockages[BLACK] -= e.P_BISHOP_TRAPPED_A6; break;
+    case F8: if (isPiece(BLACK, KING, G8)) v.PositionalThemes[BLACK] += e.RETURNING_BISHOP; break;
+    case C8: if (isPiece(BLACK, KING, B8)) v.PositionalThemes[BLACK] += e.RETURNING_BISHOP; break;
+    }
+  }
+
+  /****************************************************************
+  *  Collect data about mobility and king attacks                 *
+  ****************************************************************/
+
+  for (char dir = 0; dir&lt;vectors[BISHOP]; dir++) {
+
+    for (char pos = sq;;) {
+
+      pos = pos + vector[BISHOP][dir];
+      if (!IS_SQ(pos)) break;
+
+      if (b.pieces[pos] == PIECE_EMPTY) {
+        mob++;
+        if (e.sqNearK[!side][b.KingLoc[!side]][pos]) ++att;
+      }
+      else if (b.color[pos] != side) {
+        mob++;
+        if (e.sqNearK[!side][b.KingLoc[!side]][pos]) ++att;
+        break;
+      }
+      else {
+        break;
+      }
+
+    }
+  }
+
+  v.mgMob[side] += 3 * (mob - 7);
+  v.egMob[side] += 3 * (mob - 7);
+
+  if (att) {
+    v.attCnt[side]++;
+    v.attWeight[side] += 2 * att;
+  }
+
+
+}
+
+void EvalRook(S8 sq, S8 side) {
+  int att = 0;
+  int mob = 0;
+  int ownBlockingPawns = 0;
+  int oppBlockingPawns = 0;
+  int stepFwd;
+  int nextSq;
+
+  v.gamePhase += 2;
+
+  /***************************************************************
+  *  Material value adjustement based on the no. of own pawns.   *
+  *  Rooks gain value as pawns disappear.                        *
+  ***************************************************************/
+
+  v.MaterialAdjustement[side] += rook_adj[b.PieceCount[side][PAWN]];
+
+  /***************************************************************
+  *  This is an ugly hack to detect open files. Merging it with  *
+  *  mobility  eval would have been better, but less  readable,  *
+  *  and this is educational program fter all.                   *
+  /**************************************************************/
+
+  if (side == WHITE) stepFwd = NORTH; else stepFwd = SOUTH;
+  nextSq = sq + stepFwd;
+
+  while (IS_SQ(nextSq)) {
+    if (b.pieces[nextSq] == PAWN) {
+      if (b.color[nextSq] == side) {
+        ownBlockingPawns++;
+        break;
+      }
+      else
+        oppBlockingPawns++;
+    }
+    nextSq += stepFwd;
+  }
+
+  /****************************************************************
+  *  Evaluate open and half-open files. We merge this bonus with  *
+  *  mobility  score.                                             *
+  /***************************************************************/
+
+  if (!ownBlockingPawns) {
+
+    if (!oppBlockingPawns) {
+      v.mgMob[side] += e.ROOK_OPEN;
+      v.egMob[side] += e.ROOK_OPEN;
+    }
+    else {
+      v.mgMob[side] += e.ROOK_HALF;
+      v.egMob[side] += e.ROOK_HALF;
+    }
+  }
+
+  /****************************************************************
+  *  Collect data about mobility and king attacks                 *
+  ****************************************************************/
+
+  for (char dir = 0; dir&lt;vectors[ROOK]; dir++) {
+
+    for (char pos = sq;;) {
+
+      pos = pos + vector[ROOK][dir];
+      if (!IS_SQ(pos)) break;
+
+      if (b.pieces[pos] == PIECE_EMPTY) {
+        mob++;
+        if (e.sqNearK[!side][b.KingLoc[!side]][pos]) ++att;
+      }
+      else if (b.color[pos] != side) {
+        mob++;
+        if (e.sqNearK[!side][b.KingLoc[!side]][pos]) ++att;
+        break;
+      }
+      else {
+        break;
+      }
+
+    }
+  }
+
+  v.mgMob[side] += 2 * (mob - 7);
+  v.egMob[side] += 4 * (mob - 7);
+
+  if (att) {
+    v.attCnt[side]++;
+    v.attWeight[side] += 3 * att;
+  }
+
+}
+
+void EvalQueen(S8 sq, S8 side) {
+  v.gamePhase += 4;
+  int att = 0;
+  int mob = 0;
+
+  /****************************************************************
+  *  A queen should not be developed too early                    *
+  ****************************************************************/
+
+  if (side == WHITE &amp;&amp; ROW(sq) &gt; ROW_2) {
+    if (isPiece(WHITE, KNIGHT, B1)) v.PositionalThemes[WHITE] -= 2;
+    if (isPiece(WHITE, BISHOP, C1)) v.PositionalThemes[WHITE] -= 2;
+    if (isPiece(WHITE, BISHOP, F1)) v.PositionalThemes[WHITE] -= 2;
+    if (isPiece(WHITE, KNIGHT, G1)) v.PositionalThemes[WHITE] -= 2;
+  }
+
+  if (side == BLACK &amp;&amp; ROW(sq) &lt; ROW_7) {
+    if (isPiece(BLACK, KNIGHT, B8)) v.PositionalThemes[BLACK] -= 2;
+    if (isPiece(BLACK, BISHOP, C8)) v.PositionalThemes[BLACK] -= 2;
+    if (isPiece(BLACK, BISHOP, F8)) v.PositionalThemes[BLACK] -= 2;
+    if (isPiece(BLACK, KNIGHT, G8)) v.PositionalThemes[BLACK] -= 2;
+  }
+
+  /****************************************************************
+  *  Collect data about mobility and king attacks                 *
+  ****************************************************************/
+
+  for (char dir = 0; dir&lt;vectors[QUEEN]; dir++) {
+
+    for (char pos = sq;;) {
+
+      pos = pos + vector[QUEEN][dir];
+      if (!IS_SQ(pos)) break;
+
+      if (b.pieces[pos] == PIECE_EMPTY) {
+        mob++;
+        if (e.sqNearK[!side][b.KingLoc[!side]][pos]) ++att;
+      }
+      else if (b.color[pos] != side) {
+        mob++;
+        if (e.sqNearK[!side][b.KingLoc[!side]][pos]) ++att;
+        break;
+      }
+      else {
+        break;
+      }
+
+    }
+  }
+
+  v.mgMob[side] += 1 * (mob - 14);
+  v.egMob[side] += 2 * (mob - 14);
+
+  if (att) {
+    v.attCnt[side]++;
+    v.attWeight[side] += 4 * att;
+  }
+
+}
+
+int wKingShield() {
+
+  int result = 0;
+
+  /* king on the kingside */
+  if (COL(b.KingLoc[WHITE]) &gt; COL_E) {
+
+    if (isPiece(WHITE, PAWN, F2))  result += e.SHIELD_1;
+    else if (isPiece(WHITE, PAWN, F3))  result += e.SHIELD_2;
+
+    if (isPiece(WHITE, PAWN, G2))  result += e.SHIELD_1;
+    else if (isPiece(WHITE, PAWN, G3))  result += e.SHIELD_2;
+
+    if (isPiece(WHITE, PAWN, H2))  result += e.SHIELD_1;
+    else if (isPiece(WHITE, PAWN, H3))  result += e.SHIELD_2;
+  }
+
+  /* king on the queenside */
+  else if (COL(b.KingLoc[WHITE]) &lt; COL_D) {
+
+    if (isPiece(WHITE, PAWN, A2))  result += e.SHIELD_1;
+    else if (isPiece(WHITE, PAWN, A3))  result += e.SHIELD_2;
+
+    if (isPiece(WHITE, PAWN, B2))  result += e.SHIELD_1;
+    else if (isPiece(WHITE, PAWN, B3))  result += e.SHIELD_2;
+
+    if (isPiece(WHITE, PAWN, C2))  result += e.SHIELD_1;
+    else if (isPiece(WHITE, PAWN, C3))  result += e.SHIELD_2;
+  }
+
+  return result;
+}
+
+int bKingShield() {
+  int result = 0;
+
+  /* king on the kingside */
+  if (COL(b.KingLoc[BLACK]) &gt; COL_E) {
+    if (isPiece(BLACK, PAWN, F7))  result += e.SHIELD_1;
+    else if (isPiece(BLACK, PAWN, F6))  result += e.SHIELD_2;
+
+    if (isPiece(BLACK, PAWN, G7))  result += e.SHIELD_1;
+    else if (isPiece(BLACK, PAWN, G6))  result += e.SHIELD_2;
+
+    if (isPiece(BLACK, PAWN, H7))  result += e.SHIELD_1;
+    else if (isPiece(BLACK, PAWN, H6))  result += e.SHIELD_2;
+  }
+
+  /* king on the queenside */
+  else if (COL(b.KingLoc[BLACK]) &lt; COL_D) {
+    if (isPiece(BLACK, PAWN, A7))  result += e.SHIELD_1;
+    else if (isPiece(BLACK, PAWN, A6))  result += e.SHIELD_2;
+
+    if (isPiece(BLACK, PAWN, B7))  result += e.SHIELD_1;
+    else if (isPiece(BLACK, PAWN, B6))  result += e.SHIELD_2;
+
+    if (isPiece(BLACK, PAWN, C7))  result += e.SHIELD_1;
+    else if (isPiece(BLACK, PAWN, C6))  result += e.SHIELD_2;
+  }
+  return result;
+}
+
+/******************************************************************************
+*                            Pawn structure evaluaton                         *
+******************************************************************************/
+
+int getPawnScore() {
+  int result;
+
+  /**************************************************************************
+  *  This function wraps hashing mechanism around evalPawnStructure().      *
+  *  Please note  that since we use the pawn hashtable, evalPawnStructure() *
+  *  must not take into account the piece position.  In a more elaborate    *
+  *  program, pawn hashtable would contain only the characteristics of pawn *
+  *  structure,  and scoring them in conjunction with the piece position    *
+  *  would have been done elsewhere.                                        *
+  **************************************************************************/
+
+  int probeval = ttpawn_probe();
+  if (probeval != INVALID)
+    return probeval;
+
+  result = evalPawnStructure();
+
+  ttpawn_save(result);
+
+  return result;
+}
+
+int evalPawnStructure() {
+  int result = 0;
+
+  for (U8 row = 0; row &lt; 8; row++)
+    for (U8 col = 0; col &lt; 8; col++) {
+
+      S8 sq = SET_SQ(row, col);
+
+      if (b.pieces[sq] == PAWN) {
+        if (b.color[sq] == WHITE) result += EvalPawn(sq, WHITE);
+        else                      result -= EvalPawn(sq, BLACK);
+      }
+    }
+
+  return result;
+}
+
+int EvalPawn(S8 sq, S8 side) {
+  int result = 0;
+  int flagIsPassed = 1; // we will be trying to disprove that
+  int flagIsWeak = 1;   // we will be trying to disprove that
+  int flagIsOpposed = 0;
+
+  int stepFwd, stepBck;
+  if (side == WHITE) stepFwd = NORTH; else stepFwd = SOUTH;
+  if (side == WHITE) stepBck = SOUTH; else stepBck = NORTH;
+  S8 nextSq = sq + stepFwd;
+
+  /*************************************************************************
+  *   We have only very basic data structures that do not update informa-  *
+  *   tion about pawns incrementally, so we have to calculate everything   *
+  *   here.  The loop below detects doubled pawns, passed pawns and sets   *
+  *   a flag on finding that our pawn is opposed by enemy pawn.            *
+  *************************************************************************/
+
+  while (IS_SQ(nextSq)) {
+
+    if (b.pieces[nextSq] == PAWN) { // either opposed by enemy pawn or doubled
+      flagIsPassed = 0;
+      if (b.color[nextSq] == side)
+        result -= 20;       // doubled pawn penalty
+      else
+        flagIsOpposed = 1;  // flag our pawn as opposed
+    }
+
+    if (IS_SQ(nextSq + WEST) &amp;&amp; isPiece(!side, PAWN, nextSq + WEST))
+      flagIsPassed = 0;
+
+    if (IS_SQ(nextSq + EAST) &amp;&amp; isPiece(!side, PAWN, nextSq + EAST))
+      flagIsPassed = 0;
+
+    nextSq += stepFwd;
+  }
+
+  /*************************************************************************
+  *   Another loop, going backwards and checking whether pawn has support. *
+  *   Here we can at least break out of it for speed optimization.         *
+  *************************************************************************/
+
+  nextSq = sq;
+  while (IS_SQ(nextSq)) {
+
+    if (IS_SQ(nextSq + WEST) &amp;&amp; isPiece(side, PAWN, nextSq + WEST)) {
+      flagIsWeak = 0;
+      break;
+    }
+
+    if (IS_SQ(nextSq + EAST) &amp;&amp; isPiece(side, PAWN, nextSq + EAST)) {
+      flagIsWeak = 0;
+      break;
+    }
+
+    nextSq += stepBck;
+  }
+
+  /*************************************************************************
+  *  Evaluate passed pawns, scoring them higher if they are protected      *
+  *  or if their advance is supported by friendly pawns                    *
+  *************************************************************************/
+
+  if (flagIsPassed) {
+    if (isPawnSupported(sq, side)) result += e.protected_passer[side][sq];
+    else                             result += e.passed_pawn[side][sq];
+  }
+
+  /*************************************************************************
+  *  Evaluate weak pawns, increasing the penalty if they are situated      *
+  *  on a half-open file                                                   *
+  *************************************************************************/
+
+  if (flagIsWeak) {
+    result += e.weak_pawn[side][sq];
+    if (!flagIsOpposed)
+      result -= 4;
+  }
+
+  return result;
+}
+
+int isPawnSupported(S8 sq, S8 side) {
+  int step;
+  if (side == WHITE) step = SOUTH; else step = NORTH;
+
+  if (IS_SQ(sq + WEST) &amp;&amp; isPiece(side, PAWN, sq + WEST)) return 1;
+  if (IS_SQ(sq + EAST) &amp;&amp; isPiece(side, PAWN, sq + EAST)) return 1;
+  if (IS_SQ(sq + step + WEST) &amp;&amp; isPiece(side, PAWN, sq + step + WEST)) return 1;
+  if (IS_SQ(sq + step + EAST) &amp;&amp; isPiece(side, PAWN, sq + step + EAST)) return 1;
+
+  return 0;
+}
+
+/******************************************************************************
+*                             Pattern detection                               *
+******************************************************************************/
+
+void blockedPieces() {
+
+  // central pawn blocked, bishop hard to develop
+  if (isPiece(WHITE, BISHOP, C1) &amp;&amp; isPiece(WHITE, PAWN, D2) &amp;&amp; b.color[D3] != COLOR_EMPTY)
+    v.Blockages[WHITE] -= e.P_BLOCK_CENTRAL_PAWN;
+  if (isPiece(WHITE, BISHOP, F1) &amp;&amp; isPiece(WHITE, PAWN, E2) &amp;&amp; b.color[E3] != COLOR_EMPTY)
+    v.Blockages[WHITE] -= e.P_BLOCK_CENTRAL_PAWN;
+  if (isPiece(BLACK, BISHOP, C8) &amp;&amp; isPiece(BLACK, PAWN, D7) &amp;&amp; b.color[D6] != COLOR_EMPTY)
+    v.Blockages[BLACK] -= e.P_BLOCK_CENTRAL_PAWN;
+  if (isPiece(BLACK, BISHOP, F8) &amp;&amp; isPiece(BLACK, PAWN, E7) &amp;&amp; b.color[E6] != COLOR_EMPTY)
+    v.Blockages[BLACK] -= e.P_BLOCK_CENTRAL_PAWN;
+
+  // uncastled king blocking own rook
+  if ((isPiece(WHITE, KING, F1) || isPiece(WHITE, KING, G1)) &amp;&amp;
+    (isPiece(WHITE, ROOK, H1) || isPiece(WHITE, ROOK, G1))
+    )
+    v.Blockages[WHITE] -= e.P_KING_BLOCKS_ROOK;
+
+  if ((isPiece(WHITE, KING, C1) || isPiece(WHITE, KING, B1)) &amp;&amp;
+    (isPiece(WHITE, ROOK, A1) || isPiece(WHITE, ROOK, B1))
+    )
+    v.Blockages[WHITE] -= e.P_KING_BLOCKS_ROOK;
+
+  if ((isPiece(BLACK, KING, F8) || isPiece(BLACK, KING, G8)) &amp;&amp;
+    (isPiece(BLACK, ROOK, H8) || isPiece(BLACK, ROOK, G8))
+    )
+    v.Blockages[BLACK] -= e.P_KING_BLOCKS_ROOK;
+
+  if ((isPiece(BLACK, KING, C8) || isPiece(BLACK, KING, B8)) &amp;&amp;
+    (isPiece(BLACK, ROOK, A8) || isPiece(BLACK, ROOK, B8))
+    )
+    v.Blockages[BLACK] -= e.P_KING_BLOCKS_ROOK;
+}
+
+int isPiece(U8 color, U8 piece, S8 sq) {
+  return ((b.pieces[sq] == piece) &amp;&amp; (b.color[sq] == color));
+}
+
+/***************************************************************************************
+*                             Printing eval results                                    *
+***************************************************************************************/
+
+void printEval() {
+  printf("------------------------------------------\n");
+  printf("Total value (for side to move): %d \n", eval(-INF, INF, 0));
+  printf("Material balance    : %d \n", b.PieceMaterial[WHITE] + b.PawnMaterial[WHITE] - b.PieceMaterial[BLACK] - b.PawnMaterial[BLACK]);
+  printf("Material adjustement: "); printEvalFactor(v.MaterialAdjustement[WHITE], v.MaterialAdjustement[BLACK]);
+  printf("Mg Piece/square tables : "); printEvalFactor(b.PcsqMg[WHITE], b.PcsqMg[BLACK]);
+  printf("Eg Piece/square tables : "); printEvalFactor(b.PcsqEg[WHITE], b.PcsqEg[BLACK]);
+  printf("Mg Mobility            : "); printEvalFactor(v.mgMob[WHITE], v.mgMob[BLACK]);
+  printf("Eg Mobility            : "); printEvalFactor(v.mgMob[WHITE], v.egMob[BLACK]);
+  printf("Pawn structure      : %d \n", evalPawnStructure());
+  printf("Blockages           : "); printEvalFactor(v.Blockages[WHITE], v.Blockages[BLACK]);
+  printf("Positional themes   : "); printEvalFactor(v.PositionalThemes[WHITE], v.PositionalThemes[BLACK]);
+  printf("King Shield         : "); printEvalFactor(v.kingShield[WHITE], v.kingShield[BLACK]);
+  printf("Tempo: ");
+  if (b.stm == WHITE) printf("%d", e.TEMPO); else printf("%d", -e.TEMPO);
+  printf("\n");
+  printf("------------------------------------------\n");
+}
+
+void printEvalFactor(int wh, int bl) {
+  printf("white %4d, black %4d, total: %4d \n", wh, bl, wh - bl);
+}
+</pre>
+<p><b><a href="CPW-Engine.html" title="CPW-Engine">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175332
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.004 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 10/1000000
+Preprocessor generated node count: 32/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4856-0!canonical and timestamp 20240722175332 and revision id 9310
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=CPW-Engine_eval&amp;oldid=9310">https://www.chessprogramming.org/index.php?title=CPW-Engine_eval&amp;oldid=9310</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=CPW-Engine+eval&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="CPW-Engine eval.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:CPW-Engine eval&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="CPW-Engine eval.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=CPW-Engine eval&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=CPW-Engine eval&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/CPW-Engine eval.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/CPW-Engine eval.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=CPW-Engine eval&amp;oldid=9310.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=CPW-Engine eval&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 December 2018, at 16:13.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=CPW-Engine_eval&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.004","walltime":"0.005","ppvisitednodes":{"value":10,"limit":1000000},"ppgeneratednodes":{"value":32,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175332","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":42});});</script>
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Population Count - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Population_Count","wgTitle":"Population Count","wgCurRevisionId":22494,"wgRevisionId":22494,"wgArticleId":1093,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["John Abercrombie","Jon Christensen","Lars Danielsson"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Population_Count","wgRelevantArticleId":1093,"wgRequestId":"Zp7Di10xYjdSHhMDafgs2wAAAAI","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Population_Count rootpage-Population_Count skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Population Count</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * Population Count</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Hamming.jpg.html"><img alt="" class="thumbimage" height="225" src="wikipedia/commons/thumb/3/39/Hamming.jpg/300px-Hamming.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hamming.jpg/450px-Hamming.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hamming.jpg/600px-Hamming.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Hamming.jpg.html" title="Enlarge"></a></div>Visualization of <a href="Population Count.html#HammingDistance" title="Population Count">Hamming distance</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Population count</b>,<br/>
+an operation to determine the <a class="external text" href="https://en.wikipedia.org/wiki/Cardinality" rel="nofollow">cardinality</a> of a bitboard, also called <a class="external text" href="https://en.wikipedia.org/wiki/Hamming_weight" rel="nofollow">Hamming weight</a> or sideways sum <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. How many one bits exists in a 64-bit computer word? In computer chess, population count is used to <a href="Evaluation.html" title="Evaluation">evaluate</a> the <a href="Mobility.html" title="Mobility">mobility</a> of pieces from their <a href="Attacks.html" title="Attacks">attack sets</a>, as <a href="CDC Cyber.html#Mobility" title="CDC Cyber">already applied</a> in <a href="Chess (Program).html" title="Chess (Program)">Chess 4.6</a> on the <a href="CDC 6600.html" title="CDC 6600">CDC 6600</a> and <a href="CDC Cyber.html" title="CDC Cyber">CDC Cyber</a>.
+</p><p>Recent <a href="X86-64.html" title="X86-64">x86-64</a> processors (since <a href="AMD.html" title="AMD">AMD</a> <a class="external text" href="https://en.wikipedia.org/wiki/AMD_K10" rel="nofollow">K10</a> with <a href="SSE4.html#SSE4a" title="SSE4">SSE4a</a>, <a href="Intel.html" title="Intel">Intel</a> <a class="external text" href="https://en.wikipedia.org/wiki/Nehalem_%28microarchitecture%29" rel="nofollow">Nehalem</a> with <a href="SSE4.html#SSE4.2" title="SSE4">SSE4.2</a>) provide a <a href="X86-64.html#gpinstructions" title="X86-64">64-bit popcount instruction</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, available via <a href="Cpp.html" title="Cpp">C++</a> compiler intrinsic <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> or <a href="Assembly.html#InlineAssembly" title="Assembly">inline assembly</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>. Despite different Intrinsic prototypes (_mm_popcnt_u64 vs. popcnt64), Intel and AMD popcnt instructions are binary compatible, have same encoding (F3 [REX] 0F B8 /r), and both require bit 23 set in RCX of the <a class="external text" href="https://en.wikipedia.org/wiki/CPUID" rel="nofollow">CPUID</a> function 0000_0001h. Code samples are in <a href="C.html" title="C">C</a> / <a href="Cpp.html" title="Cpp">C++</a>, <i>see <a href="Bitboards.html#DefiningBitboards" title="Bitboards">Defining Bitboards</a></i>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Recurrence Relation"><span class="tocnumber">1</span> <span class="toctext">Recurrence Relation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Empty or Single.3F"><span class="tocnumber">2</span> <span class="toctext">Empty or Single?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Empty Bitboards"><span class="tocnumber">2.1</span> <span class="toctext">Empty Bitboards</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Single Populated Bitboards"><span class="tocnumber">2.2</span> <span class="toctext">Single Populated Bitboards</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Loop-Approaches"><span class="tocnumber">3</span> <span class="toctext">Loop-Approaches</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Too Slow"><span class="tocnumber">3.1</span> <span class="toctext">Too Slow</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Brian Kernighan.27s way"><span class="tocnumber">3.2</span> <span class="toctext">Brian Kernighan's way</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Lookup"><span class="tocnumber">4</span> <span class="toctext">Lookup</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#SWAR-Popcount"><span class="tocnumber">5</span> <span class="toctext">SWAR-Popcount</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Counting Duo-Bits"><span class="tocnumber">5.1</span> <span class="toctext">Counting Duo-Bits</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Counting Nibble-Bits"><span class="tocnumber">5.2</span> <span class="toctext">Counting Nibble-Bits</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Byte-Counts"><span class="tocnumber">5.3</span> <span class="toctext">Byte-Counts</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Adding the Byte-Counts"><span class="tocnumber">5.4</span> <span class="toctext">Adding the Byte-Counts</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#Parallel Prefix Adds"><span class="tocnumber">5.4.1</span> <span class="toctext">Parallel Prefix Adds</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Multiplication"><span class="tocnumber">5.4.2</span> <span class="toctext">Multiplication</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Casting out"><span class="tocnumber">5.4.3</span> <span class="toctext">Casting out</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#The PopCount routine"><span class="tocnumber">5.5</span> <span class="toctext">The PopCount routine</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#The Constants"><span class="tocnumber">5.5.1</span> <span class="toctext">The Constants</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#popCount"><span class="tocnumber">5.5.2</span> <span class="toctext">popCount</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#HAKMEM 169"><span class="tocnumber">5.6</span> <span class="toctext">HAKMEM 169</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Miscellaneous"><span class="tocnumber">6</span> <span class="toctext">Miscellaneous</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="#Cardinality of Multiple Sets"><span class="tocnumber">6.1</span> <span class="toctext">Cardinality of Multiple Sets</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="#Odd and Major 7-15"><span class="tocnumber">6.1.1</span> <span class="toctext">Odd and Major 7-15</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Odd and Major Digit Counts"><span class="tocnumber">6.1.2</span> <span class="toctext">Odd and Major Digit Counts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="#Popcount as log2 of LS1B"><span class="tocnumber">6.2</span> <span class="toctext">Popcount as log2 of LS1B</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Hamming Distance"><span class="tocnumber">6.3</span> <span class="toctext">Hamming Distance</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Weighted PopCount"><span class="tocnumber">6.4</span> <span class="toctext">Weighted PopCount</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Pre-calculated Mobility"><span class="tocnumber">6.5</span> <span class="toctext">Pre-calculated Mobility</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Piece Attacks Count"><span class="tocnumber">6.6</span> <span class="toctext">Piece Attacks Count</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Popcount in Hardware"><span class="tocnumber">7</span> <span class="toctext">Popcount in Hardware</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#See also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="#Publications"><span class="tocnumber">9</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-33"><a href="#1949 ..."><span class="tocnumber">9.1</span> <span class="toctext">1949 ...</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#2000 ..."><span class="tocnumber">9.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#2010 ..."><span class="tocnumber">9.3</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#Postings"><span class="tocnumber">10</span> <span class="toctext">Postings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-37"><a href="#1998 ..."><span class="tocnumber">10.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#2000 ... 2"><span class="tocnumber">10.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#2005 ..."><span class="tocnumber">10.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#2010 ... 2"><span class="tocnumber">10.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#2015 ..."><span class="tocnumber">10.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#2020 ..."><span class="tocnumber">10.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-43"><a href="#External Links"><span class="tocnumber">11</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-44"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Recurrence_Relation">Recurrence Relation</span></h1>
+<p>The <a href="Recursion.html" title="Recursion">recursive</a> <a class="external text" href="https://en.wikipedia.org/wiki/Recurrence_relation" rel="nofollow">recurrence relation</a> of population counts can be transformed to iteration as well, but lacks an arithmetical sum-formula:
+</p>
+<pre>popcnt(0) = 0
+popcnt(n) = popcnt(n ÷ 2) + (n mod 2)
+</pre>
+<p>However, it is helpful to initialize a <a href="Population Count.html#Lookup" title="Population Count">lookup table</a>, i.e. for bytes: 
+</p>
+<pre>
+unsigned char popCountOfByte256[];
+
+void initpopCountOfByte256()
+{
+   popCountOfByte256[0] = 0;
+   for (int i = 1; i &lt; 256; i++)
+      popCountOfByte256[i] = popCountOfByte256[i / 2] + (i &amp; 1);
+}
+</pre>
+<h1><span class="mw-headline" id="Empty_or_Single.3F">Empty or Single?</span></h1>
+<p>Often one has to deal with sparsely populated or even empty bitboards. To determine whether a bitboard is empty or a single populated power of two value, one may use simple boolean statements rather than a complete population count.
+</p><p><span id="EmptyBitboards"></span>
+</p>
+<h2><span class="mw-headline" id="Empty_Bitboards">Empty Bitboards</span></h2>
+<p>To test a bitboard is empty, one compares it with zero, or use the logical not operator:
+</p>
+<pre>
+if ( x == 0 ) -&gt; bitboard is empty
+if ( !x )     -&gt; bitboard is empty
+</pre>
+<p>The inverse condition (not empty) is of course
+</p>
+<pre>
+if ( x != 0 ) -&gt; bitboard is not empty
+if ( x )      -&gt; bitboard is not empty
+</pre>
+<p><span id="SinglePopulatedBitboards"></span>
+</p>
+<h2><span class="mw-headline" id="Single_Populated_Bitboards">Single Populated Bitboards</span></h2>
+<p>If the bitboard is not empty, we can <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">extract</a> the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> to look whether it is equal with the bitboard. Alternatively and faster, we can <a href="General Setwise Operations.html#LS1BReset" title="General Setwise Operations">reset the LS1B</a> to look whether the bitboard becomes empty.
+</p>
+<pre>
+if ( x != 0 &amp;&amp; (x &amp; (x-1)) == 0 ) -&gt; population count is one, power of two value
+</pre>
+<p>One can skip the leading x != 0 condition to test popcount &lt;= 1:
+</p>
+<pre>
+if ( (x &amp; (x-1)) == 0 ) -&gt; population count is less or equal than one
+</pre>
+<p>Again the inverse relation tests, whether a bitboard has more than one bit set:
+</p>
+<pre>
+if ( x &amp; (x-1) ) -&gt; population count is greater than one
+</pre>
+<p>An alternative approach to determine single populated sets, aka power of two values is based on <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">Inclusive LS1B separation</a> divided by two equals the ones' decrement <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>:
+</p>
+<pre>
+if ( ((x ^ (x-1)) &gt;&gt; 1) == (x-1) ) -&gt; population count is one, power of two value
+</pre>
+<h1><span class="mw-headline" id="Loop-Approaches">Loop-Approaches</span></h1>
+<p><span id="TooSlow"></span>
+</p>
+<h2><span class="mw-headline" id="Too_Slow">Too Slow</span></h2>
+<p>Brute force adding all 64-bits
+</p>
+<pre>
+int popCount (U64 x) {
+   int count = 0;
+   for (int i = 0; i &lt; 64; i++, x &gt;&gt;= 1)
+      count += (int)x &amp; 1;
+   return count;
+}
+</pre>
+<p>Of course, this is a slow algorithm, which might be improved by testing x not empty rather than i &lt; 64. But unrolled in <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix</a> manner it already reminds on <a href="Population Count.html#SWARPopcount" title="Population Count">this one</a>.
+</p><p><span id="BrianKernighansway"></span>
+</p>
+<h2><span class="mw-headline" id="Brian_Kernighan.27s_way">Brian Kernighan's way</span></h2>
+<p>Consecutively <a href="General Setwise Operations.html#LS1BReset" title="General Setwise Operations">reset LS1B</a> in a loop body and counting loop cycles until the bitset becomes empty. <a class="external text" href="https://en.wikipedia.org/wiki/Brian_Kernighan" rel="nofollow">Brian Kernighan</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> mentioned the trick in his and <a class="external text" href="https://en.wikipedia.org/wiki/Dennis_Ritchie" rel="nofollow">Ritchie's</a> book <a class="external text" href="https://en.wikipedia.org/wiki/The_C_Programming_Language_%28book%29" rel="nofollow">The C Programming_Language</a>, 2nd Edition 1988, exercise 2-9. However, the method was first published in 1960 by <a href="Mathematician.html#PWegner" title="Mathematician">Peter Wegner</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>, discovered independently by <a href="Mathematician.html#DHLehmer" title="Mathematician">Derrick Henry Lehmer</a>, published in 1964 <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>:
+</p>
+<pre>
+int popCount (U64 x) {
+   int count = 0;
+   while (x) {
+       count++;
+       x &amp;= x - 1; // reset LS1B
+   }
+   return count;
+}
+</pre>
+<p>Despite branches - this is still one of the fastest approaches for sparsely populated bitboards. Of course the more bits that are set, the longer it takes.
+</p><p><span id="Lookup"></span>
+</p>
+<h1><span class="mw-headline" id="Lookup">Lookup</span></h1>
+<p>Of course we can not use the whole bitboard as index to a lookup table - since it's size would be 18,446,744,073,709,551,616 bytes! If it is about the population count of a byte, we can simply construct a table lookup with 256 elements. For a bitboard that takes eight byte lookups we can add together:
+</p>
+<pre>
+unsigned char popCountOfByte256[];
+
+void initpopCountOfByte256()
+{
+   popCountOfByte256[0] = 0;
+   for (int i = 1; i &lt; 256; i++)
+      popCountOfByte256[i] = popCountOfByte256[i / 2] + (i &amp; 1);
+}
+
+int popCount (U64 x) {
+   return popCountOfByte256[ x        &amp; 0xff] +
+          popCountOfByte256[(x &gt;&gt;  8) &amp; 0xff] +
+          popCountOfByte256[(x &gt;&gt; 16) &amp; 0xff] +
+          popCountOfByte256[(x &gt;&gt; 24) &amp; 0xff] +
+          popCountOfByte256[(x &gt;&gt; 32) &amp; 0xff] +
+          popCountOfByte256[(x &gt;&gt; 40) &amp; 0xff] +
+          popCountOfByte256[(x &gt;&gt; 48) &amp; 0xff] +
+          popCountOfByte256[ x &gt;&gt; 56];
+}
+</pre>
+<p>Looks quite expensive - one may use four 16-bit word-lookups with a pre-calculated 64KByte table though, but that pollutes the memory caches quite a bit. One can also treat the bitboard as <a href="Array.html" title="Array">array</a> of bytes or words in memory, since endian issues don't care here - that safes all the shifts and 'ands', but has to read byte for byte from memory.
+</p>
+<pre>
+int popCount (U64 x) {
+   unsigned char * p = (unsigned char *) &amp;x;
+   return popCountOfByte256[p[0]] +
+          popCountOfByte256[p[1]] +
+          popCountOfByte256[p[2]] +
+          popCountOfByte256[p[3]] +
+          popCountOfByte256[p[4]] +
+          popCountOfByte256[p[5]] +
+          popCountOfByte256[p[6]] +
+          popCountOfByte256[p[7]];
+}
+</pre>
+<p><span id="SWARPopcount"></span>
+</p>
+<h1><span class="mw-headline" id="SWAR-Popcount">SWAR-Popcount</span></h1>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Divide_and_conquer_algorithm" rel="nofollow">divide and conquer</a> <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SWAR-approach</a> deals with counting bits of duos, to aggregate the duo-counts to <a href="Nibble.html" title="Nibble">nibbles</a> and <a href="Byte.html" title="Byte">bytes</a> inside one 64-bit register in parallel, to finally sum all bytes together. According to <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>, a parallel population count routine was already introduced in 1957 due to <a href="Mathematician.html#DBGillies" title="Mathematician">Donald B. Gillies</a> and <a class="external text" href="https://en.wikipedia.org/wiki/J._C._P._Miller" rel="nofollow">Jeffrey C. P. Miller</a> in the first textbook on programming, second edition: <i>The Preparation of Programs for an Electronic Digital Computer</i>, by <a href="Mathematician.html#MVWilkes" title="Mathematician">Maurice Wilkes</a>, <a href="Mathematician.html#DJWheeler" title="Mathematician">David Wheeler</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Stanley_Gill" rel="nofollow">Stanley Gill</a>, pages 191–193 <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>. 
+</p>
+<h2><span class="mw-headline" id="Counting_Duo-Bits">Counting Duo-Bits</span></h2>
+<p>A bit-duo (two neighboring bits) can be interpreted with bit 0 = a, and bit 1 = b as
+</p>
+<pre>duo := 2b + a
+</pre>
+<p>The duo population is
+</p>
+<pre>popcnt(duo) := b + a
+</pre>
+<p>which can be archived by
+</p>
+<pre>(2b + a) - (2b + a) ÷ 2
+</pre>
+<p>or
+</p>
+<pre>(2b + a) - b
+</pre>
+<p>The bit-duo has up to four states with population count from zero to two as demonstrated in following table with binary digits:
+</p>
+<table class="wikitable">
+<tr>
+<th> x
+</th>
+<th> x div 2
+</th>
+<th> popcnt(x)
+</th></tr>
+<tr>
+<td style="text-align:center;"> 00
+</td>
+<td style="text-align:center;"> 00
+</td>
+<th style="text-align:center;"> 00
+</th></tr>
+<tr>
+<td style="text-align:center;"> 01
+</td>
+<td style="text-align:center;"> 00
+</td>
+<th style="text-align:center;"> 01
+</th></tr>
+<tr>
+<td style="text-align:center;"> 10
+</td>
+<td style="text-align:center;"> 01
+</td>
+<th style="text-align:center;"> 01
+</th></tr>
+<tr>
+<td style="text-align:center;"> 11
+</td>
+<td style="text-align:center;"> 01
+</td>
+<th style="text-align:center;"> 10
+</th></tr></table>
+<p>Only the lower bit is needed from x div 2 - and one don't has to worry about borrows from neighboring duos. SWAR-wise, one needs to clear all "even" bits of the div 2 subtrahend to perform a 64-bit subtraction of all 32 duos:
+</p>
+<pre>
+x = x - ((x &gt;&gt; 1) &amp; 0x5555555555555555);
+</pre>
+<p>Note that the popcount-result of the bit-duos still takes two bits.
+</p>
+<h2><span class="mw-headline" id="Counting_Nibble-Bits">Counting Nibble-Bits</span></h2>
+<p>The next step is to add the duo-counts to populations of four neighboring bits, the 16 nibble-counts, which may range from zero to four. SWAR-wise it is done by masking odd and even duo-counts to add them together:
+</p>
+<pre>
+ x = (x &amp; 0x3333333333333333) + ((x &gt;&gt; 2) &amp; 0x3333333333333333);
+</pre>
+<p>Note that the popcount-result of the nibbles takes only three bits, since 100B is the maximum population (of the nibble 1111B).
+</p>
+<h2><span class="mw-headline" id="Byte-Counts">Byte-Counts</span></h2>
+<p>You already got the idea? Now it is about to get the byte-populations from two nibble-populations. Maximum byte-population of 1000B only takes four bits, so it is safe to mask all those four bits of the sum, rather than to mask the summands:
+</p>
+<pre>
+x = (x + (x &gt;&gt; 4)) &amp; 0x0f0f0f0f0f0f0f0f;
+</pre>
+<h2><span class="mw-headline" id="Adding_the_Byte-Counts">Adding the Byte-Counts</span></h2>
+<h3><span class="mw-headline" id="Parallel_Prefix_Adds">Parallel Prefix Adds</span></h3>
+<p>We may continue with mask-less <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix</a> SWAR-adds for byte-counts, word-counts and finally double-word-counts, to mask the least significant 8 (or 7) bits for final result in the 0..64 range:
+</p>
+<pre>
+x += (x &gt;&gt;  8);
+x += (x &gt;&gt; 16);
+x += (x &gt;&gt; 32);
+return x &amp; 255;
+</pre>
+<p><span id="Multiplication"></span>
+</p>
+<h3><span class="mw-headline" id="Multiplication">Multiplication</span></h3>
+<p>With todays fast 64-bit multiplication one can multiply the vector of 8-byte-counts with 0x0101010101010101 to get the final result in the most significant byte, which is then shifted right:
+</p>
+<pre>
+x = (x * 0x0101010101010101) &gt;&gt; 56;
+</pre>
+<p><span id="Castingout"></span>
+</p>
+<h3><span class="mw-headline" id="Casting_out">Casting out</span></h3>
+<p>Interestingly, there is another approach to add the bytes together. As demonstrated with decimal digits (base 10) and <a class="external text" href="https://en.wikipedia.org/wiki/Casting_out_nines" rel="nofollow">Casting out nines</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>, casting out by <a href="General Setwise Operations.html#Modulo" title="General Setwise Operations">modulo</a> base minus one is equivalent to taking the <a class="external text" href="https://en.wikipedia.org/wiki/Digit_sum" rel="nofollow">digit sum</a>, which might be applied here with low range 0..8 "base 256" digits:
+</p>
+<pre>
+x = x % 255;
+</pre>
+<p>However, since division and modulo are usually slow instructions and  modulo by constant is likely replaced by reciprocal multiplication anyway by the compiler, the multiplication by 0x0101010101010101 aka the 2-<a class="external text" href="https://en.wikipedia.org/wiki/P-adic_number" rel="nofollow">adic</a> fraction -1/255 is the preferred method.
+</p>
+<h2><span class="mw-headline" id="The_PopCount_routine">The PopCount routine</span></h2>
+<h3><span class="mw-headline" id="The_Constants">The Constants</span></h3>
+<p>Putting all together, the various SWAR-Masks and factors as defined by <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> as 2-<a class="external text" href="https://en.wikipedia.org/wiki/P-adic_number" rel="nofollow">adic</a> fractions <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>:
+</p>
+<pre>
+const U64 k1 = C64(0x5555555555555555); /*  -1/3   */
+const U64 k2 = C64(0x3333333333333333); /*  -1/5   */
+const U64 k4 = C64(0x0f0f0f0f0f0f0f0f); /*  -1/17  */
+const U64 kf = C64(0x0101010101010101); /*  -1/255 */
+</pre>
+<p>represented as bitboards:
+</p>
+<pre>
+k1  -1/3            k2  -1/5            k4  -1/17           kf  -1/255              
+0x5555555555555555  0x3333333333333333  0x0f0f0f0f0f0f0f0f  0x0101010101010101
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+1 . 1 . 1 . 1 .     1 1 . . 1 1 . .     1 1 1 1 . . . .     1 . . . . . . .   
+</pre>
+<h3><span class="mw-headline" id="popCount">popCount</span></h3>
+<p>This is how the complete routine looks in <a href="C.html" title="C">C</a>:
+</p>
+<pre>
+int popCount (U64 x) {
+    x =  x       - ((x &gt;&gt; 1)  &amp; k1); /* put count of each 2 bits into those 2 bits */
+    x = (x &amp; k2) + ((x &gt;&gt; 2)  &amp; k2); /* put count of each 4 bits into those 4 bits */
+    x = (x       +  (x &gt;&gt; 4)) &amp; k4 ; /* put count of each 8 bits into those 8 bits */
+    x = (x * kf) &gt;&gt; 56; /* returns 8 most significant bits of x + (x&lt;&lt;8) + (x&lt;&lt;16) + (x&lt;&lt;24) + ...  */
+    return (int) x;
+}
+</pre>
+<p><b>Advantage</b>: no branches, no memory lookups, constant runtime - independent from population
+<b>Drawback</b>: dependency chain, not much parallel speedup
+</p><p><i>For likely sparsely populated bitboards, the loop-wise <a href="Population Count.html#BrianKernighansway" title="Population Count">Brian Kernighan's way</a> might be the faster one.</i>
+<span id="HAKMEM169"></span>
+</p>
+<h2><span class="mw-headline" id="HAKMEM_169">HAKMEM 169</span></h2>
+<p>A similar technique was proposed by <a href="Bill Gosper.html" title="Bill Gosper">Bill Gosper</a> et al. from <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</a>, as published 1972 in <a class="external text" href="https://en.wikipedia.org/wiki/HAKMEM" rel="nofollow">Memo 239 (HAKMEM)</a> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>, to add bit-trio- rather than duo populations consecutively, and the 32 bit version relies on casting out 63. Note that the constants in the code below have <a class="external text" href="https://en.wikipedia.org/wiki/Octal" rel="nofollow">octal</a> (base-8) digits, originally written in <a href="Assembly.html#HAKMEM169" title="Assembly">Assembly</a> for the <a href="PDP-6.html" title="PDP-6">PDP-6</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>. An expanded 64-bit version, casting out 511 or 4095, is slightly less efficient than the binary SWAR version above.
+</p>
+<pre>
+int hakmem169_32(unsigned int x) {
+   x = x  - ((x &gt;&gt; 1)  &amp; 033333333333)
+          - ((x &gt;&gt; 2)  &amp; 011111111111);
+   x = (x +  (x &gt;&gt; 3)) &amp; 030707070707 ;
+   return x % 63; /* casting out 63 */
+} 
+</pre>
+<h1><span class="mw-headline" id="Miscellaneous">Miscellaneous</span></h1>
+<p><span id="CardinalityofMultipleSets"></span>
+</p>
+<h2><span class="mw-headline" id="Cardinality_of_Multiple_Sets">Cardinality of Multiple Sets</span></h2>
+<p>If we like to count <a href="Array.html" title="Array">arrays</a> of sets, we can reduce 2^N-1 popcounts to N popcounts, by applying the odd-major-trick. For three sets to count we safe one, with five additional cheap instructions.
+</p>
+<pre>
+  odd   =  (x ^ y)  ^ z;
+  major = ((x ^ y ) &amp; z) | (x &amp; y);
+
+  popCount(x) + popCount(y) + popCount(z) == 2*popCount(major) + popCount(odd)
+</pre>
+<p>The combined popCount3 likely gains more parallel speedup, since there are two independent chains to calculate. Possible Application is to pass the union of both bishops (since usually bishops cover disjoint sets due to different square colors) plus the up to two knight move-target sets.
+</p>
+<pre>
+// return popCount(x) + popCount(y) + popCount(z)
+int popCount3 (U64 x, U64 y, U64 z) {
+    U64 maj = ((x ^ y ) &amp; z) | (x &amp; y);
+    U64 odd = ((x ^ y ) ^ z);
+    maj =  maj - ((maj &gt;&gt; 1) &amp; k1 );
+    odd =  odd - ((odd &gt;&gt; 1) &amp; k1 );
+    maj = (maj &amp; k2) + ((maj &gt;&gt; 2) &amp; k2);
+    odd = (odd &amp; k2) + ((odd &gt;&gt; 2) &amp; k2);
+    maj = (maj + (maj &gt;&gt; 4)) &amp; k4;
+    odd = (odd + (odd &gt;&gt; 4)) &amp; k4;
+    odd = ((maj + maj + odd) * kf ) &gt;&gt; 56;
+    return (int) odd;
+}
+</pre>
+<h3><span class="mw-headline" id="Odd_and_Major_7-15">Odd and Major 7-15</span></h3>
+<p>Of course - reducing seven popcount to three, or even 15 popcounts to four sounds even more promising.
+For N = 2^n - 1 it takes N - n odd-major pairs. Thus one add-major pair - five instructions - per saved popCount.
+</p><p>That is 7 - 3 = 4 pairs:
+</p>
+<pre>
+one1,two1 := oddMaj(x1,x2,x3)
+one2,two2 := oddMaj(x4,x5,x6)
+ones,two3 := oddMaj(x7,one1,one2)
+twos,four := oddMaj(two1,two2,two3)
+</pre>
+<p>Or 15 - 4 = 11 pairs:
+</p>
+<pre>
+one1,two1  := oddMaj(x1,x2,x3)
+one2,two2  := oddMaj(x4,x5,x6)
+one3,two3  := oddMaj(x7,x8,x9)
+one4,two4  := oddMaj(x10,x11,x12)
+one5,two5  := oddMaj(x13,x14,x15)
+one6,two6  := oddMaj(one1,one2,one3)
+ones,two7  := oddMaj(one4,one5,one6)
+two8,four1 := oddMaj(two1,two2,two3)
+two9,four2 := oddMaj(two4,two5,two6)
+twos,four3 := oddMaj(two7,two8,two9)
+four,eight := oddMaj(four1,four2,four3)
+</pre>
+<p><span id="OddMajorDigitCounts"></span>
+</p>
+<h3><span class="mw-headline" id="Odd_and_Major_Digit_Counts">Odd and Major Digit Counts</span></h3>
+<p>Odd-Major is probably also useful to determine digit count sets of attacks or other stuff:
+</p>
+<pre>
+U64 odd(U64 x, U64 y, U64 z) {return x^y^z;}
+U64 maj(U64 x, U64 y, U64 z) {return ((x^y)&amp;z)|(x&amp;y);}
+
+void attackCounts(U64 t[3], const U64 s[7]) {
+   one1 = odd(s[0], s[1], s[2]);
+   two1 = maj(s[0], s[1], s[2]);
+   one2 = odd(s[3], s[4], s[5]);
+   two2 = maj(s[3], s[4], s[5]);
+   t[0] = odd(s[6], one1, one2);
+   two3 = maj(s[6], one1, one2);
+   t[1] = odd(two1, two2, two3);
+   t[2] = maj(two1, two2, two3);
+}
+</pre>
+<p>with following semantics:
+</p>
+<pre>
+exactly7attacks :=   t[2] &amp;  t[1] &amp;  t[0]
+exactly6attacks :=   t[2] &amp;  t[1] &amp; ~t[0]
+exactly5attacks :=   t[2] &amp; ~t[1] &amp;  t[0]
+exactly4attacks :=   t[2] &amp; ~t[1] &amp; ~t[0]
+exactly3attacks :=  ~t[2] &amp;  t[1] &amp;  t[0]
+exactly2attacks :=  ~t[2] &amp;  t[1] &amp; ~t[0]
+exactly1attack  :=  ~t[2] &amp; ~t[1] &amp;  t[0]
+noAttack        :=  ~t[2] &amp; ~t[1] &amp; ~t[0]
+
+atLeast4attacks :=                   t[2]
+atLeast2attacks := atLeast4attacks | t[1]
+atLeast1attack  := atLeast2attacks | t[0]
+noAttack        := ~atLeast1attack
+exactly1attack  :=  atLeast1attack  ^ atLeast2attacks
+</pre>
+<h2><span class="mw-headline" id="Popcount_as_log2_of_LS1B">Popcount as log2 of LS1B</span></h2>
+<p>Assuming an architecture has a fast popcount-instruction (but no bitscan). One can isolate the LS1B, decrement it and count the remaining trailing "ones" to perform the logarithm dualis:
+</p>
+<pre>
+log2(LS1B) = popCount( LS1B - 1 );
+bitIndexOfLS1B(x) = popCount( (x &amp; -x) - 1 );
+</pre>
+<p>For instance, LS1B is 2^44, decrementing leaves a below LSB1 mask with exactly 44 bits set:
+</p>
+<pre>
+0x0000100000000000   0x00000FFFFFFFFFFF
+. . . . . . . .      . . . . . . . .
+. . . . . . . .      . . . . . . . .
+. . . . 1 . . .      1 1 1 1 . . . .
+. . . . . . . .      1 1 1 1 1 1 1 1
+. . . . . . . .      1 1 1 1 1 1 1 1
+. . . . . . . .      1 1 1 1 1 1 1 1
+. . . . . . . .      1 1 1 1 1 1 1 1
+. . . . . . . .      1 1 1 1 1 1 1 1
+</pre>
+<p><span id="HammingDistance"></span>
+</p>
+<h2><span class="mw-headline" id="Hamming_Distance">Hamming Distance</span></h2>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Hamming_distance" rel="nofollow">hamming distance</a> of two words is defined as the number of corresponding <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">different bits</a>.
+</p>
+<pre>
+int hammingDistance (U64 a, U64 b) {return popcnt( a ^ b);}
+</pre>
+<p>Hamming distance greater than one or two is an important property of codes to detect or even correct one-bit errors.
+</p><p>The minimum and average hamming distance over all <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist keys</a> was considered as "quality"-measure of the keys. However, as long the minimum hamming distance is greater zero, <a class="external text" href="https://en.wikipedia.org/wiki/Linear_independence" rel="nofollow">linear independence</a> (that is a small subset of all keys doesn't xor to zero), is much more important than hamming distance <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>. Maximizing the minimal hamming distance leads to very poor Zobrist keys <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup>.
+</p>
+<h2><span class="mw-headline" id="Weighted_PopCount">Weighted PopCount</span></h2>
+<p>For a <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-wise</a> kind of weighted population count, see the <a href="SSE2.html#SSE2dotproduct" title="SSE2">SSE2 dot-product</a>.
+</p>
+<h2><span class="mw-headline" id="Pre-calculated_Mobility">Pre-calculated Mobility</span></h2>
+<p>Similar to <a href="Sliding Piece Attacks.html#AttacksbyOccupancyLookup" title="Sliding Piece Attacks">Attacks by Occupancy Lookup</a> to determine attack sets of sliding pieces, we may use pre-calculated population count or even center-weighted population count as a rough estimate on piece <a href="Mobility.html" title="Mobility">mobility</a> <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup>. It may not consider subsets of let say safe target squares.
+</p>
+<h2><span class="mw-headline" id="Piece_Attacks_Count">Piece Attacks Count</span></h2>
+<p>As pointed out by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a> <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup> <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup>, specialized routines to count the population (<a href="Mobility.html" title="Mobility">Mobility</a>) of attack sets of <a href="King.html" title="King">king</a>, <a href="Knight.html" title="Knight">knight</a> and line-wise sub-sets of sliding pieces can be done more efficiently than the general <a href="Population Count.html#SWARPopcount" title="Population Count">SWAR-Popcount</a>. This is similar to <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">Flipping Mirroring and Rotating</a> the whole bitboard versus <a href="Flipping Mirroring and Rotating.html#RankFileAndDiagonal" title="Flipping Mirroring and Rotating">Rank, File and Diagonal</a>, and is based on mapping the up to eight scattered occupied bits to one byte, to perform a single <a href="Population Count.html#Lookup" title="Population Count">byte lookup</a>. For various mapping techniques, see:
+</p>
+<ul><li> <a href="Bitboard Serialization.html#HashingMultipleBits" title="Bitboard Serialization">Hashing Multiple Bits</a> from <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li>
+<li> <a href="Flipping Mirroring and Rotating.html#RankFileAndDiagonal" title="Flipping Mirroring and Rotating">Rank, File and Diagonal</a> from <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">Flipping Mirroring and Rotating</a></li>
+<li> <a href="Occupancy of any Line.html" title="Occupancy of any Line">Occupancy of any Line</a></li></ul>
+<h1><span class="mw-headline" id="Popcount_in_Hardware">Popcount in Hardware</span></h1>
+<ul><li> <a href="Ferranti Mark 1.html#Instructions" title="Ferranti Mark 1">Ferranti Mark 1</a></li>
+<li> <a href="CDC 6600.html#PopulationCount" title="CDC 6600">CDC 6600</a></li>
+<li> <a href="CDC Cyber.html#PopulationCount" title="CDC Cyber">CDC Cyber</a></li>
+<li> <a href="SSE4.html#SSE4.2" title="SSE4">SSE4.2</a>, <a href="Intel.html" title="Intel">Intel</a> <a href="X86.html" title="X86">x86</a>, <a href="X86-64.html" title="X86-64">x86-64</a></li>
+<li> <a href="SSE4.html#SSE4a" title="SSE4">SSE4a</a>, <a href="AMD.html" title="AMD">AMD</a> x86, x86-64</li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Assembly.html#HAKMEM169" title="Assembly">Assembly Popcounts</a></li>
+<li> <a href="Bit-Twiddling.html" title="Bit-Twiddling">Bit-Twiddling</a></li>
+<li> <a href="General Setwise Operations.html#GreaterOne" title="General Setwise Operations">Greater One Sets</a> from <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a></li>
+<li> <a href="Kim Walisch.html#PopCount" title="Kim Walisch">libpopcnt</a> by <a href="Kim Walisch.html" title="Kim Walisch">Kim Walisch</a></li>
+<li> <a href="MMX.html#MMXPopcount" title="MMX">MMX Popcount</a></li>
+<li> <a href="CDC Cyber.html#Mobility" title="CDC Cyber">Mobility</a> in <a href="Chess (Program).html" title="Chess (Program)">Chess 4.6</a> on the <a href="CDC Cyber.html" title="CDC Cyber">CDC Cyber</a></li>
+<li> <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD and SWAR Techniques</a></li>
+<li> <a href="SSE2.html#SSE2popcount" title="SSE2">SSE2 Population Count</a></li>
+<li> <a href="SSSE3.html#PopCount" title="SSSE3">SSSE3 Population Count</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1949_...">1949 ...</span></h2>
+<ul><li> <a href="Alan Turing.html" title="Alan Turing">Alan Turing</a> (<b>1949</b>). <i><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=doc-431614f45472f.html" rel="nofollow">Alan Turing's Manual for the Ferranti Mk. I</a></i>. transcribed in 2000 by <a class="external text" href="http://www.panix.com/~rst/.html" rel="nofollow">Robert Thau</a>, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-1.Ferranti Mark 1 manual.Turing-Alan/2-1.Ferranti Mark 1 manual.Turing-Alan.1951.UNIVERSITY OF MANCHESTER.062303005.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a>, 9.4 The position of the most significant digit » <a href="Ferranti Mark 1.html" title="Ferranti Mark 1">Ferranti Mark 1</a></li>
+<li> <a href="Mathematician.html#MVWilkes" title="Mathematician">Maurice Wilkes</a>, <a href="Mathematician.html#DJWheeler" title="Mathematician">David Wheeler</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Stanley_Gill" rel="nofollow">Stanley Gill</a> (<b>1957</b>). <i>The Preparation of Programs for an Electronic Digital Computer</i>. Addison-Wesley Press; 2nd edition, <a class="external text" href="http://www.amazon.com/preparation-programs-electronic-Addison-Wesley-mathematics/dp/B0006AV1QQ.html" rel="nofollow">amazon.com</a>, <a href="Mathematician.html#DBGillies" title="Mathematician">Donald B. Gillies</a> and <a class="external text" href="https://en.wikipedia.org/wiki/J._C._P._Miller" rel="nofollow">Jeffrey C. P. Miller</a> on <a href="Population Count.html#SWARPopcount" title="Population Count">SWAR-Popcount</a>, pages 191–193</li>
+<li> <a href="Mathematician.html#PWegner" title="Mathematician">Peter Wegner</a> (<b>1960</b>). <i>A technique for counting ones in a binary computer</i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/cacm/cacm3.html.html#Wegner60" rel="nofollow">Volume 3, 1960</a></li>
+<li> Michael Beeler, <a href="Bill Gosper.html" title="Bill Gosper">Bill Gosper</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Richard_Schroeppel" rel="nofollow">Rich Schroeppel</a> (<b>1972</b>). <i><a class="external text" href="https://dspace.mit.edu/handle/1721.1/6086" rel="nofollow">HAKMEM</a></i>, Memo 239, Artificial Intelligence Laboratory, <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</a></li>
+<li> <a href="Mathematician.html#DAWagner" title="Mathematician">David A. Wagner</a>, <a href="Steven M. Bellovin.html" title="Steven M. Bellovin">Steven M. Bellovin</a> (<b>1994</b>). <i><a class="external text" href="http://academiccommons.columbia.edu/catalog/ac:127097.html" rel="nofollow">A Programmable Plaintext Recognizer</a></i>. <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.cs.gwu.edu/people/faculty/82.html" rel="nofollow">Simon Y. Berkovich</a>, Gennadi M. Lapir, Marilyn Mack (<b>2000</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=362453.html" rel="nofollow">A Bit-Counting Algorithm Using the Frequency Division Principle</a></i>. Software, Practice and Experience Vol. 30, No. 14, 2000, pp. 1531-1540</li>
+<li> <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/e/El=Qawasmeh:Eyas.html.html" rel="nofollow">Eyas El-Qawasmeh</a> (<b>2001</b>). <i><a class="external text" href="http://130.203.133.150/viewdoc/summary;jsessionid=A8ADC0228B8051C3ED8DF344DF5573CD?doi=10.1.1.127.8246.html" rel="nofollow">Beating the Popcount</a>.</i> International Journal of Information Technology, Singapore, Vol. 9. No. 1</li>
+<li> <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a>  (<b>2002</b>). <i><a class="external text" href="http://hackersdelight.org/.html" rel="nofollow">Hacker's Delight</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Addison%E2%80%93Wesley" rel="nofollow">Addison-Wesley Professional</a></li>
+<li> <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/e/El=Qawasmeh:Eyas.html.html" rel="nofollow">Eyas El-Qawasmeh</a>, <a class="external text" href="http://www.yu.edu.jo/fmd/detailsEN.aspx?myID=18327.html" rel="nofollow">Wafa'a Al-Qarqaz</a> (<b>2006</b>). <i>Reducing Lookup Table Size used for Bit-Counting Algorithm</i>. Computer Science Dept. <a class="external text" href="https://en.wikipedia.org/wiki/Jordan_University_of_Science_and_Technology" rel="nofollow">Jordan University of Science and Technology</a>, <a class="external text" href="http://www.uop.edu.jo/csit2006/vol3%20pdf/pg524.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a>  (<b>2007</b>). <i>The Quest for an Accelerared Population Count</i>. in <a class="external text" href="http://www.oreillynet.com/pub/au/36.html" rel="nofollow">Andy Oram</a> &amp; <a href="Greg Wilson.html" title="Greg Wilson">Greg Wilson</a> (eds.) (<b>2007</b>). <i> Beautiful code: Leading Programmers Explain How They Think</i>. <a class="external text" href="https://en.wikipedia.org/wiki/O%27Reilly_Media" rel="nofollow">O'Reilly</a>, <a class="external text" href="http://www.amazon.com/Beautiful-Code-Leading-Programmers-Practice/dp/0596510047.html" rel="nofollow">amazon.com</a></li>
+<li> <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a>, Sideways addition, pp 11</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a>  (<b>2012</b>). <i><a class="external text" href="http://www.informit.com/store/hackers-delight-9780321842688.html" rel="nofollow">Hacker's Delight, 2nd Edition</a></i>.  <a class="external text" href="https://en.wikipedia.org/wiki/Addison%E2%80%93Wesley" rel="nofollow">Addison-Wesley Professional</a>, More coverage of population count and counting leading zeros, Array population count </li>
+<li> <a class="external text" href="http://de.linkedin.com/pub/andreas-stiller/a/381/aa9.html" rel="nofollow">Andreas Stiller</a> (<b>2013</b>). <i><a class="external text" href="http://www.heise.de/artikel-archiv/ct/2013/05/180 Spezialkommando.html" rel="nofollow">Spezialkommando - Intrinsic __popcnt() zählt die Einsen</a></i>. <a class="external text" href="http://www.heise.de/ct/.html" rel="nofollow">c't Magazin für Computertechnik</a> 5/2013, p. 180 (German)</li>
+<li> <a href="Wojciech Mu%C5%82a.html" title="Wojciech Muła">Wojciech Muła</a>, <a class="external text" href="http://dblp.uni-trier.de/pers/hd/k/Kurz:Nathan.html" rel="nofollow">Nathan Kurz</a>, <a class="external text" href="https://github.com/lemire" rel="nofollow">Daniel Lemire</a> (<b>2016</b>). <i>Faster Population Counts Using AVX2 Instructions</i>. <a class="external text" href="https://arxiv.org/abs/1611.07612" rel="nofollow">arXiv:1611.07612</a> <sup class="reference" id="cite_ref-25"><a href="#cite note-25">[25]</a></sup> » <a href="AVX2.html" title="AVX2">AVX2</a>, <a href="AVX-512.html" title="AVX-512">AVX-512</a> </li></ul>
+<h1><span class="mw-headline" id="Postings">Postings</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=25091" rel="nofollow">Bean counters Part1</a> by <a href="Peter Fendrich.html" title="Peter Fendrich">Peter Fendrich</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=25095" rel="nofollow">Bean counters Part2</a> by <a href="Peter Fendrich.html" title="Peter Fendrich">Peter Fendrich</a>, <a href="CCC.html" title="CCC">CCC</a>, August 19, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=38188" rel="nofollow">Countbits() Function</a> by <a href="Roberto Waldteufel.html" title="Roberto Waldteufel">Roberto Waldteufel</a>, <a href="CCC.html" title="CCC">CCC</a>, January 03, 1999</li>
+<li> <a class="external text" href="http://cryptome.org/jya/sadd.htm.html" rel="nofollow">Sideways Add / Population Count</a> by <a class="external text" href="http://www.couperus.org/.html" rel="nofollow">Jitze Couperus</a>, <a href="Steven M. Bellovin.html" title="Steven M. Bellovin">Steve Bellovin</a> and <a class="external text" href="http://de.linkedin.com/in/horns.html" rel="nofollow">Axel H. Horns</a>, <a class="external text" href="https://en.wikipedia.org/wiki/C2Net" rel="nofollow">cryptography@c2.net</a>, January 28, 1999 » <a href="CDC 6600.html" title="CDC 6600">CDC 6600</a> <sup class="reference" id="cite_ref-26"><a href="#cite note-26">[26]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=106644" rel="nofollow">fast bit counting</a> by Flemming Rodler, <a href="CCC.html" title="CCC">CCC</a>, April 19, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=106791" rel="nofollow">Bit counting revisited</a> by Flemming Rodler, <a href="CCC.html" title="CCC">CCC</a>, April 19, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=106960" rel="nofollow">PowerPC BitCounting Functions Speed</a> by <a href="William Bryant.html" title="William Bryant">William Bryant</a>, <a href="CCC.html" title="CCC">CCC</a>, April 20, 2000 » <a href="PowerPC.html" title="PowerPC">PowerPC</a></li>
+<li> <a class="external text" href="http://groups.google.com/group/comp.lang.c/browse frm/thread/56af26ce0b48cbcd.html" rel="nofollow">Counting the number of bits in a 32-bit word</a> by <a href="Mathematician.html#GMarsaglia" title="Mathematician">George Marsaglia</a>, <a class="external text" href="http://groups.google.com/group/comp.lang.c/topics.html" rel="nofollow">comp.lang.c</a>, December 7, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=281989" rel="nofollow">Re: Chezzz 1.0.1 - problem solved - for David Rasmussen</a> by <a href="David Rasmussen.html" title="David Rasmussen">David Rasmussen</a>, <a href="CCC.html" title="CCC">CCC</a>, February 05, 2003 <sup class="reference" id="cite_ref-27"><a href="#cite note-27">[27]</a></sup></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=293853" rel="nofollow">Counting bits</a> by <a href="Andreas Herrmann.html" title="Andreas Herrmann">Andreas Herrmann</a>, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=313807" rel="nofollow">Hamming distance and lower hash table indexing</a> by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=353997" rel="nofollow">PopCount optimization</a> by <a href="Anastasios Milikas.html" title="Anastasios Milikas">milix</a>, <a href="CCC.html" title="CCC">CCC</a>, March 11, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/browse_frm/thread/958e93d748e48121" rel="nofollow">Population count in SSE2, again</a> by James Van Buskirk, <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/topics" rel="nofollow">comp.lang.asm.x86</a>, April 12, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26542.html" rel="nofollow">core2 popcnt</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=267994&amp;t=27965.html" rel="nofollow">Piece attacks count</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, May 18, 2009 » <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">Attack and Defend Maps</a></li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=29269.html" rel="nofollow">Bit twiddlement question: greater of two popcounts</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, August 06, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32227.html" rel="nofollow">Stockfish POPCNT support with gcc</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2010</li>
+<li> <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/browse_frm/thread/6c8b3f09d890af1b" rel="nofollow">Yet another handmade POPCNT</a> by hopcode, <a class="external text" href="https://groups.google.com/group/comp.lang.asm.x86/topics" rel="nofollow">comp.lang.asm.x86</a>, January 05, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38521.html" rel="nofollow">A brief history of the popcnt instruction</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39268.html" rel="nofollow">Introduction and (hopefully) contribution - bitboard methods</a> by <a href="Alcides Schulz.html" title="Alcides Schulz">Alcides Schulz</a>, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2011 » <a href="BitScan.html" title="BitScan">BitScan</a> </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43771.html" rel="nofollow">using Popcount and Prefetch with SSE4 hardware support</a> by <a href="Engin %C3%9Cst%C3%BCn.html" title="Engin Üstün">Engin Üstün</a>, <a href="CCC.html" title="CCC">CCC</a>, May 19, 2012 » <a href="Memory.html" title="Memory">Memory</a>, <a href="SSE4.html" title="SSE4">SSE4</a></li>
+<li> <a class="external text" href="http://macechess.blogspot.de/2013/04/64-bits-for-64-squares.html.html" rel="nofollow">64 bits for 64 squares ?</a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a>, <a class="external text" href="http://macechess.blogspot.de/.html" rel="nofollow">mACE Chess</a>, April 28, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54798.html" rel="nofollow">Stockfish 32-bit and hardware instructions on MSVC++</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2014  » <a href="Stockfish.html" title="Stockfish">Stockfish</a>, <a href="BitScan.html" title="BitScan">BitScan</a>, <a class="mw-selflink selflink">Population Count</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58230&amp;start=3.html" rel="nofollow">Re: Linux Version of Maverick 1.5</a> by <a href="Michael Dvorkin.html" title="Michael Dvorkin">Michael Dvorkin</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2015 » <a href="Mac OS.html" title="Mac OS">OS X</a>, <a href="Maverick.html" title="Maverick">Maverick</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61559.html" rel="nofollow">syzygy users (and Ronald)</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2016 » <a href="BitScan.html" title="BitScan">BitScan</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74918.html" rel="nofollow">__builtin_popcountll doesn't bring any gain</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, August 28, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75818.html" rel="nofollow">C++20 standard bit operations</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, November 15, 2020 » <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a>, <a href="BitScan.html" title="BitScan">BitScan</a>, <a href="Cpp.html" title="Cpp">C++</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Hamming_weight" rel="nofollow">Hamming weight from Wikipedia</a></li>
+<li> <a class="external text" href="http://semipublic.comp-arch.net/wiki/Population count %28POPCNT%29.html" rel="nofollow">Population count (POPCNT) - CompArch</a></li>
+<li> <a class="external text" href="http://www.crazyontap.com/topic.php?TopicId=43382.html" rel="nofollow">Crazy On Tap - Secret Opcodes</a> <sup class="reference" id="cite_ref-28"><a href="#cite note-28">[28]</a></sup></li>
+<li> <a class="external text" href="http://kent-vandervelden.blogspot.com/2009/10/counting-bits-population-count-and.html.html" rel="nofollow">Blender: POPCNT for counting bits</a></li>
+<li> <a class="external text" href="http://www.cl.cam.ac.uk/~am21/hakmemc.html.html" rel="nofollow">HAKMEMC -- HAKMEM Programming hacks in C</a> by <a class="external text" href="http://www.cl.cam.ac.uk/~am21/.html" rel="nofollow">Alan Mycroft</a></li>
+<li> <a class="external text" href="http://www.hackersdelight.org/hdcodetxt/pop.c.txt.html" rel="nofollow">popcount</a> <a href="C.html" title="C">C</a> samples from <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a> (<b>2002, 2012</b>). <i><a href="Henry S. Warren, Jr..html#HackersDeligh" title="Henry S. Warren, Jr.">Hacker's Delight</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Addison%E2%80%93Wesley" rel="nofollow">Addison-Wesley</a></li>
+<li> <a class="external text" href="http://aggregate.org/MAGIC/.html#Population%20Count%20%28Ones%20Count" rel="nofollow">The Aggregate Magic Algorithms -Population Count (Ones Count)</a> by <a href="Hank Dietz.html" title="Hank Dietz">Hank Dietz</a></li>
+<li> <a class="external text" href="http://www-graphics.stanford.edu/~seander/bithacks.html.html#CountBitsSetNaive" rel="nofollow">Counting bits set</a> from <a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html" rel="nofollow">Bit Twiddling Hacks</a> by <a class="external text" href="http://graphics.stanford.edu/%7Eseander/.html" rel="nofollow">Sean Eron Anderson</a></li>
+<li> <a class="external text" href="http://www.necessaryandsufficient.net/2009/04/optimising-bit-counting-using-iterative-data-driven-development/.html" rel="nofollow">Optimising Bit Counting using Iterative, Data-Driven Development</a> from <a class="external text" href="http://www.necessaryandsufficient.net/.html" rel="nofollow">Necessary and Sufficient</a> by <a class="external text" href="http://www.necessaryandsufficient.net/author/admin/page/2/.html" rel="nofollow">Damien Wintour</a></li>
+<li> <a class="external text" href="http://bits.stephan-brumme.com/countBits.html.html" rel="nofollow">Count bits set in parallel a.k.a. Population Count</a> from <a class="external text" href="http://bits.stephan-brumme.com/.html" rel="nofollow">the bit twiddler</a> by <a class="external text" href="http://www.stephan-brumme.com/.html" rel="nofollow">Stephan Brumme</a></li>
+<li> <a class="external text" href="http://www.strchr.com/crc32 popcnt.html" rel="nofollow">Benchmarking CRC32 and PopCnt instructions - strchr.com</a> by Peter Kankowski</li>
+<li> <a class="external text" href="http://0x80.pl/articles/sse-popcount.html.html" rel="nofollow">SSSE3: fast popcount</a> by <a href="Wojciech Mu%C5%82a.html" title="Wojciech Muła">Wojciech Muła</a>, May 24, 2008 » <a href="SSSE3.html" title="SSSE3">SSSE3</a></li>
+<li> <a class="external text" href="http://0x80.pl/articles/faster-popcount-for-large-data.html.html" rel="nofollow">Speeding up bit-parallel population count</a> by <a href="Wojciech Mu%C5%82a.html" title="Wojciech Muła">Wojciech Muła</a>, April 13, 2015</li>
+<li> <a class="external text" href="http://0x80.pl/articles/xop-popcnt.html.html" rel="nofollow">Population count using XOP instructions</a> by <a href="Wojciech Mu%C5%82a.html" title="Wojciech Muła">Wojciech Muła</a>, December 16, 2016 » <a href="XOP.html" title="XOP">XOP</a></li>
+<li> <a class="external text" href="https://github.com/WojciechMula/sse-popcount" rel="nofollow">GitHub - WojciechMula/sse-popcount: SIMD (SSE) population count</a> by <a href="Wojciech Mu%C5%82a.html" title="Wojciech Muła">Wojciech Muła</a></li>
+<li> <a class="external text" href="https://github.com/kimwalisch/libpopcnt" rel="nofollow">GitHub - kimwalisch/libpopcnt: Fast C/C++ bit population count library</a> » <a href="Kim Walisch.html#PopCount" title="Kim Walisch">libpopcnt</a> by <a href="Kim Walisch.html" title="Kim Walisch">Kim Walisch</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Census" rel="nofollow">Census from Wikipedia</a></li>
+<li> <a href="Category:John Abercrombie.html" title="Category:John Abercrombie">John Abercrombie</a> 4tet - One, one, one + Spring song, <a class="external text" href="https://de.wikipedia.org/wiki/Subway_(Musikclub)" rel="nofollow">Subway</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Cologne" rel="nofollow">Cologne</a>, April 12, 1999, <a class="external text" href="https://en.wikipedia.org/wiki/3sat" rel="nofollow">3sat</a> broadcast <sup class="reference" id="cite_ref-29"><a href="#cite note-29">[29]</a></sup>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:John Abercrombie.html" title="Category:John Abercrombie">John Abercrombie</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Bobo_Stenson" rel="nofollow">Bobo Stenson</a>, <a href="Category:Lars Danielsson.html" title="Category:Lars Danielsson">Lars Danielsson</a>, <a href="Category:Jon Christensen.html" title="Category:Jon Christensen">Jon Christensen</a> </dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/pv5e6ZsFIBw?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Color of each pixel is <a class="external text" href="https://en.wikipedia.org/wiki/Hamming_distance" rel="nofollow">Hamming distance</a> between the binary representations of its x and y coordinates, modulo 16, in the 16-color system, by Josiedraus, June 8, 2007, <a class="external text" href="https://en.wikipedia.org/wiki/Richard_Hamming" rel="nofollow">Richard Hamming from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Cryptography" rel="nofollow">Cryptography</a> is also a significant application of the /R function symbol, which counts the number of one bits in a word; Turing refers to this as the "sideways adder" in his quick-reference summary. from <a href="Alan Turing.html" title="Alan Turing">Alan Turing</a> (<b>1949</b>). <i><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=doc-431614f45472f.html" rel="nofollow">Alan Turing's Manual for the Ferranti Mk. I</a></i>. transcribed in 2000 by <a class="external text" href="http://www.panix.com/~rst/.html" rel="nofollow">Robert Thau</a>, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-1.Ferranti Mark 1 manual.Turing-Alan/2-1.Ferranti Mark 1 manual.Turing-Alan.1951.UNIVERSITY OF MANCHESTER.062303005.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a>, 9.4 The position of the most significant digit  » <a href="Ferranti Mark 1.html" title="Ferranti Mark 1">Ferranti Mark 1</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://software.intel.com/en-us/articles/extending-the-worlds-most-popular-processor-architecture.html" rel="nofollow">Extending the World’s Most Popular Processor Architecture</a> by R.M. Ramanathan, <a href="Intel.html" title="Intel">Intel</a>, covers SSE4 and popcnt</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://msdn.microsoft.com/en-us/library/bb531475(v=vs.120).aspx" rel="nofollow">_mm_popcnt_u64</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html" rel="nofollow">__builtin_popcountll</a> <a href="Free Software Foundation.html#GCC" title="Free Software Foundation">GCC</a> Intrinsic</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32227.html" rel="nofollow">Stockfish POPCNT support with gcc</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2010</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.jjj.de/fxt/fxtbook.pdf.html" rel="nofollow">Matters Computational - ideas, algorithms, source code</a> (pdf) Ideas and Source Code by <a href="Mathematician.html#Arndt" title="Mathematician">Jörg Arndt</a>, 1.7 Functions related to the base-2 logarithm, function one_bit_q(), pp 18</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www-graphics.stanford.edu/~seander/bithacks.html.html#CountBitsSetKernighan" rel="nofollow">Counting bits set, Brian Kernighan's way</a> from <a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html" rel="nofollow">Bit Twiddling Hacks</a> by <a class="external text" href="http://graphics.stanford.edu/%7Eseander/.html" rel="nofollow">Sean Eron Anderson</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Mathematician.html#PWegner" title="Mathematician">Peter Wegner</a> (<b>1960</b>). <i>A technique for counting ones in a binary computer</i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/cacm/cacm3.html.html#Wegner60" rel="nofollow">Volume 3, 1960</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a href="Mathematician.html#EFBeckenbach" title="Mathematician">Edwin Ford Beckenbach</a> (editor) (<b>1964</b>). <i><a class="external text" href="http://onlinelibrary.wiley.com/doi/10.1002/bimj.19660080310/abstract.html" rel="nofollow">Applied combinatorial mathematics</a></i>, <a class="external text" href="https://en.wikipedia.org/wiki/John_Wiley_%26_Sons" rel="nofollow">John Wiley</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a>, Sideways addition, p 11</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a href="Mathematician.html#MVWilkes" title="Mathematician">Maurice Wilkes</a>, <a href="Mathematician.html#DJWheeler" title="Mathematician">David Wheeler</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Stanley_Gill" rel="nofollow">Stanley Gill</a> (<b>1951</b>). <i>The Preparation of Programs for an Electronic Digital Computer</i>. Addison-Wesley Press; 1st edition, <a class="external text" href="http://www.amazon.com/preparation-programs-electronic-digital-computer/dp/B0007DWTT0.html" rel="nofollow">amazon.com</a>; 2nd edition 1957, <a class="external text" href="http://www.amazon.com/preparation-programs-electronic-Addison-Wesley-mathematics/dp/B0006AV1QQ.html" rel="nofollow">amazon.com</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Electronic_Delay_Storage_Automatic_Calculator" rel="nofollow">Electronic Delay Storage Automatic Calculator from Wikipedia</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.billthelizard.com/2009/06/casting-out-nines.html.html" rel="nofollow">Casting Out Nines</a> by <a class="external text" href="http://www.billthelizard.com/.html" rel="nofollow">Bill the Lizard</a>, June 13, 2009</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a>, p 9</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text">HAKMEM - ITEM 169 To count the ones in a PDP-6/10 word (in order of one-ups-manship: <a href="Bill Gosper.html" title="Bill Gosper">Gosper</a>, Mann, Lenard, [Root and Mann])</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.cl.cam.ac.uk/~am21/hakmemc.html.html" rel="nofollow">HAKMEMC -- HAKMEM Programming hacks in C</a> by <a class="external text" href="http://www.cl.cam.ac.uk/~am21/.html" rel="nofollow">Alan Mycroft</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a href="Bill Gosper.html#HAKMEM169" title="Bill Gosper">HAKMEM 169</a> for <a href="PDP-6.html" title="PDP-6">PDP-6</a>/<a href="PDP-10.html" title="PDP-10">PDP-10</a> 36-bit words</span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=200622" rel="nofollow">Re: About random numbers and hashing</a> by <a href="Sven Reichard.html" title="Sven Reichard">Sven Reichard</a>, <a href="CCC.html" title="CCC">CCC</a>, December 05, 2001</span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26152.html" rel="nofollow">Zobrist key random numbers</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> from <a href="CCC.html" title="CCC">CCC</a>, January 21, 2009</span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6823.html" rel="nofollow">Magic and precomputation</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a> from <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, September 23, 2007</span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27820.html" rel="nofollow">fast mobility count through hashing</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a> from <a href="CCC.html" title="CCC">CCC</a>, May 09, 2009</span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27965.html" rel="nofollow">Piece attacks count</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a> from <a href="CCC.html" title="CCC">CCC</a>, May 18, 2009</span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a class="external text" href="http://cryptome.org/jya/sadd.htm.html" rel="nofollow">Sideways Add / Population Count</a> by <a class="external text" href="http://www.couperus.org/.html" rel="nofollow">Jitze Couperus</a> and <a href="Steven M. Bellovin.html" title="Steven M. Bellovin">Steve Bellovin</a> et al., <a class="external text" href="https://en.wikipedia.org/wiki/C2Net" rel="nofollow">cryptography@c2.net</a>, January 28, 1999</span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite ref-25">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/WojciechMula/sse-popcount/blob/master/popcnt-avx512-harley-seal.cpp" rel="nofollow">sse-popcount/popcnt-avx512-harley-seal.cpp at master · WojciechMula/sse-popcount · GitHub</a></span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><a href="#cite ref-26">↑</a></span> <span class="reference-text"><a href="Mathematician.html#DAWagner" title="Mathematician">David A. Wagner</a>, <a href="Steven M. Bellovin.html" title="Steven M. Bellovin">Steven M. Bellovin</a> (<b>1994</b>). <i><a class="external text" href="http://academiccommons.columbia.edu/catalog/ac:127097.html" rel="nofollow">A Programmable Plaintext Recognizer</a></i>.</span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><a href="#cite ref-27">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.amd.com/us-en/assets/content type/white papers and tech docs/22007.pdf.html" rel="nofollow">AMD Athlon Processor x86 Code Optimization Guide</a> (pdf) Efficient 64-Bit Population Count Using MMX™ Instructions Page 184</span>
+</li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><a href="#cite ref-28">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/National_Security_Agency" rel="nofollow">National Security Agency from Wikipedia</a></span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><a href="#cite ref-29">↑</a></span> <span class="reference-text"><a class="external text" href="https://de.wikipedia.org/wiki/Ali_Haurand" rel="nofollow">Ali Haurand from Wikipedia.de</a> (German)</span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722144427
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.111 seconds
+Real time usage: 0.838 seconds
+Preprocessor visited node count: 872/1000000
+Preprocessor generated node count: 1782/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1093-0!canonical and timestamp 20240722144426 and revision id 22494
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Population_Count&amp;oldid=22494">https://www.chessprogramming.org/index.php?title=Population_Count&amp;oldid=22494</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:John Abercrombie.html" title="Category:John Abercrombie">John Abercrombie</a></li><li><a href="Category:Jon Christensen.html" title="Category:Jon Christensen">Jon Christensen</a></li><li><a href="Category:Lars Danielsson.html" title="Category:Lars Danielsson">Lars Danielsson</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Population+Count&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Population Count.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Population Count&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Population Count.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Population Count&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Population Count&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Population Count.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Population Count.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Population Count&amp;oldid=22494.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Population Count&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 16 November 2020, at 19:58.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Population_Count&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.111","walltime":"0.838","ppvisitednodes":{"value":872,"limit":1000000},"ppgeneratednodes":{"value":1782,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722144427","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

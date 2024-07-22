@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Pawn Endgame - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pawn_Endgame","wgTitle":"Pawn Endgame","wgCurRevisionId":20723,"wgRevisionId":20723,"wgArticleId":1561,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Elke Rehder","Marcel Duchamp"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pawn_Endgame","wgRelevantArticleId":1561,"wgRequestId":"Zp7DjQimFOpf72eNuzJXUgAAAAA","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pawn_Endgame rootpage-Pawn_Endgame skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Pawn Endgame</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * <a href="Game Phases.html" title="Game Phases">Game Phases</a> * <a href="Endgame.html" title="Endgame">Endgame</a> * Pawn Endgame</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:202px;"><a href="http://www.elke-rehder.de/Chess Paintings.htm.html"><img alt="" class="thumbimage" height="260" src="images/d/d1/Elke_Rehder_Chess_Schach_Bauern_Koenig_Pawns_King.jpg" width="200"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Elke Rehder Chess Schach Bauern Koenig Pawns King.jpg.html" title="Enlarge"></a></div>Pawns threaten the King <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>The <b>Pawn Endgame</b> is an endgame actually without any <a href="Pieces.html" title="Pieces">pieces</a> but only <a href="Pawn.html" title="Pawn">pawns</a> and <a href="King.html" title="King">kings</a>. Pawn endings somehow remind on a completely different game domain, requiring special evaluation routines, as well as conditions inside the <a href="Search.html" title="Search">search</a>, i. e. switching of <a href="Null Move Pruning.html" title="Null Move Pruning">null move pruning</a>. Specially in "closed" or blocked pawn endgames with <a href="Pawn Rams (Bitboards).html" title="Pawn Rams (Bitboards)">rammed</a> and <a href="Backward Pawn.html" title="Backward Pawn">backward pawns</a> with only very few reasonable moves due to extremely low <a href="Mobility.html" title="Mobility">mobility</a>, <a href="Zugzwang.html" title="Zugzwang">zugzwang</a>, <a href="Stalemate.html" title="Stalemate">stalemate</a>, <a href="Triangulation.html" title="Triangulation">triangulation</a>, <a href="Tempo.html" title="Tempo">tempo</a> issues, the concepts of <a href="Opposition.html" title="Opposition">opposition</a> or more general <a href="Corresponding Squares.html" title="Corresponding Squares">corresponding squares</a>, and <a href="King Pattern.html#FloodFillAlgorithms" title="King Pattern">king path puzzles</a> start to dominate. Otherwise, in open pawn endings, naturally with a bigger <a href="Branching Factor.html" title="Branching Factor">branching factor</a> than the closed, all kinds of <a href="Passed Pawn.html" title="Passed Pawn">passed pawn</a> issues are taken into account.
+</p><p>Using the <a href="Transposition Table.html" title="Transposition Table">transposition table</a> is essential in pawn endings, as demonstrated in positions like the <a href="Lasker-Reichhelm Position.html" title="Lasker-Reichhelm Position">Lasker-Reichhelm Position</a> (Fine 70) or the <a href="R%C3%A9ti Endgame Study.html" title="Réti Endgame Study">Réti Endgame Study</a> with astonishing <a href="Depth.html" title="Depth">search depths</a>. Certainly, many programs <a href="Capture Extensions.html" title="Capture Extensions">extend</a> a lot, if the last piece was captured with the transition into an "unclear" pawn endgame. <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a> for instance, extends by three <a href="Ply.html" title="Ply">plies</a> in <a href="Rebel.html" title="Rebel">Rebel</a> considering <a href="Bound.html" title="Bound">bounds</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Considerations"><span class="tocnumber">1</span> <span class="toctext">Considerations</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pawn Endgame Programs"><span class="tocnumber">2</span> <span class="toctext">Pawn Endgame Programs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Pawn Endgame Positions"><span class="tocnumber">3</span> <span class="toctext">Pawn Endgame Positions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Chess"><span class="tocnumber">5.1</span> <span class="toctext">Chess</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Computer Chess"><span class="tocnumber">5.2</span> <span class="toctext">Computer Chess</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1977 ..."><span class="tocnumber">5.3</span> <span class="toctext">1977 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#1980 ..."><span class="tocnumber">5.4</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#1990 ..."><span class="tocnumber">5.5</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2000 ..."><span class="tocnumber">5.6</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2010 ..."><span class="tocnumber">5.7</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#1997 ..."><span class="tocnumber">6.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ... 2"><span class="tocnumber">6.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2010 ... 2"><span class="tocnumber">6.3</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Considerations">Considerations</span></h1>
+<ul><li> <a href="Backward Pawn.html" title="Backward Pawn">Backward Pawn</a></li>
+<li> <a href="Blockage Detection.html" title="Blockage Detection">Blockage Detection</a></li>
+<li> <a href="Candidate Passed Pawn.html" title="Candidate Passed Pawn">Candidate Passed Pawn</a></li>
+<li> <a href="Capture Extensions.html" title="Capture Extensions">Capture Extensions</a></li>
+<li> <a href="Connected Passed Pawns.html" title="Connected Passed Pawns">Connected Passed Pawns</a></li>
+<li> <a href="Corresponding Squares.html" title="Corresponding Squares">Corresponding Squares</a></li>
+<li> <a href="Hidden Passed Pawn.html" title="Hidden Passed Pawn">Hidden Passed Pawn</a></li>
+<li> <a href="King Pawn Tropism.html" title="King Pawn Tropism">King Pawn Tropism</a></li>
+<li> <a href="KPK.html" title="KPK">KPK</a> database/rules</li>
+<li> <a href="Opposition.html" title="Opposition">Opposition</a></li>
+<li> <a href="Outside Passed Pawn.html" title="Outside Passed Pawn">Outside Passed Pawn</a></li>
+<li> <a href="Pawns Breakthrough.html" title="Pawns Breakthrough">Pawns Breakthrough</a></li>
+<li> <a href="Pawn Race.html" title="Pawn Race">Pawn Race</a></li>
+<li> <a href="Passed Pawn.html" title="Passed Pawn">Passed Pawn</a></li>
+<li> <a href="Passed Pawn Extensions.html" title="Passed Pawn Extensions">Passed Pawn Extensions</a></li>
+<li> <a href="Protected Passed Pawn.html" title="Protected Passed Pawn">Protected Passed Pawn</a></li>
+<li> <a href="Rule of the Square.html" title="Rule of the Square">Rule of the Square</a></li>
+<li> <a href="Stalemate.html" title="Stalemate">Stalemate</a></li>
+<li> <a href="Tempo.html" title="Tempo">Tempo</a></li>
+<li> <a href="Triangulation.html" title="Triangulation">Triangulation</a></li>
+<li> <a href="Zugzwang.html" title="Zugzwang">Zugzwang</a></li></ul>
+<h1><span class="mw-headline" id="Pawn_Endgame_Programs">Pawn Endgame Programs</span></h1>
+<ul><li> <a href="Chunker.html" title="Chunker">Chunker</a></li>
+<li> <a href="Endspiel.html" title="Endspiel">Endspiel‎</a></li>
+<li> <a href="PawnKing.html" title="PawnKing">PawnKing</a></li>
+<li> <a href="Peasant.html" title="Peasant">Peasant</a></li></ul>
+<h1><span class="mw-headline" id="Pawn_Endgame_Positions">Pawn Endgame Positions</span></h1>
+<ul><li> <a href="Lasker-Reichhelm Position.html" title="Lasker-Reichhelm Position">Lasker-Reichhelm Position</a> (Fine 70)</li>
+<li> <a href="R%C3%A9ti Endgame Study.html" title="Réti Endgame Study">Réti Endgame Study</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="King Pattern.html#KingAndPawns" title="King Pattern">King and Pawns</a> from <a href="King Pattern.html" title="King Pattern">King Pattern</a> in <a href="Bitboards.html" title="Bitboards">Bitboards</a></li>
+<li> <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a href="Pawn Hash Table.html" title="Pawn Hash Table">Pawn Hash Table</a></li>
+<li> <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Pawn Pattern and Properties</a> in <a href="Bitboards.html" title="Bitboards">Bitboards</a></li>
+<li> <a href="Pawn Structure.html" title="Pawn Structure">Pawn Structure</a></li>
+<li> <a href="Queen versus Pawn.html" title="Queen versus Pawn">Queen versus Pawn</a></li>
+<li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="Chess">Chess</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Vitaly_Halberstadt" rel="nofollow">Vitali Halberstadt</a> and <a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a> (<b>1932</b>). <i>L'opposition et les cases conjuguées sont réconciliées</i>. » <a href="Corresponding Squares.html" title="Corresponding Squares">Corresponding Squares</a></li></ul>
+<dl><dd> Paris-Brussels 1932, German Edition 2001 <i><a class="external text" href="http://www.buecher-nach-isbn.info/3-608/3608500359-Opposition-und-Schwesterfelder-Marcel-Duchamp-Vitali-Halberstadt-3-608-50035-9.html.html" rel="nofollow">Opposition und Schwesterfelder</a></i>, ISBN 3-932170-35-0</dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Reuben_Fine" rel="nofollow">Reuben Fine</a> (<b>1941</b>). <i><a class="external text" href="https://en.wikipedia.org/wiki/Basic_Chess_Endings" rel="nofollow">Basic Chess Endings</a></i>, Chapter 2, King and Pawn Endings</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Yuri_Averbakh" rel="nofollow">Yuri Averbakh</a>, <a class="external text" href="http://de.wikipedia.org/wiki/Ilja Lwowitsch Maiselis.html" rel="nofollow">Ilia Maizelis</a> (<b>1987</b>). <i>Comprehensive Chess Endings Vol 4: Pawn Endings, Cadogan Books 1987</i>.</li>
+<li> <a href="Karsten M%C3%BCller.html" title="Karsten Müller">Karsten Müller</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Frank_Lamprecht" rel="nofollow">Frank Lamprecht</a> (<b>2000</b>). <i>Secrets of Pawn Endings</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Everyman_Chess" rel="nofollow">Everyman Chess</a>,  (<b>2007</b>). <a class="external text" href="http://dev.jeremysilman.com/shop/pc/Secrets-of-Pawn-Endings-p3748.htm.html" rel="nofollow">re-issue</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Gambit_Publications" rel="nofollow">Gambit Publications</a> </li>
+<li> <a href="Eric Schiller.html" title="Eric Schiller">Eric Schiller</a> (<b>2006</b>). <i>Of Kings and Pawns - Chess Strategy in the Endgame</i>, Universal Publishers, ISBN-13: 978-1581129090, <a class="external text" href="http://www.amazon.com/Kings-Pawns-Chess-Strategy-Endgame/dp/1581129092.html" rel="nofollow">amazon</a>, sample chapter as <a class="external text" href="http://www.ericschiller.com/pdf/Of%20Kings%20and%20Pawns%20Excerpts.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="Computer_Chess">Computer Chess</span></h2>
+<h2><span class="mw-headline" id="1977_...">1977 ...</span></h2>
+<ul><li> <a href="Monroe Newborn.html" title="Monroe Newborn">Monroe Newborn</a> (<b>1977</b>). <i>PEASANT: An endgame program for kings and pawns</i>. <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a> » <a href="Peasant.html" title="Peasant">Peasant</a></li>
+<li> <a class="new" href="index.php?title=Crispin Perdue&amp;action=edit&amp;redlink=1.html" title="Crispin Perdue (page does not exist)">Crispin Perdue</a>, <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1977</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=1624529.html" rel="nofollow">EG: a case study in problem solving with king and pawn endings</a></i>. <a class="external text" href="http://www.sigmod.org/dblp/db/conf/ijcai/ijcai77.html.html" rel="nofollow">5. IJCAI 1977</a></li>
+<li> <a href="Kenneth W. Church.html" title="Kenneth W. Church">Kenneth W. Church</a> (<b>1978</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=67030.html" rel="nofollow">Co-ordinate Squares: A Solution to Many Chess Pawn Endgames</a></i>. B.Sc. thesis, <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</a>, reprinted 1988 in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li>
+<li> <a href="Kenneth W. Church.html" title="Kenneth W. Church">Kenneth W. Church</a> (<b>1979</b>). <i>Co-ordinate Squares: A Solution to Many Chess Pawn Endgames</i>. (abbreviated version of B.Sc. thesis), <a href="Conferences.html#IJCAI1979" title="Conferences">IJCAI-79</a>, Tokyo, Japan</li>
+<li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1979</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1979-01/1979_01_BYTE_04-01_Life_Algorithms#page/n127/mode/2up" rel="nofollow">Creating a Chess-Player, Part 4: Thoughts on Strategy</a></i>. In <a class="external text" href="http://cs.millersville.edu/~liffick/.html" rel="nofollow">Blaise W. Liffick</a> (ed.), <a class="external text" href="http://books.google.com/books/about/The BYTE book of Pascal.html?id=ofpfQgAACAAJ.html" rel="nofollow">The Byte Book of Pascal</a>, pp. 143-155. Byte Publications, also <a href="Byte Magazine.html#BYTE401" title="Byte Magazine">BYTE, Vol. 4, No. 1</a> » <a href="Corresponding Squares.html" title="Corresponding Squares">Corresponding Squares</a></li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a> (<b>1982</b>). <i>Ein Modell für Schachbauernendspiele mit menschlichen Problemlösungstechniken</i>. PhD-Thesis, Department of Computer Science, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Vienna" rel="nofollow">University of Vienna</a>, Supervisors: <a class="external text" href="http://www.logic.univie.ac.at/.html" rel="nofollow">Prof. Dr. Curt Christian</a> (University of Vienna) and <a href="Wilhelm Barth.html" title="Wilhelm Barth">Prof. Dr. Wilhelm Barth</a> (<a href="Vienna University of Technology.html" title="Vienna University of Technology">Vienna University of Technology</a>).</li>
+<li> <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a> (<b>1982</b>). <i>Construction of Planned Move Trees for Chess Pawn Endings</i>. Sigart Newsletter 80, pp. 163-168.</li>
+<li> <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a> (<b>1983</b>). <i>Knowledge-Based Move Selection and Evaluation to Guide the Search in Chess Pawn Endings</i>. <a href="ICGA Journal.html#6 3" title="ICGA Journal">ICCA Journal, Vol. 6, No. 3</a></li>
+<li> <a href="Murray Campbell.html" title="Murray Campbell">Murray Campbell</a>, <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1983</b>). <i>A Chess Program That Chunks</i>. AAAI 1983 49-53, <a class="external text" href="http://www.aaai.org/Papers/AAAI/1983/AAAI83-012.pdf.html" rel="nofollow">pdf</a> » <a href="Chunker.html" title="Chunker">Chunker</a></li>
+<li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a>, <a href="Murray Campbell.html" title="Murray Campbell">Murray Campbell</a> (<b>1984</b>). <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/0004370284900067.html" rel="nofollow">Using Chunking to Solve Chess Pawn Endgames</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 23, No. 1, pp. 97-120. ISSN 0004-3702</li>
+<li> <a href="Andy Walker.html" title="Andy Walker">Andrew N. Walker</a> (<b>1989</b>). <i>Interactive Solution of King and Pawn Endings</i>. <a href="Advances in Computer Chess 5.html" title="Advances in Computer Chess 5">Advances in Computer Chess 5</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1995</b>). <i>Combining Knowledge and Search to Yield Infallible Endgame Programs A study of passed Pawns in the KPKP endgame.</i> <a href="ICGA Journal.html#18 3" title="ICGA Journal">ICCA Journal, Vol. 18, No. 3</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1995</b>). <i>The KPKP Endgame: An Amplification</i>. <a href="ICGA Journal.html#18 4" title="ICGA Journal">ICCA Journal, Vol. 18, No. 4</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Eli David.html" title="Eli David">Omid David</a>, <a href="Ariel Felner.html" title="Ariel Felner">Ariel Felner</a>, <a href="Nathan S. Netanyahu.html" title="Nathan S. Netanyahu">Nathan S. Netanyahu</a> (<b>2004</b>). <i>Blockage Detection in Pawn Endgames</i>. <a href="ICGA Journal.html#27 3" title="ICGA Journal">ICGA Journal, Vol. 27, No. 3</a></li>
+<li> <a href="Zvi Retchkiman K%C3%B6nigsberg.html" title="Zvi Retchkiman Königsberg">Zvi Retchkiman Königsberg</a> (<b>2007</b>). <i>A Combinatorial Game Mathematical Strategy Planning Procedure for a Class of Chess Endgames</i>. <a class="external text" href="http://www.m-hikari.com/imf-password2007/65-68-2007/index.html.html" rel="nofollow">International Mathematical Forum, Vol. 2, No. 68</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Monroe Newborn.html" title="Monroe Newborn">Monroe Newborn</a>, <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>2014</b>). <i>Computer Chess Endgame Play with Pawns: Then and Now</i>. <a href="ICGA Journal.html#37 4" title="ICGA Journal">ICGA Journal, Vol. 37, No. 4</a> » <a href="Peasant.html" title="Peasant">Peasant</a>, <a href="Crafty.html" title="Crafty">Crafty</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/49490ca6fbd06b94.html" rel="nofollow">Deep analyses of pawn endgames</a> by <a href="Dap Hartmann.html" title="Dap Hartmann">Dap Hartmann</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 10, 1997</li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=92283" rel="nofollow">Pawn endings [blocked pawns</a>] by <a href="Jos%C3%A9 Ant%C3%B4nio Fabiano Mendes.html" title="José Antônio Fabiano Mendes">José Antônio Fabiano Mendes</a>, <a href="CCC.html" title="CCC">CCC</a>, January 26, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=131885" rel="nofollow">Pawn endgame test suite</a> by <a href="Peter McKenzie.html" title="Peter McKenzie">Peter McKenzie</a>, <a href="CCC.html" title="CCC">CCC</a>, October 07, 2000 » <a href="Test-Positions.html" title="Test-Positions">Test-Positions</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=247236" rel="nofollow">king and pawns ending</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, August 23, 2002</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14578.html" rel="nofollow">Is this rule safe (how has K&amp;Ps vs K&amp;Ps databases? ...)</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, June 20, 2007 » <a href="KPK.html" title="KPK">KPK</a>, <a href="Now.html" title="Now">Now</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19304.html" rel="nofollow">king pawn endgames</a> by <a class="new" href="index.php?title=Mike Adams&amp;action=edit&amp;redlink=1.html" title="Mike Adams (page does not exist)">Mike Adams</a>, <a href="CCC.html" title="CCC">CCC</a>, January 30, 2008</li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37023.html" rel="nofollow">Pawns ending</a> by <a href="Andres Valverde.html" title="Andres Valverde">Andres Valverde</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40748.html" rel="nofollow">Code of Chiron for Detection of Pawn Blockages</a> by <a href="Ubaldo Andrea Farina.html" title="Ubaldo Andrea Farina">Ubaldo Andrea Farina</a>, <a href="CCC.html" title="CCC">CCC</a>, October 13, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46183.html" rel="nofollow">pawn endgame</a> by <a class="new" href="index.php?title=Marek Kwiatkowski&amp;action=edit&amp;redlink=1.html" title="Marek Kwiatkowski (page does not exist)">Marek Kwiatkowski</a>, <a href="CCC.html" title="CCC">CCC</a>, November 28, 2012</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_endgame#King_and_pawn_endings" rel="nofollow">King and pawn endings from Wikipedia</a></li>
+<li> <a class="external text" href="http://chess-training.blogspot.com/2006/11/endgame-lab-king-and-pawn-endings 24.html.html" rel="nofollow">Chess Training: Endgame Lab - King and Pawn Endings</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.elke-rehder.de/Chess Paintings.htm.html" rel="nofollow">Chess Paintings</a> by <a href="Arts.html#Rehder" title="Arts">Elke Rehder</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">Quote by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a> from his <a href="Rebel.html#ProgrammerCorner" title="Rebel">Programmer Corner</a>: The Search is extended with 3 plies when the search transits to a pawn-ending. An extra window check of 3 pawns is done on I_SCORE before the extension is rewarded</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> (<b>1995</b>). <i>Comments on Barth’s Article “Combining Knowledge and Search to Yield Infallible Endgame Programs.”</i> <a href="ICGA Journal.html#18 4" title="ICGA Journal">ICCA Journal, Vol. 18, No. 4</a></span>
+</li>
+</ol></div>
+<p><b><a href="Endgame.html" title="Endgame">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722015954
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.022 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 117/1000000
+Preprocessor generated node count: 190/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1561-0!canonical and timestamp 20240722015954 and revision id 20723
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Pawn_Endgame&amp;oldid=20723">https://www.chessprogramming.org/index.php?title=Pawn_Endgame&amp;oldid=20723</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Elke Rehder.html" title="Category:Elke Rehder">Elke Rehder</a></li><li><a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Pawn+Endgame&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Pawn Endgame.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Pawn Endgame&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Pawn Endgame.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Pawn Endgame&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Pawn Endgame&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Pawn Endgame.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Pawn Endgame.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Pawn Endgame&amp;oldid=20723.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Pawn Endgame&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 14 August 2020, at 10:40.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Pawn_Endgame&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.022","walltime":"0.024","ppvisitednodes":{"value":117,"limit":1000000},"ppgeneratednodes":{"value":190,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722015954","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

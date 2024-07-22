@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>MCαβ - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MCαβ","wgTitle":"MCαβ","wgCurRevisionId":26521,"wgRevisionId":26521,"wgArticleId":2100,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Larry Coryell","John Lee","Alphonse Mouzon","The Eleventh House"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"MCαβ","wgRelevantArticleId":2100,"wgRequestId":"Zp7Do31htEhTE3yaocy3pgAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MCαβ rootpage-MCαβ skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">MCαβ</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * MCαβ</b>
+</p><p><b>Monte-Carlo Alpha-Beta</b>, <b>(MCαβ)</b><br/>
+is a <a href="Best-First.html" title="Best-First">Best-First search</a> algorithm based on <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a> and a shallow <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> <a href="Depth-First.html" title="Depth-First">depth-first-search</a>. It is used in <a href="Lines of Action.html" title="Lines of Action">Lines of Action</a> and in conjunction with <a href="UCT.html" title="UCT">UCT</a> (Upper Confidence bounds applied to Trees) also in Chess. It is similar to the the <a href="Best-First Minimax Search.html" title="Best-First Minimax Search">Best-first minimax search</a> proposed by <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> and <a href="Max Chickering.html" title="Max Chickering">Max Chickering</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, one distinction between the two might be that MCTS uses usually win/draw/loss scores and Best-First a score from a heuristic <a href="Evaluation.html" title="Evaluation">evaluation</a> function.
+<span id="Four_Phases"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Four Phases"><span class="tocnumber">1</span> <span class="toctext">Four Phases</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Four_Phases">Four Phases</span></h1>
+<p>MCαβ can be divided into four strategic phases, repeated as long as there is time left:<span id="Four_Phases"></span>
+</p>
+<ol><li> In the Selection phase the tree is traversed from the <a href="Root.html" title="Root">root node</a> until it selects a <a href="Leaf Node.html" title="Leaf Node">leaf node</a> that is not added to the tree yet</li>
+<li> The Expansion strategy adds the leaf node to the tree</li>
+<li> The Playout phase performs a shallow alpha-beta search</li>
+<li> The Backpropagation strategy propagates the results through the tree</li></ol>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a></li>
+<li> <a href="Best-First Minimax Search.html" title="Best-First Minimax Search">Best-First Minimax Search</a></li>
+<li> <a href="Minimax.html" title="Minimax">Minimax</a></li>
+<li> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a></li>
+<li> <a href="SSS* and Dual*.html#SSStarandDualStarAsMT" title="SSS* and Dual*">MT-SSS*</a></li>
+<li> <a href="Rocinante.html" title="Rocinante">Rocinante</a></li>
+<li> <a href="Bojun Huang.html#Rollout" title="Bojun Huang">Rollout Paradigm</a></li></ul>
+<p><span id="Publications"></span>
+</p>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a>, <a href="Max Chickering.html" title="Max Chickering">Max Chickering</a> (<b>1996</b>). <i><a class="external text" href="https://www.microsoft.com/en-us/research/publication/best-first-minimax-search/" rel="nofollow">Best-First Minimax Search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 84, No 1-2</li>
+<li> <a class="new" href="index.php?title=Pim Nijssen&amp;action=edit&amp;redlink=1.html" title="Pim Nijssen (page does not exist)">Pim Nijssen</a>, <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a> (<b>2011</b>). <i>Playout Search for Monte-Carlo Tree Search in Multi-Player Games</i>. <a href="Advances in Computer Games 13.html" title="Advances in Computer Games 13">Advances in Computer Games 13</a>, <a class="external text" href="https://www.conftool.net/acg13/index.php/Nijssen-Playout_Search_for_Monte-Carlo_Tree_Search_in_Multi-Player_Games-113.pdf?page=downloadPaper&amp;filename=Nijssen-Playout_Search_for_Monte-Carlo_Tree_Search_in_Multi-Player_Games-113.pdf&amp;form_id=113&amp;form_version=final" rel="nofollow">pdf</a></li>
+<li> <a href="Cameron Browne.html" title="Cameron Browne">Cameron Browne</a>, <a class="new" href="index.php?title=Edward Powley&amp;action=edit&amp;redlink=1.html" title="Edward Powley (page does not exist)">Edward Powley</a>, <a class="new" href="index.php?title=Daniel Whitehouse&amp;action=edit&amp;redlink=1.html" title="Daniel Whitehouse (page does not exist)">Daniel Whitehouse</a>, <a href="Simon Lucas.html" title="Simon Lucas">Simon Lucas</a>, <a class="new" href="index.php?title=Peter Cowling&amp;action=edit&amp;redlink=1.html" title="Peter Cowling (page does not exist)">Peter Cowling</a>, <a class="new" href="index.php?title=Philipp Rohlfshagen&amp;action=edit&amp;redlink=1.html" title="Philipp Rohlfshagen (page does not exist)">Philipp Rohlfshagen</a>, <a class="new" href="index.php?title=Stephen Tavener&amp;action=edit&amp;redlink=1.html" title="Stephen Tavener (page does not exist)">Stephen Tavener</a>, <a class="new" href="index.php?title=Diego Perez&amp;action=edit&amp;redlink=1.html" title="Diego Perez (page does not exist)">Diego Perez</a>, <a class="new" href="index.php?title=Spyridon Samothrakis&amp;action=edit&amp;redlink=1.html" title="Spyridon Samothrakis (page does not exist)">Spyridon Samothrakis</a>, <a class="new" href="index.php?title=Simon Colton&amp;action=edit&amp;redlink=1.html" title="Simon Colton (page does not exist)">Simon Colton</a> (<b>2012</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/6145622" rel="nofollow">A Survey of Monte Carlo Tree Search Methods</a></i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 4, No. 1, <a class="external text" href="http://ccg.doc.gold.ac.uk/ccg old/papers/browne tciaig12 1.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Hendrik Baier.html" title="Hendrik Baier">Hendrik Baier</a>, <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a> (<b>2013</b>). <i>Monte-Carlo Tree Search and minimax hybrids</i>. <a class="external text" href="http://dblp.uni-trier.de/db/conf/cig/cig2013.html.html#BaierW13" rel="nofollow">CIG 2013</a>, <a class="external text" href="https://dke.maastrichtuniversity.nl/m.winands/documents/paper%2049.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Hendrik Baier.html" title="Hendrik Baier">Hendrik Baier</a>, <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a> (<b>2014</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007%2F978-3-319-14923-3 4.html" rel="nofollow">Monte-Carlo Tree Search and Minimax Hybrids with Heuristic Evaluation Functions</a></i>. <a class="new" href="index.php?title=ECAI CGW 2014&amp;action=edit&amp;redlink=1.html" title="ECAI CGW 2014 (page does not exist)">ECAI CGW 2014</a></li>
+<li> <a href="Bojun Huang.html" title="Bojun Huang">Bojun Huang</a> (<b>2015</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Pruning-Game-Tree-by-Rollouts-Huang/a38b358745067f71a9c780db117ae2471e693d63" rel="nofollow">Pruning Game Tree by Rollouts</a></i>. <a href="AAAI.html" title="AAAI">AAAI</a> » <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a>, <a href="SSS* and Dual*.html#SSStarandDualStarAsMT" title="SSS* and Dual*">MT-SSS*</a>, <a href="Bojun Huang.html#Rollout" title="Bojun Huang">Rollout Paradigm</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup></li>
+<li> <a href="Hendrik Baier.html" title="Hendrik Baier">Hendrik Baier</a> (<b>2017</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-319-57969-6_5" rel="nofollow">A Rollout-Based Search Algorithm Unifying MCTS and Alpha-Beta</a></i>. <a class="external text" href="https://link.springer.com/book/10.1007%2F978-3-319-57969-6" rel="nofollow">Computer Games</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41730.html" rel="nofollow">MCTS without random playout?</a> by <a href="Antonio Torrecillas.html" title="Antonio Torrecillas">Antonio Torrecillas</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2012 » <a href="B*.html" title="B*">B*</a></li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=44165.html" rel="nofollow">Help with Best-First Select-Formula </a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66280&amp;start=67.html" rel="nofollow">Re: Announcing lczero</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66414.html" rel="nofollow">Alpha-Beta as a rollouts algorithm</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, January 25, 2018 »  <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a>, <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a>, <a href="Scorpio.html" title="Scorpio">Scorpio</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a href="Category:Larry Coryell.html" title="Category:Larry Coryell">Larry Coryell</a> &amp; <a href="Category:The Eleventh House.html" title="Category:The Eleventh House">The Eleventh House</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Oslo" rel="nofollow">Oslo</a> 1975, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat. <a class="external text" href="https://de.wikipedia.org/wiki/Mike_Lawrence" rel="nofollow">Mike Lawrence</a>, <a href="Category:Alphonse Mouzon.html" title="Category:Alphonse Mouzon">Alphonse Mouzon</a>, <a href="Category:John Lee.html" title="Category:John Lee">John Lee</a>, <a class="external text" href="https://www.discogs.com/artist/138771-Mike-Mandel" rel="nofollow">Mike Mandel</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/Z9dYOoLqwmE?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Richard Korf.html" title="Richard Korf">Richard Korf</a>, <a href="Max Chickering.html" title="Max Chickering">Max Chickering</a> (<b>1996</b>). <i><a class="external text" href="https://www.microsoft.com/en-us/research/publication/best-first-minimax-search/" rel="nofollow">Best-First Minimax Search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 84, No 1-2</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66280&amp;start=67.html" rel="nofollow">Re: Announcing lczero</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722133848
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.011 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 63/1000000
+Preprocessor generated node count: 148/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2100-0!canonical and timestamp 20240722133848 and revision id 26521
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=MCαβ&amp;oldid=26521">https://www.chessprogramming.org/index.php?title=MCαβ&amp;oldid=26521</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Larry Coryell.html" title="Category:Larry Coryell">Larry Coryell</a></li><li><a href="Category:John Lee.html" title="Category:John Lee">John Lee</a></li><li><a href="Category:Alphonse Mouzon.html" title="Category:Alphonse Mouzon">Alphonse Mouzon</a></li><li><a href="Category:The Eleventh House.html" title="Category:The Eleventh House">The Eleventh House</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=MC%CE%B1%CE%B2&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="MC%CE%B1%CE%B2.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:MC%CE%B1%CE%B2&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="MC%CE%B1%CE%B2.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=MC%CE%B1%CE%B2&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=MC%CE%B1%CE%B2&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/MC%CE%B1%CE%B2.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/MC%CE%B1%CE%B2.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=MC%CE%B1%CE%B2&amp;oldid=26521.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=MC%CE%B1%CE%B2&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 8 October 2022, at 10:42.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=MC%CE%B1%CE%B2&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.011","walltime":"0.011","ppvisitednodes":{"value":63,"limit":1000000},"ppgeneratednodes":{"value":148,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722133848","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":58});});</script>
+</body>
+</html>

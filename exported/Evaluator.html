@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Evaluator - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Evaluator","wgTitle":"Evaluator","wgCurRevisionId":18632,"wgRevisionId":18632,"wgArticleId":7037,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Private","X86","PC","DosEngine"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Evaluator","wgRelevantArticleId":7037,"wgRequestId":"Zp7DYX1htEhTE3yaocy3CgAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Evaluator rootpage-Evaluator skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Evaluator</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Evaluator</b>
+</p><p><b>Evaluator</b>,<br/>
+a private chess program by <a class="new" href="index.php?title=Bill MacLaughlin&amp;action=edit&amp;redlink=1.html" title="Bill MacLaughlin (page does not exist)">Bill MacLaughlin</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, written in <a href="C.html" title="C">C</a>. Evaluator played the <a href="ACM 1994.html" title="ACM 1994">ACM 1994</a>, where it ran on a <a href="X86.html" title="X86">486</a> <a class="external text" href="https://en.wikipedia.org/wiki/Intel_DX4" rel="nofollow">DX4</a> <a href="IBM PC.html" title="IBM PC">IBM PC</a> at 100MHz with 8MiB <a href="Memory.html#RAM" title="Memory">RAM</a>. 
+The 131 KiB of executable code performed 6K <a href="Nodes per Second.html" title="Nodes per Second">nodes per second</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Selected_Games">Selected Games</span></h1>
+<p><a href="ACM 1994.html" title="ACM 1994">ACM 1994</a>, <a class="mw-selflink selflink">Evaluator</a> - <a href="WChess.html" title="WChess">WChess</a>
+<sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p>
+<pre>
+[Event "ACM 1994"]
+[Site "Cape May USA"]
+[Date "1994.06.27"]
+[Round "5"]
+[White "Evaluator"]
+[Black "WChess"]
+[Result "1-0"]
+
+1.e4 e5 2.Nc3 Nf6 3.Bc4 Nc6 4.f3 Bc5 5.Nge2 Na5 6.Bb5 c6 7.Bd3 d5 8.a3 dxe4 
+9.Bxe4 Nc4 10.Bd3 Nd6 11.Na4 Nd7 12.b4 Bb6 13.Nxb6 Nxb6 14.O-O Be6 15.Re1 
+O-O 16.Bb2 Nbc4 17.Bc3 a5 18.bxa5 Qb8 19.f4 Qa7+ 20.Kh1 e4 21.Bxc4 Bxc4 
+22.Ng3 f5 23.d3 exd3 24.cxd3 Bd5 25.Qd2 Rf7 26.Rab1 h6 27.Nh5 Kh7 28.Qb2 
+Rg8 29.Qb6 Qa8 30.Re3 Nb5 31.Bb2 Qf8 32.a4 Nd6 33.Be5 g6 34.Ng3 Qe7 35.Qc5 
+Nc8 36.Qxe7 Rxe7 37.Re2 Rf8 38.Reb2 Rff7 39.Nf1 Rd7 40.Ne3 Be6 41.d4 g5 
+42.Rb4 Kg6 43.h3 Rh7 44.g3 Kh5 45.Kh2 Rhf7 46.R1b2 Rh7 47.Kg1 Kg6 48.Rb1 
+Rhf7 49.R4b2 Rfe7 50.Kg2 gxf4 51.gxf4 Kf7 52.Kh2 Kg8 53.Rc2 Na7 54.Rg2+ Kh7 
+55.a6 Nc8 56.Rc1 Na7 57.axb7 Rxb7 58.Rcg1 Nc8 59.a5 Na7 60.a6 Rbd7 61.Rg6 
+Nb5 62.Rf6 Nxd4 63.a7 Rxa7 64.Bxd4 Ra4 1-0
+</pre>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Meta-circular_evaluator" rel="nofollow">Meta-circular evaluator from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Object-code_Buffer_Overrun_Evaluator" rel="nofollow">Object-code Buffer Overrun Evaluator from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Evaluation_%28disambiguation%29" rel="nofollow">Evaluation (disambiguation) from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/f75dVhbYVz0/K7VWCMJDicgJ" rel="nofollow">Re: FIDE computer registration</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, November 07, 1995</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.computerhistory.org/chess/doc-431614f6cceea/" rel="nofollow">The 24th ACM International Computer Chess Championship</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">"Evaluator recovered from an apparent typo in its <a href="Opening Book.html" title="Opening Book">opening book</a> (f3 in a double-KP opening!?) to upset <a href="WChess.html" title="WChess">WChess</a>", <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/P9WW8L3gq9U/LyDKCyxKPnoJ" rel="nofollow">ACM Tournament - Final results</a> by <a class="new" href="index.php?title=Harold Bogner&amp;action=edit&amp;redlink=1.html" title="Harold Bogner (page does not exist)">Hal Bogner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, June 28, 1994</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721232043
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 66/1000000
+Preprocessor generated node count: 150/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7037-0!canonical and timestamp 20240721232043 and revision id 18632
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Evaluator&amp;oldid=18632">https://www.chessprogramming.org/index.php?title=Evaluator&amp;oldid=18632</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Private.html" title="Category:Private">Private</a></li><li><a href="Category:X86.html" title="Category:X86">X86</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:DosEngine.html" title="Category:DosEngine">DosEngine</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Evaluator&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Evaluator.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Evaluator&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Evaluator.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Evaluator&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Evaluator&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Evaluator.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Evaluator.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Evaluator&amp;oldid=18632.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Evaluator&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 April 2020, at 08:32.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Evaluator&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.008","ppvisitednodes":{"value":66,"limit":1000000},"ppgeneratednodes":{"value":150,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721232043","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

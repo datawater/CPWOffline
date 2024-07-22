@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CPW-Engine stdafx h - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"CPW-Engine_stdafx_h","wgTitle":"CPW-Engine stdafx h","wgCurRevisionId":9322,"wgRevisionId":9322,"wgArticleId":4868,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"CPW-Engine_stdafx_h","wgRelevantArticleId":4868,"wgRequestId":"Zp7DUQMLGU3EphdnCkJWFAAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CPW-Engine_stdafx_h rootpage-CPW-Engine_stdafx_h skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">CPW-Engine stdafx h</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * <a href="CPW-Engine.html" title="CPW-Engine">CPW-Engine</a> * stdafx.h</b>
+</p>
+<pre>
+#pragma once
+
+#include &lt;iostream&gt;
+#include &lt;xmmintrin.h&gt;
+
+#define INF 10000
+#define INVALID 32767
+
+
+#define U64 unsigned __int64
+#define U32 unsigned __int32
+#define U16 unsigned __int16
+#define U8  unsigned __int8
+#define S64 signed   __int64
+#define S32 signed   __int32
+#define S16 signed   __int16
+#define S8  signed   __int8
+
+
+
+/* Move ordering compiler switches and constants */
+
+#define USE_HASHMOVE
+#define USE_HISTORY
+#define USE_KILLERS
+
+#define SORT_KING 400000000   
+#define SORT_HASH 200000000
+#define SORT_CAPT 100000000
+#define SORT_PROM  90000000
+#define SORT_KILL  80000000
+
+#define STARTFEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+
+#define VERSION_STRING "1.1"
+#define COMPILE_STRING " compiled 30.12.2014"
+
+#define BOOK_NONE 0
+#define BOOK_NARROW 1
+#define BOOK_BROAD 2
+
+enum epiece {
+  KING,
+  QUEEN,
+  ROOK,
+  BISHOP,
+  KNIGHT,
+  PAWN,
+  PIECE_EMPTY
+};
+
+enum ecolor {
+  WHITE,
+  BLACK,
+  COLOR_EMPTY
+};
+
+enum esqare {
+  A1 = 0, B1, C1, D1, E1, F1, G1, H1,
+  A2 = 16, B2, C2, D2, E2, F2, G2, H2,
+  A3 = 32, B3, C3, D3, E3, F3, G3, H3,
+  A4 = 48, B4, C4, D4, E4, F4, G4, H4,
+  A5 = 64, B5, C5, D5, E5, F5, G5, H5,
+  A6 = 80, B6, C6, D6, E6, F6, G6, H6,
+  A7 = 96, B7, C7, D7, E7, F7, G7, H7,
+  A8 = 112, B8, C8, D8, E8, F8, G8, H8
+};
+
+enum ecastle {
+  CASTLE_WK = 1,
+  CASTLE_WQ = 2,
+  CASTLE_BK = 4,
+  CASTLE_BQ = 8
+};
+
+enum emflag {
+  MFLAG_NORMAL = 0,
+  MFLAG_CAPTURE = 1,
+  MFLAG_EPCAPTURE = 2,
+  MFLAG_CASTLE = 4,
+  MFLAG_EP = 8,
+  MFLAG_PROMOTION = 16,
+  MFLAG_NULLMOVE = 32
+};
+
+struct sboard {
+  U8	 pieces[128];
+  U8	 color[128];
+  char stm;        // side to move: 0 = white,  1 = black
+  char castle;     // 1 = shortW, 2 = longW, 4 = shortB, 8 = longB
+  char ep;         // en passant square
+  U8   ply;
+  U64  hash;
+  U64	 phash;
+  int  rep_index;
+  U64  rep_stack[1024];
+  S8   KingLoc[2];
+  int  PcsqMg[2];
+  int  PcsqEg[2];
+  int PieceMaterial[2];
+  int PawnMaterial[2];
+  U8 PieceCount[2][6];
+};
+extern sboard b;
+
+
+struct smove {
+  char id;
+  char from;
+  char to;
+  U8 piece_from;
+  U8 piece_to;
+  U8 piece_cap;
+  char flags;
+  char castle;
+  char ply;
+  char ep;
+  int score;
+};
+
+
+struct sSearchDriver {
+  int myside;
+  U8 depth;
+  int history[128][128];
+  smove killers[1024][2];
+  U64 nodes;
+  S32 movetime;
+  U64 q_nodes;
+  unsigned long starttime;
+} extern sd;
+
+enum etimef {
+  FTIME = 1,
+  FINC = 2,
+  FMOVESTOGO = 4,
+  FDEPTH = 8,
+  FNODES = 16,
+  FMATE = 32,
+  FMOVETIME = 64,
+  FINFINITE = 128
+};
+
+struct stime {
+  int time[2];
+  int inc[2];
+  int movestogo;
+  int depth;
+  int nodes;
+  int mate;
+  int movetime;
+  U8 flags;
+} extern chronos;
+
+
+
+struct s_eval_data {
+
+  int PIECE_VALUE[6];
+  int SORT_VALUE[6];
+  int START_MATERIAL;
+
+  /* Piece-square tables - we use size of the board representation,
+  not 0..63, to avoid re-indexing. Initialization routine, however,
+  uses 0..63 format for clarity */
+  int mgPst[6][2][128];
+  int egPst[6][2][128];
+
+  /* piece-square tables for pawn structure */
+
+  int weak_pawn[2][128]; // isolated and backward pawns are scored in the same way
+  int passed_pawn[2][128];
+  int protected_passer[2][128];
+
+  int sqNearK[2][128][128];
+
+  /* single values - letter p before a name signifies a penalty */
+
+  int BISHOP_PAIR;
+  int P_KNIGHT_PAIR;
+  int P_ROOK_PAIR;
+  int ROOK_OPEN;
+  int ROOK_HALF;
+  int P_BISHOP_TRAPPED_A7;
+  int P_BISHOP_TRAPPED_A6;
+  int P_KNIGHT_TRAPPED_A8;
+  int P_KNIGHT_TRAPPED_A7;
+  int P_BLOCK_CENTRAL_PAWN;
+  int P_KING_BLOCKS_ROOK;
+
+  int SHIELD_1;
+  int SHIELD_2;
+  int P_NO_SHIELD;
+
+  int RETURNING_BISHOP;
+  int P_C3_KNIGHT;
+  int P_NO_FIANCHETTO;
+  int FIANCHETTO;
+  int TEMPO;
+  int ENDGAME_MAT;
+};
+extern s_eval_data e;
+
+extern char vector[5][8];
+extern bool slide[5];
+extern char vectors[5];
+
+void board_display();
+void clearBoard();
+void fillSq(U8 color, U8 piece, S8 sq);
+void clearSq(S8 sq);
+int board_loadFromFen(char * fen);
+
+
+int com_send(char * command);
+int com_sendmove(smove m);
+int com_uci(char * command);
+int com_xboard(char * command);
+int com_nothing(char * command);
+int com();
+int com_init();
+int com_ismove(char * command);
+
+
+
+U8 movegen(smove * moves, U8 tt_move, bool captures = false);
+U8 movegen_qs(smove * moves);
+void movegen_sort(U8 movecount, smove * m, U8 current);
+
+
+void convert_0x88_a(S8 sq, char * a);
+U8 convert_a_0x88(char * a);
+char * algebraic_writemove(smove m, char * a);
+int algebraic_moves(char * a);
+
+
+int move_make(smove move);
+int move_unmake(smove move);
+int move_makeNull();
+int move_unmakeNull(char ep);
+
+// the next couple of functions respond to questions about moves or move lists
+
+int move_iscapt(smove m);
+int move_isprom(smove m);
+int move_canSimplify(smove m);
+int move_countLegal();
+int move_isLegal(smove m);
+
+
+smove strToMove(char * a);
+
+// subsidiary functions used to initialize opening book are hidden in book.h
+void initBook();
+int getBookMove(int book_type);
+
+
+void search_run(); // interface of the search functions
+void clearHistoryTable();
+
+
+void setDefaultEval();
+void setBasicValues();
+void setSquaresNearKing();
+void setPcsq();
+void correctValues();
+void readIniFile();
+void processIniString(char line[250]);
+
+
+int eval(int alpha, int beta, int use_hash);
+int isPiece(U8 color, U8 piece, S8 sq);
+void printEval();
+void printEvalFactor(int wh, int bl);
+
+
+int Quiesce(int alpha, int beta);
+int badCapture(smove move);
+int pawnRecapture(U8 capturers_color, char sq);
+
+int isAttacked(char byColor, S8 sq);
+int leaperAttack(char byColor, S8 sq, char byPiece);
+int straightAttack(char byColor, S8 sq, int vect);
+int diagAttack(int btColor, S8 sq, int vect);
+
+void perft_start(char * command);
+U64 perft(U8 depth);
+
+void util_bench(char * command);
+int util_pv(char * pv);
+
+unsigned int gettime();
+int time_uci_ponderhit();
+void time_uci_go(char * command);
+void time_xboard_go();
+void time_nothing_go();
+void time_calc_movetime();
+bool time_stop_root();
+bool time_stop();
+
+int isRepetition();
+
+int isDraw();
+
+void printWelcome();
+void printHelp();
+void printStats();
+void printSearchHeader();
+</pre>
+<p><b><a href="CPW-Engine.html" title="CPW-Engine">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175340
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.002 seconds
+Real time usage: 0.003 seconds
+Preprocessor visited node count: 4/1000000
+Preprocessor generated node count: 24/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4868-0!canonical and timestamp 20240722175340 and revision id 9322
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=CPW-Engine_stdafx_h&amp;oldid=9322">https://www.chessprogramming.org/index.php?title=CPW-Engine_stdafx_h&amp;oldid=9322</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=CPW-Engine+stdafx+h&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="CPW-Engine stdafx h.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:CPW-Engine stdafx h&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="CPW-Engine stdafx h.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=CPW-Engine stdafx h&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=CPW-Engine stdafx h&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/CPW-Engine stdafx h.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/CPW-Engine stdafx h.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=CPW-Engine stdafx h&amp;oldid=9322.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=CPW-Engine stdafx h&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 December 2018, at 16:59.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=CPW-Engine_stdafx_h&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.002","walltime":"0.003","ppvisitednodes":{"value":4,"limit":1000000},"ppgeneratednodes":{"value":24,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175340","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":41});});</script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Avoiding Branches - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Avoiding_Branches","wgTitle":"Avoiding Branches","wgCurRevisionId":18782,"wgRevisionId":18782,"wgArticleId":4771,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Hyatt Quotes","Defunkt","Joseph Bowie","Kim Clarke"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Avoiding_Branches","wgRelevantArticleId":4771,"wgRequestId":"Zp7DPP-qaMe6EU8WbZGgDQAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Avoiding_Branches rootpage-Avoiding_Branches skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Avoiding Branches</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Optimization.html" title="Optimization">Optimization</a> * Avoiding Branches</b>
+</p><p>Miss-predicted <a class="external text" href="https://en.wikipedia.org/wiki/Branch_%28computer_science%29" rel="nofollow">branches</a> causes huge penalties on todays super <a class="external text" href="https://en.wikipedia.org/wiki/Instruction_pipeline" rel="nofollow">pipelined</a> processors. While processors become smarter to predict branches with several heuristics, branches on random data should be avoided. The techniques shown here often use arithmetical shift right (by <span style="background-color: rgb(214, 214, 214)">bit-width - 1</span>, that is 31 for 32-bit <a href="Double Word.html" title="Double Word">double words</a> as integers) to determine a mask of sign-bits, either all bits set (-1) or all bits clear 0. <a href="X86.html" title="X86">x86</a> compiler may emit an cdq (Convert Double to Quad) instruction, which sign extends a 32 bit register to two 32 bit registers. Since arithmetical shift right is not strictly specified in <a href="C.html" title="C">C</a>, it might be not portable through all compilers and architectures. Note that in C, a comparison or a boolean expression with the result <span style="background-color: rgb(214, 214, 214)">{false, true}</span> might be treated as numerical value <span style="background-color: rgb(214, 214, 214)">{0, 1}</span>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Abs.2C Max.2C Min"><span class="tocnumber">1</span> <span class="toctext">Abs, Max, Min</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Absolute value of an Integer"><span class="tocnumber">1.1</span> <span class="toctext">Absolute value of an Integer</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Maximum of two Integers"><span class="tocnumber">1.2</span> <span class="toctext">Maximum of two Integers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#By CRT"><span class="tocnumber">1.2.1</span> <span class="toctext">By CRT</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#By Sign-Mask"><span class="tocnumber">1.2.2</span> <span class="toctext">By Sign-Mask</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Minimum of two Integers"><span class="tocnumber">1.3</span> <span class="toctext">Minimum of two Integers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#By CRT 2"><span class="tocnumber">1.3.1</span> <span class="toctext">By CRT</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#By Sign-Mask 2"><span class="tocnumber">1.3.2</span> <span class="toctext">By Sign-Mask</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Conditional Expressions"><span class="tocnumber">2</span> <span class="toctext">Conditional Expressions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Conditional Assignment"><span class="tocnumber">2.1</span> <span class="toctext">Conditional Assignment</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Conditional Increment"><span class="tocnumber">2.2</span> <span class="toctext">Conditional Increment</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Conditional Write"><span class="tocnumber">2.3</span> <span class="toctext">Conditional Write</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Indirect Branch"><span class="tocnumber">3</span> <span class="toctext">Indirect Branch</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#2000 ..."><span class="tocnumber">5.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2010 ..."><span class="tocnumber">5.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2020 ..."><span class="tocnumber">5.3</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Abs.2C_Max.2C_Min">Abs, Max, Min</span></h1>
+<p>It is recommend to use functions provided by the <a href="Languages.html" title="Languages">programming language</a>. In <a href="C.html" title="C">C</a> or <a href="Cpp.html" title="Cpp">C++</a> one should use appropriate compiler intrinsics and/or template functions provided by the <a href="C.html#Runtime" title="C">C Runtime Library</a> or <a href="Cpp.html#STL" title="Cpp">Standard Template Library</a>.
+</p><p>The tricks shown here, might be useful if compiler don't support those functions or don't generate the intended branchless assembly and the input is quite random, so that the branch prediction heuristics will fail often.
+<span id="Abs"></span>
+</p>
+<h2><span class="mw-headline" id="Absolute_value_of_an_Integer">Absolute value of an Integer</span></h2>
+<p>Abs as <a href="C.html" title="C">C</a> intrinsic <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> is likely implemented based on following code snippet ...
+</p>
+<pre>
+int abs(int a) {
+   int s = a &gt;&gt; 31; // cdq, signed shift, -1 if negative, else 0
+   a ^= s;  // ones' complement if negative
+   a -= s;  // plus one if negative -&gt; two's complement if negative
+   return a;
+}
+</pre>
+<p>... by compilers, on <a href="X86.html" title="X86">x86</a> a sequence three instructions: {cdq, xor, sub} or {cdq, add, xor}.
+</p><p><span id="Max"></span>
+</p>
+<h2><span class="mw-headline" id="Maximum_of_two_Integers">Maximum of two Integers</span></h2>
+<h3><span class="mw-headline" id="By_CRT">By CRT</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B" rel="nofollow">Microsoft Visual C++</a> Run-Time Library provides a _max macro <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h3><span class="mw-headline" id="By_Sign-Mask">By Sign-Mask</span></h3>
+<p>Following trick only works for a reduced integer range of effectively one bit less, which is most often no problem for 32-bit integers in chess programs, like scores and that like: <span style="background-color: rgb(214, 214, 214)">INT_MIN &lt;= a - b &lt;= INT_MAX</span>:
+If a is greater b, <span style="background-color: rgb(214, 214, 214)">a - 0</span> is returned, otherwise <span style="background-color: rgb(214, 214, 214)">a - (a - b) == +b</span>
+</p>
+<pre>
+int max(int a, int b) {
+  int diff = a - b;
+  int dsgn = diff &gt;&gt; 31;
+  return a - (diff &amp; dsgn);
+}
+</pre>
+<p><span id="Min"></span>
+</p>
+<h2><span class="mw-headline" id="Minimum_of_two_Integers">Minimum of two Integers</span></h2>
+<h3><span class="mw-headline" id="By_CRT_2">By CRT</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B" rel="nofollow">Microsoft Visual C++</a> Run-Time Library provides a _min macro <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<h3><span class="mw-headline" id="By_Sign-Mask_2">By Sign-Mask</span></h3>
+<p>Following trick only works for a reduced integer range of effectively one bit less, which is most often no problem for 32-bit integers in chess programs, like scores and that like: <span style="background-color: rgb(214, 214, 214)">INT_MIN &lt;= a - b &lt;= INT_MAX</span>:
+If a is greater b, <span style="background-color: rgb(214, 214, 214)">b + 0</span> is returned, otherwise <span style="background-color: rgb(214, 214, 214)">b + (a - b) == +a</span>
+</p>
+<pre>
+int min(int a, int b) {
+  int diff = a - b;
+  int dsgn = diff &gt;&gt; 31;
+  return b + (diff &amp; dsgn);
+}
+</pre>
+<h1><span class="mw-headline" id="Conditional_Expressions">Conditional Expressions</span></h1>
+<h2><span class="mw-headline" id="Conditional_Assignment">Conditional Assignment</span></h2>
+<p>A conditional assignment in <a href="C.html" title="C">C</a> or <a href="Cpp.html" title="Cpp">C++</a> may be implemented by compilers as <a href="X86.html" title="X86">x86</a> conditional move (cmovCC) instruction.
+</p>
+<pre>
+x = ( a &gt; b ) ? C : D;
+</pre>
+<p>otherwise it might be reformulated with conditional increment:
+</p>
+<pre>
+x = D;
+if ( a &gt; b ) x += C - D;
+</pre>
+<h2><span class="mw-headline" id="Conditional_Increment">Conditional Increment</span></h2>
+<p>If <span style="background-color: rgb(214, 214, 214)">a &gt; b</span> is hard to predict,
+</p>
+<pre>
+if ( a &gt; b ) x += C;
+</pre>
+<p>it might be reformulated branch-less in <a href="C.html" title="C">C</a>, which likely emits a <a href="X86.html" title="X86">x86</a> setCC instruction:
+</p>
+<pre>
+x += -( a &gt; b ) &amp; C; // with any boolean expression
+</pre>
+<p>With a reduced value range and <span style="background-color: rgb(214, 214, 214)">INT_MIN &lt;= b - a &lt;= INT_MAX</span>, greater and less relations might be implemented using a sign mask:
+</p>
+<pre>
+x += (( b - a ) &gt;&gt; 31) &amp; C;
+</pre>
+<p><span id="ConditionalWrite"></span>
+</p>
+<h2><span class="mw-headline" id="Conditional_Write">Conditional Write</span></h2>
+<p>During list generation, while conditionally writing data to an <a href="Array.html" title="Array">array</a> with post-incrementing a pointer or index, one may try to avoid the conditional branch by storing always and to increment the pointer by the condition, which is either 0 or 1 <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>.
+</p>
+<pre>
+if (a &gt; b)
+  *ptr++ = value;
+</pre>
+<p>might be rewritten by
+</p>
+<pre>
+  *ptr = value;
+  ptr += (a &gt; b);
+</pre>
+<h1><span class="mw-headline" id="Indirect_Branch">Indirect Branch</span></h1>
+<p><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> on <a href="X86.html" title="X86">x86</a> <a class="external text" href="https://en.wikipedia.org/wiki/Branch_predictor" rel="nofollow">Branch predictor</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Branch_target_predictor" rel="nofollow">Branch target predictor</a>, and <a class="external text" href="https://en.wikipedia.org/wiki/Indirect_branch" rel="nofollow">Indirect branch</a> in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>:
+</p>
+<pre>There are two parts to predicting a branch on <a href="X86.html" title="X86">x86</a>. 1. Is the branch taken (for a call it is always "yes")? 2. Where is the branch going?
+</pre>
+<pre>(2) is more interesting because when you fetch and then predict the branch, you don't have a clue where it is going since the register being used might not yet be ready for access. The solution is a "branch target buffer" which simply predicts the branch AND where it is going, based on the last time it was encountered. You can do a conditional jump to an indirect address and predict the jump correctly and miss the address (entire thing is then predicted wrong) or you can predict the address correctly and miss the jump (again, entire thing is wrong), or you can miss both. Only when you get both right do you have any success.
+</pre>
+<pre>Your code always jumps to the same place, whether you use the explicit jump address, or the indirect address through a register. When you get into a call where the address changes, performance will drop. Your code really is not testing that at all... 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Bit-Twiddling.html" title="Bit-Twiddling">Bit-Twiddling</a></li>
+<li> <a href="DirGolem.html" title="DirGolem">DirGolem</a></li>
+<li> <a class="new" href="index.php?title=Profiling&amp;action=edit&amp;redlink=1.html" title="Profiling (page does not exist)">Profiling</a></li>
+<li> <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">Table-driven Move Generation</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=376742" rel="nofollow">branch misprediction</a> by <a href="Eric Oldre.html" title="Eric Oldre">Eric Oldre</a>, <a href="CCC.html" title="CCC">CCC</a>, July 14, 2004</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=417440" rel="nofollow">Re: Fruit 2.0 Toga : Recapture extension</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2005</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=425259.html#425259" rel="nofollow">Re: Function pointers hurt performance?</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57477.html" rel="nofollow">Branch-poor looping</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57577.html" rel="nofollow">Mispredicted branch VS cache miss</a> by <a class="new" href="index.php?title=Natale Galioto&amp;action=edit&amp;redlink=1.html" title="Natale Galioto (page does not exist)">Natale Galioto</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61423.html" rel="nofollow">Tipical cache and branch misses for a chess engine</a> by <a href="Nicu Ionita.html" title="Nicu Ionita">Nicu Ionita</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2016 » <a href="Memory.html" title="Memory">Memory</a>, <a class="new" href="index.php?title=Profiling&amp;action=edit&amp;redlink=1.html" title="Profiling (page does not exist)">Profiling</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72539.html" rel="nofollow">Misprediction-poor looping</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73623.html" rel="nofollow">A Neat Trick</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, April 11, 2020</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html#IntegerAbs" rel="nofollow">Compute the integer absolute value (abs) without branching</a> by <a class="external text" href="http://graphics.stanford.edu/%7Eseander/.html" rel="nofollow">Sean Eron Anderson</a></li>
+<li> <a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html#IntegerMinOrMax" rel="nofollow">Compute the minimum (min) or maximum (max) of two integers without branching</a> by <a class="external text" href="http://graphics.stanford.edu/%7Eseander/.html" rel="nofollow">Sean Eron Anderson</a></li>
+<li> <a class="external text" href="http://www.azillionmonkeys.com/qed/optimize.html.html" rel="nofollow">Programming Optimization</a> by <a href="Paul Hsieh.html" title="Paul Hsieh">Paul Hsieh</a></li>
+<li> <a class="external text" href="https://software.intel.com/en-us/articles/avoiding-the-cost-of-branch-misprediction/" rel="nofollow">Avoiding the Cost of Branch Misprediction - Intel® Software Network</a> by <a class="external text" href="https://patents.justia.com/inventor/rajiv-kapoor" rel="nofollow">Rajiv Kapoor</a>, February 20, 2009 </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Branch_%28computer_science%29" rel="nofollow">Branch (computer science) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Branch_table" rel="nofollow">Branch table</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Indirect_branch" rel="nofollow">Indirect branch</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Conditional_statement" rel="nofollow">Conditional (programming)</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Branch_predictor" rel="nofollow">Branch predictor</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Branch_target_predictor" rel="nofollow">Branch target predictor</a></li>
+<li> <a href="Category:Defunkt.html" title="Category:Defunkt">Defunkt</a> - <a class="external text" href="http://www.allmusic.com/album/avoid-the-funk-a-defunkt-anthology-mw0000197423.html" rel="nofollow">Avoid The Funk</a>, Live at <a class="external text" href="http://www.dromnyc.com/.html" rel="nofollow">Drom</a>, April 14, 2010, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> lineup: <a href="Category:Joseph Bowie.html" title="Category:Joseph Bowie">Joe Bowie</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Ronny_Drayton" rel="nofollow">Ronny Drayton</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Bill_Bickford" rel="nofollow">Bill Bickford</a>, <a href="Category:Kim Clarke.html" title="Category:Kim Clarke">Kim Clarke</a>, <a class="external text" href="http://johnmulkerin.com/John Mulkerin/Main.html.html" rel="nofollow">John Mulkerin</a>, <a class="external text" href="http://meinlcymbals.com/artists/Artist/show/kenny-martin-488.html" rel="nofollow">Kenny Martin</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/NmPUCNyCtpU?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/abs-labs-llabs-abs64?view=vs-2017" rel="nofollow">abs, labs, llabs, _abs64</a> Visual C++ Developer Center - Run-Time Library Reference</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/max?view=vs-2017" rel="nofollow">_max</a> Visual C++ Developer Center - Run-Time Library Reference</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/min?view=vs-2017" rel="nofollow">_min</a> Visual C++ Developer Center - Run-Time Library Reference</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://support.amd.com/techdocs/40546.pdf" rel="nofollow">Software Optimization Guide for AMD Family 10h and 12h Processors</a> (pdf) see pp. 102 on Conditional Write</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Write-combining" rel="nofollow">Write-combining from Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=425259.html#425259" rel="nofollow">Re: Function pointers hurt performance?</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2011</span>
+</li>
+</ol></div>
+<p><b><a href="Optimization.html" title="Optimization">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721235906
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.017 seconds
+Real time usage: 0.018 seconds
+Preprocessor visited node count: 277/1000000
+Preprocessor generated node count: 556/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4771-0!canonical and timestamp 20240721235906 and revision id 18782
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Avoiding_Branches&amp;oldid=18782">https://www.chessprogramming.org/index.php?title=Avoiding_Branches&amp;oldid=18782</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Hyatt Quotes.html" title="Category:Hyatt Quotes">Hyatt Quotes</a></li><li><a href="Category:Defunkt.html" title="Category:Defunkt">Defunkt</a></li><li><a href="Category:Joseph Bowie.html" title="Category:Joseph Bowie">Joseph Bowie</a></li><li><a href="Category:Kim Clarke.html" title="Category:Kim Clarke">Kim Clarke</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Avoiding+Branches&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Avoiding Branches.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Avoiding Branches&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Avoiding Branches.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Avoiding Branches&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Avoiding Branches&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Avoiding Branches.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Avoiding Branches.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Avoiding Branches&amp;oldid=18782.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Avoiding Branches&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 April 2020, at 10:50.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Avoiding_Branches&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.017","walltime":"0.018","ppvisitednodes":{"value":277,"limit":1000000},"ppgeneratednodes":{"value":556,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721235906","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

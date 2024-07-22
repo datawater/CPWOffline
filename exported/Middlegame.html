@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Middlegame - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Middlegame","wgTitle":"Middlegame","wgCurRevisionId":22025,"wgRevisionId":22025,"wgArticleId":1530,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Middlegame","wgRelevantArticleId":1530,"wgRequestId":"Zp7DmLG9G67YuqUGxlgcTQAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Middlegame rootpage-Middlegame skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Middlegame</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * <a href="Game Phases.html" title="Game Phases">Game Phases</a> * Middlegame</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:281px;"><a class="image" href="File:SamuelBakStudyforMiddleGame.jpg.html"><img alt="" class="thumbimage" height="345" src="images/3/3f/SamuelBakStudyforMiddleGame.jpg" width="279"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:SamuelBakStudyforMiddleGame.jpg.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - Study for Middle Game, 1990 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>The <b>Middlegame</b> is the game phase which happens after the <a href="Opening.html" title="Opening">opening</a>, where the <a href="Chess Game.html" title="Chess Game">game of chess</a> literally starts after developing most <a class="external text" href="https://en.wikipedia.org/wiki/Minor_piece#Minor_piece" rel="nofollow">minor pieces</a> and to prepare or already achieve <a href="Castling.html" title="Castling">castling</a>. Quite often due to (double) pushes of the center <a href="Pawn.html" title="Pawn">pawns</a>, the basic <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a> is often already determined during the first moves, sometimes with center <a href="Pawn Rams (Bitboards).html" title="Pawn Rams (Bitboards)">rams</a> involved, already defining which <a href="Bishop.html" title="Bishop">bishop</a> is good or <a href="Bad Bishop.html" title="Bad Bishop">bad</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Opening versus Middlegame"><span class="tocnumber">1</span> <span class="toctext">Opening versus Middlegame</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Evaluation"><span class="tocnumber">2</span> <span class="toctext">Evaluation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Opening_versus_Middlegame">Opening versus Middlegame</span></h1>
+<p>The early middlegame does not necessarily imply a reduction of <a href="Material.html" title="Material">material</a> by trading <a href="Pawn.html" title="Pawn">pawns</a> or <a href="Pieces.html" title="Pieces">pieces</a>. On the other hand, early pawn trades or other <a href="Captures.html" title="Captures">captures</a> don't necessarily imply the beginning of middlegame as long as other aims of the opening are not achieved. <a href="Tapered Eval.html" title="Tapered Eval">Tapered eval</a> for a smooth transition between game phases by <a href="Piece-Square Tables.html#MultipleTables" title="Piece-Square Tables">multiple piece-square tables</a> does usually not distinguish between opening and early middlegame with all or most material still on the board. Therefor some programmers apply special opening knowledge inside their evaluation to avoid too early queen activity or moving developed pieces multiple times while other minor pieces are still on their home square and have not moved yet (considering <a href="Returning Bishop.html" title="Returning Bishop">returning bishop</a>). Other programs purely rely on the <a href="Opening Book.html" title="Opening Book">opening book</a> and don't care to differentiate between these early phases.
+</p>
+<h1><span class="mw-headline" id="Evaluation">Evaluation</span></h1>
+<p>Beside <a href="Material.html" title="Material">material</a>, <a href="Mobility.html" title="Mobility">mobility</a> and <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a> considerations, <a href="King Safety.html" title="King Safety">king safety</a> is the most important evaluation term in the middlegame. 
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Endgame.html" title="Endgame">Endgame</a></li>
+<li> <a href="Opening.html" title="Opening">Opening</a></li>
+<li> <a href="Strategy.html" title="Strategy">Strategy</a></li>
+<li> <a href="Tactics.html" title="Tactics">Tactics</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Albrecht Heeffer.html" title="Albrecht Heeffer">Albrecht Heeffer</a> (<b>1984</b>). <i>Automated Acquisition on Concepts for the Description of Middle-game Positions in Chess</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Turing_Institute" rel="nofollow">Turing Institute</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Glasgow" rel="nofollow">Glasgow</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Scotland" rel="nofollow">Scotland</a>, TIRM-84-005</li>
+<li> <a href="Alex van Tiggelen.html" title="Alex van Tiggelen">Alex van Tiggelen</a> (<b>1991</b>). <i>Neural Networks as a Guide to Optimization - The Chess Middle Game Explored</i>. <a href="ICGA Journal.html#14 3" title="ICGA Journal">ICCA Journal, Vol. 14, No. 3</a></li>
+<li> <a href="Miroslav Kubat.html" title="Miroslav Kubat">Miroslav Kubat</a>, <a class="new" href="index.php?title=Jan %C5%BDi%C5%BEka&amp;action=edit&amp;redlink=1.html" title="Jan Žižka (page does not exist)">Jan Žižka</a> (<b>2000</b>). <i><a class="external text" href="https://www.muni.cz/research/publications/351333" rel="nofollow">Learning Middle Game Patterns in Chess: A Case Study</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Lecture_Notes_in_Computer_Science" rel="nofollow">Lecture Notes in Computer Science</a>, Vol. 1821, <a class="external text" href="https://de.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70438.html" rel="nofollow">Middlegame positional test-suite</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2019 » <a href="Test-Positions.html" title="Test-Positions">Test-Positions</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/znU1a7aZ2XI/yJDFtOQnAwAJ" rel="nofollow">mg vs eg eval</a> by <a href="Joost VandeVondele.html" title="Joost VandeVondele">Joost VandeVondele</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, October 06, 2019 » <a href="Endgame.html" title="Endgame">Endgame</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_middlegame" rel="nofollow">Chess middlegame from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_endgame#The_start_of_the_endgame" rel="nofollow">The start of the endgame</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://valsur.livejournal.com/129416.html" rel="nofollow">Шахматы в искусстве (22 часть) BAK Samuel</a> by Valerij Surkov</span>
+</li>
+</ol></div>
+<p><b><a href="Game Phases.html" title="Game Phases">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722110554
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.013 seconds
+Real time usage: 0.015 seconds
+Preprocessor visited node count: 45/1000000
+Preprocessor generated node count: 82/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1530-0!canonical and timestamp 20240722110554 and revision id 22025
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Middlegame&amp;oldid=22025">https://www.chessprogramming.org/index.php?title=Middlegame&amp;oldid=22025</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Middlegame&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Middlegame.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Middlegame&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Middlegame.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Middlegame&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Middlegame&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Middlegame.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Middlegame.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Middlegame&amp;oldid=22025.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Middlegame&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 November 2020, at 16:54.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Middlegame&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.013","walltime":"0.015","ppvisitednodes":{"value":45,"limit":1000000},"ppgeneratednodes":{"value":82,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722110554","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

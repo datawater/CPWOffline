@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Rybka-Crafty Evidence V - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rybka-Crafty_Evidence_V","wgTitle":"Rybka-Crafty Evidence V","wgCurRevisionId":9271,"wgRevisionId":9271,"wgArticleId":4841,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Rybka-Crafty_Evidence_V","wgRelevantArticleId":4841,"wgRequestId":"Zp7DtLG9G67YuqUGxlgcmAAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Rybka-Crafty_Evidence_V rootpage-Rybka-Crafty_Evidence_V skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Rybka-Crafty Evidence V</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Organizations.html" title="Organizations">Organizations</a> * <a href="ICGA.html" title="ICGA">ICGA</a> * <a href="ICGA Investigations.html" title="ICGA Investigations">Investigations</a> * <a href="Rybka Controversy.html" title="Rybka Controversy">Rybka Controversy</a> * <a href="Pre-Fruit Rybka and Crafty.html" title="Pre-Fruit Rybka and Crafty">Pre-Fruit Rybka and Crafty</a> * The EvaluateWinner function</b>
+</p><p><b><a href="Rybka-Crafty Evidence IV.html" title="Rybka-Crafty Evidence IV">&lt; Prev</a> <a href="Rybka-Crafty Evidence VI.html" title="Rybka-Crafty Evidence VI">Next &gt;</a></b>
+</p><p>by <a href="Mark Watkins.html" title="Mark Watkins">Mark Watkins</a>
+</p><p>This is a function of about 100 lines of operative C code in <a href="Crafty.html" title="Crafty">Crafty</a> 19.2. It is replicated in pre-Beta <a href="Rybka.html" title="Rybka">Rybka</a>. It determines whether or not the sides have winning chances. It is fairly clearly part of "evaluation", and thus not of merely tangential interest. This should suffice for an example of a "large chunk" of code directly copied from Crafty in pre-Beta Rybka.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Part I"><span class="tocnumber">1</span> <span class="toctext">Part I</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Part II"><span class="tocnumber">2</span> <span class="toctext">Part II</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Part III"><span class="tocnumber">3</span> <span class="toctext">Part III</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Parts IV and V"><span class="tocnumber">4</span> <span class="toctext">Parts IV and V</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Part VI"><span class="tocnumber">5</span> <span class="toctext">Part VI</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Part VII"><span class="tocnumber">6</span> <span class="toctext">Part VII</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Part VIII"><span class="tocnumber">7</span> <span class="toctext">Part VIII</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Part_I">Part I</span></h1>
+<pre>
+int EvaluateWinner(TREE * RESTRICT tree) {
+  register int can_win=3;
+/*  ----------------------------------------------------------
+  |   if one side is a piece up, but has no pawns, then that |
+  |   side can not possibly win.                             |
+   ---------------------------------------------------------- */
+  if (WhiteMajors == BlackMajors) {
+    if (TotalWhitePawns==0 &amp;&amp; WhiteMinors-BlackMinors==1) can_win&amp;=2;
+    if (TotalBlackPawns==0 &amp;&amp; BlackMinors-WhiteMinors==1) can_win&amp;=1;
+    if (can_win == 0) return(can_win);
+  }
+</pre>
+<pre>
+0x00401630:     push   %ebp               # start EvaluateWinner function
+0x00401631:     mov    %esp,%ebp
+0x00401633:     sub    $0x24,%esp
+0x00401647*     push   %ebx
+0x00401648*     push   %esi
+0x00401649*     mov    $0x3,%esi          # "can_win" = 3
+0x0040164e*     push   %edi
+0x00401636:     mov    0x8(%ebp),%ecx
+0x00401639:     mov    0xb0e(%ecx),%al    # load WhiteMajors
+0x0040163f:     mov    0xb0f(%ecx),%dl    # load BlackMajors
+0x00401645:     cmp    %dl,%al            # if these are equal
+0x0040164f:     mov    %esi,-0x4(%ebp)
+0x00401652:     jne    0x4016a7             
+0x00401654:     mov    0xb10(%ecx),%bl      # load TotalWhitePawns
+0x0040165a:     test   %bl,%bl              # if TotalWhitePawns is 0
+0x0040165c:     jne    0x40167b
+0x0040165e:     movsbl 0xb0d(%ecx),%edi       # load BlackMinors
+0x00401665:     movsbl 0xb0c(%ecx),%ebx       # load WhiteMinors
+0x0040166c:     sub    %edi,%ebx              # compute WhiteMinors-BlackMinors
+0x0040166e:     cmp    $0x1,%ebx              # if result is 1
+0x00401671:     jne    0x40167b
+0x00401673:     mov    $0x2,%esi
+0x00401678:     mov    %esi,-0x4(%ebp)          # set "can_win" to 2
+0x0040167b:     mov    0xb11(%ecx),%bl      # load TotalBlackPawns
+0x00401681:     test   %bl,%bl              # if TotalBlackPawns is 0
+0x00401683:     jne    0x40169f
+0x00401685:     movsbl 0xb0d(%ecx),%edi       # load BlackMinors
+0x0040168c:     movsbl 0xb0c(%ecx),%ebx       # load WhiteMinors
+0x00401693:     sub    %ebx,%edi              # compute BlackMinors-WhiteMinors
+0x00401695:     cmp    $0x1,%edi              # if result is 1
+0x00401698:     jne    0x40169f
+0x0040169a:     and    %edi,%esi              # AND "can_win" with 1
+0x0040169c:     mov    %esi,-0x4(%ebp)
+0x0040169f:     test   %esi,%esi            # if can_win is 0
+0x004016a1:     je     0x4016e7               # return 0
+[...]
+</pre>
+<h1><span class="mw-headline" id="Part_II">Part II</span></h1>
+<pre>
+/* ----------------------------------------------------------
+  |   if one side is an exchange up, but has no pawns, then  |
+  |   that side can not possibly win.                        |
+   ---------------------------------------------------------- */
+  if (WhiteMajors != BlackMajors) {
+    if ((WhiteMajors-BlackMajors) == (BlackMinors-WhiteMinors)) {
+      if (TotalBlackPawns==0) can_win&amp;=1;
+      if (TotalWhitePawns==0) can_win&amp;=2;
+    }
+    if (can_win == 0) return(can_win);
+  }
+</pre>
+<pre>
+0x00401639:     mov    0xb0e(%ecx),%al    # load WhiteMajors
+0x0040163f:     mov    0xb0f(%ecx),%dl    # load BlackMajors
+[...]
+0x004016a3:     cmp    %dl,%al            # if WhiteMajors != BlackMajors
+0x004016a5:     je     0x4016f0
+0x004016a7:     movsbl 0xb0d(%ecx),%edi     # load BlackMinors
+0x004016ae:     movsbl 0xb0c(%ecx),%ebx     # load WhiteMinors
+0x004016b5:     movsbl %dl,%edx             
+0x004016b8:     movsbl %al,%eax
+0x004016bb:     sub    %ebx,%edi            # BlackMinors-WhiteMinors
+0x004016bd:     sub    %edx,%eax            # WhiteMajors-BlackMajors
+0x004016bf:     cmp    %edi,%eax            # compare these last 2
+0x004016c1:     jne    0x4016e3             # if equal
+0x004016c3:     mov    0xb11(%ecx),%al        # load TotalBlackPawns
+0x004016c9:     test   %al,%al                # if TotalBlackPawns is 0
+0x004016cb:     jne    0x4016d3
+0x004016cd:     and    $0x1,%esi                # AND "can_win" with 1
+0x004016d0:     mov    %esi,-0x4(%ebp)
+0x004016d3:     mov    0xb10(%ecx),%al        # load TotalWhitePawns
+0x004016d9:     test   %al,%al                # if TotalWhitePawns is 0
+0x004016db:     jne    0x4016e3
+0x004016dd:     and    $0x2,%esi                # AND "can_win" with 2
+0x004016e0:     mov    %esi,-0x4(%ebp)
+0x004016e3:     test   %esi,%esi            # if "can_win" is 0
+0x004016e5:     jne    0x4016f0
+0x004016e9:     xor    %eax,%eax              # return 0
+0x004016ef:     ret   
+[...]
+</pre>
+<p>Note that Rybka checks TotalBlackPawns before TotalWhitePawns here, just like Crafty, and the opposite of the order in the first part.
+</p>
+<h1><span class="mw-headline" id="Part_III">Part III</span></h1>
+<pre>
+/* ************************************************************
+*   if neither side has any pieces, and both sides have    *
+*   non-rookpawns, then either side can win.  also, if one *
+*   has a piece and the other side has one pawn, then that *
+*   piece can sac itself for the pawn so that the side     *
+*   with a pawn can't win.                                 *
+************************************************************ */
+  if (TotalWhitePieces == 0 &amp;&amp; TotalBlackPieces == 0) {
+    if (WhitePawns &amp; not_rook_pawns &amp;&amp; BlackPawns &amp; not_rook_pawns)
+      return (can_win);
+  }
+  if (!TotalBlackPieces) {
+    if (!TotalBlackPawns)
+      can_win &amp;= 1;
+    if (TotalBlackPawns == 1 &amp;&amp; TotalWhitePieces)
+      can_win &amp;= 1;
+  }
+  if (!TotalWhitePieces) {
+    if (!TotalWhitePawns)
+      can_win &amp;= 2;
+    if (TotalWhitePawns == 1 &amp;&amp; TotalBlackPieces)
+      can_win &amp;= 2;
+  }
+</pre>
+<pre>
+0x004016f0: mov    0xb0a(%ecx),%bl     # load TotalWhitePieces
+0x004016f6: test   %bl,%bl
+0x004016f8: jne    0x40173e
+0x004016fa: mov    0xb0b(%ecx),%al     # load TotalBlackPieces
+0x00401700: test   %al,%al
+0x00401702: jne    0x40173e            # if both are zero
+0x00401704: mov    0xa78(%ecx),%eax      # load WhitePawns bitboard
+0x0040170a: mov    0xa7c(%ecx),%edx      # ... in 2 steps of course
+0x00401710: and    $0x7e7e7e7e,%eax      # AND this bitboard
+0x00401715: and    $0x7e7e7e7e,%edx      # with "not_rook_pawns"
+0x0040171b: or     %edx,%eax             # if result is nonempty
+0x0040171d: je     0x40173e             
+0x0040171f: mov    0xa80(%ecx),%eax        # load BlackPawns bitboard
+0x00401725: mov    0xa84(%ecx),%edx
+0x0040172b: and    $0x7e7e7e7e,%eax        # AND this bitboard
+0x00401730: and    $0x7e7e7e7e,%edx        # with "not_rook_pawns"
+0x00401736: or     %edx,%eax               # if result is nonempty
+0x00401738: jne    0x4020b2                  # return current "can_win"
+
+0x0040173e: mov    0xb0b(%ecx),%dl     # load TotalBlackPieces (again)
+0x00401744: test   %dl,%dl             # if nonzero
+0x00401746: jne    0x401766
+0x00401748: mov    0xb11(%ecx),%al       # load TotalBlackPawns
+0x0040174e: test   %al,%al               # if nonzero
+0x00401750: jne    0x401758
+0x00401752: and    $0x1,%esi               # AND "can_win" with 1
+0x00401755: mov    %esi,-0x4(%ebp)
+0x00401758: cmp    $0x1,%al              # if TotalBlackPawns is 1
+0x0040175a: jne    0x401766
+0x0040175c: test   %bl,%bl               # and TotalWhitePieces is nonzero
+0x0040175e: je     0x40176a
+0x00401760: and    $0x1,%esi               # AND "can_win" with 1
+0x00401763: mov    %esi,-0x4(%ebp)
+
+0x00401766: test   %bl,%bl             # if TotalWhitePieces is nonzero
+0x00401768: jne    0x401788
+0x0040176a: mov    0xb10(%ecx),%al       # load TotalWhitePawns
+0x00401770: test   %al,%al               # if nonzero
+0x00401772: jne    0x40177a
+0x00401774: and    $0x2,%esi               # AND "can_win" with 2
+0x00401777: mov    %esi,-0x4(%ebp)
+0x0040177a: cmp    $0x1,%al              # if TotalWhitePawns is 1
+0x0040177c: jne    0x401788
+0x0040177e: test   %dl,%dl               # and TotalBlackPieces is nonzero
+0x00401780: je     0x401788
+0x00401782: and    $0x2,%esi               # AND "can_win" with 2
+0x00401785: mov    %esi,-0x4(%ebp)
+[...]
+</pre>
+<p>Note again that Rybka and Crafty both choose to compare TotalWhitePieces then TotalBlackPieces on the first line, but then both switch the order in the latter two segments.
+</p>
+<h1><span class="mw-headline" id="Parts_IV_and_V">Parts IV and V</span></h1>
+<p>The next parts of the Crafty code are quite long. They determine blind bishops, one segment for White, and the other for Black. And in each segment, there is replication of code for a8 versus h8. Furthermore, the compiler used for pre-Rybka Beta seems not to recognise the common subexpression in something like __Distance(LastOne(),A8)__ where Distance is a macro of the max of Rank and File distance, which themselves involve a macro for absolute value. So this section is quite hairy.
+</p>
+<pre>
+/* ----------------------------------------------------------
+  |   if white has a pawn, then either the pawn had better   |
+  |   not be a rook pawn, or else white had better have the  |
+  |   right color bishop or any other piece, otherwise it is |
+  |   not winnable if the black king can get to the queening |
+  |   square first.                                          |
+   ---------------------------------------------------------- */
+  if (TotalWhitePawns) do {
+    if (WhitePawns&amp;not_rook_pawns) continue;
+    if (TotalWhitePieces&gt;3 || (TotalWhitePieces==3 &amp;&amp; WhiteKnights)) continue;
+    if (TotalWhitePieces==0) {
+      if (file_mask[FILEA]&amp;WhitePawns &amp;&amp;
+          file_mask[FILEH]&amp;WhitePawns) continue;
+    }
+    if (!(WhitePawns&amp;not_rook_pawns)) {
+      if (WhiteBishops) {
+        if (!BlackBishops) {
+          if (WhiteBishops&amp;dark_squares) {
+            if (file_mask[FILEH]&amp;WhitePawns) continue;
+          }
+          else if (file_mask[FILEA]&amp;WhitePawns) continue;
+        }
+        else {
+          if (WhiteBishops&amp;dark_squares &amp;&amp; !(BlackBishops&amp;dark_squares)) {
+            if (file_mask[FILEH]&amp;WhitePawns) continue;
+          }
+          else if (file_mask[FILEA]&amp;WhitePawns) continue;
+        }
+      }
+      if (!(WhitePawns&amp;file_mask[FILEA]) ||
+          !(WhitePawns&amp;file_mask[FILEH])) {
+        if (WhitePawns&amp;file_mask[FILEA]) {
+          int bkd, wkd, pd;
+          bkd=Distance(BlackKingSQ,A8);
+          if (bkd &lt;= 1) can_win&amp;=2;
+          else {
+            wkd=Distance(WhiteKingSQ,A8);
+            pd=Distance(LastOne(WhitePawns&amp;file_mask[FILEA]),A8);
+            if (bkd&lt;(wkd-wtm) &amp;&amp; bkd&lt;=(pd-wtm)) can_win&amp;=2;
+          }
+          continue;
+        }
+        else {
+          int bkd, wkd, pd;
+          bkd=Distance(BlackKingSQ,H8);
+          if (bkd &lt;= 1) can_win&amp;=2;
+          else {
+            wkd=Distance(WhiteKingSQ,H8);
+            pd=Distance(LastOne(WhitePawns&amp;file_mask[FILEH]),H8);
+            if (bkd&lt;(wkd-wtm) &amp;&amp; bkd&lt;=(pd-wtm)) can_win&amp;=2;
+          }
+          continue;
+        }
+      }
+    }
+  } while (0);
+</pre>
+<pre>
+0x004016f0: mov    0xb0a(%ecx),%bl   # load TotalWhitePieces
+[...]
+0x00401788: mov    0xb10(%ecx),%al   # load TotalWhitePawns
+0x0040178e: test   %al,%al           # if TotalWhitePawns is nonzero
+0x00401790: je     0x401bae
+0x00401796: mov    0xa78(%ecx),%esi    # load WhitePawns bitboard
+0x0040179c: mov    0xa7c(%ecx),%edi    # ... in 2 steps of course
+0x004017a2: mov    %esi,%eax
+0x004017a4: mov    %edi,%edx
+0x004017a6: and    $0x7e7e7e7e,%eax    # AND WhitePawns with not_rook_pawns
+0x004017ab: and    $0x7e7e7e7e,%edx
+0x004017b1: or     %edx,%eax
+0x004017b3: jne    0x401bab            # if result is nonzero, skip the rest
+0x004017b9: cmp    $0x3,%bl               
+0x004017bc: jg     0x401bab            # if TotalWhitePieces &gt; 3
+0x004017c2: jne    0x4017d6            #    or (TotalWhitePieces ==3
+0x004017c4: mov    0xa88(%ecx),%edx    #            and WhiteKnights)
+0x004017ca: or     0xa8c(%ecx),%edx    # [other 32-bit of WhiteKnights]
+0x004017d0: jne    0x401bab              # then skip the rest
+0x004017d6: test   %bl,%bl             
+0x004017d8: jne    0x401804            # if TotalWhitePieces is 0
+0x004017da: mov    %esi,%eax
+0x004017dc: mov    %edi,%edx
+0x004017de: and    $0x1010101,%eax       # AND WhitePawns with FILEA filemask
+0x004017e3: and    $0x1010101,%edx
+0x004017e9: or     %edx,%eax
+0x004017eb: je     0x401804
+0x004017ed: mov    %esi,%eax
+0x004017ef: mov    %edi,%edx
+0x004017f1: and    $0x80808080,%eax      # AND WhitePawns with FILEH filemask
+0x004017f6: and    $0x80808080,%edx
+0x004017fc: or     %edx,%eax
+0x004017fe: jne    0x401bab              # if both are nonzero, skip the rest
+0x00401804: mov    0xa98(%ecx),%eax    # load WhiteBishops
+0x0040180a: mov    0xa9c(%ecx),%edx
+0x00401810: mov    %eax,%ebx
+0x00401812: or     %edx,%ebx
+0x00401814: mov    %edx,-0x10(%ebp)
+0x00401817: je     0x401896            # if WhiteBishops is nonzero
+0x00401819: mov    0xaa0(%ecx),%ebx      # load BlackBishops
+0x0040181f: mov    0xaa4(%ecx),%edx
+0x00401825: mov    %ebx,-0xc(%ebp)
+0x0040182d: or     %edx,%ebx
+0x0040182f: jne    0x40184f              # if BlackBishops is 0
+0x00401828* and    $0xaa55aa55,%eax
+0x00401831: mov    -0x10(%ebp),%edx
+0x00401834: and    $0xaa55aa55,%edx        # AND WhiteBishops with dark_squares
+0x0040183a: or     %edx,%eax
+0x0040183c: mov    %edi,%edx
+0x0040183e: mov    %esi,%eax
+0x00401840: je     0x401883                # if result is nonzero
+0x00401842: and    $0x80808080,%eax          # AND WhitePawns with FILEH
+0x00401847: and    $0x80808080,%edx        # else AND WhitePawns with FILEA 
+0x0040184d: jmp    0x40188e                # if result is non-0, skip the rest
+0x0040184f: mov    -0x10(%ebp),%ebx      # else [a BlackBishop exists]
+0x00401852: and    $0xaa55aa55,%ebx
+0x00401858: or     %ebx,%eax
+0x0040185a: je     0x40187f                # if (WhiteBishop &amp; dark_squares)
+0x0040185c: mov    -0xc(%ebp),%eax
+0x0040185f: and    $0xaa55aa55,%eax
+0x00401864: and    $0xaa55aa55,%edx
+0x0040186a: or     %edx,%eax
+0x0040186c: jne    0x40187f                # and !(BlackBishops &amp; dark_squares)
+0x0040186e: mov    %esi,%eax
+0x00401870: mov    %edi,%edx
+0x00401872: and    $0x80808080,%eax          # AND WhitePawns with FILEH
+0x00401877: and    $0x80808080,%edx        # else AND WhitePawns with FILA   
+0x0040187d: jmp    0x40188e                # if result is non-0, skip the rest
+0x0040187f: mov    %esi,%eax
+0x00401881: mov    %edi,%edx
+0x00401883: and    $0x1010101,%eax          [AND with FILEA, see 401840 above]
+0x00401888: and    $0x1010101,%edx
+0x0040188e: or     %edx,%eax
+0x00401890: jne    0x401bab                 
+0x00401896: mov    %esi,%ebx           # So, blind bishops are applicable...
+0x00401898: and    $0x1010101,%ebx
+0x0040189e: mov    %edi,%eax
+0x004018a0: and    $0x1010101,%eax     # AND WhitePawns with FILEA
+0x004018a5: mov    %ebx,%edx
+0x004018a7: or     %eax,%edx
+0x004018a9: mov    %eax,-0x18(%ebp)
+0x004018ac: je     0x4018c8
+0x004018ae: mov    %esi,%eax
+0x004018b0: mov    %edi,%edx
+0x004018b2: and    $0x80808080,%eax    # AND WhitePawns with FILEH
+0x004018b7: and    $0x80808080,%edx
+0x004018bd: or     %edx,%eax
+0x004018bf: jne    0x401bab            # if neither is zero, skip the rest
+0x004018c5: mov    -0x18(%ebp),%eax
+0x004018c8: mov    %ebx,%edx           # about to split into two cases...
+0x004018ca: or     %eax,%edx
+0x004018cc: je     0x401a34            # if (WhitePawns &amp; file_mask[FILEA])
+0x004018d2: movsbl 0xb09(%ecx),%edi      # load BlackKingSQ
+0x004018d9: mov    %edi,%eax
+0x004018db: sar    $0x3,%eax
+0x004018de: sub    $0x7,%eax             # compute Distance(BlackKingSq, A8)
+0x004018e1: cltd   
+0x004018e2: mov    %eax,%esi
+0x004018e4: xor    %edx,%esi
+0x004018e6: mov    %edi,%eax
+0x004018e8: and    $0x7,%eax
+0x004018eb: sub    %edx,%esi
+0x004018ed: cltd   
+0x004018ee: xor    %edx,%eax
+0x004018f0: sub    %edx,%eax
+0x004018f2: cmp    %esi,%eax
+0x004018f4: mov    %eax,0x8(%ebp)
+0x004018f7: jg     0x4018fc
+0x004018f9: mov    %esi,0x8(%ebp)        # distance is now in 0x8(%ebp)
+0x004018fc: cmpl   $0x1,0x8(%ebp)        # compare this distance to 1
+0x00401900: jle    0x401ba7              # if distance &lt;= 1
+0x00401ba7* andl   $0x2,-0x4(%ebp)         # AND "can_win" with 2
+0x00401bab* mov    -0x4(%ebp),%esi         # and ignore the rest
+0x00401906: movsbl 0xb08(%ecx),%edi      # else load WhiteKingSQ
+0x0040190d: mov    %edi,%eax             
+0x0040190f: sar    $0x3,%eax
+0x00401912: sub    $0x7,%eax
+0x00401915: cltd   
+0x00401916: mov    %eax,%esi
+0x00401918: xor    %edx,%esi
+0x0040191a: mov    %edi,%eax
+0x0040191c: and    $0x7,%eax
+0x0040191f: sub    %edx,%esi
+0x00401921: cltd   
+0x00401922: xor    %edx,%eax
+0x00401924: sub    %edx,%eax
+0x00401926: cmp    %esi,%eax
+0x00401928: jle    0x40192c
+0x0040192a: mov    %eax,%esi
+0x0040192c: mov    -0x18(%ebp),%eax      # have Distance(WhiteKingSQ,A8)
+0x0040192f: mov    %ebx,-0x24(%ebp)      # now the next Distance
+0x00401932: mov    %eax,-0x20(%ebp)
+0x00401935: bsf    -0x24(%ebp),%edx      # get LastOne(WhitePawns &amp; FILEA)
+0x00401939: mov    $0x0,%eax
+0x0040193e: jne    0x401950
+0x00401940: bsf    -0x20(%ebp),%edx
+0x00401944: mov    $0x20,%eax
+0x00401949: jne    0x401950              # HORRORS, the compiler is going
+0x0040194b: mov    $0x20,%edx            # to split the Distance computation
+0x00401950: add    %edx,%eax             # with Max(FileDist,RankDist)
+0x00401952: mov    0xa78(%ecx),%edx      # and then FileDist as abs(x,y)
+0x00401958: mov    %eax,%edi             # into four different parts...!
+0x0040195a: mov    0xa7c(%ecx),%eax
+0x00401960: and    $0x1010101,%edx
+0x00401966: and    $0x1010101,%eax
+0x0040196b: mov    %edx,-0x24(%ebp)
+0x0040196e: mov    %eax,-0x20(%ebp)
+0x00401971: bsf    -0x24(%ebp),%edx      # get LastOne(WhitePawns &amp; FILEA) a second time
+0x00401975: mov    $0x0,%eax
+0x0040197a: jne    0x40198c
+0x0040197c: bsf    -0x20(%ebp),%edx
+0x00401980: mov    $0x20,%eax
+0x00401985: jne    0x40198c
+0x00401987: mov    $0x20,%edx
+0x0040198c: add    %edx,%eax
+0x0040198e: sar    $0x3,%eax
+0x00401991: sub    $0x7,%eax
+0x00401994: cltd   
+0x00401995: mov    %eax,%ebx
+0x00401997: xor    %edx,%ebx
+0x00401999: sub    %edx,%ebx
+0x0040199b: mov    %edi,%eax
+0x0040199d: and    $0x7,%eax
+0x004019a0: cltd   
+0x004019a1: xor    %edx,%eax
+0x004019a3: sub    %edx,%eax
+0x004019a5: mov    0xa78(%ecx),%edx
+0x004019ab: and    $0x1010101,%edx
+0x004019b1: cmp    %ebx,%eax
+0x004019b3: mov    0xa7c(%ecx),%eax
+0x004019b9: mov    %edx,-0x24(%ebp)
+0x004019bc: jle    0x4019e8
+0x004019be: and    $0x1010101,%eax
+0x004019c3: mov    %eax,-0x20(%ebp)
+0x004019c6: bsf    -0x24(%ebp),%edx      # get LastOne(WhitePawns &amp; FILEA) a third time
+0x004019ca: mov    $0x0,%eax
+0x004019cf: jne    0x4019e1
+0x004019d1: bsf    -0x20(%ebp),%edx
+0x004019d5: mov    $0x20,%eax
+0x004019da: jne    0x4019e1
+0x004019dc: mov    $0x20,%edx
+0x004019e1: add    %edx,%eax
+0x004019e3: and    $0x7,%eax
+0x004019e6: jmp    0x401a13
+0x004019e8: and    $0x1010101,%eax
+0x004019ed: mov    %eax,-0x20(%ebp)
+0x004019f0: bsf    -0x24(%ebp),%edx      # get LastOne(WhitePawns &amp; FILEA) a fourth time
+0x004019f4: mov    $0x0,%eax
+0x004019f9: jne    0x401a0b
+0x004019fb: bsf    -0x20(%ebp),%edx
+0x004019ff: mov    $0x20,%eax
+0x00401a04: jne    0x401a0b
+0x00401a06: mov    $0x20,%edx
+0x00401a0b: add    %edx,%eax
+0x00401a0d: sar    $0x3,%eax
+0x00401a10: sub    $0x7,%eax
+0x00401a13: mov    0x8(%ebp),%edi
+0x00401a16: cltd   
+0x00401a19: sub    %edx,%eax           
+0x00401a1b: mov    0x6aa02c,%edx         # load wtm
+0x00401a21: sub    %edx,%esi             
+0x00401a23: cmp    %esi,%edi             # if (bkd &lt; wkd-wtm)
+0x00401a25: jge    0x401bab
+0x00401a2b: sub    %edx,%eax
+0x00401a2d: cmp    %eax,%edi             # and (bkd &lt;= pd-wtm)
+0x00401a2f: jmp    0x401ba5             
+0x00401ba5* jg     0x401bab
+0x00401ba7* andl   $0x2,-0x4(%ebp)         # AND "can_win" with 2, skip rest
+0x00401a34: movsbl 0xb09(%ecx),%eax      # else case 2, the same for H8/FILEH (omitted)
+[...]
+</pre>
+<p>I also omit the analogous code for determining if Black has a blind bishop.
+</p>
+<h1><span class="mw-headline" id="Part_VI">Part VI</span></h1>
+<pre>
+/* ----------------------------------------------------------
+  |   if both sides have pawns, the game is not a draw for   |
+  |   lack of material.  also, if one side has at least a    |
+  |   B+N, then it's not a drawn position.                   |
+  |                                                          |
+  |   if one side has a rook, while the other side has a     |
+  |   minor + pawns, then the rook can't possibly win.       |
+   ---------------------------------------------------------- */
+  if (TotalWhitePawns &amp;&amp; TotalBlackPawns) return(can_win);
+</pre>
+<pre>
+0x00401fc5: mov    -0x4(%ebp),%esi
+0x00401fc8: mov    0xb10(%ecx),%al    # load TotalWhitePawns
+0x00401fce: test   %al,%al
+0x00401fd0: je     0x401fe0
+0x00401fd2: mov    0xb11(%ecx),%dl    # load TotalBlackPawns
+0x00401fd8: test   %dl,%dl
+0x00401fda: jne    0x4020b2           # if both nonzero, return "can_win"
+</pre>
+<h1><span class="mw-headline" id="Part_VII">Part VII</span></h1>
+<pre>
+/* ----------------------------------------------------------
+  |   if one side has two bishops, and the other side has    |
+  |   a single kinght, the two bishops win.                  |
+   ---------------------------------------------------------- */
+  if (TotalWhitePawns==0 &amp;&amp; TotalWhitePieces==6 &amp;&amp;
+      TotalBlackPieces==3) {
+    if (WhiteKnights || !BlackKnights) can_win&amp;=2;
+  }
+  else if (TotalBlackPawns==0 &amp;&amp; TotalBlackPieces==6 &amp;&amp;
+      TotalWhitePieces==3) {
+    if (BlackKnights || !WhiteKnights) can_win&amp;=1;
+  }
+</pre>
+<pre>
+0x00401fe0: test   %al,%al            # if TotalWhitePawns == 0
+0x00401fe4: jne    0x402018
+0x00401fe2* mov    $0x6,%dl       
+0x00401fe6: cmp    %dl,0xb0a(%ecx)    # and TotalWhitePieces == 6
+0x00401fec: jne    0x402018           
+0x00401fee: cmpb   $0x3,0xb0b(%ecx)   # and TotalBlackPieces == 3
+0x00401ff5: jne    0x402018
+0x00401ff7: mov    0xa88(%ecx),%edi     
+0x00401ffd: or     0xa8c(%ecx),%edi
+0x00402003: jne    0x402013             # if WhiteKinghts
+0x00402005: mov    0xa90(%ecx),%edi
+0x0040200b: or     0xa94(%ecx),%edi
+0x00402011: jne    0x402052             # or !BlackKnights
+0x00402013: and    $0x2,%esi              # AND "can_win" with 2
+0x00402016: jmp    0x402052           # else
+0x00402018: mov    0xb11(%ecx),%bl    # if TotalBlackPawns == 0
+0x0040201e: test   %bl,%bl
+0x00402020: jne    0x402052
+0x00402022: cmp    %dl,0xb0b(%ecx)
+0x00402028: jne    0x402052           # and TotalBlackPieces == 6
+0x0040202a: cmpb   $0x3,0xb0a(%ecx)
+0x00402031: jne    0x402052           # and TotalWhitePieces == 3
+0x00402033: mov    0xa90(%ecx),%edi
+0x00402039: or     0xa94(%ecx),%edi
+0x0040203f: jne    0x40204f             # if BlackKnights
+0x00402041: mov    0xa88(%ecx),%edi
+0x00402047: or     0xa8c(%ecx),%edi
+0x0040204d: jne    0x402052             # or !WhiteKnights
+0x0040204f: and    $0x1,%esi              # AND "can_win" with 1
+</pre>
+<h1><span class="mw-headline" id="Part_VIII">Part VIII</span></h1>
+<pre>
+/* ----------------------------------------------------------
+  |   if one side is two knights ahead and the opponent has  |
+  |   no remaining material, it is a draw.                   |
+   ---------------------------------------------------------- */
+  if (TotalWhitePawns==0 &amp;&amp; TotalWhitePieces==6 &amp;&amp; !WhiteBishops &amp;&amp;
+      TotalBlackPieces+TotalBlackPawns==0) can_win&amp;=2;
+  if (TotalBlackPawns==0 &amp;&amp; TotalBlackPieces==6 &amp;&amp; !BlackBishops &amp;&amp;
+      TotalWhitePieces+TotalWhitePawns==0) can_win&amp;=1;
+  return(can_win);
+}
+</pre>
+<pre>
+0x00402052: test   %al,%al
+0x00402054: jne    0x402081           # if TotalWhitePawns == 0
+0x00402056: cmp    %dl,0xb0a(%ecx)   
+0x0040205c: jne    0x402081           # and TotalWhitePieces == 6
+0x0040205e: mov    0xa98(%ecx),%edi
+0x00402064: or     0xa9c(%ecx),%edi
+0x0040206a: jne    0x402081           # and !WhiteBishops
+0x0040206c: movsbl 0xb0b(%ecx),%edi   # and TotalBlackPieces +
+0x00402073: movsbl 0xb11(%ecx),%ebx   #     TotalBlackPawns
+0x0040207a: add    %ebx,%edi         
+0x0040207c: jne    0x402081           #     is zero
+0x0040207e: and    $0x2,%esi          #  then AND "can_win" with 2
+0x00402081: mov    0xb11(%ecx),%bl
+0x00402087: test   %bl,%bl            # if TotalBlackPawns == 0
+0x00402089: jne    0x4020b2
+0x0040208b: cmp    %dl,0xb0b(%ecx)    # and TotalBlackPieces == 6
+0x00402091: jne    0x4020b2
+0x00402093: mov    0xaa0(%ecx),%edx
+0x00402099: or     0xaa4(%ecx),%edx
+0x0040209f: jne    0x4020b2           # and !BlackBishops
+0x004020a1: movsbl 0xb0a(%ecx),%ecx   # and TotalWhitePieces +
+0x004020a8: movsbl %al,%edx           #     TotalWhitePawns
+0x004020ab: add    %edx,%ecx
+0x004020ad: jne    0x4020b2           #     is zero
+0x004020af: and    $0x1,%esi          #  then AND "can_win" with 1
+0x004020ba: ret  
+</pre>
+<p><b><a href="Pre-Fruit Rybka and Crafty.html" title="Pre-Fruit Rybka and Crafty">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722134610
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.007 seconds
+Real time usage: 0.007 seconds
+Preprocessor visited node count: 141/1000000
+Preprocessor generated node count: 312/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4841-0!canonical and timestamp 20240722134610 and revision id 9271
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Rybka-Crafty_Evidence_V&amp;oldid=9271">https://www.chessprogramming.org/index.php?title=Rybka-Crafty_Evidence_V&amp;oldid=9271</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Rybka-Crafty+Evidence+V&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Rybka-Crafty Evidence V.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Rybka-Crafty Evidence V&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Rybka-Crafty Evidence V.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Rybka-Crafty Evidence V&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Rybka-Crafty Evidence V&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Rybka-Crafty Evidence V.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Rybka-Crafty Evidence V.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Rybka-Crafty Evidence V&amp;oldid=9271.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Rybka-Crafty Evidence V&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 17 December 2018, at 16:38.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Rybka-Crafty_Evidence_V&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.007","walltime":"0.007","ppvisitednodes":{"value":141,"limit":1000000},"ppgeneratednodes":{"value":312,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722134610","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

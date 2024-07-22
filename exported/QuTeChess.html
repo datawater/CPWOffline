@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>QuTeChess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QuTeChess","wgTitle":"QuTeChess","wgCurRevisionId":9916,"wgRevisionId":9916,"wgArticleId":4438,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["GPL","Open Source","UCI","Chess Suffix"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QuTeChess","wgRelevantArticleId":4438,"wgRequestId":"Zp7Dhv-qaMe6EU8WbZGg0wAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-QuTeChess rootpage-QuTeChess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">QuTeChess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * QuTeChess</b>
+</p><p><b>QuTeChess</b>,<br/>
+an experimental, <a href="UCI.html" title="UCI">UCI</a> compatible <a href="Category:Open Source.html" title="Category:Open Source">open source chess engine</a> under the <a href="Free Software Foundation.html#GPL" title="Free Software Foundation">GNU General Public License</a> written by <a href="Ale%C5%A1 Zamuda.html" title="Aleš Zamuda">Aleš Zamuda</a>, available from a <a class="external text" href="https://en.wikipedia.org/wiki/SourceForge" rel="nofollow">SourceForge</a> <a class="external text" href="https://en.wikipedia.org/wiki/Apache_Subversion" rel="nofollow">SVN</a> <a class="external text" href="https://en.wikipedia.org/wiki/Codebase" rel="nofollow">repository</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. 
+As its name suggests, QuTeChess is written in <a href="Cpp.html" title="Cpp">C++</a> using the <a class="external text" href="https://en.wikipedia.org/wiki/Qt_%28framework%29" rel="nofollow">Qt4.7</a> cross-platform application framework (using QTime, QThread). 
+It reflects the author's dealings with Qt to implement UCI and <a href="CLI.html" title="CLI">CLI</a> along with <a href="Thread.html" title="Thread">threads</a> to start an interruptible <a href="Search.html" title="Search">search</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Description"><span class="tocnumber">1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Forum Posts"><span class="tocnumber">2</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#External Links"><span class="tocnumber">3</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<p>QuTeChess is quasi <a href="Bitboards.html" title="Bitboards">bitboard</a> based using <a href="Tinker.html" title="Tinker">Tinker's</a> <a href="Sliding Piece Attacks.html#Tinker.27s Approach" title="Sliding Piece Attacks">approach</a> in <a href="Move Generation.html" title="Move Generation">move generation</a> of <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a>. 
+Based on the <a href="Bitboard Serialization.html" title="Bitboard Serialization">serialization</a> of attacks on the otherwise empty board, it tests for <a href="Pseudo-Legal Move.html" title="Pseudo-Legal Move">pseudo legality</a> by looking whether squares <a href="Square Attacked By.html#InBetween" title="Square Attacked By">between</a> <a href="Origin Square.html" title="Origin Square">origin</a> and <a href="Target Square.html" title="Target Square">target</a> are empty.
+Its <a href="Search.html" title="Search">search</a> is plain <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> without <a href="Transposition Table.html" title="Transposition Table">transposition table</a> inside an <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> loop. 
+The availability of <i>changegenes.cpp</i> suggests QuTeChess' 
+<a href="Point Value.html" title="Point Value">piece values</a> and a few random <a href="Evaluation.html" title="Evaluation">evaluation</a> features could be <a href="Automated Tuning.html" title="Automated Tuning">tuned</a> by an <a href="Genetic Programming.html#EvolutionaryComputation" title="Genetic Programming">evolutionary computation</a> approach of <a class="external text" href="https://en.wikipedia.org/wiki/Differential_evolution" rel="nofollow">differential evolution</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=16375.html" rel="nofollow">A new UCI engine called QuTeChess</a> by <a class="new" href="index.php?title=Christopher Conkie&amp;action=edit&amp;redlink=1.html" title="Christopher Conkie (page does not exist)">Christopher Conkie</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2007</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://sourceforge.net/projects/qutechess/" rel="nofollow">QuTeChess | Free Science &amp; Engineering software downloads at SourceForge.net</a></li>
+<li> <a class="external text" href="http://www.computerchess.org.uk/ccrl/404/cgi/engine details.cgi?match length=30&amp;print=Details&amp;each game=1&amp;eng=QuTeChess%201.0.1t%20r3.html" rel="nofollow">QuTeChess 1.0.1t r3</a> in <a href="CCRL.html" title="CCRL">CCRL 40/4</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://sourceforge.net/projects/qutechess/" rel="nofollow">QuTeChess | Free Science &amp; Engineering software downloads at SourceForge.net</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">* <a href="Borko Bo%C5%A1kovi%C4%87.html" title="Borko Bošković">Borko Bošković</a>, <a href="Sa%C5%A1o Greiner.html" title="Sašo Greiner">Sašo Greiner</a>, <a href="Janez Brest.html" title="Janez Brest">Janez Brest</a>, <a href="Ale%C5%A1 Zamuda.html" title="Aleš Zamuda">Aleš Zamuda</a>, <a href="Viljem %C5%BDumer.html" title="Viljem Žumer">Viljem Žumer</a> (<b>2008</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007%2F978-3-540-68830-3_12" rel="nofollow">An Adaptive Differential Evolution Algorithm with Opposition-Based Mechanisms, Applied to the Tuning of a Chess Program</a></i>. <a class="external text" href="https://link.springer.com/book/10.1007/978-3-540-68830-3" rel="nofollow">Advances in Differential Evolution</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722145128
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 47/1000000
+Preprocessor generated node count: 102/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4438-0!canonical and timestamp 20240722145128 and revision id 9916
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=QuTeChess&amp;oldid=9916">https://www.chessprogramming.org/index.php?title=QuTeChess&amp;oldid=9916</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:GPL.html" title="Category:GPL">GPL</a></li><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=QuTeChess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="QuTeChess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:QuTeChess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="QuTeChess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=QuTeChess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=QuTeChess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/QuTeChess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/QuTeChess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=QuTeChess&amp;oldid=9916.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=QuTeChess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 January 2019, at 21:26.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=QuTeChess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.008","ppvisitednodes":{"value":47,"limit":1000000},"ppgeneratednodes":{"value":102,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722145128","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":62});});</script>
+</body>
+</html>

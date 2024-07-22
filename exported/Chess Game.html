@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chess Game - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chess_Game","wgTitle":"Chess Game","wgCurRevisionId":25933,"wgRevisionId":25933,"wgArticleId":1175,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chess_Game","wgRelevantArticleId":1175,"wgRequestId":"Zp7DNLG9G67YuqUGxlgbTwAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chess_Game rootpage-Chess_Game skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chess Game</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * Game</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:ChessIsenburgII20150928.jpg.html"><img alt="" class="thumbimage" height="223" src="images/thumb/7/7b/ChessIsenburgII20150928.jpg/300px-ChessIsenburgII20150928.jpg" srcset="/images/7/7b/ChessIsenburgII20150928.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:ChessIsenburgII20150928.jpg.html" title="Enlarge"></a></div>A Game of Chess <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>The <b>Game of Chess</b> which is actually played (or analyzed) by a chess program via its <a href="GUI.html" title="GUI">user interface</a> requires a <a href="Game Notation.html" title="Game Notation">game record</a>, or game history, which is a <a href="Move List.html" title="Move List">list</a> or <a href="Array.html" title="Array">array</a> of <a href="Moves.html" title="Moves">moves</a> or a tree of alternative move variants even containing comments. While the game record is necessary to take back moves f.i. after operator errors, the game history needs to be considered if it is about to claim or accepts <a href="Draw.html" title="Draw">draws</a> by <a href="Repetitions.html" title="Repetitions">three fold repetitions</a>, and might therefor be referred by the <a href="Search.html" title="Search">search algorithm</a> as well. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Start of the Game"><span class="tocnumber">1</span> <span class="toctext">Start of the Game</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#End of the Game"><span class="tocnumber">2</span> <span class="toctext">End of the Game</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Win.2FLoss"><span class="tocnumber">2.1</span> <span class="toctext">Win/Loss</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Draw"><span class="tocnumber">2.2</span> <span class="toctext">Draw</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Game Record"><span class="tocnumber">3</span> <span class="toctext">Game Record</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Game Header"><span class="tocnumber">4</span> <span class="toctext">Game Header</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Longest Game"><span class="tocnumber">5</span> <span class="toctext">Longest Game</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#MVC"><span class="tocnumber">6</span> <span class="toctext">MVC</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#The Game Loop"><span class="tocnumber">7</span> <span class="toctext">The Game Loop</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#CLI"><span class="tocnumber">7.1</span> <span class="toctext">CLI</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Event driven GUIs"><span class="tocnumber">7.2</span> <span class="toctext">Event driven GUIs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Publications"><span class="tocnumber">9</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Forum Posts"><span class="tocnumber">10</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#2010 ..."><span class="tocnumber">10.1</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2020 ..."><span class="tocnumber">10.2</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">11</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Start_of_the_Game">Start of the Game</span></h1>
+<p>The game of chess starts with the <a href="Initial Position.html" title="Initial Position">initial position</a>, white to move. Both sides alternately move their pieces until the game is finished.
+<span id="endofgame"></span>
+</p>
+<h1><span class="mw-headline" id="End_of_the_Game">End of the Game</span></h1>
+<p>There are three possible outcomes of the game, white wins (1-0), black wins (0-1) or <a href="Draw.html" title="Draw">draw</a> (1/2-1/2). Unfinished games may be <a class="external text" href="https://en.wikipedia.org/wiki/Adjournment#Chess" rel="nofollow">adjudicated</a>, which was common until the 80s in <a href="Tournaments and Matches.html" title="Tournaments and Matches">computer chess tournaments</a>, for instance the adjudicated win of <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a> against <a href="Schach.html" title="Schach">Schach 2.7</a> during <a href="WCCC 1986.html" title="WCCC 1986">WCCC 1986</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . <a href="Checkmate.html" title="Checkmate">Checkmate</a> and <a href="Stalemate.html" title="Stalemate">stalemate</a> finish the game immediately. Other occurrences usually require communication with the opponent and admission or adjudication of an arbiter instance (i.e. Tournament director), which in computer chess requires a protocol and/or interaction, like claiming a <a href="Repetitions.html" title="Repetitions">threefold repetition</a> draw in over the board computer chess.
+</p><p><i>see main article <a href="Rules of Chess.html" title="Rules of Chess">Rules of Chess</a></i>
+</p>
+<h2><span class="mw-headline" id="Win.2FLoss">Win/Loss</span></h2>
+<p>Since chess is a <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum_game" rel="nofollow">Zero-sum game</a>, the win of one player is the loss of the other player.
+</p>
+<ul><li> <a href="Checkmate.html" title="Checkmate">Checkmate</a> - if in <a href="Check.html" title="Check">check</a> with an empty set of <a href="Legal Move.html" title="Legal Move">legal moves</a></li>
+<li> <a href="Time Management.html" title="Time Management">Loss on time</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Resignation" rel="nofollow">Resignation</a> (to resign)</li></ul>
+<h2><span class="mw-headline" id="Draw">Draw</span></h2>
+<p>The game of chess ends and is <a href="Draw.html" title="Draw">draw</a> after either
+</p>
+<ul><li> <a href="Stalemate.html" title="Stalemate">Stalemate</a> - if <b>not</b> in <a href="Check.html" title="Check">check</a> but no <a href="Legal Move.html" title="Legal Move">legal moves</a></li>
+<li> Correct <a href="Repetitions.html" title="Repetitions">threefold repetition</a> claim</li>
+<li> Correct <a href="Fifty-move Rule.html" title="Fifty-move Rule">fifty-move rule</a> claim</li>
+<li> <a href="Material.html#InsufficientMaterial" title="Material">Insufficient material</a></li>
+<li> Draw offer accepted</li></ul>
+<p><span id="GameRecord"></span>
+</p>
+<h1><span class="mw-headline" id="Game_Record">Game Record</span></h1>
+<p>Chess programs (not necessarily the pure (search) engine) keep track of all <a href="Moves.html" title="Moves">moves</a> played in the game from the <a href="Initial Position.html" title="Initial Position">initial starting position</a> stored inside a <a href="Move List.html" title="Move List">move list</a>, often in conjunction with a <a href="Move List.html#SignatureList" title="Move List">list</a> of <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist</a> or <a href="BCH Hashing.html" title="BCH Hashing">BCH signatures</a> of the up to 100 last <a href="Reversible Moves.html" title="Reversible Moves">reversible moves</a> for the purpose to detect twofold or threefold <a href="Repetitions.html" title="Repetitions">repetitions</a>.
+</p>
+<ul><li> <a href="Game Notation.html" title="Game Notation">Game Notation</a>
+<ul><li> <a href="Algebraic Chess Notation.html" title="Algebraic Chess Notation">Algebraic Chess Notation</a></li>
+<li> <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a></li></ul></li>
+<li> <a href="Move List.html" title="Move List">Move List</a></li></ul>
+<p><span id="Header"></span>
+</p>
+<h1><span class="mw-headline" id="Game_Header">Game Header</span></h1>
+<p>The game header keeps <a class="external text" href="https://en.wikipedia.org/wiki/Metadata" rel="nofollow">metadata</a> of a game, such as player names, date of the game and site of the event and result. For instance, the <a href="Portable Game Notation.html" title="Portable Game Notation">PGN</a> game header consists of a set of <a class="external text" href="https://en.wikipedia.org/wiki/Attribute%E2%80%93value_pair" rel="nofollow">attribute value pairs</a>. The so called <b>Seven Tag Roster</b> (STR) is mandatory <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>:
+</p>
+<ol><li> Event (the name of the tournament or match event)</li>
+<li> Site (the location of the event)</li>
+<li> Date (the starting date of the game)</li>
+<li> Round (the playing round ordinal of the game)</li>
+<li> White (the player of the white pieces)</li>
+<li> Black (the player of the black pieces)</li>
+<li> Result (the result of the game)</li></ol>
+<h1><span class="mw-headline" id="Longest_Game">Longest Game</span></h1>
+<p>In 1966, Eero Bonsdorff, <a class="external text" href="https://en.wikipedia.org/wiki/Karl_Fabel" rel="nofollow">Karl Fabel</a>, and Olvai Riihimaa gave 5899 as the maximum number of <a href="Moves.html" title="Moves">moves</a> in a chess game, considering the <a href="Fifty-move Rule.html" title="Fifty-move Rule">Fifty-move Rule</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="MVC">MVC</span></h1>
+<p>The chess program and its <a href="User Interface.html" title="User Interface">user interface</a> can be interpreted as a <a class="external text" href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" rel="nofollow">Model–view–controller</a> (MVC), an <a class="external text" href="https://en.wikipedia.org/wiki/Architectural_pattern_%28computer_science%29" rel="nofollow">architectural pattern</a> that isolates <a class="external text" href="https://en.wikipedia.org/wiki/Business_logic" rel="nofollow">business logic</a> f.i. game administration, <a href="Time Management.html" title="Time Management">time management</a> and searching a move inside a chess program from input and presentation. The game model represents the domain-specific <a href="Data.html" title="Data">data</a> on which the application operates - Inside a chess program, the information about the <a href="Initial Position.html" title="Initial Position">initial position</a> and the game record to reproduce the current positions, likely subject of <a href="Search.html" title="Search">search</a> or <a href="Pondering.html" title="Pondering">pondering</a> during game play. The model and controller implement a <a class="external text" href="https://en.wikipedia.org/wiki/Finite-state_machine" rel="nofollow">finite-state machine</a> which controls the game, its <a class="external text" href="https://en.wikipedia.org/wiki/State_%28computer_science%29" rel="nofollow">states</a>, state transitions and actions considering various <a class="external text" href="https://en.wikipedia.org/wiki/Mode_%28computer_interface%29" rel="nofollow">modes</a>. The view displays the <a href="Game Notation.html" title="Game Notation">game notation</a>, a <a href="Move List.html" title="Move List">list of moves</a>, and likely the board with the current <a href="Chess Position.html" title="Chess Position">position</a>, suitable for <a class="external text" href="https://en.wikipedia.org/wiki/Interaction" rel="nofollow">interaction</a> inside a <a href="User Interface.html" title="User Interface">user interface</a>. The controller receives input from various sources and devices, such as <a class="external text" href="https://en.wikipedia.org/wiki/Keyboard_%28computing%29" rel="nofollow">keyboard</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Mouse_%28computing%29" rel="nofollow">mouse</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Serial_port" rel="nofollow">serial port</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Internet_socket" rel="nofollow">internet socket</a>, and initiates a response by making calls on model objects.
+<span id="GameLoop"></span>
+</p>
+<h1><span class="mw-headline" id="The_Game_Loop">The Game Loop</span></h1>
+<p>Early chess programs without <a href="Pondering.html" title="Pondering">Pondering</a> used a simple sequential control structure to play the whole game for instance via a <a class="external text" href="https://en.wikipedia.org/wiki/Teleprinter" rel="nofollow">teleprinter</a> or any <a class="external text" href="https://en.wikipedia.org/wiki/Computer_terminal" rel="nofollow">Computer terminals</a> in a sequential manner.
+</p>
+<pre>
+state := playGame;
+initialize position
+print board
+while (state != gameover)
+   wait for input of a move by the user
+   make move (if legal)
+   if (mate or stalemate) {
+      state := gameOver;
+      break;
+   }
+   search move with allocated time
+   make move
+   print move and update board
+   if (mate or stalemate)
+      state := gameOver;
+}
+print "thank you for playing the game";
+</pre>
+<h2><span class="mw-headline" id="CLI">CLI</span></h2>
+<p>Most current chess engines communicate via a sequential <a href="CLI.html" title="CLI">command-line interface</a>, available in all common <a class="external text" href="https://en.wikipedia.org/wiki/Operating_system" rel="nofollow">operating systems</a>. <a href="Pondering.html" title="Pondering">Pondering</a> and the need to <a href="Entering Moves.html" title="Entering Moves">enter moves</a> and commands even if the program is "thinking", requires a more complicated control structure and an interruptible search routine. Often engines used <a class="external text" href="https://en.wikipedia.org/wiki/Coroutine" rel="nofollow">coroutines</a> to implement internal <a class="external text" href="https://en.wikipedia.org/wiki/Context_switch" rel="nofollow">context switching</a> between search and user interaction. Today, it is more common to rely on <a class="external text" href="https://en.wikipedia.org/wiki/Multi-threading" rel="nofollow">multithreading</a> abilities of recent operating systems, and to use an explicit I/O-thread, while the search routine is regularly pondering whether it needs to be interrupted by pending input received by another thread, with the option to asynchronous stop the search.
+</p>
+<h2><span class="mw-headline" id="Event_driven_GUIs">Event driven GUIs</span></h2>
+<p>With the advent of operating systems with <a class="external text" href="https://en.wikipedia.org/wiki/Graphical_user_interface" rel="nofollow">graphical user interfaces</a>, also encouraged by additional input devices such as a <a class="external text" href="https://en.wikipedia.org/wiki/Mouse_%28computing%29" rel="nofollow">computer mouse</a> for asynchronous user interaction, the embedding of a chess engine with a classical CLI inside the <a class="external text" href="https://en.wikipedia.org/wiki/Event-driven_architecture" rel="nofollow">event-driven architecture</a> of a graphical user interface became more difficult. Today, most programmers rely on external event driven <a href="GUI.html" title="GUI">graphical user interface</a> applications using <a class="external text" href="https://en.wikipedia.org/wiki/Standard_streams" rel="nofollow">standard streams</a> or <a class="external text" href="https://en.wikipedia.org/wiki/Pipeline_%28Unix%29" rel="nofollow">pipelines</a> to communicate with the GUI via protocols such as the <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> and the <a href="UCI.html" title="UCI">Universal Chess Interface</a>. The external GUI application constitutes the MVC view and controller, and more or less even parts of a (redundant) game model (or even multi-game model), to make the GUI aware of its own game states to even make decisions on behalf of the engine, such as move selection from opening books and <a href="Endgame Tablebases.html" title="Endgame Tablebases">endgame tablebases</a>, draw claims and offers and to finally declare the game over. These game interacting features of the external GUI application in conjunction with certain protocols such as UCI by far exceeds what a pure chess user interface was initially designed for - controller and view only, enter legal moves and render the state of the game, which has become disputed issue in playing official <a href="Tournaments and Matches.html" title="Tournaments and Matches">tournament</a> games.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Board Representation.html" title="Board Representation">Board Representation</a></li>
+<li> <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a></li>
+<li> <a href="Chess Position.html" title="Chess Position">Chess Position</a></li>
+<li> <a href="Contempt Factor.html" title="Contempt Factor">Contempt Factor</a></li>
+<li> <a href="GUI.html" title="GUI">Graphical User Interface</a></li>
+<li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Pawn Advantage, Win Percentage, and Elo</a></li>
+<li> <a href="Strategy.html" title="Strategy">Strategy</a></li>
+<li> <a href="Tactics.html" title="Tactics">Tactics</a></li>
+<li> <a href="Time Management.html" title="Time Management">Time Management</a></li>
+<li> <a href="UCI.html" title="UCI">UCI</a></li>
+<li> <a href="User Interface.html" title="User Interface">User Interface</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1990</b>). <i>Compressing Chess Games with the Help of a fast Deterministic Chess Program.</i> <a href="ICGA Journal.html#13 4" title="ICGA Journal">ICCA Journal, Vol. 13, No. 4</a></li>
+<li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1991</b>): <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/000437029190026G.html" rel="nofollow">Data compression using an intelligent generator: The storage of chess games as an example</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 52, No. 1</li>
+<li> <a href="Borko Bo%C5%A1kovi%C4%87.html" title="Borko Bošković">Borko Bošković</a>, <a href="Sa%C5%A1o Greiner.html" title="Sašo Greiner">Sašo Greiner</a>, <a href="Janez Brest.html" title="Janez Brest">Janez Brest</a>, <a href="Viljem %C5%BDumer.html" title="Viljem Žumer">Viljem Žumer</a> (<b>2005</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/freeabs all.jsp?arnumber=1491153.html" rel="nofollow">The Representation of Chess Game</a></i>. Proceedings of the 27th International Conference on Information Technology Interfaces</li>
+<li> <a href="Nick Pelling.html" title="Nick Pelling">Nick Pelling</a> (<b>2013</b>). <i><a class="external text" href="https://www.amazon.co.uk/Chess-Superminiatures-Nick-Pelling-ebook/dp/B00HEOZ8B6" rel="nofollow">Chess Superminiatures</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/E-book" rel="nofollow">eBook</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Amazon_Kindle" rel="nofollow">Kindle edition</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Amazon.com" rel="nofollow">Amazon</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40193.html" rel="nofollow">One billion random games</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 27, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48542.html" rel="nofollow">One billion random games</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56328.html" rel="nofollow">Revised source for the random game generator</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, May 12, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59483.html" rel="nofollow">Random game mating probabilities</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, March 12, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59841&amp;start=14.html" rel="nofollow">This should be in the wiki</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 13, 2016 » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61672.html" rel="nofollow">Photographing Chess Clock</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 10, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63572.html" rel="nofollow">What can be said about 1 - 0 score?</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, March 28, 2017 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78464" rel="nofollow">Open Chess Game Database Standard (OCGDB)</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2021 » <a href="Databases.html" title="Databases">Chess Databases</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://c2.com/cgi/wiki?GameOfChess.html" rel="nofollow">Game Of Chess</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_notation" rel="nofollow">Chess notation from Wikipedia</a></li>
+<li> <a class="external text" href="http://labraj.uni-mb.si/en/Representation of Chess Game.html" rel="nofollow">Representation of Chess Game - Computer Architecture and Languages Laboratory</a>, <a href="University of Maribor.html" title="University of Maribor">University of Maribor</a></li>
+<li> How many chess games are possible? by <a class="external text" href="http://singingbanana.com/.html" rel="nofollow">Dr James Grime</a>, <a class="external text" href="http://numberphile.com/team/index.html.html" rel="nofollow">numberphile</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup></li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/Km024eldY1A?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">A Game of Chess in the <a class="external text" href="https://en.wikipedia.org/wiki/Middle_Ages" rel="nofollow">Middle Ages</a>, Image photographed from an explanation table labeled "Die Essener Isenburg" at the  <a class="external text" href="https://de.wikipedia.org/wiki/Neue_Isenburg" rel="nofollow">Isenburg Castle</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Essen" rel="nofollow">Essen</a>, Germany, by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, September 28, 2015</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a>, (<b>1986</b>) <i>The Fifth World Computer Chess Championship Cologne, 1986</i>, Research Unit for Information Science and Artificial Intelligence, <a href="University of Hamburg.html" title="University of Hamburg">University of Hamburg</a>, from <i><b>Kings move</b> Welcome to the 1989 AGT World Computer Chess Championship.</i> pg 21, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/3-1%20and%203-2%20and%203-3%20and%204-3.1989 WCCC/1989%20WCCC.062302028.sm.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.thechessdrum.net/PGN Reference.txt.html" rel="nofollow">Standard: Portable Game Notation Specification and Implementation Guide</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, 8.1.1: Seven Tag Roster</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text">Eero Bonsdorff, <a class="external text" href="https://en.wikipedia.org/wiki/Karl_Fabel" rel="nofollow">Karl Fabel</a>, Olvai Riihimaa (<b>1966</b>) <i>Schach und Zahl - Unterhaltsame Schachmathematik</i>. Seite 11-13, Walter Rau Verlag, Düsseldorf (German)</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://de.wikipedia.org/wiki/50-Z%C3%BCge-Regel.html#Schachmathematik" rel="nofollow">50-Züge-Regel - Schachmathematik from Wikipedia.de</a> (German)</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.xs4all.nl/~timkr/chess2/honor.htm.html" rel="nofollow">Defending Humanity's Honor</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Tim_Krabb%C3%A9" rel="nofollow">Tim Krabbé</a>, see game <a href="Rival.html" title="Rival">NewRival</a> - <a href="Faile.html" title="Faile">Faile</a> with 493 moves, and playing 402 moves with bare kings!</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Shannon_number" rel="nofollow">Shannon number</a>,  <a href="Mathematician.html#Hardy" title="Mathematician">Godfrey Harold Hardy</a>, <a href="Matthieu Walraet.html#googolplex" title="Matthieu Walraet">A googolplex of Go games</a></span>
+</li>
+</ol></div>
+<p><b><a href="Chess.html" title="Chess">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175355
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.082 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 195/1000000
+Preprocessor generated node count: 388/1000000
+Post‐expand include size: 1824/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.148      1 Template:MVC_to_include
+100.00%    1.148      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1175-0!canonical and timestamp 20240722175355 and revision id 25933
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chess_Game&amp;oldid=25933">https://www.chessprogramming.org/index.php?title=Chess_Game&amp;oldid=25933</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chess+Game&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chess Game.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chess Game&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chess Game.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chess Game&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chess Game&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chess Game.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chess Game.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chess Game&amp;oldid=25933.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chess Game&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 November 2021, at 12:27.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chess_Game&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.082","walltime":"0.085","ppvisitednodes":{"value":195,"limit":1000000},"ppgeneratednodes":{"value":388,"limit":1000000},"postexpandincludesize":{"value":1824,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    1.148      1 Template:MVC_to_include","100.00%    1.148      1 -total"]},"cachereport":{"timestamp":"20240722175355","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":61});});</script>
+</body>
+</html>

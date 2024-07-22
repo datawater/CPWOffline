@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Move Generation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Move_Generation","wgTitle":"Move Generation","wgCurRevisionId":26291,"wgRevisionId":26291,"wgArticleId":1164,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Zollern","Industrial Heritage Trail"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Move_Generation","wgRelevantArticleId":1164,"wgRequestId":"Zp7DnrG9G67YuqUGxlgcXAAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Move_Generation rootpage-Move_Generation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Move Generation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * Move Generation</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://commons.wikimedia.org/wiki/File:Zeche_Zollern_Kompressormotor.jpg?uselang=en"><img alt="" class="thumbimage" height="225" src="images/thumb/d/d6/GenratorZecheZollern.JPG/300px-GenratorZecheZollern.JPG" srcset="/images/d/d6/GenratorZecheZollern.JPG 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:GenratorZecheZollern.JPG.html" title="Enlarge"></a></div>Blast Generation <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Generation</b> of <a href="Moves.html" title="Moves">moves</a> is a basic part of a chess engine with many variations concerning a <a class="external text" href="https://en.wikipedia.org/wiki/Generator_%28computer_programming%29" rel="nofollow">generator</a> or an <a class="external text" href="https://en.wikipedia.org/wiki/Iterator_pattern" rel="nofollow">iterator</a> to loop over moves inside the <a href="Search.html" title="Search">search</a> routine. The implementation heavily depends on the <a href="Board Representation.html" title="Board Representation">board representation</a>, and it can be generalized into two types, pseudo-legal and legal move generation. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Legality"><span class="tocnumber">1</span> <span class="toctext">Legality</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Pseudo-legal"><span class="tocnumber">1.1</span> <span class="toctext">Pseudo-legal</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Legal"><span class="tocnumber">1.2</span> <span class="toctext">Legal</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Special Generators"><span class="tocnumber">2</span> <span class="toctext">Special Generators</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Chunk Move Generation"><span class="tocnumber">3</span> <span class="toctext">Chunk Move Generation</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Staged Move Generation"><span class="tocnumber">4</span> <span class="toctext">Staged Move Generation</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Debugging"><span class="tocnumber">5</span> <span class="toctext">Debugging</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Un-Move Generation"><span class="tocnumber">6</span> <span class="toctext">Un-Move Generation</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#General"><span class="tocnumber">7.1</span> <span class="toctext">General</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Board Array"><span class="tocnumber">7.2</span> <span class="toctext">Board Array</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Bitboards"><span class="tocnumber">7.3</span> <span class="toctext">Bitboards</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Hardware"><span class="tocnumber">7.4</span> <span class="toctext">Hardware</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Chess Programs"><span class="tocnumber">7.5</span> <span class="toctext">Chess Programs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Publications"><span class="tocnumber">8</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#1950 ..."><span class="tocnumber">8.1</span> <span class="toctext">1950 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#1970 ..."><span class="tocnumber">8.2</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#1980 ..."><span class="tocnumber">8.3</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#1990 ..."><span class="tocnumber">8.4</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2000 ..."><span class="tocnumber">8.5</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2010 ..."><span class="tocnumber">8.6</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Forum Posts"><span class="tocnumber">9</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#1990 ... 2"><span class="tocnumber">9.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#2000 ... 2"><span class="tocnumber">9.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#2005 ..."><span class="tocnumber">9.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#2010 ... 2"><span class="tocnumber">9.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#2015 ..."><span class="tocnumber">9.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#2020 ..."><span class="tocnumber">9.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#External Links"><span class="tocnumber">10</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Legality">Legality</span></h1>
+<h2><span class="mw-headline" id="Pseudo-legal">Pseudo-legal<span id="PseudoLegal"></span></span></h2>
+<p>In Pseudo-legal move generation <a href="Pieces.html" title="Pieces">pieces</a> obey their normal rules of movement, but they're not checked beforehand to see if they'll leave the <a href="King.html" title="King">king</a> in <a href="Check.html" title="Check">check</a>. It is left up to the <a href="Make Move.html" title="Make Move">move-making function</a> to test the move, or it is even possible to let the king remain in check and only test for the capture of the king on the next move.
+<span id="Legal"></span>
+</p>
+<h2><span class="mw-headline" id="Legal">Legal</span></h2>
+<p>In Legal move generation, as the name implies, only <a href="Legal Move.html" title="Legal Move">legal moves</a> are generated, which means extra time must be spent to make sure the <a href="King.html" title="King">king</a> isn't going to be left or placed <a href="Check.html" title="Check">in check</a> after each move. <a href="Pin.html" title="Pin">Pins</a> are the main difficulty, particularly when <a href="En passant.html" title="En passant">en passant</a> is involved.
+</p>
+<h1><span class="mw-headline" id="Special_Generators">Special Generators</span></h1>
+<p>Most programs use special move generators for the <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, sometimes supplemented by one for getting out of <a href="Check.html" title="Check">check</a>. These special cases can be made more efficient than generating and testing each possible move to fit specific criteria. For example, if the king is in check, the only possible legal moves are to capture the attacking piece, block the attacker if it is a "ray" piece, or move the king to safety. Special generators for the quiescence search might want to generate checks in addition to <a href="Captures.html" title="Captures">captures</a> and <a href="Promotions.html" title="Promotions">promotions</a>. They can use the fact that a knight or bishop must start off on the <a href="Color of a Square.html#SameColor" title="Color of a Square">same color square</a> as the opponent king if they are to attack it. And rooks can only generate at most 2 checking moves...to the <a href="Intersection Squares.html" title="Intersection Squares">squares</a> with the rook's column and the king's row or the king's column and the rooks row. 
+</p><p>Similar tricks can be used for generating possible moves out of check, which must be by the king, capturing the opponent's checking piece, or blocking its attack if it is a ray piece. When in <a href="Double Check.html" title="Double Check">double check</a>, only king moves are permitted.
+</p>
+<h1><span class="mw-headline" id="Chunk_Move_Generation">Chunk Move Generation</span></h1>
+<p>With <a href="Move Ordering.html" title="Move Ordering">move ordering</a> in mind, chess programs, while traversing pieces and their move-target sets once, store and buffer generated moves inside one or two <a href="Move List.html" title="Move List">move lists</a> (i.e. for <a href="Tactical Moves.html" title="Tactical Moves">tactical</a> and <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a>), which is convenient for book-keeping and assigning scores based on <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a>, <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a>, <a href="History Heuristic.html" title="History Heuristic">history</a>, <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece square table</a> etc., to later perform a <a class="external text" href="https://en.wikipedia.org/wiki/Selection_sort" rel="nofollow">selection sort</a> before actually <a href="Make Move.html" title="Make Move">making the move</a>.
+<span id="Staged"></span>
+</p>
+<h1><span class="mw-headline" id="Staged_Move_Generation">Staged Move Generation</span></h1>
+<p>Some programs do not generate all moves at once, but do it in several stages (i.e. <a href="Hash Move.html" title="Hash Move">hash move</a> first, then <a href="Captures.html" title="Captures">captures</a>, then <a href="Killer Move.html" title="Killer Move">killer moves</a>, then all the rest in a chunk) on the premise that if one of the early moves causes a cutoff, then we may save on the effort of generating the rest of the moves <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Debugging">Debugging</span></h1>
+<p>It is important to ensure that the move generator works properly. Although this could be tested by playing many games, a better approach is to write a <a href="Perft.html" title="Perft">Perft</a> function. This function <a href="Recursion.html" title="Recursion">recursively</a> generates moves for the current position and all children up to a certain depth, and by counting all the leaf nodes, it can be compared to a <a href="Perft Results.html" title="Perft Results">table of values</a> to test its accuracy.
+<span id="Reverse"></span>
+</p>
+<h1><span class="mw-headline" id="Un-Move_Generation">Un-Move Generation</span></h1>
+<p><b>Un-Move Generation</b> produces a list of all possible moves (including <a href="Captures.html" title="Captures">captures</a> and <a href="Promotions.html" title="Promotions">promotions</a>) which could be <a href="Unmake Move.html" title="Unmake Move">un-made</a> from a target position to reach all possible legal predecessor or parent positions for <a href="Retrograde Analysis.html" title="Retrograde Analysis">retrograde analysis</a> tasks. 
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<h2><span class="mw-headline" id="General">General</span></h2>
+<ul><li> <a href="Encoding Moves.html" title="Encoding Moves">Encoding Moves</a></li>
+<li> <a href="Mate-in-two.html" title="Mate-in-two">Mate-in-two</a></li>
+<li> <a href="Color Flipping.html#Monochrome" title="Color Flipping">Monochrome Move Generation</a></li>
+<li> <a href="Move List.html" title="Move List">Move List</a></li>
+<li> <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a href="Perft.html" title="Perft">Perft</a></li></ul>
+<h2><span class="mw-headline" id="Board_Array">Board Array</span></h2>
+<ul><li> <a href="Mailbox.html" title="Mailbox">Mailbox</a></li></ul>
+<dl><dd> <a href="0x88.html" title="0x88">0x88</a></dd>
+<dd> <a href="Vector Attacks.html" title="Vector Attacks">Vector Attacks</a></dd></dl>
+<ul><li> <a href="Sensor Chess.html#MoveGeneration" title="Sensor Chess">Move Generation with 256 bytes RAM or less?</a></li>
+<li> <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">Table-driven Move Generation</a></li></ul>
+<h2><span class="mw-headline" id="Bitboards">Bitboards</span></h2>
+<ul><li> <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li>
+<li> <a href="DirGolem.html" title="DirGolem">DirGolem</a></li>
+<li> <a href="Pieces versus Directions.html" title="Pieces versus Directions">Pieces versus Directions</a></li>
+<li> <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a></li></ul>
+<p><span id="Hardware"></span>
+</p>
+<h2><span class="mw-headline" id="Hardware">Hardware</span></h2>
+<ul><li> <a href="Belle.html#Hardware" title="Belle">Belle</a></li>
+<li> <a href="Berkeley Chess Microprocessor.html" title="Berkeley Chess Microprocessor">Berkeley Chess Microprocessor</a></li>
+<li> <a href="Brutus.html#MoveGeneration" title="Brutus">Brutus</a></li>
+<li> <a href="CHEOPS.html" title="CHEOPS">CHEOPS</a></li>
+<li> <a href="ChipTest.html#MoveGeneration" title="ChipTest">ChipTest</a></li></ul>
+<h2><span class="mw-headline" id="Chess_Programs">Chess Programs</span></h2>
+<ul><li> <a href="Atlas.html#MoveGeneration" title="Atlas">Move Generation in Atlas</a></li>
+<li> <a href="CPW-Engine movegen(0x88).html" title="CPW-Engine movegen(0x88)">Move Generation in CPW-Engine</a></li>
+<li> <a href="MadChess.html#MoveGeneration" title="MadChess">Move Generation in MadChess</a></li>
+<li> <a href="Rajah.html#0x88" title="Rajah">Move Generation in Rajah</a></li>
+<li> <a href="Thor%27s Hammer.html#MoveGeneration" title="Thor's Hammer">Move Generation in Thor's Hammer</a></li>
+<li> <a href="Tinker.html#MoveGeneration" title="Tinker">Move Generation in Tinker</a></li>
+<li> <a href="10x12 Board.html#OffsetMG" title="10x12 Board">Move Generation in TSCP</a></li>
+<li> <a href="Vanilla Chess.html#MoveGeneration" title="Vanilla Chess">Move Generation in Vanilla Chess</a></li>
+<li> <a href="Table-driven Move Generation.html#Ferret" title="Table-driven Move Generation">Table-driven Move Generation in Ferret</a></li>
+<li> <a href="Table-driven Move Generation.html#GNUChess" title="Table-driven Move Generation">Table-driven Move Generation in GNU Chess</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1950_...">1950 ...</span></h2>
+<ul><li> <a href="Dietrich Prinz.html" title="Dietrich Prinz">Dietrich Prinz</a> (<b>1952</b>). <i>Robot Chess</i>. Research, Vol. 6, reprinted 1988 in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Alex Bell.html" title="Alex Bell">Alex Bell</a> (<b>1972</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/overview.htm.html" rel="nofollow">Games Playing with Computers</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Allen_%26_Unwin" rel="nofollow">Allen &amp; Unwin</a>, ISBN-13: 978-0080212227</li>
+<li> <a href="Gerard Zieli%C5%84ski.html" title="Gerard Zieliński">Gerard Zieliński</a> (<b>1976</b>). <i><a class="external text" href="http://www.emeraldinsight.com/doi/abs/10.1108/eb005412.html" rel="nofollow">Arrays for Programming Chess</a></i>. <a class="external text" href="http://www.emeraldinsight.com/loi/k.html" rel="nofollow">Kybernetes</a>, Vol. 5, No. 2</li>
+<li> <a href="Ozalp Babaoglu.html" title="Ozalp Babaoglu">Ozalp Babaoglu</a> (<b>1977</b>). <i>Hardware implementation of the legal move generation and relative ordering functions for the game of chess</i>. Master's thesis, <a href="University of California, Berkeley.html" title="University of California, Berkeley">University of California, Berkeley</a></li>
+<li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a> (<b>1977</b>). <i>An Introduction to Computer Chess</i>. <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a> pp. 54-81</li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Joe Condon.html" title="Joe Condon">Joe Condon</a>, <a href="Ken Thompson.html" title="Ken Thompson">Ken Thompson</a> (<b>1982</b>). <i>Belle Chess Hardware</i>, <a href="Advances in Computer Chess 3.html" title="Advances in Computer Chess 3">Advances in Computer Chess 3</a>, Reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li>
+<li> <span id="Waterloo1982"></span><a class="new" href="index.php?title=Greg Bakker&amp;action=edit&amp;redlink=1.html" title="Greg Bakker (page does not exist)">Greg Bakker</a>, <a class="new" href="index.php?title=Jim Jonkman&amp;action=edit&amp;redlink=1.html" title="Jim Jonkman (page does not exist)">Jim Jonkman</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Tom Schultz&amp;action=edit&amp;redlink=1.html" title="Tom Schultz (page does not exist)">Tom Schultz</a> (<b>1982</b>). <i>VLSI Implementation of a Chess Legal Move Generator</i>. EE755S-1, <a href="University of Waterloo.html" title="University of Waterloo">University of Waterloo</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Patrick A.D. Powell&amp;action=edit&amp;redlink=1.html" title="Patrick A.D. Powell (page does not exist)">Patrick A.D. Powell</a>, <a class="new" href="index.php?title=Jim Jonkman&amp;action=edit&amp;redlink=1.html" title="Jim Jonkman (page does not exist)">Jim Jonkman</a> (<b>1983</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-642-95432-0_19" rel="nofollow">A VLSI legal move generator for the game of chess</a></i>. in <a href="Mathematician.html#REBryant" title="Mathematician">Randal E. Bryant</a> (eds.) <a class="external text" href="https://link.springer.com/book/10.1007%2F978-3-642-95432-0" rel="nofollow">Third Caltech Conference on Very Large Scale Integration</a> </li>
+<li> <a href="Carl Ebeling.html" title="Carl Ebeling">Carl Ebeling</a>, <a href="Andrew James Palay.html" title="Andrew James Palay">Andrew James Palay</a> (<b>1984</b>). <i>The Design and Implementation of a VLSI Chess Move Generator</i>. Proceedings of the 11th Annual International Symposium on Computer Architecture. <a href="IEEE.html" title="IEEE">IEEE</a> and <a href="ACM.html" title="ACM">ACM</a>.</li>
+<li> <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a> (<b>1984</b>). <i>Bitmap move generation in Chess</i>. <a href="ICGA Journal.html#7 3" title="ICGA Journal">ICCA Journal, Vol. 7, No. 3</a></li>
+<li> <a href="Burton Wendroff.html" title="Burton Wendroff">Burton Wendroff</a> (<b>1985</b>). <i>Attack Detection and Move Generation on the <a class="external text" href="http://www.cisl.ucar.edu/computers/gallery/cray/xmp.jsp.html" rel="nofollow">X-MP/48</a>.</i> <a href="ICGA Journal.html#8 2" title="ICGA Journal">ICCA Journal, Vol. 8, No. 2</a></li>
+<li> <a href="Carl Ebeling.html" title="Carl Ebeling">Carl Ebeling</a> (<b>1986</b>). <i><a class="external text" href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&amp;tid=7692.html" rel="nofollow">All the Right Moves: A VLSI Architecture for Chess</a></i>. Ph.D. thesis, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a>, MIT Press, Cambridge, MA. ISBN 0-262-05035-8.</li>
+<li> <a href="Feng-hsiung Hsu.html" title="Feng-hsiung Hsu">Feng-hsiung Hsu</a> (<b>1986</b>). <i><a class="external text" href="http://repository.cmu.edu/compsci/1566/.html" rel="nofollow">Two designs of functional units for VLSI based chess machines</a></i>. <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a>, Computer Science Department. Paper 1566.</li>
+<li> <a href="Feng-hsiung Hsu.html" title="Feng-hsiung Hsu">Feng-hsiung Hsu</a> (<b>1987</b>). <i>A Two-Million Moves/Sec CMOS Single-Chip Chess Move Generator</i>. IEEE J. of Solid-state Circuits, Vol. 22, No. 5, pp. 841-846.</li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="James Testa.html" title="James Testa">James Testa</a>, <a href="Alvin M. Despain.html" title="Alvin M. Despain">Alvin M. Despain</a> (<b>1990</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&amp;arnumber=124744&amp;contentType=Conference+Publications&amp;searchWithin%3Dp Authors%3A.QT.Testa%2C+J..QT..html" rel="nofollow">A CMOS VLSI chess microprocessor</a></i>. <a href="University of California, Berkeley.html" title="University of California, Berkeley">University of California, Berkeley</a>, <a href="IEEE.html" title="IEEE">IEEE</a> Custom Integrated Circuit Conference</li>
+<li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a> (<b>1992</b>). <i>Experiments in Selective Search Extensions</i>. MSc. thesis, Department of Computing Science, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a>, <a class="external text" href="https://era.library.ualberta.ca/public/datastream/get/uuid:e4fbf48d-7603-490f-85cc-5497bbecf5a8/DS1" rel="nofollow">pdf</a></li>
+<li> <a href="Yi-Fan Ke.html" title="Yi-Fan Ke">Yi-Fan Ke</a>, <a href="Tai-Ming Parng.html" title="Tai-Ming Parng">Tai-Ming Parng</a> (<b>1996</b>). <i>Parallel Move Generation System for Computer Chess</i>. <a class="external text" href="http://search.ieice.org/bin/index.php?category=D&amp;lang=E&amp;curr=1.html" rel="nofollow">IEICE Transactions on Information and Systems</a>, April, 1996, pp. 290-296</li>
+<li> <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1997</b>). <i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node2.html.html" rel="nofollow">How DarkThought Plays Chess</a>.</i> <a href="ICGA Journal.html#20 3" title="ICGA Journal">ICCA Journal, Vol. 20, No. 3</a></li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>1999</b>). <i><a class="external text" href="http://www.cis.uab.edu/hyatt/bitmaps.html.html" rel="nofollow">Rotated Bitmaps, a New Twist on an Old Idea</a></i>. <a href="ICGA Journal.html#24 4" title="ICGA Journal">ICCA Journal, Vol. 22, No. 4</a></li>
+<li> <a href="Feng-hsiung Hsu.html" title="Feng-hsiung Hsu">Feng-hsiung Hsu</a> (<b>1999</b>). <i>IBM’s Deep Blue Chess Grandmaster Chips</i>. <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.126.5392&amp;rep=rep1&amp;type=pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a>, <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a> (<b>2001</b>). <i>Plausible Move Generation in Two-Player Complete Information Games Using Static Evaluation</i>. Transactions of the Japanese Society for Artificial Intelligence, Vol.16, pp. 55-62. <a class="external text" href="http://www.teu.ac.jp/gamelab/RESEARCH/jsai2001.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Marc Boul%C3%A9.html" title="Marc Boulé">Marc Boulé</a> (<b>2002</b>). <i>An FPGA Move Generator for the Game of Chess</i>. Masters thesis, <a href="McGill University.html" title="McGill University">McGill University</a>,  (Supervisor: <a href="Zeljko Zilic.html" title="Zeljko Zilic">Zeljko Zilic</a>, Co-Supervisor: <a href="Monroe Newborn.html" title="Monroe Newborn">Monty Newborn</a>), <a class="external text" href="http://www.iml.ece.mcgill.ca/%7Emboule/files/mbthesis02.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Marc Boul%C3%A9.html" title="Marc Boulé">Marc Boulé</a>, <a href="Zeljko Zilic.html" title="Zeljko Zilic">Zeljko Zilic</a> (<b>2002</b>). <i>An FPGA Move Generator for the Game of Chess</i>. <a href="McGill University.html" title="McGill University">McGill University</a>,  <a class="external text" href="http://www.iml.ece.mcgill.ca/%7Emboule/files/cicc02.pdf.html" rel="nofollow">pdf</a> » <a href="FPGA.html" title="FPGA">FPGA</a></li>
+<li> <a href="Marc Boul%C3%A9.html" title="Marc Boulé">Marc Boulé</a>, <a href="Zeljko Zilic.html" title="Zeljko Zilic">Zeljko Zilic</a> (<b>2002</b>). <i>An FPGA Move Generator for the Game of Chess</i>. <a href="ICGA Journal.html#25 2" title="ICGA Journal">ICGA Journal, Vol. 25, No. 2</a>, <a class="external text" href="http://iml.ece.mcgill.ca/~mboule/files/icga02.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2007</b>). <i>Using Bitboards for Move Generation in Shogi</i>. <a href="ICGA Journal.html#30 1" title="ICGA Journal">ICGA Journal, Vol. 30, No. 1</a>, <a class="external text" href="http://www2.teu.ac.jp/gamelab/RESEARCH/ICGAJournal2007.pdf.html" rel="nofollow">pdf</a>, was topic of the <a href="Conferences.html#GPW" title="Conferences">11th Game Programming Workshop</a></li>
+<li> <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul</a> (<b>2009</b>). <i>New Architectures in Computer Chess</i>, Ph.D. Thesis, <a class="external text" href="http://www.personeel.unimaas.nl/uiterwijk/Theses/PhD/Reul thesis.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Adrien Couetoux&amp;action=edit&amp;redlink=1.html" title="Adrien Couetoux (page does not exist)">Adrien Couetoux</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a class="new" href="index.php?title=Hassen Doghmen&amp;action=edit&amp;redlink=1.html" title="Hassen Doghmen (page does not exist)">Hassen Doghmen</a> (<b>2012</b>). <i>Learning a Move-Generator for Upper Confidence Trees</i>. <a class="external text" href="http://ics2012.ndhu.edu.tw/.html" rel="nofollow">ICS 2012</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Hualien_City" rel="nofollow">Hualien</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Taiwan" rel="nofollow">Taiwan</a>, December 2012 » <a href="Learning.html" title="Learning">Learning</a>, <a href="UCT.html" title="UCT">UCT</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1990_..._2">1990 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess/browse frm/thread/2a726f0678600ca5.html" rel="nofollow">move generators in computer chess</a> by <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 11, 1994</li></ul>
+<dl><dd> <a class="external text" href="http://groups.google.com/group/rec.games.chess/msg/f4f0751cc8b928c8.html" rel="nofollow">Re: move generators in computer chess, Tricky bit tricks</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 20, 1994 » <a href="Traversing Subsets of a Set.html" title="Traversing Subsets of a Set">Traversing Subsets of a Set</a></dd></dl>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/vvl1nLv1MD8/oHVKdLXuiaUJ" rel="nofollow">bitboard move generation</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, October 25, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/Kl1MCF9tmpA/7tY-FfFSJDMJ" rel="nofollow">move generators in computer chess</a> by <a href="Jo%C3%ABl Rivat.html" title="Joël Rivat">Joël Rivat</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, October 26, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/106wKFeI8BA/zNuzu-2aMowJ" rel="nofollow">bitboard move generator</a> by <a href="Jo%C3%ABl Rivat.html" title="Joël Rivat">Joël Rivat</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, November 13, 1994</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/33c57503391f3a89.html" rel="nofollow">Speed of Move Generator</a> by <a href="Valavan Manohararajah.html" title="Valavan Manohararajah">Valavan Manohararajah</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, August 15, 1995</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/4b0a4302870bf6ac.html" rel="nofollow">Move generator design choices</a> by <a href="Martin Borriss.html" title="Martin Borriss">Martin Borriss</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 26, 1996</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/3601d68c3678dc7f.html" rel="nofollow">Sane numbers</a> by <a href="Martin Borriss.html" title="Martin Borriss">Martin Borriss</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 26, 1996</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/7292bfb78152b40b.html" rel="nofollow">GNU move generation</a> by <a class="new" href="index.php?title=Jan Willem de Kort&amp;action=edit&amp;redlink=1.html" title="Jan Willem de Kort (page does not exist)">Jan Willem de Kort</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, March 18, 1998 » <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a></li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=109588" rel="nofollow">Fast BB move generation</a> by <a href="Bas Hamstra.html" title="Bas Hamstra">Bas Hamstra</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=112809" rel="nofollow">move_generation + hash</a> by <a href="Georg von Zimmermann.html" title="Georg von Zimmermann">Georg von Zimmermann</a>, <a href="CCC.html" title="CCC">CCC</a>, May 28, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=116593" rel="nofollow">Pre-calculated move generation</a> by Ujecrh, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=188901" rel="nofollow">Move generation question for the big boys</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, September 15, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=238333" rel="nofollow">Precomputed move information</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=266381" rel="nofollow">Natural move generation with bitboards (was Re:significant math)</a> by <a href="Alessandro Damiani.html" title="Alessandro Damiani">Alessandro Damiani</a>, <a href="CCC.html" title="CCC">CCC</a>, November 20, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=275167" rel="nofollow">Strength question</a> by <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=294549" rel="nofollow">Which open source chess program has the fastest move generator?</a> by <a href="Dennis Breuker.html" title="Dennis Breuker">Dennis Breuker</a>, <a href="CCC.html" title="CCC">CCC</a>, April 25, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=303316" rel="nofollow">Improvements in BF makes my MoveGen suck =(</a> by <a href="Albert Bertilsson.html" title="Albert Bertilsson">Albert Bertilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2003 » <a href="Branching Factor.html" title="Branching Factor">Branching Factor</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=311601" rel="nofollow">Speed improvement in split move generation</a> by <a href="Federico Andr%C3%A9s Corigliano.html" title="Federico Andrés Corigliano">Federico Corigliano</a>, <a href="CCC.html" title="CCC">CCC</a>, August 16, 2003</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=331.html" rel="nofollow">Move Generation Speed</a> by <a href="Dan Honeycutt.html" title="Dan Honeycutt">Dan Honeycutt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 21, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5623.html" rel="nofollow">Yet another new bitboard move generation method</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 22, 2006 » <a href="Titboards.html" title="Titboards">Titboards</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5623&amp;start=6.html" rel="nofollow">Re: Yet another new bitboard move generation method</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 01, 2006 <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17790.html" rel="nofollow">Is it time for another new move generator?</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, November 11, 2007 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17820.html" rel="nofollow">Did someone mention the GNUChess move Generator?</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2007 » <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=19837.html" rel="nofollow">compact bitboard move generator</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, February 25, 2008 » <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20630.html" rel="nofollow">Move generator</a> by <a href="Chua Kong Sian.html" title="Chua Kong Sian">kongsian</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=25917.html" rel="nofollow">Bitboards / move generation on larger boards</a> by <a href="Gregory Strong.html" title="Gregory Strong">Gregory Strong</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2009 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27657.html" rel="nofollow">Move generation: staged vs all-at-once</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2009</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=264380.html" rel="nofollow">Re: Move generation: staged vs all-at-once</a> by <a href="Lance Perkins.html" title="Lance Perkins">Lance Perkins</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2009</dd></dl>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39873.html" rel="nofollow">Assembly move generation in Freccia</a> by <a href="Stefano Gemma.html" title="Stefano Gemma">Stefano Gemma</a>, <a href="CCC.html" title="CCC">CCC</a>, July 26, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=52125&amp;sid=d3919159e42267a64891e4e0e3bfbaf0.html" rel="nofollow">move generation speed</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, January 03, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43971.html" rel="nofollow">Is there such a thing as branchless move generation?</a> by <a href="John Hamlen.html" title="John Hamlen">John Hamlen</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2012 » <a href="DirGolem.html" title="DirGolem">DirGolem</a>, <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44658.html" rel="nofollow">hyper threading and move generation</a> by <a href="Gabor Buella.html" title="Gabor Buella">Gabor Buella</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44939.html" rel="nofollow">What's the fastest move generator?</a> by Marcel Fournier, <a href="CCC.html" title="CCC">CCC</a>,  August 29, 2012 </li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?p=485936.html#485936" rel="nofollow">Re: Question About CPP-C#, Performance, and Square Representation</a> by <a href="Erik Madsen.html" title="Erik Madsen">Erik Madsen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 03, 2012 » <a href="MadChess.html" title="MadChess">MadChess</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45926.html" rel="nofollow">Plausible move generator</a> by Jorge Garcia, <a href="CCC.html" title="CCC">CCC</a>, November 09, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46056.html" rel="nofollow">Diepeveen's move generator</a> by Hrvoje Horvatic, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2012 » <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">Table-driven Move Generation</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54337.html" rel="nofollow">Just another movegen</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, November 14, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54368.html" rel="nofollow">How to call the Satana move generation</a> by <a href="Stefano Gemma.html" title="Stefano Gemma">Stefano Gemma</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2014 » <a href="Satana.html" title="Satana">Satana</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54465.html" rel="nofollow">Black/White symmetry in move generation</a> by Jeffery A Esposito, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2014 » <a href="Color Flipping.html" title="Color Flipping">Color Flipping</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54704.html" rel="nofollow">Symmetric move generation using bitboards</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54796.html" rel="nofollow">Reverse move generation</a> by Kostas Oreopoulos, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2014 » <a href="Move Generation.html#Reverse" title="Move Generation">Un-Move Generation</a>, <a href="Retrograde Analysis.html" title="Retrograde Analysis">Retrograde Analysis</a> </li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55275.html" rel="nofollow">On bitboard legal move generation</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56049.html" rel="nofollow">Questions about chess programming from a newbie</a> by Matt Palmer, <a href="CCC.html" title="CCC">CCC</a>, April 18, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56299.html" rel="nofollow">Caching generated moves list in recursive searches</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>, May 10, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=58433.html" rel="nofollow">An approach to precomputed move generation bitboards</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, December 01, 2015 </li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61020.html" rel="nofollow">speed up your engine part 4</a> by <a href="Laurie Tunnicliffe.html" title="Laurie Tunnicliffe">Laurie Tunnicliffe</a>, <a href="CCC.html" title="CCC">CCC</a>, August 03, 2016 » <a href="Move Generation.html#Staged" title="Move Generation">Staged move generation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61797.html" rel="nofollow">Performance diff between legal / illegal move generator</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2016</li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=3081.html" rel="nofollow">Most efficient way to generate legal king moves?</a> by notachessplayer, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 04, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63346.html" rel="nofollow">Back to the basics, generating moves on gpu in parallel...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2017 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64242.html" rel="nofollow">Fastest pawn quiet move generation I was able to come with</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, June 10, 2017 » <a href="C.html#Duff" title="C">Duff's Device</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64619.html" rel="nofollow">History heuristic and quiet move generation</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, July 16, 2017 » <a href="History Heuristic.html" title="History Heuristic">History Heuristic</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65900.html" rel="nofollow">Skipping duplicat moves</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 03, 2017</li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70082.html" rel="nofollow">Opinions requested for new move gen idea</a>  by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, March 03, 2019 » <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">Table-driven Move Generation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70508.html" rel="nofollow">My newest almost bb move generator is wonderful</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70515.html" rel="nofollow">Efficient capture generation in the game of Thud</a> by koedem, <a href="CCC.html" title="CCC">CCC</a>, April 18, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=74917.html" rel="nofollow">Comparing 4 move generators: 0x88 vs 10x12 vs 10x12 + bitboards HYBRID vs Pure MAGIC BITBOARDS</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 28, 2020</li></ul>
+<p><b>2021</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76835.html" rel="nofollow">Staged move generation?</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2021 » <a href="Move Generation.html#Staged" title="Move Generation">Staged Move Generation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77350.html" rel="nofollow">Being silly with perft and legal move generation</a> by <a class="new" href="index.php?title=Jakob Progsch&amp;action=edit&amp;redlink=1.html" title="Jakob Progsch (page does not exist)">Jakob Progsch</a>, <a href="CCC.html" title="CCC">CCC</a>, May 19, 2021 » <a href="Perft.html" title="Perft">Perft</a>, <a href="#Legal">Legal Move Generation</a>, <a href="En passant.html" title="En passant">En passant</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77465.html" rel="nofollow">Advice on optimizing my move generation</a> by Christian Dean, <a href="CCC.html" title="CCC">CCC</a>, June 11, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77671.html" rel="nofollow">Efficiently Generated Legal moves question</a> by Pedro Duran, <a href="CCC.html" title="CCC">CCC</a>, July 08, 2021 » <a href="Legal Move.html" title="Legal Move">Legal Move</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77906.html" rel="nofollow">Move generator advice</a> by Ellie Moore, <a href="CCC.html" title="CCC">CCC</a>, August 08, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78084.html" rel="nofollow">Legal or pseudolegal move generator?</a> by Pier Carlo, <a href="CCC.html" title="CCC">CCC</a>, September 03, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78164.html" rel="nofollow">Distinguish rook and bishop move efficiently</a> by <a class="new" href="index.php?title=Guido Flohr&amp;action=edit&amp;redlink=1.html" title="Guido Flohr (page does not exist)">Guido Flohr</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78913" rel="nofollow">Fast reverse move generation</a> by koedem, <a href="CCC.html" title="CCC">CCC</a>, December 18, 2021 » <a href="Move Generation.html#Reverse" title="Move Generation">Un-Move Generation</a>, <a href="Retrograde Analysis.html" title="Retrograde Analysis">Retrograde Analysis</a></li></ul>
+<dl><dd> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78913&amp;start=1" rel="nofollow">Re: Fast reverse move generation</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, December 18, 2021 » <a href="Texel.html" title="Texel">Texel</a></dd></dl>
+<p><b>2022</b>
+</p>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79365" rel="nofollow">Move generation for bitboards</a> by <a class="new" href="index.php?title=Elias Nilsson&amp;action=edit&amp;redlink=1.html" title="Elias Nilsson (page does not exist)">Elias Nilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, February 16, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/p003.htm.html" rel="nofollow">Chapter 3: Board Games - 3.1 CHESS</a> from <a href="Alex Bell.html" title="Alex Bell">Alex Bell</a> (<b>1972</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/overview.htm.html" rel="nofollow">Games Playing with Computers</a></i>. Allen &amp; Unwin, ISBN-13: 978-0080212227</li>
+<li> <a class="external text" href="http://web.archive.org/web/20070716111804/www.brucemo.com/compchess/programming/0x88.htm.html" rel="nofollow">Description of 0x88 method</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="http://web.archive.org/web/20070715002634/www.brucemo.com/compchess/programming/movetable.htm.html" rel="nofollow">Move Table move generation</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="http://john.stanback.net/zarkov/zarkov methods.html.html" rel="nofollow">How Zarkov Plays Chess</a> by <a href="John Stanback.html" title="John Stanback">John Stanback</a></li>
+<li> <a class="external text" href="http://perl.guru.org/scott/hobbies/chess/.html" rel="nofollow">Monsoon/Typhoon Homepage</a> by <a href="Scott Gasch.html" title="Scott Gasch">Scott Gasch</a>, covers <a href="0x88.html" title="0x88">0x88</a> move generation</li>
+<li> <a class="external text" href="http://www.pradu.us/old/Nov27 2008/Buzz/.html" rel="nofollow">Buzz - A Winboard Chess Playing Program</a> by <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a> - Source of <a href="Magic Bitboards.html" title="Magic Bitboards">magic</a> Move Generator</li>
+<li> <a class="external text" href="https://www.gamedev.net/tutorials/_/technical/artificial-intelligence/chess-programming-part-iii-move-generation-r1126/" rel="nofollow">Chess Programming Part III: Move Generation</a> by <a href="Fran%C3%A7ois-Dominic Laram%C3%A9e.html" title="François-Dominic Laramée">François-Dominic Laramée</a>, <a class="external text" href="https://en.wikipedia.org/wiki/GameDev.net" rel="nofollow">gamedev.net</a>, July 2000</li>
+<li> <a class="external text" href="https://labraj.feri.um.si/en/Chess_Move_Generator" rel="nofollow">Chess Move Generator - Computer Architecture and Languages Laboratory</a>, <a href="University of Maribor.html" title="University of Maribor">University of Maribor</a></li>
+<li> <a class="external text" href="https://sites.google.com/site/hispanicchessengines/programs--interface---engines/engine" rel="nofollow">Engine - Hispanic Chess Engines | The move generator</a> by <a href="Pedro Castro.html" title="Pedro Castro">Pedro Castro</a></li>
+<li> <a class="external text" href="https://peterellisjones.com/posts/generating-legal-chess-moves-efficiently/" rel="nofollow">Generating Legal Chess Moves Efficiently</a> by <a class="new" href="index.php?title=Peter Ellis Jones&amp;action=edit&amp;redlink=1.html" title="Peter Ellis Jones (page does not exist)">Peter Ellis Jones</a>, February 09, 2017</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://commons.wikimedia.org/wiki/File:Zeche_Zollern_Kompressormotor.jpg?uselang=en" rel="nofollow">electric driven air compressor</a> in the <a class="external text" href="https://commons.wikimedia.org/wiki/File:Zeche_Zollern_Dortmund_-_Maschinenhalle.jpg?uselang=en" rel="nofollow">machine hall</a> of <a href="Category:Zollern.html" title="Category:Zollern">Zollern II/IV Colliery</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Dortmund" rel="nofollow">Dortmund</a> <a class="external text" href="https://de.wikipedia.org/wiki/B%C3%B6vinghausen_(Dortmund)" rel="nofollow">Bövinghausen</a>, Germany - part of <a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">The Industrial Heritage Trail</a>, Photo by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, September 18, 2016</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27657.html" rel="nofollow">Move generation: staged vs all-at-once</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2009</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://uwaterloo.ca/water-under-the-bridge/1983" rel="nofollow">1983 | Waking up to change</a> in <a class="external text" href="https://uwaterloo.ca/water-under-the-bridge/about-authors" rel="nofollow">Chris Redmond and Simon the Troll</a> (<b>1998</b>). <i><a class="external text" href="https://uwaterloo.ca/water-under-the-bridge/" rel="nofollow">Water Under the Bridge</a></i>. <a href="University of Waterloo.html" title="University of Waterloo">University of Waterloo</a> » <a href="#Waterloo1982">VLSI Move Generation</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=52861&amp;start=8.html" rel="nofollow">Re: multi-dimensional piece/square tables</a> by Tony P., <a href="CCC.html" title="CCC">CCC</a>, January 28, 2020</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://msdn.microsoft.com/en-us/library/9k7k7cf0.aspx.html" rel="nofollow">yield - MSDN C# Reference</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://startbigthinksmall.wordpress.com/2008/06/09/behind-the-scenes-of-the-c-yield-keyword/.html" rel="nofollow">Behind the scenes of the C# yield keyword | Struggles</a> by <a class="external text" href="http://startbigthinksmall.wordpress.com/.html" rel="nofollow">Lars Corneliussen</a>, June 9, 2008</span>
+</li>
+</ol></div>
+<p><b><a href="Board Representation.html" title="Board Representation">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722071008
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.050 seconds
+Real time usage: 0.054 seconds
+Preprocessor visited node count: 213/1000000
+Preprocessor generated node count: 346/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1164-0!canonical and timestamp 20240722071008 and revision id 26291
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Move_Generation&amp;oldid=26291">https://www.chessprogramming.org/index.php?title=Move_Generation&amp;oldid=26291</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Zollern.html" title="Category:Zollern">Zollern</a></li><li><a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">Industrial Heritage Trail</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Move+Generation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Move Generation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Move Generation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Move Generation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Move Generation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Move Generation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Move Generation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Move Generation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Move Generation&amp;oldid=26291.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Move Generation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 12 March 2022, at 18:39.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Move_Generation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.050","walltime":"0.054","ppvisitednodes":{"value":213,"limit":1000000},"ppgeneratednodes":{"value":346,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722071008","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

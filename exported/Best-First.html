@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Best-First - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Best-First","wgTitle":"Best-First","wgCurRevisionId":25998,"wgRevisionId":25998,"wgArticleId":1063,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Nucleus","Ian Carr","Allan Holdsworth"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Best-First","wgRelevantArticleId":1063,"wgRequestId":"Zp7DSAZUIzne983r89wxOAAAAA4","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Best-First rootpage-Best-First skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Best-First</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * Best-First</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Breadth-first-tree.svg.html"><img alt="" class="thumbimage" height="192" src="wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/300px-Breadth-first-tree.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/450px-Breadth-first-tree.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/600px-Breadth-first-tree.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Breadth-first-tree.svg.html" title="Enlarge"></a></div>Breadth-First Node order <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Best-First Search</b> is a <a class="external text" href="https://en.wikipedia.org/wiki/State_space_search" rel="nofollow">state space search</a> to traverse <a href="Node.html" title="Node">nodes</a> of tree-like data structures (i. e. <a href="Search Tree.html" title="Search Tree">search trees</a>) in <a class="external text" href="https://en.wikipedia.org/wiki/Breadth-first_search" rel="nofollow">breadth-first</a> manner. It is usually implemented with a <a class="new" href="index.php?title=Priority Queue&amp;action=edit&amp;redlink=1.html" title="Priority Queue (page does not exist)">priority queue</a> instead of the <a href="Queue.html" title="Queue">FIFO</a> of breadth-first <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> , to expand the most promising node of one level first. Best-first turns a uninformed breadth-first into an informed search. Since all nodes of one level must be saved until their child nodes at the next level have been generated, the space complexity and memory requirement is proportional to the number of nodes at the deepest level.
+</p><p>Best-first algorithms like <a class="external text" href="https://en.wikipedia.org/wiki/A*_search_algorithm" rel="nofollow">A*</a> are used for path finding in <a class="external text" href="https://en.wikipedia.org/wiki/Combinatorial_search" rel="nofollow">combinatorial search</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Puzzle" rel="nofollow">puzzles</a>. <a href="Iterative Deepening.html" title="Iterative Deepening">Iterative deepening</a> is a technique to turn <a href="Depth-First.html" title="Depth-First">depth-first searches</a> into best-first with the advantage space grows <a class="external text" href="https://en.wikipedia.org/wiki/Linear_growth" rel="nofollow">linear</a> rather than <a class="external text" href="https://en.wikipedia.org/wiki/Exponential_growth" rel="nofollow">exponential</a> with increasing <a href="Depth.html" title="Depth">search depth</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, as applied for instance in <a class="external text" href="https://en.wikipedia.org/wiki/IDA*" rel="nofollow">IDA*</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Two-Player"><span class="tocnumber">1</span> <span class="toctext">Two-Player</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Some Chess Programs"><span class="tocnumber">2</span> <span class="toctext">Some Chess Programs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#1960 ..."><span class="tocnumber">4.1</span> <span class="toctext">1960 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#1970 ..."><span class="tocnumber">4.2</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#1980 ..."><span class="tocnumber">4.3</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1990 ..."><span class="tocnumber">4.4</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">4.5</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ..."><span class="tocnumber">4.6</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2020 ..."><span class="tocnumber">4.7</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Two-Player">Two-Player</span></h1>
+<p>Following best-first algorithms were invented and implemented for computer chess programs as well for other two-player <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum_(game_theory)" rel="nofollow">zero-sum</a> board <a href="Games.html" title="Games">game</a> players with <a class="external text" href="https://en.wikipedia.org/wiki/Perfect_information" rel="nofollow">perfect information</a>:
+</p>
+<ul><li> <a href="B*.html" title="B*">B*</a></li>
+<li> <a class="new" href="index.php?title=Bandwidth Search&amp;action=edit&amp;redlink=1.html" title="Bandwidth Search (page does not exist)">Bandwidth Search</a></li>
+<li> <a href="Best-First Minimax Search.html" title="Best-First Minimax Search">Best-First Minimax Search</a></li>
+<li> <a href="Conspiracy Number Search.html" title="Conspiracy Number Search">Conspiracy Number Search</a></li>
+<li> <a href="Ari Weinstein.html#FSSS-Minimax" title="Ari Weinstein">FSSS-Minimax</a></li>
+<li> <a href="Richard P. Cochran.html#LCF" title="Richard P. Cochran">LCF</a></li>
+<li> <a href="MC%CE%B1%CE%B2.html" title="MCαβ">MCαβ</a></li>
+<li> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a></li>
+<li> <a href="James R. Slagle.html#MNprocedure" title="James R. Slagle">M &amp; N Procedure</a></li>
+<li> <a href="Proof-Number Search.html" title="Proof-Number Search">Proof-Number Search</a></li>
+<li> <a href="SSS* and Dual*.html" title="SSS* and Dual*">SSS* and Dual*</a></li>
+<li> <a href="UCT.html" title="UCT">UCT</a></li></ul>
+<h1><span class="mw-headline" id="Some_Chess_Programs">Some Chess Programs</span></h1>
+<ul><li> <a href="Centaur.html" title="Centaur">Centaur</a></li>
+<li> <a href="HiTech.html" title="HiTech">HiTech B*</a></li>
+<li> <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a href="Rocinante.html" title="Rocinante">Rocinante</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Depth-First.html" title="Depth-First">Depth-First</a></li>
+<li> <a href="MTD(f).html" title="MTD(f)">MTD(f)</a></li>
+<li> <a href="NegaC*.html" title="NegaC*">NegaC*</a></li>
+<li> <a href="Perft.html#15" title="Perft">Perft(15)</a></li>
+<li> <a class="new" href="index.php?title=Priority Queue&amp;action=edit&amp;redlink=1.html" title="Priority Queue (page does not exist)">Priority Queue</a></li>
+<li> <a href="Queue.html" title="Queue">Queue</a></li>
+<li> <a href="SSS* and Dual*.html#SSStarandDualStarAsMT" title="SSS* and Dual*">SSS* and Dual* as MT</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1960_...">1960 ...</span></h2>
+<ul><li> <a href="James R. Slagle.html" title="James R. Slagle">James R. Slagle</a> (<b>1963</b>). <i>Game Trees, M &amp; N Minimaxing, and the M &amp; N alpha-beta procedure.</i> Artificial Intelligence Group Report 3, UCRL-4671, University of California</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Peter_E._Hart" rel="nofollow">Peter Hart</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Nils_John_Nilsson" rel="nofollow">Nils Nilsson</a>,  <a class="external text" href="https://en.wikipedia.org/wiki/Bertram_Raphael" rel="nofollow">Bertram Raphael</a> (<b>1968</b>). <i>A Formal Basis for the Heuristic Determination of Minimum Cost Paths</i>.  <a href="IEEE.html#TSSC" title="IEEE">IEEE Transactions on Systems Science and Cybernetics</a>, Vol. SSC-4, No. 2, <a class="external text" href="https://www.cs.auckland.ac.nz/courses/compsci709s2c/resources/Mike.d/astarNilsson.pdf" rel="nofollow">pdf</a>, introducing <a class="external text" href="https://en.wikipedia.org/wiki/A*_search_algorithm" rel="nofollow">A*</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Larry Harris.html" title="Larry Harris">Larry Harris</a> (<b>1973</b>). <i>The bandwidth heuristic search</i>. <a href="Conferences.html#IJCAI1973" title="Conferences">3. IJCAI 1973</a>, <a class="external text" href="http://www.ijcai.org/Past%20Proceedings/IJCAI-73/PDF/004.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Larry Harris.html" title="Larry Harris">Larry Harris</a> (<b>1974</b>). <i>Heuristic Search under Conditions of Error</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 5, No. 3, also as (<b>1977</b>). <i>The heuristic search: An alternative to the alpha-beta minimax procedure.</i> <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a> </li>
+<li> <a href="Larry Harris.html" title="Larry Harris">Larry Harris</a> (<b>1975</b>). <i>The Heuristic Search And The Game Of Chess - A Study Of Quiescence, Sacrifices, And Plan Oriented Play</i>. <a href="Conferences.html#IJCAI1975" title="Conferences">4. IJCAI 1975</a>, reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li>
+<li> <a href="Larry Harris.html" title="Larry Harris">Larry Harris</a> (<b>1977</b>). <i>The heuristic search: An alternative to the alpha-beta minimax procedure.</i> <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a> </li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Judea Pearl.html" title="Judea Pearl">Judea Pearl</a> (<b>1981</b>). <i>Heuristic search theory: A survey of recent results</i>. <a href="Conferences.html#IJCAI1981" title="Conferences">IJCAI-81</a>, <a class="external text" href="http://ijcai.org/Past%20Proceedings/IJCAI-81-VOL%201/PDF/100.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Judea Pearl.html" title="Judea Pearl">Judea Pearl</a> (<b>1984</b>). <i>Heuristics: Intelligent Search Strategies for Computer Problem Solving</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Addison-Wesley" rel="nofollow">Addison-Wesley</a></li>
+<li> <a href="Alexander Reinefeld.html" title="Alexander Reinefeld">Alexander Reinefeld</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>1985</b>). <i>Is Best First Search Really Best?</i> Technical Report TR 85-16, Department of Computer Science, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a>.</li>
+<li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a>, <a href="Marcus Wagner.html" title="Marcus Wagner">Marcus Wagner</a> (<b>1986</b>). <i>Selective Search versus Brute Force.</i> <a href="ICGA Journal.html#9 3" title="ICGA Journal">ICCA Journal, Vol. 9, No. 3</a></li>
+<li> <a href="Richard Karp.html" title="Richard Karp">Richard Karp</a>, <a href="Yanjun Zhang.html" title="Yanjun Zhang">Yanjun Zhang</a> (<b>1988</b>). <i><a class="external text" href="https://dl.acm.org/citation.cfm?id=62212.62240" rel="nofollow">A randomized parallel branch-and-bound procedure</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/stoc/stoc88.html" rel="nofollow">STOC '88</a></li>
+<li> <a class="new" href="index.php?title=Anup K. Sen&amp;action=edit&amp;redlink=1.html" title="Anup K. Sen (page does not exist)">Anup K. Sen</a>, <a href="Amitava Bagchi.html" title="Amitava Bagchi">Amitava Bagchi</a> (<b>1989</b>). <i>Fast Recursive Formulations for Best-First Search that allow Controlled use of Memory</i>. <a href="Conferences.html#IJCAI" title="Conferences">IJCAI 1989</a>, <a class="external text" href="http://www.ijcai.org/Past%20Proceedings/IJCAI-89-VOL1/PDF/047.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Steven Skiena.html" title="Steven Skiena">Steven Skiena</a> (<b>1990</b>). <i>Breadth-First and Depth-First Search.</i> §3.2.5 in <a class="external text" href="http://www.amazon.com/exec/obidos/ASIN/0521806860/ref=nosim/weisstein-20.html" rel="nofollow">Implementing Discrete Mathematics: Combinatorics and Graph Theory with Mathematica</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Addison-Wesley" rel="nofollow">Addison-Wesley</a></li>
+<li> <a class="new" href="index.php?title=Nageshwara Rao Vempaty&amp;action=edit&amp;redlink=1.html" title="Nageshwara Rao Vempaty (page does not exist)">Nageshwara Rao Vempaty</a>, <a class="new" href="index.php?title=Vipin Kumar&amp;action=edit&amp;redlink=1.html" title="Vipin Kumar (page does not exist)">Vipin Kumar</a>, <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a>  (<b>1991</b>). <i>Depth-First vs Best-First Search</i>. <a href="Conferences.html#AAAI-91" title="Conferences">AAAI-91</a>, <a class="external text" href="https://www.aaai.org/Papers/AAAI/1991/AAAI91-067.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> (<b>1993</b>). <i>Linear-Space Best-First Search.</i> <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 62, No. 1, <a class="external text" href="http://www.aaai.org/Papers/AAAI/1992/AAAI92-082.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a>, <a href="Max Chickering.html" title="Max Chickering">Max Chickering</a> (<b>1993</b>). <i><a class="external text" href="http://www.aaai.org/Library/Symposia/Fall/1993/fs93-02-006.php.html" rel="nofollow">Best-first Minimax Search: First Results</a>.</i> <a href="Conferences.html#AAAI-93" title="Conferences">AAAI-93</a></li>
+<li> <a href="Mathematician.html#WZhang" title="Mathematician">Weixiong Zhang</a>, <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> (<b>1993</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=1867385.html" rel="nofollow">Depth-first vs. best-first search: New results</a></i>. <a href="Conferences.html#AAAI-93" title="Conferences">AAAI-93</a></li>
+<li> <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a> (<b>1994</b>). <i><a class="external text" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=EJurXJ4AAAAJ&amp;cstart=40&amp;citation_for_view=EJurXJ4AAAAJ:TQgYirikUcIC" rel="nofollow">The Principle of Pressure in Chess</a></i>. TAINN 1994</li>
+<li> <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Wim Pijls.html" title="Wim Pijls">Wim Pijls</a>, <a href="Arie de Bruin.html" title="Arie de Bruin">Arie de Bruin</a> (<b>1995, 2015</b>). <i>Best-First Fixed Depth Game Tree Search in Practice.</i> <a href="Conferences.html#IJCAI1995" title="Conferences">IJCAI-95</a>, <a class="external text" href="https://arxiv.org/abs/1505.01603" rel="nofollow">arXiv:1505.01603</a></li>
+<li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a>, <a href="Max Chickering.html" title="Max Chickering">Max Chickering</a> (<b>1996</b>). <i><a class="external text" href="https://www.microsoft.com/en-us/research/publication/best-first-minimax-search/" rel="nofollow">Best-first minimax search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 84, Nos 1-2</li>
+<li> <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Wim Pijls.html" title="Wim Pijls">Wim Pijls</a>, <a href="Arie de Bruin.html" title="Arie de Bruin">Arie de Bruin</a> (<b>1996</b>). <i>Best-First Fixed-Depth Minimax Algorithms.</i> <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 87</li>
+<li> <a href="Ayumu Nagai.html" title="Ayumu Nagai">Ayumu Nagai</a>, <a href="Hiroshi Imai.html" title="Hiroshi Imai">Hiroshi Imai</a> (<b>1999</b>). <i>Proof for the Equivalence Between Some Best-First Algorithms and Depth-First Algorithms for AND/OR Trees</i>. Proceedings of the Korea-Japan Joint Workshop on Algorithms and Computation</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Paul E. Utgoff.html" title="Paul E. Utgoff">Paul E. Utgoff</a>, <a href="Richard P. Cochran.html" title="Richard P. Cochran">Richard P. Cochran</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 1.html" rel="nofollow">A Least-Certainty Heuristic for Selective Search</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="http://people.cs.umass.edu/~utgoff/papers/springer-lcf.pdf.html" rel="nofollow">pdf</a> » <a href="Richard P. Cochran.html#LCF" title="Richard P. Cochran">LCF</a></li>
+<li> <a href="Ayumu Nagai.html" title="Ayumu Nagai">Ayumu Nagai</a>, <a href="Hiroshi Imai.html" title="Hiroshi Imai">Hiroshi Imai</a> (<b>2002</b>). <i><a class="external text" href="http://ci.nii.ac.jp/naid/110006376599.html" rel="nofollow">Proof for the Equivalence Between Some Best-First Algorithms and Depth-First Algorithms for AND/OR Trees</a></i>. <a class="external text" href="http://ci.nii.ac.jp/vol issue/nels/AA10826272/ISS0000408668 en.html.html" rel="nofollow">IEICE transactions on information and systems</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Akihiro Kishimoto.html" title="Akihiro Kishimoto">Akihiro Kishimoto</a>, <a class="new" href="index.php?title=Alex Fukunaga&amp;action=edit&amp;redlink=1.html" title="Alex Fukunaga (page does not exist)">Alex Fukunaga</a>, <a href="Adi Botea.html" title="Adi Botea">Adi Botea</a>  (<b>2012</b>). <i>Evaluation of a Simple, Scalable, Parallel Best-First Search Strategy</i>. <a class="external text" href="https://arxiv.org/abs/1201.3204" rel="nofollow">arXiv:1201.3204</a></li>
+<li> <a href="Ari Weinstein.html" title="Ari Weinstein">Ari Weinstein</a>, <a href="Michael L. Littman.html" title="Michael L. Littman">Michael L. Littman</a>, <a class="new" href="index.php?title=Sergiu Goschin&amp;action=edit&amp;redlink=1.html" title="Sergiu Goschin (page does not exist)">Sergiu Goschin</a> (<b>2013</b>). <i><a class="external text" href="http://proceedings.mlr.press/v24/weinstein12a.html.html" rel="nofollow">Rollout-based Game-tree Search Outprunes Traditional Alpha-beta</a></i>. <a class="external text" href="http://proceedings.mlr.press/.html" rel="nofollow">PMLR</a>, Vol. 24 » <a href="Ari Weinstein.html#FSSS-Minimax" title="Ari Weinstein">FSSS-Minimax</a></li>
+<li> <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a>, <a href="Wen-Jie Tseng.html" title="Wen-Jie Tseng">Wen-Jie Tseng</a>, <a class="new" href="index.php?title=Bo-Han Lin&amp;action=edit&amp;redlink=1.html" title="Bo-Han Lin (page does not exist)">Bo-Han Lin</a>, <a href="Chia-Hui Chang.html" title="Chia-Hui Chang">Chia-Hui Chang</a> (<b>2015</b>). <i><a class="external text" href="https://ir.nctu.edu.tw/handle/11536/124541" rel="nofollow">Job-Level Alpha-Beta Search</a></i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 7, No. 1</li>
+<li> <a class="new" href="index.php?title=Tom Everitt&amp;action=edit&amp;redlink=1.html" title="Tom Everitt (page does not exist)">Tom Everitt</a>, <a href="Marcus Hutter.html" title="Marcus Hutter">Marcus Hutter</a> (<b>2015</b>). <i>Analytical Results on the BFS vs. DFS Algorithm Selection Problem. Part I: Tree Search</i>. Australasian Conference on Artificial Intelligence, <a class="external text" href="https://pdfs.semanticscholar.org/1b4b/c878b2d068214e39b258ee250e5b8889e84c.pdf" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Tom Everitt&amp;action=edit&amp;redlink=1.html" title="Tom Everitt (page does not exist)">Tom Everitt</a>, <a href="Marcus Hutter.html" title="Marcus Hutter">Marcus Hutter</a> (<b>2015</b>). <i>Analytical Results on the BFS vs. DFS Algorithm Selection Problem: Part II: Graph Search</i>. Australasian Conference on Artificial Intelligence</li>
+<li> <a class="new" href="index.php?title=Alex Fukunaga&amp;action=edit&amp;redlink=1.html" title="Alex Fukunaga (page does not exist)">Alex Fukunaga</a>, <a href="Adi Botea.html" title="Adi Botea">Adi Botea</a>, <a class="new" href="index.php?title=Yuu Jinnai&amp;action=edit&amp;redlink=1.html" title="Yuu Jinnai (page does not exist)">Yuu Jinnai</a>, <a href="Akihiro Kishimoto.html" title="Akihiro Kishimoto">Akihiro Kishimoto</a> (<b>2017</b>). <i>A Survey of Parallel A*</i>. <a class="external text" href="https://arxiv.org/abs/1708.05296" rel="nofollow">arXiv:1708.05296</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Quentin Cohen-Solal&amp;action=edit&amp;redlink=1.html" title="Quentin Cohen-Solal (page does not exist)">Quentin Cohen-Solal</a> (<b>2021</b>). <i>Completeness of Unbounded Best-First Game Algorithms</i>. <a class="external text" href="https://arxiv.org/abs/2109.09468" rel="nofollow">arXiv:2109.09468</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40384.html" rel="nofollow">Breadth-first search: revisiting</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei S. Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, September 13, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44165.html" rel="nofollow">Help with Best-First Select-Formula</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, June 23, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64983&amp;start=9.html" rel="nofollow">Re: Perft(15): comparison of estimates with Ankan's result</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2017 » <a href="Perft.html#15" title="Perft">Perft(15)</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Best-first_search" rel="nofollow">Best-first search from Wikipedia</a></li>
+<li> <a href="Category:Ian Carr.html" title="Category:Ian Carr">Ian Carr</a> &amp; <a href="Category:Nucleus.html" title="Category:Nucleus">Nucleus</a> - Sidewalk, live at the <a class="external text" href="https://en.wikipedia.org/wiki/BBC" rel="nofollow">BBC 1980</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat.: <a href="Category:Allan Holdsworth.html" title="Category:Allan Holdsworth">Allan Holdsworth</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Brian_Smith_(musician)" rel="nofollow">Brian Smith</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Tim_Whitehead" rel="nofollow">Tim Whitehead</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Geoff_Castle" rel="nofollow">Geoff Castle</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Chucho_Merch%C3%A1n" rel="nofollow">Chucho Merchán</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Nic_France" rel="nofollow">Nic France</a>, <a class="external text" href="https://www.allmusic.com/artist/chris-fletcher-mn0000384453/credits" rel="nofollow">Chris Fletcher</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/Bpb_9UE12Gs?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Breadth-first_search" rel="nofollow">Breadth-first search from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.boost.org/doc/libs/1 43 0/libs/graph/doc/breadth first search.html.html" rel="nofollow">Boost Graph Library: Breadth-First Search</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Richard Korf.html#JudeaPearl" title="Richard Korf">Richard Korf Video</a> at <a href="Judea Pearl.html#Symposium" title="Judea Pearl">Judea Pearl Symposium</a>, 2010</span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722081321
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.074 seconds
+Real time usage: 1.185 seconds
+Preprocessor visited node count: 106/1000000
+Preprocessor generated node count: 206/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1063-0!canonical and timestamp 20240722081319 and revision id 25998
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Best-First&amp;oldid=25998">https://www.chessprogramming.org/index.php?title=Best-First&amp;oldid=25998</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Nucleus.html" title="Category:Nucleus">Nucleus</a></li><li><a href="Category:Ian Carr.html" title="Category:Ian Carr">Ian Carr</a></li><li><a href="Category:Allan Holdsworth.html" title="Category:Allan Holdsworth">Allan Holdsworth</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Best-First&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Best-First.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Best-First&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Best-First.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Best-First&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Best-First&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Best-First.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Best-First.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Best-First&amp;oldid=25998.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Best-First&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 November 2021, at 14:42.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Best-First&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.074","walltime":"1.185","ppvisitednodes":{"value":106,"limit":1000000},"ppgeneratednodes":{"value":206,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722081321","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":53});});</script>
+</body>
+</html>

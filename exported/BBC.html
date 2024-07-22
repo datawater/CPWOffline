@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>BBC - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"BBC","wgTitle":"BBC","wgCurRevisionId":25147,"wgRevisionId":25147,"wgArticleId":7407,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Open Source","UCI","Linux","Windows","Acronym","Didactic","NNUE"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"BBC","wgRelevantArticleId":7407,"wgRequestId":"Zp7DQ0KfcgdPZR8tVSrqWwAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-BBC rootpage-BBC skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">BBC</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * BBC</b>
+</p><p><b>BBC</b>, (Bit Board Chess)<br/>
+a didactic bitboard chess engine by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a> alias Code Monkey King, written in <a href="C.html" title="C">C</a>. BBC is subject of a <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> <a class="external text" href="https://en.wikipedia.org/wiki/Tutorial" rel="nofollow">video tutorial</a> started in summer 2020 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, actually work in progress.
+The <a href="Category:Open Source.html" title="Category:Open Source">open source engine</a> is further published on <a class="external text" href="https://en.wikipedia.org/wiki/GitHub" rel="nofollow">GitHub</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, and will be compliant to the <a href="UCI.html" title="UCI">UCI</a> protocol.
+While the series offers a nice introduction in chess engine programming and <a href="Bitboards.html" title="Bitboards">bitboard</a> techniques, 
+the advanced approach of <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> to determine <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">sliding piece attacks</a> with all its lengthy initialization topics might be hard to understand and deterrent for the intended novice target group.
+The linewise approaches of <a href="First Rank Attacks.html" title="First Rank Attacks">First Rank Attacks</a> to introduce occupancy lookups, followed by <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">Kindergarten Bitboards</a> - as intermediate step towards magics bitboards - seem didactically more appropriate. Anyway, a valuable video series covering various aspects of computer chess programming. <b>BBC 1.0</b> was released on September 24, 2020 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, <b>BBC 1.3</b> on October 21, 2020, utilizing <a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish's NNUE</a> evaluation via <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul's</a> <a href="Scorpio.html#ScorpioNNUE" title="Scorpio">Scorpio NNUE</a> <a href="Scorpio.html#Bitbases" title="Scorpio">egbbdll</a> probing library <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#See also"><span class="tocnumber">1</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Forum Posts"><span class="tocnumber">2</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#External Links"><span class="tocnumber">3</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#GitHub"><span class="tocnumber">3.1</span> <span class="toctext">GitHub</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#YouTube"><span class="tocnumber">3.2</span> <span class="toctext">YouTube</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#BBC"><span class="tocnumber">3.2.1</span> <span class="toctext">BBC</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#GUI"><span class="tocnumber">3.2.2</span> <span class="toctext">GUI</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#NNUE"><span class="tocnumber">3.2.3</span> <span class="toctext">NNUE</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="BMCP.html" title="BMCP">BMCP</a></li>
+<li> <a href="PeSTO.html" title="PeSTO">PeSTO</a></li>
+<li> <a href="Vice.html" title="Vice">Vice</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=74917.html" rel="nofollow">Comparing 4 move generators: 0x88 vs 10x12 vs 10x12 + bitboards HYBRID vs Pure MAGIC BITBOARDS</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 28, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75017.html" rel="nofollow">Bitboard CHESS ENGINE in C: YouTube series by Code Monkey King</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 06, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75155.html" rel="nofollow">Zobrist hashing tutorials on YouTube</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 19, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75199.html" rel="nofollow">BBC 1.0 release - UCI chess engine by CMK</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 24, 2020 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75204.html" rel="nofollow">How to rate my engine in CCRL?</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 25, 2020 » <a href="CCRL.html" title="CCRL">CCRL</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75380.html" rel="nofollow">BBC GUI release - PLAY IT ONLINE!</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 12, 2020 » <a href="#GUI">Web GUI Tutorial</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75415.html" rel="nofollow">How to scale stockfish NNUE score?</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 17, 2020 » <a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish NNUE</a>, <a href="Scorpio.html#NNUE" title="Scorpio">Scorpio NNUE</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75415&amp;start=3.html" rel="nofollow">Re: How to scale stockfish NNUE score?</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, October 17, 2020</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75418.html" rel="nofollow">Embedding Stockfish NNUE to ANY CHESS ENGINE: YouTube series</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 17, 2020 » <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75482.html" rel="nofollow">BBC 1.3 + Stockfish NNUE released!</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 21, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75541.html" rel="nofollow">BBC 1.4 + Stockfish NNUE + Online GUI + Opening book - FINAL RELEASE!</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77503&amp;start=55.html" rel="nofollow">Re: will Tcec allow Stockfish with a Leela net to play?</a> by <a href="Connor McMonigle.html" title="Connor McMonigle">Connor McMonigle</a>, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2021 » <a href="NNUE.html" title="NNUE">NNUE</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="GitHub">GitHub</span></h2>
+<ul><li> <a class="external text" href="https://github.com/maksimKorzh/bbc" rel="nofollow">GitHub - maksimKorzh/bbc: Bit Board Chess (BBC) - The easiest to understand bitboard chess engine by Code Monkey King</a></li>
+<li> <a class="external text" href="https://github.com/maksimKorzh/uci-gui" rel="nofollow">GitHub - maksimKorzh/uci-gui: Web based GUI for UCI chess engine</a></li></ul>
+<h2><span class="mw-headline" id="YouTube">YouTube</span></h2>
+<h3><span class="mw-headline" id="BBC">BBC</span></h3>
+<p><b>Bitboard CHESS ENGINE in C</b>
+</p>
+<ol><li> <a class="external text" href="https://youtu.be/QUNP-UjujBM" rel="nofollow">Intro</a> » <span style="background-color: #ffffac;"><a href="Bitboards.html" title="Bitboards">Bitboards</a></span></li>
+<li> <a class="external text" href="https://youtu.be/o-ySJ2EBarY" rel="nofollow">Creating comfortable conditions for development</a></li>
+<li> <a class="external text" href="https://youtu.be/OTWG4dERdSc" rel="nofollow">Generating pre-calculated PAWN ATTACK tables</a> » <span style="background-color: #ffffac;"><a href="Pawn Attacks (Bitboards).html" title="Pawn Attacks (Bitboards)">Pawn Attacks (Bitboards)</a></span></li>
+<li> <a class="external text" href="https://youtu.be/nZLuLn9JW0E" rel="nofollow">Generating pre-calculated KNIGHT ATTACK table</a> » <span style="background-color: #ffffac;"><a href="Knight Pattern.html#KnightAttacks" title="Knight Pattern">Knight Attacks</a></span></li>
+<li> <a class="external text" href="https://youtu.be/dWfwcfWg4XY" rel="nofollow">Generating pre-calculated KING ATTACK tables</a> » <span style="background-color: #ffffac;"><a href="King Pattern.html#KingAttacks" title="King Pattern">King Attacks</a></span></li>
+<li> <a class="external text" href="https://youtu.be/Obe1-u3S0Y4" rel="nofollow">Masking relevant bishop occupancy bits to form a key for MAGIC BITBOARDS</a> » <span style="background-color: #ffffac;"><a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></span></li>
+<li> <a class="external text" href="https://youtu.be/bL7LW3jntw0" rel="nofollow">Masking relevant ROOK OCCUPANCY BITS to form a key for MAGIC BITBOARDS</a></li>
+<li> <a class="external text" href="https://youtu.be/XFiZ3tjt7K4" rel="nofollow">Generating SLIDER PIECES ATTACKS on the fly for MAGIC BITBOARD purposes</a> » <span style="background-color: #ffffac;"><a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a></span></li>
+<li> <a class="external text" href="https://youtu.be/0F_aeUik91A" rel="nofollow">Implementing BIT COUNT routine (Brian Kernighan's way)</a> » <span style="background-color: #ffffac;"><a href="Population Count.html#BrianKernighansway" title="Population Count">Population Count - Brian Kernighan's way</a></span></li>
+<li> <a class="external text" href="https://youtu.be/JhLgV2P9sBg" rel="nofollow">Getting least significant 1st BIT INDEX</a> » <span style="background-color: #ffffac;"><a href="BitScan.html#Index of LS1B by Popcount" title="BitScan">Index of LS1B by Popcount</a></span></li>
+<li> <a class="external text" href="https://youtu.be/nyk3usU95IY" rel="nofollow">Populating OCCUPANCY sets to multiply them later by MAGIC NUMBERS</a></li>
+<li> <a class="external text" href="https://youtu.be/gaXLyW-yMvg" rel="nofollow">Generating relevant OCCUPANCY BIT COUNT lookup tables for sliding pieces</a></li>
+<li> <a class="external text" href="https://youtu.be/JjFYmkUhLN4" rel="nofollow">Implementing pseudo RANDOM NUMBER generator using XORSHIFT32 algorithm</a> » <span style="background-color: #ffffac;"><a href="Pseudorandom Number Generator.html" title="Pseudorandom Number Generator">Pseudorandom Number Generator</a></span></li>
+<li> <a class="external text" href="https://youtu.be/KqWeOVyOoyU" rel="nofollow">Generating MAGIC NUMBER candidates</a> » <span style="background-color: #ffffac;"><a href="Looking for Magics.html" title="Looking for Magics">Looking for Magics</a></span></li>
+<li> <a class="external text" href="https://youtu.be/UnEu5GOiSEs" rel="nofollow">Generating MAGIC NUMBERS via brute force trial and error method</a></li>
+<li> <a class="external text" href="https://youtu.be/1lAM8ffBg0A" rel="nofollow">Initializing SLIDER PIECES attack tables using PLAIN MAGIC BITBOARDS</a> » <span style="background-color: #ffffac;"><a href="Magic Bitboards.html#Plain" title="Magic Bitboards">Plain Magic Bitboards</a></span></li>
+<li> <a class="external text" href="https://youtu.be/ZBBju42pKvw" rel="nofollow">Defining BITBOARDS, OCCUPANCIES and helper variables</a> » <span style="background-color: #ffffac;"><a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">Bitboard Board-Definition</a></span></li>
+<li> <a class="external text" href="https://youtu.be/iJ0VpXq90zY" rel="nofollow">Printing CHESS BOARD position and game state variables</a> » <span style="background-color: #ffffac;"><a href="Chess Position.html" title="Chess Position">Chess Position</a></span></li>
+<li> <a class="external text" href="https://youtu.be/IdFHFRiQtj8" rel="nofollow">Parsing FEN string to initialize BITBOARDS, OCUUPANCIES &amp; board state</a> » <span style="background-color: #ffffac;"><a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">Forsyth-Edwards Notation</a></span></li>
+<li> <a class="external text" href="https://youtu.be/KSs4KRQPOKE" rel="nofollow">Getting QUEEN ATTACKS by looking up bishop &amp; rook attack tables</a></li>
+<li> <a class="external text" href="https://youtu.be/v9CEqjliv3E" rel="nofollow">Implementing routine to find out whether SQUARE IS ATTACKED</a> » <span style="background-color: #ffffac;"><a href="Square Attacked By.html" title="Square Attacked By">Square Attacked By</a></span></li>
+<li> <a class="external text" href="https://youtu.be/eRvCLaa-3Rk" rel="nofollow">Writing GENERATE MOVES function skeleton</a> »<span style="background-color: #ffffac;"><a href="Move Generation.html" title="Move Generation">Move Generation</a></span></li>
+<li> <a class="external text" href="https://youtu.be/62Hy1JEehqI" rel="nofollow">Generating QUIET PAWN moves</a> » <span style="background-color: #ffffac;"><a href="Pawn Pushes (Bitboards).html" title="Pawn Pushes (Bitboards)">Pawn Pushes (Bitboards)</a></span></li>
+<li> <a class="external text" href="https://youtu.be/cezEoX8WpWs" rel="nofollow">Generating PAWN CAPTURE moves</a> » <span style="background-color: #ffffac;"><a href="Pawn Attacks (Bitboards).html#PawnCaptures" title="Pawn Attacks (Bitboards)">Pawn Captures</a></span></li>
+<li> <a class="external text" href="https://youtu.be/TXvV2jVl7co" rel="nofollow">Generating CASTLING MOVES</a> » <span style="background-color: #ffffac;"><a href="Castling.html" title="Castling">Castling</a></span></li>
+<li> <a class="external text" href="https://youtu.be/clNvT1W93o4" rel="nofollow">Generating SLIDER &amp; LEAPER piece MOVES by attack tables lookup</a></li>
+<li> <a class="external text" href="https://youtu.be/ubX5lyIQoSs" rel="nofollow">Binary formatting of MOVE ITEMS</a> » <span style="background-color: #ffffac;"><a href="Encoding Moves.html" title="Encoding Moves">Encoding Moves</a></span></li>
+<li> <a class="external text" href="https://youtu.be/gyf3mr1LI7A" rel="nofollow">Encoding &amp; decoding MOVE ITEMS</a> </li>
+<li> <a class="external text" href="https://youtu.be/AINYYiV-83I" rel="nofollow">Implementing MOVE LIST + ADD MOVE, PRINT MOVE, PRINT MOVE LIST functions</a> » <span style="background-color: #ffffac;"><a href="Move List.html" title="Move List">Move List</a></span></li>
+<li> <a class="external text" href="https://youtu.be/944aTQQnWAA" rel="nofollow">Populating MOVE LIST with newly GENERATED MOVES</a> </li>
+<li> <a class="external text" href="https://youtu.be/CsUelozl0a8" rel="nofollow">Preserving &amp; restoring BOARD STATE aka COPY/MAKE approach</a> » <span style="background-color: #ffffac;"><a href="Copy-Make.html" title="Copy-Make">Copy-Make</a></span></li>
+<li> <a class="external text" href="https://youtu.be/coVPpTJN9iU" rel="nofollow">Implementing MAKE MOVE function (moving pieces)</a> » <span style="background-color: #ffffac;"><a href="Make Move.html" title="Make Move">Make Move</a></span></li>
+<li> <a class="external text" href="https://youtu.be/nkRrQnhRo80" rel="nofollow">Implementing MAKE MOVE function (handling captures)</a> » <span style="background-color: #ffffac;"><a href="Captures.html" title="Captures">Captures</a></span></li>
+<li> <a class="external text" href="https://youtu.be/gnDyJImkfVo" rel="nofollow">Implementing MAKE MOVE function (handling pawn promotions)</a> » <span style="background-color: #ffffac;"><a href="Promotions.html" title="Promotions">Promotions</a></span></li>
+<li> <a class="external text" href="https://youtu.be/5h5Z3bx0EKc" rel="nofollow">Implementing MAKE MOVE function (handling enpassant moves)</a> » <span style="background-color: #ffffac;"><a href="En passant.html" title="En passant">En passant</a></span></li>
+<li> <a class="external text" href="https://youtu.be/J-k2p1g6VTQ" rel="nofollow">Implementing MAKE MOVE function (handling double pawn pushes)</a> » <span style="background-color: #ffffac;"><a href="Pawn Push.html#DoublePush" title="Pawn Push">Double Pawn Push</a></span></li>
+<li> <a class="external text" href="https://youtu.be/pHohRpH30a0" rel="nofollow">Implementing MAKE MOVE function (handling castling moves)</a> » <span style="background-color: #ffffac;"><a href="Castling.html" title="Castling">Castling</a></span></li>
+<li> <a class="external text" href="https://youtu.be/zOWPZ4fuLGg" rel="nofollow">Implementing MAKE MOVE function (updating castling rights)</a> » <span style="background-color: #ffffac;"><a href="Castling Rights.html" title="Castling Rights">Castling Rights</a></span></li>
+<li> <a class="external text" href="https://youtu.be/ZBotXGrgbdg" rel="nofollow">Implementing MAKE MOVE function (updating occupancy bitboards)</a> » <span style="background-color: #ffffac;"><a href="Occupancy.html" title="Occupancy">Occupancy</a></span></li>
+<li> <a class="external text" href="https://youtu.be/sg4AMsXYuk4" rel="nofollow">Implementing MAKE MOVE function (checking whether the king is in check)</a> » <span style="background-color: #ffffac;"><a href="Check.html" title="Check">Check</a></span></li>
+<li> <a class="external text" href="https://youtu.be/bK_dg_gMW6s" rel="nofollow">Writing a cross-platform function for GETTING TIME IN MILLISECONDS</a></li>
+<li> <a class="external text" href="https://youtu.be/o0xCJDhbSUM" rel="nofollow">Writing PERFT DRIVER function</a> » <span style="background-color: #ffffac;"><a href="Perft.html" title="Perft">Perft</a></span></li>
+<li> <a class="external text" href="https://youtu.be/p2VuC0xTPoc" rel="nofollow">Writing PERFT TEST function</a></li>
+<li> <a class="external text" href="https://youtu.be/1gOYB9HelXk" rel="nofollow">Connecting to the GUI (parse move string)</a> » <span style="background-color: #ffffac;"><a href="GUI.html" title="GUI">GUI</a>, <a href="UCI.html" title="UCI">UCI</a></span></li>
+<li> <a class="external text" href="https://youtu.be/giSqiH6aa_o" rel="nofollow">Connecting to the GUI (parse "position" command)</a></li>
+<li> <a class="external text" href="https://youtu.be/lb46nX6gSBw" rel="nofollow">Connecting to the GUI (parse "go" command)</a></li>
+<li> <a class="external text" href="https://youtu.be/rW2jzTA4kW4" rel="nofollow">Connecting to the GUI (main loop) + BONUS (TSCP vs BBC blitz game)</a> » <span style="background-color: #ffffac;"><a href="TSCP.html" title="TSCP">TSCP</a></span></li>
+<li> <a class="external text" href="https://youtu.be/CMshozGbBdw" rel="nofollow">Implementing RUDIMENTARY EVALUATION (material score)</a> » <span style="background-color: #ffffac;"><a href="Evaluation.html" title="Evaluation">Evaluation</a>, <a href="Material.html" title="Material">Material</a></span></li>
+<li> <a class="external text" href="https://youtu.be/E2JzRNI1ODI" rel="nofollow">Implementing RUDIMENTARY EVALUATION (positional piece scores)</a> </li>
+<li> <a class="external text" href="https://youtu.be/b8OcJM3VeaU" rel="nofollow">Writing NEGAMAX ALPHA BETA skeleton</a> » <span style="background-color: #ffffac;"><a href="Negamax.html" title="Negamax">Negamax</a>, <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a></span></li>
+<li> <a class="external text" href="https://youtu.be/lAAdjCkWd9s" rel="nofollow">Detecting CHECKMATE and STALEMATE</a> » <span style="background-color: #ffffac;"><a href="Checkmate.html" title="Checkmate">Checkmate</a>, <a href="Stalemate.html" title="Stalemate">Stalemate</a></span></li>
+<li> <a class="external text" href="https://youtu.be/WzEhVjdNByg" rel="nofollow">Implementing QUIESCENCE SEARCH</a> » <span style="background-color: #ffffac;"><a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></span></li>
+<li> <a class="external text" href="https://youtu.be/NMNBWxinpPY" rel="nofollow">Defining MVV LVA (Most Valuable Victim - Least Valuable Attacker) table</a> » <span style="background-color: #ffffac;"><a href="MVV-LVA.html" title="MVV-LVA">MVV/LVA</a></span></li>
+<li> <a class="external text" href="https://youtu.be/VeJnLN7jFm4" rel="nofollow">Writing SCORE MOVE function</a> » <span style="background-color: #ffffac;"><a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></span></li>
+<li> <a class="external text" href="https://youtu.be/3-9tzzmtQQ0" rel="nofollow">Writing SORT MOVES function</a></li>
+<li> <a class="external text" href="https://youtu.be/DVSp_31iTBU" rel="nofollow">Applying MOVE ORDERING to sort captures</a> » <span style="background-color: #ffffac;"><a href="Captures.html" title="Captures">Captures</a></span></li>
+<li> <a class="external text" href="https://youtu.be/MA6d1hZ1YBE" rel="nofollow">Sorting KILLER &amp; HISTORY moves</a> » <span style="background-color: #ffffac;"><a href="Killer Heuristic.html" title="Killer Heuristic">Killer Heuristic</a>, <a href="History Heuristic.html" title="History Heuristic">History Heuristic</a></span></li>
+<li> <a class="external text" href="https://youtu.be/LOR-dkAkUyM" rel="nofollow">Collecting PV (Principle Variation) from the search</a> » <span style="background-color: #ffffac;"><a href="Principal Variation.html" title="Principal Variation">Principal Variation</a></span></li>
+<li> <a class="external text" href="https://youtu.be/yVyQSUYts0A" rel="nofollow">Implementing ITERATIVE DEEPENING</a> » <span style="background-color: #ffffac;"><a href="Iterative Deepening.html" title="Iterative Deepening">Iterative Deepening</a></span></li>
+<li> <a class="external text" href="https://youtu.be/heJUljl_zNE" rel="nofollow">Sorting PV moves + some BONUS TALK at the end</a></li>
+<li> <a class="external text" href="https://youtu.be/Gs4Zk6aihyQ" rel="nofollow">Implementing PVS (Principle Variation Search)</a> » <span style="background-color: #ffffac;"><a href="Principal Variation Search.html" title="Principal Variation Search">Principal Variation Search</a></span></li>
+<li> <a class="external text" href="https://youtu.be/OLT0bU0SIeg" rel="nofollow">Applying LMR (Late Move Reduction)</a> » <span style="background-color: #ffffac;"><a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a></span></li>
+<li> <a class="external text" href="https://youtu.be/n6xAzopULxU" rel="nofollow">Applying NULL MOVE PRUNING</a> » <span style="background-color: #ffffac;"><a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></span></li>
+<li> <a class="external text" href="https://youtu.be/1LmdOHshYkI" rel="nofollow">Adjusting ASPIRATION WINDOW during iterative deepening</a> » <span style="background-color: #ffffac;"><a href="Aspiration Windows.html" title="Aspiration Windows">Aspiration Windows</a></span></li>
+<li> <a class="external text" href="https://youtu.be/azEmgbdiecc" rel="nofollow">BUG ALERT!!! Fixing PVS duplication bug</a></li>
+<li> <a class="external text" href="https://youtu.be/t48NYINOekw" rel="nofollow">Handling TIME CONTROLS (forked from VICE by BluefeverSoftware)</a> » <span style="background-color: #ffffac;"><a href="Vice.html" title="Vice">Vice</a></span></li>
+<li> <a class="external text" href="https://youtu.be/W7dah-dat8Q" rel="nofollow">Zobrist HASHING (initialize random keys)</a> » <span style="background-color: #ffffac;"><a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist Hashing</a></span></li>
+<li> <a class="external text" href="https://youtu.be/sV2C7hx-gOE" rel="nofollow">Zobrist HASHING (generate hash key)</a></li>
+<li> <a class="external text" href="https://youtu.be/5EMLgIFv5Qg" rel="nofollow">Zobrist HASHING (hash keys incremental updates)</a> » <span style="background-color: #ffffac;"><a href="Incremental Updates.html" title="Incremental Updates">Incremental Updates</a></span></li>
+<li> <a class="external text" href="https://youtu.be/fEHjpzrcRxk" rel="nofollow">Implementing HASH TABLE aka transposition table (define &amp; initialize)</a> » <span style="background-color: #ffffac;"><a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></span> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup></li>
+<li> <a class="external text" href="https://youtu.be/NcboP08y_JQ" rel="nofollow">Implementing HASH TABLE aka transposition table (read/write hash entry)</a></li>
+<li> <a class="external text" href="https://youtu.be/HNtAt9RMJVs" rel="nofollow">Implementing HASH TABLE aka transposition table (connecting to search)</a></li>
+<li> <a class="external text" href="https://youtu.be/4SXKBTGUkjk" rel="nofollow">BUG ALERT! Fixing lack of enpassant &amp; side hashing on null move</a></li>
+<li> <a class="external text" href="https://youtu.be/g1b_rT9VqAw" rel="nofollow">More search BUG FIXES &amp;CLEANUPS</a></li>
+<li> <a class="external text" href="https://youtu.be/XfeuxubYlT0" rel="nofollow">Handling MATING SCORES in HASH TABLE aka transposition table</a> » <span style="background-color: #ffffac;"><a href="Score.html#MateScores" title="Score">Mate Scores</a></span></li>
+<li> <a class="external text" href="https://youtu.be/WcoOTg7Aq4E" rel="nofollow">Sending MATING SCORES to GUI + some cleanups &amp; adjustments</a></li>
+<li> <a class="external text" href="https://youtu.be/QhFtquEeffA" rel="nofollow">Detecting THREE FOLD REPETITIONS</a> » <span style="background-color: #ffffac;"><a href="Repetitions.html" title="Repetitions">Repetitions</a></span></li>
+<li> <a class="external text" href="https://youtu.be/F8ueIueVsHI" rel="nofollow">Final (hopefully!) SEARCH BUG FIXES</a></li>
+<li> <a class="external text" href="https://youtu.be/Yqpm6Ad4scI" rel="nofollow">Improving EVALUATION (setting file &amp; rank masks)</a> » <span style="background-color: #ffffac;"><a href="Evaluation.html" title="Evaluation">Evaluation</a>, <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Pawn Pattern and Properties</a></span></li>
+<li> <a class="external text" href="https://youtu.be/iwBkAEC4KSs" rel="nofollow">Improving EVALUATION (initializing isolated &amp; passed pawn masks)</a> » <span style="background-color: #ffffac;"><a href="Isolated Pawns (Bitboards).html" title="Isolated Pawns (Bitboards)">Isolated Pawns (Bitboards)</a>, <a href="Passed Pawns (Bitboards).html" title="Passed Pawns (Bitboards)">Passed Pawns (Bitboards)</a></span></li>
+<li> <a class="external text" href="https://youtu.be/CgvZMsJImJg" rel="nofollow">Improving EVALUATION (double &amp; isolated penalties, passed pawns bonus)</a></li>
+<li> <a class="external text" href="https://youtu.be/Bp4F_321j4I" rel="nofollow">Improving EVALUATION (open &amp; semi open file scoring)</a> » <span style="background-color: #ffffac;"><a href="Pawns and Files (Bitboards).html" title="Pawns and Files (Bitboards)">Pawns and Files (Bitboards)</a>, <a href="Open File.html" title="Open File">Open File</a></span></li>
+<li> <a class="external text" href="https://youtu.be/iq2lxyjWZvA" rel="nofollow">Improving EVALUATION (mobility and king safety)</a> » <span style="background-color: #ffffac;"><a href="Mobility.html" title="Mobility">Mobility</a>, <a href="King Safety.html" title="King Safety">King Safety</a></span></li>
+<li> <a class="external text" href="https://youtu.be/1SgnTKzWuss" rel="nofollow">BBC 1.0 - RELEASE</a></li>
+<li> <a class="external text" href="https://youtu.be/JYF6A0xvvtY" rel="nofollow">Improving BBC chess engine: TAPERED EVALUATION (getting game phase scores)</a> » <span style="background-color: #ffffac;"><a href="Tapered Eval.html" title="Tapered Eval">Tapered Eval</a>, <a href="PeSTO.html" title="PeSTO">PeSTO</a></span></li>
+<li> <a class="external text" href="https://youtu.be/bOmXClI6Xpw" rel="nofollow">Improving BBC chess engine: TAPERED EVALUATION (interpolating scores) + BONUS: BBC vs VICE match!</a> » <span style="background-color: #ffffac;"><a href="Vice.html" title="Vice">Vice</a></span></li></ol>
+<h3><span class="mw-headline" id="GUI"><a href="GUI.html" title="GUI">GUI</a></span></h3>
+<p><b>Web based GUI for UCI CHESS ENGINE</b>
+</p>
+<ol><li> <a class="external text" href="https://youtu.be/_0uKZbHWVKM" rel="nofollow">INTRO &amp; DEMO</a></li>
+<li> <a class="external text" href="https://youtu.be/OjZy52Tt6mY" rel="nofollow">Install dependencies, CREATE WEB APP &amp; render the CHESS BOARD</a></li>
+<li> <a class="external text" href="https://youtu.be/9Hn1gnTYNS4" rel="nofollow">Connecting engine back-end &amp; MAKING IT PLAY!</a></li>
+<li> <a class="external text" href="https://youtu.be/ZIyDWQN2buk" rel="nofollow">Printing game status, FEN &amp; PGN</a></li>
+<li> <a class="external text" href="https://youtu.be/ihHHW_CA72M" rel="nofollow">Adding GAME CONTROL buttons</a></li>
+<li> <a class="external text" href="https://youtu.be/TlxgZRd8VWk" rel="nofollow">Adding MOVE STATS</a></li>
+<li> <a class="external text" href="https://youtu.be/PWnypt2k56I" rel="nofollow">Fixing layout &amp; setting position from FEN string on button click</a></li>
+<li> <a class="external text" href="https://youtu.be/DCWtkpEF8KY" rel="nofollow">Adding MOVE TIME &amp; FIXED DEPTH controls</a></li>
+<li> <a class="external text" href="https://youtu.be/tqR4tRyfTIg" rel="nofollow">Implementing DOWNLOAD PGN feature</a></li>
+<li> <a class="external text" href="https://youtu.be/w67CEEjqIjw" rel="nofollow">Encapsulating CHESS ENGINE for SIMULTANEOUS PLAY</a></li>
+<li> <a class="external text" href="https://youtu.be/_u-VAFwY95U" rel="nofollow">final adjustments and DEPLOY at pythonanywhere.com</a></li></ol>
+<h3><span class="mw-headline" id="NNUE"><a href="NNUE.html" title="NNUE">NNUE</a></span></h3>
+<p><b>Embedding Stockfish NNUE to ANY CHESS ENGINE</b>
+</p>
+<ol><li> <a class="external text" href="https://youtu.be/zieTAE2zN9w" rel="nofollow">Intro &amp; demo</a> » <span style="background-color: #ffffac;"><a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish NNUE</a>, <a href="Scorpio.html#NNUE" title="Scorpio">Scorpio NNUE</a></span></li>
+<li> <a class="external text" href="https://youtu.be/59Fp4JVNob0" rel="nofollow">Compiling existing ENGINE with NNUE library</a></li>
+<li> <a class="external text" href="https://youtu.be/puLvzQnUoH8" rel="nofollow">Extracting PIECES &amp; SQUARES for direct NNUE probing</a></li>
+<li> <a class="external text" href="https://youtu.be/cOdPe1JvVU8" rel="nofollow">Incorporating NNUE SCORES into EVALUATION function</a></li>
+<li> <a class="external text" href="https://youtu.be/30L9hx6hsmg" rel="nofollow">bug fixes &amp; experiments</a></li>
+<li> <a class="external text" href="https://youtu.be/xFeJ9PBWpco" rel="nofollow">WINDOWS compatibility added</a></li>
+<li> <a class="external text" href="https://youtu.be/Olnk9aa1zMI" rel="nofollow">Switching to pure NNUE evaluation + important BUG FIX</a></li></ol>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://youtu.be/QUNP-UjujBM" rel="nofollow">Bitboard CHESS ENGINE in C: intro</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/maksimKorzh/bbc" rel="nofollow">GitHub - maksimKorzh/bbc: Bit Board Chess (BBC) - The easiest to understand bitboard chess engine by Code Monkey King</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75199.html" rel="nofollow">BBC 1.0 release - UCI chess engine by CMK</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 24, 2020</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75482.html" rel="nofollow">BBC 1.3 + Stockfish NNUE released!</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 21, 2020</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://web.archive.org/web/20070809015843/www.seanet.com/%7Ebrucemo/topics/hashing.htm.html" rel="nofollow">The Main Transposition Table</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722203827
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.024 seconds
+Real time usage: 0.025 seconds
+Preprocessor visited node count: 170/1000000
+Preprocessor generated node count: 340/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7407-0!canonical and timestamp 20240722203827 and revision id 25147
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=BBC&amp;oldid=25147">https://www.chessprogramming.org/index.php?title=BBC&amp;oldid=25147</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Linux.html" title="Category:Linux">Linux</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a href="Category:Acronym.html" title="Category:Acronym">Acronym</a></li><li><a href="Category:Didactic.html" title="Category:Didactic">Didactic</a></li><li><a href="Category:NNUE.html" title="Category:NNUE">NNUE</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=BBC&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="BBC.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:BBC&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="BBC.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=BBC&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=BBC&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/BBC.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/BBC.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=BBC&amp;oldid=25147.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=BBC&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 June 2021, at 09:21.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=BBC&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.024","walltime":"0.025","ppvisitednodes":{"value":170,"limit":1000000},"ppgeneratednodes":{"value":340,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722203827","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":76});});</script>
+</body>
+</html>

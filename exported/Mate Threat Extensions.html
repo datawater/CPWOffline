@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Mate Threat Extensions - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mate_Threat_Extensions","wgTitle":"Mate Threat Extensions","wgCurRevisionId":1250,"wgRevisionId":1250,"wgArticleId":966,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Mate_Threat_Extensions","wgRelevantArticleId":966,"wgRequestId":"Zp7Don1htEhTE3yaocy3pQAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Mate_Threat_Extensions rootpage-Mate_Threat_Extensions skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Mate Threat Extensions</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Selectivity.html" title="Selectivity">Selectivity</a> * <a href="Extensions.html" title="Extensions">Extensions</a> * Mate Threat Extensions</b>
+</p><p><b>Mate Threat Extensions</b> are extensions caused by a mate threat of the opponent <a href="Null Move Pruning.html#ThreatDetection" title="Null Move Pruning">detected</a> after making a <a href="Null Move.html" title="Null Move">null move</a> in a <a href="Fail-Soft.html" title="Fail-Soft">fail-soft</a> framework, or alternatively with a low shifted, or full window. Some programs detect <a href="Mate at a Glance.html" title="Mate at a Glance">mate in one threats</a> statically, i.e. as part or byproduct of <a href="King Safety.html" title="King Safety">king safety</a> in <a href="Evaluation.html" title="Evaluation">evaluation</a>, to extend near or at the <a href="Horizon Node.html" title="Horizon Node">horizon</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Threat Extensions"><span class="tocnumber">1</span> <span class="toctext">Threat Extensions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Deep-Search Extensions"><span class="tocnumber">1.1</span> <span class="toctext">Deep-Search Extensions</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#DarkThought"><span class="tocnumber">1.2</span> <span class="toctext">DarkThought</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Threat_Extensions">Threat Extensions</span></h1>
+<p>Mate threat extensions are special cases of the more general <i>Threat extensions</i> not only restricted to <a href="Score.html#MateScores" title="Score">mate scores</a> but losing some <a href="Material.html" title="Material">material</a>. According to <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a>, the <a href="Deep Thought.html" title="Deep Thought">Deep Thought</a> team already used fail-low null move scores to detect threats before 1990 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, descibed by <a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a> in his thesis <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> and <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a> paper <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, where he mentioned fall 1986 implementation in <a href="ChipTest.html" title="ChipTest">ChipTest</a>. 
+</p>
+<h2><span class="mw-headline" id="Deep-Search_Extensions">Deep-Search Extensions</span></h2>
+<p>The term <i>Deep-search extension</i> was coined by <a href="Chrilly Donninger.html" title="Chrilly Donninger">Chrilly Donninger</a> in his <i>Null Move and Deep Search</i> paper <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. As pointed out by Ernst A. Heinz, Donninger's idea was to extend the search by one ply if a null move near the horizon does not fail high and the null move score plus a constant margin is below <a href="Alpha.html" title="Alpha">alpha</a>, while the <a href="Evaluation.html" title="Evaluation">static evaluation</a> indicates a fail high. He further states <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>:
+</p>
+<pre>Donninger's idea is to extend the search one ply if a null move near the horizon (e.g. at depths &lt;= 3) does not fail high and the null move score plus a constant margin (e.g. minor piece value) is &lt;= alpha while the static evaluation at the node is &gt;= <a href="Beta.html" title="Beta">beta</a> (i.e. fails high). In order to get meaningful results for the null move score, you need to do it with a full alpha-beta window instead of a zero window (this is a known error in Donninger's original article). 
+</pre>
+<h2><span class="mw-headline" id="DarkThought">DarkThought</span></h2>
+<p>Citing <i>How DarkThought Plays Chess</i> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>:
+</p>
+<pre>In order to avoid possibly <a href="Search Explosion.html" title="Search Explosion">explosive growth</a> of the <a href="Search Tree.html" title="Search Tree">search tree</a> as caused by excessive deep search extensions in the case of repeated mutual mating threats, <a href="DarkThought.html" title="DarkThought">DarkThought</a> restricts them to null moves at depth = 2 in the first "2 * iteration-number" plies on all paths. 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Botvinnik-Markoff Extension.html" title="Botvinnik-Markoff Extension">Botvinnik-Markoff Extension</a></li>
+<li> <a href="Mate Killers.html" title="Mate Killers">Mate Killers</a></li>
+<li> <a href="Null Move Pruning.html#ThreatDetection" title="Null Move Pruning">Threat Detection</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a> (<b>1990</b>). <i>A Statistical Study of Selective Min-Max Search in Computer Chess</i>. Doctoral Thesis. UMI Order Number: AAI9111467, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a></li>
+<li> <a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a> (<b>1991</b>). <i>Extension Heuristics</i>. <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 14, No. 2, pp. 47-65</li>
+<li> <a href="Chrilly Donninger.html" title="Chrilly Donninger">Chrilly Donninger</a> (<b>1993</b>). <i>Null Move and Deep Search: Selective-Search Heuristics for Obtuse Chess Programs.</i> <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, <a class="external text" href="http://people.csail.mit.edu/heinz/iccaj db/node4.html.html" rel="nofollow">Vol. 16, No. 3</a>, pp. 137-143</li>
+<li> <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1997</b>). <i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node2.html.html" rel="nofollow">How DarkThought Plays Chess</a>.</i> <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 20, No. 3, pp. 166-176 » <a class="external text" href="http://people.csail.mit.edu/heinz/dt/node11.html.html" rel="nofollow">Extension Heuristics</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14259" rel="nofollow">Deep Search Extension</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, January 18, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=57953" rel="nofollow">Null move mate extension</a> by <a href="James Robertson.html" title="James Robertson">James Robertson</a>, <a href="CCC.html" title="CCC">CCC</a>, June 25, 1999</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=318833" rel="nofollow">The "same threat extension" as effective way to resolve horizon problem</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, October 01, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=389013" rel="nofollow">mate threat extension/null move</a> by Rick Bischoff, <a href="CCC.html" title="CCC">CCC</a>, September 25, 2004</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=390268" rel="nofollow">Re: mate threat extension/null move</a> by <a href="Don Beal.html" title="Don Beal">Don Beal</a>, <a href="CCC.html" title="CCC">CCC</a>, October 04, 2004 » <a href="Win at Chess.html" title="Win at Chess">WAC</a> booster</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=24543.html" rel="nofollow">null move threat extension</a> by <a class="new" href="index.php?title=Andrew Short&amp;action=edit&amp;redlink=1.html" title="Andrew Short (page does not exist)">Andrew Short</a>, <a href="CCC.html" title="CCC">CCC</a>, October 23, 2008</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://people.csail.mit.edu/heinz/dt/node11.html.html" rel="nofollow">Extension Heuristics</a> from <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1997</b>). <i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node2.html.html" rel="nofollow">How DarkThought Plays Chess</a>.</i> <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 20, No. 3, pp. 166-176</li>
+<li> <a class="external text" href="http://www.3dkingdoms.com/chess/implementation.htm.html" rel="nofollow">Programming Details - Slow Chess | Extensions Used, Detailed Description</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a> » <a href="Slow Chess.html" title="Slow Chess">Slow Chess</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14327" rel="nofollow">Re: Deep Search Extension</a> by <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a>, <a href="CCC.html" title="CCC">CCC</a>, January 19, 1998</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a> (<b>1990</b>). <i>A Statistical Study of Selective Min-Max Search in Computer Chess</i>. Doctoral Thesis. UMI Order Number: AAI9111467, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a> (<b>1991</b>). <i>Extension Heuristics</i>. <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 14, No. 2, pp. 47-65</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Chrilly Donninger.html" title="Chrilly Donninger">Chrilly Donninger</a> (<b>1993</b>). <i>Null Move and Deep Search: Selective-Search Heuristics for Obtuse Chess Programs.</i> <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, <a class="external text" href="http://people.csail.mit.edu/heinz/iccaj db/node4.html.html" rel="nofollow">Vol. 16, No. 3</a>, pp. 137-143</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14492" rel="nofollow">Re: Deep Search Extension</a> by <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a>, <a href="CCC.html" title="CCC">CCC</a>, January 22, 1998</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node11.html.html" rel="nofollow">Extension Heuristics</a></i> from <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1997</b>). <i><a class="external text" href="http://people.csail.mit.edu/heinz/dt/node2.html.html" rel="nofollow">How DarkThought Plays Chess</a>.</i> <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 20, No. 3, pp. 166-176</span>
+</li>
+</ol></div>
+<p><b><a href="Extensions.html" title="Extensions">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722024639
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.021 seconds
+Real time usage: 0.021 seconds
+Preprocessor visited node count: 119/1000000
+Preprocessor generated node count: 246/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:966-0!canonical and timestamp 20240722024639 and revision id 1250
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Mate_Threat_Extensions&amp;oldid=1250">https://www.chessprogramming.org/index.php?title=Mate_Threat_Extensions&amp;oldid=1250</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Mate+Threat+Extensions&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Mate Threat Extensions.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Mate Threat Extensions&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Mate Threat Extensions.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Mate Threat Extensions&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Mate Threat Extensions&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Mate Threat Extensions.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Mate Threat Extensions.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Mate Threat Extensions&amp;oldid=1250.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Mate Threat Extensions&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 27 April 2018, at 22:12.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Mate_Threat_Extensions&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.021","walltime":"0.021","ppvisitednodes":{"value":119,"limit":1000000},"ppgeneratednodes":{"value":246,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722024639","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Bitboard Board-Definition - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Bitboard_Board-Definition","wgTitle":"Bitboard Board-Definition","wgCurRevisionId":26465,"wgRevisionId":26465,"wgArticleId":1099,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Charlie Mariano","Jack Bruce","John Marshall","Jan Hammer","Nippy Noya","Zbigniew Seifert"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Bitboard_Board-Definition","wgRelevantArticleId":1099,"wgRequestId":"Zp7DNIY8AD1K7zdlkfzdFAAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Bitboard_Board-Definition rootpage-Bitboard_Board-Definition skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Bitboard Board-Definition</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * Bitboard Board-Definition</b>
+</p><p>To represent the board we typically need one bitboard for each <a href="Pieces.html#PieceTypeCoding" title="Pieces">piece-type</a> and <a href="Color.html" title="Color">color</a> - likely encapsulated inside a class or structure, or as an <a href="Array.html" title="Array">array</a> of bitboards as part of a <a href="Chess Position.html" title="Chess Position">position</a> object. A one-bit inside a bitboard implies the existence of a piece of this piece-type on a certain <a href="Squares.html" title="Squares">square</a> - one to one associated by the bit-position <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>:
+</p><p><span id="CBoardDef"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Classical Board"><span class="tocnumber">1</span> <span class="toctext">Classical Board</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Structure"><span class="tocnumber">1.1</span> <span class="toctext">Structure</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Array"><span class="tocnumber">1.2</span> <span class="toctext">Array</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Denser Board"><span class="tocnumber">2</span> <span class="toctext">Denser Board</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Classical_Board">Classical Board</span></h1>
+<p>Those bitboards may part of a central position object which is <a href="Incremental Updates.html" title="Incremental Updates">incrementally updated</a> while <a href="Make Move.html" title="Make Move">making</a> or <a href="Unmake Move.html" title="Unmake Move">unmaking</a> <a href="Moves.html" title="Moves">moves</a>. 
+</p>
+<div class="floatnone"><a href="http://www.onjava.com/pub/a/onjava/2005/02/02/bitsets.html?page=2.html" rel="nofollow"><img alt="Bitboard.gif" class="thumbborder" height="368" src="images/3/37/Bitboard.gif" style="vertical-align: text-bottom" width="384"/></a></div>
+<h2><span class="mw-headline" id="Structure">Structure</span></h2>
+<p><i>To be aware of their scalar 64-bit origin, we use so far a type defined unsigned integer U64 in our <a href="C.html" title="C">C</a>/<a href="Cpp.html" title="Cpp">C++</a> source snippets, the scalar 64-bit long in <a href="Java.html" title="Java">Java</a>. Feel free to define a distinct type or wrap U64 into classes for better abstraction and type-safety during compile time.</i>
+</p>
+<pre>
+class CBoard
+{
+   U64 whitePawns;
+   U64 whiteKnights;
+   U64 whiteBishops;
+   U64 whiteRooks;
+   U64 whiteQueens;
+   U64 whiteKing;
+
+   U64 blackPawns;
+   U64 blackKnights;
+   U64 blackBishops;
+   U64 blackRooks;
+   U64 blackQueens;
+   U64 blackKing;
+   ...
+};
+</pre>
+<h2><span class="mw-headline" id="Array">Array</span></h2>
+<p>For better generalization and to <a href="Avoiding Branches.html" title="Avoiding Branches">avoid branches</a>, one may encapsulate <a href="Array.html" title="Array">arrays</a> of bitboards. For instance, inside the <a href="Beowulf.html" title="Beowulf">Beowulf</a> sources (sample from moves.c) one finds a lot of branches on <a href="Side to move.html" title="Side to move">side to move</a> to either fetch white or black piece bitboards, as already criticized by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a> in 2001 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> ...
+</p>
+<pre>
+  switch (side) {
+   case WHITE: tsq = B-&gt;whiteRooks; break;
+   case BLACK: tsq = B-&gt;blackRooks; break;
+  }
+</pre>
+<p>.. where an indexed access with appropriate defined {0,1} color range for the side to move would avoid those branches, per piece-kind, ...
+</p>
+<pre>
+  tsq = B-&gt;rooks[side];
+</pre>
+<p>... or over all piece-kinds, ...
+</p>
+<pre>
+  tsq = B-&gt;pieceBB[nWhiteRook + side];
+</pre>
+<p>... for instance, on <a href="X86.html" title="X86">x86</a> or <a href="X86-64.html" title="X86-64">x86-64</a>, utilizing its <a class="external text" href="https://en.wikipedia.org/wiki/X86#Addressing_modes" rel="nofollow">addressing modes</a> with base- and scalable <a class="external text" href="https://en.wikipedia.org/wiki/Index_register" rel="nofollow">index register</a>, plus displacement:
+</p>
+<pre>
+   ; rsi pointer to structure, rcx side (0 == White, 1 == Black)
+   mov  rax, qword ptr [rsi + rookOffset + 8*rcx] 
+</pre>
+<p><span id="Occupancy"></span>
+Likely one also keeps some often used redundant <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> sets like white and black pieces, <a href="Occupancy.html" title="Occupancy">occupancy</a> or their complement, the empty squares.
+</p>
+<pre>
+class CBoard
+{
+   U64 pieceBB[14];
+   U64 emptyBB;
+   U64 occupiedBB;
+   ...
+public:
+   enum enumPiece
+   {
+      nWhite,     // any white piece
+      nBlack,     // any black piece
+      nWhitePawn, // white Pawn
+      nBlackPawn, // white Pawn
+      ...
+   };
+
+   U64 getPieceSet(PieceType pt) const {return pieceBB[pt];}
+   U64 getWhitePawns() const {return pieceBB[nWhitePawn];}
+   ...
+   U64 getPawns(ColorType ct) const {return pieceBB[nWhitePawn + ct];}
+   ...
+};
+</pre>
+<p>On initialization and update of the bitboards, see <a href="General Setwise Operations.html#UpdateByMove" title="General Setwise Operations">general setwise operations</a>.
+<span id="SixTwo"></span>
+</p>
+<h1><span class="mw-headline" id="Denser_Board">Denser Board</span></h1>
+<p>A common alternative to reduce the size of the board structure is to keep two color bitboards and six color independent piece bitboards, which are the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of black and white respective pieces, i.e. all queens. This space saving requires a cheap <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of a color and a piece bitboard to get the required pieces of that color only. 
+</p>
+<pre>
+class CBoard
+{
+   U64 pieceBB[8];
+public:
+   enum enumPiece
+   {
+      nWhite,     // any white piece
+      nBlack,     // any black piece
+      nPawn,
+      nKnight,
+      nBishop,
+      nRook,
+      nQueen,
+      nKing
+   };
+
+   U64 getPieceSet(PieceType pt) const {return pieceBB[pieceCode(pt)] &amp; pieceBB[colorCode(pt)];}
+   U64 getWhitePawns() const {return pieceBB[nPawn] &amp; pieceBB[nWhite];}
+   ...
+   U64 getPawns(ColorType ct) const {return pieceBB[nPawn] &amp; pieceBB[ct];}
+   ...
+};
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Color Flipping.html" title="Color Flipping">Color Flipping</a></li>
+<li> <a href="Quad-Bitboards.html" title="Quad-Bitboards">Quad-Bitboards</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/834fa3c273fafffe/cab7c12ea99e9a35.html" rel="nofollow">Bit Board Bonkers??</a> by Dave, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rec.games.chess.computer</a>, July 28, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=405590" rel="nofollow">Bitboard board representation</a> by <a href="Eric Oldre.html" title="Eric Oldre">Eric Oldre</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17138.html" rel="nofollow">BitBoard representations of the board</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47917.html" rel="nofollow">Decision concerning board representation</a> by <a class="new" href="index.php?title=Piotr Lopusiewicz&amp;action=edit&amp;redlink=1.html" title="Piotr Lopusiewicz (page does not exist)">Piotr Lopusiewicz</a>, <a href="CCC.html" title="CCC">CCC</a>, May 05, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76083.html" rel="nofollow">Bitboard board representation</a> by <a class="new" href="index.php?title=Elias Nilsson&amp;action=edit&amp;redlink=1.html" title="Elias Nilsson (page does not exist)">Elias Nilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, December 17, 2020</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a href="Category:Charlie Mariano.html" title="Category:Charlie Mariano">Charlie Mariano</a> - <a class="external text" href="https://www.discogs.com/de/Charlie-Mariano-Helen-12-Trees/release/2532764" rel="nofollow">Helen 12 Trees</a>, 1977, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> lineup:  <a href="Category:Charlie Mariano.html" title="Category:Charlie Mariano">Charlie Mariano</a>, <a href="Category:Jack Bruce.html" title="Category:Jack Bruce">Jack Bruce</a>, <a href="Category:Jan Hammer.html" title="Category:Jan Hammer">Jan Hammer</a>, <a href="Category:John Marshall.html" title="Category:John Marshall">John Marshall</a>, <a href="Category:Nippy Noya.html" title="Category:Nippy Noya">Nippy Noya</a>, <a href="Category:Zbigniew Seifert.html" title="Category:Zbigniew Seifert">Zbigniew Seifert</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/eWFEk4cQ6gE?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20060316100407/http://www.onjava.com/pub/a/onjava/2005/02/02/bitsets.html?page=2" rel="nofollow">Bitwise Optimization in Java: Bitfields, Bitboards, and Beyond</a> by <a href="Glen Pepicelli.html" title="Glen Pepicelli">Glen Pepicelli</a>, (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>, 2005), <a class="external text" href="https://en.wikipedia.org/wiki/O%27Reilly_Media" rel="nofollow">O'Reilly's</a> <a class="external text" href="https://web.archive.org/web/20050203015229/http://onjava.com/" rel="nofollow">OnJava.com</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=173418" rel="nofollow">On Beowulf - long post</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 04, 2001</span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722160740
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.018 seconds
+Real time usage: 0.019 seconds
+Preprocessor visited node count: 134/1000000
+Preprocessor generated node count: 296/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1099-0!canonical and timestamp 20240722160740 and revision id 26465
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Bitboard_Board-Definition&amp;oldid=26465">https://www.chessprogramming.org/index.php?title=Bitboard_Board-Definition&amp;oldid=26465</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Charlie Mariano.html" title="Category:Charlie Mariano">Charlie Mariano</a></li><li><a href="Category:Jack Bruce.html" title="Category:Jack Bruce">Jack Bruce</a></li><li><a href="Category:John Marshall.html" title="Category:John Marshall">John Marshall</a></li><li><a href="Category:Jan Hammer.html" title="Category:Jan Hammer">Jan Hammer</a></li><li><a href="Category:Nippy Noya.html" title="Category:Nippy Noya">Nippy Noya</a></li><li><a href="Category:Zbigniew Seifert.html" title="Category:Zbigniew Seifert">Zbigniew Seifert</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Bitboard+Board-Definition&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Bitboard Board-Definition.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Bitboard Board-Definition&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Bitboard Board-Definition.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Bitboard Board-Definition&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Bitboard Board-Definition&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Bitboard Board-Definition.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Bitboard Board-Definition.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Bitboard Board-Definition&amp;oldid=26465.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Bitboard Board-Definition&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 28 April 2022, at 18:12.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Bitboard_Board-Definition&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.018","walltime":"0.019","ppvisitednodes":{"value":134,"limit":1000000},"ppgeneratednodes":{"value":296,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722160740","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":50});});</script>
+</body>
+</html>

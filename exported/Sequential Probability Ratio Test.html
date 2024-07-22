@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Sequential Probability Ratio Test - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Sequential_Probability_Ratio_Test","wgTitle":"Sequential Probability Ratio Test","wgCurRevisionId":27047,"wgRevisionId":27047,"wgArticleId":8040,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Sequential_Probability_Ratio_Test","wgRelevantArticleId":8040,"wgRequestId":"Zp7Dt--qaMe6EU8WbZGhTQAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Sequential_Probability_Ratio_Test rootpage-Sequential_Probability_Ratio_Test skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Sequential Probability Ratio Test</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engine Testing.html" title="Engine Testing">Engine Testing</a> * Sequential Probability Ratio Test</b>
+</p><p><b>Sequential Probability Ratio Test</b>, or <b>SPRT</b>, is a sequential hypothesis testing method. Generally regarded as the most important process in modern engine development, it is used by virtually all top engines today, including <a href="Stockfish.html" title="Stockfish">Stockfish</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Advantages"><span class="tocnumber">1</span> <span class="toctext">Advantages</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Disadvantages"><span class="tocnumber">2</span> <span class="toctext">Disadvantages</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Testing Methodology"><span class="tocnumber">3</span> <span class="toctext">Testing Methodology</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Performing an SPRT Test"><span class="tocnumber">4</span> <span class="toctext">Performing an SPRT Test</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Preparing an SPRT Test"><span class="tocnumber">4.1</span> <span class="toctext">Preparing an SPRT Test</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Performing an SPRT Test With Gainer Bounds"><span class="tocnumber">4.2</span> <span class="toctext">Performing an SPRT Test With Gainer Bounds</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Performing an SPRT Test With Non-regression Bounds"><span class="tocnumber">4.3</span> <span class="toctext">Performing an SPRT Test With Non-regression Bounds</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Common Bounds"><span class="tocnumber">4.4</span> <span class="toctext">Common Bounds</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Advantages">Advantages</span></h1>
+<p>Compared to fixed games:
+</p>
+<ul><li> SPRT guarantees that the end result is statistically significant, and therefore can be trusted</li>
+<li> SPRT does not require prior knowledge to how large the sample size should be</li></ul>
+<p>Compared to test positions:
+</p>
+<ul><li> SPRT simulates real game play</li>
+<li> SPRT allows for statistical certainty that a patch gains strength</li>
+<li> SPRT provides a large sample size and low uncertainty</li>
+<li> SPRT allows time management testing</li>
+<li> SPRT is proven to work</li></ul>
+<h1><span class="mw-headline" id="Disadvantages">Disadvantages</span></h1>
+<ul><li> No local GUI support (Refer to <a href="OpenBench.html" title="OpenBench">OpenBench</a> for self-hosted web application)</li></ul>
+<h1><span class="mw-headline" id="Testing_Methodology">Testing Methodology</span></h1>
+<p>Generally, SPRT is performed on every proposed functional change. Some non-functional speedup changes can also be performed using SPRT, although a speedup script may take less resources than a SPRT test.
+</p><p>Two bounds, x and y, must be provided to conduct an SPRT test. The test will keep going until it can guarantee, within a degree of confidence, whether or not a feature is more likely to change the strength of the by engine y elo than it is to change the strength of the engine by x elo. The choice of x and y is important as it both influences the number of tests to be run on, and the elo gain needed for a patch to pass a SPRT test.
+</p><p>There are many tools one can use to perform SPRT tests, the most popular ones are <a href="OpenBench.html" title="OpenBench">OpenBench</a>, <a href="Cutechess-cli.html" title="Cutechess-cli">cutechess-cli</a>, and <a href="Fast-chess.html" title="Fast-chess">fast-chess</a>.
+</p>
+<h1><span class="mw-headline" id="Performing_an_SPRT_Test">Performing an SPRT Test</span></h1>
+<p>The following sections describe the procedure for local SPRT testing. For distributed SPRT testing, refer to <a href="OpenBench.html" title="OpenBench">OpenBench</a>.
+</p>
+<h2><span class="mw-headline" id="Preparing_an_SPRT_Test">Preparing an SPRT Test</span></h2>
+<p>In order to perform an SPRT test on the command line, there some programs and resources you would need.
+</p>
+<ul><li> A <a href="Tournament Manager.html" title="Tournament Manager">Tournament Manager</a> that supports SPRT testing. <a href="Fast-chess.html" title="Fast-chess">fast-chess</a> is recommended as it supports pentanomial statistics, which can make tests finish faster.</li>
+<li> An opening book (.pgn or .epd, <b>not</b> .bin). Some opening books can be found in the <a class="external text" href="https://github.com/official-stockfish/books" rel="nofollow">Stockfish opening books repository</a>. Balanced books such as <a class="external text" href="https://github.com/official-stockfish/books/blob/master/8moves_v3.pgn.zip" rel="nofollow">8moves_v3.pgn</a> are recommended for weaker engines, while more biased books such as <a class="external text" href="https://github.com/official-stockfish/books/blob/master/UHO_Lichess_4852_v1.epd.zip" rel="nofollow">UHO_Lichess_4852_v1.epd</a> and <a class="external text" href="https://github.com/AndyGrant/openbench-books/blob/master/Pohl.epd.zip" rel="nofollow">Pohl.epd</a> are recommended with stronger engines to reduce draw rate.</li></ul>
+<h2><span class="mw-headline" id="Performing_an_SPRT_Test_With_Gainer_Bounds">Performing an SPRT Test With Gainer Bounds</span></h2>
+<p>Say you want to introduce <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> to your <a href="UCI.html" title="UCI">UCI</a> engine. Build a binary of your engine with LMR added, and a binary of your base engine (without LMR). We'll call the two binarys engine_LMR and engine_BASE respectively.
+</p><p>In your shell, run the following command
+</p>
+<pre>
+.\fast-chess -engine cmd=[Path to engine_LMR] name=engine_LMR -engine cmd=[Path to engine_BASE] name=engine_BASE -each tc=8+0.08 -rounds 15000 -repeat -concurrency [Number of Available Threads] -recover -randomseed -openings file=[Path to Opening Book] format=[Opening book format (pgn or epd)] -sprt elo0=0 elo1=5 alpha=0.05 beta=0.05
+</pre>
+<p>Here, elo0 and elo1 represents the test bounds, while alpha and beta represents the expected alpha and beta errors of the test. The test verifies if the test with proposed changes are closer to 0 elo or 5 elo. Therefore, if the test passes, we can be reasonably certain that it brings more than 0 elo.
+</p>
+<h2><span class="mw-headline" id="Performing_an_SPRT_Test_With_Non-regression_Bounds">Performing an SPRT Test With Non-regression Bounds</span></h2>
+<p>Say you want to remove <a href="Countermove Heuristic.html" title="Countermove Heuristic">Countermove Heuristic</a> from your <a href="UCI.html" title="UCI">UCI</a> engine, as it takes a large amount of code and does not necessarily gain elo. To verify that the removal doesn't lose elo below an accepted amount, a non-regression test is performed. Build a binary of your engine with Countermvoe Heuristic removed, and a binary of your base engine (without removal of Countermove Heuristic). We'll call the two binarys engine_NOCM and engine_BASE respectively.
+</p>
+<pre>
+.\fast-chess -engine cmd=[Path to engine_NOCM] name=engine_NOCM -engine cmd=[Path to engine_BASE] name=engine_BASE -each tc=8+0.08 -rounds 15000 -repeat -concurrency [Number of Available Threads] -recover -randomseed -openings file=[Path to Opening Book] format=[Opening book format (pgn or epd)] -sprt elo0=-5 elo1=0 alpha=0.05 beta=0.05
+</pre>
+<p>Here, the bounds [-5, 0] are flipped version of the gainer bounds. This is equivalent to testing engine_BASE against engine_NOCM (notice the reverse order) with [0, 5] bounds. If the test fails, it means that Counter Moves is still worth more than an acceptable amount of elo, therefore it should not be simplified.
+</p>
+<h2><span class="mw-headline" id="Common_Bounds">Common Bounds</span></h2>
+<p>A good choice of bounds balances the expected number of games and the lowest elo gain needed for passing. Due to a variety of factors, including elo compression, bounds are generally looser for weaker engines and tighter for stronger engines.
+</p>
+<table class="wikitable">
+<tr>
+<th> Gainer Bounds
+</th>
+<th> Non-regression Bounds
+</th>
+<th> Usage
+</th></tr>
+<tr>
+<td> [0.5, 2.5]
+</td>
+<td> [-1.75, 0.25]
+</td>
+<td> Stockfish LTC
+</td></tr>
+<tr>
+<td> [0, 2]
+</td>
+<td> [-1.75, 0.25]
+</td>
+<td> Stockfish STC
+</td></tr>
+<tr>
+<td> [0, 3]
+</td>
+<td> [-3, 1]
+</td>
+<td> Top 30 engines
+</td></tr>
+<tr>
+<td> [0, 5]
+</td>
+<td> [-5, 0]
+</td>
+<td> Top 200 engines
+</td></tr>
+<tr>
+<td> [0, 10]
+</td>
+<td> [-10, 0]
+</td>
+<td> All other engines
+</td></tr></table>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<p><a class="external text" href="https://tests.stockfishchess.org/sprt_calc" rel="nofollow">Chess SPRT Calculator</a> » <a href="Stockfish.html#Fishtest" title="Stockfish">Fishtest</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722144951
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.004 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 80/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:8040-0!canonical and timestamp 20240722144951 and revision id 27047
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Sequential_Probability_Ratio_Test&amp;oldid=27047">https://www.chessprogramming.org/index.php?title=Sequential_Probability_Ratio_Test&amp;oldid=27047</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Sequential+Probability+Ratio+Test&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Sequential Probability Ratio Test.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Sequential Probability Ratio Test&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Sequential Probability Ratio Test.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Sequential Probability Ratio Test&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Sequential Probability Ratio Test&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Sequential Probability Ratio Test.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Sequential Probability Ratio Test.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Sequential Probability Ratio Test&amp;oldid=27047.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Sequential Probability Ratio Test&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 14 July 2024, at 21:31.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Sequential_Probability_Ratio_Test&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.004","walltime":"0.005","ppvisitednodes":{"value":53,"limit":1000000},"ppgeneratednodes":{"value":80,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722144951","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

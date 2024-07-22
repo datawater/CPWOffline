@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Pawn Spans - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pawn_Spans","wgTitle":"Pawn Spans","wgCurRevisionId":18634,"wgRevisionId":18634,"wgArticleId":1206,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Hans Kmoch","Steps Ahead","Mike Mainieri","Michael Brecker","Darryl Jones","Steve Smith","Mike Stern"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pawn_Spans","wgRelevantArticleId":1206,"wgRequestId":"Zp7DlQZUIzne983r89wx-gAAAA4","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pawn_Spans rootpage-Pawn_Spans skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Pawn Spans</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Pawn Pattern and Properties</a> * Pawn Spans</b>
+</p><p><b>Pawn Spans</b> and Fill-Pattern of <a href="Pawn.html" title="Pawn">pawns</a> are used as a base for many other <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a> related stuff, to determine <a href="Passed Pawns (Bitboards).html" title="Passed Pawns (Bitboards)">passers</a>, <a href="Candidates (Bitboards).html" title="Candidates (Bitboards)">candidates</a>, <a href="Isolated Pawns (Bitboards).html" title="Isolated Pawns (Bitboards)">isolanis</a> etc. set-wise. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Type of Spans"><span class="tocnumber">1</span> <span class="toctext">Type of Spans</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Front- and Rearspans"><span class="tocnumber">1.1</span> <span class="toctext">Front- and Rearspans</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Interspans"><span class="tocnumber">1.2</span> <span class="toctext">Interspans</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Stop and Telestop"><span class="tocnumber">2</span> <span class="toctext">Stop and Telestop</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Type_of_Spans">Type of Spans</span></h1>
+<p>Every pawn has a <b>frontspan</b> with <a href="Stop Square.html" title="Stop Square">stop</a> - and <b>telestop</b> squares, and a <b>rearspan</b>. Further the pawn has a <b>lee</b>- and <b>luff</b>-side, while rook-pawns miss the lee-side.
+</p>
+<pre>
+white pawn d5:
+. . . f . . . .
+. . . r . . . .    movement
+. . . o . . . .      ^
+l e e P l u f f      |
+. . . r . . . .
+. . . e . . . .
+. . . a . . . .
+. . . r . . . .
+</pre>
+<p>A span of each individual pawn reflects either its <a href="Distance.html" title="Distance">distance</a> to promotion (frontspan), or distance to its back rank (rearspan).
+<span id="FrontAndRearspans"></span>
+</p>
+<h2><span class="mw-headline" id="Front-_and_Rearspans">Front- and Rearspans</span></h2>
+<p>Front- and rearspans are the <a href="Pawn Fills.html" title="Pawn Fills">front- and rearfills</a> shifted one step further in the fill-direction:
+</p>
+<pre>
+white frontspans    black rearspans
+1 1 1 . . 1 1 1     1 1 1 1 . 1 1 1
+1 1 1 . . 1 1 1     1 . 1 1 . . . 1
+1 1 1 . . 1 1 1     . . . 1 . . . .
+1 1 1 . . 1 1 1     . . . . . . . .
+. 1 1 . . . 1 1  ^  . . . . . . . .
+. 1 1 . . . 1 1  |  . . . . . . . .
+. . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .
+               north
+white pawns         black pawns
+. . . . . . . .     . . . . . . . .
+. . . . . . . .     . 1 . . . 1 1 .
+. . . . . . . .     1 . 1 . . . . 1
+. . . . . . . .     . . . 1 . . . .
+1 . . . . 1 . .     . . . . . . . .
+. . 1 . . . . .     . . . . . . . .
+. 1 1 . . . 1 1     . . . . . . . .
+. . . . . . . .     . . . . . . . .
+               south
+white rearspans     black frontspans
+. . . . . . . .  |  . . . . . . . .
+. . . . . . . .  v  . . . . . . . .
+. . . . . . . .     . 1 . . . 1 1 .
+. . . . . . . .     1 1 1 . . 1 1 1
+. . . . . . . .     1 1 1 1 . 1 1 1
+1 . . . . 1 . .     1 1 1 1 . 1 1 1
+1 . 1 . . 1 . .     1 1 1 1 . 1 1 1
+1 1 1 . . 1 1 1     1 1 1 1 . 1 1 1
+</pre>
+<pre>
+U64 wFrontSpans(U64 wpawns) {return nortOne (nortFill(wpawns));}
+U64 bRearSpans (U64 bpawns) {return nortOne (nortFill(bpawns));}
+U64 bFrontSpans(U64 bpawns) {return soutOne (soutFill(bpawns));}
+U64 wRearSpans (U64 wpawns) {return soutOne (soutFill(wpawns));}
+</pre>
+<ul><li> Pawns still member of their frontspan have at least one pawn behind on the same file.</li>
+<li> Pawns still member of their rearspan have at least one pawn in front on the same file.</li>
+<li> All pawns which are member of the opponent frontspans (or frontfill) have a <b>mechanical obstruction</b> and are <b>unfree</b>.</li></ul>
+<h2><span class="mw-headline" id="Interspans">Interspans</span></h2>
+<p>The intersection of white and black frontspans is called interspan. Obviously interspans can only occur on closed files. <a href="Rook.html" title="Rook">Rooks</a> on interspans may have a hard time, if the attacked opponent pawns are safe. Their vertical mobility is restricted and they may vulnerable to get trapped and attacked. On the other hand, if supported by other attacking pieces, there might be successful attacks against <a href="Weak Pawns.html" title="Weak Pawns">weak pawns</a> and the especially the <a href="King.html" title="King">king</a>.
+</p>
+<pre>
+white frontspan  &amp;  black frontspan  =  interspan
+1 1 1 . . 1 1 1     . . . . . . . .     . . . . . . . .
+1 1 1 . . 1 1 1     . . . . . . . .     . . . . . . . .
+1 1 1 . . 1 1 1     . 1 . . . 1 1 .     . 1 . . . 1 1 .
+1 1 1 . . 1 1 1     1 1 1 . . 1 1 1     1 1 1 . . 1 1 1
+. 1 1 . . . 1 1  &amp;  1 1 1 1 . 1 1 1  =  . 1 1 . . . 1 1
+. 1 1 . . . 1 1     1 1 1 1 . 1 1 1     . 1 1 . . . 1 1
+. . . . . . . .     1 1 1 1 . 1 1 1     . . . . . . . .
+. . . . . . . .     1 1 1 1 . 1 1 1     . . . . . . . .
+</pre>
+<p><span id="StopandDistantStop"></span>
+</p>
+<h1><span class="mw-headline" id="Stop_and_Telestop">Stop and Telestop</span></h1>
+<p><a href="Stop Square.html" title="Stop Square">Stop squares</a> are the <a href="Pawn Pushes (Bitboards).html" title="Pawn Pushes (Bitboards)">push move targets</a> of any pawn.
+</p>
+<pre>
+U64 wStop(U64 wpawns) {return nortOne (wpawns);}
+U64 bStop(U64 bpawns) {return soutOne (bpawns);}
+</pre>
+<p>Thus, the frontfills of the stop squares are the frontspans of the pawns:
+</p>
+<pre>
+U64 wFrontSpan(U64 wpawns) {return nortFill(wStop(wpawns));}
+U64 bFrontSpan(U64 bpawns) {return soutFill(bStop(bpawns));}
+</pre>
+<p>Telestop squares all the squares of the frontspan, except the stop squares
+</p>
+<pre>
+U64 wTeleStops(U64 wpawns) {return wFrontSpans(wStop(wpawns)) ^ wStop(wpawns);}
+U64 bTeleStops(U64 bpawns) {return bFrontSpans(bStop(bpawns)) ^ bStop(bpawns);}
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Attack Spans.html" title="Attack Spans">Attack Spans</a></li>
+<li> <a href="Fill Algorithms.html" title="Fill Algorithms">Fill Algorithms</a></li>
+<li> <a href="Pawn Fills.html" title="Pawn Fills">Pawn Fills</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a href="Category:Steps Ahead.html" title="Category:Steps Ahead">Steps Ahead</a> - Live in Japan 1986, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> lineup: <a href="Category:Mike Mainieri.html" title="Category:Mike Mainieri">Mike Mainieri</a>, <a href="Category:Michael Brecker.html" title="Category:Michael Brecker">Michael Brecker</a>, <a href="Category:Darryl Jones.html" title="Category:Darryl Jones">Darryl Jones</a>, <a href="Category:Mike Stern.html" title="Category:Mike Stern">Mike Stern</a>, <a href="Category:Steve Smith.html" title="Category:Steve Smith">Steve Smith</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/NjFfu7HKOro?" width="640"></iframe></div></div></dd></dl>
+<p><b><a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721224427
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.009 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 91/1000000
+Preprocessor generated node count: 204/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1206-0!canonical and timestamp 20240721224427 and revision id 18634
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Pawn_Spans&amp;oldid=18634">https://www.chessprogramming.org/index.php?title=Pawn_Spans&amp;oldid=18634</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Hans Kmoch.html" title="Category:Hans Kmoch">Hans Kmoch</a></li><li><a href="Category:Steps Ahead.html" title="Category:Steps Ahead">Steps Ahead</a></li><li><a href="Category:Mike Mainieri.html" title="Category:Mike Mainieri">Mike Mainieri</a></li><li><a href="Category:Michael Brecker.html" title="Category:Michael Brecker">Michael Brecker</a></li><li><a href="Category:Darryl Jones.html" title="Category:Darryl Jones">Darryl Jones</a></li><li><a href="Category:Steve Smith.html" title="Category:Steve Smith">Steve Smith</a></li><li><a href="Category:Mike Stern.html" title="Category:Mike Stern">Mike Stern</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Pawn+Spans&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Pawn Spans.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Pawn Spans&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Pawn Spans.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Pawn Spans&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Pawn Spans&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Pawn Spans.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Pawn Spans.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Pawn Spans&amp;oldid=18634.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Pawn Spans&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 April 2020, at 09:25.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Pawn_Spans&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.009","walltime":"0.010","ppvisitednodes":{"value":91,"limit":1000000},"ppgeneratednodes":{"value":204,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721224427","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

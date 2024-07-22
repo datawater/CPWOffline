@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Pawn Advantage, Win Percentage, and Elo - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pawn_Advantage,_Win_Percentage,_and_Elo","wgTitle":"Pawn Advantage, Win Percentage, and Elo","wgCurRevisionId":24254,"wgRevisionId":24254,"wgArticleId":1457,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pawn_Advantage,_Win_Percentage,_and_Elo","wgRelevantArticleId":1457,"wgRequestId":"Zp7DigZUIzne983r89wx4QAAAA4","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pawn_Advantage_Win_Percentage_and_Elo rootpage-Pawn_Advantage_Win_Percentage_and_Elo skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Pawn Advantage, Win Percentage, and Elo</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * Pawn Advantage, Win Percentage and Elo</b>
+</p><p>An examination by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a> and <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a> in December 2007 on the approximate relations between <b>Win Percentage</b>, <b>Pawn Advantage</b>, and <a class="external text" href="https://en.wikipedia.org/wiki/Elo_rating_system" rel="nofollow">Elo rating</a> advantage for computer chess resulted in following findings. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Relationship"><span class="tocnumber">1</span> <span class="toctext">Relationship</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Data Acquisition"><span class="tocnumber">2</span> <span class="toctext">Data Acquisition</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Data Reduction and Modeling"><span class="tocnumber">3</span> <span class="toctext">Data Reduction and Modeling</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Postings"><span class="tocnumber">6</span> <span class="toctext">Postings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#1999"><span class="tocnumber">6.1</span> <span class="toctext">1999</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2000 ..."><span class="tocnumber">6.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2010 ..."><span class="tocnumber">6.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2015 ..."><span class="tocnumber">6.4</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2020 ..."><span class="tocnumber">6.5</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Relationship">Relationship</span></h1>
+<p>It was found that the the approximate relationship between the winning <a class="external text" href="https://en.wikipedia.org/wiki/Probability" rel="nofollow">probability</a> W and the pawn advantage P is
+</p>
+<div class="floatnone"><a class="image" href="File:PawnWinELOFormula1.jpg.html"><img alt="PawnWinELOFormula1.jpg" class="thumbborder" height="57" src="images/b/bf/PawnWinELOFormula1.jpg" style="vertical-align: text-bottom" width="183"/></a></div>
+<p>The inverse relationship can be given as
+</p>
+<div class="floatnone"><a class="image" href="File:PawnWinELOFormula2.jpg.html"><img alt="PawnWinELOFormula2.jpg" class="thumbborder" height="49" src="images/6/64/PawnWinELOFormula2.jpg" style="vertical-align: text-bottom" width="225"/></a></div>
+<p>From the above, the relationship between the equivalent Elo rating advantage R and the pawn advantage P can be given as
+</p>
+<div class="floatnone"><a class="image" href="File:PawnWinELOFormula3.jpg.html"><img alt="PawnWinELOFormula3.jpg" class="thumbborder" height="36" src="images/4/42/PawnWinELOFormula3.jpg" style="vertical-align: text-bottom" width="130"/></a></div>
+<h1><span class="mw-headline" id="Data_Acquisition">Data Acquisition</span></h1>
+<p>Data was taken from a collection of 405,460 computer games in <a href="Portable Game Notation.html" title="Portable Game Notation">PGN format</a>. Whenever exactly 5 plys in a game had gone by without captures, the game result was accumulated twice in a table indexed by the material configuration. The data was accumulated twice because it was assumed that material values were equal for both colors. So if there was data for a KPK material configuration, the data was also tallied for the KKP. Only data pertaining to the material configuration was taken. This was considered reasonable because the material configuration is the most important quantity that affects the result of a game.
+</p>
+<h1><span class="mw-headline" id="Data_Reduction_and_Modeling">Data Reduction and Modeling</span></h1>
+<p>For each material configuration, a pawn value was computed using conventional pawn-normalized material ratios that are close to those used in strong chess programs (P=1, N=4, B=4.1, R=6, Q=12). The relationship between Win Percentage and Pawn Advantage was assumed to follow a <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_regression" rel="nofollow">logistic model</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> with its <a class="external text" href="https://en.wikipedia.org/wiki/Sigmoid_function" rel="nofollow">sigmoid curve</a>, namely,
+</p>
+<div class="floatnone"><a class="image" href="File:PawnWinELOFormula4.jpg.html"><img alt="PawnWinELOFormula4.jpg" class="thumbborder" height="54" src="images/f/f4/PawnWinELOFormula4.jpg" style="vertical-align: text-bottom" width="241"/></a></div>
+<p>where K is an unknown non-zero constant. When applying the condition that the win probability is 0.5 if there is no pawn advantage, the solution to the above seperable differential equation becomes
+</p>
+<div class="floatnone"><a class="image" href="File:PawnWinELOFormula5.jpg.html"><img alt="PawnWinELOFormula5.jpg" class="thumbborder" height="58" src="images/5/5c/PawnWinELOFormula5.jpg" style="vertical-align: text-bottom" width="189"/></a></div>
+<p>For K=4, the proposed logistic model and the data is plotted here for comparison:
+</p>
+<div class="floatnone"><a class="image" href="File:Wp2pa.PNG.html"><img alt="Wp2pa.PNG" class="thumbborder" height="474" src="images/3/3a/Wp2pa.PNG" style="vertical-align: text-bottom" width="712"/></a></div>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Bishop versus Knight.html#WinningPercantages" title="Bishop versus Knight">Bishop versus Knight - Winning Percentages</a></li>
+<li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="Material.html" title="Material">Material</a></li>
+<li> <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Shogo Takeuchi.html" title="Shogo Takeuchi">Shogo Takeuchi</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a>, <a href="Kazunori Yamaguchi.html" title="Kazunori Yamaguchi">Kazunori Yamaguchi</a>, <a href="Satoru Kawai.html" title="Satoru Kawai">Satoru Kawai</a> (<b>2007</b>). <i>Visualization and Adjustment of Evaluation Functions Based on Evaluation Values and Win Probability</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/aaai/aaai2007.html.html" rel="nofollow">AAAI 2007</a>, <a class="external text" href="https://www.aaai.org/Papers/AAAI/2007/AAAI07-136.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Kenneth W. Regan</a>,  <a href="Tamal T. Biswas.html" title="Tamal T. Biswas">Tamal T. Biswas</a>, <a class="new" href="index.php?title=Jason Zhou&amp;action=edit&amp;redlink=1.html" title="Jason Zhou (page does not exist)">Jason Zhou</a> (<b>2014</b>). <i>Human and Computer Preferences at Chess</i>. <a class="external text" href="http://www.cse.buffalo.edu/~regan/papers/pdf/RBZ14aaai.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Tamal T. Biswas.html" title="Tamal T. Biswas">Tamal T. Biswas</a>, <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Kenneth W. Regan</a> (<b>2015</b>). <i>Measuring Level-K Reasoning, Satisficing, and Human Error in Game-Play Data</i>. <a href="IEEE.html" title="IEEE">IEEE</a> <a class="external text" href="http://www.icmla-conference.org/icmla15/.html" rel="nofollow">ICMLA 2015</a>, <a class="external text" href="http://www.cse.buffalo.edu/~regan/papers/pdf/BiRe15 ICMLA2015.pdf.html" rel="nofollow">pdf preprint</a></li>
+<li> <a href="Shogo Takeuchi.html" title="Shogo Takeuchi">Shogo Takeuchi</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2015</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7336038.html" rel="nofollow">Estimating Ratings of Computer Players by the Evaluation Scores and Principal Variations in Shogi</a></i>. <a class="external text" href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7335993.html" rel="nofollow">ACIT-CSI</a></li></ul>
+<h1><span class="mw-headline" id="Postings">Postings</span></h1>
+<h2><span class="mw-headline" id="1999">1999</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=52542" rel="nofollow">Elo performance?</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, May 22, 1999 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a>, <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=261636" rel="nofollow">likelihood instead of pawnunits? + chess knowledge</a> by <a class="new" href="index.php?title=Ingo Lindam&amp;action=edit&amp;redlink=1.html" title="Ingo Lindam (page does not exist)">Ingo Lindam</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 2002</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30695.html" rel="nofollow">Winning percentage and centipawns</a> by <a href="Luca Hemmerich.html" title="Luca Hemmerich">Luca Hemmerich</a>, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43323.html" rel="nofollow">Pawn Advantage, Win Percentage, and Elo</a> by <a href="Adam Hair.html" title="Adam Hair">Adam Hair</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44670.html" rel="nofollow">normal vs logistic curve for Elo model</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50266.html" rel="nofollow">Houdini, much weaker engines, and Arpad Elo</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2013 » <a href="Houdini.html" title="Houdini">Houdini</a>, <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup></li>
+<li> <a class="external text" href="http://macechess.blogspot.de/2014/03/pawn-advantage-in-ice.html.html" rel="nofollow">Pawn Advantage in iCE</a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a>, <a class="external text" href="http://macechess.blogspot.de/.html" rel="nofollow">mACE Chess</a>, March 16, 2014 » <a href="ICE.html" title="ICE">iCE</a></li>
+<li> <a class="external text" href="https://chesscomputer.tumblr.com/post/98632536555/using-the-stockfish-position-evaluation-score-to/embed" rel="nofollow">Using the Stockfish position evaluation score to predict victory probability</a> by unavoidablegrain, <a class="external text" href="https://en.wikipedia.org/wiki/Tumblr" rel="nofollow">Tumblr</a>, September 28, 2014 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="https://rjlipton.wordpress.com/2015/10/06/depth-of-satisficing/" rel="nofollow">Depth of Satisficing</a> by <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Ken Regan</a>, <a class="external text" href="https://rjlipton.wordpress.com/" rel="nofollow">Gödel's Lost Letter and P=NP</a>, October 06, 2015  » <a href="Depth.html" title="Depth">Depth</a>, <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a>, <a class="mw-selflink selflink">Pawn Advantage, Win Percentage, and Elo</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a>, <a href="Komodo.html" title="Komodo">Komodo</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a class="external text" href="https://rjlipton.wordpress.com/2016/12/08/magnus-and-the-turkey-grinder/" rel="nofollow">Magnus and the Turkey Grinder</a> by <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Ken Regan</a>, <a class="external text" href="https://rjlipton.wordpress.com/" rel="nofollow">Gödel's Lost Letter and P=NP</a>, December 08, 2016 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65764.html" rel="nofollow">Statistical interpretation of search and eval scores</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2017 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a>, <a href="Score.html" title="Score">Score</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68072.html" rel="nofollow">Why Lc0 eval (in cp) is asymmetric against AB engines?</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, July 25, 2018 » <a href="Asymmetric Evaluation.html" title="Asymmetric Evaluation">Asymmetric Evaluation</a>, <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72140.html" rel="nofollow">UCI Win/Draw/Loss reporting</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="https://lczero.org/blog/2020/04/wdl-head/" rel="nofollow">Win-Draw-Loss evaluation</a> by <a href="Alexander Lyashuk.html" title="Alexander Lyashuk">crem</a>, <a href="Leela Chess Zero.html" title="Leela Chess Zero">LCZero blog</a>, April 20, 2020 » <a href="TCEC Season 17.html#Superfinal" title="TCEC Season 17">TCEC Season 17 Superfinal</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74339.html" rel="nofollow">Stockfish has included WDL stats in engine output</a> by Deberger, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2020 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Elo_rating_system" rel="nofollow">Elo rating system from Wikipedia</a></li>
+<li> <a class="external text" href="http://wismuth.com/elo/calculator.html.html" rel="nofollow">Elo Win Probability Calculator</a> by <a href="Mathematician.html#FLabelle" title="Mathematician">François Labelle</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://mathworld.wolfram.com/LogisticEquation.html.html" rel="nofollow">logistic model from Wolfram MathWorld</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Arpad_Elo" rel="nofollow">Arpad Elo - Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57890.html" rel="nofollow">Regan's latest: Depth of Satisficing</a> by <a class="new" href="index.php?title=Carl Lumma&amp;action=edit&amp;redlink=1.html" title="Carl Lumma (page does not exist)">Carl Lumma</a>, <a href="CCC.html" title="CCC">CCC</a>, October 09, 2015</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://rjlipton.wordpress.com/2016/11/30/when-data-serves-turkey/" rel="nofollow">When Data Serves Turkey</a> by <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Ken Regan</a>, <a class="external text" href="https://rjlipton.wordpress.com/" rel="nofollow">Gödel's Lost Letter and P=NP</a>, November 30, 2016</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/World_Chess_Championship_2016" rel="nofollow">World Chess Championship 2016 from Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62435.html" rel="nofollow">Regan's conundrum</a> by <a class="new" href="index.php?title=Carl Lumma&amp;action=edit&amp;redlink=1.html" title="Carl Lumma (page does not exist)">Carl Lumma</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2016</span>
+</li>
+</ol></div>
+<p><b><a href="Evaluation.html" title="Evaluation">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722143726
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.029 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 139/1000000
+Preprocessor generated node count: 266/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1457-0!canonical and timestamp 20240722143726 and revision id 24254
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Pawn_Advantage,_Win_Percentage,_and_Elo&amp;oldid=24254">https://www.chessprogramming.org/index.php?title=Pawn_Advantage,_Win_Percentage,_and_Elo&amp;oldid=24254</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Pawn+Advantage%2C+Win+Percentage%2C+and+Elo&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Pawn Advantage, Win Percentage, and Elo.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Pawn Advantage, Win Percentage, and Elo&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Pawn Advantage, Win Percentage, and Elo.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Pawn Advantage, Win Percentage, and Elo&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Pawn Advantage, Win Percentage, and Elo&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Pawn Advantage, Win Percentage, and Elo.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Pawn Advantage, Win Percentage, and Elo.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Pawn Advantage, Win Percentage, and Elo&amp;oldid=24254.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Pawn Advantage, Win Percentage, and Elo&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 April 2021, at 10:05.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Pawn_Advantage,_Win_Percentage,_and_Elo&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.029","walltime":"0.036","ppvisitednodes":{"value":139,"limit":1000000},"ppgeneratednodes":{"value":266,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722143726","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":54});});</script>
+</body>
+</html>

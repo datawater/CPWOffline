@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Extensions - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Extensions","wgTitle":"Extensions","wgCurRevisionId":22558,"wgRevisionId":22558,"wgArticleId":962,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Extensions","wgRelevantArticleId":962,"wgRequestId":"Zp7DcbG9G67YuqUGxlgb8QAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Extensions rootpage-Extensions skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Extensions</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Selectivity.html" title="Selectivity">Selectivity</a> * Extensions</b>
+</p><p>Many programs <b>extend</b> certain moves to try and find better moves faster, or to resolve tactical "noise" resulting from the <a href="Horizon Effect.html" title="Horizon Effect">horizon effect</a>. To extend a move, its <a href="Depth.html" title="Depth">search depth</a> (draft) is incremented by some amount, typically one <a href="Ply.html" title="Ply">ply</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Inside the Loop"><span class="tocnumber">1</span> <span class="toctext">Inside the Loop</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Classification"><span class="tocnumber">2</span> <span class="toctext">Classification</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Types"><span class="tocnumber">3</span> <span class="toctext">Types</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Fractional Extensions"><span class="tocnumber">4</span> <span class="toctext">Fractional Extensions</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Conditions.2FRestrictions"><span class="tocnumber">5</span> <span class="toctext">Conditions/Restrictions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Non-reductions"><span class="tocnumber">5.1</span> <span class="toctext">Non-reductions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Publications"><span class="tocnumber">7</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#1980 ..."><span class="tocnumber">7.1</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#1990 ..."><span class="tocnumber">7.2</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2000 ..."><span class="tocnumber">7.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2010 ..."><span class="tocnumber">7.4</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#1996 ..."><span class="tocnumber">8.1</span> <span class="toctext">1996 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ... 2"><span class="tocnumber">8.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2005 ..."><span class="tocnumber">8.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2010 ... 2"><span class="tocnumber">8.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2015 ..."><span class="tocnumber">8.5</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Search Extension"><span class="tocnumber">9.1</span> <span class="toctext">Search Extension</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Misc"><span class="tocnumber">9.2</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Inside_the_Loop">Inside the Loop</span></h1>
+<p>Some extensions may be determined inside the move loop before or after <a href="Make Move.html" title="Make Move">making the move</a>, the latter case often delayed to the recursively called search routine by some programs:
+</p>
+<pre>
+for each move m € of all moves {
+  makeMove(m);
+  int ext = determineExtension( m, depth, node_type, ...); /* 0 or 1 */
+  score = -search(ply + 1, depth + ext - 1, -beta, -alpha);
+  unmakeMove(m);
+  ...
+}
+</pre>
+<h1><span class="mw-headline" id="Classification">Classification</span></h1>
+<p><a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a> has classified extensions as either win-seeking, loss-seeking, or neutral <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> :
+</p>
+<ol><li> Win-seeking extension: If I stop searching now I'll fail low, but I think there might be something good here if I look a little further.</li>
+<li> Loss-seeking extension: If I stop searching now I'll fail high, but I think I'm in trouble.</li>
+<li> Neutral extension: This is a forcing sequence, and if I stop searching now I won't know how it ends.</li></ol>
+<h1><span class="mw-headline" id="Types">Types</span></h1>
+<table class="wikitable">
+<tr>
+<th> type
+</th>
+<th> typical class
+</th></tr>
+<tr>
+<td> <a href="Botvinnik-Markoff Extension.html" title="Botvinnik-Markoff Extension">Botvinnik-Markoff Extension</a>
+</td>
+<td style="text-align:right;"> loss-seeking
+</td></tr>
+<tr>
+<td> <a href="Capture Extensions.html" title="Capture Extensions">Capture Extensions</a>
+</td>
+<td style="text-align:right;"> neutral
+</td></tr>
+<tr>
+<td> <a href="Check Extensions.html" title="Check Extensions">Check Extensions</a>
+</td>
+<td style="text-align:right;"> neutral
+</td></tr>
+<tr>
+<td> <a href="Mate Threat Extensions.html" title="Mate Threat Extensions">Mate Threat Extensions</a>
+</td>
+<td style="text-align:right;"> win-seeking
+</td></tr>
+<tr>
+<td> <a href="One Reply Extensions.html" title="One Reply Extensions">One Reply Extensions</a>
+</td>
+<td style="text-align:right;"> loss-seeking
+</td></tr>
+<tr>
+<td> <a href="Passed Pawn Extensions.html" title="Passed Pawn Extensions">Passed Pawn Extensions</a>
+</td>
+<td style="text-align:right;"> neutral
+</td></tr>
+<tr>
+<td> <a href="PV Extensions.html" title="PV Extensions">PV Extensions</a>
+</td>
+<td style="text-align:right;"> neutral
+</td></tr>
+<tr>
+<td> <a href="Recapture Extensions.html" title="Recapture Extensions">Recapture Extensions</a>
+</td>
+<td style="text-align:right;"> neutral
+</td></tr>
+<tr>
+<td> <a href="Singular Extensions.html" title="Singular Extensions">Singular Extensions</a>
+</td>
+<td style="text-align:right;"> neutral
+</td></tr></table>
+<p><span id="FractionalExtensions"></span>
+</p>
+<h1><span class="mw-headline" id="Fractional_Extensions">Fractional Extensions</span></h1>
+<p>This technique involves passing fractional <a href="Depth.html" title="Depth">depths</a> to the search function. This is typically implemented by defining one <a href="Ply.html" title="Ply">ply</a> to be a number greater than one. Then an extension can be added that does not yet extend the search, but further down the tree may cause an extension when another fractional extension causes the net extension to exceed one ply. Fractional extensions were first described by <a href="David Levy.html" title="David Levy">David Levy's</a>, <a href="David Broughton.html" title="David Broughton">David Broughton's</a> and <a href="Mark Taylor.html" title="Mark Taylor">Mark Taylor's</a> paper on their <a href="SEX Algorithm.html" title="SEX Algorithm">SEX Algorithm</a>, in conjunction with "negative" extensions aka. fractional reductions and even <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Conditions.2FRestrictions">Conditions/Restrictions</span></h1>
+<p>Some programs restrict extensions, with either a maximum limit, or via other conditions, such as depth or iteration. Care must be taken so that the search is not extended infinitely (see <a href="Search Explosion.html" title="Search Explosion">search explosion</a>). Some programs vary the extension based on the expected <a href="Node Types.html" title="Node Types">node type</a>. For example, in an expected <a href="Node Types.html#ALL" title="Node Types">All-node</a>, it might use 1/2 a ply extension for a pawn to the 7th, but a full ply on the <a href="Node Types.html#PV" title="Node Types">PV-node</a> research.
+</p>
+<h2><span class="mw-headline" id="Non-reductions">Non-reductions</span></h2>
+<p>In contemporary, heavily reducing programs former typical extensions are often used in an inverted manner: to flag moves as exempt from reductions.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Reductions.html" title="Reductions">Reductions</a></li></ul>
+<dl><dd> <a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a></dd></dl>
+<ul><li> <a href="Markian Hlynka.html#PreSearching" title="Markian Hlynka">Pre-Search</a></li>
+<li> <a href="Pruning.html" title="Pruning">Pruning</a></li>
+<li> <a href="SEX Algorithm.html" title="SEX Algorithm">SEX Algorithm</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a> (<b>1983</b>). <i>Searching to Variable Depth in Computer Chess.</i> Proceedings of <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/ijcai/ijcai83.html.html" rel="nofollow">IJCAI 83</a>, pp. 760-762. Karlsruhe. <a class="external text" href="http://ijcai.org/Past%20Proceedings/IJCAI-83-VOL-2/PDF/039.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a>, <a href="Murray Campbell.html" title="Murray Campbell">Murray Campbell</a>, <a href="Feng-hsiung Hsu.html" title="Feng-hsiung Hsu">Feng-hsiung Hsu</a> (<b>1988</b>). <i>Singular extensions: Adding Selectivity to Brute-Force Searching</i>. AAAI Spring Symposium, Computer Game Playing, pp. 8-13. Also published in <a href="ICGA Journal.html#11 4" title="ICGA Journal">ICCA Journal, Vol. 11, No. 4</a>, republished (1990) in <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 43, No. 1, pp. 99-109. ISSN 0004-3702.</li>
+<li> <a href="David Levy.html" title="David Levy">David Levy</a>, <a href="David Broughton.html" title="David Broughton">David Broughton</a>, <a href="Mark Taylor.html" title="Mark Taylor">Mark Taylor</a> (<b>1989</b>). <i>The SEX Algorithm in Computer Chess</i>. <a href="ICGA Journal.html#12 1" title="ICGA Journal">ICCA Journal, Vol. 12, No. 1</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Thomas Anantharaman.html" title="Thomas Anantharaman">Thomas Anantharaman</a> (<b>1991</b>). <i>Extension Heuristics</i>. <a href="ICGA Journal.html#14 2" title="ICGA Journal">ICCA Journal, Vol. 14, No. 2</a></li>
+<li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a> (<b>1992</b>). <i>Experiments in Selective Search Extensions</i>. MSc. thesis, Department of Computing Science, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a>, <a class="external text" href="https://era.library.ualberta.ca/public/datastream/get/uuid:e4fbf48d-7603-490f-85cc-5497bbecf5a8/DS1" rel="nofollow">pdf</a></li>
+<li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1992</b>). <i>Experiments in Forward Pruning with Limited Extensions.</i> <a href="ICGA Journal.html#15 2" title="ICGA Journal">ICCA Journal, Vol. 15, No. 2</a></li>
+<li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1992</b>). <i>Selective Extensions in Game-Tree Search.</i> <a href="3rd Computer Olympiad.html#Workshop" title="3rd Computer Olympiad">Heuristic Programming in AI 3</a></li>
+<li> <a href="Don Beal.html" title="Don Beal">Don Beal</a>, <a href="Martin C. Smith.html" title="Martin C. Smith">Martin C. Smith</a> (<b>1995</b>). <i>Quantification of Search-Extension Benefits.</i> <a href="ICGA Journal.html#18 4" title="ICGA Journal">ICCA Journal, Vol. 18, No. 4</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>2001</b>). <i>Learning Search Control in Adversary Games</i>. <a href="Advances in Computer Games 9.html" title="Advances in Computer Games 9">Advances in Computer Games 9</a>, pp. 157-174. <a class="external text" href="http://www.ru.is/faculty/yngvi/pdf/BjornssonM01b.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a>, <a href="Daisaku Yokoyama.html" title="Daisaku Yokoyama">Daisaku Yokoyama</a>, <a href="Takashi Chikayama.html" title="Takashi Chikayama">Takashi Chikayama</a> (<b>2002</b>). <i><a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.2.9258.html" rel="nofollow">Game-Tree Search Algorithm based on Realization Probability</a></i>. <a href="ICGA Journal.html#25 3" title="ICGA Journal">ICGA Journal, Vol. 25, No. 3</a>, <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.2.9258&amp;rep=rep1&amp;type=pdf.html" rel="nofollow">pdf</a>, <a class="external text" href="http://www-tsujii.is.s.u-tokyo.ac.jp/~tsuruoka/papers/icga02.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="David Levy.html" title="David Levy">David Levy</a> (<b>2002</b>) <i><a class="external text" href="http://ilk.uvt.nl/icga/journal/contents/content25-3.htm.html#SOME%20COMMENTS%20ON%20REALIZATION%20PROBABILITIES" rel="nofollow">SOME COMMENTS ON REALIZATION PROBABILITIES AND THE SEX ALGORITHM</a></i>. <a href="ICGA Journal.html#25 3" title="ICGA Journal">ICGA Journal, Vol. 25, No. 3</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=P%C3%A1lmi Skowronski&amp;action=edit&amp;redlink=1.html" title="Pálmi Skowronski (page does not exist)">Pálmi Skowronski</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a> (<b>2010</b>). <i><a class="external text" href="http://www.sciweavers.org/publications/automated-discovery-search-extension-features.html" rel="nofollow">Automated Discovery of Search-Extension Features</a></i>. <a href="Advances in Computer Games 12.html" title="Advances in Computer Games 12">Advances in Computer Games 12</a>, <a class="external text" href="http://www.hr.is/faculty/yngvi/pdf/SkowronskiBW09.pdf.html" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1996_...">1996 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/1uVIWZFB41k/VUcAUkzyFd0J" rel="nofollow">Fractional depth increments</a> by S. Read, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, January 18, 1996</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/tcjwWnFhXt4/ifkLE7GwfSEJ" rel="nofollow">Crafty V11.3</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 22, 1996 » <a href="Crafty.html" title="Crafty">Crafty</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=12201" rel="nofollow">"Suspicious move" extension</a> by <a href="David Eppstein.html" title="David Eppstein">David Eppstein</a>, <a href="CCC.html" title="CCC">CCC</a>, November 20, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=13993" rel="nofollow">Extensions?!</a> by <a href="Daniel Homan.html" title="Daniel Homan">Daniel Homan</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=17954" rel="nofollow">Move Extensions</a> by <a href="Roberto Waldteufel.html" title="Roberto Waldteufel">Roberto Waldteufel</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=20167" rel="nofollow">Extend or not extend in a nullmove tree</a> by <a href="Roland Pfister.html" title="Roland Pfister">Roland Pfister</a>, <a href="CCC.html" title="CCC">CCC</a>, June 08, 1998 » <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=21654" rel="nofollow">Selective deepening and Hashtables</a> by <a href="Werner Inmann.html" title="Werner Inmann">Werner Inmann</a>, <a href="CCC.html" title="CCC">CCC</a>, June 30, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=21888" rel="nofollow">search extension</a> by <a href="Werner Inmann.html" title="Werner Inmann">Werner Inmann</a>, <a href="CCC.html" title="CCC">CCC</a>, July 08, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=43380" rel="nofollow">King danger extensions</a> by <a href="James Robertson.html" title="James Robertson">James Robertson</a>, <a href="CCC.html" title="CCC">CCC</a>, February 16, 1999</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=45304" rel="nofollow">full-ply search extension leads to crash city!</a> by <a href="Dave Gomboc.html" title="Dave Gomboc">Dave Gomboc</a>,  <a href="CCC.html" title="CCC">CCC</a>, March 07, 1999</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=50627" rel="nofollow">Extensions and Futility Pruning</a> by <a href="James Robertson.html" title="James Robertson">James Robertson</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 1999 » <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=52090" rel="nofollow">Q. about Rebel extensions</a> by <a href="R%C3%A9mi Coulom.html" title="Rémi Coulom">Rémi Coulom</a>, <a href="CCC.html" title="CCC">CCC</a>, May 18, 1999 » <a href="Rebel.html" title="Rebel">Rebel</a></li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=87191" rel="nofollow">What is the use of extensions?</a> by <a href="Leonid Liberman.html" title="Leonid Liberman">Leonid</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=206802" rel="nofollow">No explosions</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 11, 2002 » <a href="Search Explosion.html" title="Search Explosion">Search Explosion</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=208272" rel="nofollow">Extensions</a> by <a href="Benny Antonsson.html" title="Benny Antonsson">Benny Antonsson</a>, <a href="CCC.html" title="CCC">CCC</a>, January 18, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=247564" rel="nofollow">I need help with Search/Selective Extension</a> by <a href="Scott Farrell.html" title="Scott Farrell">Scott Farrell</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2002</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=43060.html" rel="nofollow">wacnew.epd &amp; single search improvements (extensions)</a> by <a href="Stefan Knappe.html" title="Stefan Knappe">Stefan Knappe</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, June 19, 2003 » <a href="Matador.html" title="Matador">Matador</a>, <a href="Win at Chess.html" title="Win at Chess">Win at Chess</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=303131" rel="nofollow">Problem with extending to maxdepth</a> by <a href="Albert Bertilsson.html" title="Albert Bertilsson">Albert Bertilsson</a>, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=338851" rel="nofollow">Evaluation-based Reductions and/or Extensions</a> by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2003 » <a href="Reductions.html" title="Reductions">Reductions</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=356488" rel="nofollow">extensions + reductions + pruning = confusion</a> by <a href="Johan de Koning.html" title="Johan de Koning">Johan de Koning</a>, <a href="CCC.html" title="CCC">CCC</a>, March 24, 2004 (was <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=356109" rel="nofollow">Shredder 8 secret: search depth?</a>)</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=1754&amp;p=8190.html" rel="nofollow">Limiting extensions</a> by <a href="David B. Weller.html" title="David B. Weller">David B. Weller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, February 23, 2005 » <a href="GES.html" title="GES">GES</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=4952.html" rel="nofollow">Worthless extension ideas...</a> by <a href="Mark Lefler.html" title="Mark Lefler">mjlef</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, June 06, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14594.html" rel="nofollow">PVS extension up</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, June 21, 2007 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14860.html" rel="nofollow">Delaying Extensions Idea (does anyone do this)?</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20680.html" rel="nofollow">Threat extension</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21403.html" rel="nofollow">Search extensions at promising trajectories</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, May 28, 2008</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=49446.html" rel="nofollow">extensions</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard programming Forum</a>, August 26, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26632.html" rel="nofollow">Extensions, anyone?</a> by <a href="Gregory Strong.html" title="Gregory Strong">Gregory Strong</a>, <a href="CCC.html" title="CCC">CCC</a>, February 20, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27017.html" rel="nofollow">Extensions: everywhere or near the tips?</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31220.html" rel="nofollow">Stupid Extension Problem/Question</a> by <a href="John Merlino.html" title="John Merlino">John Merlino</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2009 » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31505.html" rel="nofollow">Problem with exploding tree because of extensions</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2010 » <a href="Search Explosion.html" title="Search Explosion">Search Explosion</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32940.html" rel="nofollow">Restricting extensions to the left most branches?</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2010</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=248.html" rel="nofollow">"Automated Discovery of Search Extensions"</a> by <a href="Mark Watkins.html" title="Mark Watkins">Mark Watkins</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess - Programming and Technical Discussions</a>, June 22, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40984.html" rel="nofollow">Loss-seeking extension/threatened pieces</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, November 03, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54281.html" rel="nofollow">search extensions</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, November 08, 2014 » <a href="Singular Extensions.html" title="Singular Extensions">Singular Extensions</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56311.html" rel="nofollow">Adding an Extension Results in Deeper General Search!</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 10, 2015 » <a href="Passed Pawn Extensions.html" title="Passed Pawn Extensions">Passed Pawn Extensions</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2968.html" rel="nofollow">Search extensions</a> by ppyvabw, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, March 17, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59598.html" rel="nofollow">Extensions in the days of LMR?</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2016 » <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67131.html" rel="nofollow">Depth extensions and effect on transposition queries</a> by <a class="new" href="index.php?title=Kenneth Jones&amp;action=edit&amp;redlink=1.html" title="Kenneth Jones (page does not exist)">Kenneth Jones</a>, <a href="CCC.html" title="CCC">CCC</a>, April 16, 2018 » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67823.html" rel="nofollow">Horizon effect and extensions</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, June 25, 2018 » <a href="Horizon Effect.html" title="Horizon Effect">Horizon Effect</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70165.html" rel="nofollow">delaying tactics: prune or extend?</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2019 » <a href="Selectivity.html" title="Selectivity">Selectivity</a>, <a href="Tactics.html" title="Tactics">Tactics</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Search_Extension">Search Extension</span></h2>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20070607151732/www.brucemo.com/compchess/programming/extensions.htm.html" rel="nofollow">Search Extension</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></li>
+<li> <a class="external text" href="http://www.frayn.net/beowulf/theory.html.html#extend" rel="nofollow">Computer Chess Programming Theory - Search Extensions</a> by <a href="Colin Frayn.html" title="Colin Frayn">Colin Frayn</a></li>
+<li> <a class="external text" href="http://www.3dkingdoms.com/chess/implementation.htm.html" rel="nofollow">Programming Details - Slow Chess | Extensions Used, Detailed Description</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a> » <a href="Slow Chess.html" title="Slow Chess">Slow Chess</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Extension" rel="nofollow">Extension from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Extension_%28metaphysics%29" rel="nofollow">Extension (metaphysics) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Extension_%28music%29" rel="nofollow">Extension (music) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Jazz_chord#Extensions" rel="nofollow">Jazz chord - Extensions from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://web.archive.org/web/20070607151732/www.brucemo.com/compchess/programming/extensions.htm.html" rel="nofollow">Search Extension</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="David Levy.html" title="David Levy">David Levy</a>, <a href="David Broughton.html" title="David Broughton">David Broughton</a>, <a href="Mark Taylor.html" title="Mark Taylor">Mark Taylor</a> (<b>1989</b>). <i>The SEX Algorithm in Computer Chess</i>. <a href="ICGA Journal.html#12 1" title="ICGA Journal">ICCA Journal, Vol. 12, No. 1</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=248.html" rel="nofollow">"Automated Discovery of Search Extensions"</a> by <a href="Mark Watkins.html" title="Mark Watkins">Mark Watkins</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess - Programming and Technical Discussions</a>, June 22, 2010</span>
+</li>
+</ol></div>
+<p><b><a href="Selectivity.html" title="Selectivity">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722132522
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.020 seconds
+Real time usage: 0.021 seconds
+Preprocessor visited node count: 143/1000000
+Preprocessor generated node count: 228/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:962-0!canonical and timestamp 20240722132522 and revision id 22558
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Extensions&amp;oldid=22558">https://www.chessprogramming.org/index.php?title=Extensions&amp;oldid=22558</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Extensions&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Extensions.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Extensions&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Extensions.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Extensions&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Extensions&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Extensions.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Extensions.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Extensions&amp;oldid=22558.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Extensions&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 20 November 2020, at 21:12.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Extensions&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.020","walltime":"0.021","ppvisitednodes":{"value":143,"limit":1000000},"ppgeneratednodes":{"value":228,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722132522","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":52});});</script>
+</body>
+</html>

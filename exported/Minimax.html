@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Minimax - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Minimax","wgTitle":"Minimax","wgCurRevisionId":26196,"wgRevisionId":26196,"wgArticleId":926,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Max Ernst","Kraftwerk"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Minimax","wgRelevantArticleId":926,"wgRequestId":"Zp7DhwAL2SoIDHtirCvjBgAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Minimax rootpage-Minimax skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Minimax</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * Minimax</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:254px;"><a href="https://en.wikipedia.org/wiki/Little_Machine_Constructed_by_Minimax_Dadamax_in_Person"><img alt="" class="thumbimage" height="396" src="images/d/d8/ConstructedbyMinimaxDadamax.jpg" width="252"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:ConstructedbyMinimaxDadamax.jpg.html" title="Enlarge"></a></div><a href="Category:Max Ernst.html" title="Category:Max Ernst">Max Ernst</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Little_Machine_Constructed_by_Minimax_Dadamax_in_Person" rel="nofollow">Little Machine Constructed</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Little_Machine_Constructed_by_Minimax_Dadamax_in_Person" rel="nofollow">Minimax Dadamax in Person</a>, 1919-1920 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Minimax</b>,<br/>
+an algorithm used to determine the <a href="Score.html" title="Score">score</a> in a <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum" rel="nofollow">zero-sum</a> game after a certain number of moves, with best play according to an <a href="Evaluation.html" title="Evaluation">evaluation</a> function. The algorithm can be explained like this: In a <a href="Ply.html" title="Ply">one-ply</a> search, where only move sequences with length one are examined, the side to move (max player) can simply look at the <a href="Evaluation.html" title="Evaluation">evaluation</a> after playing all possible <a href="Moves.html" title="Moves">moves</a>. The move with the best evaluation is chosen. But for a two-<a href="Ply.html" title="Ply">ply</a> search, when the opponent also moves, things become more complicated. The opponent (min player) also chooses the move that gets the best score. Therefore, the score of each move is now the score of the worst that the opponent can do. 
+<span id="History"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Implementation"><span class="tocnumber">2</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Negamax"><span class="tocnumber">3</span> <span class="toctext">Negamax</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Search"><span class="tocnumber">4.1</span> <span class="toctext">Search</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#People"><span class="tocnumber">4.2</span> <span class="toctext">People</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Selected Publications"><span class="tocnumber">5</span> <span class="toctext">Selected Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#1920 ..."><span class="tocnumber">5.1</span> <span class="toctext">1920 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#1940 ..."><span class="tocnumber">5.2</span> <span class="toctext">1940 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#1950 ..."><span class="tocnumber">5.3</span> <span class="toctext">1950 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#1960 ..."><span class="tocnumber">5.4</span> <span class="toctext">1960 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#1970 ..."><span class="tocnumber">5.5</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#1980 ..."><span class="tocnumber">5.6</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#1990 ..."><span class="tocnumber">5.7</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ..."><span class="tocnumber">5.8</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2010 ..."><span class="tocnumber">5.9</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2020 ..."><span class="tocnumber">5.10</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="History">History</span></h1>
+<p><a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik's</a> thesis (1983) <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> contains a detailed account of the known publications on that topic. It concludes that although <a href="John von Neumann.html" title="John von Neumann">John von Neumann</a> is usually associated with that concept (<a href="Timeline.html#1928" title="Timeline">1928</a>) <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> , <a class="external text" href="https://en.wikipedia.org/wiki/Primacy_of_mind" rel="nofollow">primacy</a> probably belongs to <a href="Mathematician.html#Borel" title="Mathematician">Émile Borel</a>. Further there is a conceivable claim that the first to credit should go to <a href="Mathematician.html#Babbage" title="Mathematician">Charles Babbage</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. The original minimax as defined by Von Neumann is based on exact values from <a href="Terminal Node.html" title="Terminal Node">game-terminal positions</a>, whereas the minimax search suggested by <a href="Norbert Wiener.html" title="Norbert Wiener">Norbert Wiener</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> is based on <a href="Evaluation.html" title="Evaluation">heuristic evaluations</a> from positions a few moves distant, and far from the end of the game.
+</p>
+<h1><span class="mw-headline" id="Implementation">Implementation</span></h1>
+<p>Below the pseudo code for an indirect <a href="Recursion.html" title="Recursion">recursive</a> <a href="Depth-First.html" title="Depth-First">depth-first search</a>. For clarity <a href="Make Move.html" title="Make Move">move making</a> and <a href="Unmake Move.html" title="Unmake Move">unmaking</a> before and after the recursive call is omitted.
+</p>
+<pre>
+int maxi( int depth ) {
+    if ( depth == 0 ) return evaluate();
+    int max = -oo;
+    for ( all moves) {
+        score = mini( depth - 1 );
+        if( score &gt; max )
+            max = score;
+    }
+    return max;
+}
+
+int mini( int depth ) {
+    if ( depth == 0 ) return -evaluate();
+    int min = +oo;
+    for ( all moves) {
+        score = maxi( depth - 1 );
+        if( score &lt; min )
+            min = score;
+    }
+    return min;
+}
+</pre>
+<h1><span class="mw-headline" id="Negamax">Negamax</span></h1>
+<p>Usually the <a href="Negamax.html" title="Negamax">Negamax</a> algorithm is used for simplicity. This means that the evaluation of a position is equivalent to the negation of the evaluation from the opponent's viewpoint. This is because of the zero-sum property of chess: one side's win is the other side's loss.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<h2><span class="mw-headline" id="Search">Search</span></h2>
+<ul><li> <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a></li>
+<li> <a href="Minimax (program).html" title="Minimax (program)">Minimax (program)</a></li>
+<li> <a href="Negamax.html" title="Negamax">Negamax</a></li>
+<li> <a href="Search Pathology.html" title="Search Pathology">Search Pathology</a></li>
+<li> <a href="James R. Slagle.html#TheoremProving" title="James R. Slagle">Theorem-Proving and M &amp; N procedure</a></li>
+<li> <a href="Jack Good.html#TheoremProving" title="Jack Good">Theorem-Proving from Five-Year Plan</a></li></ul>
+<h2><span class="mw-headline" id="People">People</span></h2>
+<ul><li> <a href="John von Neumann.html" title="John von Neumann">John von Neumann</a></li>
+<li> <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a></li>
+<li> <a href="Norbert Wiener.html" title="Norbert Wiener">Norbert Wiener</a></li></ul>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<h2><span class="mw-headline" id="1920_...">1920 ...</span></h2>
+<ul><li> <span id="Borel"></span><a href="Mathematician.html#Borel" title="Mathematician">Émile Borel</a> (<b>1921</b>). <i>La théorie du jeu et les équations intégrales à noyau symétrique</i>. Comptes Rendus de Académie des Sciences, Vol. 173, pp. 1304-1308, English translation by <a href="Mathematician.html#LJSavage" title="Mathematician">Leonard J. Savage</a> (<b>1953</b>). <i><a href="Minimax.html#Savage" title="Minimax">The Theory of Play and Integral Equations with Skew Symmetric Kernels</a></i>. </li>
+<li> <a href="John von Neumann.html" title="John von Neumann">John von Neumann</a> (<b>1928</b>). <i><a class="external text" href="http://gdz.sub.uni-goettingen.de/dms/load/img/?IDDOC=29357.html" rel="nofollow">Zur Theorie der Gesellschaftsspiele</a></i>. Berlin <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li></ul>
+<h2><span class="mw-headline" id="1940_...">1940 ...</span></h2>
+<ul><li> <a href="John von Neumann.html" title="John von Neumann">John von Neumann</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Oskar_Morgenstern" rel="nofollow">Oskar Morgenstern</a> (<b>1944</b>). <i><a class="external text" href="https://en.wikipedia.org/wiki/Theory_of_Games_and_Economic_Behavior" rel="nofollow">Theory of Games and Economic Behavior</a></i>. Princeton University Press, Princeton, NJ.</li>
+<li> <a href="Norbert Wiener.html" title="Norbert Wiener">Norbert Wiener</a> (<b>1948</b>). <i><a class="external text" href="http://www.amazon.com/gp/reader/026273009X/ref=sib dp pt.html#reader-link" rel="nofollow">Cybernetics or Control and Communication in the Animal and the Machine</a></i> - MIT Press, Cambridge, MA.</li></ul>
+<h2><span class="mw-headline" id="1950_...">1950 ...</span></h2>
+<ul><li> <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a> (<b>1950</b>). <i><a class="external text" href="http://www.pi.infn.it/%7Ecarosi/chess/shannon.txt.html" rel="nofollow">Programming a Computer for Playing Chess</a></i>, Philosophical Magazine, Ser.7, Vol. 41, No. 314 - March 1950</li>
+<li> <a href="Mathematician.html#Weyl" title="Mathematician">Hermann Weyl</a> (<b>1950</b>). <i>Elementary Proof of a Minimax Theorem due to von Neumann</i>. in</li></ul>
+<dl><dd> <a href="Mathematician.html#HWKuhn" title="Mathematician">Harold W. Kuhn</a> and <a href="Mathematician.html#AWTucker" title="Mathematician">Albert W. Tucker</a> (eds) (<b>1950</b>). <i><a class="external text" href="http://books.google.com/books?id=TpbbVU4tA58C&amp;printsec=frontcover&amp;dq=isbn:9780691079349&amp;hl=de&amp;ei=r2i1TabJL8 usgaW-rj7Cw&amp;sa=X&amp;oi=book result&amp;ct=result&amp;resnum=1&amp;ved=0CCoQ6AEwAA.html#v=onepage&amp;q&amp;f=false" rel="nofollow">Contributions to the Theory of Games I</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Princeton_University_Press" rel="nofollow">Princeton University Press</a></dd></dl>
+<ul><li> <a href="Mathematician.html#Borel" title="Mathematician">Émile Borel</a>, <a href="Mathematician.html#MRFrechet" title="Mathematician">Maurice R. Fréchet</a>, <a href="John von Neumann.html" title="John von Neumann">John von Neumann</a> (<b>1953</b>). <i>Discussion of the Early History of the Theory of Games, with Special Reference to the Minimax Theorem</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Econometrica" rel="nofollow">Econometrica</a>, Vol. 21</li>
+<li> <span id="Savage"></span><a href="Mathematician.html#LJSavage" title="Mathematician">Leonard J. Savage</a> (<b>1953</b>). <i>The Theory of Play and Integral Equations with Skew Symmetric Kernels</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Econometrica" rel="nofollow">Econometrica</a>, Vol. 21, pp. 101-115, English translation of <a href="Mathematician.html#Borel" title="Mathematician">Émile Borel</a> (<b>1921</b>). <i><a href="Minimax.html#Borel" title="Minimax">La théorie du jeu et les équations intégrales à noyau symétrique</a></i>.</li>
+<li> <a href="Mathematician.html#DHBlackwell" title="Mathematician">David Blackwell</a> (<b>1956</b>). <i><a class="external text" href="http://projecteuclid.org/euclid.pjm/1103044235.html" rel="nofollow">An analog of the minimax theorem for vector payoffs</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Pacific_Journal_of_Mathematics" rel="nofollow">Pacific Journal of Mathematics</a>, Vol. 6, No, 1</li>
+<li> <a href="Mathematician.html#MSion" title="Mathematician">Maurice Sion</a> (<b>1958</b>). <i><a class="external text" href="https://projecteuclid.org/euclid.pjm/1103040253" rel="nofollow">On general minimax theorems</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Pacific_Journal_of_Mathematics" rel="nofollow">Pacific Journal of Mathematics</a>, Vol. 8, No. 1 <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup></li></ul>
+<h2><span class="mw-headline" id="1960_...">1960 ...</span></h2>
+<ul><li> <a href="James R. Slagle.html" title="James R. Slagle">James R. Slagle</a> (<b>1963</b>). <i>Game Trees, M &amp; N Minimaxing, and the M &amp; N alpha-beta procedure.</i> Artificial Intelligence Group Report 3, UCRL-4671, University of California</li>
+<li> <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1966</b>). <i>Game Playing and Game Learning Automata.</i> Advances in Programming and Non-Numerical Computation, <a class="external text" href="https://en.wikipedia.org/wiki/Leslie_Fox" rel="nofollow">Leslie Fox</a> (ed.), pp. 183-200. Oxford, Pergamon. » Includes Appendix: <i>Rules of SOMAC</i> by <a href="John Maynard Smith.html" title="John Maynard Smith">John Maynard Smith</a>, introduces <a class="external text" href="https://en.wikipedia.org/wiki/Expectiminimax_tree" rel="nofollow">Expectiminimax tree</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></li>
+<li> <a href="James R. Slagle.html" title="James R. Slagle">James R. Slagle</a>, <a href="Philip Bursky.html" title="Philip Bursky">Philip Bursky</a> (<b>1968</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=321444.html" rel="nofollow">Experiments With a Multipurpose, Theorem-Proving Heuristic Program</a></i>. <a href="ACM.html#Journal" title="ACM">Journal of the ACM</a>, Vol. 15, No. 1</li>
+<li> <a href="James R. Slagle.html" title="James R. Slagle">James R. Slagle</a>, <a href="John K. Dixon.html" title="John K. Dixon">John K. Dixon</a> (<b>1969</b>). <i>Experiments With Some Programs That Search Game Trees</i>. <a href="ACM.html#Journal" title="ACM">Journal of the ACM</a>, Vol 16, No. 2, <a class="external text" href="http://wiki.cs.pdx.edu/wurzburg2009/nfp/abmin.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="James R. Slagle.html" title="James R. Slagle">James R. Slagle</a>, <a href="John K. Dixon.html" title="John K. Dixon">John K. Dixon</a> (<b>1970</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=362052.362054.html" rel="nofollow">Experiments with the M &amp; N Tree-Searching Program</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 13, No. 3</li>
+<li> <a href="Mathematician.html#TParthasarathy" title="Mathematician">Thiruvenkatachari Parthasarathy</a> (<b>1970</b>). <i><a class="external text" href="https://epubs.siam.org/doi/abs/10.1137/0119047?journalCode=smjmap" rel="nofollow">On Games Over the Unit Square</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/SIAM_Journal_on_Applied_Mathematics" rel="nofollow">SIAM Journal on Applied Mathematics</a>, Vol. 19, No. 2 <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li>
+<li> <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/p004.htm.html#index54" rel="nofollow">Minimax</a> in <a href="Alex Bell.html" title="Alex Bell">Alex Bell</a> (<b>1972</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/overview.htm.html" rel="nofollow">Games Playing with Computers</a></i>.</li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a>, <a href="Matja%C5%BE Gams.html" title="Matjaž Gams">Matjaž Gams</a> (<b>1982</b>). <i>Error Analysis of the Minimax Principle</i>. <a href="Advances in Computer Chess 3.html" title="Advances in Computer Chess 3">Advances in Computer Chess 3</a></li>
+<li> <a href="Chun-Hung Tzeng.html" title="Chun-Hung Tzeng">Chun-Hung Tzeng</a>, <a href="Paul W. Purdom.html" title="Paul W. Purdom">Paul W. Purdom</a> (<b>1983</b>). <i><a class="external text" href="https://www.aaai.org/Library/AAAI/1983/aaai83-080.php" rel="nofollow">A Theory of Game Trees</a></i>. <a href="Conferences.html#AAAI-83" title="Conferences">AAAI-83</a></li>
+<li> <a href="Dana S. Nau.html" title="Dana S. Nau">Dana S. Nau</a>, <a href="Paul W. Purdom.html" title="Paul W. Purdom">Paul W. Purdom</a>, <a href="Chun-Hung Tzeng.html" title="Chun-Hung Tzeng">Chun-Hung Tzeng</a> (<b>1986</b>). <i>Experiments on Alternatives to Minimax</i>. <a class="external text" href="https://dblp.uni-trier.de/db/journals/ijpp/ijpp15.html#NauPT86" rel="nofollow">International Journal of Parallel Programming, Vol. 15</a>, No. 2</li>
+<li> <a href="Dana S. Nau.html" title="Dana S. Nau">Dana S. Nau</a>, <a href="Paul W. Purdom.html" title="Paul W. Purdom">Paul W. Purdom</a>, <a href="Chun-Hung Tzeng.html" title="Chun-Hung Tzeng">Chun-Hung Tzeng</a> (<b>1986, 2013</b>). <i>An Evaluation of Two Alternatives to Minimax</i>. Machine Intelligence and Pattern Recognition, Vol. 4, <a class="external text" href="https://arxiv.org/abs/1304.3445" rel="nofollow">arXiv:1304.3445</a></li>
+<li> <a href="Ronald L. Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a> (<b>1987</b>). <i>Game Tree Searching by Min/Max Approximation</i>. Artificial Intelligence Vol. 34, 1, <a class="external text" href="http://people.csail.mit.edu/rivest/Rivest-GameTreeSearchingByMinMaxApproximation.pdf.html" rel="nofollow">pdf 1995</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Liwu Li.html" title="Liwu Li">Liwu Li</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1990</b>). <i>On Minimax Game Tree Search Pathology and Node-value Dependence</i>. TR90-24, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a>, <a class="external text" href="https://webdocs.cs.ualberta.ca/~tony/TechnicalReports/TR90-24.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Claude G. Diderich.html" title="Claude G. Diderich">Claude G. Diderich</a> (<b>1993</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=165007.html" rel="nofollow">A Bibliography on Minimax Trees</a></i>. <a href="ACM.html#SIG" title="ACM">ACM SIGACT News</a>, Vol. 24, No. 4</li>
+<li> <a href="David E. Moriarty.html" title="David E. Moriarty">David E. Moriarty</a>, <a href="Risto Miikkulainen.html" title="Risto Miikkulainen">Risto Miikkulainen</a> (<b>1994</b>). <i><a class="external text" href="http://nn.cs.utexas.edu/?moriarty:aaai94.html" rel="nofollow">Evolving Neural Networks to focus Minimax Search</a></i>. <a href="Conferences.html#AAAI-94" title="Conferences">AAAI-94</a> » <a href="Othello.html" title="Othello">Othello</a></li>
+<li> <a href="Claude G. Diderich.html" title="Claude G. Diderich">Claude G. Diderich</a>, <a class="new" href="index.php?title=Marc Gengler&amp;action=edit&amp;redlink=1.html" title="Marc Gengler (page does not exist)">Marc Gengler</a> (<b>1995</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-1-4613-3557-3 2.html" rel="nofollow">A Survey on Minimax Trees and Associated Algorithms</a></i>. <i><a class="external text" href="http://link.springer.com/book/10.1007/978-1-4613-3557-3.html" rel="nofollow">Minimax and Its Applications</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Kluwer Academic Publishers</a></li>
+<li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a>, <a href="Max Chickering.html" title="Max Chickering">Max Chickering</a> (<b>1996</b>). <i><a class="external text" href="https://www.microsoft.com/en-us/research/publication/best-first-minimax-search/" rel="nofollow">Best-first minimax search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 84, Nos 1-2 » <a href="Best-First.html" title="Best-First">Best-First</a></li>
+<li> <a href="Yoav Freund.html" title="Yoav Freund">Yoav Freund</a>, <a href="Robert Schapire.html" title="Robert Schapire">Robert Schapire</a> (<b>1996</b>). <i>Game Theory, On-line Prediction and Boosting</i>. <a class="external text" href="http://dblp.uni-trier.de/db/conf/colt/colt1996.html.html#FreundS96" rel="nofollow">COLT 1996</a>, <a class="external text" href="http://www.cs.princeton.edu/~schapire/papers/FreundSc96b.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Don Beal.html" title="Don Beal">Don Beal</a> (<b>1999</b>). <i>The Nature of MINIMAX Search</i>. Ph.D. thesis</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Claude G. Diderich.html" title="Claude G. Diderich">Claude G. Diderich</a>, <a class="new" href="index.php?title=Marc Gengler&amp;action=edit&amp;redlink=1.html" title="Marc Gengler (page does not exist)">Marc Gengler</a> (<b>2001</b>). <i><a class="external text" href="http://link.springer.com/referenceworkentry/10.1007%2F0-306-48332-7 280.html" rel="nofollow">Minimax Game Tree Searching</a></i>. <a class="external text" href="http://link.springer.com/book/10.1007/0-306-48332-7.html" rel="nofollow">Encyclopedia of Optimization</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li>
+<li> <a class="external text" href="http://milne.ruc.dk/~thk/.html" rel="nofollow">Tinne Hoff Kjeldsen</a> (<b>2001</b>). <i>John von Neumann’s Conception of the Minimax Theorem: A Journey Through Different Mathematical Contexts</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Archive_for_History_of_Exact_Sciences" rel="nofollow">Archive for History of Exact Sciences</a>, Vol. 56, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li>
+<li> <a class="new" href="index.php?title=Thomas Hauk&amp;action=edit&amp;redlink=1.html" title="Thomas Hauk (page does not exist)">Thomas Hauk</a>, <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>2004</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/11674399 3.html" rel="nofollow">Rediscovering *-Minimax Search</a></i>. <a href="CG 2004.html" title="CG 2004">CG 2004</a>, <a class="external text" href="http://skatgame.net/mburo/ps/STAR-A.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Mitja Lu%C5%A1trek.html" title="Mitja Luštrek">Mitja Luštrek</a>, <a href="Matja%C5%BE Gams.html" title="Matjaž Gams">Matjaž Gams</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2005</b>). <i>Why Minimax Works: An Alternative Explanation</i>. <a href="Conferences.html#IJCAI2005" title="Conferences">IJCAI 2005</a>, <a class="external text" href="https://www.ijcai.org/Proceedings/05/Papers/1223.pdf" rel="nofollow">pdf</a> » <a href="Search Pathology.html" title="Search Pathology">Search Pathology</a></li>
+<li> <a href="Mitja Lu%C5%A1trek.html" title="Mitja Luštrek">Mitja Luštrek</a>, <a href="Matja%C5%BE Gams.html" title="Matjaž Gams">Matjaž Gams</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2006</b>). <i>Is Real-Valued Minimax Pathological</i>? <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 170, <a class="external text" href="https://dis.ijs.si/MitjaL/documents/Is_Real-Valued_Minimax_Pathological-AIJ-06.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Claude G. Diderich.html" title="Claude G. Diderich">Claude G. Diderich</a>, <a class="new" href="index.php?title=Marc Gengler&amp;action=edit&amp;redlink=1.html" title="Marc Gengler (page does not exist)">Marc Gengler</a> (<b>2009</b>). <i><a class="external text" href="http://link.springer.com/referenceworkentry/10.1007%2F978-0-387-74759-0 370.html" rel="nofollow">Minimax Game Tree Searching</a></i>. <a class="external text" href="http://link.springer.com/book/10.1007/978-0-387-74759-0.html" rel="nofollow">Encyclopedia of Optimization</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2014</b>). <i><a class="external text" href="http://www.aifactory.co.uk/newsletter/2014 01 interest minimax.htm.html" rel="nofollow">Interest Search - Another way to do Minimax</a></i>. <a href="AI Factory.html" title="AI Factory">AI Factory</a>, Summer 2014</li>
+<li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a>, <a class="new" href="index.php?title=Anton Scheucher&amp;action=edit&amp;redlink=1.html" title="Anton Scheucher (page does not exist)">Anton Scheucher</a> (<b>2017</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/7358032" rel="nofollow">Product Propagation: A Back-up Rule Better than Minimaxing?</a></i> <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 9, No. 2, <a href="File:KaindlProductPropagation.pdf.html" title="File:KaindlProductPropagation.pdf">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Quentin Cohen-Solal&amp;action=edit&amp;redlink=1.html" title="Quentin Cohen-Solal (page does not exist)">Quentin Cohen-Solal</a>, <a href="Tristan Cazenave.html" title="Tristan Cazenave">Tristan Cazenave</a> (<b>2020</b>). <i>Minimax Strikes Back</i>. <a class="external text" href="https://arxiv.org/abs/2012.10700" rel="nofollow">arXiv:2012.10700</a> » <a href="Reinforcement Learning.html" title="Reinforcement Learning">Reinforcement Learning</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13433.html" rel="nofollow">beyond minimax</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 27, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42806.html" rel="nofollow">The evaluation value and value returned by minimax search</a> by <a href="Chao Ma.html" title="Chao Ma">Chao Ma</a>, <a href="CCC.html" title="CCC">CCC</a>, March 09, 2012 » <a href="Evaluation.html" title="Evaluation">Evaluation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54295.html" rel="nofollow">Why minimax is fundamentally flawed</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, November 09, 2014 » <a href="KRK.html" title="KRK">KRK</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20070820195815/www.seanet.com/%7Ebrucemo/topics/minmax.htm.html" rel="nofollow">Min-Max Search</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070811182741/www.seanet.com/%7Ebrucemo/topics/topics.htm.html" rel="nofollow">Programming Topics</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Minimax" rel="nofollow">Minimax from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Minimax_theorem" rel="nofollow">Minimax theorem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Parthasarathy%27s_theorem" rel="nofollow">Parthasarathy's theorem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Sion%27s_minimax_theorem" rel="nofollow">Sion's minimax theorem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Minimax_estimator" rel="nofollow">Minimax estimator from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Expectiminimax_tree" rel="nofollow">Expectiminimax tree from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Maxima_and_minima" rel="nofollow">Maxima and minima from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.freepatentsonline.com/5414310.html.html" rel="nofollow">Analog voltage maximizer and minimizer circuits</a> from <a class="external text" href="http://www.freepatentsonline.com/.html" rel="nofollow">FreePatentsOnline</a></li>
+<li> <a href="Category:Kraftwerk.html" title="Category:Kraftwerk">Kraftwerk</a> - Pocket Calculator, <a class="external text" href="https://en.wikipedia.org/wiki/Minimum-Maximum" rel="nofollow">Minimum-Maximum</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Moscow" rel="nofollow">Moscow</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Luzhniki_Olympic_Complex" rel="nofollow">Luzhniki</a>, June 03, 2004 and <a class="external text" href="https://en.wikipedia.org/wiki/Tokyo" rel="nofollow">Tokyo</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Shibuya_Station" rel="nofollow">Shibuya Station</a>, March 04, 2004, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/naOG7CRtlHg?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Little_Machine_Constructed_by_Minimax_Dadamax_in_Person" rel="nofollow">Little Machine Constructed by Minimax Dadamax in Person from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>1983</b>). <i>Computerschaak, Schaakwereld en Kunstmatige Intelligentie</i>. Ph.D. thesis, <a href="Delft University of Technology.html" title="Delft University of Technology">Delft University of Technology</a>. Academic Service, The Hague. ISBN 90 62 33 093 2 (Dutch)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="John von Neumann.html" title="John von Neumann">John von Neumann</a> (<b>1928</b>). <i><a class="external text" href="http://gdz.sub.uni-goettingen.de/dms/load/img/?IDDOC=29357.html" rel="nofollow">Zur Theorie der Gesellschaftsspiele</a></i>. Berlin</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Don Beal.html" title="Don Beal">Don Beal</a> (<b>1999</b>). <i>The Nature of MINIMAX Search</i>. Ph.D. thesis, ISBN 90-62-16-6348, pp. 2, refers <a href="Mathematician.html#PhilipMorrison" title="Mathematician">Philip Morrison</a> and Emily Morrison (<b>1961</b>). <i>Charles Babbage and his Calculating Engines</i>. Dover Publ. New York</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Norbert Wiener.html" title="Norbert Wiener">Norbert Wiener</a> (<b>1948</b>). <i><a class="external text" href="http://www.amazon.com/gp/reader/026273009X/ref=sib dp pt.html#reader-link" rel="nofollow">Cybernetics or Control and Communication in the Animal and the Machine</a></i> - MIT Press, Cambridge, MA.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Alexander Reinefeld.html" title="Alexander Reinefeld">Alexander Reinefeld</a> (<b>2005</b>). <i>Die Entwicklung der Spielprogrammierung: Von John von Neumann bis zu den hochparallelen Schachmaschinen</i>. <a class="external text" href="http://www.informatik.hu-berlin.de/studium/ringvorlesung/ss05/slides/05-06-02.pdf.html" rel="nofollow">slides as pdf</a>, Themen der Informatik im historischen Kontext Ringvorlesung an der <a class="external text" href="https://en.wikipedia.org/wiki/Humboldt_University_of_Berlin" rel="nofollow">HU Berlin</a>, 02.06.2005 (English paper, German title)</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Sion%27s_minimax_theorem" rel="nofollow">Sion's minimax theorem from Wikipedia</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text">see <a href="Helmut Richter.html#Swapoff" title="Helmut Richter">Swap-off</a> by <a href="Helmut Richter.html" title="Helmut Richter">Helmut Richter</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Parthasarathy%27s_theorem" rel="nofollow">Parthasarathy's theorem from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722084501
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.082 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 226/1000000
+Preprocessor generated node count: 448/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:926-0!canonical and timestamp 20240722084501 and revision id 26196
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Minimax&amp;oldid=26196">https://www.chessprogramming.org/index.php?title=Minimax&amp;oldid=26196</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Max Ernst.html" title="Category:Max Ernst">Max Ernst</a></li><li><a href="Category:Kraftwerk.html" title="Category:Kraftwerk">Kraftwerk</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Minimax&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Minimax.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Minimax&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Minimax.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Minimax&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Minimax&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Minimax.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Minimax.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Minimax&amp;oldid=26196.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Minimax&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 15 January 2022, at 17:34.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Minimax&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.082","walltime":"0.085","ppvisitednodes":{"value":226,"limit":1000000},"ppgeneratednodes":{"value":448,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722084501","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

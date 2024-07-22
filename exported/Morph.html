@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Morph - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Morph","wgTitle":"Morph","wgCurRevisionId":24276,"wgRevisionId":24276,"wgArticleId":2042,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["XBoard","Experimental","NN"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Morph","wgRelevantArticleId":2042,"wgRequestId":"Zp7DmIY8AD1K7zdlkfzeEwAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Morph rootpage-Morph skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Morph</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Morph</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="http://www1.ucsc.edu/oncampus/currents/97-05-05/levinson.photo.htm.html"><img alt="" class="thumbimage" height="358" src="images/a/ae/Robert_levinson_morph.jpg" width="250"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Robert levinson morph.jpg.html" title="Enlarge"></a></div><a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> and Morph <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Morph</b> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>,<br/>
+a research chess program started by <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> in 1989 at <a href="University of California, Santa Cruz.html" title="University of California, Santa Cruz">University of California, Santa Cruz</a> with the goal to create an autonomous chess learner, knowing only the rules of chess and then evolve from game to game using heuristics derived from <a href="Learning.html" title="Learning">machine learning</a> algorithms such as <a href="Pattern Recognition.html" title="Pattern Recognition">pattern recognition</a>, <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">temporal difference learning</a> and <a href="Neural Networks.html" title="Neural Networks">neural networks</a>. It uses a graph representation of chess positions and <a class="external text" href="https://en.wikipedia.org/wiki/Pattern-oriented_modeling" rel="nofollow">pattern-oriented</a> databases in conjunction with <a href="Minimax.html" title="Minimax">minimax</a> <a href="Search.html" title="Search">search</a>. Research has been done by dedicated undergraduate volunteers at UCSC, most computer science students with interests in chess and <a href="Artificial Intelligence.html" title="Artificial Intelligence">Artificial Intelligence</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Morph.27s History"><span class="tocnumber">1</span> <span class="toctext">Morph's History</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Morph I.2FII"><span class="tocnumber">1.1</span> <span class="toctext">Morph I/II</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Morph III.2FIV"><span class="tocnumber">1.2</span> <span class="toctext">Morph III/IV</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Morph V"><span class="tocnumber">1.3</span> <span class="toctext">Morph V</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#1989"><span class="tocnumber">3.1</span> <span class="toctext">1989</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1990 ..."><span class="tocnumber">3.2</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">3.3</span> <span class="toctext">2000 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Chess Program"><span class="tocnumber">5.1</span> <span class="toctext">Chess Program</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Misc"><span class="tocnumber">5.2</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Morph.27s_History">Morph's History</span></h1>
+<h2><span class="mw-headline" id="Morph_I.2FII">Morph I/II</span></h2>
+<p>The project began with the goal of developing a chess program that conformed more to <a href="Cognition.html" title="Cognition">cognitive models</a> of human chess playing than conventional chess programs. The key idea was to make the program adaptive and pattern-oriented, limited to searching only one <a href="Ply.html" title="Ply">ply</a> and to acquiering its own chess knowledge through experience - assisted by a human-designed graph-theoretic representation language for chess patterns. 
+</p><p>Morph stores its experience as &lt;pattern, weight&gt; pairs (pws). Morph's pattern are directed graphs where the nodes represent pieces and squares <a href="King Pattern.html" title="King Pattern">sorrounding the king</a> and the edges represent (<a href="X-ray Attacks (Bitboards).html" title="X-ray Attacks (Bitboards)">X-ray</a>) attacks or defenses. To <a href="Evaluation.html" title="Evaluation">evaluate</a> a position, Morph finds which graphs in the database match that position and then combines the weights associated with each graph. At the end of each game, Morph uses <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">temporal difference learning</a> to adjust the weights of the pattern that match each position in the game. In addition, Morph creates new patterns that should enable it to determine more accurately the value of that or similar positions should it occur in the future. 
+</p><p>The utility of pattern can be measured by the variance in its sequence of weights, which is maintained incrementally by storing the number of updates and accumulating the absolute value of their weight changes, used to decide whether patterns are deleted. After training and improving in about 3000 to 4000 games against <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a>, Morph <b>I</b> was able to defeat human chess novices while searching just one ply <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. Morph <b>II</b> is a generalization of  Morph's learning and pattern representation to be applicable to most two-player <a href="Games.html" title="Games">games</a> and search problems given the rules of those domains. 
+</p>
+<h2><span class="mw-headline" id="Morph_III.2FIV">Morph III/IV</span></h2>
+<p>The Morph III architecture allows for any reasonable number of knowledge sources to be used, a concept similar to that of advisors in the <i>Hoyle</i> system by <a href="Susan L. Epstein.html" title="Susan L. Epstein">Susan L. Epstein</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>. Compared to Morph I which had a bag of pattern, Morph's  representation shifted  towards learning internal weights. Morph <b>III</b> and Morph <b>IV</b> used <a class="external text" href="https://en.wikipedia.org/wiki/Nearest_neighbor_search" rel="nofollow">nearest neighbor</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Decision_tree" rel="nofollow">decision trees</a> to divide positions into <a class="external text" href="https://en.wikipedia.org/wiki/Equivalence_class" rel="nofollow">equivalence classes</a> and query them on-line in logarithmic time. However these approaches require a large amount of training data to achieve reasonable levels of play. 
+</p>
+<h2><span class="mw-headline" id="Morph_V">Morph V</span></h2>
+<p>Latest Morph, as mentioned in 2004 <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>, uses a unique chess board representation called <a href="Connectivity.html#ChessNeighborhood" title="Connectivity">Chess Neighborhood</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> and uses a  <a href="Neural Networks.html" title="Neural Networks">regression network</a> to learn nonlinear combinations of the individual values of pieces that make up a piece neighborhood to arrive at a single value for the entire neighborhood. A vector of 64 neighborhoods of each square is suited to serve as an input layer of the regression network, whose weights are optimized by <a class="external text" href="https://en.wikipedia.org/wiki/Gradient_descent" rel="nofollow">gradient descent</a>, along with training positions previously generated using <a href="Temporal Difference Learning.html" title="Temporal Difference Learning">temporal difference learning</a>. At the lower level the expected probability of winning of the neighborhoods are learned and at the top they are combined based on their product and <a class="external text" href="https://en.wikipedia.org/wiki/Entropy_%28information_theory%29" rel="nofollow">entropy</a>.
+</p>
+<div class="floatnone"><a class="image" href="File:ChessNeighbourhood.jpg.html"><img alt="ChessNeighbourhood.jpg" class="thumbborder" height="530" src="images/7/78/ChessNeighbourhood.jpg" style="vertical-align: text-bottom" width="544"/></a></div>
+<p>The overall model of the <a class="mw-selflink selflink">Morph</a> learner  <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Neural Networks.html#engines" title="Neural Networks">Chess Engines with Neural Networks</a></li>
+<li> <a href="Learning.html#Programs" title="Learning">Learning Chess Programs</a></li>
+<li> <a href="Morphy.html" title="Morphy">Morphy</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1989">1989</span></h2>
+<ul><li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1989</b>). <i>A Self-Learning, Pattern-Oriented Chess Program</i>. <a href="WCCC 1989.html#Workshop" title="WCCC 1989">WCCC 1989 - Workshop on New Directions in Game-Tree Search</a></li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1989</b>). <i>A Self-Learning, Pattern-Oriented Chess Program</i>. <a href="ICGA Journal.html#12 4" title="ICGA Journal">ICCA Journal, Vol. 12, No. 4</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Brian Beach&amp;action=edit&amp;redlink=1.html" title="Brian Beach (page does not exist)">Brian Beach</a>, <a href="Richard Snyder.html" title="Richard Snyder">Richard Snyder</a>, <a class="new" href="index.php?title=Tal Dayan&amp;action=edit&amp;redlink=1.html" title="Tal Dayan (page does not exist)">Tal Dayan</a>, <a class="new" href="index.php?title=Kirack Sohn&amp;action=edit&amp;redlink=1.html" title="Kirack Sohn (page does not exist)">Kirack Sohn</a> (<b>1990</b>). <i>Adaptive-predictive game-playing programs</i>. <a class="external text" href="http://portal.acm.org/citation.cfm?id=902787&amp;jmp=abstract&amp;coll=GUIDE&amp;dl=GUIDE&amp;CFID=78059366&amp;CFTOKEN=89563212.html#abstract" rel="nofollow">abstract</a></li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1991</b>). <i>A Self-Organizing Pattern Retrieval System and its Applications</i>. International Journal of Intelligent Systems, Vol. 6, pp. 717-738. ISSN 0884-8173.</li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a href="Richard Snyder.html" title="Richard Snyder">Richard Snyder</a> (<b>1991</b>). <i>Adaptive Pattern-Oriented Chess</i>. Proceedings of the 8th International Workshop on Machine Learning (eds. L. Birnbaum and G. Collins), pp. 85-89. Morgan Kaufmann, San Mateo, CA. Also published in: Proceedings of the Ninth National Conference on Artificial Intelligence AAAI-91, pp. 601-606. AAAI Press, MIT Press, Boston, MA. <a class="external text" href="http://www.aaai.org/Papers/AAAI/1991/AAAI91-094.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a href="John Amenta.html" title="John Amenta">John Amenta</a> (<b>1993</b>). <i>MORPH, An Experience-Based Adaptive Chess System</i>. <a href="ICGA Journal.html#16 1" title="ICGA Journal">ICCA Journal, Vol. 16, No. 1</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a href="Richard Snyder.html" title="Richard Snyder">Richard Snyder</a> (<b>1993</b>). <i>Distance: Toward the Unification of Chess Knowledge</i>. <a href="ICGA Journal.html#16 3" title="ICGA Journal">ICCA Journal, Vol. 16, No. 3</a> » <a href="WCCC 1992.html#Workshop" title="WCCC 1992">WCCC 1992 - Workshop</a></li>
+<li> <a class="new" href="index.php?title=Jeffrey Gould&amp;action=edit&amp;redlink=1.html" title="Jeffrey Gould (page does not exist)">Jeffrey Gould</a>, <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1994</b>). <i>Experience-Based Adaptive Search</i>. Machine Learning: A Multi-Strategy Approach (eds. R. Michalski and G. Tecuci), Vol. 4</li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Gil Fuchs&amp;action=edit&amp;redlink=1.html" title="Gil Fuchs (page does not exist)">Gil Fuchs</a> (<b>1994</b>). <i>A Pattern-Weight Formulation of Search Knowledge</i>. UCSC-CRL-94-10, <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.35.1027.html" rel="nofollow">CiteSeerX</a></li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1994</b>). <i><a class="external text" href="https://www.soe.ucsc.edu/research/technical-reports/UCSC-CRL-94-22" rel="nofollow">Morph II: A Universal Agent: Progess Report and Proposal</a></i>. UCSC-CRL-94-22 </li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1996</b>). <i><a class="external text" href="http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8640.1996.tb00257.x/abstract.html" rel="nofollow">General Game-Playing and Reinforcement Learning</a></i>. <a class="external text" href="http://dblp.uni-trier.de/db/journals/ci/ci12.html.html#PellEL96" rel="nofollow">Computational Intelligence, Vol. 12</a>, No. 1</li>
+<li> <a class="new" href="index.php?title=Jonathan Allen&amp;action=edit&amp;redlink=1.html" title="Jonathan Allen (page does not exist)">Jonathan Allen</a>, <a class="new" href="index.php?title=Edward Hamilton&amp;action=edit&amp;redlink=1.html" title="Edward Hamilton (page does not exist)">Edward Hamilton</a>, <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1997</b>). <i>New Advances in Adaptive Pattern-Oriented Chess</i>. <a href="Advances in Computer Chess 8.html" title="Advances in Computer Chess 8">Advances in Computer Chess 8</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Ryan Weber&amp;action=edit&amp;redlink=1.html" title="Ryan Weber (page does not exist)">Ryan Weber</a> (<b>2000</b>). <i>Pattern-Level Temporal Difference-Learning, Data Fusion and Chess</i>. In Sensor Fusion: Architecture, Algorithms, and Applications IV. Orlando, Florida, April 2000</li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Ryan Weber&amp;action=edit&amp;redlink=1.html" title="Ryan Weber (page does not exist)">Ryan Weber</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 9.html" rel="nofollow">Chess Neighborhoods, Function Combination, and Reinforcement Learning</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="https://users.soe.ucsc.edu/~levinson/Papers/CNFCRL.pdf" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Daniel Walker&amp;action=edit&amp;redlink=1.html" title="Daniel Walker (page does not exist)">Daniel Walker</a>, <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>2004</b>). <i>The MORPH Project in 2004</i>. <a href="ICGA Journal.html#27 4" title="ICGA Journal">ICGA Journal, Vol. 27, No. 4</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/HD_Wk587W7U/4LNWdcyeplEJ" rel="nofollow">Computer learning chess from scratch? Morph?</a> by John Michael Sauder, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 16, 1996</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=72802" rel="nofollow">morph(C) on ICC</a> by Jeff Anderson, <a href="CCC.html" title="CCC">CCC</a>, October 11, 1999</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=72897" rel="nofollow">Re: morph(C) on ICC</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, October 12, 1999</dd>
+<dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=73074" rel="nofollow">morph(C) -- can this really work ?</a> by <a href="Georg von Zimmermann.html" title="Georg von Zimmermann">Georg von Zimmermann</a>, <a href="CCC.html" title="CCC">CCC</a>, October 13, 1999</dd></dl>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=324534" rel="nofollow">Morph lll</a> by K. Burcham, <a href="CCC.html" title="CCC">CCC</a>, October 29, 2003</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?start=8&amp;t=19381.html" rel="nofollow">Re: learning</a> by <a href="Denis Mendoza.html" title="Denis Mendoza">Denis P. Mendoza</a>, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2008</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=172566.html" rel="nofollow">Re: learning</a> by <a class="new" href="index.php?title=Shivkumar Shivaji&amp;action=edit&amp;redlink=1.html" title="Shivkumar Shivaji (page does not exist)">Shivkumar Shivaji</a>, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2008</dd></dl>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Program">Chess Program</span></h2>
+<ul><li> <a class="external text" href="http://satirist.org/learn-game/projects/morph.html.html" rel="nofollow">the Morph project</a> by <a href="Jay Scott.html" title="Jay Scott">Jay Scott</a></li>
+<li> <a class="external text" href="http://www6.chessclub.com/activities/finger.php?handle=morph2.html" rel="nofollow">Finger morph2</a> @ <a class="new" href="index.php?title=Internet Chess Club&amp;action=edit&amp;redlink=1.html" title="Internet Chess Club (page does not exist)">ICC</a></li>
+<li> <a class="external text" href="https://www.sciencedaily.com/releases/1997/05/970501194114.htm" rel="nofollow">"Deep Blue" inspires deep thinking about artificial intelligence by computer scientist</a> by <a class="external text" href="https://scicom.ucsc.edu/faculty/" rel="nofollow">Robert Irion</a>, <a href="University of California, Santa Cruz.html" title="University of California, Santa Cruz">University of California, Santa Cruz</a>, May 5, 1997 <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> » <a href="Deep Blue.html" title="Deep Blue">Deep Blue</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wiktionary.org/wiki/morph" rel="nofollow">morph - Wiktionary</a></li>
+<li> <a class="external text" href="https://en.wiktionary.org/wiki/-morph" rel="nofollow">-morph - Wiktionary</a></li>
+<li> <a class="external text" href="http://membean.com/wrotds/morph-shape.html" rel="nofollow">Word Root Of The Day: morph | Membean</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Morph" rel="nofollow">Morph from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Muller's_morphs" rel="nofollow">Muller's morphs from Wikipedia</a> (amorph, hypomorph, hypermorph, antimorph and neomorph)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Morpheme" rel="nofollow">Morpheme from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Morphine" rel="nofollow">Morphine from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Morphing" rel="nofollow">Morphing from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Morphism" rel="nofollow">Morphism from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Morphism_of_algebraic_varieties" rel="nofollow">Morphism of algebraic varieties from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Homomorphism" rel="nofollow">Homomorphism from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Isomorphism" rel="nofollow">Isomorphism from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Isomorph" rel="nofollow">Isomorph from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Morphology" rel="nofollow">Morphology from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Galaxy_morphological_classification" rel="nofollow">Galaxy morphological classification from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Mathematical_morphology" rel="nofollow">Mathematical morphology from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Metamorphosis" rel="nofollow">Metamorphosis from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"> <a class="external text" href="http://www1.ucsc.edu/oncampus/currents/97-05-05/levinson.photo.htm.html" rel="nofollow">Robert Levinson photo: 05-05-97</a> by Don Harris, UCSC Photo Services, in <a class="external text" href="http://www1.ucsc.edu/oncampus/currents/97-05-05/chess.htm.html" rel="nofollow">"Deep Blue" inspires deep thinking about artificial intelligence by computer scientist</a> by <a class="external text" href="http://scicom.ucsc.edu/faculty/.html" rel="nofollow">Robert Irion</a>, <a class="external text" href="http://www1.ucsc.edu/oncampus/currents/97-05-05/index.html.html" rel="nofollow">CURRENTS, University of California, Santa Cruz</a>, May 5, 1997</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><i>The name "Morph" comes from the <a class="external text" href="https://en.wikipedia.org/wiki/Greek_language" rel="nofollow">Greek</a> "morph" meaning <a class="external text" href="https://en.wikipedia.org/wiki/Form" rel="nofollow">form</a> and the chess great, <a class="external text" href="https://en.wikipedia.org/wiki/Paul_Morphy" rel="nofollow">Paul Morphy</a></i>, footnote 1 in <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a href="Richard Snyder.html" title="Richard Snyder">Richard Snyder</a> (<b>1991</b>). <i>Adaptive Pattern-Oriented Chess</i>. Proceedings of the 8th International Workshop on Machine Learning (eds. L. Birnbaum and G. Collins), pp. 85-89. Morgan Kaufmann, San Mateo, CA. Also published in: Proceedings of the Ninth National Conference on Artificial Intelligence AAAI-91, pp. 601-606. AAAI Press, MIT Press, Boston, MA. <a class="external text" href="http://www.aaai.org/Papers/AAAI/1991/AAAI91-094.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Daniel Walker&amp;action=edit&amp;redlink=1.html" title="Daniel Walker (page does not exist)">Daniel Walker</a>, <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>2004</b>). <i>The MORPH Project in 2004</i>. <a href="ICGA Journal.html#27 4" title="ICGA Journal">ICGA Journal, Vol. 27, No. 4</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a href="John Amenta.html" title="John Amenta">John Amenta</a> (<b>1993</b>). <i>MORPH, An Experience-Based Adaptive Chess System</i>. <a href="ICGA Journal.html#16 1" title="ICGA Journal">ICCA Journal, Vol. 16, No. 1</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Jonathan Allen&amp;action=edit&amp;redlink=1.html" title="Jonathan Allen (page does not exist)">Jonathan Allen</a>, <a class="new" href="index.php?title=Edward Hamilton&amp;action=edit&amp;redlink=1.html" title="Edward Hamilton (page does not exist)">Edward Hamilton</a>, <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>1997</b>). <i>New Advances in Adaptive Pattern-Oriented Chess</i>. <a href="Advances in Computer Chess 8.html" title="Advances in Computer Chess 8">Advances in Computer Chess 8</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Susan L. Epstein.html" title="Susan L. Epstein">Susan L. Epstein</a> (<b>1992</b>). <i><a class="external text" href="http://onlinelibrary.wiley.com/doi/10.1002/int.4550070606/abstract.html" rel="nofollow">Prior Knowledge Strengthens Learning to Control Search in Weak Theory Domains</a></i>. <a class="external text" href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-INT.html.html" rel="nofollow">International Journal of Intelligent Systems</a>, Vol. 7, No. 6</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Daniel Walker&amp;action=edit&amp;redlink=1.html" title="Daniel Walker (page does not exist)">Daniel Walker</a>, <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a> (<b>2004</b>). <i>The MORPH Project in 2004</i>. <a href="ICGA Journal.html#27 4" title="ICGA Journal">ICGA Journal, Vol. 27, No. 4</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Ryan Weber&amp;action=edit&amp;redlink=1.html" title="Ryan Weber (page does not exist)">Ryan Weber</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 9.html" rel="nofollow">Chess Neighborhoods, Function Combination, and Reinforcement Learning</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="https://users.soe.ucsc.edu/~levinson/Papers/CNFCRL.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text">Image Fig. 5.3 on pg. 13 from  <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Ryan Weber&amp;action=edit&amp;redlink=1.html" title="Ryan Weber (page does not exist)">Ryan Weber</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 9.html" rel="nofollow">Chess Neighborhoods, Function Combination, and Reinforcement Learning</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="https://users.soe.ucsc.edu/~levinson/Papers/CNFCRL.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text">reprinted in <a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=doc-431614f6cc6e9.html" rel="nofollow">The 23rd ACM International Computer Chess Championship</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a>, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/3-1%20and%203-2%20and%203-3%20and%204-3.1993 23rd ACM ICCC/1993%20ICCC.062303066.sm.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a class="new" href="index.php?title=Jeff Wilkinson&amp;action=edit&amp;redlink=1.html" title="Jeff Wilkinson (page does not exist)">Jeff Wilkinson</a> (<b>1997</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Deep-Blue-is-Still-an-Infant-Levinson-Wilkinson/3ce74263ef7b5d04fdf709b2dd3a519d780ae47f" rel="nofollow">Deep Blue is Still an Infant</a></i>. <a href="AAAI.html" title="AAAI">AAAI</a>, Technical Report WS-97-04</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721231237
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.033 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 213/1000000
+Preprocessor generated node count: 430/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2042-0!canonical and timestamp 20240721231237 and revision id 24276
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Morph&amp;oldid=24276">https://www.chessprogramming.org/index.php?title=Morph&amp;oldid=24276</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:XBoard.html" title="Category:XBoard">XBoard</a></li><li><a href="Category:Experimental.html" title="Category:Experimental">Experimental</a></li><li><a href="Category:NN.html" title="Category:NN">NN</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Morph&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Morph.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Morph&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Morph.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Morph&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Morph&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Morph.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Morph.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Morph&amp;oldid=24276.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Morph&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 April 2021, at 22:43.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Morph&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.033","walltime":"0.036","ppvisitednodes":{"value":213,"limit":1000000},"ppgeneratednodes":{"value":430,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721231237","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

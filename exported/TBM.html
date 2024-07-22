@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>TBM - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"TBM","wgTitle":"TBM","wgCurRevisionId":7593,"wgRevisionId":7593,"wgArticleId":4375,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"TBM","wgRelevantArticleId":4375,"wgRequestId":"Zp7Dxk5Wo@-cHXK2v45VZAAAAA0","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-TBM rootpage-TBM skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">TBM</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Hardware.html" title="Hardware">Hardware</a> * <a href="X86-64.html" title="X86-64">x86-64</a> * TBM</b>
+</p><p><b>TBM</b> (Trailing Bit Manipulation Instructions),<br/>
+an x86-64 expansion of <a href="Bit-Twiddling.html#BitManipulation" title="Bit-Twiddling">bit-manipulation</a> instructions, introduced by <a href="AMD.html" title="AMD">AMD</a> with the <a class="external text" href="https://en.wikipedia.org/wiki/Bulldozer_%28microarchitecture%29" rel="nofollow">Bulldozer microarchitecture</a>, which also comprises the <a href="AVX.html" title="AVX">AVX</a>, <a href="BMI1.html" title="BMI1">BMI1</a> and <a href="XOP.html" title="XOP">XOP</a> instruction sets. TBM requires  bit 21 set in ECX of CPUID EAX=80000001H <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>.
+More recent <a class="external text" href="https://en.wikipedia.org/wiki/Jaguar_(microarchitecture)" rel="nofollow">AMD Jaguar</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Zen_(microarchitecture)" rel="nofollow">Zen</a> based processors do not support TBM <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Instructions"><span class="tocnumber">1</span> <span class="toctext">Instructions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Least Significant One Bit"><span class="tocnumber">1.1</span> <span class="toctext">Least Significant One Bit</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#BLSFILL"><span class="tocnumber">1.1.1</span> <span class="toctext">BLSFILL</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#BLSIC"><span class="tocnumber">1.1.2</span> <span class="toctext">BLSIC</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#TZMSK"><span class="tocnumber">1.1.3</span> <span class="toctext">TZMSK</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Least Significant Zero Bit"><span class="tocnumber">1.2</span> <span class="toctext">Least Significant Zero Bit</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#BLCFILL"><span class="tocnumber">1.2.1</span> <span class="toctext">BLCFILL</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#BLCI"><span class="tocnumber">1.2.2</span> <span class="toctext">BLCI</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#BLCIC"><span class="tocnumber">1.2.3</span> <span class="toctext">BLCIC</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#BLCMSK"><span class="tocnumber">1.2.4</span> <span class="toctext">BLCMSK</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#BLCS"><span class="tocnumber">1.2.5</span> <span class="toctext">BLCS</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#T1MSKC"><span class="tocnumber">1.2.6</span> <span class="toctext">T1MSKC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Misc"><span class="tocnumber">1.3</span> <span class="toctext">Misc</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#BEXTR"><span class="tocnumber">1.3.1</span> <span class="toctext">BEXTR</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Manuals"><span class="tocnumber">3</span> <span class="toctext">Manuals</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Instructions">Instructions</span></h1>
+<p>TBM offers various bit-manipulations based on the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">least significant one</a> or <a href="General Setwise Operations.html#TheLeastSignificantZeroBitLS0B" title="General Setwise Operations">zero bit</a>. In general they combine two or three <a href="General Setwise Operations.html" title="General Setwise Operations">operations</a> on 32- or 64-bit general purpose registers, expanding the <a href="BMI1.html" title="BMI1">BMI</a> type of operations of <a href="BMI1.html#BLSI" title="BMI1">BLSI</a>, <a href="BMI1.html#BLSMSK" title="BMI1">BLSMSK</a>, <a href="BMI1.html#BLSR" title="BMI1">BLSR</a>. In <a href="C.html" title="C">C</a> and <a href="Cpp.html" title="Cpp">C++</a>, these instructions should be emitted by an optimizing compiler for this target platform, rather than using intrinsics. Instructions are given with <a class="external text" href="https://en.wikipedia.org/wiki/Assembly_language#Opcode_mnemonics_and_extended_mnemonics" rel="nofollow">mnemonics</a> with 64-bit destination and source register according to <a href="Assembly.html#x86Syntax" title="Assembly">Intel Syntax</a>, <a href="C.html" title="C">C</a> like definition, and some arbitrary <a href="Bitboards.html" title="Bitboards">bitboard</a> diagrams with <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">little-endian rank-file mapping</a> (least significant bit 0 as square a1 bottom-left) to illustrate the operations. 
+</p>
+<table>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:51px;"><a href="Square Mapping Considerations.html" title="Square Mapping Considerations"><img alt="Cpwmappinghint.JPG" class="thumbimage" height="48" src="images/4/43/Cpwmappinghint.JPG" width="49"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Cpwmappinghint.JPG.html" title="Enlarge"></a></div></div></div></div>
+</td>
+<td> <i>Code samples and bitboard diagrams rely on <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">Little endian file and rank mapping</a></i>.
+</td></tr></table>
+<p><span id="BLSFILL"></span>
+</p>
+<h2><span class="mw-headline" id="Least_Significant_One_Bit">Least Significant One Bit</span></h2>
+<h3><span class="mw-headline" id="BLSFILL">BLSFILL</span></h3>
+<p>Fill From Lowest Set Bit. <a href="General Setwise Operations.html#Union" title="General Setwise Operations">Union</a> with the decrement.
+</p>
+<pre>
+BLSFILL reg64, reg/mem64
+dest ::= src | (src - 1);
+
+       src         |     (src - 1)     =       dest
+0x0040201008040200  0x00402010080401FF  0x00402010080403FF
+  . . . . . . . .     . . . . . . . .     . . . . . . . .
+  . . . . . . 1 .     . . . . . . 1 .     . . . . . . 1 .
+  . . . . . 1 . .     . . . . . 1 . .     . . . . . 1 . .
+  . . . . 1 . . .     . . . . 1 . . .     . . . . 1 . . .
+  . . . 1 . . . .  |  . . . 1 . . . .  =  . . . 1 . . . .
+  . . 1 . . . . .     . . 1 . . . . .     . . 1 . . . . .
+  . 1 . . . . . .     1 . . . . . . .     1 1 . . . . . .
+  . . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+</pre>
+<p><span id="BLSIC"></span>
+</p>
+<h3><span class="mw-headline" id="BLSIC">BLSIC</span></h3>
+<p>Isolate Lowest Set Bit and Complement. <a href="General Setwise Operations.html#Union" title="General Setwise Operations">Union</a> of <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> and decrement.
+</p>
+<pre>
+BLSIC reg64, reg/mem64
+dest ::= ~src | (src - 1);
+
+       src        -&gt;       ~src        |     (src - 1)     =       dest
+0x0040201008040200  0x00402010080401FF  0x00402010080403FF  0xFFFFFFFFFFFFFDFF
+  . . . . . . . .     1 1 1 1 1 1 1 1     . . . . . . . .     1 1 1 1 1 1 1 1
+  . . . . . . 1 .     1 1 1 1 1 1 . 1     . . . . . . 1 .     1 1 1 1 1 1 1 1
+  . . . . . 1 . .     1 1 1 1 1 . 1 1     . . . . . 1 . .     1 1 1 1 1 1 1 1
+  . . . . 1 . . .     1 1 1 1 . 1 1 1     . . . . 1 . . .     1 1 1 1 1 1 1 1
+  . . . 1 . . . . -&gt;  1 1 1 . 1 1 1 1  |  . . . 1 . . . .  =  1 1 1 1 1 1 1 1
+  . . 1 . . . . .     1 1 . 1 1 1 1 1     . . 1 . . . . .     1 1 1 1 1 1 1 1
+  . 1 . . . . . .     1 . 1 1 1 1 1 1     1 . . . . . . .     1 . 1 1 1 1 1 1
+  . . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+</pre>
+<p><span id="TZMSK"></span>
+</p>
+<h3><span class="mw-headline" id="TZMSK">TZMSK</span></h3>
+<p>Mask From Trailing Zeros. <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">Intersection</a> of <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> and decrement <a href="General Setwise Operations.html#LS1BSeparation" title="General Setwise Operations">sets all bits below</a> the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">least significant one bit</a>, and clears all other bits, including the LS1B itself.
+</p>
+<pre>
+dest ::= ~src &amp; (src - 1);
+       src        -&gt;       ~src        &amp;     (src - 1)     =       dest
+0x0040201008040200  0x00402010080401FF  0x00402010080403FF  0x00000000000001FF
+  . . . . . . . .     1 1 1 1 1 1 1 1     . . . . . . . .     . . . . . . . .
+  . . . . . . 1 .     1 1 1 1 1 1 . 1     . . . . . . 1 .     . . . . . . . .
+  . . . . . 1 . .     1 1 1 1 1 . 1 1     . . . . . 1 . .     . . . . . . . .
+  . . . . 1 . . .     1 1 1 1 . 1 1 1     . . . . 1 . . .     . . . . . . . .
+  . . . 1 . . . . -&gt;  1 1 1 . 1 1 1 1  &amp;  . . . 1 . . . .  =  . . . . . . . .
+  . . 1 . . . . .     1 1 . 1 1 1 1 1     . . 1 . . . . .     . . . . . . . .
+  . 1 . . . . . .     1 . 1 1 1 1 1 1     1 . . . . . . .     1 . . . . . . .
+  . . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+</pre>
+<p><span id="BLCFILL"></span>
+</p>
+<h2><span class="mw-headline" id="Least_Significant_Zero_Bit">Least Significant Zero Bit</span></h2>
+<h3><span class="mw-headline" id="BLCFILL">BLCFILL</span></h3>
+<p>Fill From Lowest Clear Bit. <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">Intersection</a> with the increment.
+</p>
+<pre>
+BLCFILL reg64, reg/mem64
+dest ::= src &amp; (src + 1);
+
+       src         &amp;     (src + 1)     =       dest
+0x80C0E0F0F8FCFEFF  0x80C0E0F0F8FCFF00  0x80C0E0F0F8FCFE00
+  . . . . . . . 1     . . . . . . . 1     . . . . . . . 1  
+  . . . . . . 1 1     . . . . . . 1 1     . . . . . . 1 1  
+  . . . . . 1 1 1     . . . . . 1 1 1     . . . . . 1 1 1  
+  . . . . 1 1 1 1     . . . . 1 1 1 1     . . . . 1 1 1 1  
+  . . . 1 1 1 1 1  &amp;  . . . 1 1 1 1 1  =  . . . 1 1 1 1 1  
+  . . 1 1 1 1 1 1     . . 1 1 1 1 1 1     . . 1 1 1 1 1 1  
+  . 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1  
+  1 1 1 1 1 1 1 1     . . . . . . . .     . . . . . . . .  
+</pre>
+<p><span id="BLCI"></span>
+</p>
+<h3><span class="mw-headline" id="BLCI">BLCI</span></h3>
+<p>Isolate Lowest Clear Bit. <a href="General Setwise Operations.html#Union" title="General Setwise Operations">Union</a> with the <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> of the increment.
+</p>
+<pre>
+BLCI reg64, reg/mem64
+dest ::= src | ~(src + 1);
+
+       src         |    ~(src + 1)     =       dest
+0x80C0E0F0F8FCFEFF  0x7F3F1F0F070300FF  0xFFFFFFFFFFFFFEFF
+  . . . . . . . 1     1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1  
+  . . . . . . 1 1     1 1 1 1 1 1 . .     1 1 1 1 1 1 1 1  
+  . . . . . 1 1 1     1 1 1 1 1 . . .     1 1 1 1 1 1 1 1  
+  . . . . 1 1 1 1     1 1 1 1 . . . .     1 1 1 1 1 1 1 1  
+  . . . 1 1 1 1 1  |  1 1 1 . . . . .  =  1 1 1 1 1 1 1 1  
+  . . 1 1 1 1 1 1     1 1 . . . . . .     1 1 1 1 1 1 1 1  
+  . 1 1 1 1 1 1 1     . . . . . . . .     . 1 1 1 1 1 1 1  
+  1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1  
+</pre>
+<p><span id="BLCIC"></span>
+</p>
+<h3><span class="mw-headline" id="BLCIC">BLCIC</span></h3>
+<p>Isolate Lowest Clear Bit and Complement. <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">Intersection</a> of the <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> with the increment.
+</p>
+<pre>
+BLCIC reg64, reg/mem64
+dest ::= ~src &amp; (src + 1);
+
+       src        -&gt;       ~src        &amp;     (src + 1)     =       dest
+0x80C0E0F0F8FCFEFF  0x7F3F1F0F07030100  0x80C0E0F0F8FCFF00  0x0000000000000100
+  . . . . . . . 1     1 1 1 1 1 1 1 .     . . . . . . . 1     . . . . . . . . 
+  . . . . . . 1 1     1 1 1 1 1 1 . .     . . . . . . 1 1     . . . . . . . .  
+  . . . . . 1 1 1     1 1 1 1 1 . . .     . . . . . 1 1 1     . . . . . . . .  
+  . . . . 1 1 1 1     1 1 1 1 . . . .     . . . . 1 1 1 1     . . . . . . . .  
+  . . . 1 1 1 1 1 -&gt;  1 1 1 . . . . .  &amp;  . . . 1 1 1 1 1  =  . . . . . . . .  
+  . . 1 1 1 1 1 1     1 1 . . . . . .     . . 1 1 1 1 1 1     . . . . . . . .  
+  . 1 1 1 1 1 1 1     1 . . . . . . .     1 1 1 1 1 1 1 1     1 . . . . . . .  
+  1 1 1 1 1 1 1 1     . . . . . . . .     . . . . . . . .     . . . . . . . .  
+</pre>
+<p><span id="BLCMSK"></span>
+</p>
+<h3><span class="mw-headline" id="BLCMSK">BLCMSK</span></h3>
+<p>Mask From Lowest Clear Bit. <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">Exclusive or</a> with the increment.
+</p>
+<pre>
+BLCMSK reg64, reg/mem64
+dest ::= src ^ (src + 1);
+
+       src         ^     (src + 1)     =       dest
+0x80C0E0F0F8FCFEFF  0x80C0E0F0F8FCFF00  0x00000000000001FF
+  . . . . . . . 1     . . . . . . . 1     . . . . . . . .  
+  . . . . . . 1 1     . . . . . . 1 1     . . . . . . . .  
+  . . . . . 1 1 1     . . . . . 1 1 1     . . . . . . . .  
+  . . . . 1 1 1 1     . . . . 1 1 1 1     . . . . . . . .  
+  . . . 1 1 1 1 1  ^  . . . 1 1 1 1 1  =  . . . . . . . .  
+  . . 1 1 1 1 1 1     . . 1 1 1 1 1 1     . . . . . . . .  
+  . 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 . . . . . . .  
+  1 1 1 1 1 1 1 1     . . . . . . . .     1 1 1 1 1 1 1 1  
+</pre>
+<p><span id="BLCS"></span>
+</p>
+<h3><span class="mw-headline" id="BLCS">BLCS</span></h3>
+<p>Set Lowest Clear Bit. <a href="General Setwise Operations.html#Union" title="General Setwise Operations">Union</a> with the increment.
+</p>
+<pre>
+BLCS reg64, reg/mem64
+dest ::= src | (src + 1);
+
+       src         |     (src + 1)     =       dest
+0x80C0E0F0F8FCFEFF  0x80C0E0F0F8FCFF00  0x80C0E0F0F8FCFFFF
+  . . . . . . . 1     . . . . . . . 1     . . . . . . . 1  
+  . . . . . . 1 1     . . . . . . 1 1     . . . . . . 1 1  
+  . . . . . 1 1 1     . . . . . 1 1 1     . . . . . 1 1 1  
+  . . . . 1 1 1 1     . . . . 1 1 1 1     . . . . 1 1 1 1  
+  . . . 1 1 1 1 1  |  . . . 1 1 1 1 1  =  . . . 1 1 1 1 1  
+  . . 1 1 1 1 1 1     . . 1 1 1 1 1 1     . . 1 1 1 1 1 1  
+  . 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1  
+  1 1 1 1 1 1 1 1     . . . . . . . .     1 1 1 1 1 1 1 1  
+</pre>
+<p><span id="T1MSKC"></span>
+</p>
+<h3><span class="mw-headline" id="T1MSKC">T1MSKC</span></h3>
+<p>Inverse Mask From Trailing Ones. <a href="General Setwise Operations.html#Union" title="General Setwise Operations">Union</a> of <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> and increment.
+</p>
+<pre>
+T1MSKC reg64, reg/mem64
+dest ::= ~src | (src + 1);
+
+       src        -&gt;       ~src        |     (src + 1)     =       dest
+0x80C0E0F0F8FCFEFF  0x7F3F1F0F07030100  0x80C0E0F0F8FCFF00  0xFFFFFFFFFFFFFF00
+  . . . . . . . 1     1 1 1 1 1 1 1 .     . . . . . . . 1     1 1 1 1 1 1 1 1  
+  . . . . . . 1 1     1 1 1 1 1 1 . .     . . . . . . 1 1     1 1 1 1 1 1 1 1  
+  . . . . . 1 1 1     1 1 1 1 1 . . .     . . . . . 1 1 1     1 1 1 1 1 1 1 1  
+  . . . . 1 1 1 1     1 1 1 1 . . . .     . . . . 1 1 1 1     1 1 1 1 1 1 1 1  
+  . . . 1 1 1 1 1 -&gt;  1 1 1 . . . . .  |  . . . 1 1 1 1 1  =  1 1 1 1 1 1 1 1  
+  . . 1 1 1 1 1 1     1 1 . . . . . .     . . 1 1 1 1 1 1     1 1 1 1 1 1 1 1  
+  . 1 1 1 1 1 1 1     1 . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1  
+  1 1 1 1 1 1 1 1     . . . . . . . .     . . . . . . . .     . . . . . . . .  
+</pre>
+<p><span id="BEXTR"></span>
+</p>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<h3><span class="mw-headline" id="BEXTR">BEXTR</span></h3>
+<p>An immediate form of the variable <a href="BMI1.html#BEXTR" title="BMI1">BMI1 Bit Field Extract</a>.
+</p>
+<pre>
+BEXTR reg32, reg/mem32, imm32
+BEXTR reg64, reg/mem64, imm32
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="SSE4.html#ABM" title="SSE4">ABM</a></li>
+<li> <a href="Bit-Twiddling.html" title="Bit-Twiddling">Bit-Twiddling</a></li>
+<li> <a href="BMI1.html" title="BMI1">BMI1</a></li>
+<li> <a href="BMI2.html" title="BMI2">BMI2</a></li>
+<li> <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a></li></ul>
+<dl><dd> <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">Obtaining and Clearing the Least Significant Bit (LS1B)</a></dd></dl>
+<h1><span class="mw-headline" id="Manuals">Manuals</span></h1>
+<ul><li> <a class="external text" href="https://www.amd.com/system/files/TechDocs/24594.pdf" rel="nofollow">AMD64 Architecture Programmer’s Manual Volume 3: General-Purpose and System Instructions</a> (pdf) <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a class="external text" href="https://www.amd.com/system/files/TechDocs/47414_15h_sw_opt_guide.pdf" rel="nofollow">Software Optimization Guide for AMD Family 15h Processors</a> (pdf) 9.8 Optimizing with BMI and TBM Instructions, pp. 163</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Bit_Manipulation_Instruction_Sets#TBM_(Trailing_Bit_Manipulation)" rel="nofollow">TBM from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://support.amd.com/us/Embedded TechDocs/25481.pdf.html" rel="nofollow">AMD CPUID Specification</a> (pdf)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.amd.com/system/files/TechDocs/52169_KB_A_Series_Mobile.pdf" rel="nofollow">Family 16h Models 00h-0Fh AMD A-Series Mobile Accelerated Processor Product Data Sheet</a> (pdf)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">Moved BMI and TBM instructions from Volume 4 to Volume 3 in September 2011</span>
+</li>
+</ol></div>
+<p><b><a href="X86-64.html" title="X86-64">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722125819
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.019 seconds
+Real time usage: 0.020 seconds
+Preprocessor visited node count: 221/1000000
+Preprocessor generated node count: 420/1000000
+Post‐expand include size: 243/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.928      1 Template:MappingHint
+100.00%    0.928      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4375-0!canonical and timestamp 20240722125818 and revision id 7593
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=TBM&amp;oldid=7593">https://www.chessprogramming.org/index.php?title=TBM&amp;oldid=7593</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=TBM&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="TBM.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:TBM&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="TBM.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=TBM&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=TBM&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/TBM.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/TBM.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=TBM&amp;oldid=7593.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=TBM&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 23 October 2018, at 23:25.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=TBM&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.019","walltime":"0.020","ppvisitednodes":{"value":221,"limit":1000000},"ppgeneratednodes":{"value":420,"limit":1000000},"postexpandincludesize":{"value":243,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.928      1 Template:MappingHint","100.00%    0.928      1 -total"]},"cachereport":{"timestamp":"20240722125819","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":42});});</script>
+</body>
+</html>

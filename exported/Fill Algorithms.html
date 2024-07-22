@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fill Algorithms - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Fill_Algorithms","wgTitle":"Fill Algorithms","wgCurRevisionId":18018,"wgRevisionId":18018,"wgArticleId":1101,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["M. C. Escher","Panta Rhei"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Fill_Algorithms","wgRelevantArticleId":1101,"wgRequestId":"Zp7DdAAL2SoIDHtirCvi1AAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Fill_Algorithms rootpage-Fill_Algorithms skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Fill Algorithms</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * Fill Algorithms</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.mcescher.com/Gallery/recogn-bmp/LW422.jpg.html"><img alt="" class="thumbimage" height="261" src="images/thumb/7/76/EschersPlaneFillingII.jpg/300px-EschersPlaneFillingII.jpg" srcset="/images/thumb/7/76/EschersPlaneFillingII.jpg/450px-EschersPlaneFillingII.jpg 1.5x, /images/7/76/EschersPlaneFillingII.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:EschersPlaneFillingII.jpg.html" title="Enlarge"></a></div><a href="Category:M. C. Escher.html" title="Category:M. C. Escher">M. C. Escher</a>, Plane Filling II, 1957 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Fill algorithms</b> perform the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of a set with their consecutive <a href="Direction.html" title="Direction">direction-wise</a> <a href="General Setwise Operations.html#ShiftingBitboards" title="General Setwise Operations">shifts</a>. The shifted intermediate sets are likely <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersected</a> with some mask to avoid board wraps of certain directions, and/or also to consider the <a href="Occupancy.html" title="Occupancy">occupancy</a> or any reasonable taboo set (i.e. <a href="Pawn Attacks (Bitboards).html" title="Pawn Attacks (Bitboards)">pawn attacks</a>) as flood stopping obstruction.
+</p><p>For the non sliding pieces, <a href="Pawn.html" title="Pawn">pawn</a>, <a href="Knight.html" title="Knight">knight</a> and <a href="King.html" title="King">king</a>, one fill cycle covers all potential <a href="Moves.html" title="Moves">moves</a> in one certain direction, or even all moves in different directions. However, for the sliding pieces, <a href="Bishop.html" title="Bishop">bishop</a>, <a href="Rook.html" title="Rook">rook</a> and <a href="Queen.html" title="Queen">queen</a>, one fill cycle covers a direction-wise move step for a union set of attacked squares reachable in one move. Often, the up to seven direction wise fill cycles may be performed in three <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix steps</a>.
+</p><p>Applications of fill algorithms are related to all kinds of <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">pawn properties</a>, <a href="Mobility.html#ProgressiveMobility" title="Mobility">progressive mobility</a> and <a href="All Shortest Paths.html" title="All Shortest Paths">path finding</a> algorithms, f.i. to find so called <a href="Trajectory.html" title="Trajectory">Trajectories</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pawn"><span class="tocnumber">1</span> <span class="toctext">Pawn</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Knight"><span class="tocnumber">2</span> <span class="toctext">Knight</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#King"><span class="tocnumber">3</span> <span class="toctext">King</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Sliding Pieces"><span class="tocnumber">4</span> <span class="toctext">Sliding Pieces</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Pawn">Pawn</span></h1>
+<p>Pawn fills are performed by north- or south <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">steps</a>, for span determination on the otherwise empty board. If it is about to consider obstructions, the north- or south <a href="Dumb7Fill.html#OccludedFill" title="Dumb7Fill">Dumb7-</a> or <a href="Kogge-Stone Algorithm.html#OccludedFill" title="Kogge-Stone Algorithm">Kogge-Stone occluded fill</a> might be applied.
+</p>
+<ul><li> <a href="Pawn Fills.html" title="Pawn Fills">Pawn Fills</a></li>
+<li> <a href="Pawn Spans.html" title="Pawn Spans">Pawn Spans</a></li>
+<li> <a href="Attack Spans.html" title="Attack Spans">Attack Spans</a></li>
+<li> <a href="Dumb7Fill.html#OccludedFill" title="Dumb7Fill">Dumb7Fill</a></li>
+<li> <a href="Kogge-Stone Algorithm.html#OccludedFill" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li></ul>
+<h1><span class="mw-headline" id="Knight">Knight</span></h1>
+<ul><li> <a href="Knight Pattern.html#KnightFill" title="Knight Pattern">Knight Fill</a></li>
+<li> <a href="Knight-Distance.html" title="Knight-Distance">Knight-Distance</a></li></ul>
+<h1><span class="mw-headline" id="King">King</span></h1>
+<ul><li> <a href="King Pattern.html#FloodFillAlgorithms" title="King Pattern">Flood Fill Algorithm</a></li>
+<li> <a href="All Shortest Paths.html" title="All Shortest Paths">All shortest Paths</a></li>
+<li> <a href="Corresponding Squares.html" title="Corresponding Squares">Corresponding Squares</a></li></ul>
+<h1><span class="mw-headline" id="Sliding_Pieces">Sliding Pieces</span></h1>
+<p>Albeit intended as direction-wise attack generators, a surrounding loop may determine target in at least N moves sets of sliding pieces as well. One may pass not only pieces as argument, but their attacks repetitively, likely with alternating disjoint directions, i.e. file- versus ranks-attacks for rooks and diagonal versus anti-diagonal attacks for bishops.
+</p>
+<ul><li> <a href="Dumb7Fill.html" title="Dumb7Fill">Dumb7Fill</a></li></ul>
+<dl><dd> <a href="AVX2.html#Dumb7Fill" title="AVX2">AVX2 Dumb7Fill</a></dd></dl>
+<ul><li> <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li>
+<li> <a href="Fill by Subtraction.html" title="Fill by Subtraction">Fill by Subtraction</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?start=0&amp;t=25979&amp;start=10.html" rel="nofollow">Re: Hyperbola Quiesscene: hardly any improvement</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Bala Jr.</a>, <a href="CCC.html" title="CCC">CCC</a>, January 14, 2009 » <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Flood_fill" rel="nofollow">Flood-fill from Wikipedia</a></li></ul>
+<dl><dd> <div class="floatnone"><a class="image" href="File:Recursive Flood Fill 4 (aka).gif.html"><img alt="Recursive Flood Fill 4 (aka).gif" class="thumbborder" height="144" src="wikipedia/commons/7/7e/Recursive_Flood_Fill_4_%28aka%29.gif" style="vertical-align: text-bottom" width="144"/></a></div></dd></dl>
+<ul><li> <a class="external text" href="http://www.codecodex.com/wiki/index.php?title=Implementing the flood fill algorithm.html" rel="nofollow">Implementing the flood fill algorithm</a> from <a class="external text" href="http://www.codecodex.com/wiki/Main Page.html" rel="nofollow">CodeCodex</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Pathfinding" rel="nofollow">Pathfinding from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Heraclitus#Panta_rhei.2C_.22everything_flows.22" rel="nofollow">Panta rhei, "everything flows" from Wikipedia</a></li>
+<li> <a href="Category:Panta Rhei.html" title="Category:Panta Rhei">Panta Rhei</a> - <a class="external text" href="http://de.wikipedia.org/wiki/Panta rhei.html" rel="nofollow">Alles fliesst</a> (1973), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video </li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/f_oaz3vNNN4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.mcescher.com/Gallery/gallery-recogn.htm.html" rel="nofollow">Picture gallery "Recognition and Success 1955 - 1972" </a> from <a class="external text" href="http://www.mcescher.com/.html" rel="nofollow">The Official M.C. Escher Website</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Boris Stilman.html" title="Boris Stilman">Boris Stilman</a> (<b>1994</b>). <i>A Linguistic Geometry of the Chess Model</i>. <a href="Advances in Computer Chess 7.html" title="Advances in Computer Chess 7">Advances in Computer Chess 7</a>, <a class="external text" href="http://www.stilman-strategies.com/bstilman/boris papers/Jour94 CHESS7.pdf.html" rel="nofollow">pdf draft</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Boris Stilman.html" title="Boris Stilman">Boris Stilman</a> (<b>2000</b>). <i>Linguistic Geometry - From Search to Construction (Operations Research/Computer Science Interfaces Series)</i>. <a class="external text" href="http://www.amazon.com/Linguistic-Geometry-Construction-Operations-Interfaces/dp/0792377389/ref=sr 1 1?ie=UTF8&amp;s=books&amp;qid=1257674191&amp;sr=1-1.html" rel="nofollow">amazon.com</a></span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722110713
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.069 seconds
+Real time usage: 1.016 seconds
+Preprocessor visited node count: 78/1000000
+Preprocessor generated node count: 178/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1101-0!canonical and timestamp 20240722110712 and revision id 18018
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Fill_Algorithms&amp;oldid=18018">https://www.chessprogramming.org/index.php?title=Fill_Algorithms&amp;oldid=18018</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:M. C. Escher.html" title="Category:M. C. Escher">M. C. Escher</a></li><li><a href="Category:Panta Rhei.html" title="Category:Panta Rhei">Panta Rhei</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Fill+Algorithms&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Fill Algorithms.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Fill Algorithms&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Fill Algorithms.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Fill Algorithms&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Fill Algorithms&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Fill Algorithms.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Fill Algorithms.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Fill Algorithms&amp;oldid=18018.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Fill Algorithms&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 19 February 2020, at 18:46.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Fill_Algorithms&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.069","walltime":"1.016","ppvisitednodes":{"value":78,"limit":1000000},"ppgeneratednodes":{"value":178,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722110713","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

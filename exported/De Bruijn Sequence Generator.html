@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>De Bruijn Sequence Generator - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"De_Bruijn_Sequence_Generator","wgTitle":"De Bruijn Sequence Generator","wgCurRevisionId":6939,"wgRevisionId":6939,"wgArticleId":697,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"De_Bruijn_Sequence_Generator","wgRelevantArticleId":697,"wgRequestId":"Zp7DMn1htEhTE3yaocy2gQAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-De_Bruijn_Sequence_Generator rootpage-De_Bruijn_Sequence_Generator skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">De Bruijn Sequence Generator</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Algorithms.html" title="Algorithms">Algorithms</a> * <a href="Backtracking.html" title="Backtracking">Backtracking</a> * De Bruijn Sequence Generator</b>
+</p><p>A <a href="Recursion.html" title="Recursion">recursive</a> backtracking implementation of a <a href="Bitboards.html" title="Bitboards">64-bit</a> <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a> generator in <a href="Cpp.html" title="Cpp">C++</a>, to build a "private" <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">bitScanForward</a>-routine. Compile the program, and start it with a parameter between 1 and 67108864 (2^26). Test-output with some "unique" private number. By <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Program Output"><span class="tocnumber">1</span> <span class="toctext">Program Output</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Source"><span class="tocnumber">2</span> <span class="toctext">Source</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Remarks"><span class="tocnumber">3</span> <span class="toctext">Remarks</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Program_Output">Program Output</span></h1>
+<pre>
+C:\source\DeBruijn&gt;debruijn 4061955
+
+const BitBoard magic = 0x022fdd63cc95386d; // the 4061955.
+
+const unsigned int magictable[64] =
+{
+    0,  1,  2, 53,  3,  7, 54, 27,
+    4, 38, 41,  8, 34, 55, 48, 28,
+   62,  5, 39, 46, 44, 42, 22,  9,
+   24, 35, 59, 56, 49, 18, 29, 11,
+   63, 52,  6, 26, 37, 40, 33, 47,
+   61, 45, 43, 21, 23, 58, 17, 10,
+   51, 25, 36, 32, 60, 20, 57, 16,
+   50, 31, 19, 15, 30, 14, 13, 12,
+};
+
+unsigned int bitScanForward (BitBoard b) {
+    return magictable[((b&amp;-b)*magic) &gt;&gt; 58];
+}
+</pre>
+<h1><span class="mw-headline" id="Source">Source</span></h1>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+typedef unsigned __int64 U64; // long long
+
+class CGenBitScan
+{
+public:
+   //==========================================
+   // constructor immediately starts the search
+   //==========================================
+   CGenBitScan(int match4nth) {
+      clock_t start, stop;
+      m_dBCount = 0;
+      m_Match4nth  = match4nth;
+      initPow2();
+      start = clock();
+      m_Lock = pow2[32]; // optimization to exclude 32, see remarks 
+      try {findDeBruijn(0, 64-6, 0, 6);} catch(int){}
+      stop = clock();
+      printf("\n%.3f Seconds for %d De Bruijn Sequences found\n", (float)(stop - start) / CLOCKS_PER_SEC, m_dBCount);
+   }
+
+private:
+   U64 pow2[64];    // single bits
+   U64 m_Lock;      // locks each bit used
+   int m_dBCount;   // counter
+   int m_Match4nth; // to match
+
+   //==========================================
+   // on the fly initialization of pow2
+   //==========================================
+   void initPow2()  {
+      pow2[0] = 1;
+      for (int i=1; i &lt; 64; i++)
+         pow2[i] = 2*pow2[i-1];
+   }
+
+   //==========================================
+   // print the bitscan routine and throw
+   //==========================================
+   void bitScanRoutineFound(U64 deBruijn) {
+      int index[64], i;
+      for (i=0; i&lt;64; i++) // init magic array
+         index[ (deBruijn&lt;&lt;i) &gt;&gt; (64-6) ] = i;
+      printf("\nconst U64 magic = 0x%08x%08x; // the %d.\n\n",
+              (int)(deBruijn&gt;&gt;32), (int)(deBruijn), m_dBCount);
+      printf("const unsigned int magictable[64] =\n{\n");
+      for (i=0; i&lt;64; i++) {
+         if ( (i &amp; 7) == 0 ) printf("\n  ");
+         printf(" %2d,", index[i]);
+      }
+      printf("\n};\n\nunsigned int bitScanForward (U64 b) {\n");
+      printf("    return magictable[((b&amp;-b)*magic) &gt;&gt; 58];\n}\n");
+      // throw 0; // unwind the stack until catched
+   }
+
+   //============================================
+   // recursive search
+   //============================================
+   void findDeBruijn(U64 seq, int depth, int vtx, int nz) {
+      if ( (m_Lock &amp; pow2[vtx]) == 0 &amp;&amp; nz &lt;= 32 ) { // only if vertex is not locked
+         if ( depth == 0 ) { // depth zero, De Bruijn Sequence found, see remarks
+            if ( ++m_dBCount == m_Match4nth )
+               bitScanRoutineFound(seq);
+         } else {
+            m_Lock ^= pow2[vtx]; // set bit, lock the vertex to don't appear multiple
+            if ( vtx == 31 &amp;&amp; depth &gt; 2 ) { // optimization, see remarks
+                findDeBruijn( seq | pow2[depth-1], depth-2, 62, nz+1);
+            } else {
+                findDeBruijn( seq, depth-1, (2*vtx)&amp;63, nz+1); // even successor
+                findDeBruijn( seq | pow2[depth-1], depth-1, (2*vtx+1)&amp;63, nz); // odd successor
+            }
+            m_Lock ^= pow2[vtx]; // reset bit, unlock
+         }
+      }
+   }
+};
+
+int main(int argc, char* argv[])
+{
+   if (argc &lt; 2)
+      printf("usage: genBitScan 1 .. %d\n", 1&lt;&lt;26);
+   else
+      CGenBitScan(atoi(argv[1]));
+   return 0;
+}
+</pre>
+<h1><span class="mw-headline" id="Remarks">Remarks</span></h1>
+<p>With findDeBruijn(0, 64-6, 0, 6), starting with six leading zeros on its most significant top, the routine has 58 decrements to reach depth zero claiming a found De Bruijn Sequence. The algorithm does not explicitly prove the uniqueness of six remaining indices which result from the up to five trailing hidden zeros with 100000B = 32 as least significant subsequence. However, the constraints of the odd De Bruin sequence seem strong enough to make that test redundant, that is proving 64-6 unique keys seems sufficient.
+</p><p>As demonstrated in the <a href="De Bruijn Sequence.html#BruijnGraphChessBoard" title="De Bruijn Sequence">De Bruijn Graph on a Chess Board</a>, there are two branch-less series {32, 0, 1} and {31, 63, 62} respectively. The recursive search routine performs some kind of pruning and reductions to take advantage of that. 63 to follow 31 must not be locked and skipped for the 62 with an extra depth reduction. 32 can not appear as index inside the 58 recursive tests in one path, and is therefor locked initially before the findDeBruijn(0, 64-6, 0, 6) call.
+</p><p>A small improvement was introducing an additional parameter for the number of binary zeros to check it not to become greater 32. This makes also the depth &gt; 0 condition for the even successors no longer necessary, to enumerate all 2^26 De Bruijn Sequences.
+</p>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=339184" rel="nofollow">De Bruijn Sequence Generator</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2003</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=339225" rel="nofollow">Re: De Bruijn Sequence Generator</a> by <a href="Dieter B%C3%BCr%C3%9Fner.html" title="Dieter Bürßner">Dieter Bürßner</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2003 » <a href="BitScan.html" title="BitScan">BitScan</a></dd></dl>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/De_Bruijn_sequence" rel="nofollow">De Bruijn sequence from Wikipedia</a></li>
+<li> <a class="external text" href="https://sites.google.com/site/sydfhd/articles-tutorials/de-bruijn-sequence-generator" rel="nofollow">De Bruijn Sequence Generator</a> from <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad's</a> Website</li></ul>
+<p><b><a href="Backtracking.html" title="Backtracking">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722115359
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.005 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 37/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:697-0!canonical and timestamp 20240722115359 and revision id 6939
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=De_Bruijn_Sequence_Generator&amp;oldid=6939">https://www.chessprogramming.org/index.php?title=De_Bruijn_Sequence_Generator&amp;oldid=6939</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=De+Bruijn+Sequence+Generator&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="De Bruijn Sequence Generator.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:De Bruijn Sequence Generator&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="De Bruijn Sequence Generator.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=De Bruijn Sequence Generator&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=De Bruijn Sequence Generator&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/De Bruijn Sequence Generator.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/De Bruijn Sequence Generator.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=De Bruijn Sequence Generator&amp;oldid=6939.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=De Bruijn Sequence Generator&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 22 September 2018, at 10:57.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=De_Bruijn_Sequence_Generator&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.005","walltime":"0.005","ppvisitednodes":{"value":37,"limit":1000000},"ppgeneratednodes":{"value":64,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722115359","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

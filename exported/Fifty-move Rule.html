@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fifty-move Rule - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Fifty-move_Rule","wgTitle":"Fifty-move Rule","wgCurRevisionId":18487,"wgRevisionId":18487,"wgArticleId":1247,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Fifty-move_Rule","wgRelevantArticleId":1247,"wgRequestId":"Zp7Dcqr3TkUYSeSKrHxddgAAAA8","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Fifty-move_Rule rootpage-Fifty-move_Rule skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Fifty-move Rule</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Draw.html" title="Draw">Draw</a> * Fifty-move Rule</b>
+</p><p>The <b>Fifty-move rule</b> states that a <a href="Chess Game.html" title="Chess Game">game of chess</a> is considered <a href="Draw.html" title="Draw">drawn</a> after <b>fifty</b> consecutive <a href="Moves.html" title="Moves">full moves</a> without a <a href="Captures.html" title="Captures">capture</a>  or a <a href="Pawn Push.html" title="Pawn Push">pawn move</a>. If the last move of such series delivers a <a href="Checkmate.html" title="Checkmate">checkmate</a>, this takes precedence over the 50 move rule. Inside a chess program, the <a href="Halfmove Clock.html" title="Halfmove Clock">halfmove clock</a> takes care of enforcing fifty-move rule. If the halfmove clock becomes greater or equal than 100, and the <a href="Side to move.html" title="Side to move">side to move</a> has at least one <a href="Legal Move.html" title="Legal Move">legal move</a>, a <a href="Score.html#DrawScore" title="Score">draw score</a> should be assigned to that <a href="Node.html" title="Node">node</a>, with appropriate <a href="Protocols.html" title="Protocols">protocol</a> handling and <a href="Chess Game.html#endofgame" title="Chess Game">game state</a> transitions, if the node is already the <a href="Root.html" title="Root">root</a> and there is no mate in one.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Fide Rule"><span class="tocnumber">1</span> <span class="toctext">Fide Rule</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Since July 01.2C 2014"><span class="tocnumber">1.1</span> <span class="toctext">Since July 01, 2014</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Temporary Exceptions"><span class="tocnumber">1.2</span> <span class="toctext">Temporary Exceptions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#1998 ..."><span class="tocnumber">4.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2000 ..."><span class="tocnumber">4.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2010 ..."><span class="tocnumber">4.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2015 ..."><span class="tocnumber">4.4</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2020 ..."><span class="tocnumber">4.5</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Fide_Rule">Fide Rule</span></h1>
+<pre>9.3 The game is drawn, upon a correct claim by the player having the move, if <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>
+
+a) he writes his move on his <a href="Game Notation.html" title="Game Notation">scoresheet</a>, and declares to the arbiter his intention to make this move which shall result in the last 50 moves having been made by each player without the movement of any pawn and without any capture, or
+
+b) the last 50 consecutive moves have been made by each player without the movement of any pawn and without any capture. 
+</pre>
+<h2><span class="mw-headline" id="Since_July_01.2C_2014">Since July 01, 2014</span></h2>
+<p>Since July 01, 2014 75 moves without capture and pawn move end the game even without a claim <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>
+</p>
+<pre>9.6  If one or both of the following occur(s) then the game is drawn: 
+
+a) the same position has appeared, as in  <a href="Repetitions.html#92b" title="Repetitions">9.2b</a>, for at least five consecutive alternate moves by each player.  
+
+b) any consecutive series of 75 moves have been completed by each player without the movement of any pawn and without any capture. If the last move resulted in checkmate, that shall take precedence. 
+</pre>
+<h2><span class="mw-headline" id="Temporary_Exceptions">Temporary Exceptions</span></h2>
+<p>At the beginning of the nineties, when it has been proven that some <a href="Endgame.html" title="Endgame">endgames</a> can be won only in a larger number of moves, there has been an attempt to complicate the rule with a series of exceptions, all of which has been scraped later on.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Draw.html" title="Draw">Draw</a></li>
+<li> <a href="Endgame Tablebases.html#DTZ50" title="Endgame Tablebases">Endgame Tablebases | DTZ50 - Depth to Zeroing in the context of the Fifty-move Rule</a></li>
+<li> <a href="Graph History Interaction.html" title="Graph History Interaction">Graph History Interaction</a> (GHI)</li>
+<li> <a href="Halfmove Clock.html" title="Halfmove Clock">Halfmove Clock</a></li>
+<li> <a href="Path-Dependency.html" title="Path-Dependency">Path-Dependency</a></li>
+<li> <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a href="Transposition.html" title="Transposition">Transposition</a></li>
+<li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="John Roycroft.html" title="John Roycroft">John Roycroft</a> (<b>1984</b>). <i>A Proposed Revision of the ‘50-Move Rule’</i>. <a href="ICGA Journal.html#7 3" title="ICGA Journal">ICCA Journal, Vol. 7, No. 3</a></li>
+<li> <a href="Bob Herschberg.html" title="Bob Herschberg">Bob Herschberg</a>, <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>1993</b>). <i>Back to fifty</i>. <a href="ICGA Journal.html#16 1" title="ICGA Journal">ICCA Journal, Vol. 16, No. 1</a></li>
+<li> <a class="new" href="index.php?title=Galen Huntington&amp;action=edit&amp;redlink=1.html" title="Galen Huntington (page does not exist)">Galen Huntington</a>, <a href="Guy Haworth.html" title="Guy Haworth">Guy Haworth</a> (<b>2015</b>). <i>Depth to Mate and the 50-Move Rule</i>. <a href="ICGA Journal.html#38 2" title="ICGA Journal">ICGA Journal, Vol. 38, No. 2</a> » <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=18139" rel="nofollow">Horrible move!</a> by <a href="Tony Hedlund.html" title="Tony Hedlund">Tony Hedlund</a>, <a href="CCC.html" title="CCC">CCC</a>, May 07, 1998 » <a href="HIARCS.html" title="HIARCS">HIARCS</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=49261" rel="nofollow">50 move rule question</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, April 20, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=280707" rel="nofollow">Question about 50 move rule and e.p./castle flags</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2003</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40388.html" rel="nofollow">Repetitions/50 moves and TT</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, September 13, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44167.html" rel="nofollow">Texel recipe to fix TT draws scores</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, June 23, 2012 » <a href="Texel.html" title="Texel">Texel</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45556.html" rel="nofollow">Draw by 50 move rule or mate</a> by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 13, 2012</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=3&amp;t=2209.html" rel="nofollow">Half Move Clock Confusion</a> by HumbleProgrammer, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 10, 2013 » <a href="Halfmove Clock.html" title="Halfmove Clock">Halfmove Clock</a>, <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53030.html" rel="nofollow">FIDE's new rules for chess</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, July 20, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55633.html" rel="nofollow">The 75 move rule</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, March 11, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60264.html" rel="nofollow">Hashtable and 50 move rule draws</a> by <a href="Stan Arts.html" title="Stan Arts">Stan Arts</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2016 » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/M2bkzC3MuFQ/N3pHK4DcAgAJ" rel="nofollow">The new chess rules (5-fold repetition and 75-move draw)</a> by <a href="Lyudmil Antonov.html" title="Lyudmil Antonov">Lyudmil Antonov</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, November 29, 2016 » <a href="Stockfish.html" title="Stockfish">Stockfish</a>, <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62956.html" rel="nofollow">Have engines updated for fide 2014 draw rules?</a> by <a class="new" href="index.php?title=Norm Pollock&amp;action=edit&amp;redlink=1.html" title="Norm Pollock (page does not exist)">Norm Pollock</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2017</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=3093.html" rel="nofollow">Losing by draw</a> by Hamfer, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, March 17, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64853.html" rel="nofollow">Fifty move counter and Null move</a> by Tamás Kuzmics, <a href="CCC.html" title="CCC">CCC</a>, August 09, 2017 » <a href="Halfmove Clock.html" title="Halfmove Clock">Halfmove Clock</a>, <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=66023.html" rel="nofollow">75 moves FIDE-rule in section 9.6b</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, December 16, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69750.html" rel="nofollow">changing the 50 move rule to 5 move rule</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72308.html" rel="nofollow">50 move counter in FEN and GUIs</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72578.html" rel="nofollow">Graph History Interaction 2 questions</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, December 15, 2019 » <a href="Graph History Interaction.html" title="Graph History Interaction">Graph History Interaction</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73374.html" rel="nofollow">Turning off 50-move draw rule in Stockfish &amp; other engines</a> by jp, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2020 </li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Fifty-move_rule" rel="nofollow">Fifty-move rule from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.fide.com/component/handbook/?id=124&amp;view=article.html" rel="nofollow">Fide Handbook - E.I.01A. Laws of Chess</a></li>
+<li> <a class="external text" href="http://galen.metapath.org/egtb50/.html" rel="nofollow">Endgame tablebases with the fifty-move rule</a> by <a class="new" href="index.php?title=Galen Huntington&amp;action=edit&amp;redlink=1.html" title="Galen Huntington (page does not exist)">Galen Huntington</a></li>
+<li> <a class="external text" href="http://www.horst-wandersleben.de/Wette.htm.html" rel="nofollow">Computerschach - Eine Wette, die ich gerne verloren habe</a> by <a class="new" href="index.php?title=Horst Wandersleben&amp;action=edit&amp;redlink=1.html" title="Horst Wandersleben (page does not exist)">Horst Wandersleben</a> (German) <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.fide.com/component/handbook/?id=124&amp;view=article.html" rel="nofollow">Fide Handbook - E.I.01A. Laws of Chess</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53030.html" rel="nofollow">FIDE's new rules for chess</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, July 20, 2014</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://galen.metapath.org/egtb50/.html" rel="nofollow">Endgame tablebases with the fifty-move rule</a> by <a class="new" href="index.php?title=Galen Huntington&amp;action=edit&amp;redlink=1.html" title="Galen Huntington (page does not exist)">Galen Huntington</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Dieter B%C3%BCr%C3%9Fner.html" title="Dieter Bürßner">Dieter Bürßner</a> found a game finished in a <a class="mw-selflink selflink">fifty-move rule</a> draw, where <a href="Castling.html" title="Castling">castling</a> occurred during the last fifty moves</span>
+</li>
+</ol></div>
+<p><b><a href="Draw.html" title="Draw">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722110952
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.013 seconds
+Real time usage: 0.014 seconds
+Preprocessor visited node count: 111/1000000
+Preprocessor generated node count: 202/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1247-0!canonical and timestamp 20240722110952 and revision id 18487
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Fifty-move_Rule&amp;oldid=18487">https://www.chessprogramming.org/index.php?title=Fifty-move_Rule&amp;oldid=18487</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Fifty-move+Rule&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Fifty-move Rule.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Fifty-move Rule&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Fifty-move Rule.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Fifty-move Rule&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Fifty-move Rule&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Fifty-move Rule.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Fifty-move Rule.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Fifty-move Rule&amp;oldid=18487.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Fifty-move Rule&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 21 March 2020, at 23:43.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Fifty-move_Rule&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.013","walltime":"0.014","ppvisitednodes":{"value":111,"limit":1000000},"ppgeneratednodes":{"value":202,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722110952","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

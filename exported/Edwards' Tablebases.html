@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Edwards' Tablebases - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Edwards'_Tablebases","wgTitle":"Edwards' Tablebases","wgCurRevisionId":26937,"wgRevisionId":26937,"wgArticleId":4458,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Edwards'_Tablebases","wgRelevantArticleId":4458,"wgRequestId":"Zp7DSwZUIzne983r89wxQAAAAA4","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Edwards_Tablebases rootpage-Edwards_Tablebases skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Edwards' Tablebases</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Knowledge.html" title="Knowledge">Knowledge</a> * <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a> * Edwards' Tablebases</b>
+</p><p><b>Edwards' Tablebases</b>,<br/>
+are three-, four and some five-piece tablebases constructed by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> in the early 90s, initially for his chess program <a href="Spector.html" title="Spector">Spector</a>. Edwards' Tablebases rely on <a href="Endgame Tablebases.html#DTM" title="Endgame Tablebases">Depth to Mate</a> and the complete coverage for both sides, using one <a href="Byte.html" title="Byte">byte</a> per <a href="Chess Position.html" title="Chess Position">position</a>, with evaluations of the forms "mate in N", "lose (get mated) in N", "draw", and "illegal". Values for the number N (measured in fullmoves, not <a href="Ply.html" title="Ply">ply</a>) for mates range from mate in 1 upto mate in 126 and for losses in 0 (lose in 0 means <a href="Checkmate.html" title="Checkmate">checkmated</a>) to lose in 125 moves.  Each file is for a given class (e.g., KBNK) and for a given <a href="Side to move.html" title="Side to move">side to move</a> (e.g., White) <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. After finishing the construction procedure in 1994, Steven Edwards made the whole data, documentation and a test program written in <a href="C.html" title="C">ANSI-C</a> publicly available on the Internet. Until the advent of the compressed <a href="Nalimov Tablebases.html" title="Nalimov Tablebases">Nalimov Tablebases</a>, Edwards' Tablebases were quite popular and used in several chess programs, such as <a href="Crafty.html" title="Crafty">Crafty</a>, <a href="Gromit.html" title="Gromit">Gromit</a>, and the commercial <a href="MChess.html" title="MChess">MChess Pro</a>, to name a few.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Index Scheme"><span class="tocnumber">1</span> <span class="toctext">Index Scheme</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#1990 ..."><span class="tocnumber">4.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#1995 ..."><span class="tocnumber">4.2</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2000 ..."><span class="tocnumber">4.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2010 ..."><span class="tocnumber">4.4</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Downloads"><span class="tocnumber">5</span> <span class="toctext">Downloads</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Index_Scheme">Index Scheme</span></h1>
+<p>The index scheme for pawn-less endgames exploits the fourfold symmetry of the <a href="Chessboard.html" title="Chessboard">chessboard</a> to restrict the last identified piece to the a1-d1-d4 triangle by <a href="Horizontal Mirroring.html" title="Horizontal Mirroring">horizontal</a>, <a href="Vertical Flipping.html" title="Vertical Flipping">vertical</a>, or <a href="Diagonal Mirroring.html" title="Diagonal Mirroring">diagonal reflections</a>, and features vertical symmetry by confining one pawn to the queen-side flank for endgames with one pawn. Other schemes as applied for instance in <a href="Thompson%27s Databases.html" title="Thompson's Databases">Thompson's Databases</a>, enumerating all legal positions of both kings as combined index and considering pawns can't reside on the first or eighth rank, feature denser index ranges than Edwards' <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Endgame Bitbases.html" title="Endgame Bitbases">Bitbases</a></li>
+<li> <a href="Gaviota Tablebases.html" title="Gaviota Tablebases">Gaviota Tablebases</a></li>
+<li> <a href="Felicity Tablebases.html" title="Felicity Tablebases">Felicity Tablebases</a></li>
+<li> <a href="Lomonosov Tablebases.html" title="Lomonosov Tablebases">Lomonosov Tablebases</a></li>
+<li> <a href="Nalimov Tablebases.html" title="Nalimov Tablebases">Nalimov Tablebases</a></li>
+<li> <a href="Scorpio Bitbases.html" title="Scorpio Bitbases">Scorpio Bitbases</a></li>
+<li> <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy Bases</a></li>
+<li> <a href="Thompson%27s Databases.html" title="Thompson's Databases">Thompson's Databases</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> and the Editorial Board (<b>1995</b>). <i>An Examination of the Endgame KBNKN</i>. <a href="ICGA Journal.html#18 3" title="ICGA Journal">ICCA Journal, Vol. 18, No. 3</a></li>
+<li> <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> (<b>1996</b>). <i>An Examination of the Endgame KBBKN.</i> <a href="ICGA Journal.html#19 1" title="ICGA Journal">ICCA Journal, Vol. 19, No. 1</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/RN3yWuteQQ4/9G7rH4pFVKMJ" rel="nofollow">Announcing forced mates: a poll</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven J. Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, July 21, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/PZV47lZr2jE/xxZIRd4q4vIJ" rel="nofollow">KBBK tablebases: attempt #2</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven J. Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 13, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/comp.archives/XSXGunhIhjM/VsWof-hiBaoJ" rel="nofollow">Updated tablebase documentation</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven J. Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, October 14, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/comp.archives/806Mshtacxc/rBvnTLgJxqUJ" rel="nofollow">KPK tablebases now available via ftp</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven J. Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, October 14, 1994</li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/alt.chess.ics/E_3_8Z7sPT8/ufKMjWjxM80J" rel="nofollow">Re: FICS vs. ICS: No, really, which is better?</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven J. Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">alt.chess.ics</a>, June 01, 1995</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/8AKVzXG7Efw/ieMDuzaJjY4J" rel="nofollow">MCP6 Endgame Tablebase. Thanks mr.Hirsch!</a> by H.Pieters, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, November 11, 1996</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=11493" rel="nofollow">Steve Edward's Endgame Tablebase generator is now available for WIN95</a> by <a href="Michael Byrne.html" title="Michael Byrne">Mike Byrne</a>, <a href="CCC.html" title="CCC">CCC</a>, November 01, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14970" rel="nofollow">EGTB</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, February 10, 1998</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=34259.html" rel="nofollow">Tablebases Edwards</a> by RR, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 25, 2001</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53244.html" rel="nofollow">A different tablebase encoding format</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 10, 2014</li></ul>
+<h1><span class="mw-headline" id="Downloads">Downloads</span></h1>
+<p><sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p>
+<ul><li> <a href="File:Tbgen.zip.html" title="File:Tbgen.zip">File:Tbgen.zip</a></li>
+<li> <a href="File:Spector.zip.html" title="File:Spector.zip">File:Spector.zip</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=11493" rel="nofollow">Steve Edward's Endgame Tablebase generator is now available for WIN95</a> by <a href="Michael Byrne.html" title="Michael Byrne">Mike Byrne</a>, <a href="CCC.html" title="CCC">CCC</a>, November 01, 1997</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>1999</b>). <i>Endgame Databases and Efficient Index Schemes for Chess.</i> <a href="ICGA Journal.html#22 1" title="ICGA Journal">ICCA Journal, Vol. 22, No. 1</a>, <a class="external text" href="http://people.csail.mit.edu/heinz/ps/edb index.ps.gz.html" rel="nofollow">ps</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">Courtesy <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a></span>
+</li>
+</ol></div>
+<p><b><a href="Endgame Tablebases.html" title="Endgame Tablebases">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722120728
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.014 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 85/1000000
+Preprocessor generated node count: 158/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4458-0!canonical and timestamp 20240722120728 and revision id 26937
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Edwards%27_Tablebases&amp;oldid=26937">https://www.chessprogramming.org/index.php?title=Edwards%27_Tablebases&amp;oldid=26937</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Edwards%27+Tablebases&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Edwards%27 Tablebases.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Edwards%27 Tablebases&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Edwards%27 Tablebases.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Edwards%27 Tablebases&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Edwards%27 Tablebases&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Edwards%27 Tablebases.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Edwards%27 Tablebases.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Edwards%27 Tablebases&amp;oldid=26937.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Edwards%27 Tablebases&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 28 June 2024, at 14:24.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Edwards%27_Tablebases&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.014","walltime":"0.016","ppvisitednodes":{"value":85,"limit":1000000},"ppgeneratednodes":{"value":158,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722120728","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":57});});</script>
+</body>
+</html>

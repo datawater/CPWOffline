@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Move List - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Move_List","wgTitle":"Move List","wgCurRevisionId":24836,"wgRevisionId":24836,"wgArticleId":1354,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Move_List","wgRelevantArticleId":1354,"wgRequestId":"Zp7Dn--qaMe6EU8WbZGhDgAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Move_List rootpage-Move_List skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Move List</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * Move List</b>
+</p><p>A <b>Move List</b> is a data structure inside a chess program with the aim to collect, administrate and process <a href="Moves.html" title="Moves">moves</a> played during a <a href="Chess Game.html" title="Chess Game">game of chess</a> or inside the <a href="Search.html" title="Search">search</a>. There are essentially two types of move lists. One type has alternating White and Black half-moves for <a href="Game Notation.html" title="Game Notation">game notation</a> to record the game, continued by the current path or variation of the search. Same applies for the <a href="Principal Variation.html" title="Principal Variation">principal variation</a> as a result of a <a href="Depth-First.html" title="Depth-First">depth-first</a> <a href="Minimax.html" title="Minimax">minimax</a> search. Secondly, a move list refers a list of <a href="Move Generation.html" title="Move Generation">generated moves</a> for the <a href="Side to move.html" title="Side to move">side to move</a> of a <a href="Chess Position.html" title="Chess Position">position</a>, a <a href="Node.html" title="Node">node</a> of the <a href="Search Tree.html" title="Search Tree">search tree</a> keeping the edges to its child-nodes to traverse. Move lists are often conveniently and efficiently implemented as pre-allocated <a href="Array.html" title="Array">arrays</a> rather than <a href="Linked List.html" title="Linked List">linked</a> or <a href="Linked List.html#Doubly" title="Linked List">doubly linked lists</a>.
+<span id="GameList"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Game List"><span class="tocnumber">1</span> <span class="toctext">Game List</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Sample Layout"><span class="tocnumber">1.1</span> <span class="toctext">Sample Layout</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Signature List"><span class="tocnumber">1.2</span> <span class="toctext">Signature List</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Parallel Search Considerations"><span class="tocnumber">1.3</span> <span class="toctext">Parallel Search Considerations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Search Lists"><span class="tocnumber">2</span> <span class="toctext">Search Lists</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Sample Layout 2"><span class="tocnumber">2.1</span> <span class="toctext">Sample Layout</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Processing the Move List"><span class="tocnumber">2.2</span> <span class="toctext">Processing the Move List</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Game_List">Game List</span></h1>
+<p>The game list keeps <a href="Moves.html" title="Moves">moves</a> of the game already played from the <a href="Initial Position.html" title="Initial Position">initial</a> up to the current <a href="Root.html" title="Root">root</a> <a href="Chess Position.html" title="Chess Position">position</a> of the search, plus the current path or variation actually searching. A global game object maintains an index of the root position, initialized with zero after the game starts. When a move was found and played after search, or a move was entered by the opponent player, it is stored under the <a class="external text" href="http://en.wiktionary.org/wiki/post-increment.html" rel="nofollow">post incremented</a> index. 
+</p><p>Despite the length of the game may vary, one usually takes a once allocated fixed sized array for a maximum number of half moves to occur in the game, considering <a href="Depth.html#MaxPly" title="Depth">MAX_PLY</a> of a deep trailing search. Despite the theoretical maximum length of a chess game of 11797 half moves, as limited by the <a href="Fifty-move Rule.html" title="Fifty-move Rule">Fifty-move Rule</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup><sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, 1024 (or even less) halfmoves should practically suffice <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. On the other hand, it is not a big deal to <a class="external text" href="https://en.wikipedia.org/wiki/Malloc#realloc" rel="nofollow">reallocate</a> the list rarely.
+</p>
+<h2><span class="mw-headline" id="Sample_Layout">Sample Layout</span></h2>
+<pre>
+                       Move List
+                       +---------+ 
+Initial Position  -&gt;   |    0    |  1. White move
+                       +---------+ 
+ moves already         |    1    |  1... Black move
+ played                +---------+ 
+                       |    2    |  2. White move
+                       +---------+ 
+                       |   ...   | 
+                       +---------+ 
+                       |   r-1   | 
+                       +---------+ 
+Root Position   -&gt;     |    r    |  ply 0
+                       +---------+ 
+ Current               |   r+1   |  ply 1  
+ Variation             +---------+ 
+                       |   ...   | 
+                       +---------+ 
+Searched Node   -&gt;     |    x    |  ply x-r
+                       +---------+ 
+                       |   ...   | 
+                       +---------+ 
+                       |   1023  | 
+                       +---------+ 
+</pre>
+<p><span id="SignatureList"></span>
+</p>
+<h2><span class="mw-headline" id="Signature_List">Signature List</span></h2>
+<p>A correspondent array might be used for <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist-</a> or <a href="BCH Hashing.html" title="BCH Hashing">BCH signatures</a>. Along with remembering an index of the last <a href="Irreversible Moves.html" title="Irreversible Moves">irreversible move</a> (<a href="Halfmove Clock.html" title="Halfmove Clock">Halfmove Clock</a>), such a list is handy to recognize two- or threefold <a href="Repetitions.html" title="Repetitions">repetitions</a>. Since the hash signature list refers positions (nodes) rather than moves (edges), it contains one more element than its corresponding move list, that is even an empty game list and halfmove count zero implies a signature list with one element, the key of the <a href="Initial Position.html" title="Initial Position">initial position</a>. However, it is not necessary to make that list the same length as the move list of the game, and it may shortened after playing an irreversible move. If the <a href="Fifty-move Rule.html" title="Fifty-move Rule">Fifty-move Rule</a> is implemented correctly, 100 entries should suffice. 
+</p>
+<h2><span class="mw-headline" id="Parallel_Search_Considerations">Parallel Search Considerations</span></h2>
+<p>It makes sense each <a href="Process.html" title="Process">process</a> or <a href="Thread.html" title="Thread">thread</a> keeps a local copy of the game move list, at least, depending on the implementation, the search tree part. Assuming the above structures, while starting a <a href="Parallel Search.html" title="Parallel Search">parallel search</a> at the root, all move lists (including corresponding hash signatures) in all involved processes or threads are once synchronized by a master, that is copied  from index zero up to the root position index. During the parallel search, at so called split points or nodes, the variation of the current search tree from root until this split node, needs to be copied as well.
+<span id="SearchLists"></span>
+</p>
+<h1><span class="mw-headline" id="Search_Lists">Search Lists</span></h1>
+<p>Search lists keep generated moves for the side to move of a node. Their access in conjunction with move generation is usually hidden behind an <a href="Iteration.html" title="Iteration">iterator</a> interface with two methods, one for initializing the move generator, and a method to get the next move. There could be any <a class="external text" href="https://en.wikipedia.org/wiki/Finite-state_machine" rel="nofollow">finite-state machine</a> and <a href="Data.html" title="Data">data structures</a> hidden by that interface, for instance an array of <a href="Pieces versus Directions.html#DirectionWise" title="Pieces versus Directions">16 direction bitboards</a>, where set bits uniquely define distinct <a href="Target Square.html" title="Target Square">target squares</a>. The advantage of a move list becomes obvious if considering <a href="Move Ordering.html" title="Move Ordering">move ordering</a> and bookkeeping, the order of moves generated is usually not the order (except <a href="Hash Move.html" title="Hash Move">hash-</a> and possibly <a href="Killer Move.html" title="Killer Move">killer moves</a>) they should execute, which requires to evaluate moves and to assign a score by various heuristics and static and dynamic move and square properties, i.e. <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a>, <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a>, <a href="Piece-Square Tables.html" title="Piece-Square Tables">dedicated piece-square tables</a> and <a href="History Heuristic.html" title="History Heuristic">history scores</a>, to perform a <a class="external text" href="https://en.wikipedia.org/wiki/Selection_sort" rel="nofollow">selection sort</a> from the move list, to try the best evaluated moves first in most implementations.
+</p><p>Since the number of moves per side and position may vary, one may think about a dynamically allocated list on the heap, to reallocate if more space is needed during generation. This is quite expensive inside the search and typically avoided. Chess programmers tend to administrate their own once allocated or static array of moves, shared by all levels of the search, or alternatively keep distinct move arrays for each ply of up to <a href="Encoding Moves.html#MoveIndex" title="Encoding Moves">256 moves</a> on the processor stack <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. Considering possible <a href="Move Generation.html#Staged" title="Move Generation">staged move generation</a>, or even to save move generation at all for <a href="Hash Move.html" title="Hash Move">hash-</a> or <a href="Killer Move.html" title="Killer Move">killer moves</a> at confirmed <a href="Node Types.html#CUT" title="Node Types">Cut-Nodes</a>, <a href="Depth.html#MaxPly" title="Depth">MAX_PLY</a> times <a href="Branching Factor.html" title="Branching Factor">average branching factor</a> plus some safety margin seems sufficient for a list shared by all plies of a path of a <a href="Depth-First.html" title="Depth-First">depth-first</a> tree traversal. However, <a class="external text" href="https://en.wikipedia.org/wiki/Bounds_checking" rel="nofollow">bounds checking</a> might be applied in a special compiled debug version of the chess program. Further, some programs keep disjoint lists for <a href="Tactical Moves.html" title="Tactical Moves">tactical moves</a> like <a href="Captures.html" title="Captures">captures</a> and <a href="Promotions.html" title="Promotions">promotions</a>, and a separate list for <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a>. 
+</p>
+<h2><span class="mw-headline" id="Sample_Layout_2">Sample Layout</span></h2>
+<pre>
+N ::= MAX_PLY * BF
+
+                       Move List
+                       +---------+ 
+Root Position   -&gt;  {  |    0    |  first generated move of the search (already tried)
+                    {  +---------+ 
+ moves already      {  |    1    |           for each ply of the search
+ tried at ply 0     {  +---------+          +-----------------+
+                       |    2    | &lt;--------| next 2 play     |         
+ moves to try       {  +---------+          +-----------------+  Ply 0 
+ at ply 0           {  |   ...   |     +----| next 2 generate |         
+                       +---------+     |    +-----------------+---+
+                       |    i    | &lt;---+        | next 2 play     |   
+                       +---------+              +-----------------+  Ply 1
+                       |   ...   |              | next 2 generate |
+                       +---------+              +-----------------+---+
+                       |   N-1   |                  | next 2 play     | 
+                       +---------+                  +-----------------+  Ply 2 
+                                                    | next 2 generate |
+                                                    +-----------------+---+
+                                                         | ...            |
+</pre>
+<h2><span class="mw-headline" id="Processing_the_Move_List">Processing the Move List</span></h2>
+<p>While starting the search, 'next to play' and 'next to generate' of ply index zero are both initialized with the first index, zero, referring the next free move slot inside the list. Move generation fills the list and increments 'next 2 generate' accordantly. Before actually traversing the move list within the loop of the search routine, the local movelist (so far) starting with 'next 2 play' (inclusive) until 'next 2 generate' (exclusive) may be ordered for best <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> performance, likely assigning scores to the moves to perform a <a class="external text" href="https://en.wikipedia.org/wiki/Selection_sort" rel="nofollow">selection sort</a>, possibly swapping moves inside the local list to try apparently better moves early. After picking a move from the list for <a href="Make Move.html" title="Make Move">make move</a> and searching ahead, 'next 2 play', indexing the move just picked, is post incremented. If 'next 2 play' equals 'next 2 generate', no more generated moves are available on that ply-level, and it is about to terminate the move loop, or - if using staged move generation, to start the next generation phase, possibly further incrementing 'next 2 generate'.
+</p><p>This scheme works <a href="Recursion.html" title="Recursion">recursively</a> thoroughly all ply depths. At the start of the search at a node ply+1 it is required to perform following initialization on the search stack:
+</p>
+<pre>
+next_2_generate[ply+1] ::= next_2_generate[ply];
+next_2_play[ply+1]     ::= next_2_generate[ply];
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chess Game.html" title="Chess Game">Chess Game</a></li>
+<li> <a href="Game Notation.html" title="Game Notation">Game Notation</a></li>
+<li> <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a href="Pieces versus Directions.html" title="Pieces versus Directions">Pieces versus Directions</a></li>
+<li> <a href="Refutation Table.html" title="Refutation Table">Refutation Table</a></li>
+<li> <a href="Triangular PV-Table.html" title="Triangular PV-Table">Triangular PV-Table</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2007</b>). <i>Improving Strategic Play in Shogi by Using Move Sequence Trees</i>. <a href="Conferences.html#GPW" title="Conferences">12th Game Programming Workshop</a>, <a class="external text" href="http://www.teu.ac.jp/gamelab/RESEARCH/gpw2007.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53379.html" rel="nofollow">Using bitboards to store move lists</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, August 22, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53820.html" rel="nofollow">std::vector&lt;&gt; considered harmful</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, September 25, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61792.html" rel="nofollow">Max moves in a position</a> by <a href="Laurie Tunnicliffe.html" title="Laurie Tunnicliffe">Laurie Tunnicliffe</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2016 » <a href="Chess.html#Maxima" title="Chess">Chess Maxima</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64642.html" rel="nofollow">Move list in stack vs heap ?</a> by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a>, <a href="CCC.html" title="CCC">CCC</a>, July 18, 2017</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://de.wikipedia.org/wiki/50-Z%C3%BCge-Regel.html#Schachmathematik" rel="nofollow">50-Züge-Regel - Schachmathematik from Wikipedia.de</a> (German)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">Eero Bonsdorff, <a class="external text" href="https://en.wikipedia.org/wiki/Karl_Fabel" rel="nofollow">Karl Fabel</a>, Olvai Riihimaa (<b>1966</b>) <i>Schach und Zahl - Unterhaltsame Schachmathematik</i>. Seite 11-13, Walter Rau Verlag, Düsseldorf (German)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.xs4all.nl/~timkr/chess2/honor.htm.html" rel="nofollow">Defending Humanity's Honor</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Tim_Krabb%C3%A9" rel="nofollow">Tim Krabbé</a>, see game <a href="Rival.html" title="Rival">NewRival</a> - <a href="Faile.html" title="Faile">Faile</a> with 493 moves, and playing 402 moves with bare kings!</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=424966" rel="nofollow">Subject: Maximum Number of Legal Moves</a> by <a href="Andrew Shapira.html" title="Andrew Shapira">Andrew Shapira</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2005</span>
+</li>
+</ol></div>
+<p><b><a href="Data.html" title="Data">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722184302
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.015 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 132/1000000
+Preprocessor generated node count: 260/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1354-0!canonical and timestamp 20240722184302 and revision id 24836
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Move_List&amp;oldid=24836">https://www.chessprogramming.org/index.php?title=Move_List&amp;oldid=24836</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Move+List&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Move List.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Move List&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Move List.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Move List&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Move List&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Move List.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Move List.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Move List&amp;oldid=24836.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Move List&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 31 May 2021, at 11:14.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Move_List&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.015","walltime":"0.016","ppvisitednodes":{"value":132,"limit":1000000},"ppgeneratednodes":{"value":260,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722184302","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

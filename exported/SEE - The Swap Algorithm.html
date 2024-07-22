@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>SEE - The Swap Algorithm - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SEE_-_The_Swap_Algorithm","wgTitle":"SEE - The Swap Algorithm","wgCurRevisionId":25676,"wgRevisionId":25676,"wgArticleId":1268,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SEE_-_The_Swap_Algorithm","wgRelevantArticleId":1268,"wgRequestId":"Zp7DxgMLGU3EphdnCkJXPQAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.FenTT.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SEE_-_The_Swap_Algorithm rootpage-SEE_-_The_Swap_Algorithm skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">SEE - The Swap Algorithm</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * SEE - The Swap Algorithm</b>
+</p><p>The <a href="Iteration.html" title="Iteration">iterative</a> <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a> Swap-Algorithm in Bitboards creates a swap-list of best case <a href="Material.html" title="Material">material</a> gains by traversing a <a href="Square Attacked By.html" title="Square Attacked By">square attacked/defended by</a> set in least valuable piece order from <a href="Pawn.html" title="Pawn">pawn</a>, <a href="Knight.html" title="Knight">knight</a>, <a href="Bishop.html" title="Bishop">bishop</a>, <a href="Rook.html" title="Rook">rook</a>, <a href="Queen.html" title="Queen">queen</a> until <a href="King.html" title="King">king</a>, with alternating sides. The swap-list, an unary tree since there are no branches but just a series of captures, is <a href="Negamax.html" title="Negamax">negamaxed</a> for a final static exchange evaluation <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup><sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Traversal of To-Attacks"><span class="tocnumber">1</span> <span class="toctext">Traversal of To-Attacks</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#SEE a Capture"><span class="tocnumber">2</span> <span class="toctext">SEE a Capture</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Pseudo C-Code"><span class="tocnumber">3</span> <span class="toctext">Pseudo C-Code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Traces"><span class="tocnumber">4</span> <span class="toctext">Traces</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Position 1"><span class="tocnumber">4.1</span> <span class="toctext">Position 1</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Position 2"><span class="tocnumber">4.2</span> <span class="toctext">Position 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">6.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ..."><span class="tocnumber">6.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2020 ..."><span class="tocnumber">6.3</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Traversal_of_To-Attacks">Traversal of To-Attacks</span></h1>
+<p>Assuming this arbitrary <a href="Bitboard Board-Definition.html#CBoardDef" title="Bitboard Board-Definition">Board-Definition</a> with color as least significant piece bit and "even" pieces are the white ones, following routine returns a single populated square set and passes the least valuable piece per <a href="Cpp.html" title="Cpp">C++</a> reference to the caller. If no more piece is found for the appropriate side, it returns an empty set.
+</p>
+<pre>
+U64 Board::getLeastValuablePiece(U64 attadef, int bySide, int &amp;piece)
+{
+   for (piece = nWhitePawn + bySide; piece &lt;= nWhiteKing + bySide; piece += 2) {
+      U64 subset = attadef &amp; pieceBB[piece];
+      if ( subset )
+         return subset &amp; -subset; // single bit
+   }
+   return 0; // empty set
+}
+</pre>
+<h1><span class="mw-headline" id="SEE_a_Capture">SEE a Capture</span></h1>
+<p>The first two members of the gain swap-list are likely determined by the <a href="Captures.html" title="Captures">capture move</a> we like to prove. Thus, the first element of the swap-list is the value of the target piece, while the second is only written (or used) if the target square is further defended. In this case it is the value of the capturing piece minus the value of captured piece, this is the best-case material gain from the defending point of view. However during traversal, <a href="X-ray Attacks (Bitboards).html" title="X-ray Attacks (Bitboards)">X-ray attacks</a> are considered while capturing with a piece, which may have indirect attacks or defends behind, which unions the set of attackers and defenders. 
+</p>
+<h1><span class="mw-headline" id="Pseudo_C-Code">Pseudo C-Code</span></h1>
+<pre>
+int Board::see ( enumSquare toSq, enumPiece target, enumSquare frSq, enumPiece aPiece)
+{
+   int gain[32], d = 0;
+   U64 mayXray = pawns | bishops | rooks | queen;
+   U64 fromSet = 1ULL &lt;&lt; frSq;
+   U64 occ     = occupiedBB;
+   U64 attadef = attacksTo( occ, toSq );
+   gain[d]     = value[target];
+   do {
+      d++; // next depth and side
+      gain[d]  = value[aPiece] - gain[d-1]; // speculative store, if defended
+      if (max (-gain[d-1], gain[d]) &lt; 0) break; // pruning does not influence the result
+      attadef ^= fromSet; // reset bit in set to traverse
+      occ     ^= fromSet; // reset bit in temporary occupancy (for x-Rays)
+      if ( fromSet &amp; mayXray )
+         attadef |= considerXrays(occ, ..);
+      fromSet  = getLeastValuablePiece (attadef, d &amp; 1, aPiece);
+   } while (fromSet);
+   while (--d)
+      gain[d-1]= -max (-gain[d-1], gain[d])
+   return gain[0];
+}
+</pre>
+<p>Considering <a href="X-ray Attacks (Bitboards).html" title="X-ray Attacks (Bitboards)">X-ray attacks</a> leaves some implementation details left, dependent on what sliding attack-getter is handy, <a href="Classical Approach.html" title="Classical Approach">ray attacks</a> are sufficient, but requires some effort to determine the ray-direction. With <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> one will likely use something similar as the sliding piece subset of <a href="Square Attacked By.html" title="Square Attacked By">Square Attacked By</a>. The preliminary pruning of the swap-list fill (if (max (-gain[d-1], gain[d]) &lt; 0) break;) and other improvements were proposed by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Traces">Traces</span></h1>
+<p>Two positions with traces of the swap-list during traversal and negamaxing with some arbitrary <a href="Material.html" title="Material">piece values</a>.
+</p>
+<h2><span class="mw-headline" id="Position_1">Position 1</span></h2>
+<p>To demonstrate how SEE works in obvious cases, is Rook takes Pawn a winning capture?
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">      <br/>     <br/>       <br/>       <br/>        <br/>      <br/>     <br/>      <br/></div><div class="pcfg"> ♚ ♜    <br/> ♟♟    ♟<br/>♟       <br/>    ♟   <br/>        <br/>♙     ♙ <br/> ♙♙    ♙<br/>  ♔ ♖   <br/></div></div></td></tr></table>
+<pre>1k1r4/1pp4p/p7/4p3/8/P5P1/1PP4P/2K1R3 w - - ; Rxe5?
+</pre>
+<pre>
+gain[0]  =  100 ; win for white if black pawn e5 is en-prise by rxp
+gain[1]  =  400 ; win for black if white rook e5 is en-prise,  500-100, speculative store
+no further attacks for black at depth 1
+-&gt; SEE(rxe5) == 100
+</pre>
+<h2><span class="mw-headline" id="Position_2">Position 2</span></h2>
+<p>This position covers a more complicated case with X-rays. Is Knight takes pawn a winning capture?
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">     <br/>    <br/>      <br/>       <br/>        <br/>     <br/>   <br/>      <br/></div><div class="pcfg"> ♚ ♜   ♛<br/> ♟♟♞   ♟<br/>♟    ♝  <br/>    ♟   <br/>        <br/>♙  ♘  ♙ <br/> ♙♙ ♖ ♗♙<br/>  ♔ ♕   <br/></div></div></td></tr></table>
+<pre>1k1r3q/1ppn3p/p4b2/4p3/8/P2N2P1/1PP1R1BP/2K1Q3 w - - ; Nxe5?
+</pre>
+<pre>
+gain[0] =  100 ; win for white if black pawn   e5 is en-prise by nxp
+gain[1] =  225 ; win for black if white knight e5 is en-prise by nxn,  325- 100
+gain[2] =  100 ; win for white if black knight e5 is en-prise by rxn,  325- 225 -&gt; x-rays includes queen e1
+gain[3] =  400 ; win for black if white rook   e5 is en-prise by bxr,  500- 100 -&gt; x-rays includes queen h8
+gain[4] =  -75 ; win for white if black bishop e5 is en-prise by qxb,  325- 400
+gain[5] = 1075 ; win for black if white queen  e5 is en-prise by qxq, 1000- -75
+gain[6] =  -75 ; win for white if black queen  e5 is en-prise,        1000-1075 speculative store
+no further attacks for white at depth = 6
+
+gain[4] = -max(--75,  1075) = -1075
+gain[3] = -max(-400, -1075) =   400
+gain[2] = -max(-100,   400) =  -400
+gain[1] = -max(-225,  -400) =   225
+gain[0] = -max(-100,   225) =  -225
+-&gt; SEE(nxe5) == -225
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Attack and Defend Maps.html#EDsLookup" title="Attack and Defend Maps">Ed's Lookup</a> from <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">Attack and Defend Maps</a></li>
+<li> <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a></li>
+<li> <a href="SOMA.html" title="SOMA">SOMA</a></li>
+<li> <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">Static Exchange Evaluation</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=178979" rel="nofollow">Static Exchange Eval</a> by <a href="Artem Petakov.html" title="Artem Petakov">Artem Pyatakov</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=341658" rel="nofollow">Does swap of Crafty find bad promotions</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, January 11, 2004</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=46486&amp;p=176048.html#p176025" rel="nofollow">Re: WBEC Ridderkerk new results</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, February 15, 2004 » <a href="DanChess.html" title="DanChess">DanChess</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=6104.html" rel="nofollow">SEE with magic bitboards</a> by <a href="Pradu Kannan.html" title="Pradu Kannan">Pradu Kannan</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, January 24, 2007 » <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=123511&amp;t=14168.html" rel="nofollow">Re: Movei added to Crafty vs Rybka comaprison data</a> by <a href="Edsel Apostol.html" title="Edsel Apostol">Edsel Apostol</a>, <a href="CCC.html" title="CCC">CCC</a>, June 06, 2007</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31479.html" rel="nofollow">Question about SEE algorithm on Chessprogramming Wiki</a> by <a href="Mathieu Pag%C3%A9.html" title="Mathieu Pagé">Mathieu Pagé</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40046.html" rel="nofollow">Implementing SEE</a> by colin, <a href="CCC.html" title="CCC">CCC</a>, Aug 12, 2011</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=419174&amp;t=40046.html" rel="nofollow">Re: Implementing SEE</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, August 13, 2011</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40054.html" rel="nofollow">SEE with alpha beta</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, August 14, 2011 » <a href="Onno.html" title="Onno">Onno</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/S_4E_Xs5HaE/mS3VTnuEFgAJ" rel="nofollow">pin-aware see</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, September 14, 2016 » <a href="Pin.html" title="Pin">Pin</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/9mcmjnyqbAQ/S6mDA0QsAAAJ" rel="nofollow">Illegal moves in SEE</a> by <a href="Stephane Nicolet.html" title="Stephane Nicolet">Stephane Nicolet</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, September 22, 2016 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64166.html" rel="nofollow">Problems with SEE</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2017</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72862.html" rel="nofollow">SEE versus SEE_GE</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2020 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77787.html" rel="nofollow">Static exchange evaluation with promotion</a> by Guido Flohr, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2021</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=178981" rel="nofollow">Subject: Re: Static Exchange Eval</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> from <a href="Computer Chess Forums.html" title="Computer Chess Forums">CCC</a>, August 02, 2001</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Crafty.html" title="Crafty">Crafty</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, see <i><b>swap.c</b></i></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=419315&amp;t=40054.html" rel="nofollow">Re: SEE with alpha beta</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, August 14, 2011</span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722021117
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.012 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 146/1000000
+Preprocessor generated node count: 286/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1268-0!canonical and timestamp 20240722021117 and revision id 25676
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=SEE_-_The_Swap_Algorithm&amp;oldid=25676">https://www.chessprogramming.org/index.php?title=SEE_-_The_Swap_Algorithm&amp;oldid=25676</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=SEE+-+The+Swap+Algorithm&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="SEE - The Swap Algorithm.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:SEE - The Swap Algorithm&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="SEE - The Swap Algorithm.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=SEE - The Swap Algorithm&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=SEE - The Swap Algorithm&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/SEE - The Swap Algorithm.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/SEE - The Swap Algorithm.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=SEE - The Swap Algorithm&amp;oldid=25676.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=SEE - The Swap Algorithm&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 25 July 2021, at 23:23.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=SEE_-_The_Swap_Algorithm&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.012","walltime":"0.012","ppvisitednodes":{"value":146,"limit":1000000},"ppgeneratednodes":{"value":286,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722021117","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":63});});</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ChessGUI - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ChessGUI","wgTitle":"ChessGUI","wgCurRevisionId":26673,"wgRevisionId":26673,"wgArticleId":3469,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ChessGUI","wgRelevantArticleId":3469,"wgRequestId":"Zp7DSf-qaMe6EU8WbZGgNQAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ChessGUI rootpage-ChessGUI skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">ChessGUI</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="User Interface.html" title="User Interface">User Interface</a> * <a href="GUI.html" title="GUI">GUI</a> * ChessGUI</b>
+</p><p><b>ChessGUI</b>,<br/>
+a free Graphical User Interface for <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> and <a href="UCI.html" title="UCI">UCI</a> compatible engines running under <a href="Windows.html" title="Windows">Windows</a>, developed by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a> using the <a class="external text" href="https://en.wikipedia.org/wiki/Visual_Component_Library" rel="nofollow">Visual Component Library</a> of <a class="external text" href="https://en.wikipedia.org/wiki/Borland" rel="nofollow">Borland's</a> <a class="external text" href="https://en.wikipedia.org/wiki/C++Builder" rel="nofollow">C++Builder 5.0</a>, starting as GUI for his engines <a href="BigLion.html" title="BigLion">BigLion</a>, <a class="new" href="index.php?title=Taktix&amp;action=edit&amp;redlink=1.html" title="Taktix (page does not exist)">Taktix</a>, and <a class="new" href="index.php?title=ArcBishop&amp;action=edit&amp;redlink=1.html" title="ArcBishop (page does not exist)">ArcBishop</a>. ChessGUI has a classical frame window with multiple hierarchical <a class="external text" href="https://en.wikipedia.org/wiki/Tab_%28GUI%29" rel="nofollow">tabbed views</a> on the current tournament or game document and engine outputs. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Features"><span class="tocnumber">1</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Testing Framework"><span class="tocnumber">1.1</span> <span class="toctext">Testing Framework</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Live Broadcast"><span class="tocnumber">1.2</span> <span class="toctext">Live Broadcast</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Support"><span class="tocnumber">1.3</span> <span class="toctext">Support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Screenshot"><span class="tocnumber">2</span> <span class="toctext">Screenshot</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Retirement"><span class="tocnumber">3</span> <span class="toctext">Retirement</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2007 ..."><span class="tocnumber">5.1</span> <span class="toctext">2007 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ..."><span class="tocnumber">5.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2015 ..."><span class="tocnumber">5.3</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Features">Features</span></h1>
+<h2><span class="mw-headline" id="Testing_Framework">Testing Framework</span></h2>
+<p>While Matthias claims "ChessGUI is not <a href="WinBoard.html" title="WinBoard">WinBoard</a>, nor <a href="Arena.html" title="Arena">Arena</a>, nor ..., but instead it is just an idea in a pre-beta stage of conception" <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, its sophisticated <a href="Tournament Manager.html" title="Tournament Manager">tournament modes</a> along with its <i>Sample Testsuite Tools</i> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> make ChessGUI a popular framework for <a href="Engine Testing.html" title="Engine Testing">engine testing</a> and to produce <a href="Engine Rating Lists.html" title="Engine Rating Lists">rating lists</a>. 
+</p>
+<h2><span class="mw-headline" id="Live_Broadcast">Live Broadcast</span></h2>
+<p>ChessGUI is able to broadcast live games via the <a class="external text" href="https://en.wikipedia.org/wiki/Internet" rel="nofollow">internet</a> using <a href="TLCS-TLCV.html" title="TLCS-TLCV">TLCV</a> by <a href="Thomas McBurney.html" title="Thomas McBurney">Thomas McBurney</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, as successfully applied during the <a href="TCEC.html" title="TCEC">TCEC</a> broadcasts by <a href="Martin Thoresen.html" title="Martin Thoresen">Martin Thoresen</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. More recently, ChessGUI was incorporated in <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca's</a> <a href="AiBloodshed.html" title="AiBloodshed">aiBloodshed</a> chess game broadcaster.
+</p>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<p>ChessGUI supports various <a href="Chess.html#Variants" title="Chess">chess variants</a>, <a href="Opening Book.html" title="Opening Book">opening books</a> and <a href="Endgame Tablebases.html" title="Endgame Tablebases">endgame tablebases</a>, the latter also for optional adjudication of the game result. Version <b>0.245f</b>, released in December 2013, supports the six piece <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy Bases</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>. 
+</p>
+<h1><span class="mw-headline" id="Screenshot">Screenshot</span></h1>
+<div class="floatnone"><a href="http://www.chess.hylogic.de/chess/ChessGUI01.jpg.html" rel="nofollow"><img alt="ChessGUI01.jpg" class="thumbborder" height="685" src="images/9/93/ChessGUI01.jpg" style="vertical-align: text-bottom" width="970"/></a></div>
+<p>ChessGUI with <a href="Chronos.html" title="Chronos">Chronos</a> and <a href="Fire.html" title="Fire">Fire</a> playing <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p>
+<h1><span class="mw-headline" id="Retirement">Retirement</span></h1>
+<p>On 29 Mar 2016, the author of ChessGUI announced he retired from chess programming, therefore there would not be any update nor support for both ChessGUI and chess engine Big Lion. His home page become inaccessible after his dead<sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="AiBloodshed.html" title="AiBloodshed">aiBloodshed</a></li>
+<li> <a href="Arena.html" title="Arena">Arena</a></li>
+<li> <a href="Tournament Manager.html" title="Tournament Manager">Tournament Manager</a></li>
+<li> <a href="WinBoard.html" title="WinBoard">WinBoard</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2007_...">2007 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15501.html" rel="nofollow">ChessGUI celebrates Jubilee !!</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17558.html" rel="nofollow">Gothic chess in ChessGUI 0.064</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, November 03, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17871.html" rel="nofollow">ChessGUI: enough is enough</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, November 15, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=18379.html" rel="nofollow">ChessGUI and Carrera, Embassy, Janus</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 14, 2007</li></ul>
+<p><b>2008</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19497.html" rel="nofollow">ChessGUI 0.072</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 08, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19594.html" rel="nofollow">ChessGUI 0.075</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19909.html" rel="nofollow">ChessGUI 0.079</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 29, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20682.html" rel="nofollow">ChessGUI 0.085</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20802.html" rel="nofollow">ChessGUI 0.086</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, April 22, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21378.html" rel="nofollow">ChessGUI 0.098</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, May 26, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21828.html" rel="nofollow">ChessGUI 0.104</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22393.html" rel="nofollow">ChessGUI 0.112, now with wiki help file</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 16, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22438.html" rel="nofollow">ChessGUI makes a development pause</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 18, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=23790.html" rel="nofollow">ChessGUI 0.123 released</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, September 17, 2008</li></ul>
+<p><b>2009</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26701.html" rel="nofollow">ChessGUI 0.136 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26864.html" rel="nofollow">ChessGUI 0.139 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, March 04, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27087.html" rel="nofollow">ChessGUI 0.144 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, March 20, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27524.html" rel="nofollow">ChessGUI 0.150 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, April 20, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=28918.html" rel="nofollow">ChessGUI</a> by <a href="Sam Hamilton.html" title="Sam Hamilton">Sam Hamilton</a>, <a href="CCC.html" title="CCC">CCC</a>, July 11, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=28978.html" rel="nofollow">ChessGUI 0.164 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 16, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30299.html" rel="nofollow">ChessGUI 0.168 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 24, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31391.html" rel="nofollow">ChessGUI 0.172 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 31, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31692.html" rel="nofollow">ChessGUI 0.173 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31952.html" rel="nofollow">ChessGUI 0.175 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 23, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32521.html" rel="nofollow">ChessGUI 0.176 is out there</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 10, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32884.html" rel="nofollow">ChessGUI 0.178 is out there</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32904.html" rel="nofollow">ChessGUI ... UCI ... Gaviota EGTB</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 25, 2010 » <a href="Gaviota Tablebases.html" title="Gaviota Tablebases">Gaviota Tablebases</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33853.html" rel="nofollow">ChessGUI 0.180 is out there</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34389.html" rel="nofollow">ChessGUI 0.181 is out there</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, May 19, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35169.html" rel="nofollow">ChessGUI 0.184 is out there</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35304.html" rel="nofollow">ChessGUI 0.186 is out there</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35470.html" rel="nofollow">ChessGUI 0.189 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 17, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35606.html" rel="nofollow">ChessGUI development suspended</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 28, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35790.html" rel="nofollow">Is ChessGUI really bug-free ?</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 13, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35904.html" rel="nofollow">Terminating the ChessGUI project</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 27, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35931.html" rel="nofollow">New Time Controls for WB</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36207.html" rel="nofollow">ChessGUI 0.200 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 28, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36427.html" rel="nofollow">ChessGUI is back</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36876.html" rel="nofollow">ChessGUI 0.205</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 01, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37739.html" rel="nofollow">ChessGUI 0.209 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37951.html" rel="nofollow">ChessGUI 0.212 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 05, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38079.html" rel="nofollow">ChessGUI 0.214 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 15, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38290.html" rel="nofollow">ChessGUI ...</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, March 04, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38637.html" rel="nofollow">Importing engines into ChessGUI</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, April 02, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39796.html" rel="nofollow">ChessGUI 0.223 and Swiss tournaments</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 20, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39940.html" rel="nofollow">ChessGUI 0.225 and Knock Out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40015.html" rel="nofollow">ChessGUI 0.228 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 10, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40018.html" rel="nofollow">... about STS_Tool.exe (in ChessGUI package)</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 10, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40137.html" rel="nofollow">ChessGUI 0.230 and TLCV</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2011 » <a href="TLCS-TLCV.html" title="TLCS-TLCV">TLCS/TLCV</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40557.html" rel="nofollow">ChessGUI 0.235 is out</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41417.html" rel="nofollow">ChessGUI in action</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, December 11, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44530.html" rel="nofollow">ChessGUI 0.239 and STS_Tool 1.3</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2012</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46835.html" rel="nofollow">ChessGUI 0.240a</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 11, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46875.html" rel="nofollow">ChessGUI 0.240b</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46945.html" rel="nofollow">ChessGUI 0.240g is available</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 20, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47099.html" rel="nofollow">ChessGUI and Chess960</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>,  February 03, 2013 » <a href="Chess960.html" title="Chess960">Chess960</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47143.html" rel="nofollow">ChessGUI 0.241 available (MUST READ)</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>,  February 06, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47225.html" rel="nofollow">ChessGUI 0.243 is available</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, February 14, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48790.html" rel="nofollow">ChessGUI 0.245a is available</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, July 29, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50492.html" rel="nofollow">ChessGUI 0.245f is available</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 14, 2013 » <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy Bases</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50541.html" rel="nofollow">Graham2014-1.cgb opening book for ChessGUI</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, December 19, 2013 » <a href="Test-Positions.html#OpeningSuites" title="Test-Positions">Opening Suites</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57222.html" rel="nofollow">ChessGUI 0.245h</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 09, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59666.html" rel="nofollow">no more ChessGUI</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, March 28, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59970.html" rel="nofollow">Hint for ChessGUI users</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, April 26, 2016 » <a href="ECO.html" title="ECO">ECO</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61823.html" rel="nofollow">ChessGUI Timer Problem</a> by <a href="Dennis Sceviour.html" title="Dennis Sceviour">Dennis Sceviour</a>, <a href="CCC.html" title="CCC">CCC</a>, October 24, 2016 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62472.html" rel="nofollow">Raffaela 2.15.305 beta under ChessGUI</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 2016 » <a href="Raffaela.html" title="Raffaela">Raffaela</a></li></ul>
+<p><b>2017 ...</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63478.html" rel="nofollow">Book ChessGUI</a> by Krzysztof Grzelak, <a href="CCC.html" title="CCC">CCC</a>, March 17, 2017 » <a href="Opening Book.html" title="Opening Book">Opening Book</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64969.html" rel="nofollow">ChessGUI (current version) and JavaScript engines part I</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, August 23, 2017 » <a href="JavaScript.html" title="JavaScript">JavaScript</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70774.html" rel="nofollow">Matthias Gemuh's (ChessGUI and BigLion) sad situation</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, May 18, 2019 </li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.chess.hylogic.de/.html" rel="nofollow">BigLion Homepage</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chess.hylogic.de/.html" rel="nofollow">BigLion Homepage</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41608.html" rel="nofollow">an STS Tool retouched</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 26, 2011</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40137.html" rel="nofollow">ChessGUI 0.230 and TLCV</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2011</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://home.pacific.net.au/~tommyinoz/tlcv.html.html" rel="nofollow">Tom's Live Chess Viewer</a> by <a href="Thomas McBurney.html" title="Thomas McBurney">Thomas McBurney</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.tcec-chess.net/viewtopic.php?f=13&amp;t=20.html" rel="nofollow">nTCEC Complete Rules + FAQ</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50492.html" rel="nofollow">ChessGUI 0.245f is available</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, December 14, 2013</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text">Image courtesy <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a class="external text" href="http://www.chess.hylogic.de/.html" rel="nofollow">BigLion Homepage</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=81145.html" rel="nofollow">ChessGUI</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, December 14, 2022</span>
+</li>
+</ol></div>
+<p><b><a href="GUI.html" title="GUI">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175335
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.027 seconds
+Real time usage: 0.028 seconds
+Preprocessor visited node count: 167/1000000
+Preprocessor generated node count: 330/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:3469-0!canonical and timestamp 20240722175335 and revision id 26673
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=ChessGUI&amp;oldid=26673">https://www.chessprogramming.org/index.php?title=ChessGUI&amp;oldid=26673</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=ChessGUI&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="ChessGUI.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:ChessGUI&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="ChessGUI.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=ChessGUI&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=ChessGUI&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/ChessGUI.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/ChessGUI.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=ChessGUI&amp;oldid=26673.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=ChessGUI&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 16 December 2022, at 08:00.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=ChessGUI&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.027","walltime":"0.028","ppvisitednodes":{"value":167,"limit":1000000},"ppgeneratednodes":{"value":330,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175335","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

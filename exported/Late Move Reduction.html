@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Late Move Reductions - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Late_Move_Reductions","wgTitle":"Late Move Reductions","wgCurRevisionId":27064,"wgRevisionId":27064,"wgArticleId":995,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Late_Move_Reductions","wgRelevantArticleId":995,"wgRequestId":"Zp7DYl0xYjdSHhMDafgsbQAAAAI","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Late_Move_Reduction","wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false},"wgInternalRedirectTargetUrl":"/index.php?title=Late_Move_Reductions\u0026printable=yes"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["mediawiki.action.view.redirect","ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<link href="https://www.chessprogramming.org/Late_Move_Reductions" rel="canonical"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Late_Move_Reductions rootpage-Late_Move_Reductions skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Late Move Reductions</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a class="mw-redirect" href="index.php?title=Late Move Reduction&amp;redirect=no.html" title="Late Move Reduction">Late Move Reduction</a>)</span></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Selectivity.html" title="Selectivity">Selectivity</a> * <a href="Reductions.html" title="Reductions">Reductions</a> * Late Move Reductions</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:335px;"><a href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bc8"><img alt="" class="thumbimage" height="224" src="images/7/7c/Bak_OtherRules.jpg" width="333"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Bak OtherRules.jpg.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - Other Rules <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Late Move Reductions (LMR)</b>,<br/>
+or its version known as <b>History Pruning</b> and <b>History Reductions</b> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> , save search by reducing <a href="Moves.html" title="Moves">moves</a> that are <a href="Move Ordering.html" title="Move Ordering">ordered</a> closer to the end of likely <a href="Node Types.html#ALL" title="Node Types">fail-low nodes</a>. Typically, most schemes search the first few moves (say 3-4) at full <a href="Depth.html" title="Depth">depth</a>, then if no move <a href="Fail-High.html" title="Fail-High">fails high</a>, many of the remaining moves are reduced in search <a href="Depth.html" title="Depth">depth</a>. The technique has been used for many years in various forms, but it became very popular in 2005 after <a href="Fruit.html" title="Fruit">Fruit</a> and <a href="Glaurung.html" title="Glaurung">Glaurung</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> used open source implementations based on the <a href="History Heuristic.html" title="History Heuristic">History Heuristic</a>. LMR can often reduce the <a href="Branching Factor.html#EffectiveBranchingFactor" title="Branching Factor">effective branching factor</a> to less than 2, depending on the reduction conditions. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Common Conditions"><span class="tocnumber">1</span> <span class="toctext">Common Conditions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Uncommon Conditions"><span class="tocnumber">2</span> <span class="toctext">Uncommon Conditions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Reduction Depth"><span class="tocnumber">3</span> <span class="toctext">Reduction Depth</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Re-searches"><span class="tocnumber">4</span> <span class="toctext">Re-searches</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Test Results"><span class="tocnumber">5</span> <span class="toctext">Test Results</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Publications"><span class="tocnumber">7</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2004"><span class="tocnumber">8.1</span> <span class="toctext">2004</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2005 ..."><span class="tocnumber">8.2</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2010 ..."><span class="tocnumber">8.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2015 ..."><span class="tocnumber">8.4</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2020 ..."><span class="tocnumber">8.5</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Common_Conditions">Common Conditions</span></h1>
+<p>Most programs do not reduce these types of <a href="Moves.html" title="Moves">moves</a>:
+</p>
+<ul><li> <a href="Depth.html" title="Depth">Depth</a> &lt; 3 (sometimes depth &lt; 2)</li></ul>
+<p>Most programs reduce these types of moves less:
+</p>
+<ul><li> Moves while in <a href="Check.html" title="Check">check</a></li>
+<li> Moves which give check</li>
+<li> <a href="Killer Heuristic.html" title="Killer Heuristic">Killer Moves</a></li>
+<li> Moves in a <a href="Node Types.html#PV" title="Node Types">PV-Node</a> in a <a href="Principal Variation Search.html" title="Principal Variation Search">PVS</a> search</li>
+<li> Moves when <a href="Improving.html" title="Improving">improving</a></li></ul>
+<p>Most programs reduce these types of moves more:
+</p>
+<ul><li> Moves in an expected <a href="Node Types.html#Cut-Nodes" title="Node Types">Cut-node</a></li>
+<li> Moves in a node where <a href="Best Move.html#TT-Entry" title="Best Move">hash move</a> is a capture</li></ul>
+<h1><span class="mw-headline" id="Uncommon_Conditions">Uncommon Conditions</span></h1>
+<p>Uncommon conditions on moves not to reduce:
+</p>
+<ul><li> <a href="Tactical Moves.html" title="Tactical Moves">Tactical Moves</a> (<a href="Captures.html" title="Captures">captures</a> and <a href="Promotions.html" title="Promotions">promotions</a>)</li>
+<li> Moves while in check</li>
+<li> Moves which give check</li>
+<li> Moves that cause a search <a href="Extensions.html" title="Extensions">extension</a></li>
+<li> Anytime in a PV-Node in a PVS search</li>
+<li> <a href="Passed Pawn.html" title="Passed Pawn">Passed Pawn</a> Moves</li>
+<li> <a href="Killer Heuristic.html" title="Killer Heuristic">Killer Moves</a></li>
+<li> Moves threatening the King area</li>
+<li> <a href="Tactics.html" title="Tactics">Tactically</a> threatening moves</li>
+<li> Moves with good past <a href="Relative History Heuristic.html" title="Relative History Heuristic">relative history</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li>
+<li> Any <a href="Pawn Push.html" title="Pawn Push">Pawn Moves</a> </li>
+<li> Allowing reductions of "bad" <a href="Captures.html" title="Captures">captures</a> (<a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a> &lt; 0)</li>
+<li> Moves of a  <a href="Null Move Pruning.html#ThreatDetection" title="Null Move Pruning">threatened piece</a> to safety (often detected via a <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move search</a>)</li></ul>
+<h1><span class="mw-headline" id="Reduction_Depth">Reduction Depth</span></h1>
+<p>Classical implementation reduces by one <a href="Ply.html" title="Ply">ply</a> only. Yet modern programs, most notably <a href="Stockfish.html" title="Stockfish">Stockfish</a>, allow reductions of more than one ply and increase them for later moves. Reduction depth changes according to expected  <a href="Node Types.html" title="Node Types">node type</a> (being typically smaller in pv nodes), <a href="Depth.html" title="Depth">depth</a> and move number. Here some sample formulas can be viewed:
+</p>
+<ul><li> <a href="Weiss.html" title="Weiss">Weiss</a> reduces by 0.20 + ln(depth) * ln(move number) / 3.35 for captures and promotions and 1.35 + ln(depth) * ln(move number) / 2.75 for quiet moves.</li>
+<li> <a href="Ethereal.html" title="Ethereal">Ethereal</a> reduces by 0.7844 + ln(depth) * ln(moves played) / 2.4696 for quiet moves and 3 (or 2 if the move gave check) for captures and promotions</li>
+<li> <a href="Senpai.html" title="Senpai">Senpai</a> reduces by one ply for the first 6 moves and by depth / 3 for remaining moves.</li>
+<li> <a href="Fruit Reloaded.html" title="Fruit Reloaded">Fruit Reloaded</a> uses formula: uint8( sqrt(double(depth-1)) + sqrt(double(moves-1))); for non-PV nodes. In PV-nodes it reduces by 2/3 of this value.</li></ul>
+<h1><span class="mw-headline" id="Re-searches">Re-searches</span></h1>
+<p>Classical implementation assumes a re-search at full depth if the reduced depth search returns a score above alpha. In recent years, <a href="Stockfish.html" title="Stockfish">Stockfish</a> had success with adjusting re-search depth based on result from reduced search.
+</p>
+<h1><span class="mw-headline" id="Test_Results">Test Results</span></h1>
+<p>Some test results related to LMR can be found on
+</p>
+<ul><li> <a href="Late Move Reduction Test Results.html" title="Late Move Reduction Test Results">Late Move Reduction Test Results</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Tord Romstad.html#Video" title="Tord Romstad">Parallelism and Selectivity in Game Tree Search | Video</a>, Talk by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a></li>
+<li> <a href="Bobby.html#StrategicQuiescenceSearch" title="Bobby">Bobby's Strategic Quiescence Search</a></li>
+<li> <a href="History Heuristic.html" title="History Heuristic">History Heuristic</a></li>
+<li> <a href="History Leaf Pruning.html" title="History Leaf Pruning">History Leaf Pruning</a></li>
+<li> <a href="Futility Pruning.html#MoveCountBasedPruning" title="Futility Pruning">Move Count Based Pruning</a> (Late Move Pruning)</li>
+<li> <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a href="Relative History Heuristic.html" title="Relative History Heuristic">Relative History Heuristic</a></li>
+<li> <a href="SEX Algorithm.html" title="SEX Algorithm">SEX Algorithm</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="David Levy.html" title="David Levy">David Levy</a>, <a href="David Broughton.html" title="David Broughton">David Broughton</a>, <a href="Mark Taylor.html" title="Mark Taylor">Mark Taylor</a> (<b>1989</b>). <i>The SEX Algorithm in Computer Chess</i>. <a href="ICGA Journal.html#12 1" title="ICGA Journal">ICCA Journal, Vol. 12, No. 1</a></li>
+<li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Masakazu Muramatsu.html" title="Masakazu Muramatsu">Masakazu Muramatsu</a>  (<b>2012</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Efficiency-of-three-forward-pruning-techniques-in-Hoki-Muramatsu/206099961f401c8693e071c2b739f164ae5ffa6c" rel="nofollow">Efficiency of three Forward-Pruning Techniques in Shogi: Futility Pruning, Null-move Pruning, and Late Move Reduction (LMR)</a></i>. <a class="external text" href="https://www.journals.elsevier.com/entertainment-computing" rel="nofollow">Entertainment Computing</a>, Vol. 3, No. 3</li>
+<li> <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel S. Abdi</a> (<b>2013</b>). <i>Analysis of pruned minimax trees</i>. <a class="external text" href="https://dl.dropboxusercontent.com/u/55295461/analysis/pruning.pdf" rel="nofollow">pdf</a> » <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a>, <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2004">2004</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=352384" rel="nofollow">Forward pruning and some related techniques</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, March 02, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=2300&amp;p=10549.html" rel="nofollow">Reductions and null move refutations</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, April 18, 2005 » <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=434809" rel="nofollow">What is History Pruning?</a> by <a class="new" href="index.php?title=David Dahlem&amp;action=edit&amp;redlink=1.html" title="David Dahlem (page does not exist)">David Dahlem</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=445457" rel="nofollow">History based pruning question</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Jose Povoa Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=457846" rel="nofollow">About history pruning...</a> by Svein Bjørnar Myrvang, <a href="CCC.html" title="CCC">CCC</a>, October 26, 2005</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=3795.html" rel="nofollow">What is "history pruning"?</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">Vladimir Medvedev</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 07, 2005</li></ul>
+<p><b>2006</b>
+</p>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=489978" rel="nofollow">History pruning</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2006</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=490705" rel="nofollow">late move reductions</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2006</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=490712" rel="nofollow">Re: late move reductions</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2006 » <a href="Kiwi.html" title="Kiwi">Kiwi</a></dd>
+<dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=490779" rel="nofollow">PHR (Peak History Reduction) idea</a> by <a href="Daniel Mehrmann.html" title="Daniel Mehrmann">Daniel Mehrmann</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2006 » <a href="Main Page.html" title="Main Page">Home</a>, <a href="Relative History Heuristic.html" title="Relative History Heuristic">Relative History Heuristic</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=4435&amp;p=23839.html" rel="nofollow">history pruning/ late move pruning</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, March 02, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?t=5194.html" rel="nofollow">LMR question</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, July 13, 2006</li></ul>
+<p><b>2007</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=12936.html" rel="nofollow">LMR in micro-Max</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2007 » <a href="Micro-Max.html" title="Micro-Max">Micro-Max</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15219.html" rel="nofollow">Fruit and History Reductions</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, July 19, 2007 » <a href="Fruit.html" title="Fruit">Fruit</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15304.html" rel="nofollow">LMR other conditions</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=15337.html" rel="nofollow">Improving history tables</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, July 25, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=18345.html" rel="nofollow">LMR: history or not?</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 2007 » <a href="Hamsters.html" title="Hamsters">Hamsters</a></li></ul>
+<p><b>2008</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=178438.html" rel="nofollow">Extreme late move reductions?</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20636.html" rel="nofollow">LMR?</a> by <a href="Martin Giepmans.html" title="Martin Giepmans">Martin Giepmans</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2008  » <a href="Anatoli.html" title="Anatoli">Anatoli</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=25599.html" rel="nofollow">Adaptative LMR and TT</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2008</li></ul>
+<p><b>2009</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26703.html" rel="nofollow">About LMR &amp; History reductions</a> by <a href="Joona Kiiski.html" title="Joona Kiiski">Joona Kiiski</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26877.html" rel="nofollow">LMR</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=26944.html" rel="nofollow">LMR and 'tactically connected' moves</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27277.html" rel="nofollow">LMR revisited</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27530.html" rel="nofollow">LMR and null move selectivity</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, April 20, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=29944.html" rel="nofollow">LMR</a> by <a href="Bas Hamstra.html" title="Bas Hamstra">Bas Hamstra</a>, <a href="CCC.html" title="CCC">CCC</a>, September 30, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30245.html" rel="nofollow">May I Ask What You Think Of This?</a> by <a class="new" href="index.php?title=Christopher Conkie&amp;action=edit&amp;redlink=1.html" title="Christopher Conkie (page does not exist)">Christopher Conkie</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31369.html" rel="nofollow">Did people try replacing LMR by pruning</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, December 31, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31494.html" rel="nofollow">The problem with LMR in suprtactical positions</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31933.html" rel="nofollow">Researching if LMR-affected search improves Alpha?</a> by <a href="John Merlino.html" title="John Merlino">John Merlino</a>, <a href="CCC.html" title="CCC">CCC</a>, January 22, 2010</li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=32984.html" rel="nofollow">Problems with LMR in late endgames</a> by <a href="Luca Hemmerich.html" title="Luca Hemmerich">Luca Hemmerich</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33265.html" rel="nofollow">LMR algorithm</a> by kenny stanley, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33434.html" rel="nofollow">LMR Conditions</a> by kenny stanley, <a href="CCC.html" title="CCC">CCC</a>, March 23, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34437.html" rel="nofollow">LMR at root of search tree - worthwhile?</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, May 21, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34557.html" rel="nofollow">EPR, even better than LMR!</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, May 27, 2010</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=248.html#p2538" rel="nofollow">Re: "Automated Discovery of Search Extensions"</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, June 26, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35558.html" rel="nofollow">lmr at PV nodes?</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35955.html" rel="nofollow">move count based pruning</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36633.html" rel="nofollow">LMR differences in long vs short games</a> by <a class="new" href="index.php?title=Jacob B%C3%B8rs Lind&amp;action=edit&amp;redlink=1.html" title="Jacob Børs Lind (page does not exist)">Jacob Børs Lind</a>, <a href="CCC.html" title="CCC">CCC</a>, November 08, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37337.html" rel="nofollow">fulitiy + lmr; funny results</a> by <a href="Volker B%C3%B6hm.html" title="Volker Böhm">Volker Böhm</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37424.html" rel="nofollow">lmr in PV</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, January 03, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41995.html" rel="nofollow">Should reduction depend on depth?</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, January 14, 2012 » <a href="Komodo.html" title="Komodo">Komodo</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43434.html" rel="nofollow">Possible LMR improvement using AB_FOOL</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, April 24, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44272.html" rel="nofollow">LMR Research</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46503.html" rel="nofollow">Adjustable search pruning depending on time control</a> by <a class="new" href="index.php?title=Jerry Donald&amp;action=edit&amp;redlink=1.html" title="Jerry Donald (page does not exist)">Jerry Donald</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2012 » <a href="Time Management.html" title="Time Management">Time Management</a></li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47577.html" rel="nofollow">ROC analysis of Late Move Reductions</a> by Gerard van Ewijk, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2013 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48144.html" rel="nofollow">Is LMR Sound</a> by <a class="new" href="index.php?title=Henk van den Belt&amp;action=edit&amp;redlink=1.html" title="Henk van den Belt (page does not exist)">Henk van den Belt</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48154.html" rel="nofollow">Is LMR safe within NULL move reduction</a> by <a class="new" href="index.php?title=Henk van den Belt&amp;action=edit&amp;redlink=1.html" title="Henk van den Belt (page does not exist)">Henk van den Belt</a>, <a href="CCC.html" title="CCC">CCC</a>, May 30, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48356.html" rel="nofollow">LMR at CUT nodes can be arbitrarily bad!</a> by <a href="Michel Van den Bergh.html" title="Michel Van den Bergh">Michel Van den Bergh</a>, <a href="CCC.html" title="CCC">CCC</a>, June 20, 2013 » <a href="Node Types.html" title="Node Types">Node Types</a>, <a href="Python.html" title="Python">Python</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49558.html" rel="nofollow">How much to reduce ?</a> by <a class="new" href="index.php?title=Henk van den Belt&amp;action=edit&amp;redlink=1.html" title="Henk van den Belt (page does not exist)">Henk van den Belt</a>, <a href="CCC.html" title="CCC">CCC</a>, October 03, 2013 » <a href="Depth Reduction R.html" title="Depth Reduction R">R</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51578.html" rel="nofollow">Null move and LMR</a> by <a href="Laurie Tunnicliffe.html" title="Laurie Tunnicliffe">Laurie Tunnicliffe</a>, <a href="CCC.html" title="CCC">CCC</a>, March 12, 2014 » <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52169.html" rel="nofollow">LMR &amp; TT interaction</a> by <a class="new" href="index.php?title=Natale Galioto&amp;action=edit&amp;redlink=1.html" title="Natale Galioto (page does not exist)">Natale Galioto</a>, <a href="CCC.html" title="CCC">CCC</a>, April 29, 2014 » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54392.html" rel="nofollow">A question about Stockfish and LMR or other pruning...</a> by Forrest Hoch, <a href="CCC.html" title="CCC">CCC</a>, November 20, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55526.html" rel="nofollow">About LMR , again :-)</a> by <a href="Daniel Anulliero.html" title="Daniel Anulliero">Daniel Anulliero</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56312.html" rel="nofollow">LMR tuning</a> by <a href="Shawn Chidester.html" title="Shawn Chidester">Shawn Chidester</a>, <a href="CCC.html" title="CCC">CCC</a>, May 11, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56524.html" rel="nofollow">Interpretation of LMR</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56631.html" rel="nofollow">What's Your Engine's Maximum LMR Reduction?</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, June 08, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57035.html" rel="nofollow">New "smoothing" issue</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, July 20, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57381.html" rel="nofollow">On LMR, and statically predicting moves</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57486.html" rel="nofollow">LMR by another name</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2015 » <a href="Spector.html" title="Spector">Spector</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57697.html" rel="nofollow">Ratio reduction</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, September 20, 2015 » <a href="Symbolic.html" title="Symbolic">Symbolic</a></li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58996.html" rel="nofollow">late move reduction</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59598.html" rel="nofollow">Extensions in the days of LMR?</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2016 » <a href="Extensions.html" title="Extensions">Extensions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60194.html" rel="nofollow">LMR problems</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, May 16, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60240.html" rel="nofollow">Reductions</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, May 22, 2016 » <a href="Depth Reduction R.html" title="Depth Reduction R">R</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61031.html" rel="nofollow">Disappointing LMR Results</a> by <a class="new" href="index.php?title=David Cimbalista&amp;action=edit&amp;redlink=1.html" title="David Cimbalista (page does not exist)">David Cimbalista</a>, <a href="CCC.html" title="CCC">CCC</a>, August 04, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61086.html" rel="nofollow">Null Move in LMR</a> by <a href="Laurie Tunnicliffe.html" title="Laurie Tunnicliffe">Laurie Tunnicliffe</a>, <a href="CCC.html" title="CCC">CCC</a>, August 10, 2016 » <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=3084.html" rel="nofollow">LMR and PVS</a> by thevinenator, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 10, 2017 » <a href="Principal Variation Search.html" title="Principal Variation Search">Principal Variation Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63521.html" rel="nofollow">Late move reductions ?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63649.html" rel="nofollow">Check extension vs LMR</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 04, 2017 » <a href="Check Extensions.html" title="Check Extensions">Check Extensions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63870.html" rel="nofollow">LMR - or starters - Advance and Expert</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, May 01, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65169.html" rel="nofollow">LMR and killer</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2017 » <a href="Killer Heuristic.html" title="Killer Heuristic">Killer Heuristic</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65273.html" rel="nofollow">LMR prescription</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, September 24, 2017</li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70217" rel="nofollow">Depth reduced but ELO increased</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, March 16, 2019 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78397" rel="nofollow">Elo expected from LMR</a> by Christian Dean, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2021 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79616" rel="nofollow">Troubles with LMR</a> by Kurt Peters, <a href="CCC.html" title="CCC">CCC</a>, March 31, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Late_Move_Reductions" rel="nofollow">Late Move Reductions from Wikipedia</a></li>
+<li> <a class="external text" href="https://web.archive.org/web/20150212051846/http://www.glaurungchess.com/lmr.html" rel="nofollow">An Introduction to Late Move Reductions</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="http://mediocrechess.blogspot.de/2007/03/other-late-move-reduction-lmr.html.html" rel="nofollow">Mediocre Chess: [Guide] Late move reduction (LMR)</a> by <a href="Jonatan Pettersson.html" title="Jonatan Pettersson">Jonatan Pettersson</a>, March 26, 2007 » <a href="Mediocre.html" title="Mediocre">Mediocre</a></li>
+<li> <a class="external text" href="http://members.home.nl/matador/hr.htm.html" rel="nofollow">History Reductions in Pro Deo</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a> » <a href="ProDeo.html" title="ProDeo">ProDeo</a></li>
+<li> <a class="external text" href="http://rebel13.nl/rebel13/blog/lmr%20advanced.html.html" rel="nofollow">LMR advanced</a> from <a class="external text" href="http://rebel13.nl/index.html.html" rel="nofollow">Rebel 13</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> » <a href="Rebel.html" title="Rebel">Rebel</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bc8" rel="nofollow">Chess in the Art of Samuel Bak</a>, <a class="external text" href="http://www.chgs.umn.edu/.html" rel="nofollow">Center for Holocaust &amp; Genocide Studies</a>, <a href="University of Minnesota.html" title="University of Minnesota">University of Minnesota</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://members.home.nl/matador/hr.htm.html" rel="nofollow">History Reductions in Pro Deo</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20150212051846/http://www.glaurungchess.com/lmr.html" rel="nofollow">An Introduction to Late Move Reductions</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"> <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a>, <a href="Erik van der Werf.html" title="Erik van der Werf">Erik van der Werf</a>, <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a> (<b>2004</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/11674399 18.html" rel="nofollow">The Relative History Heuristic</a></i>. <a href="CG 2004.html" title="CG 2004">CG 2004</a>,  <a class="external text" href="http://erikvanderwerf.tengen.nl/pubdown/relhis.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic" rel="nofollow">Receiver operating characteristic (ROC) from Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63870.html" rel="nofollow">LMR - or starters - Advance and Expert</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, May 01, 2017</span>
+</li>
+</ol></div>
+<p><b><a href="Reductions.html" title="Reductions">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722180847
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.032 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 156/1000000
+Preprocessor generated node count: 294/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:995-0!canonical and timestamp 20240722180847 and revision id 27064
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Late_Move_Reductions&amp;oldid=27064">https://www.chessprogramming.org/index.php?title=Late_Move_Reductions&amp;oldid=27064</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Late+Move+Reductions&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Late Move Reductions.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Late Move Reductions&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Late Move Reductions.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Late Move Reductions&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Late Move Reductions&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Late Move Reductions.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Late Move Reductions.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Late Move Reductions&amp;oldid=27064.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Late Move Reductions&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 22 July 2024, at 20:08.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Late_Move_Reductions&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.032","walltime":"0.034","ppvisitednodes":{"value":156,"limit":1000000},"ppgeneratednodes":{"value":294,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722180847","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

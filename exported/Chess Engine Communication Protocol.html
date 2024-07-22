@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chess Engine Communication Protocol - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chess_Engine_Communication_Protocol","wgTitle":"Chess Engine Communication Protocol","wgCurRevisionId":25409,"wgRevisionId":25409,"wgArticleId":1603,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chess_Engine_Communication_Protocol","wgRelevantArticleId":1603,"wgRequestId":"Zp7DMkKfcgdPZR8tVSrqKQAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chess_Engine_Communication_Protocol rootpage-Chess_Engine_Communication_Protocol skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chess Engine Communication Protocol</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Protocols.html" title="Protocols">Protocols</a> * Chess Engine Communication Protocol</b>
+</p><p><b>Chess Engine Communication Protocol</b> (CECP),<br/>also dubbed the <b>XBoard</b> or <b>WinBoard</b> protocol after the eponymous <a href="XBoard.html" title="XBoard">XBoard</a> or <a href="WinBoard.html" title="WinBoard">WinBoard</a> <a href="GUI.html" title="GUI">graphical user interfaces</a> (GUI), is an open <a class="external text" href="https://en.wikipedia.org/wiki/Communication_protocol" rel="nofollow">communication protocol</a> for chess engines to play <a href="Chess Game.html" title="Chess Game">games</a> automatically, that is to communicate with other chess playing entities.   
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#GUI"><span class="tocnumber">1</span> <span class="toctext">GUI</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#How it began"><span class="tocnumber">2</span> <span class="toctext">How it began</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#UML State diagram"><span class="tocnumber">3</span> <span class="toctext">UML State diagram</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Version 2"><span class="tocnumber">4</span> <span class="toctext">Version 2</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Pros and Cons"><span class="tocnumber">5</span> <span class="toctext">Pros and Cons</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Pros"><span class="tocnumber">5.1</span> <span class="toctext">Pros</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Cons"><span class="tocnumber">5.2</span> <span class="toctext">Cons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Engines"><span class="tocnumber">6</span> <span class="toctext">Engines</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#GUIs"><span class="tocnumber">7</span> <span class="toctext">GUIs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Native"><span class="tocnumber">7.1</span> <span class="toctext">Native</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Compatible"><span class="tocnumber">7.2</span> <span class="toctext">Compatible</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Utilities"><span class="tocnumber">8</span> <span class="toctext">Utilities</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#See also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Forum Posts"><span class="tocnumber">10</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#1990 ..."><span class="tocnumber">10.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#1995 ..."><span class="tocnumber">10.2</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2000 ..."><span class="tocnumber">10.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2005 ..."><span class="tocnumber">10.4</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2010 ..."><span class="tocnumber">10.5</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2015 ..."><span class="tocnumber">10.6</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2020 ..."><span class="tocnumber">10.7</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#External Links"><span class="tocnumber">11</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="GUI">GUI</span></h1>
+<p>A <a href="GUI.html" title="GUI">GUI</a> supporting the protocol is known as <a href="XBoard.html" title="XBoard">XBoard</a> or <a href="WinBoard.html" title="WinBoard">WinBoard</a>, being for <a href="Unix.html" title="Unix">Unix</a> (Posix) or <a href="Windows.html" title="Windows">Windows</a> operating systems, respectively. Many other GUIs support the protocol, which is based on text commands, while requiring the engine to keep the state of the game internally. While the <a href="UCI.html" title="UCI">Universal Chess Interface</a> is somewhat more popular today, the Chess Engine Communication Protocol protocol is preferred by some because it allows greater flexibility for the engine (for instance, in <a href="Pondering.html" title="Pondering">pondering</a>).
+</p>
+<h1><span class="mw-headline" id="How_it_began">How it began</span></h1>
+<p><a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> in an Interview by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, April 2000 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>:
+</p>
+<pre>Originally, xboard and WinBoard were simply graphical user interfaces for <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a>, then for GNU Chess and <a href="Chess Server.html" title="Chess Server">Internet chess servers</a>. Because the <a href="GUI.html" title="GUI">GUI</a> and the chess engine are separate programs, several people thought of the idea of connecting their own chess programs in place of GNU Chess, and they began to email me asking how to do it. I think the first person to ask was <a href="Shay Bushinsky.html" title="Shay Bushinsky">Shay Bushinsky</a>, in November 1994. Over the years I received so many requests for this information that I was more or less forced into documenting and extending the ad-hoc engine protocol to support them. The document that exists now (chess-engines.html) evolved directly from the original email reply I sent to Shay. Unfortunately, because the protocol was never really designed, but just grew out of documenting the existing communication with GNU Chess, there are still several bugs and deficiencies in it today. It would be nice to make some major revisions, but then of course it would (at best) take a long time for the existing engines to convert over to the new protocol, so both would have to be supported, probably forever. 
+</pre>
+<p><span id="UMLStates"></span>
+</p>
+<h1><span class="mw-headline" id="UML_State_diagram">UML State diagram</span></h1>
+<div class="floatnone"><a href="http://walkofmind.com/programming/chess/xboard.htm.html" rel="nofollow"><img alt="Xboard.gif" class="thumbborder" height="526" src="images/8/89/Xboard.gif" style="vertical-align: text-bottom" width="777"/></a></div>
+<p>WinBoard/XBoard protocol <a class="external text" href="https://en.wikipedia.org/wiki/UML_state_machine" rel="nofollow">UML state diagram</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p>
+<h1><span class="mw-headline" id="Version_2">Version 2</span></h1>
+<p><a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> established a protocol Version 2 in September, 2009 <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, also covering <a href="Games.html" title="Games">Chess Variants</a> and different board sizes.
+</p>
+<h1><span class="mw-headline" id="Pros_and_Cons">Pros and Cons</span></h1>
+<p>Those pros and cons compared with <a href="UCI.html" title="UCI">UCI</a>
+</p>
+<h2><span class="mw-headline" id="Pros">Pros</span></h2>
+<ul><li> All commands are short</li>
+<li> Has redundant commands for almost all chess tasks from old-time to now</li>
+<li> Designed to work without the need of having an extra thread for processing those commands</li>
+<li> Allows users to play directly with chess engines without using chess GUIs</li>
+<li> Allows chess engines act a bit independently such as they can auto-start pondering after a move</li></ul>
+<h2><span class="mw-headline" id="Cons">Cons</span></h2>
+<ul><li> Has a long and complicated list of commands</li>
+<li> Use many assumptions about data without keywords requirements. For example, the string "a2a3" is considered as a move, "9 156 1084 48000 Nf3 Nc6 Nc3 Nf6" is considered as a computing output when the first number is the ply, the second number is a score in centipawn unit...</li>
+<li> Since allowing chess engines acting more independently chess GUIs may get loss to control engines</li>
+<li> Some popular chess GUIs don't support</li>
+<li> The majority of new chess engines don't support</li></ul>
+<h1><span class="mw-headline" id="Engines">Engines</span></h1>
+<ul><li> <a href="Category:WinBoard.html" title="Category:WinBoard">WinBoard Engines</a></li>
+<li> <a href="Category:XBoard.html" title="Category:XBoard">XBoard Engines</a></li></ul>
+<p><span id="GUI"></span>
+</p>
+<h1><span class="mw-headline" id="GUIs">GUIs</span></h1>
+<h2><span class="mw-headline" id="Native">Native</span></h2>
+<ul><li> <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a href="XBoard.html" title="XBoard">XBoard</a></li></ul>
+<h2><span class="mw-headline" id="Compatible">Compatible</span></h2>
+<ul><li> <a href="Arena.html" title="Arena">Arena</a></li>
+<li> <a href="ChessGUI.html" title="ChessGUI">ChessGUI</a></li>
+<li> <a href="ChessPartner.html" title="ChessPartner">ChessPartner</a></li>
+<li> <a href="ChessX.html" title="ChessX">ChessX</a></li>
+<li> <a href="Cute Chess.html" title="Cute Chess">Cute Chess</a></li>
+<li> <a class="new" href="index.php?title=EBoard&amp;action=edit&amp;redlink=1.html" title="EBoard (page does not exist)">EBoard</a></li>
+<li> <a class="new" href="index.php?title=Jose&amp;action=edit&amp;redlink=1.html" title="Jose (page does not exist)">jose</a></li>
+<li> <a href="PyChess.html" title="PyChess">PyChess</a></li>
+<li> <a href="SCID.html" title="SCID">SCID</a></li>
+<li> <a href="Scid vs. PC.html" title="Scid vs. PC">Scid vs. PC</a></li>
+<li> <a href="Scidb.html" title="Scidb">Scidb</a></li>
+<li> <a href="Banksia.html" title="Banksia">Banksia</a></li>
+<li> <a href="Banksia GUI.html" title="Banksia GUI">Banksia GUI</a></li></ul>
+<h1><span class="mw-headline" id="Utilities">Utilities</span></h1>
+<ul><li> <a href="InBetween.html" title="InBetween">InBetween</a></li>
+<li> <a href="PolyGlot.html" title="PolyGlot">PolyGlot</a></li>
+<li> <a href="Wb2UCI.html" title="Wb2UCI">Wb2UCI</a></li>
+<li> <a href="UCI2WB.html" title="UCI2WB">UCI2WB</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="CPW-Engine com.html" title="CPW-Engine com">CPW-Engine_com</a></li>
+<li> <a href="Engine Testing.html" title="Engine Testing">Engine Testing</a></li>
+<li> <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a></li>
+<li> <a class="new" href="index.php?title=Icsdrone&amp;action=edit&amp;redlink=1.html" title="Icsdrone (page does not exist)">icsdrone</a></li>
+<li> <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a href="UCI.html" title="UCI">UCI</a></li>
+<li> <a href="Vice.html#CECP" title="Vice">Vice XBoard/WiBoard-Videos</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/gnu.chess/browse frm/thread/40206c9937414b0d.html" rel="nofollow">xboard datapoint</a> by Paul Vaughan, <a href="GNU Chess.html#NewsGroup" title="GNU Chess">gnu.chess</a>, January 29, 1991</li>
+<li> <a class="external text" href="http://groups.google.com/group/gnu.chess/browse frm/thread/28d5826a078d091d.html" rel="nofollow">xboard v1.2</a> by Chris Sears, <a href="GNU Chess.html#NewsGroup" title="GNU Chess">gnu.chess</a>, June 14, 1991</li>
+<li> <a class="external text" href="http://groups.google.com/group/gnu.chess/browse frm/thread/4dc93bfa82e41a08.html" rel="nofollow">reading in a position and playing in xboard</a> by <a href="Lewis Stiller.html" title="Lewis Stiller">Lewis Stiller</a>, <a href="GNU Chess.html#NewsGroup" title="GNU Chess">gnu.chess</a>, February 20, 1992</li>
+<li> <a class="external text" href="http://groups.google.com/group/gnu.chess/browse frm/thread/a7d8892d10f66aff.html" rel="nofollow">Re: Accessing remote computers with WinBoard</a> by <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a>, <a href="GNU Chess.html#NewsGroup" title="GNU Chess">gnu.chess</a>, November 7, 1993</li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.board/browse frm/thread/63700b0fcfa8b39e.html" rel="nofollow">XBoard and WinBoard 3.4, patchlevel 1</a> by <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rec.games.board</a>, December 13 1995</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.misc/M-NkXvEu1DM/XeESczC85o0J" rel="nofollow">XBoard and WinBoard, version 3.6.0</a> by <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, May 09, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=26696" rel="nofollow">new autoplayer interface standard</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 15, 1998</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/su1X8FrRMPA/dMUBRY-RT4AJ" rel="nofollow">xboard/winboard interface documentation</a> by <a href="Jan Eric Larsson.html" title="Jan Eric Larsson">Jan Eric Larsson</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, November 27, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=62577" rel="nofollow">WinBoard and pondering under W98</a> by <a href="Frank Phillips.html" title="Frank Phillips">Frank Phillips</a>, <a href="CCC.html" title="CCC">CCC</a>, July 28, 1999 » <a href="Pondering.html" title="Pondering">Pondering</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/r5-Kdb4p4bE/tKCt-SwZKlgJ" rel="nofollow">Winboard for Dummies</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 30, 2001</li>
+<li> <a class="external text" href="http://groups.google.com/group/gnu.chess/browse frm/thread/3fffd13e5ba818aa.html" rel="nofollow">xboard and WinBoard 4.2.4 released</a> by <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a>, <a href="GNU Chess.html#NewsGroup" title="GNU Chess">gnu.chess</a>, December 10, 2001</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=39184.html" rel="nofollow">what is the importance of the ping command?</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 24, 2002 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=389667" rel="nofollow">Kiwi for Win98 and input-reading stuff</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a>, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2004 » <a href="Kiwi.html" title="Kiwi">Kiwi</a>, <a href="Windows.html" title="Windows">Windows</a>, <a href="Cpp.html" title="Cpp">C++</a>, <a href="Thread.html" title="Thread">Thread</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=1622.html" rel="nofollow">Safe I/O (repeated)</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, February 11, 2005</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=2&amp;t=1693&amp;p=7809.html" rel="nofollow">A question about kibitz</a> by <a class="new" href="index.php?title=Niyaz Khasanov&amp;action=edit&amp;redlink=1.html" title="Niyaz Khasanov (page does not exist)">Niyaz Khasanov</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, February 18, 2005</li>
+<li> <a class="external text" href="http://lists.gnu.org/archive/html/info-gnu-chess/2006-05/msg00004.html.html" rel="nofollow">Re: gnuchess/xboard protocol</a> by <a class="new" href="index.php?title=Hans Eric Sandstr%C3%B6m&amp;action=edit&amp;redlink=1.html" title="Hans Eric Sandström (page does not exist)">Hans Eric Sandström</a>, <a href="GNU Chess.html#NewsGroup" title="GNU Chess">gnu.org</a>, May 19, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=24327.html" rel="nofollow">Authors of WinBoard SMP engines, take note!</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2008 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a>, <a href="SMP.html" title="SMP">SMP</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=19&amp;t=50429.html" rel="nofollow">UCI protocol in winboard</a> by <a href="Engin %C3%9Cst%C3%BCn.html" title="Engin Üstün">Engin Üstün</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 24, 2009 » <a href="UCI.html" title="UCI">UCI</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30088.html" rel="nofollow">Adapter for non-standard chess engine to Winboard</a> by <a href="Carey Bloodworth.html" title="Carey Bloodworth">Carey</a>, <a href="CCC.html" title="CCC">CCC</a>, October 10, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32254.html" rel="nofollow">XBoard and epd tournament</a> by <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2010 » <a href="Engine Testing.html" title="Engine Testing">Engine Testing</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32952.html" rel="nofollow">Aquarium (other GUIs too?) and WB support =&gt; I am shocked</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=24&amp;t=51739.html" rel="nofollow">WinBoard protocol driver</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum - Chess Programming Lessons</a>, April 30, 2011</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=52093.html" rel="nofollow">Starting to use the Winboard Protocol</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, December 11, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42834.html" rel="nofollow">XBoard / WinBoard 4.6.0 released</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 11, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45325.html" rel="nofollow">Winboard protocol and fractional increments</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, September 25, 2012 » <a href="Time Management.html" title="Time Management">Time Management</a></li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46780.html" rel="nofollow">A few questions about CECP</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49683.html" rel="nofollow">WB protocol: describing how a piece moves</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 12, 2013</li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50903.html" rel="nofollow">WB protocol extension: thinking output</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 14, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53265.html" rel="nofollow">Handling xboard new game race condition in protover 1 engine</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, August 12, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53734.html" rel="nofollow">for Chess-variant authors</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, September 17, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54124.html" rel="nofollow">XBoard and chess variants</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54162.html" rel="nofollow">UCCI2WB</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54629.html" rel="nofollow">WB protocol specs</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 12, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57082.html" rel="nofollow">xboard softquit</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, July 26, 2015</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2871&amp;p=22300.html" rel="nofollow">Winboard 2 state diagram</a> by thevinenator, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, August 26, 2015 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57430.html" rel="nofollow">XBoard for Mac: Zippy problems</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2015 » <a href="Mac OS.html" title="Mac OS">Mac OS</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57446.html" rel="nofollow">Suggestions for XBoard documentation</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58714.html" rel="nofollow">CECP ('WB protocol') specs</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59784.html" rel="nofollow">Release of XBoard 4.9.0 soon</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59905.html" rel="nofollow">Chess on Android</a> by <a href="Pedro Castro.html" title="Pedro Castro">Pedro Castro</a>, <a href="CCC.html" title="CCC">CCC</a>, April 19, 2016 » <a href="Chess for Android.html" title="Chess for Android">Chess for Android</a>, <a href="DanaSah.html" title="DanaSah">DanaSah</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60239.html" rel="nofollow">CECP: Chess variants with dice</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, May 22, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61823.html" rel="nofollow">ChessGUI Timer Problem</a> by <a href="Dennis Sceviour.html" title="Dennis Sceviour">Dennis Sceviour</a>, <a href="CCC.html" title="CCC">CCC</a>, October 24, 2016 » <a href="ChessGUI.html" title="ChessGUI">ChessGUI</a></li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63525.html" rel="nofollow">Winboard variants online</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2017 » <a href="Chess.html#Variants" title="Chess">Chess Variants</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64411.html" rel="nofollow">Winboard questions</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64432.html" rel="nofollow">Winboard: Resigning?</a> by <a href="Rasmus Althoff.html" title="Rasmus Althoff">Rasmus Althoff</a>, <a href="CCC.html" title="CCC">CCC</a>, June 27, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=65454.html" rel="nofollow">Loading opening book and tablebases (xboard vs uci)</a> by <a href="Pedro Castro.html" title="Pedro Castro">Pedro Castro</a>, <a href="CCC.html" title="CCC">CCC</a>, October 15, 2017 » <a href="UCI.html" title="UCI">UCI</a></li></ul>
+<p><b>2018 ...</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66745.html" rel="nofollow">UCI vs Winboard question</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2018 » <a href="UCI.html" title="UCI">UCI</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70502.html" rel="nofollow">Winboard state machine diagram</a> by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71186.html" rel="nofollow">Xboard, CECP, how to handle long inits</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, July 04, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72019&amp;start=36.html" rel="nofollow">Re: PGN standard, its improvement and standardization</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2019 » from <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> to <a href="Protocols.html" title="Protocols">Protocols</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73592.html" rel="nofollow">UCI to CECP</a> by Fulvio, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2020 » <a href="UCI.html" title="UCI">UCI</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74028.html" rel="nofollow">Rolling dice</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, May 27, 2020 » <a href="EinStein w%C3%BCrfelt nicht!.html" title="EinStein würfelt nicht!">EinStein würfelt nicht!</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75239.html" rel="nofollow">Questions about CECP post-nopost (UCI info)</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, September 28, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75944.html" rel="nofollow">CECP "time" and "otim"</a> by <a href="Marcel Vanthoor.html" title="Marcel Vanthoor">Marcel Vanthoor</a>, <a href="CCC.html" title="CCC">CCC</a>, November 30, 2020 » <a href="Time Management.html" title="Time Management">Time Management</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76106.html" rel="nofollow">FRC in CECP</a> by lucasart, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2020 » <a href="Chess960.html" title="Chess960">Chess960</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://www.gnu.org/software/xboard/engine-intf.html" rel="nofollow">Chess Engine Communication Protocol - GNU Project - Free Software Foundation</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_Engine_Communication_Protocol" rel="nofollow">Chess Engine Communication Protocol from Wikipedia</a></li>
+<li> <a class="external text" href="http://hgm.nubati.net/CECP.html.html" rel="nofollow">Chess-Engine Communication Protocol</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup></li>
+<li> <a class="external text" href="http://home.hccnet.nl/h.g.muller/engine-intf.html.html" rel="nofollow">Chess Engine Communication Protocol</a> by <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> &amp; <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a></li>
+<li> <a class="external text" href="http://hgm.nubati.net/newspecs.html.html" rel="nofollow">Chess Engine Communication Protocol - New Specs</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li>
+<li> <a class="external text" href="http://hgm.nubati.net/news.html.html" rel="nofollow">XBoard News</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a></li></ul>
+<dl><dd> <a class="external text" href="http://hgm.nubati.net/XB-4.9.0/.html" rel="nofollow">What is new in XBoard/WinBoard 4.9.0?</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">H.G. Muller</a></dd></dl>
+<ul><li> <a class="external text" href="http://timmann.server269.com/xboard.html.html" rel="nofollow">Tim Mann's Chess Pages, XBoard and WinBoard</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.tim-mann.org/winboard/rshd-readme.txt.html" rel="nofollow">rshd-readme.txt</a> by <a href="Dan Newman.html" title="Dan Newman">Dan Newman</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></dd></dl>
+<ul><li> <a class="external text" href="http://www.mail-archive.com/bug-xboard@gnu.org/maillist.html.html" rel="nofollow">bug-xboard mail archive</a> </li>
+<li> <a class="external text" href="http://walkofmind.com/programming/chess/winboard x.htm.html" rel="nofollow">Tinkering with Winboard...</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a></li></ul>
+<dl><dd> <a class="external text" href="http://walkofmind.com/programming/chess/xboard.htm.html" rel="nofollow">Winboard/XBoard UML state diagram</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.horizonchess.com/FAQ/Winboard/index.html.html" rel="nofollow">FAQ on Winboard and Chess Engines</a> by <a href="Aaron Tay.html" title="Aaron Tay">Aaron Tay</a></li>
+<li> <a class="external text" href="http://www.oocities.org/siliconvalley/lab/6606/winboard.htm.html" rel="nofollow">Lyapko George's WinBoard related page</a> (outdated) by <a href="George Lyapko.html" title="George Lyapko">George Lyapko</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li>
+<li> <a class="external text" href="http://computer-chess.org/doku.php?id=winboard:faq:index.html" rel="nofollow">Winboard and Chess Engines FAQ</a> from <a href="Ron Murawski.html" title="Ron Murawski">Ron Murawski's</a> <a class="external text" href="http://computer-chess.org/doku.php?id=home.html" rel="nofollow">Computer-Chess Wiki</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewforum.php?f=19.html" rel="nofollow">WinBoard development and bugfixing Forum</a></li>
+<li> <a class="external text" href="http://web.archive.org/web/20020925204655fw /http://www.playwitharena.com/directory/interviews/interviews.htm.html" rel="nofollow">Arena, Interviews mit Prof. Dr. Robert Hyatt, Tim Mann und Martin Blume</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a> for <a href="ChessBits.html" title="ChessBits">ChessBits</a>, No. 18, May 2002 (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>) »  <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a>, <a href="Martin Blume.html" title="Martin Blume">Martin Blume</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://tim-mann.org/history.html.html" rel="nofollow">XBoard Project History</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://walkofmind.com/programming/chess/xboard.htm.html" rel="nofollow">Winboard/XBoard UML state diagram</a> by <a href="Alessandro Scotti.html" title="Alessandro Scotti">Alessandro Scotti</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70502.html" rel="nofollow">Winboard state machine diagram</a> by <a href="Harald L%C3%BC%C3%9Fen.html" title="Harald Lüßen">Harald Lüßen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2019</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://home.hccnet.nl/h.g.muller/engine-intf.html.html" rel="nofollow">Chess Engine Communication Protocol</a> by <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> &amp; <a href="Harm Geert Muller.html" title="Harm Geert Muller">H.G. Muller</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58714.html" rel="nofollow">CECP ('WB protocol') specs</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2015</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54629.html" rel="nofollow">WB protocol specs</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 12, 2014</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Remote_Shell" rel="nofollow">Remote Shell from Wikipedia</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://rshd.sourceforge.net/.html" rel="nofollow">Windows Implementation of RSHD</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46721.html" rel="nofollow">Tool to recreate PGN from winboard.debug?</a> by <a href="Sven Sch%C3%BCle.html" title="Sven Schüle">Sven Schüle</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2013</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=245615" rel="nofollow">3 interviews about engine protocols with T. Mann, R. Hyatt and M. Blume</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="CCC.html" title="CCC">CCC</a>, August 15, 2002</span>
+</li>
+</ol></div>
+<p><b><a href="Protocols.html" title="Protocols">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722123600
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.033 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 237/1000000
+Preprocessor generated node count: 438/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1603-0!canonical and timestamp 20240722123600 and revision id 25409
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chess_Engine_Communication_Protocol&amp;oldid=25409">https://www.chessprogramming.org/index.php?title=Chess_Engine_Communication_Protocol&amp;oldid=25409</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chess+Engine+Communication+Protocol&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chess Engine Communication Protocol.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chess Engine Communication Protocol&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chess Engine Communication Protocol.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chess Engine Communication Protocol&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chess Engine Communication Protocol&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chess Engine Communication Protocol.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chess Engine Communication Protocol.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chess Engine Communication Protocol&amp;oldid=25409.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chess Engine Communication Protocol&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 July 2021, at 09:30.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chess_Engine_Communication_Protocol&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.033","walltime":"0.035","ppvisitednodes":{"value":237,"limit":1000000},"ppgeneratednodes":{"value":438,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722123600","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

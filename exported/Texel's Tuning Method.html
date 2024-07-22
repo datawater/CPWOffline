@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Texel's Tuning Method - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Texel's_Tuning_Method","wgTitle":"Texel's Tuning Method","wgCurRevisionId":26396,"wgRevisionId":26396,"wgArticleId":627,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Texel's_Tuning_Method","wgRelevantArticleId":627,"wgRequestId":"Zp7D0zxGB7tcqRj0I5AfZwAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Texel_s_Tuning_Method rootpage-Texel_s_Tuning_Method skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Texel's Tuning Method</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a> * Texel's Tuning Method</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Texel sheep and gulls on Flat Holm.jpg.html"><img alt="" class="thumbimage" height="200" src="wikipedia/commons/thumb/2/24/Texel_sheep_and_gulls_on_Flat_Holm.jpg/300px-Texel_sheep_and_gulls_on_Flat_Holm.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Texel_sheep_and_gulls_on_Flat_Holm.jpg/450px-Texel_sheep_and_gulls_on_Flat_Holm.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Texel_sheep_and_gulls_on_Flat_Holm.jpg/600px-Texel_sheep_and_gulls_on_Flat_Holm.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Texel sheep and gulls on Flat Holm.jpg.html" title="Enlarge"></a></div>Texel and Gaviotas stay tuned on <a class="external text" href="https://en.wikipedia.org/wiki/Flat_Holm" rel="nofollow">Ynys Echni</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Texel's Tuning Method</b>,<br/>
+by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a> as applied to <a href="Texel.html#1.03" title="Texel">Texel 1.03</a> and following versions <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> is a concrete instance of a <a href="Automated Tuning.html#LogisticRegression" title="Automated Tuning">logistic regression</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . This page is a slightly edited reprint of a reply to <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> and subsequent postings in a <a href="CCC.html" title="CCC">CCC</a> discussion about <a href="Automated Tuning.html" title="Automated Tuning">automated tuning</a> initiated by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a> in January 2014 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> . As mentioned in a further reply <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> , a similar technique was already proposed by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a> in 2009, as applied to <a href="Gaviota.html" title="Gaviota">Gaviota</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> . 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Method"><span class="tocnumber">1</span> <span class="toctext">Method</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Advantages"><span class="tocnumber">2</span> <span class="toctext">Advantages</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Concerns"><span class="tocnumber">3</span> <span class="toctext">Concerns</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Results"><span class="tocnumber">4</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Future improvements"><span class="tocnumber">5</span> <span class="toctext">Future improvements</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Pseudo Code"><span class="tocnumber">6</span> <span class="toctext">Pseudo Code</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2009"><span class="tocnumber">8.1</span> <span class="toctext">2009</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2014"><span class="tocnumber">8.2</span> <span class="toctext">2014</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2015 ..."><span class="tocnumber">8.3</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2020 ..."><span class="tocnumber">8.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Method">Method</span></h1>
+<p>Take 64000 <a href="Chess Game.html" title="Chess Game">games</a> played at a fast <a href="Time Management.html" title="Time Management">time control</a> (such as 1s+0.08s/move) between the current and/or previous versions of the engine. Extract all <a href="Chess Position.html" title="Chess Position">positions</a> from those games, except positions within the <a href="Opening Book.html" title="Opening Book">opening book</a> and positions where the engine found a <a href="Score.html#MateScores" title="Score">mate score</a> during the game. This typically gives about 8.8 million positions which are stored as <a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">FEN</a> strings in a text file.
+</p><p>Define the average <a href="Evaluation.html" title="Evaluation">evaluation</a> <a class="external text" href="https://en.wikipedia.org/wiki/Mean_squared_error" rel="nofollow">error</a> E <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>:
+</p>
+<div class="floatnone"><a class="image" href="File:TexelTuneMathE.jpg.html"><img alt="TexelTuneMathE.jpg" height="71" src="images/1/18/TexelTuneMathE.jpg" style="vertical-align: text-bottom" width="376"/></a></div>
+<p>where:
+</p>
+<ul><li> N is the number of test positions.</li>
+<li> Ri is the result of the game corresponding to position i; 0 for black win, <b>0.5</b> for draw and <b>1</b> for white win.</li>
+<li> qi or qScore corresponding to position i, is the white relative <a href="Score.html" title="Score">score</a> from the <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>. The algorithm assumes the qScore function is <a class="external text" href="https://en.wikipedia.org/wiki/Deterministic_system" rel="nofollow">deterministic</a>. If <a href="Transposition Table.html" title="Transposition Table">transposition tables</a> or the <a href="History Heuristic.html" title="History Heuristic">history heuristic</a> is used in the qScore function this may not be the case.</li>
+<li> <div class="floatnone"><a class="image" href="File:TexelTuneMathSigmoid.jpg.html"><img alt="TexelTuneMathSigmoid.jpg" height="62" src="images/8/81/TexelTuneMathSigmoid.jpg" style="vertical-align: middle" width="277"/></a></div> <div class="floatright"><a href="http://wolfr.am/1al3d5B.html" rel="nofollow"><img alt="SigmoidTexelTune.gif" height="197" src="images/5/5e/SigmoidTexelTune.gif" width="300"/></a></div></li></ul>
+<dl><dd> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup></dd></dl>
+<ul><li> K is a scaling constant.</li></ul>
+<p>Compute the K that minimizes E. K is never changed again by the algorithm <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>.
+</p><p>If needed, <a class="external text" href="https://en.wikipedia.org/wiki/Code_refactoring" rel="nofollow">refactor</a> the source code so that the qScore function depends on a set of evaluation function <a class="external text" href="https://en.wikipedia.org/wiki/Parameter" rel="nofollow">parameters</a>
+</p>
+<div class="floatnone"><a class="image" href="File:TexelTuneMathParams.jpg.html"><img alt="TexelTuneMathParams.jpg" height="31" src="images/c/c0/TexelTuneMathParams.jpg" style="vertical-align: text-bottom" width="245"/></a></div>
+<p>The average error E is now a function of the M parameters. Find parameter values such that E is a <a class="external text" href="https://en.wikipedia.org/wiki/Maxima_and_minima" rel="nofollow">local minimum</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Parameter_space" rel="nofollow">parameter space</a>. The exact <a class="external text" href="https://en.wikipedia.org/wiki/Mathematical_optimization" rel="nofollow">optimization</a> method is not that important. It could for example use <a class="external text" href="https://en.wikipedia.org/wiki/Local_search_%28optimization%29" rel="nofollow">local search</a> varying one parameter at a time, the <a class="external text" href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm" rel="nofollow">Gauss-Newton method</a>, the <a class="external text" href="https://en.wikipedia.org/wiki/Conjugate_gradient_method" rel="nofollow">conjugate gradient method</a>, or a hybrid approach mixing those methods.
+</p><p>If the evaluation function parameters are all of integer type with finite range (which they typically are in a chess engine), the local search method is guaranteed to eventually terminate since there is only a finite number of elements in the parameter space. Also in this case the conventional <a class="external text" href="https://en.wikipedia.org/wiki/Gradient" rel="nofollow">gradient</a> isn't mathematically defined, but you can use <a class="external text" href="https://en.wikipedia.org/wiki/Difference_quotient" rel="nofollow">difference quotients</a> instead of the "real" gradient in the GN and CG methods.
+</p>
+<h1><span class="mw-headline" id="Advantages">Advantages</span></h1>
+<p>One big advantage of this method is that it can simultaneously optimize several hundreds of evaluation function parameters in a reasonable amount of time. The first step that collects a set of games does not take any extra time, because those games have already been played when previous changes to the engine were tested. The step that converts from <a href="Portable Game Notation.html" title="Portable Game Notation">PGN</a> to FEN only takes a few minutes. The time consuming step is to compute the local minimum. In my engine M is currently around 400 and computing the gradient takes around 25 minutes on a 16-core Dell T620 computer <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup> . A local minimum can usually be computed within 6 hours, faster if only small changes to the parameter values are needed.
+</p><p>While 6 hours may seem like a lot, consider how long it would take <a href="CLOP.html" title="CLOP">CLOP</a> to simultaneously optimize 400 parameters (assuming you have enough memory to actually do that). I have not worked out the math but I guess it would take at least ten years to get reliable results.
+</p><p>Another advantage is that no external source of <a href="Knowledge.html" title="Knowledge">knowledge</a> is needed. You don't need to find a large set of games played by engines or humans that are stronger than the engine you want to improve. While this may not be a practical advantage for the current <a href="Playing Strength.html" title="Playing Strength">strength</a> of my engine, I still find this property theoretically pleasing, somewhat similar to the concept of self <a class="external text" href="https://en.wikipedia.org/wiki/Calibration" rel="nofollow">calibration</a> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup> .
+</p><p>A third advantage is that the need for different evaluation terms to be "<a class="external text" href="https://en.wikipedia.org/wiki/Orthogonality#Statistics.2C_econometrics.2C_and_economics" rel="nofollow">orthogonal</a>" disappears, since the optimization will automatically deal with dependencies between evaluation terms.
+</p><p>A fourth advantage, compared to the method used by <a href="Amir Ban.html" title="Amir Ban">Amir Ban</a> to tune the <a href="Junior.html" title="Junior">Junior</a> evaluation function <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup> , is that my method does not need the implementation of a "drawishness" function in the chess engine.
+</p>
+<h1><span class="mw-headline" id="Concerns">Concerns</span></h1>
+<p>My biggest concern about this method is what is called <a class="external text" href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation" rel="nofollow">Correlation does not imply causation</a> in statistics. I don't have a specific example for chess, but the Wikipedia example about ice cream sales and drowning accidents is quite illuminating. It is a known fact that when ice cream sales increase, so does drowning accidents, but that does not imply that stopping ice cream sales would reduce the number of <a class="external text" href="https://en.wikipedia.org/wiki/Drowning" rel="nofollow">drowning</a> accidents. It is conceivable that the chess engine would learn to appreciate positional features that are correlated to increased winning chances, even though actively striving to reach such positions does not increase winning chances. Anyway the method does work in my engine, possibly because of the counter argument that "Correlation is not causation but it sure is a hint".
+</p><p>Another concern is that the chess engine will not be able to learn things that it does not understand at all. For example, assume the chess engine did not know how to win <a href="KBNK Endgame.html" title="KBNK Endgame">KBNK endings</a>, so all games leading to this endgame would end in a draw. Because of this E would tend to be smaller if the evaluation functions scored all KBNK endings as draws, so there is a risk the evaluation actually gets worse after optimization.
+</p><p>On the other hand, the algorithm can be expected to improve the engine's knowledge about things that it partially already knows, or knowledge about things that are good even if you don't know it. For example, assume the engine does not know that the bishop pair deserves a bonus. However, if the engine has general knowledge about mobility it is likely that it will win more than it loses anyway when it has the bishop pair advantage. Therefore the engine will be able to learn that the bishop pair deserves a bonus. If the algorithm is then repeated with a new set of games, the engine might learn that the bishop pair is even better when it knows that it should not unnecessarily trade a bishop.
+</p><p>It may also be argued that since more than one position is picked from each game (in fact about 140 positions per game on average), the result is invalid because there is a dependence between terms in the summation that defines E, but least squares theory in general assumes that different data points are independent. The way I see it, E has contributions from 64000 independent events and the fact that there are 140 times more terms in the summation is similar to what would happen if you solved a weighted least squares problem where the weights are determined by how often a particular type of position is present in typical games.
+</p><p>While it would probably be better (or at least equally good) to take one position each from 8.8 million different games, obtaining that many games would require more computation time than I am willing to spend. I believe 64000 independent events is more than enough to estimate 400 parameters anyway.
+</p>
+<h1><span class="mw-headline" id="Results">Results</span></h1>
+<p>When I started using this method, I calculated that K=1.13 best matched the then current evaluation function in my engine. I have not changed the value of K since then and do not intend to change it in the future either, since it is just an arbitrary scaling constant.
+</p><p>Since 2014-01-01 when the first evaluation change based on this algorithm was included in my engine, the Elo improvements caused by evaluation weight tuning (measured using 32000 games at 1+0.08) have been:
+</p>
+<pre>24.6 + 4.0 + 5.8 + 2.8 + 12.8 + 39.4 + 10.2 = 99.6 Elo
+</pre>
+<p>The 24.6 improvement was when I made most of the evaluation parameters accessible to the optimization algorithm. The next three improvements came when I in three stages exposed more evaluation parameters to the algorithm. The 12.8 improvement came when I re-created the set of test positions based on the most recently played games.
+</p><p>The 39.4 improvement came when I changed the criteria for which positions to include in the test set. Initially I removed also all positions where the q-search score deviated too much from the search score in the actual game (which conveniently is saved by <a href="Cutechess-cli.html" title="Cutechess-cli">cutechess-cli</a> in PGN comments). I believed that including those positions would just raise the "noise level" of the data and cause a worse solution to be found. Apparently this is not the case. I now believe that even though including these positions causes noise, the q-search function has to deal with them all the time in real games, so trying to learn how those positions should be evaluated on average is still beneficial.
+</p><p>The 10.2 improvement came when I added separate queen piece square tables for middle game and end game. Previously texel only had one queen PST, which had horizontal, vertical and diagonal symmetry.
+</p><p>The last improvement was made after the texel 1.03 release. The others are included in the 1.03 release and I believe they are responsible for most of the <a href="Playing Strength.html" title="Playing Strength">strength</a> increase in texel 1.03.
+</p><p>I don't know if the large strength increase was made possible because the method is good or because the texel evaluation function was particularly bad before I started using this algorithm. Anyway I don't expect to be able to get equally big improvements in the future as I got in texel 1.03, but I hope the algorithm will nevertheless help finding a fair amount of smaller evaluation improvements.
+</p>
+<h1><span class="mw-headline" id="Future_improvements">Future improvements</span></h1>
+<p>Currently local search is used to find a local optimum. I believe it would be faster to initially use a few Gauss-Newton iterations and then switch to local search when the remaining corrections are small.
+</p><p>A number of evaluation parameters have values that appear quite unintuitive. For example, the value of a white queen on b7/g7 (and a black queen on b2/g2 because of symmetry) in the middle game has a value of -128<a href="Centipawns.html" title="Centipawns">cp</a>. I have not investigated the cause yet, but I believe the explanation is that almost always when a white/black queen is on b7/b2 in the early middle game, it is because it has just eaten the "<a class="external text" href="https://en.wikipedia.org/wiki/Poisoned_Pawn_Variation" rel="nofollow">poisoned pawn</a>", and the opponent is about to win back a pawn by playing Rb1 and Rxb7. If placing the queen on b7/g7/b2/g2 for other reasons is much less common, the optimization algorithm will assign a large penalty for a queen on these squares. While this improves the evaluation function in the average case, it will also cause large evaluation errors for the uncommon cases that do not fall under the "poisoned pawn" category. Implementing a more specific rule about poisoned pawns could be profitable.
+</p><p>Other examples of odd parameter values include a white king on b8 which in the middle game gives white a 200cp bonus, a white knight on a8 in the middle game which gives white a 223cp penalty, the pawn race bonus which is only 157cp even though it is supposed to trigger only when one side can promote a queen and the opponent can not.
+</p><p>Investigating the cause for these and other odd looking parameter values may suggest further improvements to the evaluation function.
+</p><p>Another interesting approach is to apply data mining techniques on the residuals to try to discover missing knowledge in the evaluation function. I don't know how successful this approach will be. It may be more profitable to test different variants of already known chess evaluation principles instead.
+</p>
+<h1><span class="mw-headline" id="Pseudo_Code">Pseudo Code</span></h1>
+<p>of a local optimization routine <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>
+</p>
+<pre>
+vector&lt;int&gt; localOptimize(const vector&lt;int&gt;&amp; initialGuess) {
+   const int nParams = initialGuess.size();
+   double bestE = E(initialGuess);
+   vector&lt;int&gt; bestParValues = initialGuess;
+   bool improved = true;
+   while ( improved ) {
+      improved = false;
+      for (int pi = 0; pi &lt; nParams; pi++) {
+         vector&lt;int&gt; newParValues = bestParValues;
+         newParValues[pi] += 1;
+         double newE = E(newParValues);
+         if (newE &lt; bestE) {
+            bestE = newE;
+            bestParValues = newParValues;
+            improved = true;
+         } else {
+            newParValues[pi] -= 2;
+            newE = E(newParValues);
+            if (newE &lt; bestE) {
+               bestE = newE;
+               bestParValues = newParValues;
+               improved = true;
+            }
+         }
+      }
+   }
+   return bestParValues;
+}
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Arasan.html#Tuning" title="Arasan">Arasan's Tuning</a></li>
+<li> <a href="Eval Tuning in Deep Thought.html" title="Eval Tuning in Deep Thought">Eval Tuning in Deep Thought</a></li>
+<li> <a href="Michael Buro.html#GLEM" title="Michael Buro">GLEM</a> by <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a></li>
+<li> <a href="Gosu.html" title="Gosu">Gosu</a></li>
+<li> <a href="Point Value by Regression Analysis.html" title="Point Value by Regression Analysis">Point Value by Regression Analysis</a></li>
+<li> <a href="RuyTune.html" title="RuyTune">RuyTune</a></li>
+<li> <a href="Wukong JS.html#TexelTuningVideo" title="Wukong JS">Texel's Tuning Video | Wukong JS</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a></li>
+<li> <a href="Stockfish%27s Tuning Method.html" title="Stockfish's Tuning Method">Stockfish's Tuning Method</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2009">2009</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27266&amp;postdays=0&amp;postorder=asc&amp;topic view=&amp;start=11.html" rel="nofollow">Re: Insanity... or Tal style?</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, April 02, 2009 » <a href="Gaviota.html" title="Gaviota">Gaviota</a></li></ul>
+<h2><span class="mw-headline" id="2014">2014</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823.html" rel="nofollow">How Do You Automatically Tune Your Evaluation Tables</a> by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2014</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=10.html" rel="nofollow">Re: How Do You Automatically Tune Your Evaluation Tables</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2014</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=26.html" rel="nofollow">The texel evaluation function optimization algorithm</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2014</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=27.html" rel="nofollow">Re: The texel evaluation function optimization algorithm</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2014 » <a class="external text" href="https://en.wikipedia.org/wiki/Cross_entropy" rel="nofollow">Cross-entropy from Wikipedia</a> </dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=40.html" rel="nofollow">Re: The texel evaluation function optimization algorithm</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, February 05, 2014</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=50823&amp;start=70.html" rel="nofollow">Re: The texel evaluation function optimization algorithm</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, Mar 04, 2014 » <a class="external text" href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" rel="nofollow">Regularization from Wikipedia</a> </dd></dl>
+<ul><li> <a class="external text" href="https://groups.google.com/forum/#!topic/fishcooking/QJPG9MS8tCA" rel="nofollow">Texel tuning method</a> by vdb..., <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, January 31, 2014 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53657.html" rel="nofollow">Tune cut margins with Texel/gaviota tuning method</a> by <a href="Fabio Gobbato.html" title="Fabio Gobbato">Fabio Gobbato</a>, <a href="CCC.html" title="CCC">CCC</a>, September 11, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54021.html" rel="nofollow">A little improvement to the Texel's tuning method</a> by <a href="Fabio Gobbato.html" title="Fabio Gobbato">Fabio Gobbato</a>, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55265.html" rel="nofollow">Optimization algorithm for the Texel/Gaviota tuning method</a> by <a href="Fabio Gobbato.html" title="Fabio Gobbato">Fabio Gobbato</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55621.html" rel="nofollow">Experiments with eval tuning</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2015 » <a href="Arasan.html" title="Arasan">Arasan</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55696.html" rel="nofollow">txt: automated chess engine tuning</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 18, 2015 <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55696&amp;start=108.html" rel="nofollow">Re: txt: automated chess engine tuning</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei S. Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, February 15, 2016 » <a href="SmarThink.html" title="SmarThink">SmarThink</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168&amp;start=30.html" rel="nofollow">Re: Piece weights with regression analysis (in Russian)</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="CCC.html" title="CCC">CCC</a>, May 03, 2015 » <a href="Point Value by Regression Analysis.html" title="Point Value by Regression Analysis">Point Value by Regression Analysis</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168&amp;start=36.html" rel="nofollow">Re: Piece weights with regression analysis (in Russian)</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 2015 » <a href="Automated Tuning.html#LogisticRegression" title="Automated Tuning">Logistic Regression</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57700.html" rel="nofollow">test positions for texel tuning</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, September 20, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58298.html" rel="nofollow">Why computing K that minimizes the sigmoid func. value?...</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2015</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58298&amp;start=43.html" rel="nofollow">Re: Why computing K that minimizes the sigmoid func. value?</a> by <a href="Thomas Kolarik.html" title="Thomas Kolarik">Thomas Kolarik</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2015 » <a href="Nirvanachess.html" title="Nirvanachess">Nirvanachess</a></dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58298&amp;start=46.html" rel="nofollow">Re: Why computing K that minimizes the sigmoid func. value?</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2015</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58298&amp;start=52.html" rel="nofollow">Re: Why computing K that minimizes the sigmoid func. value?</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, December 07, 2015 » <a href="Andscacs.html" title="Andscacs">Andscacs</a></dd></dl>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2987.html" rel="nofollow">Tuning</a> by ppyvabw, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, June 11, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60902.html" rel="nofollow">GreKo 2015 ML: tuning evaluation (article in Russian)</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">Vladimir Medvedev</a>, <a href="CCC.html" title="CCC">CCC</a>, July 22, 2016 » <a href="GreKo.html" title="GreKo">GreKo</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61427.html" rel="nofollow">training data to use with Texel Tuning method</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, September 14, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61856.html" rel="nofollow">Python script for TTM</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2016 » <a href="Python.html" title="Python">Python</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61861.html" rel="nofollow">A database for learning evaluation functions</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2016 » <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a>, <a href="Evaluation.html" title="Evaluation">Evaluation</a>, <a href="Learning.html" title="Learning">Learning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62440.html" rel="nofollow">Texel tuning - some issues</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2016</li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63408.html" rel="nofollow">improved evaluation function</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 11, 2017 » <a href="Zurichess.html" title="Zurichess">Zurichess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63542.html" rel="nofollow">Texel tuning method with a small number of positions</a> by <a href="Pawel Koziol.html" title="Pawel Koziol">Pawel Koziol</a>, <a href="CCC.html" title="CCC">CCC</a>, March 23, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64189.html" rel="nofollow">Texel tuning method question</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 2017</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64189&amp;start=35.html" rel="nofollow">Re: Texel tuning method question</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2017</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64189&amp;start=42.html" rel="nofollow">Re: Texel tuning method question</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, July 20, 2017 » <a href="Python.html" title="Python">Python</a></dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64189&amp;start=46.html" rel="nofollow">Re: Texel tuning method question</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2017</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64310.html" rel="nofollow">Impressive Texel-tuning results</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2017 » <a href="Chess22k.html" title="Chess22k">chess22k</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64313.html" rel="nofollow">Cooking Cheese with Texel's tuning method</a> by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2017 » <a href="Cheese.html" title="Cheese">Cheese</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64338.html" rel="nofollow">cursed parameters in Texel tuning</a> by <a href="Pawel Koziol.html" title="Pawel Koziol">Pawel Koziol</a>, <a href="CCC.html" title="CCC">CCC</a>, June 18, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65290.html" rel="nofollow">Troubles with Texel Tuning</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, September 26, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65538.html" rel="nofollow">Texel Tuning - Success!</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, October 24, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65799.html" rel="nofollow">tuning for the uninformed</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, November 23, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65881.html" rel="nofollow">how to create a labeled epd from pgn?</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, December 02, 2017 » <a href="Extended Position Description.html" title="Extended Position Description">EPD</a>, <a href="Portable Game Notation.html" title="Portable Game Notation">PGN</a></li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67614.html" rel="nofollow">texel tuning</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, June 01, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67893.html" rel="nofollow">Texel Tuning</a> by <a href="Tam%C3%A1s Kuzmics.html" title="Tamás Kuzmics">Tamás Kuzmics</a>, <a href="CCC.html" title="CCC">CCC</a>, July 03, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68326.html" rel="nofollow">Texel tuning speed</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69194.html" rel="nofollow">Texel tuning for piece values</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2018</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74221.html" rel="nofollow">Tool and data for Texel Tuning</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, June 18, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74416.html" rel="nofollow">Question on Texel's Tuning Method</a> by Josh Odom, <a href="CCC.html" title="CCC">CCC</a>, July 08, 2020 <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74877.html" rel="nofollow">Evaluation &amp; Tuning in Chess Engines</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2020 » <a href="Ethereal.html" title="Ethereal">Ethereal</a></li></ul>
+<p><b>2021</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76238.html" rel="nofollow">Help with Texel's tuning</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 05, 2021</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76238&amp;start=15.html" rel="nofollow">Re: Help with Texel's tuning</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2021 » <a href="Wukong JS.html" title="Wukong JS">Wukong JS</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76265.html" rel="nofollow">Tapered Evaluation and MSE (Texel Tuning)</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, January 10, 2021 » <a href="Tapered Eval.html" title="Tapered Eval">Tapered Eval</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76288.html" rel="nofollow">Training data</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76380.html" rel="nofollow">Texel tuning variant</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76465.html" rel="nofollow">Reinforcement learning project</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2021 » <a href="Reinforcement Learning.html" title="Reinforcement Learning">Reinforcement Learning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77420.html" rel="nofollow">A hybrid of SPSA and local optimization</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, June 01, 2021 » <a href="SPSA.html" title="SPSA">SPSA</a></li></ul>
+<p><b>2022</b>
+</p>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79049&amp;start=127" rel="nofollow">Re: Devlog of Leorik - A.k.a. how to tune high-quality PSTs from scratch (material values) in 20 seconds</a> by <a href="Thomas Jahn.html" title="Thomas Jahn">Thomas Jahn</a>, <a href="CCC.html" title="CCC">CCC</a>, March 28, 2022 » <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a>, <a href="Piece-Square Tables.html" title="Piece-Square Tables">Piece-Square Tables</a>, <a href="Leorik.html" title="Leorik">Leorik</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_regression" rel="nofollow">Logistic regression from Wikipedia</a></li>
+<li> <a class="external text" href="http://macechess.blogspot.de/2014/03/the-texel-way-of-tuning 10.html.html" rel="nofollow">The texel way of tuning</a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a>, <a class="external text" href="http://macechess.blogspot.de/.html" rel="nofollow">mACE Chess</a>, March 10, 2014 » <a href="ICE.html" title="ICE">iCE</a></li>
+<li> <a class="external text" href="http://macechess.blogspot.de/2014/03/some-more-tuning-results.html.html" rel="nofollow">Some more tuning results</a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a>, <a class="external text" href="http://macechess.blogspot.de/.html" rel="nofollow">mACE Chess</a>, March 22, 2014</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/NEWUOA" rel="nofollow">NEWUOA from Wikipedia</a> <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup></li>
+<li> <a class="external text" href="https://bitbucket.org/zurichess/txt" rel="nofollow">zurichess/txt — Bitbucket</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a></li>
+<li> <a class="external text" href="https://habrahabr.ru/post/305604/" rel="nofollow">Самообучение шахматной программы / Хабрахабр</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">Vladimir Medvedev</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Habrahabr" rel="nofollow">Habrahabr</a>, July 21, 2016 (Russian) <a class="external text" href="https://translate.google.com/translate?sl=ru&amp;tl=en&amp;js=y&amp;prev=_t&amp;hl=de&amp;ie=UTF-8&amp;u=https%3A%2F%2Fhabrahabr.ru%2Fpost%2F305604%2F&amp;edit-text=" rel="nofollow">translated</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Google_Translate" rel="nofollow">Google Translate</a> » <a href="GreKo.html" title="GreKo">GreKo</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Texel_%28sheep%29" rel="nofollow">Texel sheep</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Gull" rel="nofollow">gulls</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Flat_Holm" rel="nofollow">Flat Holm Island</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Wales" rel="nofollow">Wales</a>, Photo by <a class="external text" href="http://www.flickr.com/people/8007352@N06.html" rel="nofollow">Sam Whitfield</a>, March 20, 2010, <a class="external text" href="http://commons.wikimedia.org/wiki/Category:Texel %28sheep%29.html" rel="nofollow">Category:Texel (sheep) - Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=555522&amp;t=50823.html" rel="nofollow">The texel evaluation function optimization algorithm</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2014 » <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168&amp;start=36.html" rel="nofollow">Re: Piece weights with regression analysis (in Russian)</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 2015</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=10.html" rel="nofollow">Re: How Do You Automatically Tune Your Evaluation Tables</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2014</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823.html" rel="nofollow">How Do You Automatically Tune Your Evaluation Tables</a> by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2014</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=28.html" rel="nofollow">Re: The texel evaluation function optimization algorithm</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, January 31, 2014</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27266&amp;postdays=0&amp;postorder=asc&amp;topic view=&amp;start=11.html" rel="nofollow">Re: Insanity... or Tal style?</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, April 02, 2009</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Partition_of_sums_of_squares" rel="nofollow">Partition of sums of squares - Wikipedia</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58298&amp;start=46.html" rel="nofollow">Re: Why computing K that minimizes the sigmoid func. value?</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2015</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Sigmoid_function" rel="nofollow">Sigmoid function from Wikipedia</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Logistic_function" rel="nofollow">Logistic function from Wikipedia</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text">see also winning probability W in <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Pawn Advantage, Win Percentage, and Elo</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://wolfr.am/1al3d5B.html" rel="nofollow">log-linear 1 / (1 + 10^(-s/4)) , s=-10 to 10</a> plot by <a class="external text" href="https://en.wikipedia.org/wiki/Wolfram_Alpha" rel="nofollow">Wolfram Alpha</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55621&amp;start=4.html" rel="nofollow">Re: Experiments with eval tuning</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2015</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58298.html" rel="nofollow">Why computing K that minimizes the sigmoid func. value?...</a> by <a href="Michael Hoffmann.html" title="Michael Hoffmann">Michael Hoffmann</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2015</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.zdnet.com/dell-poweredge-t620-review-7000003879/.html" rel="nofollow">Dell PowerEdge T620 review | ZDNet</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.selfcalibration.com/.html" rel="nofollow">What is Self-Calibration?</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a href="Amir Ban.html" title="Amir Ban">Amir Ban</a> (<b>2012</b>). <i><a class="external text" href="http://www.ratio.huji.ac.il/node/2362.html" rel="nofollow">Automatic Learning of Evaluation, with Applications to Computer Chess</a></i>. Discussion Paper 613, <a class="external text" href="https://en.wikipedia.org/wiki/Hebrew_University_of_Jerusalem" rel="nofollow">The Hebrew University of Jerusalem</a> - Center for the Study of Rationality, <a class="external text" href="https://en.wikipedia.org/wiki/Givat_Ram" rel="nofollow">Givat Ram</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=40.html" rel="nofollow">Re: The texel evaluation function optimization algorithm</a> by <a href="Peter %C3%96sterlund.html" title="Peter Österlund">Peter Österlund</a>, <a href="CCC.html" title="CCC">CCC</a>, February 05, 2014</span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="https://bitbucket.org/brtzsnr/txt" rel="nofollow">brtzsnr / txt — Bitbucket</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Central_limit_theorem" rel="nofollow">Central limit theorem from Wikipedia</a></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50823&amp;start=94.html" rel="nofollow">Re: The texel evaluation function optimization algorithm</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, March 12, 2014</span>
+</li>
+</ol></div>
+<p><b><a href="Automated Tuning.html" title="Automated Tuning">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722183213
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.103 seconds
+Real time usage: 0.789 seconds
+Preprocessor visited node count: 376/1000000
+Preprocessor generated node count: 802/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:627-0!canonical and timestamp 20240722183212 and revision id 26396
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Texel%27s_Tuning_Method&amp;oldid=26396">https://www.chessprogramming.org/index.php?title=Texel%27s_Tuning_Method&amp;oldid=26396</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Texel%27s+Tuning+Method&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Texel%27s Tuning Method.html" title="View the content page [c]">Page</a></span></li>
+<li id="ca-talk"><span><a accesskey="t" href="Talk:Texel%27s Tuning Method.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Texel%27s Tuning Method.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Texel%27s Tuning Method&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Texel%27s Tuning Method&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Texel%27s Tuning Method.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Texel%27s Tuning Method.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Texel%27s Tuning Method&amp;oldid=26396.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Texel%27s Tuning Method&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 28 March 2022, at 21:06.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Texel%27s_Tuning_Method&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.103","walltime":"0.789","ppvisitednodes":{"value":376,"limit":1000000},"ppgeneratednodes":{"value":802,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722183213","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

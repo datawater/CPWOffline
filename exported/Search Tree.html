@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Search Tree - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Search_Tree","wgTitle":"Search Tree","wgCurRevisionId":24168,"wgRevisionId":24168,"wgArticleId":949,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Piet Mondrian","Jan Garbarek","Eberhard Weber"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Search_Tree","wgRelevantArticleId":949,"wgRequestId":"Zp7DrQimFOpf72eNuzJXpAAAAAA","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.FenTT.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Search_Tree rootpage-Search_Tree skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Search Tree</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * Tree</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Piet Mondrian, 1911, Gray Tree (De grijze boom), oil on canvas, 79.7 x 109.1 cm, Gemeentemuseum Den Haag, Netherlands.jpg.html"><img alt="" class="thumbimage" height="217" src="wikipedia/commons/thumb/8/80/Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg/300px-Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg/450px-Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/8/80/Piet_Mondrian%2C_1911%2C_Gray_Tree_%28De_grijze_boom%29%2C_oil_on_canvas%2C_79.7_x_109.1_cm%2C_Gemeentemuseum_Den_Haag%2C_Netherlands.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Piet Mondrian, 1911, Gray Tree (De grijze boom), oil on canvas, 79.7 x 109.1 cm, Gemeentemuseum Den Haag, Netherlands.jpg.html" title="Enlarge"></a></div><a href="Category:Piet Mondrian.html" title="Category:Piet Mondrian">Piet Mondrian</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Gray_Tree" rel="nofollow">Gray Tree</a>, 1912 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>The <b>Search Tree</b> as part of the <a class="external text" href="https://en.wikipedia.org/wiki/Game_tree" rel="nofollow">game tree</a> is a dynamical, hierarchical data-structure, a <a class="external text" href="https://en.wikipedia.org/wiki/Graph_%28mathematics%29#Directed_graph" rel="nofollow">directed graph</a> of <a href="Node.html" title="Node">nodes</a>, also called <a class="external text" href="https://en.wikipedia.org/wiki/Vertex_%28graph_theory%29" rel="nofollow">vertices</a> or <a class="external text" href="https://en.wikipedia.org/wiki/State_diagram" rel="nofollow">states</a>, connected by directed <b>edges</b>, also called <b>arcs</b>, or <a class="external text" href="https://en.wikipedia.org/wiki/State_transition_table" rel="nofollow">state transitions</a>. In the game of chess, nodes represent the alternating white and black to move <a href="Chess Position.html" title="Chess Position">chess positions</a>, and directed edges represent the alternating white and black <a href="Moves.html" title="Moves">moves</a>. 
+</p><p>Opposed to the wooden <a class="external text" href="https://en.wikipedia.org/wiki/Tree" rel="nofollow">plants</a>, which are due to their similar structure <a class="external text" href="https://en.wikipedia.org/wiki/Metaphor" rel="nofollow">metaphor</a> of the search tree, where the <a class="external text" href="https://en.wikipedia.org/wiki/Root" rel="nofollow">root</a> is inside the bottom ground, the root of a search tree is most often illustrated from the top down to the leaves at the bottom. Due to our text-flow from top to bottom (after left to right), this might considered as <a href="Endianness.html" title="Endianness">endianness</a> of the search tree illustration. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Alpha-Beta Tree"><span class="tocnumber">1</span> <span class="toctext">Alpha-Beta Tree</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Topology"><span class="tocnumber">2</span> <span class="toctext">Topology</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Transpositions"><span class="tocnumber">3</span> <span class="toctext">Transpositions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Cycles"><span class="tocnumber">4</span> <span class="toctext">Cycles</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Tree walk"><span class="tocnumber">5</span> <span class="toctext">Tree walk</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Minimal Search Trees"><span class="tocnumber">6</span> <span class="toctext">Minimal Search Trees</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Minimal Alpha-Beta Tree"><span class="tocnumber">6.1</span> <span class="toctext">Minimal Alpha-Beta Tree</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Minimal PV Tree"><span class="tocnumber">6.2</span> <span class="toctext">Minimal PV Tree</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Publications"><span class="tocnumber">8</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Forum Posts"><span class="tocnumber">9</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">10</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Alpha-Beta_Tree">Alpha-Beta Tree</span></h1>
+<div class="floatnone"><a href="http://www.ics.uci.edu/%7Eeppstein/180a/970422.html.html" rel="nofollow"><img alt="Deep-prune.gif" class="thumbborder" height="476" src="images/6/65/Deep-prune.gif" style="vertical-align: text-bottom" width="480"/></a></div>
+<p>An <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> Search Tree <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>
+</p>
+<h1><span class="mw-headline" id="Topology">Topology</span></h1>
+<p>The <a href="Root.html" title="Root">root</a> of the search tree is the position we like to evaluate to find the <a href="Best Move.html" title="Best Move">best move</a>. Leaves are either terminal nodes (mate, stalemate) or nodes which has been assigned a heuristic value, where the desired <a href="Depth.html" title="Depth">depth</a> from the root is accomplished. 
+</p>
+<ul><li> <a href="Root.html" title="Root">Root Node</a></li>
+<li> <a href="Leftmost Node.html" title="Leftmost Node">Leftmost Node</a></li>
+<li> <a href="Sibling Node.html" title="Sibling Node">Sibling Node</a></li>
+<li> <a href="Interior Node.html" title="Interior Node">Interior Node</a></li>
+<li> <a href="Leaf Node.html" title="Leaf Node">Leaf Node</a></li>
+<li> <a href="Terminal Node.html" title="Terminal Node">Terminal Node</a></li>
+<li> <a href="Branching Factor.html" title="Branching Factor">Branching Factor</a></li></ul>
+<h1><span class="mw-headline" id="Transpositions">Transpositions</span></h1>
+<p>Because of <a href="Transposition.html" title="Transposition">transpositions</a> due to different move sequences, nodes inside the tree may occur from various ancestors - even within a different number of moves. A common sample from the <a class="external text" href="https://en.wikipedia.org/wiki/Sicilian_Defence#Sveshnikov_Variation:_4...Nf6_5.Nc3_e5" rel="nofollow">Sveshnikov Variation</a> in the Sicilian:
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">  <br/>   <br/>     <br/>     <br/>       <br/>       <br/>  <br/>   <br/></div><div class="pcfg">♜ ♝♛♚♝ ♜<br/>♟♟   ♟♟♟<br/>  ♞♟ ♞  <br/> ♘  ♟ ♗ <br/>    ♙   <br/>  ♘     <br/>♙♙♙  ♙♙♙<br/>♖  ♕♔♗ ♖<br/></div></div></td></tr></table>
+<p>1. e4 c5 2. Nf3 d6 3. d4 cxd 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e5 7. Ndb5<br/>
+1. e4 c5 2. Nc3 e6 3. Nf3 Nc6 4. d4 cxd 5. Nxd4 Nf6 6. Ndb5 d6 7. Bf4 e5 8 Bg5
+<span id="Cycles"></span>
+</p>
+<h1><span class="mw-headline" id="Cycles">Cycles</span></h1>
+<p>The search tree may contain various cycles, since both sides may <a href="Repetitions.html" title="Repetitions">repeat</a> a former position with the minimum of two <a href="Reversible Moves.html" title="Reversible Moves">reversible moves</a> each, or four <a href="Ply.html" title="Ply">plies</a>. Cycles are usually eliminated and not searched twice, which results in searching a <a class="external text" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" rel="nofollow">directed acyclic graph</a> (DAG).
+</p>
+<h1><span class="mw-headline" id="Tree_walk">Tree walk</span></h1>
+<p>Whether the search tree has to reside in memory the whole search, depends on which algorithm is used to <a class="external text" href="https://en.wikipedia.org/wiki/Tree_traversal" rel="nofollow">traverse</a> and expand it. So called <a href="Depth-First.html" title="Depth-First">Depth-First</a> search algorithms, like <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a>, starts at the root and explores as far as possible along each branch before backtracking, and only has to keep one path from the root to the current position in memory. <a href="Best-First.html" title="Best-First">Best-First</a> approaches build a search-tree by visiting and expanding the most promising nodes first.
+<span id="MinimalGameTree"></span>
+</p>
+<h1><span class="mw-headline" id="Minimal_Search_Trees">Minimal Search Trees</span></h1>
+<p>Minimal Search Trees require optimal move ordering in <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> or its enhancements. Of course, this goal requires an <a href="Oracle.html" title="Oracle">oracle</a>, since we don't know the best moves in advance - otherwise we wouldn't search at all. Thus rarely the expected <a href="Node Types.html" title="Node Types">Node Types</a> don't behave as expected, but Cut-Nodes don't fail high, because their All-Node child fails high instead. Anyway, due to <a href="Iterative Deepening.html" title="Iterative Deepening">Iterative Deepening</a> with <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a>, <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a> is already quite good, so this occurs quite rarely. Often, if the first move on an expected Cut-Node fails to cut, there are still other moves which do the cut.
+</p>
+<h2><span class="mw-headline" id="Minimal_Alpha-Beta_Tree">Minimal Alpha-Beta Tree</span></h2>
+<p>A perfectly ordered Tree, <a href="Node Types.html#ALL" title="Node Types">All-Nodes</a> (A) need to consider all successors, <a href="Node Types.html#CUT" title="Node Types">Cut-Nodes</a> (C) only the one which already refutes the opponent move.
+</p>
+<pre>
+                (A)
+               / | \
+             /   |   \
+           /     |     \
+         /       |       \
+       /         |         \
+     [A]        [C]        [C]
+    / | \        |          |
+   /  |  \       |          |
+ (A) (C) (C)    (A)        (A)
+ /|\  |   |     /|\        /|\
+[ACC][A] [A]   [CCC]      [CCC]
+</pre>
+<h2><span class="mw-headline" id="Minimal_PV_Tree">Minimal PV Tree</span></h2>
+<p>A minimal, perfectly ordered search tree, with <a href="Donald Knuth.html" title="Donald Knuth">Knuth's</a> <a href="Node Types.html" title="Node Types">Node Types</a>. Only the <a href="Node Types.html#PV" title="Node Types">PV-Nodes</a> (P) are searched with an open alpha-beta window. <a href="Node Types.html#CUT" title="Node Types">Cut-Nodes</a> as children or sibling of PV-Nodes require a <a href="Scout.html" title="Scout">Scout-search</a>, to prove the nodes are greater or equal to beta. An <a href="Node Types.html#ALL" title="Node Types">All-Node</a> as successor of Cut-Nodes has to consider all moves to prove no move will cause a <a href="Beta-Cutoff.html" title="Beta-Cutoff">beta-cutoff</a>.
+</p>
+<pre>
+                (P)
+               / | \
+             /   |   \
+           /     |     \
+         /       |       \
+       /         |         \
+     [P]        [C]        [C]
+    / | \        |          |
+   /  |  \       |          |
+ (P) (C) (C)    (A)        (A)
+ /|\  |   |     /|\        /|\
+[PCC][A] [A]   [CCC]      [CCC]
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Conspiracy Numbers.html" title="Conspiracy Numbers">Conspiracy Numbers</a></li>
+<li> <a href="Graph History Interaction.html" title="Graph History Interaction">Graph History Interaction</a></li>
+<li> <a href="NegaScout.html" title="NegaScout">NegaScout</a> or <a href="Principal Variation Search.html" title="Principal Variation Search">Principal Variation Search</a></li>
+<li> <a href="Path-Dependency.html" title="Path-Dependency">Path-Dependency</a></li>
+<li> <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a href="Scout.html" title="Scout">Scout</a></li>
+<li> <a href="Search Space.html" title="Search Space">Search Space</a></li>
+<li> <a href="Transposition.html" title="Transposition">Transposition</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1966</b>). <i>Game Playing and Game Learning Automata.</i> Advances in Programming and Non-Numerical Computation, <a class="external text" href="https://en.wikipedia.org/wiki/Leslie_Fox" rel="nofollow">Leslie Fox</a> (ed.), pp. 183-200. Oxford, Pergamon. » Includes Appendix: <i>Rules of SOMAC</i> by <a href="John Maynard Smith.html" title="John Maynard Smith">John Maynard Smith</a>, introduces <a class="external text" href="https://en.wikipedia.org/wiki/Expectiminimax_tree" rel="nofollow">Expectiminimax tree</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a href="Chun-Hung Tzeng.html" title="Chun-Hung Tzeng">Chun-Hung Tzeng</a>, <a href="Paul W. Purdom.html" title="Paul W. Purdom">Paul W. Purdom</a> (<b>1983</b>). <i><a class="external text" href="https://www.aaai.org/Library/AAAI/1983/aaai83-080.php" rel="nofollow">A Theory of Game Trees</a></i>. <a href="Conferences.html#AAAI-83" title="Conferences">AAAI-83</a></li>
+<li> <a href="Andy Walker.html" title="Andy Walker">Andrew N. Walker</a> (<b>1984</b>). <i>Uniqueness in Game Trees</i>. <a href="ICGA Journal.html#7 4" title="ICGA Journal">ICCA Journal, Vol. 7, No. 4</a></li>
+<li> <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Wim Pijls.html" title="Wim Pijls">Wim Pijls</a>, <a href="Arie de Bruin.html" title="Arie de Bruin">Arie de Bruin</a> (<b>1996</b>). <i>Exploiting Graph Properties of Game Trees.</i> <a href="Conferences.html#AAAI-96" title="Conferences">AAAI-96</a> » <a href="Enhanced Transposition Cutoff.html" title="Enhanced Transposition Cutoff">Enhanced Transposition Cutoff</a></li>
+<li> <a href="Wim Pijls.html" title="Wim Pijls">Wim Pijls</a>, <a href="Arie de Bruin.html" title="Arie de Bruin">Arie de Bruin</a> (<b>1998</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/3-540-48957-6_12" rel="nofollow">Game Tree Algorithms and Solution Trees</a></i>. <a href="CG 1998.html" title="CG 1998">CG 1998</a></li>
+<li> <a href="R%C3%A9mi Coulom.html" title="Rémi Coulom">Rémi Coulom</a> (<b>2002</b>). <i>Treemaps for Search-Tree Visualization</i>. <a href="7th Computer Olympiad.html#Workshop" title="7th Computer Olympiad">7th Computer Olympiad Workshop</a>, <a class="external text" href="https://www.remi-coulom.fr/Publications/CGOlympiad2002.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="J%C3%B3nhei%C3%B0ur %C3%8Dsleifsd%C3%B3ttir.html" title="Jónheiður Ísleifsdóttir">Jónheiður Ísleifsdóttir</a> (<b>2006</b>). <i>Tools for debugging large game trees</i>. <a class="external text" href="http://www.computer-shogi.org/gpw/gpw11 e.html.html" rel="nofollow">11th Game Programming Workshop</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Hakone,_Kanagawa" rel="nofollow">Hakone</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Japan" rel="nofollow">Japan</a> » <a href="Debugging.html" title="Debugging">Debugging</a></li>
+<li> <a href="J%C3%B3nhei%C3%B0ur %C3%8Dsleifsd%C3%B3ttir.html" title="Jónheiður Ísleifsdóttir">Jónheiður Ísleifsdóttir</a>  (<b>2007</b>). <i>GTQL: A Query Language for Game Trees</i>. M.Sc. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/Reykjav%C3%ADk_University" rel="nofollow">Reykjavík University</a></li>
+<li> <a href="J%C3%B3nhei%C3%B0ur %C3%8Dsleifsd%C3%B3ttir.html" title="Jónheiður Ísleifsdóttir">Jónheiður Ísleifsdóttir</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>. (<b>2008</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-87608-3 20.html" rel="nofollow">GTQ: A Language and Tool for Game-Tree Analysis</a></i>. <a href="CG 2008.html" title="CG 2008">CG 2008</a>, <a class="external text" href="http://www.ru.is/faculty/yngvi/pdf/IsleifsdottirB08.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=291979" rel="nofollow">Measuring closeness to a minimal tree</a> by <a href="Ian Kennedy.html" title="Ian Kennedy">Ian Kennedy</a>, <a href="CCC.html" title="CCC">CCC</a>, April 06, 2003</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42588.html" rel="nofollow">how to print tree non-recursively</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2012 » <a href="Recursion.html" title="Recursion">Recursion</a>, <a href="Iteration.html" title="Iteration">Iteration</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45264.html" rel="nofollow">Probabilistic approach to optimize search tree</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei S. Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2012</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Tree_%28graph_theory%29" rel="nofollow">Tree (graph theory) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tree_%28set_theory%29" rel="nofollow">Tree (set theory) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tree_data_structure" rel="nofollow">Tree (data structure) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tree_decomposition" rel="nofollow">Tree decomposition from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tree_traversal" rel="nofollow">Tree traversal from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/AVL_tree" rel="nofollow">AVL tree from Wikipedia</a> named after its inventors <a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a>, <a href="Mathematician.html#Landis" title="Mathematician">Evgenii Landis</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Expectiminimax_tree" rel="nofollow">Expectiminimax tree from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Dancing_trees" rel="nofollow">Dancing tree from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Decision_tree" rel="nofollow">Decision tree from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Red-Black_Tree" rel="nofollow">Red-black tree from Wikipedia</a></li>
+<li> <a href="Category:Jan Garbarek.html" title="Category:Jan Garbarek">Jan Garbarek Group</a> - <i>Once I Dreamt A Tree Upside Down</i>, 37th international jazz festival in <a class="external text" href="https://en.wikipedia.org/wiki/Burghausen,_Alt%C3%B6tting" rel="nofollow">Burghausen</a>, 22.03.06 <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> Jan Garbarek, <a class="external text" href="https://en.wikipedia.org/wiki/Manu_Katch%C3%A9" rel="nofollow">Manu Katché</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Rainer_Br%C3%BCninghaus" rel="nofollow">Rainer Brüninghaus</a>, <a href="Category:Eberhard Weber.html" title="Category:Eberhard Weber">Eberhard Weber</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/Uw4oc5fKzO4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Gray_Tree" rel="nofollow">Gray Tree from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.ics.uci.edu/%7Eeppstein/180a/970422.html.html" rel="nofollow">Lecture notes for April 22, 1997 Alpha-Beta Search</a> by <a href="David Eppstein.html" title="David Eppstein">David Eppstein</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">see <a href="Helmut Richter.html#Swapoff" title="Helmut Richter">Swap-off</a> by <a href="Helmut Richter.html" title="Helmut Richter">Helmut Richter</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a> and <a href="Mathematician.html#Landis" title="Mathematician">Evgenii Landis</a> (<b>1962</b>). <i>An algorithm for the organization of information</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Proceedings_of_the_USSR_Academy_of_Sciences" rel="nofollow">Proceedings of the USSR Academy of Sciences</a> 146: 263–266. (Russian) English translation by Myron J. Ricci in Soviet Math. Doklady, 3:1259–1263, 1962</span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722181357
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.075 seconds
+Real time usage: 1.432 seconds
+Preprocessor visited node count: 145/1000000
+Preprocessor generated node count: 298/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:949-0!canonical and timestamp 20240722181355 and revision id 24168
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Search_Tree&amp;oldid=24168">https://www.chessprogramming.org/index.php?title=Search_Tree&amp;oldid=24168</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Piet Mondrian.html" title="Category:Piet Mondrian">Piet Mondrian</a></li><li><a href="Category:Jan Garbarek.html" title="Category:Jan Garbarek">Jan Garbarek</a></li><li><a href="Category:Eberhard Weber.html" title="Category:Eberhard Weber">Eberhard Weber</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Search+Tree&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Search Tree.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Search Tree&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Search Tree.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Search Tree&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Search Tree&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Search Tree.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Search Tree.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Search Tree&amp;oldid=24168.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Search Tree&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 6 April 2021, at 14:40.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Search_Tree&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.075","walltime":"1.432","ppvisitednodes":{"value":145,"limit":1000000},"ppgeneratednodes":{"value":298,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722181357","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":49});});</script>
+</body>
+</html>

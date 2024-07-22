@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hash Table - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Hash_Table","wgTitle":"Hash Table","wgCurRevisionId":21635,"wgRevisionId":21635,"wgArticleId":1300,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Association P.C.","Pierre Courbois","Jasper van 't Hof","Toto Blanke"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Hash_Table","wgRelevantArticleId":1300,"wgRequestId":"Zp7DWgimFOpf72eNuzJWzgAAAAA","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Hash_Table rootpage-Hash_Table skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Hash Table</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * Hash Table</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Hash table 3 1 1 0 1 0 0 SP.svg.html"><img alt="" class="thumbimage" height="219" src="wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/300px-Hash_table_3_1_1_0_1_0_0_SP.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/450px-Hash_table_3_1_1_0_1_0_0_SP.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/600px-Hash_table_3_1_1_0_1_0_0_SP.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Hash table 3 1 1 0 1 0 0 SP.svg.html" title="Enlarge"></a></div>A small phone book as a hash table <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>A <b>Hash Table</b>, or a Hash Map, is a data structure that associates identifiers or keys (names, chess positions) with values (i. e. phone number, score of a position). A <a class="external text" href="https://en.wikipedia.org/wiki/Hash_function" rel="nofollow">hash function</a> is used for turning the key into a relatively small integer, the hash, that serves as an index into an <a href="Array.html" title="Array">array</a>. 
+</p><p>In a well-dimensioned hash table, the average cost for each lookup is independent of the number of elements stored in the table. In general programming as well in computer chess, hash tables often serve as <a class="external text" href="https://en.wikipedia.org/wiki/Cache" rel="nofollow">cache</a> for once  calculated values, to save relative expensive computations over and over again. 
+<span id="PerfectHashing"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Perfect Hashing"><span class="tocnumber">1</span> <span class="toctext">Perfect Hashing</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Minimal Perfect Hashing"><span class="tocnumber">2</span> <span class="toctext">Minimal Perfect Hashing</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Search Tables"><span class="tocnumber">3</span> <span class="toctext">Search Tables</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Class Libraries"><span class="tocnumber">4</span> <span class="toctext">Class Libraries</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#1968"><span class="tocnumber">5.1</span> <span class="toctext">1968</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#1970 ..."><span class="tocnumber">5.2</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1980 ..."><span class="tocnumber">5.3</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#1990 ..."><span class="tocnumber">5.4</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2000 ..."><span class="tocnumber">5.5</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2010 ..."><span class="tocnumber">5.6</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2020 ..."><span class="tocnumber">5.7</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#1998 ..."><span class="tocnumber">6.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ... 2"><span class="tocnumber">6.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2005 ..."><span class="tocnumber">6.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2010 ... 2"><span class="tocnumber">6.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2015 ..."><span class="tocnumber">6.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2020 ... 2"><span class="tocnumber">6.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Perfect_Hashing">Perfect Hashing</span></h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Hash table 4 1 1 0 0 0 0 LL.svg.html"><img alt="" class="thumbimage" height="270" src="wikipedia/commons/thumb/7/71/Hash_table_4_1_1_0_0_0_0_LL.svg/300px-Hash_table_4_1_1_0_0_0_0_LL.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Hash_table_4_1_1_0_0_0_0_LL.svg/450px-Hash_table_4_1_1_0_0_0_0_LL.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Hash_table_4_1_1_0_0_0_0_LL.svg/600px-Hash_table_4_1_1_0_0_0_0_LL.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Hash table 4 1 1 0 0 0 0 LL.svg.html" title="Enlarge"></a></div>A perfect hash function <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup></div></div></div>
+<p>If all of the keys are known at compile or initialization time and their cardinality is reasonable small, a perfect hash table can be created, in which there will be no collisions, since each key has an unique index. Opposed to Minimal Perfect Hashing, the lookup <a href="Array.html" title="Array">array</a> contains either gaps or multiple entries.
+</p><p>Applications in computer chess are hashing of masked <a href="Occupancy.html" title="Occupancy">occupied bitboards</a>, to map for instance <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">attack sets of sliding pieces</a> (<a href="Rook.html" title="Rook">rooks</a>, <a href="Bishop.html" title="Bishop">bishops</a>) on a particular <a href="Squares.html" title="Squares">square</a>, or <a href="King Safety.html#PawnShield" title="King Safety">pawn shield</a> stuff. <a href="Material Tables.html" title="Material Tables">Another application</a>, despite a reversible hash function, is a precomputed table indexed by some <a href="Material.html" title="Material">material</a> key, likely an <a href="Incremental Updates.html" title="Incremental Updates">incremental updated</a> <a class="external text" href="https://en.wikipedia.org/wiki/Dot_product" rel="nofollow">dot-product</a> of all piece-type counts in some fixed order, by a vector of cumulated maximum count products of pieces ordered below, usually ignoring unusual material configurations due to <a href="Promotions.html" title="Promotions">promotions</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . Persistent, or on the fly generated <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a> and <a href="Endgame Bitbases.html" title="Endgame Bitbases">Bitbases</a> containing <a href="Knowledge.html#PerfectKnowledge" title="Knowledge">perfect knowledge</a> by <a href="Retrograde Analysis.html" title="Retrograde Analysis">retrograde analyses</a> of certain <a href="Material.html" title="Material">material</a> constellations with a few pieces in late endings might be considered as a kind of perfect hashing as well.
+</p>
+<ul><li> <a href="BitScan.html#WalterFaxonsmagicBitscan" title="BitScan">Walter Faxon's Magic BitScan</a></li>
+<li> <a href="BitScan.html#BitscanByModulo" title="BitScan">BitScan by Modulo</a></li>
+<li> <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">Kindergarten Bitboards</a></li>
+<li> <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li>
+<li> <a href="Hashing Dictionaries.html" title="Hashing Dictionaries">Hashing Dictionaries</a></li>
+<li> <a href="Congruent Modulo Bitboards.html" title="Congruent Modulo Bitboards">Congruent Modulo Bitboards</a></li>
+<li> <a href="Material Tables.html" title="Material Tables">Material Tables</a></li>
+<li> <a class="new" href="index.php?title=Pawn Shield Tables&amp;action=edit&amp;redlink=1.html" title="Pawn Shield Tables (page does not exist)">Pawn Shield Tables</a></li>
+<li> <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a></li></ul>
+<p><span id="MinimalPerfectHashing"></span>
+</p>
+<h1><span class="mw-headline" id="Minimal_Perfect_Hashing">Minimal Perfect Hashing</span></h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Hash table 4 1 0 0 0 0 0 LL.svg.html"><img alt="" class="thumbimage" height="210" src="wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/300px-Hash_table_4_1_0_0_0_0_0_LL.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/450px-Hash_table_4_1_0_0_0_0_0_LL.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/600px-Hash_table_4_1_0_0_0_0_0_LL.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Hash table 4 1 0 0 0 0 0 LL.svg.html" title="Enlarge"></a></div>Minimal perfect hash function <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></div></div></div>
+<p>If the hash <a href="Array.html" title="Array">array</a> has no gaps and unique, distinct values, so called Minimal Perfect Hashing is applied, like in following <a href="Bitboards.html" title="Bitboards">bitboard</a> hashing for <a href="BitScan.html" title="BitScan">bitscan</a> purpose or determining pre-calculated <a href="Move List.html" title="Move List">move lists</a> by <a href="Target Square.html" title="Target Square">move target</a> sets of <a href="Knight.html" title="Knight">knights</a> and <a href="King.html" title="King">king</a>.
+</p>
+<ul><li> <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">De Bruijn Multiplication</a></li>
+<li> <a href="BitScan.html#MattTaylorsFoldingtrick" title="BitScan">Matt Taylor's Folding trick</a></li>
+<li> <a href="Bitboard Serialization.html#HashingMultipleBits" title="Bitboard Serialization">Hashing Multiple Bits</a> for <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li></ul>
+<p><span id="SearchTables"></span>
+</p>
+<h1><span class="mw-headline" id="Search_Tables">Search Tables</span></h1>
+<p>The classical hash table implementation in computer chess are the <a href="Transposition Table.html" title="Transposition Table">transposition tables</a>, indexed by <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist</a>- or <a href="BCH Hashing.html" title="BCH Hashing">BCH keys</a> of the position, modulo number of entries inside the table, to store <a href="Search.html" title="Search">search</a> results, <a href="Evaluation.html" title="Evaluation">evaluation</a>, <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a> related stuff and <a href="Repetitions.html" title="Repetitions">repetitions</a>.
+</p>
+<ul><li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a href="Pawn Hash Table.html" title="Pawn Hash Table">Pawn Hash Table</a></li>
+<li> <a href="Evaluation Hash Table.html" title="Evaluation Hash Table">Evaluation Hash Table</a></li>
+<li> <a href="Material Hash Table.html" title="Material Hash Table">Material Hash Table</a></li>
+<li> <a href="Persistent Hash Table.html" title="Persistent Hash Table">Persistent Hash Table</a></li>
+<li> <a href="Repetitions.html#RepetitionHashTable" title="Repetitions">Repetition Hash Table</a></li>
+<li> <a href="Shared Hash Table.html" title="Shared Hash Table">Shared Hash Table</a></li></ul>
+<h1><span class="mw-headline" id="Class_Libraries">Class Libraries</span></h1>
+<ul><li> <a class="external text" href="http://doc.trolltech.com/2.3/qmap.html.html" rel="nofollow">QMap Class Reference</a>, <a href="Cpp.html" title="Cpp">C++</a> from <a class="external text" href="http://doc.trolltech.com/2.3/index.html.html" rel="nofollow">Qt On-line Reference Documentation</a></li>
+<li> <a class="external text" href="http://msdn.microsoft.com/en-us/library/s897094z%28VS.80%29.aspx.html" rel="nofollow">CMap Class</a>, <a href="Cpp.html" title="Cpp">C++</a> from <a class="external text" href="http://msdn.microsoft.com/en-us/library/d06h2x6e%28VS.80%29.aspx.html" rel="nofollow">MFC Library Reference</a></li>
+<li> <a class="external text" href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html.html" rel="nofollow">Interface Map</a> from the <a href="Java.html" title="Java">Java</a> package <a class="external text" href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/package-summary.html.html" rel="nofollow">java.util</a></li>
+<li> <a class="external text" href="http://docs.python.org/lib/module-UserDict.html.html" rel="nofollow">UserDict - Class wrapper for dictionary objects</a> from <a class="external text" href="http://docs.python.org/lib/lib.html.html" rel="nofollow">Python Library Reference</a></li>
+<li> <a class="external text" href="http://docs.python.org/lib/defaultdict-objects.html.html" rel="nofollow">defaultdict objects</a> from <a class="external text" href="http://docs.python.org/lib/lib.html.html" rel="nofollow">Python Library Reference</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1968">1968</span></h2>
+<ul><li> <a href="Ward Douglas Maurer.html" title="Ward Douglas Maurer">Ward Douglas Maurer</a> (<b>1968</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=357995.html" rel="nofollow">An Improved Hash Code for Scatter Storage</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 11, No. 1</li>
+<li> <a href="Elwyn Berlekamp.html" title="Elwyn Berlekamp">Elwyn Berlekamp</a> (<b>1968</b>). <i>Algebraic Coding Theory</i>, New York: McGraw-Hill. Revised ed., Aegean Park Press, (<b>1984</b>), ISBN 0894120638. <a class="external text" href="http://www.amazon.com/Algebraic-Coding-Theory-Revised-M-6/dp/0894120638.html" rel="nofollow">amazon</a></li>
+<li> <a class="external text" href="http://www.bahfrah.org.uk/bio/index.htm.html" rel="nofollow">F R A Hopgood</a> (<b>1968</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/reports/p008.htm.html" rel="nofollow">A Solution to the table overflow problem for Hash Tables</a></i>. <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/reports/overview.htm.html" rel="nofollow">Literature: Reports</a> hosted by <a href="Atlas Computer Laboratory.html" title="Atlas Computer Laboratory">Atlas Computer Laboratory</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Albert Zobrist.html" title="Albert Zobrist">Albert Zobrist</a> (<b>1970</b>). <i>A New Hashing Method with Application for Game Playing</i>. Technical Report #88, Computer Science Department, The University of Wisconsin, Madison, WI, USA. Reprinted (<b>1990</b>) in <a href="ICGA Journal.html#13 3" title="ICGA Journal">ICCA Journal, Vol. 13, No. 2</a>, <a class="external text" href="http://www.cs.wisc.edu/techreports/1970/TR88.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Bloom_filter" rel="nofollow">Burton H. Bloom</a> (<b>1970</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=362692.html" rel="nofollow">Space/time trade-offs in hash coding with allowable errors</a></i>. Comm. of the ACM, Vol. 13, No. 7, <a class="external text" href="http://www.lsi.upc.edu/%7Ediaz/p422-bloom.pdf.html" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> </li>
+<li> <a class="external text" href="http://www.bahfrah.org.uk/bio/index.htm.html" rel="nofollow">F R A Hopgood</a>, <a class="external text" href="http://people.bath.ac.uk/masjhd/.html" rel="nofollow">J. Davenport</a> (<b>1972</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/reports/p012.htm.html" rel="nofollow">The quadratic hash method when the table size is a power of 2</a></i>. <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/reports/overview.htm.html" rel="nofollow">Literature: Reports</a> hosted by <a href="Atlas Computer Laboratory.html" title="Atlas Computer Laboratory">Atlas Computer Laboratory</a></li>
+<li> <a class="external text" href="http://www.bahfrah.org.uk/bio/index.htm.html" rel="nofollow">F R A Hopgood</a> (<b>1974</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/reports/p007.htm.html" rel="nofollow">Computer Animation used as a Tool in Teaching Computer Science</a></i>. <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/reports/overview.htm.html" rel="nofollow">Literature: Reports</a> hosted by <a href="Atlas Computer Laboratory.html" title="Atlas Computer Laboratory">Atlas Computer Laboratory</a></li>
+<li> <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/a/Amble:Ole.html.html" rel="nofollow">Ole Amble</a>,  <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a>   (<b>1974</b>). <i>Ordered Hash Tables</i>. <a class="external text" href="https://en.wikipedia.org/wiki/The_Computer_Journal" rel="nofollow">The Computer Journal</a>, Vol. 17</li>
+<li> <a href="Ward Douglas Maurer.html" title="Ward Douglas Maurer">Ward Douglas Maurer</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/l/Lewis:Ted G=.html" rel="nofollow">Ted G. Lewis</a> (<b>1975</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?doid=356643.356645.html" rel="nofollow">Hash Table Methods</a></i>. <a href="ACM.html#Surveys" title="ACM">ACM Computing Surveys</a>, Vol. 7, No. 1</li>
+<li> <a href="Mathematician.html#JLCarter" title="Mathematician">J. Lawrence Carter</a>, <a href="Mathematician.html#MNWegman" title="Mathematician">Mark N. Wegman</a> (<b>1977</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=803400.html" rel="nofollow">Universal classes of hash functions</a></i>. <a class="external text" href="http://dl.acm.org/citation.cfm?id=800105.html" rel="nofollow">STOC '77</a></li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Harry Nelson.html" title="Harry Nelson">Harry Nelson</a> (<b>1985</b>). <i>Hash Tables in Cray Blitz</i>. <a href="ICGA Journal.html#8 1" title="ICGA Journal">ICCA Journal, Vol. 8, No. 1</a> » <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a></li>
+<li> <a href="Tony Warnock.html" title="Tony Warnock">Tony Warnock</a>, <a href="Burton Wendroff.html" title="Burton Wendroff">Burton Wendroff</a> (<b>1988</b>). <i>Search Tables in Computer Chess</i>. <a href="ICGA Journal.html#11 1" title="ICGA Journal">ICCA Journal, Vol. 11, No. 1</a></li>
+<li> <a href="Mathematician.html#IDamgard" title="Mathematician">Ivan Damgård</a> (<b>1989</b>). <i>A Design Principle for Hash Functions</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/crypto/crypto89.html.html" rel="nofollow">CRYPTO '89</a></li>
+<li> <a href="Mathematician.html#RMerkle" title="Mathematician">Ralph C. Merkle</a> (<b>1989</b>). <i>One Way Hash Functions and DES</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/crypto/crypto89.html.html" rel="nofollow">CRYPTO '89</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="external text" href="http://sun.aei.polsl.pl/~zjc/.html" rel="nofollow">Zbigniew J. Czech</a>, <a class="external text" href="http://itee.uq.edu.au/~havas/.html" rel="nofollow">George Havas</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/m/Majewski:Bohdan S=.html.html" rel="nofollow">Bohdan S. Majewski</a> (<b>1992</b>). <i>An Optimal Algorithm for Generating Minimal Perfect Hash Functions</i>. Information Processing Letters, Vol. 43, pp. 257–264. <a class="external text" href="http://cmph.sourceforge.net/papers/chm92.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Warren D. Smith.html" title="Warren D. Smith">Warren D. Smith</a> (<b>1992</b>). <i>Hash functions for Binary and Ternary Words</i>. <a class="external text" href="https://en.wikipedia.org/wiki/NEC_Corporation_of_America" rel="nofollow">NEC Research Institute</a>, <a class="external text" href="http://scorevoting.net/WarrenSmithPages/homepage/gohash.ps.html" rel="nofollow">ps</a></li>
+<li> <a href="Mathematician.html#MDietzfelbinger" title="Mathematician">Martin Dietzfelbinger</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Anna_Karlin" rel="nofollow">Anna Karlin</a>, <a href="Mathematician.html#KMehlhorn" title="Mathematician">Kurt Mehlhorn</a>, <a href="Mathematician.html#FMeyerAdH" title="Mathematician">Friedhelm Meyer auf der Heide</a>, <a class="external text" href="https://plus.google.com/105803273623353288634/posts" rel="nofollow">Hans Rohnert</a>, <a href="Mathematician.html#RETarjan" title="Mathematician">Robert E. Tarjan</a> (<b>1994</b>). <i><a class="external text" href="http://epubs.siam.org/doi/abs/10.1137/S0097539791194094.html" rel="nofollow">Dynamic Perfect Hashing: Upper and Lower Bounds</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/SIAM_Journal_on_Computing" rel="nofollow">SIAM Journal on Computing</a>, Vol. 23, Nr. 4</li>
+<li> <a class="external text" href="http://sun.aei.polsl.pl/~zjc/.html" rel="nofollow">Zbigniew J. Czech</a>, <a class="external text" href="http://itee.uq.edu.au/~havas/.html" rel="nofollow">George Havas</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/m/Majewski:Bohdan S=.html.html" rel="nofollow">Bohdan S. Majewski</a> (<b>1997</b>). <i>Perfect Hashing</i>. Theoretical Computer Science, Vol. 182, Nos. 1-2, pp. 1-143</li>
+<li> <a href="Bob Jenkins.html" title="Bob Jenkins">Bob Jenkins</a> (<b>1997</b>). <i>Hash functions</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Dr._Dobb%27s_Journal" rel="nofollow">Dr. Dobb's Journal</a>, September 1997 <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup></li>
+<li> <a href="Donald Knuth.html" title="Donald Knuth">Donald E. Knuth</a> (<b>1998</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a></i>. Volume 3 - Sorting and Searching, 6.4 about universal hashing, (second edition), <a class="external text" href="http://www.amazon.com/Art-Computer-Programming-Sorting-Searching/dp/0201896850.html" rel="nofollow">amazom</a></li>
+<li> <a href="Dennis Breuker.html" title="Dennis Breuker">Dennis Breuker</a> (<b>1998</b>). <i><a class="external text" href="http://www.dennisbreuker.nl/thesis/.html" rel="nofollow">Memory versus Search in Games</a></i>. Ph.D. Thesis, <a href="Maastricht University.html" title="Maastricht University">Universiteit Maastricht</a>, The Netherlands. ISBN 90-9012006-8.</li>
+<li> <a href="Charles Leiserson.html" title="Charles Leiserson">Charles E. Leiserson</a>, <a href="Harald Prokop.html" title="Harald Prokop">Harald Prokop</a>, <a href="Keith H. Randall.html" title="Keith H. Randall">Keith H. Randall</a> (<b>1998</b>). <i>Using de Bruijn Sequences to Index a 1 in a Computer Word</i>, <a class="external text" href="http://supertech.csail.mit.edu/papers/debruijn.pdf.html" rel="nofollow">pdf</a> » <a href="BitScan.html" title="BitScan">BitScan</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a> (<b>2002</b>). <i><a class="external text" href="http://www.cis.uab.edu/hyatt/hashing.html.html" rel="nofollow">A lock-less transposition table implementation for parallel search chess engines</a></i>. <a href="ICGA Journal.html#25 1" title="ICGA Journal">ICGA Journal, Vol. 25, No. 1</a> » <a href="Shared Hash Table.html#Lockless" title="Shared Hash Table">Shared Hash Table - Lock-less</a></li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Anthony Cozzie.html" title="Anthony Cozzie">Anthony Cozzie</a> (<b>2005</b>). <i><a class="external text" href="http://www.cis.uab.edu/hyatt/collisions.html.html" rel="nofollow">The Effect of Hash Signature Collisions in a Chess Program</a></i>. <a href="ICGA Journal.html#28 3" title="ICGA Journal">ICGA Journal, Vol. 28, No. 3</a></li>
+<li> <a href="Mathematician.html#DFotakis" title="Mathematician">Dimitris Fotakis</a>, <a href="Mathematician.html#RPagh" title="Mathematician">Rasmus Pagh</a>, <a href="Peter Sanders.html" title="Peter Sanders">Peter Sanders</a>, <a href="Mathematician.html#PGSpirakis" title="Mathematician">Paul Spirakis</a> (<b>2005</b>). <i><a class="external text" href="https://link.springer.com/article/10.1007/s00224-004-1195-x" rel="nofollow">Space Efficient Hash Tables with Worst Case Constant Access Time</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Theory_of_Computing_Systems" rel="nofollow">Theory of Computing Systems</a>, Vol. 38, No. 2</li>
+<li> <a href="Sam Tannous.html" title="Sam Tannous">Sam Tannous</a> (<b>2007</b>). <i>Avoiding Rotated Bitboards with Direct Lookup</i>. <a href="ICGA Journal.html#30 2" title="ICGA Journal">ICGA Journal, Vol. 30, No. 2</a>, <a class="external text" href="http://arxiv.org/PS cache/arxiv/pdf/0704/0704.3773v2.pdf.html" rel="nofollow">pdf</a> » <a href="Hashing Dictionaries.html" title="Hashing Dictionaries">Hashing Dictionaries</a></li>
+<li> <a class="new" href="index.php?title=Kumar Chellapilla&amp;action=edit&amp;redlink=1.html" title="Kumar Chellapilla (page does not exist)">Kumar Chellapilla</a>, <a href="Mathematician.html#AMityagin" title="Mathematician">Anton Mityagin</a>, <a href="Mathematician.html#DXCharles" title="Mathematician">Denis Xavier Charles</a> (<b>2007</b>). <i><a class="external text" href="http://www2007.org/poster1018.php.html" rel="nofollow">GigaHash: scalable minimal perfect hashing for billions of urls</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/%7Eley/db/conf/www/www2007.html.html#ChellapillaMC07" rel="nofollow">WWW 2007</a></li>
+<li> <a href="Trevor Fenner.html" title="Trevor Fenner">Trevor Fenner</a>, <a href="Mark Levene.html" title="Mark Levene">Mark Levene</a> (<b>2008</b>). <i>Move Generation with Perfect Hashing Functions.</i> <a href="ICGA Journal.html#31 1" title="ICGA Journal">ICGA Journal, Vol. 31, No. 1</a>, <a class="external text" href="http://www.dcs.bbk.ac.uk/~mark/download/bitboard sliding icga final.pdf.html" rel="nofollow">pdf</a> » <a href="Congruent Modulo Bitboards.html" title="Congruent Modulo Bitboards">Congruent Modulo Bitboards</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Maurizio Monge.html" title="Maurizio Monge">Maurizio Monge</a> (<b>2010</b>). <i>On perfect hashing of numbers with sparse digit representation via multiplication by a constant</i>. <a class="external text" href="https://arxiv.org/abs/1003.3196" rel="nofollow">arXiv:1003.3196</a> » <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li>
+<li> <a href="Jiao Wang.html" title="Jiao Wang">Jiao Wang</a>, <a class="new" href="index.php?title=Si-Zhong Li&amp;action=edit&amp;redlink=1.html" title="Si-Zhong Li (page does not exist)">Si-Zhong Li</a>, <a href="Xinhe Xu.html" title="Xinhe Xu">Xin-He Xu</a> (<b>2010</b>). <i>A Minors Hash Table in Chinese-Chess Programs</i>. <a href="ICGA Journal.html#33 1" title="ICGA Journal">ICGA Journal, Vol. 33, No. 1</a></li>
+<li> <a href="Mathematician.html#MPatrascu" title="Mathematician">Mihai Pătrașcu</a>, <a href="Mathematician.html#MThorup" title="Mathematician">Mikkel Thorup</a> (<b>2011</b>). <i>The Power of Simple Tabulation Hashing</i>. <a class="external text" href="http://arxiv.org/abs/1011.5200.html" rel="nofollow">arXiv:1011.5200v2</a></li>
+<li> <a class="new" href="index.php?title=Dan Anthony Feliciano Alcantara&amp;action=edit&amp;redlink=1.html" title="Dan Anthony Feliciano Alcantara (page does not exist)">Dan Anthony Feliciano Alcantara</a> (<b>2011</b>). <i>Effcient Hash Tables on the GPU</i>. Ph.D. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_California,_Davis" rel="nofollow">University of California, Davis</a>, <a class="external text" href="http://idav.ucdavis.edu/~dfalcant//downloads/dissertation.pdf.html" rel="nofollow">pdf</a> » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a href="John Tromp.html" title="John Tromp">John Tromp</a> (<b>2014</b>). <i><a class="external text" href="https://github.com/tromp/cuckoo/blob/master/cuckoo.pdf" rel="nofollow">Cuckoo Cycle: a memory-hard proof-of-work system</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/iacr/iacr2014.html.html#Tromp14" rel="nofollow">IACR Cryptology ePrint Archive</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li>
+<li> <a href="David Eppstein.html" title="David Eppstein">David Eppstein</a>, <a href="Mathematician.html#MTGoodrich" title="Mathematician">Michael T. Goodrich</a>, <a href="Mathematician.html#MMitzenmacher" title="Mathematician">Michael Mitzenmacher</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/p/Pszona:Pawel" rel="nofollow">Paweł Pszona</a> (<b>2014</b>). <i>Wear Minimization for Cuckoo Hashing: How Not to Throw a Lot of Eggs into One Basket</i>. <a class="external text" href="https://arxiv.org/abs/1404.0286" rel="nofollow">arXiv:1404.0286</a></li>
+<li> <a href="Thomas Dybdahl Ahle.html" title="Thomas Dybdahl Ahle">Thomas Dybdahl Ahle</a>, <a href="Mathematician.html#MAumueller" title="Mathematician">Martin Aumüller</a>, <a href="Mathematician.html#RPagh" title="Mathematician">Rasmus Pagh</a> (<b>2016</b>). <i>Parameter-free Locality Sensitive Hashing for Spherical Range Reporting</i>. <a class="external text" href="https://arxiv.org/abs/1605.02673" rel="nofollow">arXiv:1605.02673</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/m/Maier:Tobias" rel="nofollow">Tobias Maier</a>, <a href="Peter Sanders.html" title="Peter Sanders">Peter Sanders</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/d/Dementiev:Roman" rel="nofollow">Roman Dementiev</a> (<b>2016</b>). <i>Concurrent Hash Tables: Fast and General?(!)</i>. <a class="external text" href="https://arxiv.org/abs/1601.04017" rel="nofollow">arXiv:1601.04017</a></li>
+<li> <a href="Thomas Dybdahl Ahle.html" title="Thomas Dybdahl Ahle">Thomas Dybdahl Ahle</a> (<b>2017</b>). <i>Optimal Set Similarity Data-structures Without False Negatives</i>. Master thesis, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Copenhagen" rel="nofollow">University of Copenhagen</a>, <a class="external text" href="http://www.itu.dk/people/thdy/papers/minhash.pdf.html" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/m/Maier:Tobias" rel="nofollow">Tobias Maier</a>, <a href="Peter Sanders.html" title="Peter Sanders">Peter Sanders</a> (<b>2017</b>). <i>Dynamic Space Efficient Hashing</i>. <a class="external text" href="https://arxiv.org/abs/1705.00997" rel="nofollow">arXiv:1705.00997</a></li>
+<li> <a href="Peter Sanders.html" title="Peter Sanders">Peter Sanders</a> (<b>2018</b>). <i>Hashing with Linear Probing and Referential Integrity</i>. <a class="external text" href="https://arxiv.org/abs/1808.04602" rel="nofollow">arXiv:1808.04602</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a> (<b>2020</b>). <i><a class="external text" href="https://backscattering.de/chess/hashtable-packing/" rel="nofollow">The Hashtable Packing Problem</a></i>. (Draft)</li>
+<li> <a href="Thomas Dybdahl Ahle.html" title="Thomas Dybdahl Ahle">Thomas Dybdahl Ahle</a>, <a class="external text" href="https://dblp.uni-trier.de/pid/236/4491.html" rel="nofollow">Jakob Tejs Bæk Knudsen</a>, <a href="Mathematician.html#MThorup" title="Mathematician">Mikkel Thorup</a> (<b>2020</b>). <i>The Power of Hashing with Mersenne Primes</i>. <a class="external text" href="https://arxiv.org/abs/2008.08654" rel="nofollow">arXiv:2008.08654</a> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=13810" rel="nofollow">Fast hash algorithm</a> by John Scalo, <a href="CCC.html" title="CCC">CCC</a>, January 08, 1998 » <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist Hashing</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14053" rel="nofollow">Fast hash key method - Revisited!</a> by John Scalo, <a href="CCC.html" title="CCC">CCC</a>, January 14, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14226" rel="nofollow">Hash tables and data-cache, some programmer stuff...</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 1998</li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=175221" rel="nofollow">A fast hash -- assuming you are not planning to do incremental updates</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, June 15, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=214125" rel="nofollow">Non power of two hash table sizes</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Jose Povoa Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, February 18, 2002</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=484874" rel="nofollow">Hash table and O(1)</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, February 06, 2006</li>
+<li> <a class="external text" href="http://www.hiarcs.net/forums/viewtopic.php?p=2921.html" rel="nofollow">What is the Difference between Mainhash, Evalhash, Pawnhash?</a> by Thomas Wallendik, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Hiarcs Forum</a>, October 13, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=285407.html" rel="nofollow">Cache pollution when reading/writing hash table</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, August 09, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33561.html" rel="nofollow">Cache-friendier material index</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 31, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44082.html" rel="nofollow">how to measure frequency of hash collisions</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2012 » <a href="Transposition Table.html#KeyCollisions" title="Transposition Table">Key Collisions</a>, <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48479.html" rel="nofollow">Hashing based on move lists</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, June 30, 2013</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57924.html" rel="nofollow">Hash cache</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 12, 2015 » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58890.html" rel="nofollow">On-the fly hash key generation?</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, January 12, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58944.html" rel="nofollow">Crafty's four hash tables</a> by <a href="Louis Zulli.html" title="Louis Zulli">Louis Zulli</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2016 » <a href="Crafty.html" title="Crafty">Crafty</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61328.html" rel="nofollow">Hashed repetition table</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, September 04, 2016 » <a href="Repetitions.html#RepetitionHashTable" title="Repetitions">Repetition Hash Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62239.html" rel="nofollow">Hashing a quadboard from scratch</a> by <a href="Edoardo Manino.html" title="Edoardo Manino">Edoardo Manino</a>, <a href="CCC.html" title="CCC">CCC</a>, November 23, 2016 » <a href="Quad-Bitboards.html" title="Quad-Bitboards">Quad-Bitboards</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65870.html" rel="nofollow">Magic end-game material hash?</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, November 30, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66183.html" rel="nofollow">hashing in chess4j</a> by <a href="James Swafford.html" title="James Swafford">James Swafford</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2017 » <a href="Chess4j.html" title="Chess4j">chess4j</a>, <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li></ul>
+<h2><span class="mw-headline" id="2020_..._2">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72932.html" rel="nofollow">hash collisions</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2020 » <a href="Transposition Table.html#KeyCollisions" title="Transposition Table">Key Collisions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72964.html" rel="nofollow">Dense board representation as hash code</a> by koedem, <a href="CCC.html" title="CCC">CCC</a>, February 01, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73071.html" rel="nofollow">Hashtable packing (e.g. to optimize magic bitboards) is strongly NP-complete</a> by <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a>, <a href="CCC.html" title="CCC">CCC</a>,  February 13, 2020 » <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73110.html" rel="nofollow">Zobrist key independence</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, February 17, 2020 » <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist Hashing</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Hash_table" rel="nofollow">Hash Table from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Hash_function" rel="nofollow">Hash function from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Perfect_hash_function" rel="nofollow">Perfect hash function from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" rel="nofollow">Cryptographic hash function from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithm" rel="nofollow">Secure Hash Algorithm from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction" rel="nofollow">Merkle–Damgård construction from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.gnu.org/software/gperf/.html" rel="nofollow">gperf - GNU Project</a> - <a href="Free Software Foundation.html" title="Free Software Foundation">Free Software Foundation</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Transposition_table" rel="nofollow">Transposition table from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tabulation_hashing" rel="nofollow">Tabulation hashing from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Zobrist_hashing" rel="nofollow">Zobrist hashing from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cuckoo_hashing" rel="nofollow">Cuckoo hashing from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Distributed_hash_table" rel="nofollow">Distributed hash table from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Koorde" rel="nofollow">Koorde</a> based on <a class="external text" href="https://en.wikipedia.org/wiki/Chord_%28peer-to-peer%29" rel="nofollow">Chord</a> and <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Transposition-driven_scheduling" rel="nofollow">Transposition-driven scheduling - Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Hashlife" rel="nofollow">Hashlife from Wikipedia</a> by <a href="Bill Gosper.html" title="Bill Gosper">Bill Gosper</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup></li>
+<li> <a class="external text" href="http://www.concentric.net/~Ttwang/tech/inthash.htm.html" rel="nofollow">Integer Hash Function</a> by <a class="external text" href="http://www.concentric.net/~ttwang/index.html.html" rel="nofollow">Thomas Wang</a></li>
+<li> <a class="external text" href="http://www.azillionmonkeys.com/qed/hash.html.html" rel="nofollow">Hash functions</a> by <a href="Paul Hsieh.html" title="Paul Hsieh">Paul Hsieh</a></li>
+<li> <a class="external text" href="http://burtleburtle.net/bob/hash/index.html.html" rel="nofollow">Hash Functions and Block Ciphers</a> by <a href="Bob Jenkins.html" title="Bob Jenkins">Bob Jenkins</a></li>
+<li> <a class="external text" href="http://burtleburtle.net/bob/hash/doobs.html.html" rel="nofollow">A Hash Function for Hash Table Lookup</a> by <a href="Bob Jenkins.html" title="Bob Jenkins">Bob Jenkins</a></li>
+<li> <a class="external text" href="http://burtleburtle.net/bob/hash/perfect.html.html" rel="nofollow">Perfect Hashing</a> by <a href="Bob Jenkins.html" title="Bob Jenkins">Bob Jenkins</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Jenkins_hash_function" rel="nofollow">Jenkins hash function from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function" rel="nofollow">Fowler–Noll–Vo hash function from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.partow.net/programming/hashfunctions/index.html.html" rel="nofollow">General Purpose Hash Function Algorithms</a> by <a class="external text" href="http://www.partow.net/about/index.html.html" rel="nofollow">Arash Partow</a></li>
+<li> <a class="external text" href="http://www.cse.yorku.ca/~oz/hash.html.html" rel="nofollow">Hash Functions</a></li>
+<li> <a class="external text" href="http://www.fantasy-coders.de/projects/gh/html/x435.html.html" rel="nofollow">7. Wahl einer geeigneten Hash-Funktion</a> from <a class="external text" href="http://www.fantasy-coders.de/projects/gh/html/index.html.html" rel="nofollow">Guugelhupf - Design und Implementation</a> (German)</li>
+<li> <a href="Category:Association P.C..html" title="Category:Association P.C.">Association P.C.</a> - Soft Time in a Life Machine, <a class="external text" href="https://en.wikipedia.org/wiki/JazzFest_Berlin" rel="nofollow">Berliner Jazztage</a>, November 7, 1971, <a class="external text" href="https://en.wikipedia.org/wiki/Norddeutscher_Rundfunk" rel="nofollow">NDR</a>-<a class="external text" href="https://en.wikipedia.org/wiki/Radio_Bremen" rel="nofollow">RB</a>-<a class="external text" href="https://en.wikipedia.org/wiki/Sender_Freies_Berlin" rel="nofollow">SFB</a> 3 Broadcast,  <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:Pierre Courbois.html" title="Category:Pierre Courbois">Pierre Courbois</a>, <a href="Category:Jasper van %27t Hof.html" title="Category:Jasper van 't Hof">Jasper van 't Hof</a>, <a href="Category:Toto Blanke.html" title="Category:Toto Blanke">Toto Blanke</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Sigi_Busch" rel="nofollow">Sigi Busch</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/_RvR7oG8Uz4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Hash_function" rel="nofollow">Hash function from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Hash_function" rel="nofollow">Hash function from Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33561.html" rel="nofollow">Cache-friendier material index</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 31, 2010</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Hash_function" rel="nofollow">Hash function from Wikipedia</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Bloom_filter" rel="nofollow">Bloom filter from Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction" rel="nofollow">Merkle–Damgård construction from Wikipedia</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://burtleburtle.net/bob/hash/doobs.html.html" rel="nofollow">A Hash Function for Hash Table Lookup</a> by <a href="Bob Jenkins.html" title="Bob Jenkins">Bob Jenkins</a>, updated <a class="external text" href="https://en.wikipedia.org/wiki/Dr._Dobb%27s_Journal" rel="nofollow">Dr. Dobb's</a> article</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://bitcointalk.org/index.php?topic=405483.0" rel="nofollow">Cuckoo Cycle: a new memory-hard proof-of-work system</a> by <a href="John Tromp.html" title="John Tromp">John Tromp</a>, <a class="external text" href="https://bitcointalk.org/index.php" rel="nofollow">Bitcoin Forum</a>, January 08, 2014</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Cuckoo_hashing" rel="nofollow">Cuckoo hashing from Wikipedia</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Locality-sensitive_hashing" rel="nofollow">Locality-sensitive hashing from Wikipedia</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/MinHash" rel="nofollow">MinHash from Wikipedia</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Mersenne_prime" rel="nofollow">Mersenne prime from Wikipedia</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Strong_NP-completeness" rel="nofollow">Strong NP-completeness from Wikipedia</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www-users.cs.york.ac.uk/~jowen/hashlife.html.html" rel="nofollow">Gosper's Algorithm (Hashlife) explained</a></span>
+</li>
+</ol></div>
+<p><b><a href="Data.html" title="Data">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722162558
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.190 seconds
+Real time usage: 2.779 seconds
+Preprocessor visited node count: 291/1000000
+Preprocessor generated node count: 592/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1300-0!canonical and timestamp 20240722162555 and revision id 21635
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Hash_Table&amp;oldid=21635">https://www.chessprogramming.org/index.php?title=Hash_Table&amp;oldid=21635</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Association P.C..html" title="Category:Association P.C.">Association P.C.</a></li><li><a href="Category:Pierre Courbois.html" title="Category:Pierre Courbois">Pierre Courbois</a></li><li><a href="Category:Jasper van %27t Hof.html" title="Category:Jasper van 't Hof">Jasper van 't Hof</a></li><li><a href="Category:Toto Blanke.html" title="Category:Toto Blanke">Toto Blanke</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Hash+Table&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Hash Table.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Hash Table&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Hash Table.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Hash Table&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Hash Table&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Hash Table.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Hash Table.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Hash Table&amp;oldid=21635.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Hash Table&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 October 2020, at 21:17.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Hash_Table&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.190","walltime":"2.779","ppvisitednodes":{"value":291,"limit":1000000},"ppgeneratednodes":{"value":592,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722162558","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

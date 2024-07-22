@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Looking for Magics - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Looking_for_Magics","wgTitle":"Looking for Magics","wgCurRevisionId":2272,"wgRevisionId":2272,"wgArticleId":1664,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Looking_for_Magics","wgRelevantArticleId":1664,"wgRequestId":"Zp7DhX1htEhTE3yaocy3XgAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Looking_for_Magics rootpage-Looking_for_Magics skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Looking for Magics</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> * <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> * Looking for Magics</b>
+</p><p><a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> is probably the fastest approach to generate <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">sliding piece attacks</a> on recent architectures with fast 64-bit multiplication. It performs a mask/mul/shift-&gt;lookup to gain all the attacked squares of a bishop or rook.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Trial and Error"><span class="tocnumber">1</span> <span class="toctext">Trial and Error</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Feeding in Randoms"><span class="tocnumber">2</span> <span class="toctext">Feeding in Randoms</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Fixed Shift Magics"><span class="tocnumber">3</span> <span class="toctext">Fixed Shift Magics</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Trial_and_Error">Trial and Error</span></h1>
+<p>So far the only approach to find 64-bit magic factors is <a href="Trial and Error.html" title="Trial and Error">trial and error</a>. One has the idea, how many bits are needed for a <a href="Hash Table.html#PerfectHashing" title="Hash Table">perfect hashing</a> - and about constrains of least and most significant one-bit inside the magic factor. In September 2017, <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a> introduced a technique based on the <a class="external text" href="https://en.wikipedia.org/wiki/Least_common_multiple" rel="nofollow">least common multiple</a> of the periods for all relevant occupancies to reduce the range for magic candidates, specially to find magics with one bit less than the number of relevant occupancies to half the individual tables sizes as mentioned in <a href="Best Magics so far.html" title="Best Magics so far">Best Magics so far</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>.
+</p>
+<pre>
+                                        any consecutive
+relevant occupancy                      combination of
+bishop b1, 5 bits                       the masked bits
+. . . . . . . .     . . . . . . . .     . . .[C D E F G]
+. . . . . . . .     . 1 . . . . . .     . . . . . . . .
+. . . . . . G .     . 1 . . . . . .     . . . . . . . .
+. . . . . F . .     . 1 . . . . . .     . . . . . . . .
+. . . . E . . .  *  . 1 . . . . . .  =  . . garbage . .    &gt;&gt; (64- 5)
+. . . D . . . .     . 1 . . . . . .     . . . . . . . .
+. . C . . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+                                        any consecutive
+relevant occupancy                      combination of
+bishop d4, 9 bits                       the masked bits
+. . . . . . . .     . . . . . . . .     2 4 5 B C E F G]
+. . . . . . G .     . . .some . . .     . . . . . . .[1
+. 5 . . . F . .     . . . . . . . .     . . . . . . . .
+. . 4 . E . . .     . . .magic. . .     . . . . . . . .
+. . . . . . . .  *  . . . . . . . .  =  . . garbage . .    &gt;&gt; (64- 9)
+. . C . 2 . . .     . . .bits . . .     . . . . . . . .
+. B . . . 1 . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+                                        any consecutive
+relevant occupancy                      combination of
+rook d4, 10 bits                        the masked bits
+. . . . . . . .     . . . . . . . .     4 5 6 B C E F G]
+. . . 6 . . . .     . . .some . . .     . . . . . .[1 2
+. . . 5 . . . .     . . . . . . . .     . . . . . . . .
+. . . 4 . . . .     . . .magic. . .     . . . . . . . .
+. B C . E F G .  *  . . . . . . . .  =  . . garbage . .    &gt;&gt; (64-10)
+. . . 2 . . . .     . . .bits . . .     . . . . . . . .
+. . . 1 . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+                                        any consecutive
+relevant occupancy                      combination of
+rook a1, 12 bits                        the masked bits
+. . . . . . . .     . . . . . . . .     5 6 B C D E F G]
+6 . . . . . . .     . . .some . . .     . . . .[1 2 3 4
+5 . . . . . . .     . . . . . . . .     . . . . . . . .
+4 . . . . . . .     . . .magic. . .     . . . . . . . .
+3 . . . . . . .  *  . . . . . . . .  =  . . garbage . .    &gt;&gt; (64-12)
+2 . . . . . . .     . . .bits . . .     . . . . . . . .
+1 . . . . . . .     . . . . . . . .     . . . . . . . .
+. B C D E F G .     . . . . . . . .     . . . . . . . .
+</pre>
+<p><span id="FeedinginRandoms"></span>
+</p>
+<h1><span class="mw-headline" id="Feeding_in_Randoms">Feeding in Randoms</span></h1>
+<p><a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad's</a> proposal to find magics <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> :
+</p>
+<table class="wikitable">
+<tr>
+<td>  Just trying out <a href="Pseudorandom Number Generator.html" title="Pseudorandom Number Generator">random numbers</a> with a low number of nonzero bits until you find a number which works is by far the fastest and easiest way to generate the magic numbers, in my experience. On my Core Duo 2.8 GHz, it takes less than a second to find magic numbers for rooks and bishops for all squares (and I have made no attempt to optimize the code, it should be easy to make it much faster). Here is the source code:
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define USE_32_BIT_MULTIPLICATIONS
+
+typedef unsigned long long uint64;
+
+uint64 random_uint64() {
+  uint64 u1, u2, u3, u4;
+  u1 = (uint64)(random()) &amp; 0xFFFF; u2 = (uint64)(random()) &amp; 0xFFFF;
+  u3 = (uint64)(random()) &amp; 0xFFFF; u4 = (uint64)(random()) &amp; 0xFFFF;
+  return u1 | (u2 &lt;&lt; 16) | (u3 &lt;&lt; 32) | (u4 &lt;&lt; 48);
+}
+
+uint64 random_uint64_fewbits() {
+  return random_uint64() &amp; random_uint64() &amp; random_uint64();
+}
+
+int count_1s(uint64 b) {
+  int r;
+  for(r = 0; b; r++, b &amp;= b - 1);
+  return r;
+}
+
+const int BitTable[64] = {
+  63, 30, 3, 32, 25, 41, 22, 33, 15, 50, 42, 13, 11, 53, 19, 34, 61, 29, 2,
+  51, 21, 43, 45, 10, 18, 47, 1, 54, 9, 57, 0, 35, 62, 31, 40, 4, 49, 5, 52,
+  26, 60, 6, 23, 44, 46, 27, 56, 16, 7, 39, 48, 24, 59, 14, 12, 55, 38, 28,
+  58, 20, 37, 17, 36, 8
+};
+
+int pop_1st_bit(uint64 *bb) {
+  uint64 b = *bb ^ (*bb - 1);
+  unsigned int fold = (unsigned) ((b &amp; 0xffffffff) ^ (b &gt;&gt; 32));
+  *bb &amp;= (*bb - 1);
+  return BitTable[(fold * 0x783a9b23) &gt;&gt; 26];
+}
+
+uint64 index_to_uint64(int index, int bits, uint64 m) {
+  int i, j;
+  uint64 result = 0ULL;
+  for(i = 0; i &lt; bits; i++) {
+    j = pop_1st_bit(&amp;m);
+    if(index &amp; (1 &lt;&lt; i)) result |= (1ULL &lt;&lt; j);
+  }
+  return result;
+}
+
+uint64 rmask(int sq) {
+  uint64 result = 0ULL;
+  int rk = sq/8, fl = sq%8, r, f;
+  for(r = rk+1; r &lt;= 6; r++) result |= (1ULL &lt;&lt; (fl + r*8));
+  for(r = rk-1; r &gt;= 1; r--) result |= (1ULL &lt;&lt; (fl + r*8));
+  for(f = fl+1; f &lt;= 6; f++) result |= (1ULL &lt;&lt; (f + rk*8));
+  for(f = fl-1; f &gt;= 1; f--) result |= (1ULL &lt;&lt; (f + rk*8));
+  return result;
+}
+
+uint64 bmask(int sq) {
+  uint64 result = 0ULL;
+  int rk = sq/8, fl = sq%8, r, f;
+  for(r=rk+1, f=fl+1; r&lt;=6 &amp;&amp; f&lt;=6; r++, f++) result |= (1ULL &lt;&lt; (f + r*8));
+  for(r=rk+1, f=fl-1; r&lt;=6 &amp;&amp; f&gt;=1; r++, f--) result |= (1ULL &lt;&lt; (f + r*8));
+  for(r=rk-1, f=fl+1; r&gt;=1 &amp;&amp; f&lt;=6; r--, f++) result |= (1ULL &lt;&lt; (f + r*8));
+  for(r=rk-1, f=fl-1; r&gt;=1 &amp;&amp; f&gt;=1; r--, f--) result |= (1ULL &lt;&lt; (f + r*8));
+  return result;
+}
+
+uint64 ratt(int sq, uint64 block) {
+  uint64 result = 0ULL;
+  int rk = sq/8, fl = sq%8, r, f;
+  for(r = rk+1; r &lt;= 7; r++) {
+    result |= (1ULL &lt;&lt; (fl + r*8));
+    if(block &amp; (1ULL &lt;&lt; (fl + r*8))) break;
+  }
+  for(r = rk-1; r &gt;= 0; r--) {
+    result |= (1ULL &lt;&lt; (fl + r*8));
+    if(block &amp; (1ULL &lt;&lt; (fl + r*8))) break;
+  }
+  for(f = fl+1; f &lt;= 7; f++) {
+    result |= (1ULL &lt;&lt; (f + rk*8));
+    if(block &amp; (1ULL &lt;&lt; (f + rk*8))) break;
+  }
+  for(f = fl-1; f &gt;= 0; f--) {
+    result |= (1ULL &lt;&lt; (f + rk*8));
+    if(block &amp; (1ULL &lt;&lt; (f + rk*8))) break;
+  }
+  return result;
+}
+
+uint64 batt(int sq, uint64 block) {
+  uint64 result = 0ULL;
+  int rk = sq/8, fl = sq%8, r, f;
+  for(r = rk+1, f = fl+1; r &lt;= 7 &amp;&amp; f &lt;= 7; r++, f++) {
+    result |= (1ULL &lt;&lt; (f + r*8));
+    if(block &amp; (1ULL &lt;&lt; (f + r * 8))) break;
+  }
+  for(r = rk+1, f = fl-1; r &lt;= 7 &amp;&amp; f &gt;= 0; r++, f--) {
+    result |= (1ULL &lt;&lt; (f + r*8));
+    if(block &amp; (1ULL &lt;&lt; (f + r * 8))) break;
+  }
+  for(r = rk-1, f = fl+1; r &gt;= 0 &amp;&amp; f &lt;= 7; r--, f++) {
+    result |= (1ULL &lt;&lt; (f + r*8));
+    if(block &amp; (1ULL &lt;&lt; (f + r * 8))) break;
+  }
+  for(r = rk-1, f = fl-1; r &gt;= 0 &amp;&amp; f &gt;= 0; r--, f--) {
+    result |= (1ULL &lt;&lt; (f + r*8));
+    if(block &amp; (1ULL &lt;&lt; (f + r * 8))) break;
+  }
+  return result;
+}
+
+
+int transform(uint64 b, uint64 magic, int bits) {
+#if defined(USE_32_BIT_MULTIPLICATIONS)
+  return
+    (unsigned)((int)b*(int)magic ^ (int)(b&gt;&gt;32)*(int)(magic&gt;&gt;32)) &gt;&gt; (32-bits);
+#else
+  return (int)((b * magic) &gt;&gt; (64 - bits));
+#endif
+}
+
+uint64 find_magic(int sq, int m, int bishop) {
+  uint64 mask, b[4096], a[4096], used[4096], magic;
+  int i, j, k, n, fail;
+
+  mask = bishop? bmask(sq) : rmask(sq);
+  n = count_1s(mask);
+
+  for(i = 0; i &lt; (1 &lt;&lt; n); i++) {
+    b[i] = index_to_uint64(i, n, mask);
+    a[i] = bishop? batt(sq, b[i]) : ratt(sq, b[i]);
+  }
+  for(k = 0; k &lt; 100000000; k++) {
+    magic = random_uint64_fewbits();
+    if(count_1s((mask * magic) &amp; 0xFF00000000000000ULL) &lt; 6) continue;
+    for(i = 0; i &lt; 4096; i++) used[i] = 0ULL;
+    for(i = 0, fail = 0; !fail &amp;&amp; i &lt; (1 &lt;&lt; n); i++) {
+      j = transform(b[i], magic, m);
+      if(used[j] == 0ULL) used[j] = a[i];
+      else if(used[j] != a[i]) fail = 1;
+    }
+    if(!fail) return magic;
+  }
+  printf("***Failed***\n");
+  return 0ULL;
+}
+
+int RBits[64] = {
+  12, 11, 11, 11, 11, 11, 11, 12,
+  11, 10, 10, 10, 10, 10, 10, 11,
+  11, 10, 10, 10, 10, 10, 10, 11,
+  11, 10, 10, 10, 10, 10, 10, 11,
+  11, 10, 10, 10, 10, 10, 10, 11,
+  11, 10, 10, 10, 10, 10, 10, 11,
+  11, 10, 10, 10, 10, 10, 10, 11,
+  12, 11, 11, 11, 11, 11, 11, 12
+};
+
+int BBits[64] = {
+  6, 5, 5, 5, 5, 5, 5, 6,
+  5, 5, 5, 5, 5, 5, 5, 5,
+  5, 5, 7, 7, 7, 7, 5, 5,
+  5, 5, 7, 9, 9, 7, 5, 5,
+  5, 5, 7, 9, 9, 7, 5, 5,
+  5, 5, 7, 7, 7, 7, 5, 5,
+  5, 5, 5, 5, 5, 5, 5, 5,
+  6, 5, 5, 5, 5, 5, 5, 6
+};
+
+int main() {
+  int square;
+
+  printf("const uint64 RMagic[64] = {\n");
+  for(square = 0; square &lt; 64; square++)
+    printf("  0x%llxULL,\n", find_magic(square, RBits[square], 0));
+  printf("};\n\n");
+
+  printf("const uint64 BMagic[64] = {\n");
+  for(square = 0; square &lt; 64; square++)
+    printf("  0x%llxULL,\n", find_magic(square, BBits[square], 1));
+  printf("};\n\n");
+
+  return 0;
+}
+</pre>
+</td></tr></table>
+<h1><span class="mw-headline" id="Fixed_Shift_Magics">Fixed Shift Magics</span></h1>
+<p>Another application is Looking for overlapping Magics for a <a href="Magic Bitboards.html#FixedShiftFancy" title="Magic Bitboards">fixed shift approach</a>, as recently proposed by <a href="Volker Annuss.html" title="Volker Annuss">Volker Annuss</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> .
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Best Magics so far.html" title="Best Magics so far">Best Magics so far</a></li>
+<li> <a href="Traversing Subsets of a Set.html" title="Traversing Subsets of a Set">Traversing Subsets of a Set</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=175544&amp;t=19699.html" rel="nofollow">Magic Move Generation</a> by Colin, <a href="CCC.html" title="CCC">CCC</a>, February 18, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=25810.html" rel="nofollow">Magics revisited</a> by <a href="Richard Pijl.html" title="Richard Pijl">Richard Pijl</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33346.html" rel="nofollow">magic search</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39298.html" rel="nofollow">Build magics on the fly</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54138.html" rel="nofollow">Super Fast 'Looking for magics' 1.0</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55712.html" rel="nofollow">question about magic keys generation time</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58424.html" rel="nofollow">Magic number generation taking 17 seconds or more</a> by <a class="new" href="index.php?title=Kalyankumar Ramaseshan&amp;action=edit&amp;redlink=1.html" title="Kalyankumar Ramaseshan (page does not exist)">Kalyankumar Ramaseshan</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59691&amp;start=9.html" rel="nofollow">Re: Some questions from a beginner</a> by Tim Hagen, <a href="CCC.html" title="CCC">CCC</a>, April 04, 2016</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59691&amp;start=18.html" rel="nofollow">Re: Some questions from a beginner</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, April 05, 2016</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59691&amp;start=22.html" rel="nofollow">Re: Some questions from a beginner</a> by <a href="Mincho Georgiev.html" title="Mincho Georgiev">Mincho Georgiev</a>, <a href="CCC.html" title="CCC">CCC</a>,  April 06, 2016</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64578.html" rel="nofollow">Looking for dense magics</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, July 11, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65187.html" rel="nofollow">Disproving the existence of some magics</a> by <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=67051.html" rel="nofollow">No bishop magics with fixed shift 8</a> by <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a>, <a href="CCC.html" title="CCC">CCC</a>, April 09, 2018</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.chessprogramming.net/generating-magic-multipliers/.html" rel="nofollow">Chess Programming | Generating Magic Multipliers</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65187.html" rel="nofollow">Disproving the existence of some magics</a> by <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2017</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=175834&amp;t=19699.html" rel="nofollow">Re: Magic Move Generation</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, February 20, 2008</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51162.html" rel="nofollow">Fixed shift magics with 800KB lookup table</a> by <a href="Volker Annuss.html" title="Volker Annuss">Volker Annuss</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September, 05, 2010</span>
+</li>
+</ol></div>
+<p><b><a href="Magic Bitboards.html" title="Magic Bitboards">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721235934
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.010 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 92/1000000
+Preprocessor generated node count: 188/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1664-0!canonical and timestamp 20240721235934 and revision id 2272
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Looking_for_Magics&amp;oldid=2272">https://www.chessprogramming.org/index.php?title=Looking_for_Magics&amp;oldid=2272</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Looking+for+Magics&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Looking for Magics.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Looking for Magics&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Looking for Magics.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Looking for Magics&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Looking for Magics&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Looking for Magics.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Looking for Magics.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Looking for Magics&amp;oldid=2272.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Looking for Magics&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 19 May 2018, at 10:06.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Looking_for_Magics&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.011","ppvisitednodes":{"value":92,"limit":1000000},"ppgeneratednodes":{"value":188,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721235934","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":53});});</script>
+</body>
+</html>

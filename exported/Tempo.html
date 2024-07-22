@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Tempo - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tempo","wgTitle":"Tempo","wgCurRevisionId":5954,"wgRevisionId":5954,"wgArticleId":1525,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Yamandu Costa"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Tempo","wgRelevantArticleId":1525,"wgRequestId":"Zp7DyuWZo7QkwsW0UTn48AAAAAw","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tempo rootpage-Tempo skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Tempo</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * Tempo</b>
+</p><p>In <a href="Chess.html" title="Chess">chess</a>, a <b>tempo</b> refers to a "turn" or single move. When a player achieves a result in one fewer move, he <a class="external text" href="https://en.wikipedia.org/wiki/Tempo_%28chess%29#Gaining_a_tempo" rel="nofollow">gains a tempo</a> and when he takes one more move than necessary he <a class="external text" href="https://en.wikipedia.org/wiki/Tempo_%28chess%29#Losing_a_tempo" rel="nofollow">loses a tempo</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Force.2C Space and Time"><span class="tocnumber">1</span> <span class="toctext">Force, Space and Time</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tempo Bonus"><span class="tocnumber">2</span> <span class="toctext">Tempo Bonus</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#1997 ..."><span class="tocnumber">4.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#2000 ..."><span class="tocnumber">4.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2010 ..."><span class="tocnumber">4.3</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Force.2C_Space_and_Time">Force, Space and Time</span></h1>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Siegbert_Tarrasch" rel="nofollow">Tarrasch's</a> concept of force, <a href="Space.html" title="Space">space</a> and time <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> and their equivalence (to some extend) is considered by <a href="Material.html" title="Material">material</a> (force), <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece placement</a> and <a href="Center Control.html" title="Center Control">center control</a> (space) and roughly by <a href="Mobility.html" title="Mobility">mobility</a> (space and time) inside the <a href="Evaluation.html" title="Evaluation">evaluation</a> of a chess program. Whether gaining three tempos in a <a class="new" href="index.php?title=Gambit&amp;action=edit&amp;redlink=1.html" title="Gambit (page does not exist)">gambit opening</a> is worth a <a href="Pawn.html" title="Pawn">pawn</a>, is a matter of considering <a href="Development.html" title="Development">piece development</a> and <a href="King Safety.html" title="King Safety">king safety</a> issues related to center <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a> (open/close, <a href="Pawn Levers (Bitboards).html" title="Pawn Levers (Bitboards)">lever</a> options) and <a href="Castling.html" title="Castling">castling</a> abilities, f.i. estimating number of moves to castle, and certain long term deficiencies. Also, some programs better rely more or less on the <a href="Opening Book.html" title="Opening Book">opening book</a> to play gambits well.
+</p>
+<h1><span class="mw-headline" id="Tempo_Bonus">Tempo Bonus</span></h1>
+<p>To avoid <a href="Odd-Even Effect.html#ScoreOscillation" title="Odd-Even Effect">score oscillations</a> on the <a class="external text" href="https://en.wikipedia.org/wiki/Parity_%28mathematics%29" rel="nofollow">parity</a> of the search depth, some programs give a small bonus for having the right to move - the premise being that it is usually advantageous to be able to <a href="Null Move Observation.html" title="Null Move Observation">do something</a>, except in the <a href="Zugzwang.html" title="Zugzwang">zugzwang</a> positions. That bonus is useful mainly in the opening and middle game positions, but can be counterproductive in the <a href="Endgame.html" title="Endgame">endgame</a>. 
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Development.html" title="Development">Development</a></li>
+<li> <a class="new" href="index.php?title=Gambit&amp;action=edit&amp;redlink=1.html" title="Gambit (page does not exist)">Gambit</a></li>
+<li> <a href="Mobility.html" title="Mobility">Mobility</a></li>
+<li> <a href="Null Move Observation.html" title="Null Move Observation">Null Move Observation</a></li>
+<li> <a href="Odd-Even Effect.html" title="Odd-Even Effect">Odd-Even Effect</a></li></ul>
+<dl><dd> <a href="Odd-Even Effect.html#ScoreOscillation" title="Odd-Even Effect">Score Oscillation</a></dd></dl>
+<ul><li> <a href="Opening.html" title="Opening">Opening</a></li>
+<li> <a href="Side to move.html" title="Side to move">Side to move</a></li>
+<li> <a href="Space.html" title="Space">Space</a></li>
+<li> <a href="Quiescence Search.html#StandPat" title="Quiescence Search">Standing Pat</a> in <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="Tempo (engine).html" title="Tempo (engine)">Tempo (engine)</a></li>
+<li> <a href="Transposition.html" title="Transposition">Transposition</a></li>
+<li> <a href="Triangulation.html" title="Triangulation">Triangulation</a></li>
+<li> <a href="Null Move Pruning.html#VariableNMBound" title="Null Move Pruning">Variable Null Move Bound</a></li>
+<li> <a href="Zugzwang.html" title="Zugzwang">Zugzwang</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/d3e7bdb00afc9dc4.html" rel="nofollow">PROG: odd/even score alternance</a> by <a href="R%C3%A9mi Coulom.html" title="Rémi Coulom">Rémi Coulom</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 5, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=10903" rel="nofollow">pv score oscillation</a> by <a href="Will Singleton.html" title="Will Singleton">Willie Wood</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 1997</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=148445" rel="nofollow">Bonus points for side to move in qsearch?</a> by <a href="Leen Ammeraal.html" title="Leen Ammeraal">Leen Ammeraal</a>, <a href="CCC.html" title="CCC">CCC</a>, January 06, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=158704" rel="nofollow">Testposition - The Vital Tempo</a> by <a class="new" href="index.php?title=Sune Larsson&amp;action=edit&amp;redlink=1.html" title="Sune Larsson (page does not exist)">Sune Larsson</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2001 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21538.html" rel="nofollow">How to tune the bonus for having the move</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, June 01, 2008 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=28167.html" rel="nofollow">Side to Move Bonus - does it help?</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37732.html" rel="nofollow">Why works an oscillating TempoValue?</a> by <a class="new" href="index.php?title=Marek Kwiatkowski&amp;action=edit&amp;redlink=1.html" title="Marek Kwiatkowski (page does not exist)">Marek Kwiatkowski</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42982.html" rel="nofollow">stand pat or side to move bonus</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48349.html" rel="nofollow">First move advantage</a> by <a href="Lyudmil Tsvetkov.html" title="Lyudmil Tsvetkov">Lyudmil Tsvetkov</a>, <a href="CCC.html" title="CCC">CCC</a>, June 19, 2013 » <a href="Opening.html" title="Opening">Opening</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2985.html" rel="nofollow">Symmetrical evaluation and endgame</a> by Hamfer, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, June 02, 2016 » <a href="Asymmetric Evaluation.html" title="Asymmetric Evaluation">Asymmetric Evaluation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65558.html" rel="nofollow">side-to-move bonus for several eval terms</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68224.html" rel="nofollow">On Tempo</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, August 15, 2018</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Tempo_%28chess%29" rel="nofollow">Tempo (chess) from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.chessguru.net/get better/chess tempo/.html" rel="nofollow">Tempo, a fundamental concept in chess</a> from <a class="external text" href="http://www.chessguru.net/.html" rel="nofollow">chessguru.net</a></li>
+<li> <a href="Category:Yamandu Costa.html" title="Category:Yamandu Costa">Yamandu Costa</a> - Tempo de <a class="external text" href="http://pt.wikipedia.org/wiki/Crian%C3%A7a.html" rel="nofollow">Criança</a>, 2003, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/bOU8f8gm83M?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Siegbert_Tarrasch" rel="nofollow">Siegbert Tarrasch</a> (<b>1931</b>). <a class="external text" href="http://www.amazon.de/Das-Schachspiel-Originalfassung-Siegbert-Tarrasch/dp/3938484845.html" rel="nofollow">Das Schachspiel</a> Die Eröffnung I. Allgemeiner Teil Die Kräfte, Der Raum, Die Zeit, Tempobilanz (German)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50222.html" rel="nofollow">The creativity of Don Dailey</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2013</span>
+</li>
+</ol></div>
+<p><b><a href="Evaluation.html" title="Evaluation">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722130136
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.010 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 72/1000000
+Preprocessor generated node count: 154/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1525-0!canonical and timestamp 20240722130136 and revision id 5954
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Tempo&amp;oldid=5954">https://www.chessprogramming.org/index.php?title=Tempo&amp;oldid=5954</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Yamandu Costa.html" title="Category:Yamandu Costa">Yamandu Costa</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Tempo&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Tempo.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Tempo&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Tempo.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Tempo&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Tempo&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Tempo.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Tempo.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Tempo&amp;oldid=5954.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Tempo&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 15 August 2018, at 21:20.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Tempo&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.011","ppvisitednodes":{"value":72,"limit":1000000},"ppgeneratednodes":{"value":154,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722130136","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

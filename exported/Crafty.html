@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Crafty - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Crafty","wgTitle":"Crafty","wgCurRevisionId":24567,"wgRevisionId":24567,"wgArticleId":2449,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Open Source","WinBoard","XBoard","DEC Alpha","PowerPC","X86","X64","Mac","Linux","Windows","PC","Android","Robert Fripp"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Crafty","wgRelevantArticleId":2449,"wgRequestId":"Zp7DUAMLGU3EphdnCkJWEAAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Crafty rootpage-Crafty skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Crafty</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Crafty</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://twogirlsbeingcrafty.blogspot.de/2011/04/owl-pin-cushion.html.html"><img alt="" class="thumbimage" height="397" src="images/thumb/2/2e/CraftyOwl.jpg/300px-CraftyOwl.jpg" srcset="/images/2/2e/CraftyOwl.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:CraftyOwl.jpg.html" title="Enlarge"></a></div>Crafty Owl <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Crafty</b>, <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <br/>
+a portable <a href="Category:Open Source.html" title="Category:Open Source">open source engine</a> supporting the <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> written by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> in <a href="C.html" title="C">ANSI C</a> starting in the early 90s, loosely derived from <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a>, winner of the <a href="WCCC 1983.html" title="WCCC 1983">1983</a> and <a href="WCCC 1986.html" title="WCCC 1986">1986</a> World Computer Chess Championships <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. Crafty pioneered in using <a href="Rotated Bitboards.html" title="Rotated Bitboards">Rotated bitboards</a> , <a href="Parallel Search.html" title="Parallel Search">parallel search</a> and probing <a href="Nalimov Tablebases.html" title="Nalimov Tablebases">Nalimov Tablebases</a>. It performs a <a href="Principal Variation Search.html" title="Principal Variation Search">principal variation search</a>, <a href="Null Move Pruning.html" title="Null Move Pruning">null move pruning</a>, <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> as well as a <a href="SEE - The Swap Algorithm.html" title="SEE - The Swap Algorithm">SEE swap algorithm</a> for <a href="Move Ordering.html" title="Move Ordering">move ordering</a> and to <a href="Pruning.html" title="Pruning">prune</a> "bad" <a href="Captures.html" title="Captures">captures</a> in <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>. In 2006/2007, Crafty switched from rotated to <a href="Magic Bitboards.html" title="Magic Bitboards">Magic bitboards</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, according to Robert Hyatt because it was not faster but simpler <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. Crafty <b>25.1</b>, released in October 2016,  not only includes an increase in playing strength <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> but support for <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy bases</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a> aided by the coding <a href="Syzygy Bases.html#Fathom" title="Syzygy Bases">contributions</a> of <a href="Basil Falcinelli.html" title="Basil Falcinelli">Basil Falcinelli</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>. Crafty <b>25.3</b> features <a href="Playing Strength.html" title="Playing Strength">playing strength</a> adjustment between 800 and 2600 Elo <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Team Members"><span class="tocnumber">1</span> <span class="toctext">Team Members</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tournaments"><span class="tocnumber">2</span> <span class="toctext">Tournaments</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Descriptions"><span class="tocnumber">3</span> <span class="toctext">Descriptions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#1997"><span class="tocnumber">3.1</span> <span class="toctext">1997</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#2008"><span class="tocnumber">3.2</span> <span class="toctext">2008</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Generation II"><span class="tocnumber">3.3</span> <span class="toctext">Generation II</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Leading or Trailing Zeros"><span class="tocnumber">3.4</span> <span class="toctext">Leading or Trailing Zeros</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#LSB"><span class="tocnumber">3.4.1</span> <span class="toctext">LSB</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Last One"><span class="tocnumber">3.4.2</span> <span class="toctext">Last One</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Selected Games"><span class="tocnumber">4</span> <span class="toctext">Selected Games</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#WCCC 2004"><span class="tocnumber">4.1</span> <span class="toctext">WCCC 2004</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#WCCC 2006"><span class="tocnumber">4.2</span> <span class="toctext">WCCC 2006</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Copyright"><span class="tocnumber">5</span> <span class="toctext">Copyright</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Crafty Clones"><span class="tocnumber">6</span> <span class="toctext">Crafty Clones</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Publications"><span class="tocnumber">8</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#1997 ..."><span class="tocnumber">8.1</span> <span class="toctext">1997 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2000 ..."><span class="tocnumber">8.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2010 ..."><span class="tocnumber">8.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2020 ..."><span class="tocnumber">8.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Forum Posts"><span class="tocnumber">9</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="#1995 ..."><span class="tocnumber">9.1</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#2000 ... 2"><span class="tocnumber">9.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#2005 ..."><span class="tocnumber">9.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#2010 ... 2"><span class="tocnumber">9.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#2015 ..."><span class="tocnumber">9.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#2020 ... 2"><span class="tocnumber">9.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#External Links"><span class="tocnumber">10</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Chess Engine"><span class="tocnumber">10.1</span> <span class="toctext">Chess Engine</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Misc"><span class="tocnumber">10.2</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Team_Members">Team Members</span></h1>
+<p>as mentioned at <a href="WCRCC 2010.html" title="WCRCC 2010">WCRCC 2010</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> and <a href="CCT15.html" title="CCT15">CCT15</a>, 2013 <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>
+</p>
+<ul><li> <a href="Peter Berger.html" title="Peter Berger">Peter Berger</a>, Crafty's <a href="Category:Opening Book Author.html" title="Category:Opening Book Author">book author</a> at <a href="WCCC 2004.html" title="WCCC 2004">WCCC 2004</a>, <a href="WCCC 2005.html" title="WCCC 2005">WCCC 2005</a> and <a href="WCCC 2006.html" title="WCCC 2006">WCCC 2006</a></li>
+<li> <a href="Michael Byrne.html" title="Michael Byrne">Michael Byrne</a></li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a></li>
+<li> <a class="new" href="index.php?title=Tracy Riegle&amp;action=edit&amp;redlink=1.html" title="Tracy Riegle (page does not exist)">Tracy Riegle</a></li>
+<li> <a href="Peter Skinner.html" title="Peter Skinner">Peter Skinner</a></li></ul>
+<h1><span class="mw-headline" id="Tournaments">Tournaments</span></h1>
+<p>Crafty participated at four <a href="World Microcomputer Chess Championship.html" title="World Microcomputer Chess Championship">World Microcomputer Chess Championships</a>, the <a href="WMCCC 1996.html" title="WMCCC 1996">WMCCC 1996</a>, <a href="WMCCC 1997.html" title="WMCCC 1997">WMCCC 1997</a>, <a href="WMCCC 2000.html" title="WMCCC 2000">WMCCC 2000</a>, and <a href="WMCCC 2001.html" title="WMCCC 2001">WMCCC 2001</a>, three <a href="World Computer Chess Championship.html" title="World Computer Chess Championship">World Computer Chess Championships</a>, the <a href="WCCC 2004.html" title="WCCC 2004">WCCC 2004</a>, <a href="WCCC 2005.html" title="WCCC 2005">WCCC 2005</a> and <a href="WCCC 2006.html" title="WCCC 2006">WCCC 2006</a>, the <a href="ACCA Americas%27 Computer Chess Championship.html" title="ACCA Americas' Computer Chess Championship">ACCA Americas' Computer Chess Championships</a>, the <a href="ACCA World Computer Rapid Chess Championship.html" title="ACCA World Computer Rapid Chess Championship">ACCA World Computer Rapid Chess Championships</a>, <a href="CCT Tournaments.html" title="CCT Tournaments">CCT</a> and various other <a class="new" href="index.php?title=Tournaments&amp;action=edit&amp;redlink=1.html" title="Tournaments (page does not exist)">tournaments</a>. Crafty won the <a href="CCT1.html" title="CCT1">CCT1</a> in 2000, <a href="CCT5.html" title="CCT5">CCT5</a> in 2003 and <a href="CCT6.html" title="CCT6">CCT6</a> in 2004. At the <a href="ACCA 2010.html" title="ACCA 2010">Fifth Annual ACCA Americas' Computer Chess Championships</a> in 2010 Crafty was runner-up behind <a href="Thinker.html" title="Thinker">Thinker</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> .
+</p>
+<h1><span class="mw-headline" id="Descriptions">Descriptions</span></h1>
+<h2><span class="mw-headline" id="1997">1997</span></h2>
+<p>from the <a href="ICGA.html" title="ICGA">ICGA</a> page <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> :
+</p>
+<pre>Crafty is a "bitmapper" using 64 bit words to represent the chess board, along the lines of the famous <a href="Chess (Program).html" title="Chess (Program)">Chess 4.x</a> program from <a href="Northwestern University.html" title="Northwestern University">Northwestern University</a>. It uses a traditional <a href="Alpha-Beta.html" title="Alpha-Beta">alpha/beta search</a> with the <a href="Principal Variation Search.html" title="Principal Variation Search">PVS</a> (<a href="Null Window.html" title="Null Window">null-window</a>) enhancement, along with <a href="Null Move Pruning.html" title="Null Move Pruning">null-moves</a> (<a href="Depth Reduction R.html" title="Depth Reduction R">R</a>=2) and lots of search <a href="Extensions.html" title="Extensions">extensions</a> including "<a href="Extensions.html#FractionalExtensions" title="Extensions">fractional ply extensions</a>" to drive the search deeper along interesting lines. It has a very simple <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a> that only considers <a href="Captures.html" title="Captures">capture moves</a> and is fairly selective about which captures are included. It does a full endpoint <a href="Evaluation.html" title="Evaluation">evaluation</a>, with no root <a href="Piece-Square Tables.html#Preprocessing" title="Piece-Square Tables">pre-processing</a> nor <a href="Incremental Updates.html" title="Incremental Updates">incrementally updated</a> scoring terms. It is currently about 37,000 lines of ANSI C with about 3,000 lines of that being evaluation.
+</pre>
+<pre>Since Crafty uses <a href="Bitboards.html" title="Bitboards">bitmaps</a>, much of the <a href="Evaluation.html" title="Evaluation">evaluation</a> is significantly shorter than it would be in a more traditional (array-based) <a href="Board Representation.html" title="Board Representation">board representation</a>, so that this 3,000 lines of code is somewhat misleading (for example, to ask "can this pawn run and promote before the opposing king can get there?" only takes one line of code in Crafty. It is still very fast, searching around 100,000 moves per second. At 60 seconds per move, it solves 297/300 of the <a class="new" href="index.php?title=Win At Chess&amp;action=edit&amp;redlink=1.html" title="Win At Chess (page does not exist)">Win At Chess</a> tactical positions. It has a large <a href="Opening Book.html" title="Opening Book">opening database</a> composed from 250,000 GM games, and uses 3-4-5 piece <a href="Endgame Tablebases.html" title="Endgame Tablebases">endgame databases</a> during the search (not just at the <a href="Root.html" title="Root">root</a> of the <a href="Search Tree.html" title="Search Tree">tree</a>.) It has played over 100,000 games during the past two years, playing on various <a href="Chess Server.html" title="Chess Server">chess servers</a> around the world, and has maintained ratings on these servers that are always near the very top. 
+</pre>
+<h2><span class="mw-headline" id="2008">2008</span></h2>
+<p>from a <a href="CCC.html" title="CCC">CCC</a> post <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> :
+</p>
+<pre>Crafty's basic search is pretty simple. Just <a href="Principal Variation Search.html" title="Principal Variation Search">PVS</a> + <a href="Null Move Pruning.html" title="Null Move Pruning">null-move</a> + <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> + <a href="Check Extensions.html" title="Check Extensions">check extension</a> (all others have been removed after testing showed they hurt performance rather than helped), + simple q-search checks (I am playing with this as I write this however and it might change) + simple q-search. I've used <a href="Killer Heuristic.html" title="Killer Heuristic">killers</a> and <a href="Transposition Table.html" title="Transposition Table">hashing</a> since middle 70's so those are not new. <a href="Bitboards.html" title="Bitboards">Bitboards</a> were around in the middle 70's so that's not new. I don't think there is anything remarkable in my evaluation, certainly nothing we were not doing 15 years ago or longer, other than tuning adjustments.
+</pre>
+<pre>As far as tuning goes on LMR and null-move, I have not gone very far afield there. I use <a href="Depth Reduction R.html" title="Depth Reduction R">R</a>=3 everywhere. LMR is a 1-ply reduction although I have plans to try a variable reduction so that for moves that look really ugly I reduce them even further (white playing Na1 for example, with king on the other side of the board, no passed pawns, etc...)
+</pre>
+<pre>I have even run without the check extension, the only one that is left. Many think the purpose of this extension is to find deep mates. That's wrong. The purpose is to try to expose <a href="Horizon Effect.html" title="Horizon Effect">horizon-effect</a> moves and avoid them when possible. I also want to test a restricted check extension, where it is only applied in the last N plies where the horizon effect is most notable, where right now I apply them everywhere with no limit, always +1 ply added to depth. 
+</pre>
+<p><span id="25"></span>
+</p>
+<h2><span class="mw-headline" id="Generation_II">Generation II</span></h2>
+<p>Crafty <b>25.0</b>, Generation II, December 2015 <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>
+</p>
+<ul><li> This version contains a major rewrite of the <a href="Parallel Search.html" title="Parallel Search">parallel search</a> code, now referred to as <b>Generation II</b>. It has a more lightweight split algorithm, that costs the parent MUCH less effort to split the search. The key is that now the individual "helper" <a href="Thread.html" title="Thread">threads</a> do all the work, allocating a split block, copying the data from the parent, etc., rather than the parent doing it all. Gen II based on the <a href="Dynamic Tree Splitting.html" title="Dynamic Tree Splitting">DTS</a> "late-join" idea so that a thread will try to join existing split points before it goes to the idle wait loop waiting for some other thread to split with it. In fact, this is now the basis for the new split method where the parent simply creates a split point by allocating a split block for itself, and then continuing the search, after the parent split block is marked as "joinable". Now any idle threads just "jump in" without the parent doing anything else, which means that currently idle threads will "join" this split block if they are in the "wait-for-work" spin loop, and threads that become idle also join in exactly the same way. This is MUCH more efficient, and also significantly reduces the number of split blocks needed during the search. We also now pre-split the search when we are reasonably close to the root of the tree, which is called a "gratuitous split. This leaves joinable split points laying around so that whenever a thread becomes idle, it can join in at these pre-existing split points immediately. We now use a much more conservative approach when dealing with <a href="Fail-High.html" title="Fail-High">fail highs</a> at the <a href="Root.html" title="Root">root</a>. Since <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a> and such have introduced greater levels of <a href="Search Instability.html" title="Search Instability">search instability</a>, we no longer trust a fail-high at the root if it fails low on the research. We maintain the last <a href="Score.html" title="Score">score</a> returned for every root move, along with the <a class="new" href="index.php?title=Principal variation&amp;action=edit&amp;redlink=1.html" title="Principal variation (page does not exist)">PV</a> . Either an <a href="Exact Score.html" title="Exact Score">exact score</a> or the <a href="Bound.html" title="Bound">bound</a> score that was returned. At the end of the iteration, we sort the root move list using the backed-up score as the sort key, and we play the move with the best score. This solves a particularly ugly issue where we get a score for the first move, then another move fails high, but then fails low and the re-search produces a score that is actually WORSE than the original <a href="Best Move.html" title="Best Move">best move</a>. We still see that, but we always play the best move now. One other efficiency trick is that when the above happens, the search would tend to be less efficient since the best score for that fail-high/fail-low move is actually worse than the best move/score found so far. If this happens, the score is restored to the original best move score (in Search()) so that we continue searching with a good <a href="Lower Bound.html" title="Lower Bound">lower bound</a> , not having to deal with moves that would fail high with this worse value, but not with the original best move's value.</li>
+<li> We also added a new method to automatically tune the new SMP parameters. The command is autotune and "help autotune" will explain how to run it.</li>
+<li> In addition , we did a complete re-factor of pawn evaluation code. There were too many overlapping terms that made tuning difficult. Now a pawn is classified as one specific class, there is no overlap between classes, which simplifies the code significantly. The code is now easier to understand and modify. In addition, the <a href="Passed Pawn.html" title="Passed Pawn">passed pawn</a> evaluation was rewritten and consolidates all the passed pawn evaluation in one place. The evaluation used to add a bonus for <a href="Tarrasch Rule.html" title="Tarrasch Rule">rooks behind passed pawns</a> in rook scoring, blockading somewhere else, etc. All of this was moved to the passed pawn code to make it easier to understand and modify.</li>
+<li> Added a limited version of <a href="Futility Pruning.html#MoveCountBasedPruning" title="Futility Pruning">late move pruning</a> (LMP) for the last two plies. Once a set number of moves have been searched with no fail high, non-interesting moves are simply skipped in a way similar to <a href="Futility Pruning.html" title="Futility Pruning">futility pruning</a>.</li>
+<li> We had a minor change to <a href="History Heuristic.html" title="History Heuristic">history counters</a> that now rely on a "saturating counter" idea. I wanted to avoid the aging idea, and it seemed to not be so clear that preferring history moves by the depth at which they were good was the way to go. I returned to a history counter idea I tested around 2005 but discarded, namely using a saturating counter. The idea is that a center value (at present 1024) represents a zero score. Decrementing it makes it worse, incrementing it makes it better. But to make it saturate at either end, I only reduce the counter by a fraction of its distance from the saturation point so that once it gets to either extreme value, it will not be modified further avoiding wrap-around. This <a href="Relative History Heuristic.html" title="Relative History Heuristic">basic idea</a> was originally reported by <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a> in 2005. It seems to provide better results (slightly) on very deep searches. One impetus for this was an intent to fold this into a move so that I could sort the moves rather than doing the selection approach I currently use. However, this had a bad effect on testing, since history information is dynamic and is constantly changing, between two moves at the same ply in fact. The sort fixed the history counters to the value at the start of that ply. This was discarded after testing, but the history counter based on the saturating counter idea seemed to be OK and was left in even though it produced minimal Elo gain during testing.</li>
+<li> We change to the way moves are counted, to add a little more consistency to LMR. Now Next*() returns an order number that starts with 1 and monotonically increases, this order number is used for LMR and such decisions that vary things based on how far down the move list something occurs. Root move counting was particularly problematic with parallel searching, now things are at least "more consistent". The only negative impact is that now the move counter gets incremented even for illegal moves, but testing showed this was a no-change change with one thread, and the consistency with multiple threads made it useful.</li>
+<li> Added the <a href="Countermove Heuristic.html" title="Countermove Heuristic">"counter-move" heuristic</a>  for move ordering (<a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a>,  <a href="ICGA Journal.html#15 1" title="ICGA Journal">IJICCA</a>) which simply remembers a fail high move and the move at the previous ply. If the hash, captures or killer moves don't result in a fail high, this move is tried next. No significant cost, seems to reduce tree size noticeably. Added a follow-up idea based on the same idea, except we pair a move that fails high with the move two plies back, introducing a sort of "connection" between them. This is a sort of "plan" idea where the first move of the pair enables the second move to fail high. The benefit is that this introduces yet another pair of good moves that get ordered before history moves, and is therefore not subject to reduction. I have been unable to come up with a reference for this idea, but I believe I first saw it somewhere around the time <a href="Fruit.html" title="Fruit">Fruit</a> showed up, I am thinking perhaps in the <a href="ICGA Journal.html" title="ICGA Journal">JICCA/JICGA</a>. Any reference would be appreciated.</li>
+<li> A minor change to the way the PV and fail-hi/fail-low moves are displayed when <a href="Pondering.html" title="Pondering">pondering</a> . </li>
+<li> Crafty now adds the ponder move to the front of the PV enclosed in parentheses so that it is always visible in console mode. The depths are reaching such extreme numbers the ponder move scrolls off the top of the screen when running in console mode or when "tail -f" is used to watch the log file while a game is in progress. This is a bit trickier than you might think since Crafty displays the game move numbers in the PV.</li>
+<li> The penalty for pawns on same color as bishop now only applies when there is one bishop. </li></ul>
+<p><span id="BitScan"></span>
+</p>
+<h2><span class="mw-headline" id="Leading_or_Trailing_Zeros">Leading or Trailing Zeros</span></h2>
+<p>Crafty had always mapped square-index 0 to square 'a1', 7 to 'h1', and 63 to 'h8' respectively, but recently (crafty-20.6) reversed the bit-index versus square-index mapping from <a href="BitScan.html#LeadingZeroCount" title="BitScan">leading</a> to <a href="BitScan.html#TrailingZeroCount" title="BitScan">trailing zero count</a> based <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">little-endian rank-file</a> (LERF), using <a href="BitScan.html#Bitscanforward" title="BitScan">bitscan forward</a> (<a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LSB</a>) to retrieve squares in <b>a1-h8</b> order, as most often used in <a class="new" href="index.php?title=MappingHint&amp;action=edit&amp;redlink=1.html" title="MappingHint (page does not exist)">CPW</a> bitboard samples.
+</p>
+<h3><span class="mw-headline" id="LSB">LSB</span></h3>
+<p><a href="BitScan.html#TrailingZeroCount" title="BitScan">Trailing zero count</a> aka bitscan forward for non empty sets as used in <a href="Bitboard Serialization.html" title="Bitboard Serialization">bitboard serialization</a> for <a href="Move Generation.html" title="Move Generation">move generation</a> and <a href="Evaluation.html" title="Evaluation">evaluation</a> purposes, is implemented with <a href="X86-64.html" title="X86-64">x86-64</a> <a href="BitScan.html#bsfbsr" title="BitScan">bsf instruction</a> via intrinsic or <a href="Assembly.html#InlineAssembly" title="Assembly">inline assembly</a> if available (there are also 32-bit <a href="X86.html" title="X86">x86</a> bsf versions), and a conditional 16-bit <a href="Byte.html" title="Byte">byte</a> lookup approach otherwise - <a href="Windows.html" title="Windows">Windows 64</a>, <a href="Linux.html" title="Linux">Linux 64</a> and lookup versions with preprocessor instructions for conditional compiles omitted <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>:
+</p>
+<pre>
+int LSB(BITBOARD arg1) {
+  unsigned long index;
+  if (_BitScanForward64(&amp;index, arg1))
+    return index;
+  else
+    return 64;
+}
+
+int static __inline__ LSB(long word)
+{
+  long dummy, dummy2;
+
+asm("          bsfq    %1, %0     " "\n\t"
+    "          jnz     1f         " "\n\t"
+    "          movq    $64, %0    " "\n\t"
+    "1:                           " "\n\t"
+:   "=&amp;r"(dummy), "=&amp;r" (dummy2)
+:   "1"((long) (word))
+:   "cc");
+  return (dummy);
+}
+
+unsigned char lsb[65536];
+
+int LSB(BITBOARD arg1) {
+  if ( arg1        &amp; 65535) return (lsb[ arg1        &amp; 65535]);
+  if ((arg1 &gt;&gt; 16) &amp; 65535) return (lsb[(arg1 &gt;&gt; 16) &amp; 65535] + 16);
+  if ((arg1 &gt;&gt; 32) &amp; 65535) return (lsb[(arg1 &gt;&gt; 32) &amp; 65535] + 32);
+  return (lsb[arg1 &gt;&gt; 48] + 48);
+}
+</pre>
+<h3><span class="mw-headline" id="Last_One">Last One</span></h3>
+<p>Earlier Crafty versions prior to 20.6 had a <a href="BitScan.html#LeadingZeroCount" title="BitScan">leading zero count</a> compliant, <a href="Big-endian.html" title="Big-endian">big-endian</a> rank-file mapping. Left-bottom square (from White's point of view) 'a1' with square-index 0 was mapped to the leftmost, arithmetical most significant bit of an unsigned 64-bit integer with bit-index 63, while square 'h8' with square-index 63, was mapped to the rightmost, arithmetical least significant bit with bit-index 0. Bitscan forward and found index <a href="Flipping Mirroring and Rotating.html#Rotationby180degrees" title="Flipping Mirroring and Rotating">reversal</a> was used in LastOne, to retrieve squares in <b>h8-a1</b> order <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup>:
+</p>
+<pre>
+int LastOne(BITBOARD arg1)
+{
+  unsigned long index;
+  if (_BitScanForward64(&amp;index, arg1))
+    return 63 - index;
+  else
+    return 64;
+}
+</pre>
+<p>This one was found in 15.17 with <a href="Mac OS.html" title="Mac OS">Mac OS</a> support <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>
+</p>
+<pre>
+int LastOne(register BITBOARD a)
+{
+  register unsigned long i;
+  if (i = a &amp; 0xffffffff)
+    return(__cntlzw(i ^ (i - 1)) + 32);
+  if (i = a &gt;&gt; 32)
+    return(__cntlzw(i ^ (i - 1)));
+  return(64);
+}
+</pre>
+<h1><span class="mw-headline" id="Selected_Games">Selected Games</span></h1>
+<h2><span class="mw-headline" id="WCCC_2004">WCCC 2004</span></h2>
+<p><a href="WCCC 2004.html" title="WCCC 2004">WCCC 2004</a>, round 9, <a href="Falcon.html" title="Falcon">Falcon</a> - <a class="mw-selflink selflink">Crafty</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>
+</p>
+<pre>
+[Event "WCCC 2004"]
+[Site "Ramat Gan, Israel"]
+[Date "2004.07.11"]
+[Round "9"]
+[White "Falcon"]
+[Black "Crafty"]
+[Result "0-1"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.Nc3 Bd6 5.O-O O-O 6.d3 h6 7.Be3 a6 8.Ba4 b5 
+9.Bb3 Na5 10.d4 exd4 11.Bxd4 Be7 12.e5 Ne8 13.Nd5 Nxb3 14.axb3 c5 15.Be3 
+Bb7 16.b4 Bxd5 17.Qxd5 Nc7 18.Qb7 Rb8 19.Qe4 cxb4 20.Rfd1 Qc8 21.Nd4 Re8 
+22.Nf5 Bf8 23.Qg4 Kh7 24.Bxh6 gxh6 25.Qh5 Kg8 26.Rd3 Re6 27.Rg3+ Rg6 28.Rxg6+ 
+fxg6 29.Qxg6+ Kh8 30.Nxh6 Bxh6 31.Qxh6+ Kg8 32.Qg6+ Kf8 33.Rd1 Ne6 34.Rd3 
+Ke7 35.Qf6+ Ke8 36.Rg3 Qc5 37.Rg8+ Nf8 38.Rg7 Rb6 39.Qf7+ Kd8  40.Rg8 Kc7 
+41.Qxf8 Qxf8 42.Rxf8 a5 43.Ra8 a4 44.g3 Rb8 45.Ra7+ Rb7 46.Ra5 Kb6 47.Ra8 
+Ra7 48.Rb8+ Kc6 49.Rc8+ Kd5 50.e6 dxe6 51.Rd8+ Kc5 52.Rc8+ Kb6 53.Re8 a3 
+54.Rxe6+ Kc5 55.bxa3 0-1
+</pre>
+<h2><span class="mw-headline" id="WCCC_2006">WCCC 2006</span></h2>
+<p><a href="WCCC 2006.html" title="WCCC 2006">WCCC 2006</a>, round 8, <a href="Diep.html" title="Diep">Diep</a> - <a class="mw-selflink selflink">Crafty</a> <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>
+</p>
+<pre>
+[Event "WCCC 2006"]
+[Site "Turin, Italy"]
+[Date "2006.05.30"]
+[Round "8"]
+[White "Diep"]
+[Black "Crafty"]
+[Result "0-1"]
+
+1.e4 e5 2.Nf3 d6 3.d4 exd4 4.Nxd4 Nf6 5.Nc3 Be7 6.Bf4 O-O 7.Qd2 c6 8.O-O-O b5 
+9.f3 b4 10.Nce2 c5 11.Nb3 Nc6 12.Bxd6 c4 13.Nc5 Qa5 14.Bxe7 Nxe7 15.Qd6 Nf5 
+16.exf5 Qxa2 17.g4 a5 18.Rd4 Re8 19.Kd1 Qxb2 20.Nc1 b3 21.cxb3 cxb3 22.Bd3 a4 
+23.Re1 Rxe1+ 24.Kxe1 Qxc1+ 25.Ke2 Bb7 26.Qd8+ Ne8 27.Qe7 Bc6 28.Bc4 Nf6 29.Bxf7+ 
+Kh8 30.Nd3 b2 31.Rd8+ Rxd8 32.Qxd8+ Be8 33.Bxe8 Qc2+ 34.Ke3 Nd5+ 35.Kd4 Qc3+ 
+36.Ke4 Qc7 37.Qxc7 Nxc7 38.Nxb2 a3 39.Bf7 axb2 40.Ba2 Nb5 41.Kd3 Na3 42.g5 b1=B+ 
+43.Bxb1 Nxb1 44.h4 Kg8 45.h5 Kf8 46.f4 Ke7 47.Kd4 Nd2 48.Ke3 Nc4+ 49.Kd4 Nd6 
+50.Ke5 Nf7+ 51.Kd5 h6 52.f6+ gxf6 53.g6 Nd8 54.f5 Nb7 55.Kc6 Na5+ 0-1
+</pre>
+<h1><span class="mw-headline" id="Copyright">Copyright</span></h1>
+<p>Many programmers did not grasp Crafty's <a class="external text" href="https://en.wikipedia.org/wiki/Copyright" rel="nofollow">Copyright</a> statement, but apparently took remarks by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> like in his reply to <a href="Ren Wu.html" title="Ren Wu">Ren Wu</a>, January 26, 1999, concerning <a class="external text" href="https://en.wikipedia.org/wiki/Code_reuse" rel="nofollow">code reuse</a> and not <a class="external text" href="https://en.wikipedia.org/wiki/Reinventing_the_wheel" rel="nofollow">reinventing the wheel</a> as alibi for their chess programming <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup> :
+</p>
+<pre>This is a basic tenet of software engineering called 'code reuse'. Why should I pay you to write something from scratch and take a year, if you can take something that exists and modify it to do the same thing in a month? And then I don't have as much trouble debugging and testing, since it is mostly already done...
+</pre>
+<pre>that's not a bad side to this... Of course occasionally starting over is a good thing. But not starting from 'scratch'. IE if you don't know what has already been tried, you will re-invent the same bad wheels over and over and probably follow the same footsteps many before you did... software engineering wants to avoid that 'reinvention' problem... 
+</pre>
+<p><a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> further on the copyright problem <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup> :
+</p>
+<pre>My primary requirement is that if something is done to crafty to make it 'better', then that 'something' must be as public as the original code was. Because many have contributed bits and pieces... Eugene, George, Steffen, Mark, SJE, and many others that are to numerous to mention. Seems unfair that they modify what I did, then they make their stuff public, and then someone else takes _all_ of this and purports it to be 'original'.
+</pre>
+<pre>I suppose it has to do with 'national morals' or whatever, ie the software piracy problem in China, to name but one. 
+</pre>
+<p><span id="CraftyClones"></span>
+</p>
+<h1><span class="mw-headline" id="Crafty_Clones">Crafty Clones</span></h1>
+<ul><li> <a href="Bionic Impakt.html" title="Bionic Impakt">Bionic Impakt</a></li>
+<li> <a href="Brause.html" title="Brause">Brause</a></li>
+<li> <a href="Chinito.html" title="Chinito">Chinito</a></li>
+<li> <a href="Fafis.html" title="Fafis">Fafis</a></li>
+<li> <a href="Gunda-1.html" title="Gunda-1">Gunda-1</a></li>
+<li> <a href="Kaissa (BY).html" title="Kaissa (BY)">Kaissa (BY)</a></li>
+<li> <a href="LaGrande.html" title="LaGrande">LaGrande</a></li>
+<li> <a href="LaPetite.html" title="LaPetite">LaPetite</a></li>
+<li> <a href="Patriot.html" title="Patriot">Patriot</a></li>
+<li> <a class="new" href="index.php?title=Vafra&amp;action=edit&amp;redlink=1.html" title="Vafra (page does not exist)">Vafra</a></li>
+<li> <a href="Voyager.html" title="Voyager">Voyager</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a></li>
+<li> <a href="Nalimov Tablebases.html" title="Nalimov Tablebases">Nalimov Tablebases</a></li>
+<li> <a href="Category:Open Source.html" title="Category:Open Source">Open Source Engines</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1997_...">1997 ...</span></h2>
+<ul><li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Monroe Newborn.html" title="Monroe Newborn">Monroe Newborn</a> (<b>1997</b>). <i>CRAFTY Goes Deep</i>. <a href="ICGA Journal.html#20 2" title="ICGA Journal">ICCA Journal, Vol. 20, No. 2</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> (<b>2001</b>). <i>Modeling the “Go Deep” Behaviour of CRAFTY and DARK THOUGHT.</i> <a href="Advances in Computer Games 9.html" title="Advances in Computer Games 9">Advances in Computer Games 9</a> » <a href="Depth.html" title="Depth">Depth</a>, <a href="DarkThought.html" title="DarkThought">DarkThought</a></li>
+<li> <a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a>, <a href="Eric Postma.html" title="Eric Postma">Eric Postma</a>, <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>2002</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-40031-8 11.html" rel="nofollow">The Neural MoveMap Heuristic in Chess</a></i>. <a href="CG 2002.html" title="CG 2002">CG 2002</a>, <a class="external text" href="http://www.pradu.us/old/Nov27 2008/Buzz/research/parallel/movemap heuristic.pdf.html" rel="nofollow">pdf</a> » <a href="Neural MoveMap Heuristic.html" title="Neural MoveMap Heuristic">Neural MoveMap Heuristic</a></li>
+<li> <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a> (<b>2003</b>). <i>Implementation of Multi-ProbCut in Chess</i>. CPSC 449 Thesis, <a class="external text" href="http://www.cs.ubc.ca/%7Ejiang/papers/thesis.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Jan Renze Steenhuisen.html" title="Jan Renze Steenhuisen">Jan Renze Steenhuisen</a> (<b>2005</b>). <i>New Results in Deep-Search Behaviour</i>.  <a href="ICGA Journal.html#28 4" title="ICGA Journal">ICGA Journal, Vol. 28, No. 4</a>, <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.104.9527.html" rel="nofollow">CiteSeerX</a></li>
+<li> <a href="Yew Jin Lim.html" title="Yew Jin Lim">Yew Jin Lim</a>, <a href="Wee Sun Lee.html" title="Wee Sun Lee">Wee Sun Lee</a> (<b>2006</b>). <i>RankCut - A Domain Independent Forward Pruning Method for Games</i>. <a href="Conferences.html#AAAI-2006" title="Conferences">AAAI 2006</a>, <a class="external text" href="http://www.yewjin.com/storage/papers/rankcut.pdf.html" rel="nofollow">pdf</a>  » <a href="RankCut.html" title="RankCut">RankCut</a></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2006</b>). <i>Computer Analysis of World Chess Champions</i>. <a href="ICGA Journal.html#29 2" title="ICGA Journal">ICGA Journal, Vol. 29, No. 2</a>, <a class="external text" href="https://ailab.si/matej/doc/Computer_Analysis_of_World_Chess_Champions.pdf" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup> <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2006</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-540-75538-8_1" rel="nofollow">Computer Analysis of Chess Champions</a></i>. <a href="CG 2006.html" title="CG 2006">CG 2006</a></li>
+<li> <a href="Yew Jin Lim.html" title="Yew Jin Lim">Yew Jin Lim</a> (<b>2007</b>). <i>On Forward Pruning in Game-Tree Search</i>. Ph.D. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/National_University_of_Singapore" rel="nofollow">National University of Singapore</a>, <a class="external text" href="http://www.yewjin.com/storage/papers/PhDThesisLimYewJin.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2007</b>). <i>Factors affecting diminishing returns for searching deeper</i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a> » <a class="mw-selflink selflink">Crafty</a>, <a href="Rybka.html" title="Rybka">Rybka</a>, <a href="Shredder.html" title="Shredder">Shredder</a>, <a href="Depth.html#DiminishingReturns" title="Depth">Diminishing Returns</a></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2007</b>). <i>Factors affecting diminishing returns for searching deeper</i>. <a href="ICGA Journal.html#30 2" title="ICGA Journal">ICGA Journal, Vol. 30, No. 2</a>, <a class="external text" href="http://www.ailab.si/matej/doc/Factors Affecting Diminishing Returns.pdf.html" rel="nofollow">pdf</a> </li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Aritz P%C3%A9rez.html" title="Aritz Pérez">Aritz Pérez</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2007</b>). <i>How trustworthy is Crafty's analysis of world chess champions</i>? <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a> </li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Aritz P%C3%A9rez.html" title="Aritz Pérez">Aritz Pérez</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2008</b>). <i>How trustworthy is Crafty's analysis of world chess champions</i>? <a href="ICGA Journal.html#31 3" title="ICGA Journal">ICGA Journal, Vol. 31, No. 3</a>, <a class="external text" href="http://www.ailab.si/matej/doc/How Trustworthy is Craftys Analysis.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Eric Stock&amp;action=edit&amp;redlink=1.html" title="Eric Stock (page does not exist)">Eric Stock</a>, <a class="new" href="index.php?title=David J. King&amp;action=edit&amp;redlink=1.html" title="David J. King (page does not exist)">David J. King</a> (<b>2010</b>). <i><a class="external text" href="https://rke.abertay.ac.uk/en/publications/a-new-enhancement-to-mtdf" rel="nofollow">A new enhancement to MTD(f)</a></i>. Games and Arts, <a class="external text" href="https://en.wikipedia.org/wiki/Abertay_University" rel="nofollow">Abertay University</a>, <a class="external text" href="https://www.researchgate.net/publication/304307495_A_New_Enhancement_to_MTDf" rel="nofollow">ResearchGate</a> » <a href="MTD(f).html" title="MTD(f)">MTD(f)</a> <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup></li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>2014</b>). <i>A Solution to Short PVs Caused by Exact Hash Matches</i>. <a href="ICGA Journal.html#37 3" title="ICGA Journal">ICGA Journal, Vol. 37, No. 3</a> » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a>, <a href="Principal Variation.html#SeparateTT" title="Principal Variation">Separate TT for the PV</a></li>
+<li> <a href="Monroe Newborn.html" title="Monroe Newborn">Monroe Newborn</a>, <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>2014</b>). <i>Computer Chess Endgame Play with Pawns: Then and Now</i>. <a href="ICGA Journal.html#37 4" title="ICGA Journal">ICGA Journal, Vol. 37, No. 4</a> » <a href="Peasant.html" title="Peasant">Peasant</a>, <a href="Pawn Endgame.html" title="Pawn Endgame">Pawn Endgame</a></li>
+<li> <a href="Guy Haworth.html" title="Guy Haworth">Guy Haworth</a> (<b>2015</b>). <i>Chess Endgame News</i>. <a href="ICGA Journal.html#38 1" title="ICGA Journal">ICGA Journal, Vol. 38, No. 1</a> » <a href="FinalGen.html" title="FinalGen">FinalGen</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> (<b>2020</b>). <i>The history of BLITZ/CRAY-BLITZ/CRAFTY</i>. <a href="ICGA Journal.html#42 23" title="ICGA Journal">ICGA Journal, Vol. 42, Nos. 2-3</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/msg/a1c2d43fab3601ab.html" rel="nofollow">Re: Crafty version 8.7</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 05, 1995</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/f2c922d3c296bbbe.html" rel="nofollow">Crafty V9.22</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 05, 1996</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/1c03a81c896c048b.html" rel="nofollow">Crafty V9.26</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, May 08, 1996</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/784986ccb84e473b.html" rel="nofollow">Crafty's opening book - technical details</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 04, 1996</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/tcjwWnFhXt4/ifkLE7GwfSEJ" rel="nofollow">Crafty V11.3</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 22, 1996 » <a href="Extensions.html#FractionalExtensions" title="Extensions">Fractional Extensions</a></li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/f2ff4847ad3bb180.html" rel="nofollow">Crafty 11.15</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, January 30, 1997</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/6e999936bc7e5200.html" rel="nofollow">Repetitions in Crafty</a> by <a href="Martin Borriss.html" title="Martin Borriss">Martin Borriss</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, January 30, 1997 » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="https://groups.google.com/group/rec.games.chess.computer/browse_frm/thread/ca0300b50438a388" rel="nofollow">quiescence search</a> by <a href="Andrew Tridgell.html" title="Andrew Tridgell">Andrew Tridgell</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 16, 1997 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a>, <a href="Check.html" title="Check">Check</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=12532" rel="nofollow">Crafty and fastest Cray: question to Bob</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, December 01, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=15912" rel="nofollow">Parallel Crafty</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 1998</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/C6z6Nnh2Nbs/G3LOexi_PMUJ" rel="nofollow">Current Crafty strength on SMP?</a> by Charlton Harrison, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 29, 1998</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/cc8520f40dc69198.html" rel="nofollow">crafty copyright problem</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 17, 1999 » <a href="Voyager.html" title="Voyager">Voyager</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=43533" rel="nofollow">Crafty Modifications MUST be made available to Robert Hyatt</a> by <a class="new" href="index.php?title=KarinsDad&amp;action=edit&amp;redlink=1.html" title="KarinsDad (page does not exist)">KarinsDad</a>, <a href="CCC.html" title="CCC">CCC</a>, February 17, 1999</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/ed89415506592e02.html" rel="nofollow">Crafty implications ...</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, March 4, 1999</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=75923" rel="nofollow">Do have the Crafty the Assembler written core?</a> by <a href="Leonid Liberman.html" title="Leonid Liberman">Leonid</a>, <a href="CCC.html" title="CCC">CCC</a>, November 01, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=92088" rel="nofollow">Crafty internal iterative deepening</a> by <a class="new" href="index.php?title=Tijs van Dam&amp;action=edit&amp;redlink=1.html" title="Tijs van Dam (page does not exist)">Tijs van Dam</a>, <a href="CCC.html" title="CCC">CCC</a>, January 26, 2000 » <a href="Internal Iterative Deepening.html" title="Internal Iterative Deepening">Internal Iterative Deepening</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=136233" rel="nofollow">Crafty 17.13 - re-importing FEN files?</a> by <a href="Wieland Belka.html" title="Wieland Belka">Wieland Belka</a>, <a href="CCC.html" title="CCC">CCC</a>, November 02, 2000 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=136234" rel="nofollow">Crafty 17.13 - using game archives by engines?</a> by <a href="Wieland Belka.html" title="Wieland Belka">Wieland Belka</a>, <a href="CCC.html" title="CCC">CCC</a>, November 02, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=246598" rel="nofollow">razoring in crafty version 16.9, mid 1999</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, August 21, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=310051" rel="nofollow">Crafty SMP questions</a> by Matthew Hull, <a href="CCC.html" title="CCC">CCC</a>, August 05, 2003 » <a href="SMP.html" title="SMP">SMP</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=45863.html" rel="nofollow">Crafty 19.08 SE 2004 released ...</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael Byrne</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, January 01, 2004 » <a href="Wb2UCI.html" title="Wb2UCI">Wb2UCI</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=347219" rel="nofollow">Re: Crafty 1910 SE vs Ruffian2 I hate this , but</a> by <a href="Peter Skinner.html" title="Peter Skinner">Peter Skinner</a>, <a href="CCC.html" title="CCC">CCC</a>, February 04, 2004 » <a href="Ruffian.html" title="Ruffian">Ruffian</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=353751" rel="nofollow">is this a sign of broken smp</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael Byrne</a>, <a href="CCC.html" title="CCC">CCC</a>, March 09, 2004 » <a href="SMP.html" title="SMP">SMP</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=376529" rel="nofollow">Question about Crafty and Bishop Pair</a> by <a href="Jan Renze Steenhuisen.html" title="Jan Renze Steenhuisen">Renze Steenhuisen</a>, <a href="CCC.html" title="CCC">CCC</a>, July 13, 2004 » <a href="Bishop Pair.html" title="Bishop Pair">Bishop Pair</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=412534" rel="nofollow">Re: need help in compiling Crafty</a> by <a class="new" href="index.php?title=Joshua Haglund&amp;action=edit&amp;redlink=1.html" title="Joshua Haglund (page does not exist)">Joshua Haglund</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=424820" rel="nofollow">Crafty and assembly code</a> by <a class="new" href="index.php?title=Alain Zanchetta&amp;action=edit&amp;redlink=1.html" title="Alain Zanchetta (page does not exist)">Alain Zanchetta</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=140141&amp;t=16002.html" rel="nofollow">Re: BitBoard Tests Magic v Non-Rotated 32 Bits v 64 Bits</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2007 » <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=19706.html" rel="nofollow">crafty-22.0</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, February 18, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21194.html" rel="nofollow">Crafty questions</a> by <a href="Pablo Vazquez.html" title="Pablo Vazquez">Pablo Vazquez</a>, <a href="CCC.html" title="CCC">CCC</a>, May 16, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=220004&amp;t=23894.html" rel="nofollow">Re: Lemming Poll</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2008 » <a href="Tapered Eval.html" title="Tapered Eval">Tapered Eval</a>, <a href="LearningLemming.html" title="LearningLemming">LearningLemming</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=25224.html" rel="nofollow">Crafty - no analysis output near mate?</a> by <a href="Matthew Lai.html" title="Matthew Lai">cyberfish</a>, December 03, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=31130.html" rel="nofollow">MTD(f) experiments with Crafty</a> by <a class="new" href="index.php?title=Eric Stock&amp;action=edit&amp;redlink=1.html" title="Eric Stock (page does not exist)">Eric Stock</a>, <a href="CCC.html" title="CCC">CCC</a>, December 18, 2009 » <a href="MTD(f).html" title="MTD(f)">MTD(f)</a> <sup class="reference" id="cite_ref-25"><a href="#cite note-25">[25]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=34606.html" rel="nofollow">Crafty Transpostion Table Question</a> by <a class="new" href="index.php?title=Eric Stock&amp;action=edit&amp;redlink=1.html" title="Eric Stock (page does not exist)">Eric Stock</a>, <a href="CCC.html" title="CCC">CCC</a>, May 30, 2010 » <a href="Shared Hash Table.html#Lockless" title="Shared Hash Table">Lockless Hashing</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36040.html" rel="nofollow">old crafty vs new crafty on new hardware</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 11, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36050.html" rel="nofollow">Crafty tests show that Software has advanced more</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36059.html" rel="nofollow">Final results - Crafty - hardware vs software</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 13, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36088.html" rel="nofollow">hardware doubling number for Crafty</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 15, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=407977&amp;t=39149.html" rel="nofollow">On Crafty...</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, May 22, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=410448&amp;t=39381.html" rel="nofollow">Re: Robert - How did you came up with the name Crafty</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2011</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=3&amp;t=1477&amp;start=10.html#p13013" rel="nofollow">Re: Still waiting on Ed</a> by <a href="Mark Watkins.html" title="Mark Watkins">BB+</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, July 07, 2011 » on 22.1 vs. 23.4. differences</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=3&amp;t=1477&amp;start=20.html#p13017" rel="nofollow">Re: Still waiting on Ed</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, July 07, 2011 » on 22.1 vs. 23.4. differences</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40853.html" rel="nofollow">ICGA rule #2 / opening books / Diep-Crafty, Turino 2006</a> by <a href="Peter Berger.html" title="Peter Berger">Peter Berger</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2011 » <a href="Opening Book.html" title="Opening Book">Opening Book</a>, <a href="WCCC 2006.html" title="WCCC 2006">WCCC 2006</a></li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45338.html" rel="nofollow">Crafty source</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 26, 2012</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48351.html" rel="nofollow">Crafty 23.6 released</a> by <a href="Peter Skinner.html" title="Peter Skinner">Peter Skinner</a>, <a href="CCC.html" title="CCC">CCC</a>, June 20, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49450.html" rel="nofollow">interesting SMP bug</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 24, 2013 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50030.html" rel="nofollow">Crafty 23.8</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, November 11, 2013</li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52432.html" rel="nofollow">Crafty 24.0</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, May 26, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53907.html" rel="nofollow">Crafty 24.1</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, October 01, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54059.html" rel="nofollow">Threads test incl. Crafty 24.1</a> by <a href="Andreas Strangm%C3%BCller.html" title="Andreas Strangmüller">Andreas Strangmüller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 15, 2014 » <a href="Thread.html" title="Thread">Thread</a>, <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=54795.html" rel="nofollow">Android Version of Crafty</a> by <a href="Ted Summers.html" title="Ted Summers">Ted Summers</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2014 » <a href="Android.html" title="Android">Android</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=30107.html" rel="nofollow">Grafty vs Crafty</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, April 21, 2015 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56595.html" rel="nofollow">parallel speedup and assorted trivia</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 2015 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56935.html" rel="nofollow">Crafty UCI version</a> by <a class="new" href="index.php?title=Marek Soszynski&amp;action=edit&amp;redlink=1.html" title="Marek Soszynski (page does not exist)">Marek Soszynski</a>, July 10, 2015 » <a href="UCI.html" title="UCI">UCI</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58160.html" rel="nofollow">An interesting parallel search non-bug</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2015 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58688.html" rel="nofollow">Crafty 25.0 Release</a> by Michael B, <a href="CCC.html" title="CCC">CCC</a>, December 25, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58711.html" rel="nofollow">Crafty 25.0 announcement</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58758.html" rel="nofollow">crafty eval cache</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2016 » <a href="Evaluation Hash Table.html" title="Evaluation Hash Table">Evaluation Hash Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58830.html" rel="nofollow">NUMA 101</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2016 » <a href="NUMA.html" title="NUMA">NUMA</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58931.html" rel="nofollow">Crafty 25.0.1</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, January 15, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58944.html" rel="nofollow">Crafty's four hash tables</a> by <a href="Louis Zulli.html" title="Louis Zulli">Louis Zulli</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2016 » <a href="Hash Table.html" title="Hash Table">Hash Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59464.html" rel="nofollow">Crafty c questions</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2016 » <a href="C.html" title="C">C</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59577.html" rel="nofollow">Crafty chess engine</a> by Krzysztof Grzelak, <a href="CCC.html" title="CCC">CCC</a>, March 20, 2016</li>
+<li> <a class="external text" href="http://talkchess.com/forum/viewtopic.php?t=59745.html" rel="nofollow">Crafty SMP measurement</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, April 04, 2016 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61289.html" rel="nofollow">Around Crafty dev. ...</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="CCC.html" title="CCC">CCC</a>, August 31, 2016 </li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61289&amp;start=2.html" rel="nofollow">Re: Around Crafty dev. ...</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 01, 2016</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61594.html" rel="nofollow">Crafty 25.1 Release</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, October 04, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61874.html" rel="nofollow">Crafty v25.2 Release</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, October 29, 2016</li></ul>
+<p><b>2017 ...</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62907.html" rel="nofollow">Crafty Play By Elo ( Crafty v25.3)</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, January 23, 2017 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71512.html" rel="nofollow">SYZYGY question</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 11, 2019 » <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy Bases</a>, <a href="En passant.html" title="En passant">En passant</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=71585.html" rel="nofollow">Crafty 25.3 Release</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, August 17, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_..._2">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72970.html" rel="nofollow">Crafty 25.6</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, February 01, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73738.html" rel="nofollow">Crafty 25.6 search stability</a> by <a class="new" href="index.php?title=Joshua Haglund&amp;action=edit&amp;redlink=1.html" title="Joshua Haglund (page does not exist)">jhaglund2</a>, <a href="CCC.html" title="CCC">CCC</a>, April 23, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77200.html" rel="nofollow">Crafty NNUE Chess Engine?</a> by supersharp77, <a href="CCC.html" title="CCC">CCC</a>, April 29, 2021 » <a href="NNUE.html" title="NNUE">NNUE</a>, <a class="new" href="index.php?title=Vafra&amp;action=edit&amp;redlink=1.html" title="Vafra (page does not exist)">Vafra</a> <sup class="reference" id="cite_ref-26"><a href="#cite note-26">[26]</a></sup></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Engine">Chess Engine</span></h2>
+<ul><li> <a class="external text" href="https://github.com/MichaelB7/Crafty" rel="nofollow">GitHub - MichaelB7/Crafty</a></li>
+<li> <a class="external text" href="http://www.craftychess.com/.html" rel="nofollow">Crafty Chess</a> managed by <a class="new" href="index.php?title=Tracy Riegle&amp;action=edit&amp;redlink=1.html" title="Tracy Riegle (page does not exist)">Tracy Riegle</a></li>
+<li> <a class="external text" href="http://www.craftychess.com/downloads/source/.html" rel="nofollow">Index of /downloads/source</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Crafty" rel="nofollow">Crafty from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.craftychess.com/documentation/craftydoc.html.html" rel="nofollow">Crafty Documentation</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=34" rel="nofollow">Crafty's ICGA Tournaments</a></li>
+<li> <a class="external text" href="http://www.chessgames.com/perl/chessplayer?pid=5405.html" rel="nofollow">The chess games of Crafty (Computer)</a> from <a class="external text" href="http://www.chessgames.com/index.html.html" rel="nofollow">chessgames.com</a></li>
+<li> <a class="external text" href="http://wbec-ridderkerk.nl/html/details1/Crafty.html.html" rel="nofollow">Crafty</a> from <a href="WBEC.html" title="WBEC">WBEC Ridderkerk</a> </li>
+<li> <a class="external text" href="http://wondersmith.com/rants/howfar.htm.html" rel="nofollow">How Far We've Come: 20 Years of Personal Computing</a> by <a class="external text" href="http://wondersmith.com/scifi/author.htm.html" rel="nofollow">Blake Linton Wilfong</a>, November 05, 2000 » <a href="ACM 1981.html" title="ACM 1981">ACM 1981</a>, <a href="Sargon.html" title="Sargon">Sargon</a>, <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a></li>
+<li> <a class="external text" href="http://www.spec.org/cpu2000/CINT2000/186.crafty/docs/186.crafty.html.html" rel="nofollow">186.crafty: SPEC CPU2000 Benchmark Description</a></li>
+<li> <a class="external text" href="http://www.computerchess.org.uk/ccrl/4040/cgi/compare engines.cgi?family=Crafty&amp;print=Rating+list&amp;print=Results+table&amp;print=LOS+table&amp;print=Ponder+hit+table&amp;print=Eval+difference+table&amp;print=Comopp+gamenum+table&amp;print=Overlap+table&amp;print=Score+with+common+opponents.html" rel="nofollow">Crafty Versions</a> at <a href="CCRL.html" title="CCRL">CCRL 40/40</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="http://en.wiktionary.org/wiki/crafty.html" rel="nofollow">crafty - Wiktionary</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Craft" rel="nofollow">Craft from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/American_craft" rel="nofollow">American craft from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Arts_and_Crafts_movement" rel="nofollow">Arts and Crafts movement from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/American_Craftsman" rel="nofollow">American Craftsman from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Guitar_Craft" rel="nofollow">Guitar Craft from Wikipedia</a></li>
+<li> <a href="Category:Robert Fripp.html" title="Category:Robert Fripp">Robert Fripp</a> and the League of Crafty Guitarists, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/D57fYwyhajk?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://twogirlsbeingcrafty.blogspot.de/2011/04/owl-pin-cushion.html.html" rel="nofollow">Two Girls Being Crafty: Owl Pin Cushion</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=410448&amp;t=39381.html" rel="nofollow">Re: Robert - How did you came up with the name Crafty</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2011</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Crafty" rel="nofollow">Crafty from Wikipedia</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5452&amp;start=56.html" rel="nofollow">Re: Fastest Magic Move Bitboard Generator ready to use</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 09, 2006</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=140141&amp;t=16002.html" rel="nofollow">Re: BitBoard Tests Magic v Non-Rotated 32 Bits v 64 Bits</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2007</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.craftychess.com/.html" rel="nofollow">Crafty Chess</a> managed by <a class="new" href="index.php?title=Tracy Riegle&amp;action=edit&amp;redlink=1.html" title="Tracy Riegle (page does not exist)">Tracy Riegle</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61594.html" rel="nofollow">Crafty 25.1 Release</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, October 04, 2016</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62907.html" rel="nofollow">Crafty Play By Elo ( Crafty v25.3)</a> by <a href="Michael Byrne.html" title="Michael Byrne">Michael B</a>, <a href="CCC.html" title="CCC">CCC</a>, January 23, 2017</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://aigames.net/ACCA/ACCAWCRCC/2010ACCAWCRCC/WCRCCPart.html.html" rel="nofollow">2010 Fourth Annual ACCA World Computer Rapid Chess Championships - Participants</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.cctchess.com/previous-events/cct-15/participants/" rel="nofollow">CCT 15 Participants | CCT Events</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://compchess.org/ACCAChampionships/ACCA2010Championships/2010ACCCResults.html.html" rel="nofollow">The 2010 Fifth Annual ACCA Americas' Computer Chess Championships - Results</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=34" rel="nofollow">Crafty's ICGA Tournaments</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=235340&amp;t=25215.html" rel="nofollow">Re: Hardware vs Software - test result</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, December 03, 2008</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58688.html" rel="nofollow">Crafty 25.0 Release</a> by Michael B, <a href="CCC.html" title="CCC">CCC</a>, December 25, 2015</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.craftychess.com/downloads/source/.html" rel="nofollow">Index of /downloads/source</a> crafty-23.5.zip, inline64.h, boolean.c</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.craftychess.com/downloads/source/.html" rel="nofollow">Index of /downloads/source</a>, crafty-20.5.zip, boolean.c</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.craftychess.com/downloads/source/.html" rel="nofollow">Index of /downloads/source</a>, crafty-15.17.zip, boolean.c</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/round.php?tournament=24&amp;round=9&amp;id=3" rel="nofollow">Ramat-Gan 2004 - Chess - Round 9 - Game 3 (ICGA Tournaments)</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/round.php?tournament=16&amp;round=8&amp;id=5" rel="nofollow">Turin 2006 - Chess - Round 8 - Game 5 (ICGA Tournaments)</a></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=40922" rel="nofollow">Re: Bionic v Crafty - a possible solution</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, January 26, 1999</span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/msg/db825bdc948464b6.html" rel="nofollow">Re: crafty copyright problem</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 17, 1999</span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.chessbase.com/post/computers-choose-who-was-the-strongest-player-" rel="nofollow">Computers choose: who was the strongest player?</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, October 30, 2006</span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.chessbase.com/post/computer-analysis-of-world-champions" rel="nofollow">Computer analysis of world champions</a> by <a href="S%C3%B8ren Riis.html" title="Søren Riis">Søren Riis</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, November 02, 2006</span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=31130.html" rel="nofollow">MTD(f) experiments with Crafty</a> by <a class="new" href="index.php?title=Eric Stock&amp;action=edit&amp;redlink=1.html" title="Eric Stock (page does not exist)">Eric Stock</a>, <a href="CCC.html" title="CCC">CCC</a>, December 18, 2009 » <a href="MTD(f).html" title="MTD(f)">MTD(f)</a></span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite ref-25">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Eric Stock&amp;action=edit&amp;redlink=1.html" title="Eric Stock (page does not exist)">Eric Stock</a>, <a class="new" href="index.php?title=David J. King&amp;action=edit&amp;redlink=1.html" title="David J. King (page does not exist)">David J. King</a> (<b>2010</b>). <i><a class="external text" href="https://rke.abertay.ac.uk/en/publications/a-new-enhancement-to-mtdf" rel="nofollow">A new enhancement to MTD(f)</a></i>. Games and Arts, <a class="external text" href="https://en.wikipedia.org/wiki/Abertay_University" rel="nofollow">Abertay University</a></span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><a href="#cite ref-26">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.jurjevic.org.uk/chess/vafra/index.html.html" rel="nofollow">Vafra</a> by <a class="new" href="index.php?title=Robert Jurjevi%C4%87&amp;action=edit&amp;redlink=1.html" title="Robert Jurjević (page does not exist)">Robert Jurjević</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722064728
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.061 seconds
+Real time usage: 0.064 seconds
+Preprocessor visited node count: 544/1000000
+Preprocessor generated node count: 1116/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2449-0!canonical and timestamp 20240722064728 and revision id 24567
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Crafty&amp;oldid=24567">https://www.chessprogramming.org/index.php?title=Crafty&amp;oldid=24567</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:WinBoard.html" title="Category:WinBoard">WinBoard</a></li><li><a href="Category:XBoard.html" title="Category:XBoard">XBoard</a></li><li><a href="Category:DEC Alpha.html" title="Category:DEC Alpha">DEC Alpha</a></li><li><a href="Category:PowerPC.html" title="Category:PowerPC">PowerPC</a></li><li><a href="Category:X86.html" title="Category:X86">X86</a></li><li><a href="Category:X64.html" title="Category:X64">X64</a></li><li><a href="Category:Mac.html" title="Category:Mac">Mac</a></li><li><a href="Category:Linux.html" title="Category:Linux">Linux</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Android.html" title="Category:Android">Android</a></li><li><a href="Category:Robert Fripp.html" title="Category:Robert Fripp">Robert Fripp</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Crafty&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Crafty.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Crafty&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Crafty.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Crafty&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Crafty&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Crafty.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Crafty.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Crafty&amp;oldid=24567.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Crafty&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 May 2021, at 08:36.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Crafty&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.061","walltime":"0.064","ppvisitednodes":{"value":544,"limit":1000000},"ppgeneratednodes":{"value":1116,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722064728","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

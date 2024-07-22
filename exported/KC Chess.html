@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>KC Chess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"KC_Chess","wgTitle":"KC Chess","wgCurRevisionId":19571,"wgRevisionId":19571,"wgArticleId":7207,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Open Source","DosEngine","8086","Pascal","Thesis","Acronym","Chess Suffix"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"KC_Chess","wgRelevantArticleId":7207,"wgRequestId":"Zp7DdoY8AD1K7zdlkfzdwQAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-KC_Chess rootpage-KC_Chess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">KC Chess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * KC Chess</b>
+</p><p><b>KC Chess</b>,<br/>
+a chess program written by <a href="R. Kevin Phillips.html" title="R. Kevin Phillips">R. Kevin Phillips</a> and <a href="Craig S. Bruce.html" title="Craig S. Bruce">Craig S. Bruce</a> in 1990 for their undergraduate final project at the <a class="external text" href="https://en.wikipedia.org/wiki/University_of_New_Brunswick" rel="nofollow">University of New Brunswick</a>
+<sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. KC Chess is written in <a href="Pascal.html#TurboPascal" title="Pascal">Turbo Pascal</a> to run under <a href="MS-DOS.html" title="MS-DOS">MS-DOS</a> <a href="IBM PC.html" title="IBM PC">computers</a>. It has a <a href="Mailbox.html" title="Mailbox">Mailbox</a> board representation, its <a href="Search.html" title="Search">search</a> its based on static evaluation of <a href="Moves.html" title="Moves">move</a> <a href="Score.html" title="Score">score</a> differences rather than positions and passes a <a href="Bound.html" title="Bound">bound</a> for backward pruning, missing the <a href="Beta-Cutoff.html" title="Beta-Cutoff">deep cutoffs</a> of <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a>. There was no <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> nor <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, MaxDepth aka level of play is preset at initialization time somehow based on the expected time to use. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pseudo Code"><span class="tocnumber">1</span> <span class="toctext">Pseudo Code</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Summary"><span class="tocnumber">2</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Pseudo_Code">Pseudo Code</span></h1>
+<p>Source code and report of the program with pseudo code are available from Craig Bruce's sites <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>
+</p>
+<pre>
+CutoffSearch (Player, Depth, CutoffValue);
+    If Depth = 0 Then
+        return (0);
+    Else
+        BestScore := -infinity;
+        Generate the move list for Player as per current board setup;
+        For each legal move in the move list do
+            Make the current move and get MoveScore;
+            SubTreeCutoffValue := MoveScore - BestScore;
+            Score := MoveScore - CutoffSearch (enemy of Player, Depth - 1,
+                                               SubTreeCutoffValue);
+            UnMake the current move;
+            If Score &gt; BestScore then BestScore := Score;
+            If BestScore &gt;= CutoffValue then exit the For loop;
+        End For;
+        Return (BestScore);
+    End If;
+End CutoffSearch;
+</pre>
+<h1><span class="mw-headline" id="Summary">Summary</span></h1>
+<p>Excerpt from the readme file <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p>
+<pre>The chess program is 3417 lines long and the project took 220 hours to complete.  The work was carried out from JAN - APR 1990 as our CS 4993 undergraduate project.  The program may be distributed freely and is considered <a class="external text" href="https://en.wikipedia.org/wiki/Public_domain" rel="nofollow">Public Domain</a> software. A 30 page written report was also produced and submitted with the rest of the work to Dr. J. D. Horton <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> who was our project supervisor. 
+</pre>
+<p>Excerpt from the report <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>:
+</p>
+<pre>The greatest limitation of the program is the extremely simple evaluation of a given move. The score is determined exclusively by the number of value points assigned to the piece that is taken. If no piece is taken then no points are awarded. As implemented, the positional evaluation plays only a small roll in selecting a move. A better positional evaluator, which takes into account such things as attack strategy and special situations requiring special actions, etc. should be combined with a better capture value to calculate the value at all nodes in the search tree. A better capture value would take into account the fact that the material value of the piece varies with the stage and balance of the game. The combination of material and position values should be consistent with the strategy and circumstances of the game. Of course this was beyond the scope of this project (not to mention our own skill and knowledge of chess). This could be a future enhancement.
+</pre>
+<pre>Another deficiency is with the search tree algorithm itself. Since it only searches to a certain depth, it may attempt to push an inevitable loss out of its sight by sacrificing a less valuable piece to 'save' the greater valued one. This is known as the <a href="Horizon Effect.html" title="Horizon Effect">Horizon Effect</a> and is an inevitable consequence of the limited search. The only solution is to increase the search depth. This often would only serve to move the horizon a little father down the road. The solution to this problem is also beyond the scope of this project. 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Pascal.html#SourceSample" title="Pascal">Source Sample</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/EQxCixpytBg/e1R0a7u1WMsJ" rel="nofollow">Working with moves or with positions</a> by Guillem Barnolas, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 22, 1998 » <a href="Make Move.html" title="Make Move">Make Move</a>, <a href="Unmake Move.html" title="Unmake Move">Unmake Move</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://web.archive.org/web/20120411173812/http://www.csbruce.com/~csbruce/chess/" rel="nofollow">KC Chess: Kevin &amp; Craig's Chess Program</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a>)</li>
+<li> <a class="external text" href="https://web.archive.org/web/20120414114219/http://www.csbruce.com/~csbruce/chess/report.html" rel="nofollow">KC-Chess Report</a></li>
+<li> <a class="external text" href="https://web.archive.org/web/20120414024548/http://www.csbruce.com/~csbruce/chess/pieces.txt" rel="nofollow">pieces.txt</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20120411173812/http://www.csbruce.com/~csbruce/chess/" rel="nofollow">KC Chess: Kevin &amp; Craig's Chess Program</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a>)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20120414114219/http://www.csbruce.com/~csbruce/chess/report.html" rel="nofollow">KC-Chess Report - 4.5. SEARCH-TREE PRUNING</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a>)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20120414114214/http://www.csbruce.com/~csbruce/chess/readme.txt" rel="nofollow">readme.txt</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a>)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.cs.unb.ca/~jdh/.html" rel="nofollow">Joseph D Horton</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20120414114219/http://www.csbruce.com/~csbruce/chess/report.html" rel="nofollow">KC-Chess Report - 6. PROGRAM LIMITATIONS</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a>)</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722043854
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.010 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 106/1000000
+Preprocessor generated node count: 226/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7207-0!canonical and timestamp 20240722043854 and revision id 19571
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=KC_Chess&amp;oldid=19571">https://www.chessprogramming.org/index.php?title=KC_Chess&amp;oldid=19571</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:DosEngine.html" title="Category:DosEngine">DosEngine</a></li><li><a href="Category:8086.html" title="Category:8086">8086</a></li><li><a href="Category:Pascal.html" title="Category:Pascal">Pascal</a></li><li><a href="Category:Thesis.html" title="Category:Thesis">Thesis</a></li><li><a href="Category:Acronym.html" title="Category:Acronym">Acronym</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=KC+Chess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="KC Chess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:KC Chess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="KC Chess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=KC Chess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=KC Chess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/KC Chess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/KC Chess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=KC Chess&amp;oldid=19571.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=KC Chess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 21 June 2020, at 11:35.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=KC_Chess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.010","ppvisitednodes":{"value":106,"limit":1000000},"ppgeneratednodes":{"value":226,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722043854","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Killer Chess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Killer_Chess","wgTitle":"Killer Chess","wgCurRevisionId":15134,"wgRevisionId":15134,"wgArticleId":4572,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Queen","Chess Suffix"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Killer_Chess","wgRelevantArticleId":4572,"wgRequestId":"Zp7DdQMLGU3EphdnCkJWbAAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Killer_Chess rootpage-Killer_Chess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Killer Chess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Killer Chess</b>
+</p><p><b>Killer Chess</b> (K. Chess) <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>,<br/>
+a minimalistic chess program written by <a href="Andy Thomason.html" title="Andy Thomason">Andy Thomason</a> in <a href="Z80.html" title="Z80">Z80</a> <a href="Assembly.html" title="Assembly">Assembly</a> or even <a class="external text" href="https://en.wikipedia.org/wiki/Machine_code" rel="nofollow">machine code</a> of 2.2 KiB of <a href="Memory.html" title="Memory">Memory</a>. Killer Chess (K. Chess IV) played the <a href="WMCCC 1980.html" title="WMCCC 1980">First World Microcomputer Chess Championship</a> 1980 in <a class="external text" href="https://en.wikipedia.org/wiki/London" rel="nofollow">London</a>, and lost its first round by default, since the program had the white pieces but could only play with black. Some hurried modifications enabled it to compete the course <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, but it lost all remaining games as well. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Selected Games"><span class="tocnumber">1</span> <span class="toctext">Selected Games</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Fafner"><span class="tocnumber">1.1</span> <span class="toctext">Fafner</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Viktor"><span class="tocnumber">1.2</span> <span class="toctext">Viktor</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Related Publications"><span class="tocnumber">3</span> <span class="toctext">Related Publications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Chess Program"><span class="tocnumber">4.1</span> <span class="toctext">Chess Program</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Misc"><span class="tocnumber">4.2</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Selected_Games">Selected Games</span></h1>
+<h2><span class="mw-headline" id="Fafner">Fafner</span></h2>
+<p><a href="WMCCC 1980.html" title="WMCCC 1980">WMCCC 1980</a>, round 3, <a class="mw-selflink selflink">K. Chess IV</a> - <a class="new" href="index.php?title=Fafner&amp;action=edit&amp;redlink=1.html" title="Fafner (page does not exist)">Fafner 2</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+</p>
+<pre>
+[Event "WMCCC 1980"]
+[Site "London, United Kingdom"]
+[Date "1980.09.05"]
+[Round "3"]
+[White "K. Chess IV"]
+[Black "Fafner 2"]
+[Result "0-1"]
+
+1. d4 f5 2. c3 Nf6 3. Bg5 d5 4. f3 Nc6 5. Qd3 Bd7 6. c4 dxc4 7. Qe3 Nd5 
+8. Qd2 g6 9. Bf6 Nxf6 10. e4 fxe4 11. Qf4 Nxd4 12. Bxc4 Nc2+ 13. Kd2 Ba4+ 
+14. Bd3 Qxd3+ 15. Kc1 Nxa1 16. b4 Qc2# 0-1 
+</pre>
+<h2><span class="mw-headline" id="Viktor">Viktor</span></h2>
+<p><a href="WMCCC 1980.html" title="WMCCC 1980">WMCCC 1980</a>, round 4, <a href="Viktor.html" title="Viktor">Viktor</a> - <a class="mw-selflink selflink">K. Chess IV</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+</p>
+<pre>
+[Event "WMCCC 1980"]
+[Site "London, United Kingdom"]
+[Date "1980.09.06"]
+[Round "4"]
+[White "Viktor"]
+[Black "K. Chess IV"]
+[Result "1-0"]
+
+1.d4 b6 2.Nc3 Bb7 3.e4 e6 4.Bd3 Nc6 5.Nf3 Nxd4 6.Nxd4 Bb4 7.O-O e5 8.Ndb5 g6 9.b3 c6 
+10.Ba3 Bxa3 11.Nxa3 Qh4 12.Be2 Nf6 13.Qd3 Nxe4 14.Nxe4 d5 15.Nd6+ Kd7 16.Nxb7 Kc7 
+17.Qa6 Qe4 18.Bf3 Qd4 19.Rad1 Qf4 20.Bxd5 cxd5 21.Nb5+ Kc8 22.Nc5+ Kd8 23.Qb7 bxc5 
+24.Qxa8+ Kd7 25.Rxd5+ Ke7 26.Qxh8 e4 27.Qd8+ 1-0 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Killer (NL).html" title="Killer (NL)">Killer</a> by <a class="new" href="index.php?title=Kees de Kruif&amp;action=edit&amp;redlink=1.html" title="Kees de Kruif (page does not exist)">Kees de Kruif</a></li>
+<li> <a href="Killer.html" title="Killer">Killer</a> by <a href="Mario Carbonell Martinez.html" title="Mario Carbonell Martinez">Mario Carbonell Martinez</a>, <a class="new" href="index.php?title=German Blanquer&amp;action=edit&amp;redlink=1.html" title="German Blanquer (page does not exist)">German Blanquer</a> and <a href="Alvaro Benlloch.html" title="Alvaro Benlloch">Alvaro Benlloch</a></li>
+<li> <a href="Killer Heuristic.html" title="Killer Heuristic">Killer Heuristic</a></li>
+<li> <a href="Killer Move.html" title="Killer Move">Killer Move</a></li>
+<li> <a href="Losing Chess.html" title="Losing Chess">Losing Chess</a></li>
+<li> <a href="Mate Killers.html" title="Mate Killers">Mate Killers</a></li></ul>
+<h1><span class="mw-headline" id="Related_Publications">Related Publications</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Michael_Basman" rel="nofollow">Michael Basman</a> (<b>1991</b>). <i>The Killer Grob</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Pergamon_Press" rel="nofollow">Pergamon Chess Series</a>, ISBN-13: 978-0080371313, from <a class="external text" href="http://www.amazon.com/Killer-Grob-Pergamon-Chess-Series/dp/0080371310/ref=la B001H6GWHG 1 2?ie=UTF8&amp;qid=1342984251&amp;sr=1-2.html" rel="nofollow">amazon.com</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Aaron_Summerscale" rel="nofollow">Aaron Summerscale</a> (<b>1999</b>). <i>A Killer Chess Opening Repertoire</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Everyman_Chess" rel="nofollow">Cadogan Chess Books</a>, ISBN-13: 978-1857445190, from <a class="external text" href="http://www.amazon.com/Killer-Chess-Opening-Repertoire-Cadogan/dp/1857445198.html" rel="nofollow">amazon.com</a></li>
+<li> <a href="Eric Schiller.html" title="Eric Schiller">Eric Schiller</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Raymond_Keene" rel="nofollow">Raymond Keene</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Leonid_Shamkovich" rel="nofollow">Leonid Shamkovich</a> (<b>2003</b>). <i><a class="external text" href="https://www.amazon.com/gp/product/1580421113/ref=dbs_a_def_rwt_hsch_vapi_taft_p4_i3" rel="nofollow">Killer Chess Tactics : World Champion Tactics and Combinations</a></i>.  <a class="external text" href="https://en.wikipedia.org/wiki/Avery_Cardoza#Cardoza_Publishing_Books" rel="nofollow">Cardoza</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Dover_Publications" rel="nofollow">Dover Publications</a> (<b>2005</b>). <i>Killer Chess (Boxed Set)</i>. from <a class="external text" href="http://www.amazon.com/Killer-Chess-Boxed-Set-Dover/dp/0486446131/ref=sr 1 1?ie=UTF8&amp;qid=1342983242&amp;sr=8-1&amp;keywords=killer+chess.html" rel="nofollow">amazon.com</a></li></ul>
+<dl><dd> <i>Danger in Chess: How to Avoid Making Blunders</i> by <a class="external text" href="http://www.newinchess.com/Amatzia Avni-pa-1180.html.html" rel="nofollow">Amatzia Avni</a></dd>
+<dd> <i>How Good Is Your Chess?</i> by <a class="external text" href="https://en.wikipedia.org/wiki/Daniel_J._King" rel="nofollow">Daniel King</a></dd>
+<dd> <i>Why You Lose at Chess</i> by <a class="external text" href="https://en.wikipedia.org/wiki/Tim_Harding_%28chess_player%29" rel="nofollow">Tim Harding</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Aaron_Summerscale" rel="nofollow">Aaron Summerscale</a>, <a class="external text" href="http://sverreschesscorner.blogspot.de/.html" rel="nofollow">Sverre Johnsen</a> (<b>2010</b>). <i>A Killer Chess Opening Repertoire</i>. Enlarged edition, <a class="external text" href="http://www.gambitbooks.com/books/killer.html.html" rel="nofollow">Gambit Publications Limited</a>, ISBN 13: 978-1-906454-18-0</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Program">Chess Program</span></h2>
+<ul><li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=467" rel="nofollow">K. Chess' ICGA Tournaments</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="http://www.soundkeepers.com/chess/chess openings/.html" rel="nofollow">SoundChess : Killer Chess Openings</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Killer" rel="nofollow">Killer (disambiguation page) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Killer_application" rel="nofollow">Killer application from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Alexander_Pichushkin" rel="nofollow">Alexander Pichushkin from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Attack_of_the_Killer_Tomatoes" rel="nofollow">Attack of the Killer Tomatoes from Wikipedia</a></li>
+<li> <a href="Category:Queen.html" title="Category:Queen">Queen</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Killer_Queen" rel="nofollow">Killer Queen</a> (1974), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/2ZBtPf7FOoM?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Tom F%C3%BCrstenberg.html" title="Tom Fürstenberg">Tom Fürstenberg</a> (<b>1980</b>). <i>The First World Microcomputer Championship</i>. <a class="external text" href="https://en.wikipedia.org/wiki/CHESS_magazine" rel="nofollow">Chess</a>, <a class="external text" href="http://www.chesscomputeruk.com/html/publication archive.html.html" rel="nofollow">December 1980</a> mentions Killer Chess</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Kevin O%E2%80%99Connell.html" title="Kevin O’Connell">Kevin O’Connell</a> (<b>1980</b>). <i>World Microcomputer Chess Championship</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Personal_Computer_World" rel="nofollow">Personal Computer World</a>, <a class="external text" href="http://www.chesscomputeruk.com/html/publication archive.html.html" rel="nofollow">November 1980</a> mentions K. Chess</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Kevin O%E2%80%99Connell.html" title="Kevin O’Connell">Kevin O’Connell</a> (<b>1980</b>). <i>World Microcomputer Chess Championship</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Personal_Computer_World" rel="nofollow">Personal Computer World</a>, <a class="external text" href="http://www.chesscomputeruk.com/html/publication archive.html.html" rel="nofollow">November 1980</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/round.php?tournament=13&amp;round=3&amp;id=7" rel="nofollow">London 1980 - Chess - Round 3 - Game 7 (ICGA Tournaments)</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/round.php?tournament=13&amp;round=4&amp;id=5" rel="nofollow">London 1980 - Chess - Round 4 - Game 5 (ICGA Tournaments)</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722043940
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.012 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 132/1000000
+Preprocessor generated node count: 290/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4572-0!canonical and timestamp 20240722043940 and revision id 15134
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Killer_Chess&amp;oldid=15134">https://www.chessprogramming.org/index.php?title=Killer_Chess&amp;oldid=15134</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Queen.html" title="Category:Queen">Queen</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Killer+Chess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Killer Chess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Killer Chess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Killer Chess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Killer Chess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Killer Chess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Killer Chess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Killer Chess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Killer Chess&amp;oldid=15134.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Killer Chess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 October 2019, at 21:52.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Killer_Chess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.012","walltime":"0.012","ppvisitednodes":{"value":132,"limit":1000000},"ppgeneratednodes":{"value":290,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722043940","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":50});});</script>
+</body>
+</html>

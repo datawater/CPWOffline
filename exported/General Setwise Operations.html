@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>General Setwise Operations - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"General_Setwise_Operations","wgTitle":"General Setwise Operations","wgCurRevisionId":26202,"wgRevisionId":26202,"wgArticleId":1090,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Wassily Kandinsky","Casiopea","Tetsuo Sakurai","Hux Flux"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"General_Setwise_Operations","wgRelevantArticleId":1090,"wgRequestId":"Zp7DbAimFOpf72eNuzJW-QAAAAA","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-General_Setwise_Operations rootpage-General_Setwise_Operations skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">General Setwise Operations</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * General Setwise Operations</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Upward by Vasily Kandinsky, 1929.jpg.html"><img alt="" class="thumbimage" height="431" src="wikipedia/commons/thumb/1/1d/Upward_by_Vasily_Kandinsky%2C_1929.jpg/300px-Upward_by_Vasily_Kandinsky%2C_1929.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Upward_by_Vasily_Kandinsky%2C_1929.jpg/450px-Upward_by_Vasily_Kandinsky%2C_1929.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Upward_by_Vasily_Kandinsky%2C_1929.jpg/600px-Upward_by_Vasily_Kandinsky%2C_1929.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Upward by Vasily Kandinsky, 1929.jpg.html" title="Enlarge"></a></div><a href="Category:Wassily Kandinsky.html" title="Category:Wassily Kandinsky">Wassily Kandinsky</a> - Upward, 1929 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>General Setwise Operations</b>,<br/>
+<a class="external text" href="https://en.wikipedia.org/wiki/Binary_operation" rel="nofollow">binary</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Unary_operation" rel="nofollow">unary operations</a>, essential in testing and manipulating bitboards within a chess program. <a href="General Setwise Operations.html#Relational" title="General Setwise Operations">Relational operators</a> on bitboards test for equality, <a href="General Setwise Operations.html#Bitwisebooleanoperations" title="General Setwise Operations">bitwise boolean operators</a> perform the intrinsic setwise operations <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, such as <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>, <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> and <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a>. <a href="General Setwise Operations.html#ShiftingBitboards" title="General Setwise Operations">Shifting bitboards</a> simulates piece movement, while finally <a href="General Setwise Operations.html#ArithmeticalOperations" title="General Setwise Operations">arithmetical operations</a> are used in <a href="Bit-Twiddling.html" title="Bit-Twiddling">bit-twiddling</a> applications and to calculate various hash-indicies. 
+</p><p><a class="external text" href="https://en.wikipedia.org/wiki/Operator_%28mathematics%29" rel="nofollow">Operators</a> are denoted with focus on the <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a>, <a href="Java.html" title="Java">Java</a> and <a href="Pascal.html" title="Pascal">Pascal</a> programming languages, as well as the <a class="external text" href="https://en.wikipedia.org/wiki/Mnemonic#Assembly_mnemonics" rel="nofollow">mnemonics</a> of <a href="X86.html" title="X86">x86</a> or <a href="X86-64.html" title="X86-64">x86-64</a> <a href="Assembly.html" title="Assembly">Assembly</a> language instructions including <a href="Bit-Twiddling.html#BitManipulation" title="Bit-Twiddling">bit-manipulation</a> (<a href="BMI1.html" title="BMI1">BMI1</a>, <a href="BMI2.html" title="BMI2">BMI2</a>, <a href="TBM.html" title="TBM">TBM</a>) and <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD</a> expansions (<a href="MMX.html" title="MMX">MMX</a>, <a href="SSE2.html" title="SSE2">SSE2</a>, <a href="AVX.html" title="AVX">AVX</a>, <a href="AVX2.html" title="AVX2">AVX2</a>, <a href="AVX-512.html" title="AVX-512">AVX-512</a>, <a href="XOP.html" title="XOP">XOP</a>), <a class="external text" href="https://en.wikipedia.org/wiki/List_of_mathematical_symbols" rel="nofollow">Mathematical symbols</a>, some <a class="external text" href="https://en.wikipedia.org/wiki/Venn_diagram" rel="nofollow">Venn diagrams</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, <a class="external text" href="https://en.wikipedia.org/wiki/Truth_table" rel="nofollow">Truth tables</a>, and bitboard diagrams where appropriate. 
+</p><p><span id="Relational"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Relational"><span class="tocnumber">1</span> <span class="toctext">Relational</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Equality"><span class="tocnumber">1.1</span> <span class="toctext">Equality</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Empty and Universe"><span class="tocnumber">1.2</span> <span class="toctext">Empty and Universe</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Bitwise Boolean"><span class="tocnumber">2</span> <span class="toctext">Bitwise Boolean</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Intersection"><span class="tocnumber">2.1</span> <span class="toctext">Intersection</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Union"><span class="tocnumber">2.2</span> <span class="toctext">Union</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Complement Set"><span class="tocnumber">2.3</span> <span class="toctext">Complement Set</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Relative Complement"><span class="tocnumber">2.4</span> <span class="toctext">Relative Complement</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Implication"><span class="tocnumber">2.5</span> <span class="toctext">Implication</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Exclusive Or"><span class="tocnumber">2.6</span> <span class="toctext">Exclusive Or</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Equivalence"><span class="tocnumber">2.7</span> <span class="toctext">Equivalence</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Majority"><span class="tocnumber">2.8</span> <span class="toctext">Majority</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Greater One Sets"><span class="tocnumber">2.9</span> <span class="toctext">Greater One Sets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Shifting Bitboards"><span class="tocnumber">3</span> <span class="toctext">Shifting Bitboards</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#One Step Only"><span class="tocnumber">3.1</span> <span class="toctext">One Step Only</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Rotate"><span class="tocnumber">3.2</span> <span class="toctext">Rotate</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Generalized Shift"><span class="tocnumber">3.3</span> <span class="toctext">Generalized Shift</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#See also"><span class="tocnumber">3.4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Bit by Square"><span class="tocnumber">3.5</span> <span class="toctext">Bit by Square</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Update by Move"><span class="tocnumber">3.6</span> <span class="toctext">Update by Move</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Swapping Bits"><span class="tocnumber">3.7</span> <span class="toctext">Swapping Bits</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Arithmetic Operations"><span class="tocnumber">4</span> <span class="toctext">Arithmetic Operations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#Derived from Bitwise"><span class="tocnumber">4.1</span> <span class="toctext">Derived from Bitwise</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Addition"><span class="tocnumber">4.2</span> <span class="toctext">Addition</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Subtraction"><span class="tocnumber">4.3</span> <span class="toctext">Subtraction</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#The Two.27s Complement"><span class="tocnumber">4.4</span> <span class="toctext">The Two's Complement</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Least Significant One"><span class="tocnumber">4.5</span> <span class="toctext">Least Significant One</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#Isolation"><span class="tocnumber">4.5.1</span> <span class="toctext">Isolation</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Reset"><span class="tocnumber">4.5.2</span> <span class="toctext">Reset</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#Separation"><span class="tocnumber">4.5.3</span> <span class="toctext">Separation</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Smearing"><span class="tocnumber">4.5.4</span> <span class="toctext">Smearing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-32"><a href="#Least Significant Zero"><span class="tocnumber">4.6</span> <span class="toctext">Least Significant Zero</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#Most Significant One"><span class="tocnumber">4.7</span> <span class="toctext">Most Significant One</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#Multiplication"><span class="tocnumber">4.8</span> <span class="toctext">Multiplication</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Division"><span class="tocnumber">4.9</span> <span class="toctext">Division</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#Modulo"><span class="tocnumber">4.10</span> <span class="toctext">Modulo</span></a>
+<ul>
+<li class="toclevel-3 tocsection-37"><a href="#Casting out 255"><span class="tocnumber">4.10.1</span> <span class="toctext">Casting out 255</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#Reciprocal Multiplication"><span class="tocnumber">4.10.2</span> <span class="toctext">Reciprocal Multiplication</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#Power of Two"><span class="tocnumber">4.10.3</span> <span class="toctext">Power of Two</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="#Selected Publications"><span class="tocnumber">5</span> <span class="toctext">Selected Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-41"><a href="#1847 ..."><span class="tocnumber">5.1</span> <span class="toctext">1847 ...</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#1900 ..."><span class="tocnumber">5.2</span> <span class="toctext">1900 ...</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#1950 ..."><span class="tocnumber">5.3</span> <span class="toctext">1950 ...</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#2000 ..."><span class="tocnumber">5.4</span> <span class="toctext">2000 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-45"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-46"><a href="#2000 ... 2"><span class="tocnumber">6.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#2010 ..."><span class="tocnumber">6.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#2020 ..."><span class="tocnumber">6.3</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-49"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-50"><a href="#Sets"><span class="tocnumber">7.1</span> <span class="toctext">Sets</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#Algebra"><span class="tocnumber">7.2</span> <span class="toctext">Algebra</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#Logic"><span class="tocnumber">7.3</span> <span class="toctext">Logic</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#Operations"><span class="tocnumber">7.4</span> <span class="toctext">Operations</span></a>
+<ul>
+<li class="toclevel-3 tocsection-54"><a href="#Setwise"><span class="tocnumber">7.4.1</span> <span class="toctext">Setwise</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="#Bitwise"><span class="tocnumber">7.4.2</span> <span class="toctext">Bitwise</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="#Arithmetic"><span class="tocnumber">7.4.3</span> <span class="toctext">Arithmetic</span></a></li>
+<li class="toclevel-3 tocsection-57"><a href="#Modular arithmetic"><span class="tocnumber">7.4.4</span> <span class="toctext">Modular arithmetic</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-58"><a href="#Misc"><span class="tocnumber">7.5</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-59"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Relational">Relational</span></h1>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Relational_operator" rel="nofollow">Relational operators</a> on bitboards are the test for <a class="external text" href="https://en.wikipedia.org/wiki/Relational_operator#Equality" rel="nofollow">equality</a> whether they are the same or not. Greater or less in the arithmetical sense is usually not relevant with bitboards <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> - instead we often compare <a href="Bit.html" title="Bit">bit</a> for bit of two bitboards by certain <a href="General Setwise Operations.html#Bitwisebooleanoperations" title="General Setwise Operations">bitwise boolean operations</a> to retrieve bitwise greater, less or equal results.
+</p>
+<h2><span class="mw-headline" id="Equality">Equality</span></h2>
+<p>In <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a> "==" is used, to test for equality, "!=" for not equal. <a href="Pascal.html" title="Pascal">Pascal</a> uses "=", "&lt;&gt;" and has ":=" to distinguish relational equal operators from assignment.
+</p>
+<pre>
+if (a == b) -&gt; both sets are equal
+if (a != b) -&gt; both sets are not equal
+</pre>
+<p><b>x86-mnemonics</b> <br/>
+<a href="X86.html" title="X86">x86</a> has a cmp-instruction, which internally performs a subtraction to set its internal processor flags (carry, zero, overflow) accordantly, for instance the zero-flag if both sets are equal. Those flags are then used by conditional jump or move instructions.
+</p>
+<pre>
+cmp  rax, rbx ; rax == rbx
+je   equal    ; (jz) conditional jump if equal (jne, jnz for not equal)
+</pre>
+<p><span id="EmptyAndUniverse"></span>
+</p>
+<h2><span class="mw-headline" id="Empty_and_Universe">Empty and Universe</span></h2>
+<p>Two important sets are:
+</p>
+<ul><li> The <a class="external text" href="https://en.wikipedia.org/wiki/Empty_set" rel="nofollow">empty set</a> is represented by all bits zero.</li>
+<li> The <a class="external text" href="https://en.wikipedia.org/wiki/Universal_set" rel="nofollow">universal set</a> contains all elements by setting all bits to binary one.</li></ul>
+<p>The numerical values and setwise representations of those sets:
+</p>
+<pre>
+empty set E       = 0
+ set-wise         = {}
+
+universal set U   = 2^64 - 1
+ signed decimal   = -1
+ hexadecimal      = 0xffffffffffffffff
+ unsigned decimal = 18,446,744,073,709,551,615
+ set-wise         = {a1, b1, c1, d1, ....., e8, f8, g8, h8}
+</pre>
+<p>as  bitboard diagrams and <a class="external text" href="https://en.wikipedia.org/wiki/Venn_diagram" rel="nofollow">Venn diagrams</a>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn0000.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/9/91/Venn0000.svg/240px-Venn0000.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Venn0000.svg/360px-Venn0000.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Venn0000.svg/480px-Venn0000.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn0000.svg.html" title="Enlarge"></a></div>Empty</div></div></div>
+<pre>                
+      Empty                 Universe
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+ . . . . . . . .        1 1 1 1 1 1 1 1
+</pre>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn1111.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/c/ca/Venn1111.svg/240px-Venn1111.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Venn1111.svg/360px-Venn1111.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Venn1111.svg/480px-Venn1111.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn1111.svg.html" title="Enlarge"></a></div>Universe</div></div></div>
+<p>Programmers often wonder to use -1 in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> as unsigned constant. See <a href="General Setwise Operations.html#TheTwosComplement" title="General Setwise Operations">The Two's Complement</a> - alternately one may use ~0 to define the universal set. Since in <a href="C.html" title="C">C</a> or <a href="Cpp.html" title="Cpp">C++</a>, decimal numbers without ULL suffix are treated as 32-bit integers, constants outside the integer range need some care concerning sign or zero extension. Const declarations or using the <a href="Bitboards.html#DefiningBitboards" title="Bitboards">C64 Macro</a> is recommended:
+</p>
+<pre>
+const U64 universe = 0xffffffffffffffffULL;
+</pre>
+<p>To test whether a set is empty or not, one may compare with zero or use the logical not operator '!' in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a>:
+</p>
+<pre>
+if (a == 0) -&gt; empty set
+if (!a)     -&gt; empty set
+if (a != 0) -&gt; set is not empty
+if (a)      -&gt; set is not empty
+</pre>
+<p>To test for the universal set is less likely:
+</p>
+<pre>
+if (a == universe) -&gt; universal set
+if (a + 1 == 0)    -&gt; universal set
+</pre>
+<p><span id="Bitwisebooleanoperations"></span>
+</p>
+<h1><span class="mw-headline" id="Bitwise_Boolean">Bitwise Boolean</span></h1>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra" rel="nofollow">Boolean algebra</a> is an algebraic structure <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> that captures essential properties of both <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory#Basic_concepts" rel="nofollow">set operations</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Logical_connective" rel="nofollow">logical operations</a>. The properties of <a class="external text" href="https://en.wikipedia.org/wiki/Associativity" rel="nofollow">associativity</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Commutativity" rel="nofollow">commutativity</a>, and <a class="external text" href="https://en.wikipedia.org/wiki/Absorption_laws" rel="nofollow">absorption</a>, which define an <a class="external text" href="https://en.wikipedia.org/wiki/Lattice_%28order%29" rel="nofollow">ordered lattice</a>, in conjunction with  <a class="external text" href="https://en.wikipedia.org/wiki/Distributivity" rel="nofollow">distributive</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Complement_%28set_theory%29" rel="nofollow">complement laws</a> define the <a class="external text" href="https://en.wikipedia.org/wiki/Algebra_of_sets" rel="nofollow">Algebra of sets</a> is in fact a <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28structure%29" rel="nofollow">Boolean algebra</a>. 
+</p><p>Specifically, Boolean algebra deals with the set operations of <a class="external text" href="https://en.wikipedia.org/wiki/Intersection_%28set_theory%29" rel="nofollow">intersection</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Union_%28set_theory%29" rel="nofollow">union</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Complement_%28set_theory%29" rel="nofollow">complement</a>, their equivalents of <a class="external text" href="https://en.wikipedia.org/wiki/Logical_conjunction" rel="nofollow">conjunction</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Logical_disjunction" rel="nofollow">disjunction</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Negation" rel="nofollow">negation</a> and their bitwise boolean operations of <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#AND" rel="nofollow">AND</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#OR" rel="nofollow">OR</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#NOT" rel="nofollow">NOT</a> to implement <a href="Combinatorial Logic.html" title="Combinatorial Logic">combinatorial logic</a> in <a href="Software.html" title="Software">software</a>. Bitwise boolean operations on 64-bit words are in fact 64 parallel operations on each <a href="Bit.html" title="Bit">bit</a> performing one setwise operation without any "side-effects". Square mapping don't cares as long all sets use the same.
+<span id="Intersection"></span>
+</p>
+<h2><span class="mw-headline" id="Intersection">Intersection</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn0001.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/9/99/Venn0001.svg/240px-Venn0001.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Venn0001.svg/360px-Venn0001.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Venn0001.svg/480px-Venn0001.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn0001.svg.html" title="Enlarge"></a></div>Intersection</div></div></div>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory" rel="nofollow">set theory</a> <a class="external text" href="https://en.wikipedia.org/wiki/Intersection_%28set_theory%29" rel="nofollow">intersection</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A ∩ B</span>
+</pre>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28logic%29" rel="nofollow">boolean algebra</a> <a class="external text" href="https://en.wikipedia.org/wiki/Logical_conjunction" rel="nofollow">conjunction</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">a ∧ b</span>
+</pre>
+<p>Bitboard intersection or conjunction is performed by <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#AND" rel="nofollow">bitwise and</a> (binary operator &amp; in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a>, and the keyword "AND" in <a href="Pascal.html" title="Pascal">Pascal</a>).
+</p>
+<pre>intersection = a &amp; b
+</pre>
+<p><b>Truth Table</b><br/>
+Truth table of <a class="external text" href="https://en.wikipedia.org/wiki/AND_gate" rel="nofollow">and</a> for one bit, for a '1' result both inputs need to be '1':
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th> a and b
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr></table>
+<p>Conjunction acts like a bitwise minimum, min(a, b) or as bitwise multiplication (a * b).
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="X86.html" title="X86">x86</a> has general purpose instruction as well as <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-instructions</a> for bitwise and:
+</p>
+<pre>
+and   rax,  rbx        ; rax &amp;= rbx
+test  rax,  rbx        ; to determine whether the intersection is empty
+pand  mm0,  mm1        ; MMX   mm0 &amp;= mm1
+pand  xmm0, xmm1       ; SSE2 xmm0 &amp;= xmm1
+vpand xmm0, xmm1, xmm2 ; AVX  xmm0 = xmm1 &amp; xmm2
+vpand ymm0, ymm1, ymm2 ; AVX2 ymm0 = ymm1 &amp; ymm2
+</pre>
+<p><a href="SSE2.html" title="SSE2">SSE2</a>-intrinsic <a href="SSE2.html# mm and si128" title="SSE2">_mm_and_si128</a><br/>
+<a href="AVX2.html" title="AVX2">AVX2</a>-intrinsic <a href="AVX2.html# mm256 and si256" title="AVX2">_mm256_and_si256</a><br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a>
+</p><p><b>Idempotent</b> <br/>
+Conjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Idempotence" rel="nofollow">idempotent</a>.
+</p>
+<pre>a &amp; a == a
+</pre>
+<p><b>Commutative</b> <br/>
+Conjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Commutative" rel="nofollow">commutative</a>
+</p>
+<pre>a &amp; b == b &amp; a
+</pre>
+<p><b>Associative</b><br/> 
+Conjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Associative" rel="nofollow">associative</a>.
+</p>
+<pre>(a &amp; b) &amp; c == a &amp; (b &amp; c)
+</pre>
+<p><b>Subset</b> <br/>
+The intersection of two sets is <a class="external text" href="https://en.wikipedia.org/wiki/Subset" rel="nofollow">subset</a> of both.
+</p><p>Assume we have a attack set of a <a href="Queen.html" title="Queen">queen</a>, and like to know whether the queen attacks opponent <a href="Pieces.html" title="Pieces">pieces</a> it may <a href="Captures.html" title="Captures">capture</a>, we need to 'and' the queen-attacks with the set of opponent pieces.
+</p>
+<pre>
+queen attacks    &amp;  opponent pieces  =  attacked pieces
+. . . . . . . .     1 . . 1 1 . . 1     . . . . . . . .
+. . . 1 . . 1 .     1 . 1 1 1 1 1 .     . . . 1 . . 1 .
+. 1 . 1 . 1 . .     . 1 . . . . . 1     . 1 . . . . . .
+. . 1 1 1 . . .     . . . . . . . .     . . . . . . . .
+1 1 1 * 1 1 1 .  &amp;  . . . * . . 1 .  =  . . . * . . 1 .
+. . 1 1 1 . . .     . . . . . . . .     . . . . . . . .
+. . . 1 . 1 . .     . . . . . . . .     . . . . . . . .
+. . . 1 . . . .     . . . . . . . .     . . . . . . . .
+</pre>
+<p>To prove whether set 'a' is <a class="external text" href="https://en.wikipedia.org/wiki/Subset" rel="nofollow">subset</a> of another set 'b', we compare whether the intersection equals the subset:
+</p>
+<pre>
+bool isASubsetOfB(U64 a, U64 b) {return (a &amp; b) == a;}
+</pre>
+<p><span id="DisjointSets"></span>
+<b>Disjoint Sets</b> <br/>
+To test whether two sets are <a class="external text" href="https://en.wikipedia.org/wiki/Disjoint" rel="nofollow">disjoint</a> - that is their intersection is empty - compiler emit the <a href="X86.html" title="X86">x86</a> test-instruction instead of and. That saves the content of a register, if the intersection is not otherwise needed:
+</p>
+<pre>
+if ( (a &amp; b) == 0 ) -&gt; a and b are disjoint sets
+</pre>
+<p>In chess the bitboards of white and black pieces are obviously always disjoint, same for sets of different piece-types, such as knights or pawns. Of course this is because one square is occupied by one piece only.
+<span id="Union"></span>
+</p>
+<h2><span class="mw-headline" id="Union">Union</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn0111.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/3/30/Venn0111.svg/240px-Venn0111.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Venn0111.svg/360px-Venn0111.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Venn0111.svg/480px-Venn0111.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn0111.svg.html" title="Enlarge"></a></div>Union</div></div></div>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory" rel="nofollow">set theory</a> <a class="external text" href="https://en.wikipedia.org/wiki/Union_%28set_theory%29" rel="nofollow">union</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A ∪ B</span>
+</pre>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28logic%29" rel="nofollow">boolean algebra</a> <a class="external text" href="https://en.wikipedia.org/wiki/Logical_disjunction" rel="nofollow">disjunction</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">a ∨ b</span>
+</pre>
+<p>The union or disjunction of two bitboards is applied by <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#OR" rel="nofollow">bitwise or</a> (binary operator | in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a>, or the keyword "OR" in <a href="Pascal.html" title="Pascal">Pascal</a>). The union is superset of the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>, while the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> is <a class="external text" href="https://en.wikipedia.org/wiki/Subset" rel="nofollow">subset</a> of the union.
+</p>
+<pre>union = a | b
+</pre>
+<p><b>Truth Table</b> <br/>
+Truth table of <a class="external text" href="https://en.wikipedia.org/wiki/OR_gate" rel="nofollow">or</a> for one bit, one set input bits is sufficient to set the output:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th> a or b
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr></table>
+<p>Disjunction acts like bitwise maximum, max(a, b) or as addition with saturation, min(a + b, 1). It can also be interpreted as sum minus product, a + b - a*b, with possible temporary overflow of one binary digit to two - or with modulo 2 arithmetic.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="X86.html" title="X86">x86</a> has general purpose instruction as well as <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-instructions</a> for bitwise or:
+</p>
+<pre>
+or   rax,  rbx        ;       rax |= rbx
+por  mm0,  mm1        ; MMX   mm0 |= mm1
+por  xmm0, xmm1       ; SSE2 xmm0 |= xmm1
+vpor xmm0, xmm1, xmm2 ; AVX  xmm0  = xmm1 | xmm2
+vpor ymm0, ymm1, ymm2 ; AVX2 ymm0  = ymm1 | ymm2
+</pre>
+<p><a href="SSE2.html" title="SSE2">SSE2</a>-intrinsic <a href="SSE2.html# mm or si128" title="SSE2">_mm_or_si128</a><br/>
+<a href="AVX2.html" title="AVX2">AVX2</a>-intrinsic <a href="AVX2.html# mm256 or si256" title="AVX2">_mm256_or_si256</a><br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a><br/>
+</p><p><b>Idempotent</b> <br/>
+Disjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Idempotence" rel="nofollow">idempotent</a>.
+</p>
+<pre>a | a == a
+</pre>
+<p><b>Commutative</b> <br/>
+Disjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Commutative" rel="nofollow">commutative</a>
+</p>
+<pre>a | b == b | a
+</pre>
+<p><b>Associative</b> <br/>
+Disjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Associative" rel="nofollow">associative</a>.
+</p>
+<pre>(a | b) | c == a | (b | c)
+</pre>
+<p><span id="DistributiveAndOr"></span>
+<b>Distributive</b> <br/>
+Disjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Distributivity" rel="nofollow">distributive</a> over <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">conjunction</a> and vice versa:
+</p>
+<pre>x | (y &amp; z) == (x | y) &amp; (x | z)
+x &amp; (y | z) == (x &amp; y) | (x &amp; z)
+</pre>
+<p><b>Superset</b> <br/>
+The union of two sets is superset of both. For instance the union of all white and black pieces are the set of all occupied squares:
+</p>
+<pre>
+white pieces     |  black pieces     =  occupied squares
+. . . . . . . .     1 . 1 1 1 1 1 1     1 . 1 1 1 1 1 1
+. . . . . . . .     1 1 1 1 . 1 1 1     1 1 1 1 . 1 1 1
+. . . . . . . .     . . 1 . . . . .     . . 1 . . . . .
+. . . . . . . .     . . . . 1 . . .     . . . . 1 . . .
+. . . . 1 . . .  |  . . . . . . . .  =  . . . . 1 . . .
+. . . . . 1 . .     . . . . . . . .     . . . . . 1 . .
+1 1 1 1 . 1 1 1     . . . . . . . .     1 1 1 1 . 1 1 1
+1 1 1 1 1 1 . 1     . . . . . . . .     1 1 1 1 1 1 . 1
+</pre>
+<p>Since white and black pieces are always disjoint, one may use addition here as well. That fails for union of attack sets, since squares may be attacked or defended by multiple pieces of course.
+<span id="ComplementSet"></span>
+</p>
+<h2><span class="mw-headline" id="Complement_Set">Complement Set</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn1010.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/e/eb/Venn1010.svg/240px-Venn1010.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Venn1010.svg/360px-Venn1010.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Venn1010.svg/480px-Venn1010.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn1010.svg.html" title="Enlarge"></a></div>Complement</div></div></div>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory" rel="nofollow">set theory</a> <a class="external text" href="https://en.wikipedia.org/wiki/Complement_%28set_theory%29" rel="nofollow">complement set</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A</span><span style="vertical-align: super;">∁</span>
+</pre>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28logic%29" rel="nofollow">boolean algebra</a> <a class="external text" href="https://en.wikipedia.org/wiki/Negation" rel="nofollow">negation</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">¬a</span>
+</pre>
+<p>The complement set (absolute complement set), negation or <a class="external text" href="https://en.wikipedia.org/wiki/Ones%27_complement#Ones.27_complement" rel="nofollow">ones' complement</a> has it's equivalent in <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#NOT" rel="nofollow">bitwise not</a> (unary operator '~' in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a>, or the keyword "NOT" in <a href="Pascal.html" title="Pascal">Pascal</a>).
+</p><p><b>Truth Table</b> <br/>
+Truth table of <a class="external text" href="https://en.wikipedia.org/wiki/NOT_gate" rel="nofollow">not</a> for one bit:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th> not a
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 0
+</th></tr></table>
+<p>The complement can be interpreted as bitwise subtraction (1 - a).
+</p><p><b>x86-mnemonics</b> <br/>
+Available as general purpose instruction.
+</p>
+<pre>not  rax ; rax = ~rax
+</pre>
+<p><a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a>
+</p><p><b>Empty Squares</b><br/>
+The set of empty squares for instance is the complement-set of all occupied squares and vice versa:
+</p>
+<pre>
+~occupied squares  =   empty squares
+  1 . 1 1 1 1 1 1      . 1 . . . . . .
+  1 1 1 1 . 1 1 1      . . . . 1 . . .
+  . . 1 . . . . .      1 1 . 1 1 1 1 1
+  . . . . 1 . . .      1 1 1 1 . 1 1 1
+~ . . . . 1 . . .  =   1 1 1 1 . 1 1 1
+  . . . . . 1 . .      1 1 1 1 1 . 1 1
+  1 1 1 1 . 1 1 1      . . . . 1 . . .
+  1 1 1 1 1 1 . 1      . . . . . . 1 .
+</pre>
+<p><i>Don't confuse bitwise not with logical not-operator '!' in</i> <a href="C.html" title="C">C</a>:
+</p>
+<pre>!0 == 1
+!(anything != 0) == 0
+!1  == 0
+!-1 == 0
+</pre>
+<p><span id="Complementlaws"></span>
+<b>Complement laws</b><br/>
+</p>
+<ul><li> The <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of a set with it's complement is the universal set -1.</li>
+<li> The <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of a set with it's complement is the empty set 0 - both are <a class="external text" href="https://en.wikipedia.org/wiki/Disjoint" rel="nofollow">disjoint</a>.</li>
+<li> Empty set and universal set are complement sets.</li></ul>
+<pre>a  | ~a == -1
+a  &amp; ~a ==  0
+~0      == -1
+~(-1)   ==  0
+</pre>
+<p><span id="DeMorganslaws"></span>
+<b>De Morgan's laws</b> <br/>
+</p>
+<ul><li> Complement of <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> (<a class="external text" href="https://en.wikipedia.org/wiki/NOR_gate" rel="nofollow">NOR</a> ) is the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of the complements <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>.</li>
+<li> Complement of <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> (<a class="external text" href="https://en.wikipedia.org/wiki/NAND_logic" rel="nofollow">NAND</a> or <a class="external text" href="https://en.wikipedia.org/wiki/Sheffer_stroke" rel="nofollow">Sheffer stroke</a> ) is the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of the complements.</li></ul>
+<pre>~(a | b) == ~a &amp; ~b
+~(a &amp; b) == ~a | ~b
+</pre>
+<p>For instance to get the set of empty squares, we can complement the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of white and black pieces. Or we can intersect the complements of white and black pieces.
+<span id="RelativeComplement"></span>
+</p>
+<h2><span class="mw-headline" id="Relative_Complement">Relative Complement</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn0010.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/5/5a/Venn0010.svg/240px-Venn0010.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Venn0010.svg/360px-Venn0010.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Venn0010.svg/480px-Venn0010.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn0010.svg.html" title="Enlarge"></a></div>Relative Complement</div></div></div>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory" rel="nofollow">set theory</a> <a class="external text" href="https://en.wikipedia.org/wiki/Complement_%28set_theory%29#Relative_complement" rel="nofollow">relative complement</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A</span><span style="vertical-align: super;">∁</span><span style="font-size: 140%;"> ∩ B = B \ A</span>
+</pre>
+<p>The relative complement is the <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">absolute complement</a> restricted to some other set. The relative complement of 'a' inside 'b' is also known as the <b>set theoretic difference</b> of 'b' minus 'a'. It is the set of all elements that belong to 'b' but <b>not</b> to 'a'. Also called 'b' without 'a'. It is the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of 'b' with the absolute complement of 'a'.
+</p>
+<pre>not_a_in_b  = ~a &amp;  b
+b_without_a =  b &amp; ~a
+</pre>
+<p><b>Truth Table</b><br/> 
+Truth table of relative complement for one bit:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th> b andnot a
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 0
+</th></tr></table>
+<p>The relative complement of 'a' in 'b' may be interpreted as a bitwise (a &lt; b) relation.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="X86.html" title="X86">x86</a> don't has an own general purpose instruction for relative complement, but <a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="BMI1.html" title="BMI1">BMI1</a>, and <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-instructions</a>:
+</p>
+<pre>
+andn   rax,  rbx,  rcx  ; BMI1  rax = ~rbx &amp; rcx
+pandn  mm0,  mm1        ; MMX   mm0 = ~mm0 &amp; mm1
+pandn  xmm0, xmm1       ; SSE2 xmm0 = ~xmm0 &amp; xmm1
+vpandn xmm0, xmm1, xmm2 ; AVX  xmm0 = ~xmm1 &amp; xmm2
+vpandn ymm0, ymm1, ymm2 ; AVX  xmm0 = ~xmm1 &amp; xmm2
+</pre>
+<p><a href="SSE2.html" title="SSE2">SSE2</a>-intrinsic <a href="SSE2.html# mm andnot si128" title="SSE2">_mm_andnot_si128</a><br/>
+<a href="AVX2.html" title="AVX2">AVX2</a>-intrinsic <a href="AVX2.html# mm256 andnot si256" title="AVX2">_mm256_andnot_si256</a><br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a>
+</p><p><b>Super minus Sub</b><br/>  
+In presumption of <a href="General Setwise Operations.html#XorWithout" title="General Setwise Operations">subtraction or exclusive or</a> there are alternatives to calculate the relative complement - superset minus subset. We can take either the union without the complementing set - or the other set without the intersection
+</p>
+<pre>~a &amp; b == ( a | b ) - a
+~a &amp; b == b - ( a &amp; b )
+</pre>
+<h2><span class="mw-headline" id="Implication">Implication</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn1011.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/1/1e/Venn1011.svg/240px-Venn1011.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Venn1011.svg/360px-Venn1011.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Venn1011.svg/480px-Venn1011.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn1011.svg.html" title="Enlarge"></a></div>Implication</div></div></div>
+<p>Logical Implication or <a class="external text" href="https://en.wikipedia.org/wiki/Entailment" rel="nofollow">Entailment</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A ⇒ B</span>
+</pre>
+<p>The boolean <a class="external text" href="https://en.wikipedia.org/wiki/Material_conditional" rel="nofollow">Material conditional</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">a → b</span>
+</pre>
+<p>Logical Implication or the boolean Material conditional 'a' implies 'b' (if 'a' then 'b') is an derived boolean operation, implemented as <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of the <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">absolute complement</a> of 'a' with 'b':
+</p>
+<pre>a_implies_b ==  ~a | b
+</pre>
+<p><b>Truth Table</b> 
+Truth table of logical implication for one bit:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th> a implies b
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr></table>
+<p>Implication may be interpreted as a bitwise (a &lt;= b) relation.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a><br/>
+<span id="ExclusiveOr"></span>
+</p>
+<h2><span class="mw-headline" id="Exclusive_Or">Exclusive Or</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn0110.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/4/46/Venn0110.svg/240px-Venn0110.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Venn0110.svg/360px-Venn0110.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Venn0110.svg/480px-Venn0110.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn0110.svg.html" title="Enlarge"></a></div>Exclusive Or</div></div></div>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory" rel="nofollow">set theory</a> <a class="external text" href="https://en.wikipedia.org/wiki/Symmetric_difference" rel="nofollow">symmetric difference</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A ∆ B</span>
+</pre>
+<p>In <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28logic%29" rel="nofollow">boolean algebra</a> <a class="external text" href="https://en.wikipedia.org/wiki/Exclusive_or" rel="nofollow">Exclusive or</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">a ⊕ b</span>
+</pre>
+<p>Exclusive or, also exclusive disjunction (xor, binary operator '^' in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> or <a href="Java.html" title="Java">Java</a>, or the keyword "XOR" in <a href="Pascal.html" title="Pascal">Pascal</a>),
+</p>
+<pre>xor = a ^ b
+</pre>
+<p>also called symmetric difference, leaves all elements which are exclusively set in one of the two sets.  Xor is really a multi purpose operation with a lot of applications not only bitboards of course.
+</p>
+<pre>
+1 . . . . . . 1     . . . . . . . .     1 . . . . . . 1
+. 1 . . . . 1 .     . . . . . . . .     . 1 . . . . 1 .
+. . 1 . . 1 . .     . . 1 1 1 1 . .     . . . 1 1 . . .
+. . . 1 1 . . .     . . 1 1 1 1 . .     . . 1 . . 1 . .
+. . . 1 1 . . .  ^  . . 1 1 1 1 . .  =  . . 1 . . 1 . .
+. . 1 . . 1 . .     . . 1 1 1 1 . .     . . . 1 1 . . .
+. 1 . . . . 1 .     . . . . . . . .     . 1 . . . . 1 .
+1 . . . . . . 1     . . . . . . . .     1 . . . . . . 1
+</pre>
+<p><b>Truth Table</b> <br/>
+Truth table of <a class="external text" href="https://en.wikipedia.org/wiki/XOR_gate" rel="nofollow">exclusive or</a> for one bit:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th> a xor b
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 0
+</th></tr></table>
+<p>Xor implements a bitwise (a != b) relation.
+It acts like a bitwise addition (modulo 2), since (1 + 1) mod 2 = 0.
+It also acts like a bitwise subtraction (modulo 2).
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="X86.html" title="X86">x86</a> has general purpose instruction as well as <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-instructions</a> for bitwise exclusive or:
+</p>
+<pre>
+xor   rax,  rbx        ;       rax ^= rbx
+pxor  mm0,  mm1        ; MMX   mm0 ^= mm1
+pxor  xmm0, xmm1       ; SSE2 xmm0 ^= xmm1
+vpxor xmm0, xmm1, xmm2 ; AVX  xmm0  = xmm1 ^ xmm2
+vpxor ymm0, ymm1, ymm2 ; AVX2 ymm0  = ymm1 ^ ymm2
+</pre>
+<p><a href="SSE2.html" title="SSE2">SSE2</a>-intrinsic <a href="SSE2.html# mm xor si128" title="SSE2">_mm_xor_si128</a><br/>
+<a href="AVX2.html" title="AVX2">AVX2</a>-intrinsic <a href="AVX2.html# mm256 xor si256" title="AVX2">_mm256_xor_si256</a><br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a>
+</p><p><b>Commutative</b> <br/>
+Exclusive disjunction is <a class="external text" href="https://en.wikipedia.org/wiki/Commutative" rel="nofollow">commutative</a>
+</p>
+<pre>a ^ b == b ^ a
+</pre>
+<p><b>Associative</b><br/> 
+Xor is <a class="external text" href="https://en.wikipedia.org/wiki/Associative" rel="nofollow">associative</a> as well.
+</p>
+<pre>(a ^ b) ^ c == a ^ (b ^ c)
+</pre>
+<p><b>Distributive</b> <br/>
+<a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">Conjunction</a> is <a class="external text" href="https://en.wikipedia.org/wiki/Distributivity" rel="nofollow">distributive</a> over exclusive disjunction - but <b>not</b> vice versa, since conjunction acts like multiplication, while xor acts as addition in the <a class="external text" href="https://en.wikipedia.org/wiki/Finite_field" rel="nofollow">Galois field</a> <a class="external text" href="https://en.wikipedia.org/wiki/GF%282%29" rel="nofollow">GF(2)</a> :
+</p>
+<pre>x &amp; (y ^ z) == (x &amp; y) ^ (x &amp; z)
+</pre>
+<p><b>Own Inverse</b> <br/>
+If applied two (even) times with the same operand, xor restores the original result. It is own inverse or an <a class="external text" href="https://en.wikipedia.org/wiki/Involution" rel="nofollow">involution</a> .
+</p><p><b>Subset</b><br/> 
+If one operand is subset of the other, xor (or subtraction) implements the <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a>.
+</p>
+<pre>
+super               sub                 super &amp;~ sub
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. 1 1 1 1 1 1 .     . . . . . . . .     . 1 1 1 1 1 1 .
+. 1 1 1 1 1 1 .     . . 1 1 1 1 . .     . 1 . . . . 1 .
+. 1 1 1 1 1 1 .  ^  . . 1 1 1 1 . .     . 1 . . . . 1 .
+. 1 1 1 1 1 1 .     . . 1 1 1 1 . .  =  . 1 . . . . 1 .
+. 1 1 1 1 1 1 .  -  . . 1 1 1 1 . .     . 1 . . . . 1 .
+. 1 1 1 1 1 1 .     . . . . . . . .     . 1 1 1 1 1 1 .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+</pre>
+<p><b>Subtraction</b><br/> 
+While commutative, xor is a better replacement for subtracting from power of two minus one values, such as 63.
+</p>
+<pre>(2<span style="vertical-align: super;">n</span> - 1) - a == a ^ (2<span style="vertical-align: super;">n</span> - 1) with a subset of 2<span style="vertical-align: super;">n</span> - 1
+</pre>
+<p>This is because it usually safes one <a href="X86.html" title="X86">x86</a> load instruction and an additional register, but uses opcodes with immediate operands - for instance:
+</p>
+<pre>
+ 1 - a == a ^  1
+ 3 - a == a ^  3
+ 7 - a == a ^  7
+15 - a == a ^ 15
+31 - a == a ^ 31
+63 - a == a ^ 63
+...
+-1 - a == a ^ -1
+</pre>
+<p><b>Or without And</b> <br/>
+Xor is the same as a <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> without the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> - all the bits different, 0,1 or 1,0. Since the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> is subset of the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a>, xor or subtraction can replace the "without" operation &amp; ~:
+</p>
+<pre>a ^ b == (a | b) &amp;~(a &amp; b)
+a ^ b == (a | b) ^ (a &amp; b)
+a ^ b == (a | b) - (a &amp; b)
+</pre>
+<p><b>Disjoint Sets</b> <br/>
+The symmetric difference of disjoint sets is equal to the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> or arithmetical addition. Since <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> and symmetric difference are disjoint, the union might defined that way:
+</p>
+<pre>a | b = ( a &amp; b ) ^ ( a ^ b )
+a | b = ( a &amp; b ) ^   a ^ b
+a | b = ( a &amp; b ) | ( a ^ b )
+a | b = ( a &amp; b ) + ( a ^ b )
+</pre>
+<p>Assume we have distinct attack sets of pawns in left or right <a href="Direction.html" title="Direction">direction</a>. The set of all squares attacked by two pawns is the intersection, the set exclusively attacked by one pawn (either right or left) is the xor-sum, while all squares attacked by any pawn is the union, see <a href="Pawn Attacks (Bitboards).html#PawnAttacks" title="Pawn Attacks (Bitboards)">pawn attacks</a>.
+</p><p><b>Union of Complements</b><br/> 
+The symmetric difference is equivalent to the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of both <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complements</a>. Since both <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complements</a> are <a class="external text" href="https://en.wikipedia.org/wiki/Disjoint" rel="nofollow">disjoint</a>, bitwise or or add can replaced by xor itself:
+</p>
+<pre>a ^ b == (a &amp; ~b) | (b &amp; ~a)
+a ^ b == (a &amp; ~b) ^ (b &amp; ~a)
+a ^ b == (a &amp; ~b) + (b &amp; ~a)
+</pre>
+<p><b>Toggle</b> <br/>
+Xor can be used to toggle or flip bits by a mask.
+</p>
+<pre>x ^= mask;
+</pre>
+<p><b>Complement</b> <br/>
+xor with the universal set -1 flips each bit and results in the ones' complement.
+</p>
+<pre>a ^ -1 == ~a
+</pre>
+<p><span id="XorWithout"></span>
+<b>Without</b> <br/>
+Due to distributive law and since symmetric difference of set and subset is the relative complement of subset in set, there are some equivalent ways to calculate the <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a> by xor. Based on surrounding expressions or whether subexpressions such as union, intersection or symmetric difference may be reused one may prefer the one or other alternative.
+</p>
+<pre>a &amp; ~b == a &amp; (-1 ^ b )
+a &amp; ~b == a &amp; ( a ^ b )
+a &amp; ~b == a ^ ( a &amp; b ) == a - ( a &amp; b )
+a &amp; ~b == b ^ ( a | b ) == ( a | b ) - b
+</pre>
+<p>Also note that<br/>
+</p>
+<pre>a &amp; a == a &amp; -1
+</pre>
+<p><span id="XorClear"></span>
+<b>Clear</b><br/> 
+Since 'a' xor 'a' is zero, it is the shorter opcode to clear a register, since it takes no immediate operand. Applied by optimizing compilers. Same is true for subtraction by the way.
+</p>
+<pre>
+xor  rax, rax   ; same as mov rax, 0
+pxor mm0, mm0   ; MMX 64-bit register
+pxor xmm0, xmm0 ; SSE2 - 128-bit xmm-register
+</pre>
+<p><b>Xor Swap</b><br/> 
+Three xors on the same registers swap their content: (Note: this only works when a and b are stored on distinct memory adresses!)
+</p>
+<pre>
+a ^= b
+b ^= a
+a ^= b
+</pre>
+<p>If we provide an <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> by a mask, ...
+</p>
+<pre>
+a = (a ^ b) &amp; mask
+b ^= a
+a ^= b
+</pre>
+<p>... 'a' becomes 'b', but only a part of 'b', where mask is one, becomes 'a'.
+<span id="BitsFrom2SourcesByMask"></span>
+<b>Bits from two Sources</b><br/> 
+Getting arbitrary, <a class="external text" href="https://en.wikipedia.org/wiki/Disjoint" rel="nofollow">disjoint</a> bits from two sources by a mask:
+</p>
+<pre>
+// if mask-bit is zero, bit from a, otherwise from b - since a^(a^b) == b
+U64 mask = C64(0xFFFF0000FFFF0000);
+U64 result = a ^ ((a ^ b) &amp; mask);
+</pre>
+<p>This takes one instruction less, than the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a> of the mask in 'a' with <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of mask with 'b'.
+</p>
+<pre>
+    a ^    ((a ^ b) &amp; mask)
+== (a &amp; ~mask) | (b &amp; mask)
+== (a &amp; ~mask) ^ (b &amp; mask) because both sets of the union are disjoint
+== (a &amp; ~mask) + (b &amp; mask) because both sets of the union are disjoint
+</pre>
+<p><b>XOR-applications and affairs</b><br/>
+</p>
+<ul><li> Calculation of hash-keys based on <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist-keys</a>.</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check" rel="nofollow">Cyclic redundancy check</a>, <a href="Parallel Prefix Algorithms.html#ParityWords" title="Parallel Prefix Algorithms">Parity words</a> or <a href="Parallel Prefix Algorithms.html#GrayCode" title="Parallel Prefix Algorithms">Gray Code</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fredkin_gate" rel="nofollow">Fredkin gate</a> by <a href="Edward Fredkin.html" title="Edward Fredkin">Edward Fredkin</a></li>
+<li> <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a>.</li>
+<li> <a href="Subtracting a Rook from a Blocking Piece.html" title="Subtracting a Rook from a Blocking Piece">o^(o-2r)</a>.</li>
+<li> <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt's</a> approach of a <a href="Shared Hash Table.html#Lockless" title="Shared Hash Table">lockless transposition table</a></li>
+<li> <a href="General Setwise Operations.html#SwappingBits" title="General Setwise Operations">Swapping Bits</a>.</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Perceptrons_%28book%29#The_XOR_affair" rel="nofollow">The XOR affair</a> from <a class="external text" href="https://en.wikipedia.org/wiki/Perceptrons_%28book%29" rel="nofollow">Perceptrons</a> by <a href="Marvin Minsky.html" title="Marvin Minsky">Marvin Minsky</a> and <a href="Mathematician.html#SPapert" title="Mathematician">Seymour Papert</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li></ul>
+<h2><span class="mw-headline" id="Equivalence">Equivalence</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a class="image" href="File:Venn1001.svg.html"><img alt="" class="thumbimage" height="180" src="wikipedia/commons/thumb/4/47/Venn1001.svg/240px-Venn1001.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Venn1001.svg/360px-Venn1001.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Venn1001.svg/480px-Venn1001.svg.png 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Venn1001.svg.html" title="Enlarge"></a></div>Equivalence</div></div></div>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/If_and_only_if" rel="nofollow">If and only if</a> (Iff) is denoted as:
+</p>
+<pre><span style="font-size: 140%;">A ⇔ B</span>
+</pre>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Logical_equivalence" rel="nofollow">Logical equivalence</a> is denoted as:
+</p>
+<pre><span style="font-size: 140%;">a ↔ b</span>
+</pre>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Logical_equality" rel="nofollow">Logical equality</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Logical_equivalence" rel="nofollow">logical equivalence</a> or <a class="external text" href="https://en.wikipedia.org/wiki/Logical_biconditional" rel="nofollow">biconditional</a> (<a class="external text" href="https://en.wikipedia.org/wiki/If_and_only_if" rel="nofollow">if and only if</a>, <a class="external text" href="https://en.wikipedia.org/wiki/XNOR_gate" rel="nofollow">XNOR</a> ) is the complement of xor.
+</p>
+<pre>a_equal_b == ~(a ^ b)
+a_equal_b ==  (a &amp; b) | (~a &amp; ~b)
+a_equal_b ==  (a &amp; b) | ~(a | b)
+</pre>
+<p><b>Truth Table</b> <br/> 
+Truth table of equivalence or for one bit:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th> a ↔ b
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr></table>
+<p>Equivalence implements a bitwise (a == b) relation.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> has <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a><br/>
+<span id="Majority"></span>
+</p>
+<h2><span class="mw-headline" id="Majority">Majority</span></h2>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Majority_function" rel="nofollow">majority function</a> or <b>median operator</b> is a function from n inputs to one output. The value of the operation is false when n/2 or fewer arguments are false, and true otherwise. For two inputs it is the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>. Three inputs require some more computation:
+</p><p><b>Truth Table</b><br/>  
+Truth table of majority for three inputs:
+</p>
+<table class="wikitable">
+<tr>
+<th>  a
+</th>
+<th>  b
+</th>
+<th>  c
+</th>
+<th> maj(a,b,c)
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 0
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<th style="text-align:center;"> 1
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<th style="text-align:center;"> 1
+</th></tr></table>
+<pre>major(a,b,c) = (a &amp; b) |  (a &amp; c) | (b &amp; c);
+major(a,b,c) = (a &amp; b) | ((a ^ b ) &amp; c);
+</pre>
+<p>See the application of <a href="Population Count.html#CardinalityofMultipleSets" title="Population Count">cardinality of multiple sets</a> for more than three inputs.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="AVX-512.html" title="AVX-512">AVX-512</a> <a href="AVX-512.html#VPTERNLOG" title="AVX-512">VPTERNLOG</a> imm8 = 0xe8 implements the majority function.
+<span id="GreaterOne"></span>
+</p>
+<h2><span class="mw-headline" id="Greater_One_Sets">Greater One Sets</span></h2>
+<p><b>Greater One</b> is a function from n inputs to one output. The value of the operation is true if more than one argument is true, false otherwise. Obviously, for two inputs it is the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>, for three inputs it is the <a href="General Setwise Operations.html#Majority" title="General Setwise Operations">majority function</a>. For more inputs it is the union of all distinct pairwise intersections, which can be expressed with setwise operators that way:
+</p>
+<pre><span style="font-size: 200%;">∪</span><span style="vertical-align: sub;">i&gt;j∈I</span><span style="font-size: 120%;">(A<span style="vertical-align: sub;">i</span> ∩ A<span style="vertical-align: sub;">j</span>)</span>
+</pre>
+<p>With four bitboards this is equivalent to:
+</p>
+<pre>
+  (a1 &amp; a0)
+
+| (a2 &amp; a1)
+| (a2 &amp; a0)
+
+| (a3 &amp; a2)
+| (a3 &amp; a1)
+| (a3 &amp; a0)
+</pre>
+<p>with
+</p>
+<pre>n * (n - 1) - 1
+</pre>
+<p>operations - that is 11 for n == 4.
+</p><p><b>O(n^2) to O(n)</b> <br/> 
+Due to <a href="General Setwise Operations.html#DistributiveAndOr" title="General Setwise Operations">distibutive law</a> one can factor out common sets ...
+</p>
+<pre>
+  (a1 &amp; (      a0))
+| (a2 &amp; (   a1|a0))
+| (a3 &amp; (a2|a1|a0))
+</pre>
+<p>... with further reductions of the number of operations, also due to aggregation of the inner or-terms. Three additional operations for an increment of n, thus the former quadratic increase becomes linear.
+</p><p>In general, as mentioned,<br/>
+</p>
+<pre><span style="font-size: 200%;">∪</span><span style="vertical-align: sub;">i&gt;j∈I</span><span style="font-size: 120%;">(A<span style="vertical-align: sub;">i</span> ∩ A<span style="vertical-align: sub;">j</span>)</span>
+</pre>
+<p>requires
+</p>
+<pre>n * (n - 1) - 1
+</pre>
+<p>operations, which can be reduced to
+</p>
+<pre>3 * (n - 1) - 2
+</pre>
+<p>operations.
+</p><p>This <a class="external text" href="https://en.wikipedia.org/wiki/Big_O_notation" rel="nofollow">O(n^2) to O(n)</a> simplification is helpful to determine for instance <a href="Knight Pattern.html#KnightForks" title="Knight Pattern">knight fork target squares</a> from eight distinct knight-wise <a href="Direction.html" title="Direction">direction</a> attack sets of potential targets, like <a href="King.html" title="King">king</a>, <a href="Queen.html" title="Queen">queen</a>, <a href="Rook.html" title="Rook">rooks</a> and hanging <a href="Bishop.html" title="Bishop">bishops</a> or even <a href="Pawn.html" title="Pawn">pawns</a> - or any other form of at least double attacks from n attack bitboards:
+</p>
+<pre>
+U64 attack[n]; // 0..n-1
+U64 atLeastDouble = 0;
+U64 atLeastSingle = a[0];
+for (i=1; i &lt; n; i++) {
+  atLeastDouble |= attack[i] &amp; atLeastSingle;
+  atLeastSingle |= attack[i];
+}
+</pre>
+<p>Well, if you need additionally at least triple attacks, you'll get the idea how this would work as well, see also <a href="Population Count.html#OddMajorDigitCounts" title="Population Count">Odd and Major Digit Counts</a> from the <a href="Population Count.html" title="Population Count">Population Count</a> page.
+</p><p><span id="ShiftingBitboards"></span>
+</p>
+<h1><span class="mw-headline" id="Shifting_Bitboards">Shifting Bitboards</span></h1>
+<p>In the 8*8 board centric world with one scalar square-coordinate 0..63, each of the max eight neighboring squares can be determined by adding an offset for each <a href="Direction.html" title="Direction">direction</a>. For border squares one has to care about overflows and wraps from a-file to h-file or vice versa. Some conditional code is needed to avoid that. Such code is usually part of move generation for particular pieces.
+</p>
+<pre>
+  northwest    north   northeast
+  noWe         nort         noEa
+          +7    +8    +9
+              \  |  /
+  west    -1 &lt;-  0 -&gt; +1    east
+              /  |  \
+          -9    -8    -7
+  soWe         sout         soEa
+  southwest    south   southeast
+</pre>
+<table>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:51px;"><a href="Square Mapping Considerations.html" title="Square Mapping Considerations"><img alt="Cpwmappinghint.JPG" class="thumbimage" height="48" src="images/4/43/Cpwmappinghint.JPG" width="49"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Cpwmappinghint.JPG.html" title="Enlarge"></a></div></div></div></div>
+</td>
+<td> <i>Code samples and bitboard diagrams rely on <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">Little endian file and rank mapping</a></i>.
+</td></tr></table>
+<p>In the setwise world of bitboards, where a square as member of a set is determined by an appropriate one-bit 2^square, the operation to apply such movements is <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#Bit_shifts" rel="nofollow">shifting</a> . Unfortunately most architectures don't support a "generalized" shift by signed values but only shift left or shift right. That makes bitboard code less general as one has usually separate code for each direction or at least for the positive and negative directions.
+</p>
+<ul><li> Shift left (&lt;&lt;) is arithmetically a multiplication by power of two.</li>
+<li> Shift right (&gt;&gt; or &gt;&gt;&gt; in <a href="Java.html" title="Java">Java</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>) is arithmetically a division by power of two.</li></ul>
+<p>Since the square-index is encoded as power of two exponent inside a bitboard, the power of two multiplication or division is adding or subtracting the square-index.
+</p><p>The reason the bitboard type-definintion is unsigned in <a href="C.html" title="C">C</a>, <a href="Cpp.html" title="Cpp">C++</a> is to avoid so called <a class="external text" href="https://en.wikipedia.org/wiki/Arithmetic_shift" rel="nofollow">arithmetical shift right</a> in opposition to <a class="external text" href="https://en.wikipedia.org/wiki/Logical_shift" rel="nofollow">logical shift right</a> . Arithmetical shift right implies filling one-bits in from MSB-direction if the operand is negative and has MSB bit 63 set. Logical shift right always shifts in zeros - that is what we need. <a href="Java.html" title="Java">Java</a> has no unsigned types, but a special unsigned shift right operator &gt;&gt;&gt;.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="X86.html" title="X86">x86</a> has general purpose instructions, <a href="BMI2.html" title="BMI2">BMI2</a> general purpose instructions not affecting processor flags, as well as <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-instructions</a> for various shifts:
+</p>
+<pre>
+shr      rax,  cl         ;       rax &gt;&gt;= cl
+shl      rax,  cl         ;       rax &lt;&lt;= cl
+shrx     r64a, r/m64, r64b; BMI2  r64a = r/m64 &gt;&gt; r64b
+shlx     r64a, r/m64, r64b; BMI2  r64a = r/m64 &lt;&lt; r64b 
+psrlq    mm0,  mm1        ; MMX   mm0 &gt;&gt;= mm1
+psllq    mm0,  mm1        ; MMX   mm0 &lt;&lt;= mm1
+psrlq    xmm0, xmm1       ; SSE2 xmm0 &gt;&gt;= xmm1
+psllq    xmm0, xmm1       ; SSE2 xmm0 &lt;&lt;= xmm1
+vpsrlvq  ymm0, ymm1, ymm2 ; AVX2 ymm0   = ymm1 &gt;&gt; ymm2 ; Individual shifts
+vpsllvq  ymm0, ymm1, ymm2 ; AVX2 ymm0   = ymm1 &lt;&lt; ymm2 ; Individual shifts
+</pre>
+<p><a href="SSE2.html" title="SSE2">SSE2</a>-intrinsics with variable register or constant immediate shift amounts, working on vectors of two bitboards:
+</p>
+<ul><li> <a href="SSE2.html# mm srl epi64" title="SSE2">_mm_srl_epi64</a></li>
+<li> <a href="SSE2.html# mm srli epi64" title="SSE2">_mm_srli_epi64</a></li>
+<li> <a href="SSE2.html# mm sll epi64" title="SSE2">_mm_sll_epi64</a></li>
+<li> <a href="SSE2.html# mm slli epi64" title="SSE2">_mm_slli_epi64</a></li></ul>
+<p><a href="AVX2.html" title="AVX2">AVX2</a> has <a href="AVX2.html#IndividualShifts" title="AVX2">individual shifts</a> for each of four bitboards:
+</p>
+<ul><li> <a href="AVX2.html# mm256 sllv epi64" title="AVX2">_mm256_sllv_epi64</a></li>
+<li> <a href="AVX2.html# mm256 srlv epi64" title="AVX2">_mm256_srlv_epi64</a></li></ul>
+<p><span id="OneStepOnly"></span>
+</p>
+<h2><span class="mw-headline" id="One_Step_Only">One Step Only</span></h2>
+<p>The advantage with bitboards is, that the shift applies to all set bits in parallel, e.g. with all pawns. Vertical shifts by +-8 don't need any under- or overflow conditions since bits simply fall out and disappear.
+</p>
+<pre>
+U64 soutOne (U64 b) {return  b &gt;&gt; 8;}
+U64 nortOne (U64 b) {return  b &lt;&lt; 8;}
+</pre>
+<p>Wraps from a-file to h-file or vice versa may be considered by only shifting subsets which may not wrap.
+Thus we can mask off the a- or h-file before or after a +-1,7,9 shift:
+</p>
+<pre>
+const U64 notAFile = 0xfefefefefefefefe; // ~0x0101010101010101
+const U64 notHFile = 0x7f7f7f7f7f7f7f7f; // ~0x8080808080808080
+</pre>
+<p>Post-shift masks, ...
+</p>
+<pre>
+U64 eastOne (U64 b) {return (b &lt;&lt; 1) &amp; notAFile;}
+U64 noEaOne (U64 b) {return (b &lt;&lt; 9) &amp; notAFile;}
+U64 soEaOne (U64 b) {return (b &gt;&gt; 7) &amp; notAFile;}
+U64 westOne (U64 b) {return (b &gt;&gt; 1) &amp; notHFile;}
+U64 soWeOne (U64 b) {return (b &gt;&gt; 9) &amp; notHFile;}
+U64 noWeOne (U64 b) {return (b &lt;&lt; 7) &amp; notHFile;}
+</pre>
+<p>... and pre-shift, with the mirrored file masks.
+</p>
+<pre>
+U64 eastOne (U64 b) {return (b &amp; notHFile) &lt;&lt; 1;}
+U64 noEaOne (U64 b) {return (b &amp; notHFile) &lt;&lt; 9;}
+U64 soEaOne (U64 b) {return (b &amp; notHFile) &gt;&gt; 7;}
+U64 westOne (U64 b) {return (b &amp; notAFile) &gt;&gt; 1;}
+U64 soWeOne (U64 b) {return (b &amp; notAFile) &gt;&gt; 9;}
+U64 noWeOne (U64 b) {return (b &amp; notAFile) &lt;&lt; 7;}
+</pre>
+<p><a href="SSE2.html#OneStepOnlySSE2" title="SSE2">SSE2 one step only</a> provides some optimizations according to the wraps on vectors of two bitboards.
+</p><p>Main application of shifts is to get attack sets or move-target sets of appropriate <a href="Pieces.html" title="Pieces">pieces</a>, eg. <b>one step</b> for <a href="Pawn.html" title="Pawn">pawns</a> and <a href="King.html" title="King">king</a>. Applying one step <b>multiple</b> times may used to generate attack sets and moves of pieces like <a href="Knight Pattern.html" title="Knight Pattern">knights</a> and <a href="Dumb7Fill.html" title="Dumb7Fill">sliding pieces</a>.
+</p><p>For instance all push-targets of white pawns can be determined with one shift left plus <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> with empty squares.
+</p>
+<pre>
+whiteSinglePawnPushTargets = nortOne(whitePawns) &amp; emptySquares;
+</pre>
+<p><a href="Square Mapping Considerations.html" title="Square Mapping Considerations">Square-Mapping</a> is crucial while shifting bitboards. Shifting left inside a computer word may mean shifting right on the board with little-endian file-mapping as used in most sample code here.
+</p><p><span id="Rotate"></span>
+</p>
+<h2><span class="mw-headline" id="Rotate">Rotate</span></h2>
+<p>For the sake of completeness - Rotate is similar to shift but wraps bits around. Rotate does not alter the number of set bits. With <a href="X86-64.html" title="X86-64">x86-64</a> like shift operand s modulo 64, each bit index i, in the 0 to 63 range, is transposed by
+</p>
+<pre>
+rotateLeft ::=  i := (i + s) mod 64
+rotateRight::=  i := (i - s) mod 64
+</pre>
+<p>Additionally, following relations hold:
+</p>
+<pre>
+rotateLeft (s) == rotateRight(64-s)
+rotateRight(s) == rotateLeft (64-s)
+</pre>
+<p>Most processors have rotate instructions, but are not supported by standard programming languages like <a href="C.html" title="C">C</a> or <a href="Java.html" title="Java">Java</a>. Some compilers provide intrinsic, processor specific functions.
+</p>
+<pre>
+U64 rotateLeft (U64 x, int s) {return _rotl64(x, s);}
+U64 rotateRight(U64 x, int s) {return _rotr64(x, s);}
+</pre>
+<p><b>x86-mnemonics</b>
+</p>
+<pre>
+rol  rax, cl
+ror  rax, cl
+</pre>
+<p><b>Rotate by Shift</b><br/> 
+Otherwise rotate has to be emulated by shifts, with some chance optimizing compiler will emit exactly one rotate instruction.
+</p>
+<pre>
+U64 rotateLeft (U64 x, int s) {return (x &lt;&lt; s) | (x &gt;&gt; (64-s));}
+U64 rotateRight(U64 x, int s) {return (x &gt;&gt; s) | (x &lt;&lt; (64-s));}
+</pre>
+<p>Since <a href="X86-64.html" title="X86-64">x86-64</a> 64-bit shifts are implicitly modulo 64 (and 63), one may replace (64-s) by -s.
+</p><p><span id="GeneralizedShift"></span>
+</p>
+<h2><span class="mw-headline" id="Generalized_Shift">Generalized Shift</span></h2>
+<p>shifts left for positive amounts, but right for negative amounts.
+</p>
+<pre>
+U64 genShift(U64 x, int s) {
+   return (s &gt; 0) ? (x &lt;&lt; s) : (x &gt;&gt; -s);
+}
+</pre>
+<p>If compiler are not able to produce speculative execution of both shifts with a conditional move instruction, one may try an explicit branch-less solution:
+</p>
+<pre>
+/**
+ * generalized shift
+ * @author Gerd Isenberg
+ * @param x any bitboard
+ * @param s shift amount -64 &lt; s &lt; +64
+ *          left if positive
+ *          right if negative
+ * @return shifted bitboard
+ */
+U64 genShift(U64 x, int s) {
+   char left  =   (char) s;
+   char right = -((char)(s &gt;&gt; 8) &amp; left);
+   return (x &gt;&gt; right) &lt;&lt; (right + left);
+}
+</pre>
+<p>Due to the value range of the shift, one may save the arithmetical shift right in assembly:
+</p>
+<pre>
+ ; input
+ ;     ecx - shift amount,
+ ;           left if positive
+ ;           right if negative
+ ;     rax - bitboard to shift
+ mov   dl,  cl
+ and   cl,  ch
+ neg   cl
+ shr   rax, cl
+ add   cl,  dl
+ shl   rax, cl
+</pre>
+<p><span id="GenOneStep"></span>
+<b>One Step</b><br/>
+<a href="X86-64.html" title="X86-64">x86-64</a> rot64 works like a generalized shift with positive or negative shift amount - since it internally applies an unsigned modulo 64 ( &amp; 63) and makes -i = 64-i. We need to clear either the lower or upper bits by intersection with a mask, which might be combined with the wrap-ands for <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">one step</a>. It might be applied to get attacks for both sides with a <a href="Direction.html" title="Direction">direction</a> parameter and small lookups for shift amount and wrap-ands - instead of multiple code for eight directions. Of course generalized shift will be a bit slower due to lookups and using cl as the shift amount register.
+</p>
+<pre>
+// positve left, negative right shifts
+int shift[8] = {9, 1,-7,-8,-9,-1, 7, 8};
+
+U64 avoidWrap[8] =
+{
+   0xfefefefefefefe00,
+   0xfefefefefefefefe,
+   0x00fefefefefefefe,
+   0x00ffffffffffffff,
+   0x007f7f7f7f7f7f7f,
+   0x7f7f7f7f7f7f7f7f,
+   0x7f7f7f7f7f7f7f00,
+   0xffffffffffffff00,
+};
+
+U64 shiftOne (U64 b, int dir8) {
+   return _rotl64(b, shift[dir8]) &amp; avoidWrap[dir8];
+}
+</pre>
+<p>The avoidWrap masks by some arbitrary dir8 enumeration and shift amount:
+</p>
+<pre>
+6 == noWe -&gt; +7     7 == nort -&gt; +8     0 == noEa -&gt; +9
+0x7F7F7F7F7F7F7F00  0xFFFFFFFFFFFFFF00  0xFEFEFEFEFEFEFE00
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+5 == west -&gt; -1                         1 == east -&gt; +1
+0x7F7F7F7F7F7F7F7F                      0xFEFEFEFEFEFEFEFE
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+
+4 == soWe -&gt; -9     3 == sout -&gt; -8     2 == soEa -&gt; -7
+0x007F7F7F7F7F7F7F  0x00FFFFFFFFFFFFFF  0x00FEFEFEFEFEFEFE
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Pawn Pushes (Bitboards).html#GeneralizedPush" title="Pawn Pushes (Bitboards)">Generalized Pawn Push</a></li>
+<li> <a href="Dumb7Fill.html#GeneralizedRays" title="Dumb7Fill">Generalized Ray Attacks</a></li></ul>
+<p><span id="BitbySquare"></span>
+</p>
+<h2><span class="mw-headline" id="Bit_by_Square">Bit by Square</span></h2>
+<p>Since single populated bitboards are always power of two values, shifting 2^0 left implements pow2(square) to convert square-indices to a member of a bitboard.
+</p>
+<pre>
+U64 singleBitset = C64(1) &lt;&lt; square; // or lookup[square]
+</pre>
+<p><i>The inverse function square = log2(x), is topic of <a href="BitScan.html" title="BitScan">bitscan</a> and <a href="Bitboard Serialization.html" title="Bitboard Serialization">bitboard serialization</a>.</i>
+</p><p><b>Shift versus Lookup</b> <br/>
+While 1 &lt;&lt; square sounds cheap, it is rather expensive in 32-bit mode - and therefor often precalculated in a small lookup-table of 64-single bit bitboards. Also, on <a href="X86-64.html" title="X86-64">x86-64</a>-processors a variable shift is restricted to the byte-register cl. Thus, two or more variable shifts are constrained by sequential execution <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>.
+</p><p><b>Test</b> <br/>
+Test a bit of a square-index by <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>-operator 'and'.
+</p>
+<pre>
+if (x &amp; singleBitset) -&gt; bit is set;
+</pre>
+<p><b>Set</b> <br/>
+Set a bit of a square-index by <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a>-operator 'or'.
+</p>
+<pre>
+x |=  singleBitset; // set bit
+</pre>
+<p><b>Toggle</b> <br/>
+Toggle a bit of square-index by <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">xor</a>.
+</p>
+<pre>
+x ^=  singleBitset; // toggle bit
+</pre>
+<p><b>Reset</b> <br/>
+<span id="ResetBit"></span>Reset a bit of square-index by <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a> of the single bit,
+</p>
+<pre>
+x &amp;= ~singleBitset; // reset bit
+</pre>
+<p>or conditional toggle by single bit intersection
+</p>
+<pre>
+x ^=  singleBitset &amp; x; // reset bit
+</pre>
+<p>Set and toggle (or, xor) might the faster way to reset a bit inside a register (not, and).
+</p>
+<pre>
+x |=  singleBitset; // set bit
+x ^=  singleBitset; // resets set bit
+</pre>
+<p>If singleBitset needs to preserved, an extra register is needed for the complement.
+</p><p><b>x86-Instructions</b> <br/>
+<a href="X86.html" title="X86">x86</a> processor provides a bit-test instruction family (bt, bts, btr, btc) with 32- and 64-bit operands. They may be used implicitly by compiler optimization or explicitly by inline assembler or compiler intrinsics. Take care that they are applied on local variables likely registers rather than memory references <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>:
+</p>
+<ul><li> <a href="X86-64.html#gpinstructions" title="X86-64">_bittest64</a></li>
+<li> <a href="X86-64.html#gpinstructions" title="X86-64">_bittestandset64</a></li>
+<li> <a href="X86-64.html#gpinstructions" title="X86-64">_bittestandcomplement64</a></li>
+<li> <a href="X86-64.html#gpinstructions" title="X86-64">_bittestandreset64</a></li></ul>
+<p><span id="UpdateByMove"></span>
+</p>
+<h2><span class="mw-headline" id="Update_by_Move">Update by Move</span></h2>
+<p>This technique to toggle <a href="Bit.html" title="Bit">bits</a> by <a href="Squares.html" title="Squares">square</a> is likely used to initialize or <a href="Incremental Updates.html" title="Incremental Updates">update</a> the <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">bitboard board-definition</a>. While <a href="Make Move.html" title="Make Move">making</a> or <a href="Unmake Move.html" title="Unmake Move">unmaking moves</a>, the single bit either correspondents with the <a href="Origin Square.html" title="Origin Square">from</a>- or <a href="Target Square.html" title="Target Square">to-square</a> of the <a href="Moves.html" title="Moves">move</a>. Which particular bitboard has to be updated depends on the moving <a href="Pieces.html" title="Pieces">piece</a> or captured piece.
+</p><p><i>For simplicity we assume piece plus color and captured piece are member or method of a move-structure/class.</i>
+</p><p><a href="Quiet Moves.html" title="Quiet Moves">Quiet moves</a> toggle both from- and to-squares of the piece-bitboard, as well for the redundant union-sets:
+</p>
+<pre>
+U64 fromBB   = C64(1) &lt;&lt; move-&gt;from;
+U64 toBB     = C64(1) &lt;&lt; move-&gt;to;
+U64 fromToBB = fromBB ^ toBB; // |+
+pieceBB[move-&gt;piece]  ^=  fromToBB;   // update piece bitboard
+pieceBB[move-&gt;color]  ^=  fromToBB;   // update white or black color bitboard
+occupiedBB            ^=  fromToBB;   // update occupied ...
+emptyBB               ^=  fromToBB;   // ... and empty bitboard
+</pre>
+<p><a href="Captures.html" title="Captures">Captures</a> need to consider the captured piece of course:
+</p>
+<pre>
+U64 fromBB   = C64(1) &lt;&lt; move-&gt;from;
+U64 toBB     = C64(1) &lt;&lt; move-&gt;to;
+U64 fromToBB = fromBB ^ toBB; // |+
+pieceBB[move-&gt;piece]  ^=  fromToBB;   // update piece bitboard
+pieceBB[move-&gt;color]  ^=  fromToBB;   // update white or black color bitboard
+pieceBB[move-&gt;cPiece] ^=  toBB;       // reset the captured piece
+pieceBB[move-&gt;cColor] ^=  toBB;       // update color bitboard by captured piece
+occupiedBB            ^=  fromBB;     // update occupied, only from becomes empty
+emptyBB               ^=  fromBB;     // update empty bitboard
+</pre>
+<p>Similar for special moves like <a href="Castling.html" title="Castling">castling</a>, <a href="Promotions.html" title="Promotions">promotions</a> and <a href="En passant.html" title="En passant">en passant captures</a>.
+<span id="UpperAndLowerBits"></span>
+<b>Upper Squares</b> <br/>
+To get a set of all upper squares or bits, either shift ~1 or -2 left by square:
+</p>
+<pre>
+U64 upperBits =  C64(~1) &lt;&lt; sq;
+</pre>
+<p>for instance d4 (27)
+</p>
+<pre>
+high = ~1 &lt;&lt; d4
+ 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1
+ . . . . 1 1 1 1
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+</pre>
+<p><b>Lower Squares</b> <br/>
+Lower squares are simply Bit by Square minus one.
+</p>
+<pre>
+U64 lowerBits = (C64(1 ) &lt;&lt; sq) - 1);
+</pre>
+<p>for instance d4 (27)
+</p>
+<pre>
+low = (1&lt;&lt;d4)-1
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+ 1 1 1 . . . . .
+ 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1
+</pre>
+<p><span id="SwappingBits"></span>
+</p>
+<h2><span class="mw-headline" id="Swapping_Bits">Swapping Bits</span></h2>
+<p><a class="external text" href="http://graphics.stanford.edu/%7Eseander/bithacks.html.html#SwappingBitsXOR" rel="nofollow">Swapping</a> none overlapping bit-sequences in a bitboard is the base of a lot of <a class="external text" href="https://en.wikipedia.org/wiki/Permutation" rel="nofollow">permutation</a> tricks.
+</p><p><b>by Position</b><br/> 
+Suppose we like to swap n <a href="Bit.html" title="Bit">bits</a> from two none overlapping bit locations of a bitboard. The trick is to set all n least significant bits by subtracting one from n power of 2. Both substrings are shifted to bit zero, exclusive ored and masked by the n ones. This sequence is then twice shifted back to their original places, while the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> (xor-union due to <a class="external text" href="https://en.wikipedia.org/wiki/Disjoint" rel="nofollow">disjoint</a> bits) is finally exclusive ored with the original bitboard to swap both sequences.
+</p>
+<pre>
+/**
+ * swap n none overlapping bits of bit-index i with j
+ * @param b any bitboard
+ * @param i,j positions of bit sequences to swap
+ * @param n number of consecutive bits to swap
+ * @return bitboard b with swapped bit-sequences
+ */
+U64 swapNBits(U64 b, int i, int j, int n) {
+   U64     m = ( 1 &lt;&lt; n) - 1;
+   U64     x = ((b &gt;&gt; i) ^ (b &gt;&gt; j)) &amp; m;
+   return  b ^  (x &lt;&lt; i) ^ (x &lt;&lt; j);
+}
+</pre>
+<p>For instance swap 6 bits each, from bit-index 9 (bits named ABCDEF, either 0,1) with bit-index 41 (abcdef):
+</p>
+<pre>
+b                                       m = (1&lt;&lt;6) - 1
+. . . . . . . .                         . . . . . . . .
+* . . . . . . .                         . . . . . . . .
+*|a b c d e f|*                         . . . . . . . .
+. . . . . . . .                         . . . . . . . .
+. . . . . . . .                         . . . . . . . .
+. . . . . . . .                         . . . . . . . .
+*|A B C D E F|*                         . . . . . . . .
+. . . . . . . .                         1 1 1 1 1 1 . .
+
+b &gt;&gt; j           ^  b &gt;&gt; i          =&gt;  x = .xor &amp; m       with
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .    r = a ^ A
+. . . . . . . .     a b c d e f * *     . . . . . . . .    s = b ^ B
+. . . . . . . .  ^  . . . . . . . * =&gt;  . . . . . . . .    t = c ^ C
+. . . . . . . .     . . . . . . . .     . . . . . . . .    u = d ^ D
+. . . . . . . .     . . . . . . . .     . . . . . . . .    v = e ^ E
+a b c d e f * *     A B C D E F * .     r s t u v w . .    w = f ^ F
+
+b               ^  x &lt;&lt; i | x &lt;&lt; j  =&gt; swapNBits(9,41,6)
+. . . . . . . .    . . . . . . . .     . . . . . . . .
+* . . . . . . .    . . . . . . . .     * . . . . . . .
+*|a b c d e f|*    . r s t u v w .     *|A B C D E F|*
+. . . . . . . .    . . . . . . . .     . . . . . . . .
+. . . . . . . . ^  . . . . . . . .  =&gt; . . . . . . . .
+. . . . . . . .    . . . . . . . .     . . . . . . . .
+*|A B C D E F|*    . r s t u v w .     *|a b c d e f|*
+. . . . . . . .    . . . . . . . .     . . . . . . . .
+</pre>
+<p><span id="DeltaSwap"></span>
+<b>Delta Swap</b> <br/>
+To swap any none overlapping pairs we can shift by the difference (j-i, with j&gt;i) and supply an explicit mask with a '1' on the least significant position for each pair supposed to be swapped.
+</p>
+<pre>
+/**
+ * swap any none overlapping pairs of bits
+ *   that are delta places apart
+ * @param b any bitboard
+ * @param mask has a 1 on the least significant position
+ *             for each pair supposed to be swapped
+ * @param delta of pairwise swapped bits
+ * @return bitboard b with bits swapped
+ */
+U64 deltaSwap(U64 b, U64 mask, int delta) {
+   U64 x = (b ^ (b &gt;&gt; delta)) &amp; mask;
+   return   x ^ (x &lt;&lt; delta)  ^ b;
+}
+</pre>
+<p>To apply the swapping of the swapNBits sample above, we call deltaSwap with delta of 32 and 0x7E00 as mask. But we may apply any arbitrary and often periodic mask pattern, as long as no overlapping occurs. The <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of mask with (mask &lt;&lt; delta) must therefor be empty. But we can also swap odd or even files of a bitboard by calling deltaSwap with delta of one, and mask of 0x5555555555555555:
+</p>
+<pre>
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+1 . 1 . 1 . 1 .
+</pre>
+<p>Applications of delta swaps are <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">flipping, mirroring and rotating</a>. In <a href="Donald Knuth.html" title="Donald Knuth">Knuth's</a> <i><a class="external text" href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming" rel="nofollow">The Art of Computer Programming</a>, Vol 4, page 13, bit permutation in general</i> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>, he mentions 2^k delta swaps with k = {0,1,2,3,4,5,4,3,2,1,0} to obtain any arbitrary permutation. Special cases might be cheaper.
+</p><p><span id="ArithmeticalOperations"></span>
+</p>
+<h1><span class="mw-headline" id="Arithmetic_Operations">Arithmetic Operations</span></h1>
+<p>At the first glance, <a class="external text" href="https://en.wikipedia.org/wiki/Arithmetic#Arithmetic_operations" rel="nofollow">arithmetic operations</a>, that is <a class="external text" href="https://en.wikipedia.org/wiki/Addition" rel="nofollow">addition</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Subtraction" rel="nofollow">subtraction</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Multiplication" rel="nofollow">multiplication</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Division_%28mathematics%29" rel="nofollow">division</a>, doesn't make much sense with bitboards. Still, there are some <a href="Bit-Twiddling.html" title="Bit-Twiddling">bit-twiddling</a> applications related to least significant one bit (LS1B), to <a href="Traversing Subsets of a Set.html" title="Traversing Subsets of a Set">enumerate all subsets of a set</a> or <a href="Subtracting a Rook from a Blocking Piece.html" title="Subtracting a Rook from a Blocking Piece">sliding attack generation</a>. Multiplication of certain pattern has some applications as well, most likely to calculate hash-indicies of <a href="Occupancy of any Line.html#Multiplication" title="Occupancy of any Line">masked occupancies</a>.
+</p>
+<h2><span class="mw-headline" id="Derived_from_Bitwise">Derived from Bitwise</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://en.wikipedia.org/wiki/Half_adder#Half_adder"><img alt="" class="thumbimage" height="167" src="wikipedia/commons/thumb/d/d9/Half_Adder.svg/300px-Half_Adder.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/450px-Half_Adder.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/600px-Half_Adder.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Half Adder.svg.html" title="Enlarge"></a></div>Half Adder</div></div></div>
+<p>Unlike bitwise boolean operations on 64-bit words, which are in fact 64 parallel operations on each bit without any interaction between them, arithmetic operations like addition need to propagate possible <a class="external text" href="https://en.wikipedia.org/wiki/Carry_%28arithmetic%29" rel="nofollow">carries</a> from lower to higher bits. Despite, Add and Sub are usually as fast their bitwise boolean counterparts, because they are implemented in Hardware within the <a href="Combinatorial Logic.html#ALU" title="Combinatorial Logic">ALU</a> of the CPU. A so called <a href="Combinatorial Logic.html#Adder" title="Combinatorial Logic">half-adder</a> to add two bits (A, B), requires an <a href="Combinatorial Logic.html#AND" title="Combinatorial Logic">And-Gate</a> for the carry (C) and a <a href="Combinatorial Logic.html#XOR" title="Combinatorial Logic">Xor-Gate</a> for the sum (S):
+</p>
+<pre>
+two_bitsum = (bitA ^ bitB) | ((bitA &amp; bitB) &lt;&lt; 1);
+</pre>
+<p>To get an idea of the "complexity" of a simple addition, and how to implement an <a class="external text" href="https://en.wikipedia.org/wiki/Carry-lookahead_adder" rel="nofollow">carry-lookahead adder</a> in software with bitwise boolean and shift instructions only, and presumption on <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix algorithms</a>, this is how a 64-bit <a href="Parallel Prefix Algorithms.html#FurtherElaborationsOnKoggeStone" title="Parallel Prefix Algorithms">Kogge-Stone</a> adder would look like in C:
+</p>
+<pre>
+U64 koggeStoneAdd(U64 a, U64 b) {
+   U64 gen = a&amp;b;  // carries
+   U64 pro = a^b;  // sum
+   gen |= pro &amp; (gen &lt;&lt; 1);
+   pro  = pro &amp; (pro &lt;&lt; 1);
+   gen |= pro &amp; (gen &lt;&lt; 2);
+   pro  = pro &amp; (pro &lt;&lt; 2);
+   gen |= pro &amp; (gen &lt;&lt; 4);
+   pro  = pro &amp; (pro &lt;&lt; 4);
+   gen |= pro &amp; (gen &lt;&lt; 8);
+   pro  = pro &amp; (pro &lt;&lt; 8);
+   gen |= pro &amp; (gen &lt;&lt;16);
+   pro  = pro &amp; (pro &lt;&lt;16);
+   gen |= pro &amp; (gen &lt;&lt;32);
+   return a^b ^ (gen &lt;&lt; 1);
+}
+</pre>
+<p><span id="Addition"></span>
+</p>
+<h2><span class="mw-headline" id="Addition">Addition</span></h2>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Addition" rel="nofollow">Addition</a> might be used instead of bitwise 'xor' or 'or' for a <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of <a class="external text" href="https://en.wikipedia.org/wiki/Disjoint" rel="nofollow">disjoint</a> (intersection zero) sets, which may yield to simplification of the surrounding expression or may take advantage of certain address calculation instruction such as <a href="X86.html" title="X86">x86</a> load effective address (lea).
+</p><p>The enriched algebra with arithmetical and bitwise-boolean operations becomes aware with following relation - the bitwise overflows are the intersection, otherwise the sum modulo two is the symmetric difference - thus the arithmetical sum is the xor-sum plus the carries shifted left one:
+</p>
+<pre>
+x + y = (x ^ y) + 2*(x &amp; y)
+x ^ y =  x + y  - 2*(x &amp; y)
+</pre>
+<p>This is particular interesting in <a href="SIMD and SWAR Techniques.html#SWAR" title="SIMD and SWAR Techniques">SWAR-arithmetic</a>, or if we like to compute the average without possible temporary overflows:
+</p>
+<pre>
+(x + y) / 2 = ((x ^ y)&gt;&gt;1) + (x &amp; y)
+</pre>
+<p><b>x86-mnemonics</b>
+</p>
+<pre>
+add  rax, rbx ; rax += rbx
+lea  rax, [rcx + rdx + const ] ; rax = rcx + rdx + const
+</pre>
+<p><span id="Subtraction"></span>
+</p>
+<h2><span class="mw-headline" id="Subtraction">Subtraction</span></h2>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Subtraction" rel="nofollow">Subtraction</a> (like xor) might be used to implement the <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a>, of a <a class="external text" href="https://en.wikipedia.org/wiki/Subset" rel="nofollow">subset</a> inside it's superset. As mentioned, subtraction may be useful in calculating <a href="Subtracting a Rook from a Blocking Piece.html" title="Subtracting a Rook from a Blocking Piece">sliding attacks</a>.
+</p><p><b>x86-mnemonics</b> <br/>
+</p>
+<pre>
+sub  rax, rbx ; rax -= rbx
+</pre>
+<p><span id="TheTwosComplement"></span>
+</p>
+<h2><span class="mw-headline" id="The_Two.27s_Complement">The Two's Complement</span></h2>
+<p>A lot of <a href="Bit-Twiddling.html" title="Bit-Twiddling">bit-twiddling</a> tricks on bitboards to traverse or isolate subsets, rely on <a class="external text" href="https://en.wikipedia.org/wiki/Two%27s_complement" rel="nofollow">two's complement</a> arithmetic. Most recent processors (and compiler or interpreter for these processors) use the two's complement to implement the unary minus operator for signed as well for unsigned integer types. In <a href="C.html" title="C">C</a> it is guaranteed for unsigned integer types. <a href="Java.html" title="Java">Java</a> guarantees two's complement for all implicit signed integral types char, short, int, long.
+</p><p><b>x86-mnemonics</b> <br/>
+</p>
+<pre>
+neg  rax;  rax = -rax; rax *= -1
+</pre>
+<p><i>2^N is used as power operator in this paragraph not xor</i> !
+</p><p><b>Increment of Complement</b><br/> 
+The two's complement is defined as a value, we need to add to the original value to get 2<span style="vertical-align: super;">64</span> which is an "overflowed" zero - since all 64-bit values are implicitly modulo 2<span style="vertical-align: super;">64</span>. Thus, the two's complement is defined as <i>ones' complement plus one</i>:
+</p>
+<pre>-x == ~x + 1
+</pre>
+<p>That fulfills the condition that x + (-x) == 2<span style="vertical-align: super;">bitsize</span> (2<span style="vertical-align: super;">64</span>) which overflows to zero:
+</p>
+<pre>
+x + (-x)     == 0
+x +  ~x + 1  == 0
+==&gt;   x + ~x == -1 the universal set
+</pre>
+<p><b>Complement of Decrement</b><br/> 
+Replacing x by x - 1 in the increment of complement formula, leaves another definition - two's complement or Negation is also the ones' complement of the ones' decrement:
+</p>
+<pre>-x == ~(x - 1)
+</pre>
+<p>Thus, we can reduce subtraction by addition and ones' complement:
+</p>
+<pre>
+~(x - y) ==   ~x + y
+  x - y  == ~(~x + y)
+</pre>
+<p><b>Bitwise Copy/Invert</b><br/> 
+The two's complement may also defined by a bitwise copy-loop from right (LSB) to left (MSB):
+</p>
+<pre>
+Copy bits from source to destination from right to left
+- until the first binary "one" is copied.
+Then invert each of the remaining higher bits.
+</pre>
+<p><b>Signed-Unsigned</b> <br/>
+This works independently whether we interpret 'x' as signed or unsigned. While 0 is is the synonym for all bits clear, -1 is the synonym for all bits set in a computer word of any arbitrary bit-size, also for 64-bit words such as bitboards.
+</p><p>The signed-unsigned "independence" of the two's complement is the reason that processors don't need different add or sub instructions for signed or unsigned integers. The binary pattern of the result is the same, only the interpretation differs and processors flag different overflow- or underflow conditions simultaneously.
+</p><p>Unsigned 64-bit values as used for bitboards have this value range:
+</p>
+<pre>
+       hexadecimal                      decimal    pow2
+0x0000000000000000                            0           0
+0x0000000000000001                            1           1
+..
+0x7fffffffffffffff    9,223,372,036,854,775,807    2^63 - 1
+0x8000000000000000    9,223,372,036,854,775,808    2^63
+..
+0xffffffffffffffff   18,446,744,073,709,551,615    2^64 - 1
+
+</pre>
+<p>With signed interpretation, the positive numbers are subset of the unsigned with MSB clear:
+</p>
+<pre>
+       hexadecimal                      decimal    pow2
+0x0000000000000000                            0           0
+0x0000000000000001                            1           1
+..
+0x7fffffffffffffff    9,223,372,036,854,775,807    2^63 - 1
+
+</pre>
+<p>Negative numbers have MSB set to one, thus the sign bit interpretation
+</p>
+<pre>
+       hexadecimal                      decimal    pow2
+0x8000000000000000   -9,223,372,036,854,775,808  -(2^63)
+0x8000000000000001   -9,223,372,036,854,775,807  -(2^63) +1
+..
+0xfffffffffffffffe                           -2          -2
+0xffffffffffffffff                           -1          -1
+
+</pre>
+<p>There is no "negative" zero. What makes the value range of negative values one greater than the positive numbers - and implies that
+</p>
+<pre>
+ -0x8000000000000000 == 0x8000000000000000
+</pre>
+<p><span id="TheLeastSignificantOneBitLS1B"></span>
+</p>
+<h2><span class="mw-headline" id="Least_Significant_One">Least Significant One</span></h2>
+<p>At some point bitboards require <a href="Bitboard Serialization.html" title="Bitboard Serialization">serialization</a>, thus isolation of single populated sub-sets which are power of two values if interpreted as number. Dependent on the bitboard-api those values need a further <a href="BitScan.html" title="BitScan">log2(powOfTwo)</a> to convert them into the square index range from 0 to 63. Bitwise boolean operations (and, xor, or) with two's complement or ones' decrement can compute relatives of a set x in several useful ways.
+<span id="LS1BIsolation"></span>
+</p>
+<h3><span class="mw-headline" id="Isolation">Isolation</span></h3>
+<p>The <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of a none empty bitboard with it's two's complement isolates the LS1B:
+</p>
+<pre>
+LS1B_of_x = x &amp; -x;
+</pre>
+<p>With some arbitrary sample set:
+</p>
+<pre>
+      x          &amp;        -x         =     LS1B_of_x
+. . . . . . . .     1 1 1 1 1 1 1 1     . . . . . . . .
+. . 1 . 1 . . .     1 1 . 1 . 1 1 1     . . . . . . . .
+. 1 . . . 1 . .     1 . 1 1 1 . 1 1     . . . . . . . .
+. . . . . . . .     1 1 1 1 1 1 1 1     . . . . . . . .
+. 1 . . . 1 . .  &amp;  1 . 1 1 1 . 1 1  =  . . . . . . . .
+. . 1 . 1 . . .     . . 1 1 . 1 1 1     . . 1 . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+</pre>
+<p>Some C++ compiler warn -x still unsigned - (0-x) may used to avoid that with no overhead.
+</p><p><b>x86-mnemonics</b> <br/>
+<a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="BMI1.html" title="BMI1">BMI1</a> has LS1B bit isolation:
+</p>
+<pre>
+blsi  rax, rbx ; BMI1  rax = rbx &amp; -rbx 
+</pre>
+<p><a href="BMI1.html" title="BMI1">BMI1</a>-intrinsic <a href="BMI1.html# blsi u3264" title="BMI1">_blsi_u32/64</a>
+</p><p><a href="AMD.html" title="AMD">AMD's</a> <a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="TBM.html" title="TBM">TBM</a> further has a <a href="TBM.html#BLSIC" title="TBM">Isolate Lowest Set Bit and Complement</a> instruction, which applies <a href="General Setwise Operations.html#DeMorganslaws" title="General Setwise Operations">De Morgan's law</a> to get the complement of the LS1B:
+</p>
+<pre>
+blsic rax, rbx ; TBM:  rax = ~rbx | (rbx - 1);
+</pre>
+<p><span id="LS1BReset"></span>
+</p>
+<h3><span class="mw-headline" id="Reset">Reset</span></h3>
+<p>The <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of a none empty bitboard with it's ones' decrement resets the LS1B <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>:
+</p>
+<pre>
+x_with_reset_LS1B = x &amp; (x-1);
+</pre>
+<p>With some arbitrary sample set:
+</p>
+<pre>
+      x          &amp;      (x-1)        =  x_with_reset_LS1B
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . 1 . 1 . . .     . . 1 . 1 . . .     . . 1 . 1 . . .
+. 1 . . . 1 . .     . 1 . . . 1 . .     . 1 . . . 1 . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. 1 . . . 1 . .  &amp;  . 1 . . . 1 . .  =  . 1 . . . 1 . .
+. . 1 . 1 . . .     1 1 . . 1 . . .     . . . . 1 . . .
+. . . . . . . .     1 1 1 1 1 1 1 1     . . . . . . . .
+. . . . . . . .     1 1 1 1 1 1 1 1     . . . . . . . .
+</pre>
+<p>... since we already know two's complement (-x) and ones' decrement (x-1) are complement sets.
+</p><p><b>x86-mnemonics</b><br/>
+<a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="BMI1.html" title="BMI1">BMI1</a> has LS1B bit reset:
+</p>
+<pre>
+blsr  rax, rbx ; BMI1  rax = rbx &amp; (rbx - 1)
+</pre>
+<p><a href="BMI1.html" title="BMI1">BMI1</a>-intrinsic <a href="BMI1.html# blsr u3264" title="BMI1">_blsr_u32/64</a>
+<span id="LS1BSeparation"></span>
+</p>
+<h3><span class="mw-headline" id="Separation">Separation</span></h3>
+<p>Masks separated by LS1B by xor with two's complement or ones' decrement. Intersection of one's complement with decrement leaves the below mask excluding LS1B:
+</p>
+<pre>
+above_LS1B_mask           =  x ^  -x;
+below_LSB1_mask_including =  x ^ (x-1);
+below_LSB1_mask           = ~x &amp; (x-1);
+</pre>
+<p>With some arbitrary sample set:
+</p>
+<pre>
+      x          ^        -x         =   above_LS1B_mask
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+. . 1 . 1 . . .     1 1 . 1 . 1 1 1     1 1 1 1 1 1 1 1
+. 1 . . . 1 . .     1 . 1 1 1 . 1 1     1 1 1 1 1 1 1 1
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+. 1 . . . 1 . .  ^  1 . 1 1 1 . 1 1  =  1 1 1 1 1 1 1 1
+. . 1 . 1 . . .     . . 1 1 . 1 1 1     . . . 1 1 1 1 1
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+      x          ^      (x-1)        =  below_LSB1_mask_including
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . 1 . 1 . . .     . . 1 . 1 . . .     . . . . . . . .
+. 1 . . . 1 . .     . 1 . . . 1 . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. 1 . . . 1 . .  ^  . 1 . . . 1 . .  =  . . . . . . . .
+. . 1 . 1 . . .     1 1 . . 1 . . .     1 1 1 . . . . .
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+
+     ~x          &amp;      (x-1)        =  below_LSB1_mask
+1 1 1 1 1 1 1 1     . . . . . . . .     . . . . . . . .
+1 1 . 1 . 1 1 1     . . 1 . 1 . . .     . . . . . . . .
+1 . 1 1 1 . 1 1     . 1 . . . 1 . .     . . . . . . . .
+1 1 1 1 1 1 1 1     . . . . . . . .     . . . . . . . .
+1 . 1 1 1 . 1 1  &amp;  . 1 . . . 1 . .  =  . . . . . . . .
+1 1 . 1 . 1 1 1     1 1 . . 1 . . .     1 1 . . . . . .
+1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+</pre>
+<p><b>x86-mnemonics</b><br/>
+<a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="BMI1.html" title="BMI1">BMI1</a> has <a href="BMI1.html#BLSMSK" title="BMI1">BLSMSK</a> (Mask Up to Lowest Set Bit = below_LSB1_mask_including), <a href="AMD.html" title="AMD">AMD's</a> <a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="TBM.html" title="TBM">TBM</a> has <a href="TBM.html#TZMSK" title="TBM">TZMSK</a> (Mask From Trailing Zeros = below_LSB1_mask):
+</p>
+<pre>
+blsmsk rax, rbx ; BMI1:  rax =  rbx ^ (rbx - 1)
+tzmsk  rax, rbx ; TBM:   rax = ~rbx &amp; (rbx - 1)
+</pre>
+<p><a href="BMI1.html" title="BMI1">BMI1</a>-intrinsic <a href="BMI1.html# blsmsk u3264" title="BMI1">_blsmsk_u32/64</a>
+</p>
+<h3><span class="mw-headline" id="Smearing">Smearing</span></h3>
+<p>To smear the LS1B up and down, we use the <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> with two's complement or ones' decrement:
+</p>
+<pre>
+smearsLS1BUp   = x |  -x;
+smearsLS1BDown = x | (x-1);
+</pre>
+<p>With some arbitrary sample set:
+</p>
+<pre>
+      x          |        -x         =  smearsLS1BUp
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+. . 1 . 1 . . .     1 1 . 1 . 1 1 1     1 1 1 1 1 1 1 1
+. 1 . . . 1 . .     1 . 1 1 1 . 1 1     1 1 1 1 1 1 1 1
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+. 1 . . . 1 . .  |  1 . 1 1 1 . 1 1  =  1 1 1 1 1 1 1 1
+. . 1 . 1 . . .     . . 1 1 . 1 1 1     . . 1 1 1 1 1 1
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+      x          |      (x-1)        =  smearsLS1BDown
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. . 1 . 1 . . .     . . 1 . 1 . . .     . . 1 . 1 . . .
+. 1 . . . 1 . .     . 1 . . . 1 . .     . 1 . . . 1 . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+. 1 . . . 1 . .  |  . 1 . . . 1 . .  =  . 1 . . . 1 . .
+. . 1 . 1 . . .     1 1 . . 1 . . .     1 1 1 . 1 . . .
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+. . . . . . . .     1 1 1 1 1 1 1 1     1 1 1 1 1 1 1 1
+</pre>
+<p><b>x86-mnemonics</b> <br/>
+<a href="AMD.html" title="AMD">AMD's</a> <a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="TBM.html" title="TBM">TBM</a> has a <a href="TBM.html#BLSFILL" title="TBM">Fill From Lowest Set Bit</a> instruction:
+</p>
+<pre>
+blsfill  rax, rbx ; TBM:  rax = rbx | (rbx - 1)
+</pre>
+<p><span id="TheLeastSignificantZeroBitLS0B"></span>
+</p>
+<h2><span class="mw-headline" id="Least_Significant_Zero">Least Significant Zero</span></h2>
+<p>Dealing with the least significant zero bit (LS0B) or clear bit can be derived from the complement of the LS1B. <a href="AMD.html" title="AMD">AMD's</a> <a href="X86-64.html" title="X86-64">x86-64</a> expansion <a href="TBM.html" title="TBM">TBM</a> has six instructions based on boolean operations with the one's increment:
+</p>
+<ul><li> <a href="TBM.html#BLCI" title="TBM">Isolate Lowest Clear Bit</a>, <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> with the <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> of the increment</li>
+<li> <a href="TBM.html#BLCIC" title="TBM">Isolate Lowest Clear Bit and Complement</a>, <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> of the <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> with the increment</li>
+<li> <a href="TBM.html#BLCFILL" title="TBM">Fill From Lowest Clear Bit</a>, <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> with the increment</li>
+<li> <a href="TBM.html#BLCMSK" title="TBM">Mask From Lowest Clear Bit</a>, <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">exclusive or</a> with the increment</li>
+<li> <a href="TBM.html#BLCS" title="TBM">Set Lowest Clear Bit</a>, <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> with the increment</li>
+<li> <a href="TBM.html#T1MSKC" title="TBM">Inverse Mask From Trailing Ones</a>, <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> of <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> and increment</li></ul>
+<p><span id="TheMostSignificantOneBitMS1B"></span>
+</p>
+<h2><span class="mw-headline" id="Most_Significant_One">Most Significant One</span></h2>
+<p>The MS1B is not that simple to isolate as long we have no reverse arithmetic with carries propagating from left to right. To isolate MS1B, one needs to set all lower bits below MS1B, shift the resulting mask right by one and finally add one.
+<span id="parallelPrefixMSB"></span>
+Setting all lower bits in the general case requires 63 times x |= x &gt;&gt; 1 which might be done in <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix</a> manner in log2(64) = 6 steps:
+</p>
+<pre>
+x |= x &gt;&gt; 32;
+x |= x &gt;&gt; 16;
+x |= x &gt;&gt;  8;
+x |= x &gt;&gt;  4;
+x |= x &gt;&gt;  2;
+x |= x &gt;&gt;  1;
+MS1B = (x &gt;&gt; 1) + 1;
+</pre>
+<p>Still quite expensive - better to traverse sets the other way around or rely on intrinsic functions to use special processor instructions like <a href="BitScan.html#Bitscanreverse" title="BitScan">BitScanReverse</a> or LeadingZeroCount, which implicitly performs not only the isolation but also the <a class="external text" href="https://en.wikipedia.org/wiki/Binary_logarithm" rel="nofollow">log2</a>.
+</p><p><b>Common MS1B</b> <br/>
+Two sets have a common MS1B, if the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> is greater than the xor sum:
+</p>
+<pre>
+if ((a &amp; b) &gt; (a ^ b)) -&gt; a and b have common MS1B
+</pre>
+<p>This is because a common MS1B is set in the <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> but cleared in the xor sum. Otherwise, with no common MS1B, the xor-sum is greater except equal for two zero operands.
+<span id="Multiplication"></span>
+</p>
+<h2><span class="mw-headline" id="Multiplication">Multiplication</span></h2>
+<p>64-bit <a class="external text" href="https://en.wikipedia.org/wiki/Multiplication" rel="nofollow">Multiplication</a> has become awfully fast on recent processors. Shift left is of course still faster than multiplication by power of two, but if we have more than one bit set in a factor, it already makes sense to replace for instance
+</p>
+<pre>
+y  = (x &lt;&lt; 8) + (x &lt;&lt; 16);
+</pre>
+<p>by
+</p>
+<pre>
+y  = x * 0x00010100;
+</pre>
+<p><b>Fill-Multiplication</b><br/> 
+In fact, we can replace <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix</a> left shifts like,
+</p>
+<pre>
+x |= x &lt;&lt; 32;
+x |= x &lt;&lt; 16;
+x |= x &lt;&lt;  8;
+</pre>
+<p>where x has max one bit per file, and we can therefor safely replace 'or' by 'add'
+</p>
+<pre>
+x += x &lt;&lt; 32;
+x += x &lt;&lt; 16;
+x += x &lt;&lt;  8;
+</pre>
+<p>by multiplication with 0x0101010101010101 (which is the A-File in little endian mapping):
+</p>
+<pre>
+. . . . . . . .     1 . . . . . . .     . 1 1 . 1 1 . .
+. . . . . . . .     1 . . . . . . .     . 1 1 . 1 1 . .
+. . . . . . . .     1 . . . . . . .     . 1 1 . 1 1 . .
+. . . . . . . .     1 . . . . . . .     . 1 1 . 1 1 . .
+. 1 . . . 1 . .  *  1 . . . . . . .  =  . 1 1 . 1 1 . .
+. . 1 . 1 . . .     1 . . . . . . .     . . 1 . 1 . . .
+. . . . . . . .     1 . . . . . . .     . . . . . . . .
+. . . . . . . .     1 . . . . . . .     . . . . . . . .
+</pre>
+<p>See <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">Kindergarten-Bitboards</a>- or <a href="Magic Bitboards.html" title="Magic Bitboards">Magic-Bitboards</a> as applications of fill-multiplication.
+</p><p><b>De Bruijn Multiplication</b> <br/>
+Another bitboard related application of multiplication is to determine the bit-index of the least significant one bit. A isolated, single bit is multiplied with a <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a> to implement a <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">bitscan</a>.
+<span id="Division"></span>
+</p>
+<h2><span class="mw-headline" id="Division">Division</span></h2>
+<p>64-bit <a class="external text" href="https://en.wikipedia.org/wiki/Division_%28mathematics%29" rel="nofollow">Division</a> is still a slow instruction which takes a lot of cycles - it should be avoided at runtime. Division by a power of two is done by right shift.
+</p><p>An interesting application to calculate various masks for <a href="General Setwise Operations.html#DeltaSwap" title="General Setwise Operations">delta swaps</a>, e.g. swapping <a href="Bit.html" title="Bit">bits</a>, bit-duos, <a href="Nibble.html" title="Nibble">nibbles</a>, <a href="Byte.html" title="Byte">bytes</a>, <a href="Word.html" title="Word">words</a> and <a href="Double Word.html" title="Double Word">double words</a>, is the 2-<a class="external text" href="https://en.wikipedia.org/wiki/P-adic_number" rel="nofollow">adic</a> division of the universal set (-1) by 2^(2^i) plus one, which may be done at compile time:
+</p>
+<pre>
+-1 / ( 2^(2^0) + 1) == -1 / (         2 + 1) == 0x5555555555555555
+-1 / ( 2^(2^1) + 1) == -1 / (         4 + 1) == 0x3333333333333333
+-1 / ( 2^(2^2) + 1) == -1 / (        16 + 1) == 0x0f0f0f0f0f0f0f0f
+-1 / ( 2^(2^3) + 1) == -1 / (       256 + 1) == 0x00ff00ff00ff00ff
+-1 / ( 2^(2^4) + 1) == -1 / (     65536 + 1) == 0x0000ffff0000ffff
+-1 / ( 2^(2^5) + 1) == -1 / (4294967296 + 1) == 0x00000000ffffffff
+</pre>
+<p>See <a href="Flipping Mirroring and Rotating.html#Generalized" title="Flipping Mirroring and Rotating">generalized flipping, mirroring and reversion</a>. Often used masks and factors are the 2-adic division of the universal set (-1) by 2^(2^i) minus one, which results in the lowest bit of <a href="SIMD and SWAR Techniques.html#SWAR" title="SIMD and SWAR Techniques">SWAR-wise</a> bits set, bit-duos, nibbles, bytes, words and double words:
+</p>
+<pre>
+-1 / ( 2^(2^0) - 1) == -1 / (         2 - 1) == 0xffffffffffffffff
+-1 / ( 2^(2^1) - 1) == -1 / (         4 - 1) == 0x5555555555555555
+-1 / ( 2^(2^2) - 1) == -1 / (        16 - 1) == 0x1111111111111111
+-1 / ( 2^(2^3) - 1) == -1 / (       256 - 1) == 0x0101010101010101
+-1 / ( 2^(2^4) - 1) == -1 / (     65536 - 1) == 0x0001000100010001
+-1 / ( 2^(2^5) - 1) == -1 / (4294967296 - 1) == 0x0000000100000001
+</pre>
+<p><span id="Modulo"></span>
+</p>
+<h2><span class="mw-headline" id="Modulo">Modulo</span></h2>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Modular_arithmetic" rel="nofollow">Modular arithmetic</a> with 64-bit <a class="external text" href="https://en.wikipedia.org/wiki/Modulo_operation" rel="nofollow">modulo</a> by a constant, has applications in <a class="external text" href="https://en.wikipedia.org/wiki/Cryptography" rel="nofollow">Cryptography</a> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>, <a href="Hash Table.html" title="Hash Table">Hashing</a>, and with Bitboards in <a href="BitScan.html#BitscanByModulo" title="BitScan">Bit Scanning</a>, <a href="Population Count.html#Castingout" title="Population Count">Population Count</a> and <a href="Congruent Modulo Bitboards.html" title="Congruent Modulo Bitboards">Congruent Modulo Bitboards</a> for <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a>.
+<span id="Castingout255"></span>
+</p>
+<h3><span class="mw-headline" id="Casting_out_255">Casting out 255</span></h3>
+<p>Similar to <a class="external text" href="https://en.wikipedia.org/wiki/Casting_out_nines" rel="nofollow">Casting out nines</a> with decimals and due to the <a class="external text" href="https://en.wikipedia.org/wiki/Congruence_relation" rel="nofollow">congruence relation</a>
+</p>
+<pre>Base<span style="vertical-align: super;">n</span> ≡ 1 (mod Base-1)
+</pre>
+<p>casting out 255 can be used to add all the eight bytes within a <a href="SIMD and SWAR Techniques.html#SWAR" title="SIMD and SWAR Techniques">SWAR-wise</a> 64-bit <a href="Quad Word.html" title="Quad Word">quad word</a> if the sum is less than 255, as mentioned, applicable in <a href="Population Count.html#Castingout" title="Population Count">Population Count</a> and <a href="Congruent Modulo Bitboards.html#Castingout255" title="Congruent Modulo Bitboards">Congruent Modulo Bitboards - Casting out 255</a>.
+<span id="ReciprocalMultiplication"></span>
+</p>
+<h3><span class="mw-headline" id="Reciprocal_Multiplication">Reciprocal Multiplication</span></h3>
+<p>Likely 64-bit compiler will optimize modulo (and division) by reciprocal, 2^64 div constant, to perform a 64*64 = 128bit fixed point multiplication to get the quotient in the upper 64-bit, and a second multiplication and subtraction to finally get the remainder. Here some sample <a href="X86-64.html" title="X86-64">x86-64</a> assembly:
+</p>
+<pre>
+r11d := r10 % 257
+ mov    r11d, r10 ; masked diagonal
+ mov    rax, ff00ff00ff00ff01H ; 2^(64+8) / 257
+ mul    r10
+ shr    rdx, 8
+ imul   edx, 257 ; 00000101H
+ sub    r11d, edx
+</pre>
+<h3><span class="mw-headline" id="Power_of_Two">Power of Two</span></h3>
+<p>As a remainder, and to close the cycle to <a href="General Setwise Operations.html#Bitwisebooleanoperations" title="General Setwise Operations">bitwise boolean operations</a>, the well known trick is mentioned, to replace modulo by power of two by <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a> with power of two minus one:
+</p>
+<pre>a % 2<span style="vertical-align: super;">n</span> == a &amp; (2<span style="vertical-align: super;">n</span> - 1)
+</pre>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<h2><span class="mw-headline" id="1847_...">1847 ...</span></h2>
+<ul><li> <a href="Mathematician.html#Boole" title="Mathematician">George Boole</a> (<b>1847</b>). <i><a class="external text" href="https://archive.org/stream/mathematicalanal00booluoft/mathematicalanal00booluoft_djvu.txt" rel="nofollow">The Mathematical Analysis of Logic, Being an Essay towards a Calculus of Deductive Reasoning</a></i>. Macmillan, Barclay &amp; Macmillan</li>
+<li> <a href="Mathematician.html#Boole" title="Mathematician">George Boole</a> (<b>1848</b>). <i><a class="external text" href="http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/.html" rel="nofollow">The Calculus of Logic</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/The_Quarterly_Journal_of_Pure_and_Applied_Mathematics" rel="nofollow">Cambridge and Dublin Mathematical Journal</a>, Vol. III</li>
+<li> <a href="Mathematician.html#ADeMorgan" title="Mathematician">Augustus De Morgan</a> (<b>1860</b>). <i><a class="external text" href="http://books.google.com/books?id=Od3jgF5rZtgC.html" rel="nofollow">Syllabus of a Proposed System of Logic</a></i>. Walton &amp; Malbery</li>
+<li> <a href="Mathematician.html#CSPeirce" title="Mathematician">Charles S. Peirce</a> (<b>1867</b>). <i>On an Improvement in Boole's Calculus of Logic</i>. Proceedings of the American Academy of Arts and Sciences, Series Vol. 7</li>
+<li> <a href="Mathematician.html#Cantor" title="Mathematician">Georg Cantor</a> (<b>1874</b>). <i><a class="external text" href="https://glossar.hs-augsburg.de/Cantor,_G._(1874):_Ueber_eine_Eigenschaft_des_Inbegriffs_aller_reellen_algebraischen_Zahlen" rel="nofollow">Ueber eine Eigenschaft des Inbegriffes aller reellen algebraischen Zahlen</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Crelle%27s_Journal" rel="nofollow">Journal für die reine und angewandte Mathematik</a>, No. 77</li>
+<li> <a href="Mathematician.html#CSPeirce" title="Mathematician">Charles S. Peirce</a> (<b>1880</b>). <i><a class="external text" href="https://archive.org/details/jstor-2369442" rel="nofollow">On the Algebra of Logic</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/American_Journal_of_Mathematics" rel="nofollow">American Journal of Mathematics</a>, Vol. 3</li>
+<li> <a href="Mathematician.html#Venn" title="Mathematician">John Venn</a> (<b>1880</b>). <i><a class="external text" href="http://www.tandfonline.com/doi/abs/10.1080/14786448008626877.html#.U3kRnHYfwgI" rel="nofollow">On the Diagrammatic and Mechanical Representation of Propositions and Reasonings</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Philosophical_Magazine" rel="nofollow">Philosophical Magazine</a>, Vol. 9, No. 5</li>
+<li> <a href="Mathematician.html#Venn" title="Mathematician">John Venn</a> (<b>1881</b>). <i><a class="external text" href="https://archive.org/details/symboliclogic00venniala" rel="nofollow">Symbolic Logic</a></i>. MacMillan &amp; Co.</li></ul>
+<h2><span class="mw-headline" id="1900_...">1900 ...</span></h2>
+<ul><li> <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a> (<b>1938</b>). <i><a class="external text" href="https://en.wikipedia.org/wiki/A_Symbolic_Analysis_of_Relay_and_Switching_Circuits" rel="nofollow">A Symbolic Analysis of Relay and Switching Circuits</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/American_Institute_of_Electrical_Engineers" rel="nofollow">Transactions of the AIEE</a>, Vol. 57, No 12, Master's thesis 1940, <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</a></li>
+<li> <a href="Mathematician.html#VIShestakov" title="Mathematician">Victor I. Shestakov</a> (<b>1941</b>). <i>Algebra of Two Poles Schemata</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Automation_and_Remote_Control" rel="nofollow">Automatics and Telemechanics</a>, Vol. 5, No 2</li></ul>
+<h2><span class="mw-headline" id="1950_...">1950 ...</span></h2>
+<ul><li> <a href="Mathematician.html#LLyusternik" title="Mathematician">Lazar A. Lyusternik</a>, <a href="Mathematician.html#AAbramov" title="Mathematician">Aleksandr Abramov</a>, <a href="Mathematician.html#VIShestakov" title="Mathematician">Victor I. Shestakov</a>, <a href="Mikhail R. Shura-Bura.html" title="Mikhail R. Shura-Bura">Mikhail R. Shura-Bura</a> (<b>1952</b>). <i>Programming for High-Speed Electronic Computers</i>. (Программирование для электронных счетных машин)</li>
+<li> <a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a> (<b>1961</b>). <i>Bitwise operations</i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 4, No. 3</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a> (<b>2002, 2012</b>). <i><a href="Henry S. Warren, Jr..html#HackersDelight" title="Henry S. Warren, Jr.">Hacker's Delight</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Addison%E2%80%93Wesley" rel="nofollow">Addison-Wesley</a></li>
+<li> <a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a></li>
+<li> <a href="Ronald L. Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a> (<b>2011</b>). <i>The invertibility of the XOR of rotations of a binary word</i>. <a class="external text" href="https://dblp1.uni-trier.de/db/journals/ijcm/ijcm88.html" rel="nofollow">International Journal of Computer Mathematics, Vol. 88</a>, <a class="external text" href="https://pdfs.semanticscholar.org/8177/7b0bb30aa7ca12f9a1aea57691a6fb1e1249.pdf" rel="nofollow">2009 pdf preprint</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=306882" rel="nofollow">curiosity killed the cat... hi/lo bit C verses Assembly</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, July 17, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=450730" rel="nofollow">mask of highest bit</a> by <a href="Andrew Shapira.html" title="Andrew Shapira">Andrew Shapira</a>, <a href="CCC.html" title="CCC">CCC</a>, September 21, 2005</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47710.html" rel="nofollow">How to Shift Left (by) a Negative Number??</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 05, 2013</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2878.html" rel="nofollow">To shift or not to shift</a> by thevinenator, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, September 09, 2015 » <a href="Space-Time Tradeoff.html" title="Space-Time Tradeoff">Space-Time Tradeoff</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/r_7TSUtNXls/PUM5JgcSFQAJ" rel="nofollow">Question about resetting a bit in a bitboard corresponding to a given square</a> by guenther, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, September 09, 2016 » <a href="#ResetBit">Reset Bit</a></li>
+<li> <a class="external text" href="https://groups.google.com/forum/#!topic/fishcooking/TplkvO62I9U" rel="nofollow">On the speed of SquareBB array</a> by protonspring, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, March 22, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75818.html" rel="nofollow">C++20 standard bit operations</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, November 15, 2020 » <a href="Population Count.html" title="Population Count">Population Count</a>, <a href="BitScan.html" title="BitScan">BitScan</a>, <a href="Cpp.html" title="Cpp">C++</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Sets">Sets</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Set_%28mathematics%29" rel="nofollow">Set (mathematics) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Portal:Set_theory" rel="nofollow">Portal:Set theory from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Finite_set" rel="nofollow">Finite set from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fuzzy_set" rel="nofollow">Fuzzy set from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Set_theory" rel="nofollow">Set theory from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Naive_set_theory" rel="nofollow">Naive set theory from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory" rel="nofollow">Zermelo–Fraenkel set theory from Wikipedia</a> » <a href="Ernst Zermelo.html" title="Ernst Zermelo">Ernst Zermelo</a>, <a href="Mathematician.html#AbrahamFraenkel" title="Mathematician">Abraham Fraenkel</a></dd></dl>
+<ul><li> <a class="external text" href="http://plato.stanford.edu/entries/set-theory/.html" rel="nofollow">Set Theory (Stanford Encyclopedia of Philosophy)</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Venn_diagram" rel="nofollow">Venn diagram from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Algebra">Algebra</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Algebra" rel="nofollow">Algebra from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Elementary_algebra" rel="nofollow">Elementary algebra from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Abstract_algebra" rel="nofollow">Abstract algebra from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Algebraic_structure" rel="nofollow">Algebraic structure from Wikipedia</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Model_theory" rel="nofollow">Model theory</a>)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Algebra_of_sets" rel="nofollow">Algebra of sets from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra" rel="nofollow">Boolean algebra from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28logic%29" rel="nofollow">Boolean algebra (logic) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra_%28structure%29" rel="nofollow">Boolean algebra (structure) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebras_canonically_defined" rel="nofollow">Boolean algebras canonically defined from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_ring" rel="nofollow">Boolean ring from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Finite_field" rel="nofollow">Finite field from Wikipedia</a> </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/GF%282%29" rel="nofollow">GF(2) from Wikipedia</a> </li>
+<li> <a class="external text" href="http://plato.stanford.edu/entries/boolalg-math/.html" rel="nofollow">The Mathematics of Boolean Algebra (Stanford Encyclopedia of Philosophy)</a></li></ul>
+<h2><span class="mw-headline" id="Logic">Logic</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Logic" rel="nofollow">Logic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Portal:Logic" rel="nofollow">Portal:Logic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Mathematical_logic" rel="nofollow">Mathematical logic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Algebraic_logic" rel="nofollow">Algebraic logic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Propositional_calculus" rel="nofollow">Propositional calculus from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Predicate_logic" rel="nofollow">Predicate logic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Entailment" rel="nofollow">Entailment from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Syllogism" rel="nofollow">Syllogism from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Logical_connective" rel="nofollow">Logical connective from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Operations">Operations</span></h2>
+<h3><span class="mw-headline" id="Setwise">Setwise</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Set_%28mathematics%29#Basic_operations" rel="nofollow">Set (mathematics) - Basic operations from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Intersection_%28set_theory%29" rel="nofollow">Intersection (set theory) from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Union_%28set_theory%29" rel="nofollow">Union (set theory) from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Complement_%28set_theory%29" rel="nofollow">Complement (set theory) from Wikipedia</a></dd></dl>
+<h3><span class="mw-headline" id="Bitwise">Bitwise</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation" rel="nofollow">Bitwise operation from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Logical_conjunction" rel="nofollow">Logical conjunction from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Logical_disjunction" rel="nofollow">Logical disjunction from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Exclusive_or" rel="nofollow">Exclusive or from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Negation" rel="nofollow">Negation from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Bitwise_operation#Bit_shifts" rel="nofollow">Bit Shifts from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Circular_shift" rel="nofollow">Circular shift from Wikipedia</a></dd></dl>
+<h3><span class="mw-headline" id="Arithmetic">Arithmetic</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Arithmetic#Arithmetic_operations" rel="nofollow">Arithmetic operations from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Addition" rel="nofollow">Addition from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Subtraction" rel="nofollow">Subtraction from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Two%27s_complement" rel="nofollow">Two's complement from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Multiplication" rel="nofollow">Multiplication from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Division_%28mathematics%29" rel="nofollow">Division from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Modulo_operation" rel="nofollow">Modulo operation from Wikipedia</a></dd></dl>
+<h3><span class="mw-headline" id="Modular_arithmetic">Modular arithmetic</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Congruence_relation" rel="nofollow">Congruence relation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Modular_arithmetic" rel="nofollow">Modular arithmetic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Linear_congruence_theorem" rel="nofollow">Linear congruence theorem from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a href="Category:Casiopea.html" title="Category:Casiopea">Casiopea</a> - Conjunction, <a class="external text" href="https://en.wikipedia.org/wiki/Casiopea_Perfect_Live_II" rel="nofollow">Perfect Live</a> (1986), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/zdU2KCDYROU?" width="640"></iframe></div></div></dd></dl>
+<ul><li> <a href="Category:Hux Flux.html" title="Category:Hux Flux">Hux Flux</a> - Bitshifter, <a class="external text" href="https://en.wikipedia.org/wiki/Division_by_Zero_%28album%29" rel="nofollow">Division by Zero</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/ONhwqC6_NY0?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Category:Wassily Kandinsky.html" title="Category:Wassily Kandinsky">Wassily Kandinsky</a> - Upward, 1929, <a class="external text" href="https://en.wikipedia.org/wiki/Peggy_Guggenheim_Collection" rel="nofollow">Peggy Guggenheim Collection</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia COmmons</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Mathematician.html#Ershov" title="Mathematician">Andrey Ershov</a>, <a href="Mikhail R. Shura-Bura.html" title="Mikhail R. Shura-Bura">Mikhail R. Shura-Bura</a> (<b>1980</b>). <i><a class="external text" href="http://ershov.iis.nsk.su/archive/eaindex.asp?lang=2&amp;gid=910.html" rel="nofollow">The Early Development of Programming in the USSR</a></i>. in <a class="external text" href="https://en.wikipedia.org/wiki/Nicholas_C._Metropolis" rel="nofollow">Nicholas C. Metropolis</a> (ed.) <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=578384.html" rel="nofollow">A History of Computing in the Twentieth Century</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Academic_Press" rel="nofollow">Academic Press</a>, <a class="external text" href="http://ershov.iis.nsk.su/archive/eaimage.asp?did=28792&amp;fileid=173670.html" rel="nofollow">preprint pp. 43</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Lazar_Lyusternik" rel="nofollow">Lazar A. Lyusternik</a>, <a class="external text" href="http://www.mathnet.ru/php/person.phtml?personid=30351&amp;option lang=eng.html" rel="nofollow">Aleksandr A. Abramov</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Victor_Shestakov" rel="nofollow">Victor I. Shestakov</a>, <a href="Mikhail R. Shura-Bura.html" title="Mikhail R. Shura-Bura">Mikhail R. Shura-Bura</a> (<b>1952</b>). <i>Programming for High-Speed Electronic Computers</i>. (Программирование для электронных счетных машин)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Mathematician.html#Venn" title="Mathematician">John Venn</a> (<b>1880</b>). <i><a class="external text" href="http://www.tandfonline.com/doi/abs/10.1080/14786448008626877.html#.U3kRnHYfwgI" rel="nofollow">On the Diagrammatic and Mechanical Representation of Propositions and Reasonings</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Philosophical_Magazine" rel="nofollow">Philosophical Magazine</a>, Vol. 9, No. 59</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text">Greater or less in the arithmetical sense is usually not relevant with bitboards, but see greater condition in <a href="Thor%27s Hammer.html#MoveGeneration" title="Thor's Hammer">Thor's Hammer's move generation</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Mathematician.html#Boole" title="Mathematician">George Boole</a> (<b>1847</b>). <i><a class="external text" href="https://archive.org/stream/mathematicalanal00booluoft/mathematicalanal00booluoft_djvu.txt" rel="nofollow">The Mathematical Analysis of Logic, Being an Essay towards a Calculus of Deductive Reasoning</a></i>. Macmillan, Barclay &amp; Macmillan</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Mathematician.html#CSPeirce" title="Mathematician">Charles S. Peirce</a> (<b>1880</b>). <i><a class="external text" href="https://archive.org/details/jstor-2369442" rel="nofollow">On the Algebra of Logic</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/American_Journal_of_Mathematics" rel="nofollow">American Journal of Mathematics</a>, Vol. 3</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Mathematician.html#ADeMorgan" title="Mathematician">Augustus De Morgan</a> (<b>1860</b>). <i><a class="external text" href="http://books.google.com/books?id=Od3jgF5rZtgC.html" rel="nofollow">Syllabus of a Proposed System of Logic</a></i>. Walton &amp; Malbery</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Marvin Minsky.html" title="Marvin Minsky">Marvin Minsky</a>, <a href="Mathematician.html#SPapert" title="Mathematician">Seymour Papert</a> (1969, <b>1972</b>). <i><a class="external text" href="https://en.wikipedia.org/wiki/Perceptrons_%28book%29" rel="nofollow">Perceptrons: An Introduction to Computational Geometry</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Press" rel="nofollow">The MIT Press</a>, ISBN 0-262-63022-2</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/o3AMPvhmY3o/1yZhMk3_VlIJ" rel="nofollow">Re: Java chess program?</a> by <a href="Moritz Berger.html" title="Moritz Berger">Moritz Berger</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, May 29, 1997 » <a href="General Setwise Operations.html#ShiftingBitboards" title="General Setwise Operations">Shifting Bitboards</a>, <a href="Java.html" title="Java">Java</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2878.html" rel="nofollow">To shift or not to shift</a> by thevinenator, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, September 09, 2015</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/forum/#!topic/fishcooking/TplkvO62I9U" rel="nofollow">On the speed of SquareBB array</a> by protonspring, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, March 22, 2019</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a href="Donald Knuth.html" title="Donald Knuth">Donald Knuth</a> (<b>2009</b>). <i><a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/taocp.html.html" rel="nofollow">The Art of Computer Programming</a>, Volume 4, Fascicle 1: Bitwise tricks &amp; techniques</i>, as <a class="external text" href="http://www-cs-faculty.stanford.edu/%7Eknuth/fasc1a.ps.gz.html" rel="nofollow">Pre-Fascicle 1a postscript</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"> <a href="Mathematician.html#PWegner" title="Mathematician">Peter Wegner</a> (<b>1960</b>). <i>A technique for counting ones in a binary computer</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Communications_of_the_ACM" rel="nofollow">Communications of the ACM</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/cacm/cacm3.html.html#Wegner60" rel="nofollow">Volume 3, 1960</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Modular_exponentiation" rel="nofollow">Modular exponentiation from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722124814
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.658 seconds
+Real time usage: 8.765 seconds
+Preprocessor visited node count: 1425/1000000
+Preprocessor generated node count: 2932/1000000
+Post‐expand include size: 299/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.959      1 Template:MappingHint
+100.00%    0.959      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1090-0!canonical and timestamp 20240722124806 and revision id 26202
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=General_Setwise_Operations&amp;oldid=26202">https://www.chessprogramming.org/index.php?title=General_Setwise_Operations&amp;oldid=26202</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Wassily Kandinsky.html" title="Category:Wassily Kandinsky">Wassily Kandinsky</a></li><li><a href="Category:Casiopea.html" title="Category:Casiopea">Casiopea</a></li><li><a href="Category:Tetsuo Sakurai.html" title="Category:Tetsuo Sakurai">Tetsuo Sakurai</a></li><li><a href="Category:Hux Flux.html" title="Category:Hux Flux">Hux Flux</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=General+Setwise+Operations&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="General Setwise Operations.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:General Setwise Operations&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="General Setwise Operations.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=General Setwise Operations&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=General Setwise Operations&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/General Setwise Operations.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/General Setwise Operations.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=General Setwise Operations&amp;oldid=26202.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=General Setwise Operations&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 January 2022, at 00:52.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=General_Setwise_Operations&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.658","walltime":"8.765","ppvisitednodes":{"value":1425,"limit":1000000},"ppgeneratednodes":{"value":2932,"limit":1000000},"postexpandincludesize":{"value":299,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.959      1 Template:MappingHint","100.00%    0.959      1 -total"]},"cachereport":{"timestamp":"20240722124814","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

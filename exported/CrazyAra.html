@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CrazyAra - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"CrazyAra","wgTitle":"CrazyAra","wgCurRevisionId":25863,"wgRevisionId":25863,"wgArticleId":7831,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UCI","Open Source","GPL","Python","GPU","DCNN","MCTS","Crazyhouse","Chess960","Xiangqi","PC","Windows","Linux","Mac","Thesis","Bird","Weather Report","Jaco Pastorius","Joe Zawinul","Wayne Shorter"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"CrazyAra","wgRelevantArticleId":7831,"wgRequestId":"Zp7DLETIpR5ox-FcHX-JeQAAAAI","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CrazyAra rootpage-CrazyAra skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">CrazyAra</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * CrazyAra</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Ara chloroptera -Brookfield Zoo-8.jpg.html"><img alt="" class="thumbimage" height="448" src="wikipedia/commons/thumb/2/2c/Ara_chloroptera_-Brookfield_Zoo-8.jpg/300px-Ara_chloroptera_-Brookfield_Zoo-8.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ara_chloroptera_-Brookfield_Zoo-8.jpg/450px-Ara_chloroptera_-Brookfield_Zoo-8.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ara_chloroptera_-Brookfield_Zoo-8.jpg/600px-Ara_chloroptera_-Brookfield_Zoo-8.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Ara chloroptera -Brookfield Zoo-8.jpg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/Red-and-green_macaw" rel="nofollow">Ara chloropterus</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>CrazyAra</b>, (ClassicAra, MultiAra)<br/>
+a family of <a href="UCI.html" title="UCI">UCI</a> compatible <a href="Chess.html#Variants" title="Chess">chess variant</a> <a href="Category:Open Source.html" title="Category:Open Source">open source</a> engines licensed under the <a href="Free Software Foundation.html#GPL" title="Free Software Foundation">GPL v3.0</a>.
+CrazyAra started as a <a class="external text" href="https://en.wikipedia.org/wiki/Academic_term#Synonyms" rel="nofollow">semester</a> project by <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="Moritz Willig.html" title="Moritz Willig">Moritz Willig</a> and <a href="Alena Beyer.html" title="Alena Beyer">Alena Beyer</a> for the course <i>Deep Learning: Methods and Architectures</i> at the <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a> in summer 2018, headed by <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a> and <a href="Johannes F%C3%BCrnkranz.html" title="Johannes Fürnkranz">Johannes Fürnkranz</a>.
+The project was inspired by the <a href="Deep Learning.html" title="Deep Learning">deep learning</a> and <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a> techniques described in <a class="new" href="index.php?title=DeepMind&amp;action=edit&amp;redlink=1.html" title="DeepMind (page does not exist)">DeepMind's</a> <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a> papers  
+<sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>
+<sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>,
+the goal to train a <a href="Neural Networks.html#Deep" title="Neural Networks">deep</a> <a href="Neural Networks.html#Convolutional" title="Neural Networks">convolutional neural network</a> to play <a href="Crazyhouse.html" title="Crazyhouse">Crazyhouse</a> trained by <a href="Supervised Learning.html" title="Supervised Learning">supervised learning</a> on human data - the initial version of CrazyAra entirely written in <a href="Python.html" title="Python">Python</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>.
+In December 2018, CrazyAra won a five game Crazyhouse online-match versus <a class="external text" href="https://en.wikipedia.org/wiki/Justin_Tan" rel="nofollow">Justin Tan</a> aka JannLee with 4-1 
+<sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Continuation"><span class="tocnumber">1</span> <span class="toctext">Continuation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Network"><span class="tocnumber">2</span> <span class="toctext">Network</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Monte-Carlo Graph Search"><span class="tocnumber">3</span> <span class="toctext">Monte-Carlo Graph Search</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#ClassicAra"><span class="tocnumber">4</span> <span class="toctext">ClassicAra</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#MultiAra"><span class="tocnumber">5</span> <span class="toctext">MultiAra</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Publications"><span class="tocnumber">7</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Chess Engine"><span class="tocnumber">9.1</span> <span class="toctext">Chess Engine</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#GitHub"><span class="tocnumber">9.1.1</span> <span class="toctext">GitHub</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Reports"><span class="tocnumber">9.1.2</span> <span class="toctext">Reports</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Misc"><span class="tocnumber">9.2</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Continuation">Continuation</span></h1>
+<p>As subject of his master thesis <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>, 
+Johannes Czech continued the development in porting the engine to <a href="Cpp.html" title="Cpp">C++</a> and to further apply <a href="Reinforcement Learning.html" title="Reinforcement Learning">reinforcement learning</a> to Crazyhouse and other chess variants including <a href="Chess960.html" title="Chess960">Chess960</a>.
+While the initial version uses <a href="Python-chess.html" title="Python-chess">Python-chess</a> by <a href="Niklas Fiekas.html" title="Niklas Fiekas">Niklas Fiekas</a>, the C++ version uses a multi variant <a href="Stockfish.html" title="Stockfish">Stockfish</a> fork by <a class="new" href="index.php?title=Daniel Dugovic&amp;action=edit&amp;redlink=1.html" title="Daniel Dugovic (page does not exist)">Daniel Dugovic</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>
+for <a href="Move Generation.html" title="Move Generation">move generation</a>, <a href="Board Representation.html" title="Board Representation">board representation</a> and <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy</a> parsing.
+To feature more chess variants, more recently <a class="new" href="index.php?title=Fairy-Stockfish&amp;action=edit&amp;redlink=1.html" title="Fairy-Stockfish (page does not exist)">Fairy-Stockfish</a> by <a class="new" href="index.php?title=Fabian Fichter&amp;action=edit&amp;redlink=1.html" title="Fabian Fichter (page does not exist)">Fabian Fichter</a> was incorporated <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>,
+as for instance used in <a href="Maximilian Langer.html" title="Maximilian Langer">Maximilian Langer's</a> <a href="Chinese Chess.html" title="Chinese Chess">Xiangqi</a> version of CrazyAra <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Network">Network</span></h1>
+<p>CrazyAra uses <a class="external text" href="https://en.wikipedia.org/wiki/Apache_MXNet" rel="nofollow">MXNet</a> as it's deep learning framework - with three NN back-ends to run the NN inference available, <a href="Nvidia.html" title="Nvidia">Nvidia's</a> TensorRT built on <a class="external text" href="https://en.wikipedia.org/wiki/CUDA" rel="nofollow">CUDA</a> (<a href="GPU.html" title="GPU">GPU</a> only), MXNet and <a class="external text" href="https://en.wikipedia.org/wiki/Torch_(machine_learning)" rel="nofollow">Torch</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>.
+The input representation is a hybrid between chess and <a href="Shogi.html" title="Shogi">Shogi</a> and compared to the AlphaZero description avoids the history of past board representations <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>.
+In CrazyAra v0.2.0 a newly designed architecture was used which is called RISE (<a class="external text" href="https://en.wikipedia.org/wiki/Residual_neural_network" rel="nofollow">ResneXt</a>, Inception, Squeeze, Excitation). The model uses mixed depth-wise convolutional kernels, efficient squeeze excitation modules, use of 5x5 convolutions in deeper layers, and <a class="external text" href="https://en.wikipedia.org/wiki/Hard_sigmoid" rel="nofollow">hard sigmoid</a> instead of <a class="external text" href="https://en.wikipedia.org/wiki/Sigmoid_function" rel="nofollow">sigmoid</a> <a class="external text" href="https://en.wikipedia.org/wiki/Activation_function" rel="nofollow">activation functions</a>.
+The proposed model architecture has fewer parameters, faster inference and training time while maintaining an equal amount of depth compared to the architecture proposed by DeepMind (19 residual layers with 256 filters) <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>. 
+Similar to AlphaZero, the output is represented by a value and policy head, the latter implemented as vector of moves <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Monte-Carlo_Graph_Search">Monte-Carlo Graph Search</span></h1>
+<p>CrazyAra optionally features an improvement of AlphaZero's <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a> / <a href="Christopher D. Rosin.html#PUCT" title="Christopher D. Rosin">PUCT</a> algorithm, considering <a href="Transposition.html" title="Transposition">transpositions</a> - 
+dubbed <b>Monte-Carlo Graph Search</b> based on a <a class="external text" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" rel="nofollow">directed acyclic graph</a> (DAG) instead of a <a class="external text" href="https://en.wikipedia.org/wiki/Tree_structure" rel="nofollow">tree structure</a> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="ClassicAra">ClassicAra</span></h1>
+<p><b>ClassicAra</b> is a version of CrazyAra to play classical chess as well as <a href="Chess960.html" title="Chess960">Chess960</a>. ClassicAra had its tournament debut as <a href="TCEC Season 21.html" title="TCEC Season 21">TCEC Season 21</a> in Spring 2021, not yet improved by <a href="Reinforcement Learning.html" title="Reinforcement Learning">reinforcement learning</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="MultiAra">MultiAra</span></h1>
+<p><b>MultiAra</b>, released in August 2021, is a version of the Ara project which supports all <a href="Chess.html#Variants" title="Chess">chess variants</a> available on <a class="new" href="index.php?title=Lichess&amp;action=edit&amp;redlink=1.html" title="Lichess (page does not exist)">Lichess</a> <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a href="Crazyhouse.html" title="Crazyhouse">Crazyhouse</a></li>
+<li> <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a></li>
+<li> <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a></li>
+<li> <a href="Parrot.html" title="Parrot">Parrot</a></li>
+<li> <a href="Reinforcement Learning.html" title="Reinforcement Learning">Reinforcement Learning</a></li>
+<li> <a href="Supervised Learning.html" title="Supervised Learning">Supervised Learning</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a> (<b>2019</b>). <i>Deep Reinforcement Learning for Crazyhouse</i>. Master thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a>, <a class="external text" href="https://ml-research.github.io/papers/czech2019deep.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="Moritz Willig.html" title="Moritz Willig">Moritz Willig</a>, <a href="Alena Beyer.html" title="Alena Beyer">Alena Beyer</a>, <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a>, <a href="Johannes F%C3%BCrnkranz.html" title="Johannes Fürnkranz">Johannes Fürnkranz</a> (<b>2019</b>). <i>Learning to play the Chess Variant Crazyhouse above World Champion Level with Deep Neural Networks and Human Data</i>. <a class="external text" href="https://arxiv.org/abs/1908.06660" rel="nofollow">arXiv:1908.06660</a></li>
+<li> <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="Moritz Willig.html" title="Moritz Willig">Moritz Willig</a>, <a href="Alena Beyer.html" title="Alena Beyer">Alena Beyer</a>, <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a>, <a href="Johannes F%C3%BCrnkranz.html" title="Johannes Fürnkranz">Johannes Fürnkranz</a> (<b>2020</b>). <i><a class="external text" href="https://www.frontiersin.org/articles/10.3389/frai.2020.00024/full" rel="nofollow">Learning to Play the Chess Variant Crazyhouse Above World Champion Level With Deep Neural Networks and Human Data</a></i>.  <a class="external text" href="https://www.frontiersin.org/journals/artificial-intelligence#" rel="nofollow">Frontiers in Artificial Intelligence</a></li>
+<li> <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="Patrick Korus.html" title="Patrick Korus">Patrick Korus</a>, <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a> (<b>2020</b>). <i>Monte-Carlo Graph Search for AlphaZero</i>. <a class="external text" href="https://arxiv.org/abs/2012.11045" rel="nofollow">arXiv:2012.11045</a> </li>
+<li> <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="Patrick Korus.html" title="Patrick Korus">Patrick Korus</a>, <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a> (<b>2021</b>). <i><a class="external text" href="https://ojs.aaai.org/index.php/ICAPS/article/view/15952" rel="nofollow">Improving AlphaZero Using Monte-Carlo Graph Search</a></i>. <a class="external text" href="https://ojs.aaai.org/index.php/ICAPS/issue/view/380" rel="nofollow">Proceedings of the Thirty-First International Conference on Automated Planning and Scheduling</a>, Vol. 31, <a class="external text" href="https://www.ml.informatik.tu-darmstadt.de/papers/czech2021icaps_mcgs.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Maximilian Langer.html" title="Maximilian Langer">Maximilian Langer</a> (<b>2021</b>). <i>Evaluation of Monte-Carlo Tree Search for Xiangqi</i>. B.Sc. thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a>, <a class="external text" href="https://ml-research.github.io/papers/langer2021xiangqi.pdf" rel="nofollow">pdf</a> » <a href="Chinese Chess.html" title="Chinese Chess">Xiangqi</a></li>
+<li> <a class="new" href="index.php?title=Maximilian Alexander Gehrke&amp;action=edit&amp;redlink=1.html" title="Maximilian Alexander Gehrke (page does not exist)">Maximilian Alexander Gehrke</a> (<b>2021</b>). <i>Assessing Popular Chess Variants Using Deep Reinforcement Learning</i>. Master thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a>, <a class="external text" href="https://ml-research.github.io/papers/gehrke2021assessing.pdf" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70861.html" rel="nofollow">CrazyAra Crazyhouse UCI running on WinBoard 4.8.0?</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, May 30, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69754&amp;start=310.html" rel="nofollow">Re: New engine releases 2019</a> by <a href="Graham Banks.html" title="Graham Banks">Graham Banks</a>, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=76209&amp;start=199.html" rel="nofollow">Re: New engine releases &amp; news 2021</a> by <a href="G%C3%BCnther Simon.html" title="Günther Simon">Günther Simon</a>, <a href="CCC.html" title="CCC">CCC</a>, April 05, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77020.html" rel="nofollow">ClassicAra Chess Engine..World Record Download!!</a> by supersharp77, <a href="CCC.html" title="CCC">CCC</a>, April 06, 2021</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77020&amp;start=58.html" rel="nofollow">Re: ClassicAra Chess Engine..World Record Download!!</a> by <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="CCC.html" title="CCC">CCC</a>, May 20, 2021</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77020&amp;start=70.html" rel="nofollow">Re: ClassicAra Chess Engine..World Record Download!!</a> by <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="CCC.html" title="CCC">CCC</a>, May 25, 2021 <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77670.html" rel="nofollow">Has CrazyAra really improved because of MTGS ?</a> by George Pichard, <a href="CCC.html" title="CCC">CCC</a>, July 08, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=78027" rel="nofollow">CrazyAra, ClassicAra, MultiAra 0.9.5 release</a> by <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, August 26, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Engine">Chess Engine</span></h2>
+<ul><li> <a class="external text" href="https://crazyara.org/" rel="nofollow">CrazyAra - Crazyhouse Chess Engine</a></li>
+<li> <a class="external text" href="https://rise-of-light.de/projects/crazyara.html" rel="nofollow">Rise of light - CrazyAra - Chess Engine</a></li></ul>
+<h3><span class="mw-headline" id="GitHub">GitHub</span></h3>
+<ul><li> <a class="external text" href="https://github.com/QueensGambit/CrazyAra" rel="nofollow">GitHub - QueensGambit/CrazyAra: A Deep Learning UCI-Chess Variant Engine written in C++ &amp; Python</a></li>
+<li> <a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki" rel="nofollow">Home · QueensGambit/CrazyAra Wiki · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/QueensGambit/CrazyAra-Engine" rel="nofollow">GitHub - QueensGambit/CrazyAra-Engine: CrazyAra - A Deep Learning UCI-Chess Variant Engine written in C++</a></li></ul>
+<h3><span class="mw-headline" id="Reports">Reports</span></h3>
+<ul><li> <a class="external text" href="https://zhchess.blogspot.com/2018/12/crazyara-plays-jannlee-for-christmas.html" rel="nofollow">Crazyhouse Chess: CrazyAra plays JannLee for Christmas</a>, December 26, 2018</li>
+<li> <a class="external text" href="http://www.ke.tu-darmstadt.de/news/student-bot-beats-crazyhouse-champion.html" rel="nofollow">Student Bot beats Crazyhouse World Champion</a>, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a> </li>
+<li> <a class="external text" href="https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_145920.de.jsp" rel="nofollow">Schachmatt durch „CrazyAra“ – Informatik – Technische Universität Darmstadt</a>, February 19, 2019 (German)</li>
+<li> <a class="external text" href="https://nachrichten.idw-online.de/2019/02/19/schachmatt-durch-crazyara-kuenstliche-intelligenz-schlaegt-mehrfachen-weltmeister-im-einsetzschach/" rel="nofollow">Schachmatt durch CrazyAra: Künstliche Intelligenz schlägt mehrfachen Weltmeister im Einsetzschach</a> by  <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Informationsdienst_Wissenschaft" rel="nofollow">Informationsdienst Wissenschaft</a>, February 19, 2019 (German)</li>
+<li> <a class="external text" href="https://www.echo-online.de/lokales/darmstadt/darmstadter-studenten-entwickeln-schach-bot_20056672" rel="nofollow">Darmstädter Studenten entwickeln Schach-Bot</a> by Karin Walz, <a class="external text" href="https://www.echo-online.de/" rel="nofollow">Echo</a>, April 02, 2019 (German)</li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Ara_(bird)" rel="nofollow">Ara (bird) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Ara" rel="nofollow">Ara from Wikipedia</a></li>
+<li> <a href="Category:Weather Report.html" title="Category:Weather Report">Weather Report</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Birdland_(song)" rel="nofollow">Birdland</a>, <a class="external text" href="https://en.wikipedia.org/wiki/The_Midnight_Special_(TV_series)" rel="nofollow">The Midnight Special</a>, April 1977, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> lineup: <a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a>, <a href="Category:Wayne Shorter.html" title="Category:Wayne Shorter">Wayne Shorter</a>, <a href="Category:Jaco Pastorius.html" title="Category:Jaco Pastorius">Jaco Pastorius</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Alex_Acu%C3%B1a" rel="nofollow">Alex Acuña</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Manolo_Badrena" rel="nofollow">Manolo Badrena</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/0MOOSx85rqs?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Red-and-green_macaw" rel="nofollow">Red-and-green macaw</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Brookfield_Zoo" rel="nofollow">Brookfield Zoo</a>, <a class="external text" href="https://commons.wikimedia.org/wiki/File:Ara_chloroptera_-Brookfield_Zoo-8.jpg" rel="nofollow">Photo</a> by <a class="external text" href="https://www.flickr.com/photos/22321795@N04" rel="nofollow">Nimesh M</a>, July 05, 2008, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2017</b>). <i>Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</i>. <a class="external text" href="https://arxiv.org/abs/1712.01815" rel="nofollow">arXiv:1712.01815</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2018</b>). <i><a class="external text" href="http://science.sciencemag.org/content/362/6419/1140.html" rel="nofollow">A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_(journal)" rel="nofollow">Science</a>, Vol. 362, No. 6419</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra" rel="nofollow">GitHub - QueensGambit/CrazyAra: A Deep Learning UCI-Chess Variant Engine written in C++ &amp; Python</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://lichess.org/study/uAJmnF3w" rel="nofollow">CrazyAra Crazyhouse</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://zhchess.blogspot.com/2018/12/crazyara-plays-jannlee-for-christmas.html" rel="nofollow">Crazyhouse Chess: CrazyAra plays JannLee for Christmas</a>, December 26, 2018</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a> (<b>2019</b>). <i>Deep Reinforcement Learning for Crazyhouse</i>. Master thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a>, <a class="external text" href="https://ml-research.github.io/papers/czech2019deep.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/ddugovic/Stockfish" rel="nofollow">GitHub - ddugovic/Stockfish: BETA multi-variant fork of popular UCI chess engine; final release for now</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/releases" rel="nofollow">Releases · QueensGambit/CrazyAra · GitHub</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a href="Maximilian Langer.html" title="Maximilian Langer">Maximilian Langer</a> (<b>2021</b>). <i>Evaluation of Monte-Carlo Tree Search for Xiangqi</i>. B.Sc. thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a>, <a class="external text" href="https://ml-research.github.io/papers/langer2021xiangqi.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki/2.-Build-neural-network-inference-library" rel="nofollow">2. Build neural network inference library · QueensGambit/CrazyAra Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki/Input-representation" rel="nofollow">Input representation · QueensGambit/CrazyAra Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki/Model-architecture" rel="nofollow">Model architecture · QueensGambit/CrazyAra Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki/Output-representation" rel="nofollow">Output representation · QueensGambit/CrazyAra Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki/Network-visualization" rel="nofollow">Network visualization · QueensGambit/CrazyAra Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="Patrick Korus.html" title="Patrick Korus">Patrick Korus</a>, <a href="Kristian Kersting.html" title="Kristian Kersting">Kristian Kersting</a> (<b>2020</b>). <i>Monte-Carlo Graph Search for AlphaZero</i>. <a class="external text" href="https://arxiv.org/abs/2012.11045" rel="nofollow">arXiv:2012.11045</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/QueensGambit/CrazyAra/wiki/Engine-settings" rel="nofollow">Engine settings · QueensGambit/CrazyAra Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=77020&amp;start=58.html" rel="nofollow">Re: ClassicAra Chess Engine..World Record Download!!</a> by <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, <a href="CCC.html" title="CCC">CCC</a>, May 20, 2021</span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=78027" rel="nofollow">CrazyAra, ClassicAra, MultiAra 0.9.5 release</a> by <a href="Johannes Czech.html" title="Johannes Czech">Johannes Czech</a>, August 26, 2021</span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="https://tcec-chess.com/#div=l4&amp;game=127&amp;season=21" rel="nofollow">Drofa 3.0.0 vs ClassicAra 0.9.2.post1 - TCEC Season 21 - League 4</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722020022
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.090 seconds
+Real time usage: 0.813 seconds
+Preprocessor visited node count: 344/1000000
+Preprocessor generated node count: 750/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7831-0!canonical and timestamp 20240722020021 and revision id 25863
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=CrazyAra&amp;oldid=25863">https://www.chessprogramming.org/index.php?title=CrazyAra&amp;oldid=25863</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:GPL.html" title="Category:GPL">GPL</a></li><li><a href="Category:Python.html" title="Category:Python">Python</a></li><li><a href="Category:GPU.html" title="Category:GPU">GPU</a></li><li><a href="Category:DCNN.html" title="Category:DCNN">DCNN</a></li><li><a href="Category:MCTS.html" title="Category:MCTS">MCTS</a></li><li><a href="Category:Crazyhouse.html" title="Category:Crazyhouse">Crazyhouse</a></li><li><a href="Category:Chess960.html" title="Category:Chess960">Chess960</a></li><li><a href="Category:Xiangqi.html" title="Category:Xiangqi">Xiangqi</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a href="Category:Linux.html" title="Category:Linux">Linux</a></li><li><a href="Category:Mac.html" title="Category:Mac">Mac</a></li><li><a href="Category:Thesis.html" title="Category:Thesis">Thesis</a></li><li><a href="Category:Bird.html" title="Category:Bird">Bird</a></li><li><a href="Category:Weather Report.html" title="Category:Weather Report">Weather Report</a></li><li><a href="Category:Jaco Pastorius.html" title="Category:Jaco Pastorius">Jaco Pastorius</a></li><li><a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a></li><li><a href="Category:Wayne Shorter.html" title="Category:Wayne Shorter">Wayne Shorter</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=CrazyAra&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="CrazyAra.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:CrazyAra&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="CrazyAra.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=CrazyAra&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=CrazyAra&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/CrazyAra.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/CrazyAra.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=CrazyAra&amp;oldid=25863.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=CrazyAra&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 October 2021, at 12:23.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=CrazyAra&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.090","walltime":"0.813","ppvisitednodes":{"value":344,"limit":1000000},"ppgeneratednodes":{"value":750,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722020022","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":54});});</script>
+</body>
+</html>

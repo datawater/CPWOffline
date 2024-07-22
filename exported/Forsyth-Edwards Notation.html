@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Forsyth-Edwards Notation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Forsyth-Edwards_Notation","wgTitle":"Forsyth-Edwards Notation","wgCurRevisionId":26430,"wgRevisionId":26430,"wgArticleId":1248,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Forsyth-Edwards_Notation","wgRelevantArticleId":1248,"wgRequestId":"Zp7DWH1htEhTE3yaocy28QAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.FenTT.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Forsyth-Edwards_Notation rootpage-Forsyth-Edwards_Notation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Forsyth-Edwards Notation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Chess Position.html" title="Chess Position">Position</a> * Forsyth-Edwards Notation</b>
+</p><p><b>Forsyth-Edwards Notation</b> (<b>FEN</b>) describes a <a href="Chess Position.html" title="Chess Position">Chess Position</a>. It is an one-line <a class="external text" href="https://en.wikipedia.org/wiki/ASCII" rel="nofollow">ASCII</a>-string. <b>FEN</b> is based on a system created by Scotsman <a href="David Forsyth.html" title="David Forsyth">David Forsyth</a> in the 19th century. <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> specified the <b>FEN standard</b> for computer chess applications as part of the <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> .
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#FEN Syntax"><span class="tocnumber">1</span> <span class="toctext">FEN Syntax</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Piece Placement"><span class="tocnumber">1.1</span> <span class="toctext">Piece Placement</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Side to move"><span class="tocnumber">1.2</span> <span class="toctext">Side to move</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Castling ability"><span class="tocnumber">1.3</span> <span class="toctext">Castling ability</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#En passant target square"><span class="tocnumber">1.4</span> <span class="toctext">En passant target square</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Halfmove Clock"><span class="tocnumber">1.5</span> <span class="toctext">Halfmove Clock</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Fullmove counter"><span class="tocnumber">1.6</span> <span class="toctext">Fullmove counter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Samples"><span class="tocnumber">2</span> <span class="toctext">Samples</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Chess960"><span class="tocnumber">3</span> <span class="toctext">Chess960</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Shredder-FEN"><span class="tocnumber">3.1</span> <span class="toctext">Shredder-FEN</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#X-FEN"><span class="tocnumber">3.2</span> <span class="toctext">X-FEN</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#1993 ..."><span class="tocnumber">5.1</span> <span class="toctext">1993 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2020 ..."><span class="tocnumber">5.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="FEN_Syntax">FEN Syntax</span></h1>
+<p>One FEN string or record consists of <b>six</b> fields separated by a space character. The first four fields of the FEN specification are the same as the first four fields of the <a href="Extended Position Description.html" title="Extended Position Description">EPD</a> specification.
+</p><p><i><a class="external text" href="https://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols" rel="nofollow">Terminal and nonterminal symbols</a> of a variant of <a class="external text" href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form" rel="nofollow">BNF</a> below are embedded in ' ' resp. &lt; &gt;.</i>
+</p>
+<pre>
+&lt;FEN&gt; ::=  &lt;Piece Placement&gt;
+       ' ' &lt;Side to move&gt;
+       ' ' &lt;Castling ability&gt;
+       ' ' &lt;En passant target square&gt;
+       ' ' &lt;Halfmove clock&gt;
+       ' ' &lt;Fullmove counter&gt;
+</pre>
+<p><span id="PiecePlacement"></span>
+</p>
+<h2><span class="mw-headline" id="Piece_Placement">Piece Placement</span></h2>
+<p>The Piece Placement is determined rank by rank in <a href="Big-endian.html" title="Big-endian">big-endian</a> order, that is starting at the 8th rank down to the first rank. Each rank is separated by the terminal symbol '/' (slash). One rank, scans piece placement in <a href="Little-endian.html" title="Little-endian">little-endian</a> file-order from the A to H.
+</p><p>A decimal digit counts consecutive empty squares, the pieces are identified by a single letter from standard English names for chess pieces as used in the <a href="Algebraic Chess Notation.html" title="Algebraic Chess Notation">Algebraic Chess Notation</a>. Uppercase letters are for white pieces, lowercase letters for black pieces.
+</p>
+<pre>
+&lt;Piece Placement&gt; ::= &lt;rank8&gt;'/'&lt;rank7&gt;'/'&lt;rank6&gt;'/'&lt;rank5&gt;'/'&lt;rank4&gt;'/'&lt;rank3&gt;'/'&lt;rank2&gt;'/'&lt;rank1&gt;
+&lt;ranki&gt;       ::= [&lt;digit17&gt;]&lt;piece&gt; {[&lt;digit17&gt;]&lt;piece&gt;} [&lt;digit17&gt;] | '8'
+&lt;piece&gt;       ::= &lt;white Piece&gt; | &lt;black Piece&gt;
+&lt;digit17&gt;     ::= '1' | '2' | '3' | '4' | '5' | '6' | '7'
+&lt;white Piece&gt; ::= 'P' | 'N' | 'B' | 'R' | 'Q' | 'K'
+&lt;black Piece&gt; ::= 'p' | 'n' | 'b' | 'r' | 'q' | 'k'
+</pre>
+<p><span id="Sidetomove"></span>
+</p>
+<h2><span class="mw-headline" id="Side_to_move">Side to move</span></h2>
+<p><a href="Side to move.html" title="Side to move">Side to move</a> is one lowercase letter for either White ('w') or Black ('b').
+</p>
+<pre>
+&lt;Side to move&gt; ::= {'w' | 'b'}
+</pre>
+<p><span id="Castling"></span>
+</p>
+<h2><span class="mw-headline" id="Castling_ability">Castling ability</span></h2>
+<p>If neither side can castle, the symbol '-' is used, otherwise each of four individual <a href="Castling Rights.html" title="Castling Rights">castling rights</a> for king and queen castling for both sides are indicated by a sequence of one to four letters.
+</p>
+<pre>
+&lt;Castling ability&gt; ::= '-' | ['K'] ['Q'] ['k'] ['q'] (1..4)
+</pre>
+<p><span id="Enpassanttargetsquare"></span>
+</p>
+<h2><span class="mw-headline" id="En_passant_target_square">En passant target square</span></h2>
+<p>The <a href="En passant.html" title="En passant">en passant</a> target square is specified after a double push of a pawn, no matter whether an en passant capture is really possible or not <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> . Other moves than double pawn pushes imply the symbol '-' for this FEN field.
+</p>
+<pre>
+&lt;En passant target square&gt; ::= '-' | &lt;epsquare&gt;
+&lt;epsquare&gt;   ::= &lt;fileLetter&gt; &lt;eprank&gt;
+&lt;fileLetter&gt; ::= 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h'
+&lt;eprank&gt;     ::= '3' | '6'
+</pre>
+<p><span id="HalfmoveClock"></span>
+</p>
+<h2><span class="mw-headline" id="Halfmove_Clock">Halfmove Clock</span></h2>
+<p>The <a href="Halfmove Clock.html" title="Halfmove Clock">halfmove clock</a> specifies a decimal number of half moves with respect to the <a href="Fifty-move Rule.html" title="Fifty-move Rule">50 move draw rule</a>. It is reset to zero after a capture or a pawn move and incremented otherwise.
+</p>
+<pre>
+&lt;Halfmove Clock&gt; ::= &lt;digit&gt; {&lt;digit&gt;}
+&lt;digit&gt; ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+</pre>
+<p><span id="Fullmovecounter"></span>
+</p>
+<h2><span class="mw-headline" id="Fullmove_counter">Fullmove counter</span></h2>
+<p>The number of the full moves in a game. It starts at 1, and is incremented after each Black's move.
+</p>
+<pre>
+&lt;Fullmove counter&gt; ::= &lt;digit19&gt; {&lt;digit&gt;}
+&lt;digit19&gt; ::= '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+&lt;digit&gt;   ::= '0' | &lt;digit19&gt;
+</pre>
+<h1><span class="mw-headline" id="Samples">Samples</span></h1>
+<p>FEN strings of Starting Position and after 1.e4 c5 2.Nf3:
+</p>
+<table class="fentt" style="font-size:16pt"><tr><td class="board" style="width: 8em;border-top:none !important;border-bottom:none !important;border-left:none !important;border-right:none !important;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg"><br/><br/>        <br/>        <br/>        <br/>        <br/><br/><br/></div><div class="pcfg">♜♞♝♛♚♝♞♜<br/>♟♟♟♟♟♟♟♟<br/>        <br/>        <br/>        <br/>        <br/>♙♙♙♙♙♙♙♙<br/>♖♘♗♕♔♗♘♖<br/></div></div></td></tr></table>
+<pre>rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+</pre>
+<table class="fentt" style="font-size:16pt"><tr><td class="board" style="width: 8em;border-top:none !important;border-bottom:none !important;border-left:none !important;border-right:none !important;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg"><br/><br/>        <br/>        <br/>       <br/>        <br/> <br/><br/></div><div class="pcfg">♜♞♝♛♚♝♞♜<br/>♟♟♟♟♟♟♟♟<br/>        <br/>        <br/>    ♙   <br/>        <br/>♙♙♙♙ ♙♙♙<br/>♖♘♗♕♔♗♘♖<br/></div></div></td></tr></table> 1.e4
+<pre>rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1
+</pre>
+<table class="fentt" style="font-size:16pt"><tr><td class="board" style="width: 8em;border-top:none !important;border-bottom:none !important;border-left:none !important;border-right:none !important;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg"><br/> <br/>        <br/>       <br/>       <br/>        <br/> <br/><br/></div><div class="pcfg">♜♞♝♛♚♝♞♜<br/>♟♟ ♟♟♟♟♟<br/>        <br/>  ♟     <br/>    ♙   <br/>        <br/>♙♙♙♙ ♙♙♙<br/>♖♘♗♕♔♗♘♖<br/></div></div></td></tr></table> 1.e4 c5
+<pre>rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2
+</pre>
+<table class="fentt" style="font-size:16pt"><tr><td class="board" style="width: 8em;border-top:none !important;border-bottom:none !important;border-left:none !important;border-right:none !important;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg"><br/> <br/>        <br/>       <br/>       <br/>       <br/> <br/> <br/></div><div class="pcfg">♜♞♝♛♚♝♞♜<br/>♟♟ ♟♟♟♟♟<br/>        <br/>  ♟     <br/>    ♙   <br/>     ♘  <br/>♙♙♙♙ ♙♙♙<br/>♖♘♗♕♔♗ ♖<br/></div></div></td></tr></table> 1.e4 c5 2.Nf3
+<pre>rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2 
+</pre>
+<h1><span class="mw-headline" id="Chess960">Chess960</span></h1>
+<h2><span class="mw-headline" id="Shredder-FEN">Shredder-FEN</span></h2>
+<p><b>Shredder-FEN</b> or <b>SMK-FEN</b> is an extension of FEN covering <a href="Chess960.html" title="Chess960">Chess960</a>, introduced by <a href="Shredder.html" title="Shredder">Shredder</a> author <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a> (SMK) in 2005. 
+Shredder-FEN uses different <a href="Castling Rights.html" title="Castling Rights">castling right</a> characters, that is instead of <b>KQkq</b>, upper case and lower case <a href="Files.html" title="Files">file characters</a> of the affected rooks for white and black castling rights, and became a <a class="external text" href="https://en.wikipedia.org/wiki/De_facto_standard" rel="nofollow">de facto standard</a> supported by most <a href="GUI.html" title="GUI">GUIs</a> and <a href="Protocols.html" title="Protocols">protocols</a>.
+</p>
+<h2><span class="mw-headline" id="X-FEN">X-FEN</span></h2>
+<p>The earlier <a class="external text" href="https://en.wikipedia.org/wiki/X-FEN" rel="nofollow">X-FEN</a> extension was introduced by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a> in 2003, and covers not only <a href="Chess960.html" title="Chess960">Chess960</a> but also 10x8 variants. Its author dogmatically claimed upward compatibility with standard chess <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>, still using the <b>KQkq</b> <a href="Castling Rights.html" title="Castling Rights">castling right</a> characters for all Chess960 positions. Further, X-FEN introduced a changed <a href="En passant.html" title="En passant">en passant</a> target square semantic, which is only specified after a double pawn push was made beside an opponent pawn that might capture en passant if legal, that is not leaving its king in check. 
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Extended Position Description.html" title="Extended Position Description">Extended Position Description</a> (EPD)</li>
+<li> <a class="new" href="index.php?title=Forsyth-Edwards Expanded Notation&amp;action=edit&amp;redlink=1.html" title="Forsyth-Edwards Expanded Notation (page does not exist)">Forsyth-Edwards Expanded Notation</a> (FEEN)</li>
+<li> <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> (PGN)</li>
+<li> <a href="BMI2.html#FEN Compression" title="BMI2">BMI2 FEN Compression</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1993_...">1993 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/MkLV6dIwGU4/GfbtTyR6o6sJ" rel="nofollow">Revised PGN standard available</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, December 20, 1993 » <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=53266" rel="nofollow">Full definition for FEN</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, May 27, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=138460" rel="nofollow">File name extensions</a> by <a href="Leen Ammeraal.html" title="Leen Ammeraal">Leen Ammeraal</a>, <a href="CCC.html" title="CCC">CCC</a>, November 14, 2000 </li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=314898" rel="nofollow">Ten years later: revising EPD/FEN/PGN</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=323898" rel="nofollow">Making positions in eps</a> by <a href="Jan Renze Steenhuisen.html" title="Jan Renze Steenhuisen">Renze Steenhuisen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2003 » <a href="Forsyth-Edwards Notation.html#FEN2EPS" title="Forsyth-Edwards Notation">Fen2eps</a> </li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=437213" rel="nofollow">Why to use compatible X-FEN (in Chess960)</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, July 17, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=439792" rel="nofollow">Chess960: X-FEN rules international</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, August 03, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=439995" rel="nofollow">contradicting FEN and SMK-FEN</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, August 04, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=459898" rel="nofollow">Chess960: Arena castle vs X-FEN castle</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13923.html" rel="nofollow">fen to fen functions</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, May 21, 2007</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31521.html" rel="nofollow">where FEN is not consistent</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, January 06, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37879.html" rel="nofollow">FEN string</a> by colin, <a href="CCC.html" title="CCC">CCC</a>, January 30, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=396838&amp;t=37879.html" rel="nofollow">No more pseudolegal en passant target foolishness</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38488.html" rel="nofollow">What's wrong with this EPD?</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, March 20, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43417.html" rel="nofollow">Question about Shredder FEN and X-FEN</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 22, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47622&amp;start=6.html" rel="nofollow">Re: Causes for inconsistent benchmark signatures</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, March 27, 2013 » <a href="En passant.html" title="En passant">En passant</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49083.html" rel="nofollow">The maximum character length of a FEN string</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 24, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53120.html" rel="nofollow">Is 79 maximal?</a> by <a href="Louis Zulli.html" title="Louis Zulli">Louis Zulli</a>, <a href="CCC.html" title="CCC">CCC</a>, July 29, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54779.html" rel="nofollow">PGN to FEN (with Evaluation)?</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2014 » <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a>, <a href="Python.html" title="Python">Python</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57065.html" rel="nofollow">Binary FEN</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, July 24, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59255.html" rel="nofollow">Any tool to convert FEN strings to diagrams?</a> by Ted Wong, <a href="CCC.html" title="CCC">CCC</a>, February 15, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64003.html" rel="nofollow">FEN - Flipper for Windows</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, May 17, 2017 » <a href="Color Flipping.html" title="Color Flipping">Color Flipping</a>, <a href="Extended Position Description.html" title="Extended Position Description">EPD</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72308.html" rel="nofollow">50 move counter in FEN and GUIs</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73552.html" rel="nofollow">FEN and 3rd repetition rule. No information?</a> by <a class="new" href="index.php?title=Luis Babboni&amp;action=edit&amp;redlink=1.html" title="Luis Babboni (page does not exist)">Luis Babboni</a>, <a href="CCC.html" title="CCC">CCC</a>, April 03, 2020 » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76892.html" rel="nofollow">FEN compression</a> by lucasart, <a href="CCC.html" title="CCC">CCC</a>, March 17, 2021 » <a href="BMI2.html#FEN Compression" title="BMI2">FEN Compression</a>, <a href="NNUE.html#Training" title="NNUE">NNUE Training</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79627" rel="nofollow">Required fields in Forsyth-Edwards Notation (FEN)</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, April 02, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Forsyth-Edwards_Notation" rel="nofollow">Forsyth-Edwards Notation from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.fam-petzke.de/cp fen en.shtml.html" rel="nofollow">Chess Programming - Chess Board Implementation : A FEN parser</a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a></li>
+<li> <a class="external text" href="http://mathieupage.com/?p=65.html" rel="nofollow">FEN Database</a> by <a href="Mathieu Pag%C3%A9.html" title="Mathieu Pagé">Mathieu Pagé</a></li>
+<li> <a class="external text" href="http://www.gilith.com/chess/diagrams/.html" rel="nofollow">Gilith - Chess Diagram Maker</a> by <a href="Joe Leslie-Hurd.html" title="Joe Leslie-Hurd">Joe Leslie-Hurd</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.gilith.com/software/fen2img/.html" rel="nofollow">fen2img Chess Diagram Maker</a> by <a href="Joe Leslie-Hurd.html" title="Joe Leslie-Hurd">Joe Leslie-Hurd</a></dd></dl>
+<ul><li> <a class="external text" href="http://webchess.freehostia.com/diag/index.php.html" rel="nofollow">Chess Diagram Generator</a></li>
+<li> <a class="external text" href="https://github.com/bagaturchess/ChessBoardScanner" rel="nofollow">GitHub - bagaturchess/ChessBoardScanner: Java based Chess Board Scanner, which converts 2D chess board image into a machine readable format a.k.a. Forsyth–Edwards Notation (FEN)</a> by <a href="Krasimir Topchiyski.html" title="Krasimir Topchiyski">Krasimir Topchiyski</a></li>
+<li> <a class="external text" href="http://chessforeva.blogspot.de/2009/10/3d-chess-diagram-from-fen.html.html" rel="nofollow">Chessforeva: 3D chess diagram from FEN</a> » <a href="3D Graphics Board.html" title="3D Graphics Board">3D Graphics Board</a></li>
+<li> <span id="FEN2EPS"></span><a class="external text" href="http://fen2eps.sourceforge.net/.html" rel="nofollow">Fen2eps</a> by <a class="new" href="index.php?title=Dirk Baechle&amp;action=edit&amp;redlink=1.html" title="Dirk Baechle (page does not exist)">Dirk Baechle</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.thechessdrum.net/PGN Reference.txt.html" rel="nofollow">Standard: Portable Game Notation Specification and Implementation Guide</a> 16.1: FEN by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=219015&amp;t=23806.html" rel="nofollow">Re: Arasan test suite update</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, September 19, 2008</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31521.html" rel="nofollow">where FEN is not consistent</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, January 06, 2010</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=396838&amp;t=37879.html" rel="nofollow">No more pseudolegal en passant target foolishness</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2011</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=437213" rel="nofollow">Why to use compatible X-FEN (in Chess960)</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, July 17, 2005</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Encapsulated_PostScript" rel="nofollow">Encapsulated PostScript from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Chess Position.html" title="Chess Position">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722141313
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.019 seconds
+Real time usage: 0.020 seconds
+Preprocessor visited node count: 277/1000000
+Preprocessor generated node count: 532/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1248-0!canonical and timestamp 20240722141313 and revision id 26430
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Forsyth-Edwards_Notation&amp;oldid=26430">https://www.chessprogramming.org/index.php?title=Forsyth-Edwards_Notation&amp;oldid=26430</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Forsyth-Edwards+Notation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Forsyth-Edwards Notation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Forsyth-Edwards Notation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Forsyth-Edwards Notation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Forsyth-Edwards Notation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Forsyth-Edwards Notation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Forsyth-Edwards Notation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Forsyth-Edwards Notation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Forsyth-Edwards Notation&amp;oldid=26430.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Forsyth-Edwards Notation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 5 April 2022, at 08:47.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Forsyth-Edwards_Notation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.019","walltime":"0.020","ppvisitednodes":{"value":277,"limit":1000000},"ppgeneratednodes":{"value":532,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722141313","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

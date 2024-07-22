@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>GPU - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"GPU","wgTitle":"GPU","wgCurRevisionId":27032,"wgRevisionId":27032,"wgArticleId":4980,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Videos"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"GPU","wgRelevantArticleId":4980,"wgRequestId":"Zp7DfUKfcgdPZR8tVSrq8gAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-GPU rootpage-GPU skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">GPU</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Hardware.html" title="Hardware">Hardware</a> * GPU</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:NvidiaTesla.jpg.html"><img alt="" class="thumbimage" height="103" src="wikipedia/commons/thumb/3/32/NvidiaTesla.jpg/300px-NvidiaTesla.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/NvidiaTesla.jpg/450px-NvidiaTesla.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/NvidiaTesla.jpg/600px-NvidiaTesla.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:NvidiaTesla.jpg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/Nvidia_Tesla" rel="nofollow">Nvidia Tesla</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>GPU</b> (Graphics Processing Unit),<br/>
+a specialized processor initially intended for fast <a class="external text" href="https://en.wikipedia.org/wiki/Image_processing" rel="nofollow">image processing</a>. GPUs may have more raw computing power than general purpose <a class="external text" href="https://en.wikipedia.org/wiki/Central_processing_unit" rel="nofollow">CPUs</a> but need a specialized and parallelized way of programming. <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a> has proven that a <a href="Best-First.html" title="Best-First">Best-first</a> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a> (MCTS) with <a href="Deep Learning.html" title="Deep Learning">deep learning</a> methodology will work with GPU architectures.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#GPU in Computer Chess"><span class="tocnumber">2</span> <span class="toctext">GPU in Computer Chess</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#GPU Chess Engines"><span class="tocnumber">3</span> <span class="toctext">GPU Chess Engines</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#GPGPU"><span class="tocnumber">4</span> <span class="toctext">GPGPU</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Khronos OpenCL"><span class="tocnumber">4.1</span> <span class="toctext">Khronos OpenCL</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AMD"><span class="tocnumber">4.2</span> <span class="toctext">AMD</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Apple"><span class="tocnumber">4.3</span> <span class="toctext">Apple</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Intel"><span class="tocnumber">4.4</span> <span class="toctext">Intel</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Nvidia"><span class="tocnumber">4.5</span> <span class="toctext">Nvidia</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Further"><span class="tocnumber">4.6</span> <span class="toctext">Further</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Hardware Model"><span class="tocnumber">5</span> <span class="toctext">Hardware Model</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Hardware Examples"><span class="tocnumber">5.1</span> <span class="toctext">Hardware Examples</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Wavefront and Warp"><span class="tocnumber">5.2</span> <span class="toctext">Wavefront and Warp</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Programming Model"><span class="tocnumber">6</span> <span class="toctext">Programming Model</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Thread Examples"><span class="tocnumber">6.1</span> <span class="toctext">Thread Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Memory Model"><span class="tocnumber">7</span> <span class="toctext">Memory Model</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Memory Examples"><span class="tocnumber">7.1</span> <span class="toctext">Memory Examples</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Unified Memory"><span class="tocnumber">7.2</span> <span class="toctext">Unified Memory</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Instruction Throughput"><span class="tocnumber">8</span> <span class="toctext">Instruction Throughput</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Integer Instruction Throughput"><span class="tocnumber">8.1</span> <span class="toctext">Integer Instruction Throughput</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Floating-Point Instruction Throughput"><span class="tocnumber">8.2</span> <span class="toctext">Floating-Point Instruction Throughput</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Throughput Examples"><span class="tocnumber">8.3</span> <span class="toctext">Throughput Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Tensors"><span class="tocnumber">9</span> <span class="toctext">Tensors</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Nvidia TensorCores"><span class="tocnumber">9.1</span> <span class="toctext">Nvidia TensorCores</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#AMD Matrix Cores"><span class="tocnumber">9.2</span> <span class="toctext">AMD Matrix Cores</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Intel XMX Cores"><span class="tocnumber">9.3</span> <span class="toctext">Intel XMX Cores</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Host-Device Latencies"><span class="tocnumber">10</span> <span class="toctext">Host-Device Latencies</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#Deep Learning"><span class="tocnumber">11</span> <span class="toctext">Deep Learning</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Architectures"><span class="tocnumber">12</span> <span class="toctext">Architectures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="#AMD 2"><span class="tocnumber">12.1</span> <span class="toctext">AMD</span></a>
+<ul>
+<li class="toclevel-3 tocsection-31"><a href="#CDNA3"><span class="tocnumber">12.1.1</span> <span class="toctext">CDNA3</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#Navi 3x RDNA3"><span class="tocnumber">12.1.2</span> <span class="toctext">Navi 3x RDNA3</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#CDNA2"><span class="tocnumber">12.1.3</span> <span class="toctext">CDNA2</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#CDNA"><span class="tocnumber">12.1.4</span> <span class="toctext">CDNA</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#Navi 2x RDNA2"><span class="tocnumber">12.1.5</span> <span class="toctext">Navi 2x RDNA2</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#Navi RDNA"><span class="tocnumber">12.1.6</span> <span class="toctext">Navi RDNA</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#Vega GCN 5th gen"><span class="tocnumber">12.1.7</span> <span class="toctext">Vega GCN 5th gen</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#Polaris GCN 4th gen"><span class="tocnumber">12.1.8</span> <span class="toctext">Polaris GCN 4th gen</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#Southern Islands GCN 1st gen"><span class="tocnumber">12.1.9</span> <span class="toctext">Southern Islands GCN 1st gen</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-40"><a href="#Apple 2"><span class="tocnumber">12.2</span> <span class="toctext">Apple</span></a>
+<ul>
+<li class="toclevel-3 tocsection-41"><a href="#M series"><span class="tocnumber">12.2.1</span> <span class="toctext">M series</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-42"><a href="#ARM"><span class="tocnumber">12.3</span> <span class="toctext">ARM</span></a>
+<ul>
+<li class="toclevel-3 tocsection-43"><a href="#Valhall .282019.29"><span class="tocnumber">12.3.1</span> <span class="toctext">Valhall (2019)</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#Bifrost .282016.29"><span class="tocnumber">12.3.2</span> <span class="toctext">Bifrost (2016)</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#Midgard .282012.29"><span class="tocnumber">12.3.3</span> <span class="toctext">Midgard (2012)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-46"><a href="#Intel 2"><span class="tocnumber">12.4</span> <span class="toctext">Intel</span></a>
+<ul>
+<li class="toclevel-3 tocsection-47"><a href="#Xe"><span class="tocnumber">12.4.1</span> <span class="toctext">Xe</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-48"><a href="#Nvidia 2"><span class="tocnumber">12.5</span> <span class="toctext">Nvidia</span></a>
+<ul>
+<li class="toclevel-3 tocsection-49"><a href="#Grace Hopper Superchip"><span class="tocnumber">12.5.1</span> <span class="toctext">Grace Hopper Superchip</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#Ada Lovelace Architecture"><span class="tocnumber">12.5.2</span> <span class="toctext">Ada Lovelace Architecture</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#Hopper Architecture"><span class="tocnumber">12.5.3</span> <span class="toctext">Hopper Architecture</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#Ampere Architecture"><span class="tocnumber">12.5.4</span> <span class="toctext">Ampere Architecture</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="#Turing Architecture"><span class="tocnumber">12.5.5</span> <span class="toctext">Turing Architecture</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#Volta Architecture"><span class="tocnumber">12.5.6</span> <span class="toctext">Volta Architecture</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="#Pascal Architecture"><span class="tocnumber">12.5.7</span> <span class="toctext">Pascal Architecture</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="#Maxwell Architecture"><span class="tocnumber">12.5.8</span> <span class="toctext">Maxwell Architecture</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-57"><a href="#PowerVR"><span class="tocnumber">12.6</span> <span class="toctext">PowerVR</span></a>
+<ul>
+<li class="toclevel-3 tocsection-58"><a href="#PowerVR 2"><span class="tocnumber">12.6.1</span> <span class="toctext">PowerVR</span></a></li>
+<li class="toclevel-3 tocsection-59"><a href="#IMG"><span class="tocnumber">12.6.2</span> <span class="toctext">IMG</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-60"><a href="#Qualcomm"><span class="tocnumber">12.7</span> <span class="toctext">Qualcomm</span></a>
+<ul>
+<li class="toclevel-3 tocsection-61"><a href="#Adreno"><span class="tocnumber">12.7.1</span> <span class="toctext">Adreno</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-62"><a href="#Vivante Corporation"><span class="tocnumber">12.8</span> <span class="toctext">Vivante Corporation</span></a>
+<ul>
+<li class="toclevel-3 tocsection-63"><a href="#GC-Series"><span class="tocnumber">12.8.1</span> <span class="toctext">GC-Series</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-64"><a href="#See also"><span class="tocnumber">13</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-65"><a href="#Publications"><span class="tocnumber">14</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-66"><a href="#1986"><span class="tocnumber">14.1</span> <span class="toctext">1986</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#1990"><span class="tocnumber">14.2</span> <span class="toctext">1990</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#2008 ..."><span class="tocnumber">14.3</span> <span class="toctext">2008 ...</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#2010..."><span class="tocnumber">14.4</span> <span class="toctext">2010...</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#2015 ..."><span class="tocnumber">14.5</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-71"><a href="#Forum Posts"><span class="tocnumber">15</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-72"><a href="#2005 ..."><span class="tocnumber">15.1</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#2010 ..."><span class="tocnumber">15.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#2015 ... 2"><span class="tocnumber">15.3</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#2020 ..."><span class="tocnumber">15.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-76"><a href="#External Links"><span class="tocnumber">16</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-77"><a href="#OpenCL"><span class="tocnumber">16.1</span> <span class="toctext">OpenCL</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#CUDA"><span class="tocnumber">16.2</span> <span class="toctext">CUDA</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#Deep Learning 2"><span class="tocnumber">16.3</span> <span class="toctext">Deep Learning</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#Game Programming"><span class="tocnumber">16.4</span> <span class="toctext">Game Programming</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#Chess Programming"><span class="tocnumber">16.5</span> <span class="toctext">Chess Programming</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-82"><a href="#References"><span class="tocnumber">17</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="History">History</span></h1>
+<p>In the 1970s and 1980s RAM was expensive and Home Computers used custom graphics chips to operate directly on registers/memory without a dedicated frame buffer resp. texture buffer, like  <a class="external text" href="https://en.wikipedia.org/wiki/Television_Interface_Adaptor" rel="nofollow">TIA</a>in the <a href="Atari 8-bit.html" title="Atari 8-bit">Atari VCS</a> gaming system, <a class="external text" href="https://en.wikipedia.org/wiki/CTIA_and_GTIA" rel="nofollow">GTIA</a>+<a class="external text" href="https://en.wikipedia.org/wiki/ANTIC" rel="nofollow">ANTIC</a> in the <a href="Atari 8-bit.html" title="Atari 8-bit">Atari 400/800</a> series, or <a class="external text" href="https://en.wikipedia.org/wiki/Original_Chip_Set#Denise" rel="nofollow">Denise</a>+<a class="external text" href="https://en.wikipedia.org/wiki/Original_Chip_Set#Agnus" rel="nofollow">Agnus</a> in the <a href="Amiga.html" title="Amiga">Commodore Amiga</a> series. The 1990s would make 3D graphics and 3D modeling more popular, especially for video games. Cards specifically designed to accelerate 3D math, such as <a class="external text" href="https://en.wikipedia.org/wiki/IMPACT_(computer_graphics)" rel="nofollow">SGI Impact</a> (1995) in 3D graphics-workstations or <a class="external text" href="https://en.wikipedia.org/wiki/3dfx#Voodoo_Graphics_PCI" rel="nofollow">3dfx Voodoo</a> (1996) for playing 3D games on PCs, emerged. Some game engines could use instead the <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD-capabilities</a> of CPUs such as the <a href="Intel.html" title="Intel">Intel</a> <a href="MMX.html" title="MMX">MMX</a> instruction set or <a href="AMD.html" title="AMD">AMD's</a> <a href="X86.html#3DNow.21" title="X86">3DNow!</a> for <a class="external text" href="https://en.wikipedia.org/wiki/Real-time_computer_graphics" rel="nofollow">real-time rendering</a>. Sony's 3D capable chip <a class="external text" href="https://en.wikipedia.org/wiki/PlayStation_technical_specifications#Graphics_processing_unit_(GPU)" rel="nofollow">GTE</a> used in the PlayStation (1994) and Nvidia's 2D/3D combi chips like <a class="external text" href="https://en.wikipedia.org/wiki/NV1" rel="nofollow">NV1</a> (1995) coined the term GPU for 3D graphics hardware acceleration. With the advent of the <a class="external text" href="https://en.wikipedia.org/wiki/Unified_shader_model" rel="nofollow">unified shader architecture</a>, like in Nvidia <a class="external text" href="https://en.wikipedia.org/wiki/Tesla_(microarchitecture)" rel="nofollow">Tesla</a> (2006), ATI/AMD <a class="external text" href="https://en.wikipedia.org/wiki/TeraScale_(microarchitecture)" rel="nofollow">TeraScale</a> (2007) or Intel <a class="external text" href="https://en.wikipedia.org/wiki/Intel_GMA#GMA_X3000" rel="nofollow">GMA X3000</a> (2006), GPGPU frameworks like <a class="external text" href="https://en.wikipedia.org/wiki/CUDA" rel="nofollow">CUDA</a> and <a href="OpenCL.html" title="OpenCL">OpenCL</a> emerged and gained in popularity.
+</p>
+<h1><span class="mw-headline" id="GPU_in_Computer_Chess">GPU in Computer Chess</span></h1>
+<p>There are in main four ways how to use a GPU for chess:
+</p>
+<ul><li> As an accelerator in <a href="Leela Chess Zero.html" title="Leela Chess Zero">Lc0</a>: run a neural network for position evaluation on GPU</li>
+<li> Offload the search in <a href="Zeta.html" title="Zeta">Zeta</a>: run a parallel game tree search with move generation and position evaluation on GPU</li>
+<li> As a hybrid in <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=64983&amp;start=4.html#p729152" rel="nofollow">perft_gpu</a>: expand the game tree to a certain degree on CPU and offload to GPU to compute the sub-tree</li>
+<li> Neural network training such as <a class="external text" href="https://github.com/glinscott/nnue-pytorch" rel="nofollow">Stockfish NNUE trainer in Pytorch</a><sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> or <a class="external text" href="https://github.com/LeelaChessZero/lczero-training" rel="nofollow">Lc0 TensorFlow Training</a></li></ul>
+<h1><span class="mw-headline" id="GPU_Chess_Engines">GPU Chess Engines</span></h1>
+<ul><li> <a href="Category:GPU.html" title="Category:GPU">Category:GPU</a></li></ul>
+<h1><span class="mw-headline" id="GPGPU">GPGPU</span></h1>
+<p>Early efforts to leverage a GPU for general-purpose computing required reformulating computational problems in terms of graphics primitives via graphics APIs like <a class="external text" href="https://en.wikipedia.org/wiki/OpenGL" rel="nofollow">OpenGL</a> or <a class="external text" href="https://en.wikipedia.org/wiki/DirectX" rel="nofollow">DirextX</a>, followed by first GPGPU frameworks such as <a class="external text" href="https://en.wikipedia.org/wiki/Lib_Sh" rel="nofollow">Sh/RapidMind</a> or <a class="external text" href="https://en.wikipedia.org/wiki/BrookGPU" rel="nofollow">Brook</a> and finally <a class="external text" href="https://en.wikipedia.org/wiki/CUDA" rel="nofollow">CUDA</a> and <a class="external text" href="https://www.chessprogramming.org/OpenCL" rel="nofollow">OpenCL</a><sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<h2><span class="mw-headline" id="Khronos_OpenCL">Khronos OpenCL</span></h2>
+<p><a href="OpenCL.html" title="OpenCL">OpenCL</a> specified by the <a class="external text" href="https://en.wikipedia.org/wiki/Khronos_Group" rel="nofollow">Khronos Group</a> is widely adopted across all kind of hardware accelerators from different vendors.
+</p>
+<ul><li> <a class="external text" href="https://www.khronos.org/conformance/adopters/conformant-products/opencl" rel="nofollow">List of OpenCL Conformant Products</a></li></ul>
+<ul><li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/opencl-1.2.pdf" rel="nofollow">OpenCL 1.2 Specification</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL//sdk/1.2/docs/man/xhtml/" rel="nofollow">OpenCL 1.2 Reference</a></li></ul>
+<ul><li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/opencl-2.0.pdf" rel="nofollow">OpenCL 2.0 Specification</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/2.2/pdf/OpenCL_C.pdf" rel="nofollow">OpenCL 2.0 C Language Specification</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL//sdk/2.0/docs/man/xhtml/" rel="nofollow">OpenCL 2.0 Reference</a></li></ul>
+<ul><li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/3.0-unified/pdf/" rel="nofollow">OpenCL 3.0 Specifications</a></li></ul>
+<h2><span class="mw-headline" id="AMD">AMD</span></h2>
+<p><a href="AMD.html" title="AMD">AMD</a> supports language frontends like OpenCL, HIP, C++ AMP and with OpenMP offload directives. It offers with <a class="external text" href="https://rocmdocs.amd.com/en/latest/" rel="nofollow">ROCm</a> its own parallel compute platform.
+</p>
+<ul><li> <a class="external text" href="https://community.amd.com/t5/opencl/bd-p/opencl-discussions" rel="nofollow">AMD OpenCL Developer Community</a></li>
+<li> <a class="external text" href="https://rocmdocs.amd.com/en/latest/index.html" rel="nofollow">AMD ROCm™ documentation</a></li>
+<li> <a class="external text" href="https://manualzz.com/doc/o/cggy6/amd-opencl-programming-user-guide-contents" rel="nofollow">AMD OpenCL Programming Guide</a></li>
+<li> <a class="external text" href="http://developer.amd.com/wordpress/media/2013/12/AMD OpenCL Programming Optimization Guide2.pdf.html" rel="nofollow">AMD OpenCL Optimization Guide</a></li>
+<li> <a class="external text" href="https://gpuopen.com/amd-isa-documentation/" rel="nofollow">AMD GPU ISA documentation</a></li></ul>
+<h2><span class="mw-headline" id="Apple">Apple</span></h2>
+<p>Since macOS 10.14 Mojave a transition from OpenCL to <a class="external text" href="https://en.wikipedia.org/wiki/Metal_(API)" rel="nofollow">Metal</a> is recommended by <a class="new" href="index.php?title=Apple&amp;action=edit&amp;redlink=1.html" title="Apple (page does not exist)">Apple</a>.
+</p>
+<ul><li> <a class="external text" href="https://developer.apple.com/opencl/" rel="nofollow">Apple OpenCL Developer</a> </li>
+<li> <a class="external text" href="https://developer.apple.com/metal/" rel="nofollow">Apple Metal Developer</a></li>
+<li> <a class="external text" href="https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html" rel="nofollow">Apple Metal Programming Guide</a></li>
+<li> <a class="external text" href="https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf" rel="nofollow">Metal Shading Language Specification</a></li></ul>
+<h2><span class="mw-headline" id="Intel">Intel</span></h2>
+<p>Intel supports OpenCL with implementations like BEIGNET and NEO for different GPU architectures and the <a class="external text" href="https://en.wikipedia.org/wiki/OneAPI_(compute_acceleration)" rel="nofollow">oneAPI</a> platform with <a class="external text" href="https://en.wikipedia.org/wiki/DPC++" rel="nofollow">DPC++</a> as frontend language.
+</p>
+<ul><li> <a class="external text" href="https://www.intel.com/content/www/us/en/developer/overview.html#gs.pu62bi" rel="nofollow">Intel Developer Zone</a></li>
+<li> <a class="external text" href="https://www.intel.com/content/www/us/en/develop/documentation/oneapi-programming-guide/top.html" rel="nofollow">Intel oneAPI Programming Guide</a></li></ul>
+<h2><span class="mw-headline" id="Nvidia">Nvidia</span></h2>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/CUDA" rel="nofollow">CUDA</a> is the parallel computing platform by <a href="Nvidia.html" title="Nvidia">Nvidia</a>. It supports language frontends like C, C++, Fortran, OpenCL and offload directives via <a class="external text" href="https://en.wikipedia.org/wiki/OpenACC" rel="nofollow">OpenACC</a> and <a class="external text" href="https://en.wikipedia.org/wiki/OpenMP" rel="nofollow">OpenMP</a>.
+</p>
+<ul><li> <a class="external text" href="https://developer.nvidia.com/cuda-zone" rel="nofollow">Nvidia CUDA Zone</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/parallel-thread-execution/index.html" rel="nofollow">Nvidia PTX ISA</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/index.html" rel="nofollow">Nvidia CUDA Toolkit Documentation</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html" rel="nofollow">Nvidia CUDA C++ Programming Guide</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html" rel="nofollow">Nvidia CUDA C++ Best Practices Guide</a></li></ul>
+<h2><span class="mw-headline" id="Further">Further</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Vulkan#Planned_features" rel="nofollow">Vulkan</a> (OpenGL sucessor of Khronos Group)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/DirectCompute" rel="nofollow">DirectCompute</a> (Microsoft)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/C%2B%2B_AMP" rel="nofollow">C++ AMP</a> (Microsoft)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/OpenACC" rel="nofollow">OpenACC</a> (offload directives)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/OpenMP" rel="nofollow">OpenMP</a> (offload directives)</li></ul>
+<h1><span class="mw-headline" id="Hardware_Model">Hardware Model</span></h1>
+<p>A common scheme on GPUs with unified shader architecture is to run multiple threads in <a class="external text" href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_threads" rel="nofollow">SIMT</a> fashion and a multitude of SIMT waves on the same <a class="external text" href="https://en.wikipedia.org/wiki/SIMD" rel="nofollow">SIMD</a> unit to hide memory latencies. Multiple processing elements (GPU cores) are members of a SIMD unit, multiple SIMD units are coupled to a compute unit, with up to hundreds of compute units present on a discrete GPU. The actual SIMD units may have architecture dependent different numbers of cores (SIMD8, SIMD16, SIMD32), and different computation abilities - floating-point and/or integer with specific bit-width of the FPU/ALU and registers. There is a difference between a vector-processor with variable bit-width and SIMD units with fix bit-width cores. Different architecture white papers from different vendors leave room for speculation about the concrete underlying hardware implementation and the concrete classification as <a class="external text" href="https://en.wikipedia.org/wiki/Flynn%27s_taxonomy" rel="nofollow">hardware architecture</a>. Scalar units present in the compute unit perform special functions the SIMD units are not capable of and MMAC units (matrix-multiply-accumulate units) are used to speed up neural networks further.
+</p>
+<table class="wikitable" style="margin:auto">
+<caption> Vendor Terminology
+</caption>
+<tr>
+<th> AMD Terminology </th>
+<th> Nvidia Terminology
+</th></tr>
+<tr>
+<td> Compute Unit </td>
+<td> Streaming Multiprocessor
+</td></tr>
+<tr>
+<td> Stream Core </td>
+<td> CUDA Core
+</td></tr>
+<tr>
+<td> Wavefront </td>
+<td> Warp
+</td></tr></table>
+<h3><span class="mw-headline" id="Hardware_Examples">Hardware Examples</span></h3>
+<p>Nvidia GeForce GTX 580 (<a class="external text" href="https://en.wikipedia.org/wiki/Fermi_%28microarchitecture%29" rel="nofollow">Fermi</a>) <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup><sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+</p>
+<ul><li> 512 CUDA cores @1.544GHz</li>
+<li> 16 SMs - Streaming Multiprocessors</li>
+<li> organized in 2x16 CUDA cores per SM</li>
+<li> Warp size of 32 threads</li></ul>
+<p>AMD Radeon HD 7970 (<a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Core_Next" rel="nofollow">GCN)</a><sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup><sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p>
+<ul><li> 2048 Stream cores @0.925GHz</li>
+<li> 32 Compute Units</li>
+<li> organized in 4xSIMD16, each SIMT4, per Compute Unit</li>
+<li> Wavefront size of 64 work-items</li></ul>
+<h3><span class="mw-headline" id="Wavefront_and_Warp">Wavefront and Warp</span></h3>
+<p>Generalized the definition of the Wavefront and Warp size is the amount of threads executed in SIMT fashion on a GPU with unified shader architecture.
+</p>
+<h1><span class="mw-headline" id="Programming_Model">Programming Model</span></h1>
+<p>A <a class="external text" href="https://en.wikipedia.org/wiki/Parallel_programming_model" rel="nofollow">parallel programming model</a> for GPGPU can be <a class="external text" href="https://en.wikipedia.org/wiki/Data_parallelism" rel="nofollow">data-parallel</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Task_parallelism" rel="nofollow">task-parallel</a>, a mixture of both, or with libraries and offload-directives also <a class="external text" href="https://en.wikipedia.org/wiki/Implicit_parallelism" rel="nofollow">implicitly-parallel</a>. Single GPU threads (work-items in OpenCL) contain the kernel to be computed and are coupled to a work-group, one or multiple work-groups form the NDRange to be executed on the GPU device. The members of a work-group execute the same kernel, can be usually synchronized and have access to the same scratch-pad memory, with an architecture limit of how many work-items a work-group can hold and how many threads can run in total concurrently on the device.
+</p>
+<table class="wikitable" style="margin:auto">
+<caption> Terminology
+</caption>
+<tr>
+<th> OpenCL Terminology </th>
+<th> CUDA Terminology
+</th></tr>
+<tr>
+<td> Kernel </td>
+<td> Kernel
+</td></tr>
+<tr>
+<td> Compute Unit </td>
+<td> Streaming Multiprocessor
+</td></tr>
+<tr>
+<td> Processing Element </td>
+<td> CUDA Core
+</td></tr>
+<tr>
+<td> Work-Item </td>
+<td> Thread
+</td></tr>
+<tr>
+<td> Work-Group </td>
+<td> Block
+</td></tr>
+<tr>
+<td> NDRange </td>
+<td> Grid
+</td></tr>
+</table>
+<h2><span class="mw-headline" id="Thread_Examples">Thread Examples</span></h2>
+<p>Nvidia GeForce GTX 580 (Fermi, CC2) <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>
+</p>
+<ul><li> Warp size: 32</li>
+<li> Maximum number of threads per block: 1024</li>
+<li> Maximum number of resident blocks per multiprocessor: 32</li>
+<li> Maximum number of resident warps per multiprocessor: 64</li>
+<li> Maximum number of resident threads per multiprocessor: 2048</li></ul>
+<p><br/>
+AMD Radeon HD 7970 (GCN) <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>
+</p>
+<ul><li> Wavefront size: 64</li>
+<li> Maximum number of work-items per work-group: 1024</li>
+<li> Maximum number of work-groups per compute unit: 40</li>
+<li> Maximum number of Wavefronts per compute unit: 40</li>
+<li> Maximum number of work-items per compute unit: 2560</li></ul>
+<h1><span class="mw-headline" id="Memory_Model">Memory Model</span></h1>
+<p>OpenCL offers the following memory model for the programmer:
+</p>
+<ul><li> __private - usually registers, accessable only by a single work-item resp. thread.</li>
+<li> __local - scratch-pad memory shared across work-items of a work-group resp. threads of block.</li>
+<li> __constant - read-only memory.</li>
+<li> __global - usually VRAM, accessable by all work-items resp. threads.</li></ul>
+<table class="wikitable" style="margin:auto">
+<caption> Terminology
+</caption>
+<tr>
+<th> OpenCL Terminology </th>
+<th> CUDA Terminology
+</th></tr>
+<tr>
+<td> Private Memory </td>
+<td> Registers
+</td></tr>
+<tr>
+<td> Local Memory </td>
+<td> Shared Memory
+</td></tr>
+<tr>
+<td> Constant Memory </td>
+<td> Constant Memory
+</td></tr>
+<tr>
+<td> Global Memory </td>
+<td> Global Memory
+</td></tr></table>
+<h3><span class="mw-headline" id="Memory_Examples">Memory Examples</span></h3>
+<p>Nvidia GeForce GTX 580 (<a class="external text" href="https://en.wikipedia.org/wiki/Fermi_%28microarchitecture%29" rel="nofollow">Fermi)</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>
+</p>
+<ul><li> 128 KiB private memory per compute unit</li>
+<li> 48 KiB (16 KiB) local memory per compute unit (configurable)</li>
+<li> 64 KiB constant memory</li>
+<li> 8 KiB constant cache per compute unit</li>
+<li> 16 KiB (48 KiB) L1 cache per compute unit (configurable)</li>
+<li> 768 KiB L2 cache in total</li>
+<li> 1.5 GiB to 3 GiB global memory</li></ul>
+<p>AMD Radeon HD 7970 (<a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Core_Next" rel="nofollow">GCN</a>) <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>
+</p>
+<ul><li> 256 KiB private memory per compute unit</li>
+<li> 64 KiB local memory per compute unit</li>
+<li> 64 KiB constant memory</li>
+<li> 16 KiB constant cache per four compute units</li>
+<li> 16 KiB L1 cache per compute unit</li>
+<li> 768 KiB L2 cache in total</li>
+<li> 3 GiB to 6 GiB global memory</li></ul>
+<h3><span class="mw-headline" id="Unified_Memory">Unified Memory</span></h3>
+<p>Usually data has to be copied between a CPU host and a discrete GPU device, but different architectures from different vendors with different frameworks on different operating systems may offer a unified and accessible address space between CPU and GPU.
+</p>
+<h1><span class="mw-headline" id="Instruction_Throughput">Instruction Throughput</span></h1>
+<p>GPUs are used in <a class="external text" href="https://en.wikipedia.org/wiki/High-performance_computing" rel="nofollow">HPC</a> environments because of their good <a class="external text" href="https://en.wikipedia.org/wiki/FLOP" rel="nofollow">FLOP</a>/Watt ratio. The instruction throughput in general depends on the architecture (like Nvidia's <a class="external text" href="https://en.wikipedia.org/wiki/Tesla_%28microarchitecture%29" rel="nofollow">Tesla</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Fermi_%28microarchitecture%29" rel="nofollow">Fermi</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Kepler_%28microarchitecture%29" rel="nofollow">Kepler</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Maxwell_%28microarchitecture%29" rel="nofollow">Maxwell</a> or AMD's <a class="external text" href="https://en.wikipedia.org/wiki/TeraScale_%28microarchitecture%29" rel="nofollow">TeraScale</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Core_Next" rel="nofollow">GCN</a>, <a class="external text" href="https://en.wikipedia.org/wiki/AMD_RDNA_Architecture" rel="nofollow">RDNA</a>), the brand (like Nvidia <a class="external text" href="https://en.wikipedia.org/wiki/GeForce" rel="nofollow">GeForce</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Nvidia_Quadro" rel="nofollow">Quadro</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Nvidia_Tesla" rel="nofollow">Tesla</a> or AMD <a class="external text" href="https://en.wikipedia.org/wiki/Radeon" rel="nofollow">Radeon</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Radeon_Pro" rel="nofollow">Radeon Pro</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Radeon_Instinct" rel="nofollow">Radeon Instinct</a>) and the specific model.
+</p>
+<h2><span class="mw-headline" id="Integer_Instruction_Throughput">Integer Instruction Throughput</span></h2>
+<ul><li> INT32</li></ul>
+<dl><dd> The 32-bit integer performance can be architecture and operation depended less than 32-bit FLOP or 24-bit integer performance.</dd></dl>
+<ul><li> INT64</li></ul>
+<dl><dd> In general <a class="external text" href="https://en.wikipedia.org/wiki/Processor_register" rel="nofollow">registers</a> and Vector-<a class="external text" href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit" rel="nofollow">ALUs</a> of consumer brand GPUs are 32-bit wide and have to emulate 64-bit integer operations.</dd></dl>
+<ul><li> INT8</li></ul>
+<dl><dd> Some architectures offer higher throughput with lower precision. They quadruple the INT8 or octuple the INT4 throughput.</dd></dl>
+<h2><span class="mw-headline" id="Floating-Point_Instruction_Throughput">Floating-Point Instruction Throughput</span></h2>
+<ul><li> FP32</li></ul>
+<dl><dd> Consumer GPU performance is measured usually in single-precision (32-bit) floating-point FMA (fused-multiply-add) throughput.</dd></dl>
+<ul><li> FP64</li></ul>
+<dl><dd> Consumer GPUs have in general a lower ratio (FP32:FP64) for double-precision (64-bit) floating-point operations throughput than server brand GPUs.</dd></dl>
+<ul><li> FP16</li></ul>
+<dl><dd> Some GPGPU architectures offer half-precision (16-bit) floating-point operation throughput with an FP32:FP16 ratio of 1:2.</dd></dl>
+<h2><span class="mw-headline" id="Throughput_Examples">Throughput Examples</span></h2>
+<p>Nvidia GeForce GTX 580 (Fermi, CC 2.0) - 32-bit integer operations/clock cycle per compute unit <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>
+</p>
+<pre>   MAD 16
+   MUL 16
+   ADD 32
+   Bit-shift 16
+   Bitwise XOR 32
+</pre>
+<p>Max theoretic ADD operation throughput: 32 Ops x 16 CUs x 1544 MHz = 790.528 GigaOps/sec
+</p><p>AMD Radeon HD 7970 (GCN 1.0) - 32-bit integer operations/clock cycle per processing element <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>
+</p>
+<pre>   MAD 1/4
+   MUL 1/4
+   ADD 1
+   Bit-shift 1
+   Bitwise XOR 1
+</pre>
+<p>Max theoretic ADD operation throughput: 1 Op x 2048 PEs x 925 MHz = 1894.4 GigaOps/sec
+</p>
+<h1><span class="mw-headline" id="Tensors">Tensors</span></h1>
+<p>MMAC (matrix-multiply-accumulate) units are used in consumer brand GPUs for neural network based upsampling of video game resolutions, in professional brands for upsampling of images and videos, and in server brand GPUs for accelerating convolutional neural networks in general. Convolutions can be implemented as a series of matrix-multiplications via Winograd-transformations <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>. Mobile SoCs usually have an dedicated neural network engine as MMAC unit.
+</p>
+<h2><span class="mw-headline" id="Nvidia_TensorCores">Nvidia TensorCores</span></h2>
+<dl><dd> With Nvidia <a class="external text" href="https://en.wikipedia.org/wiki/Volta_(microarchitecture)" rel="nofollow">Volta</a> series TensorCores were introduced. They offer FP16xFP16+FP32, matrix-multiplication-accumulate-units, used to accelerate neural networks.<sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup> Turing's 2nd gen TensorCores add FP16, INT8, INT4 optimized computation.<sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup> Amperes's 3rd gen adds support for BF16, TF32, FP64 and sparsity acceleration.<sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>Ada Lovelaces's 4th gen adds support for FP8.<sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup></dd></dl>
+<h2><span class="mw-headline" id="AMD_Matrix_Cores">AMD Matrix Cores</span></h2>
+<dl><dd> AMD released 2020 its server-class <a class="external text" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf" rel="nofollow">CDNA</a> architecture with Matrix Cores which support MFMA (matrix-fused-multiply-add) operations on various data types like INT8, FP16, BF16, FP32. AMD's CDNA 2 architecture adds FP64 optimized throughput for matrix operations. AMD's RDNA 3 architecture features dedicated AI tensor operation acceleration. AMD's CDNA 3 architecture adds support for FP8 and sparse matrix data (sparsity).</dd></dl>
+<h2><span class="mw-headline" id="Intel_XMX_Cores">Intel XMX Cores</span></h2>
+<dl><dd> Intel added XMX, Xe Matrix eXtensions, cores to some of the <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Xe" rel="nofollow">Intel Xe</a> GPU series, like <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Arc#Alchemist" rel="nofollow">Arc Alchemist</a> and <a class="external text" href="https://www.intel.com/content/www/us/en/products/sku/232876/intel-data-center-gpu-max-1100/specifications.html" rel="nofollow">Intel Data Center GPU Max Series</a>.</dd></dl>
+<h1><span class="mw-headline" id="Host-Device_Latencies">Host-Device Latencies</span></h1>
+<p>One reason GPUs are not used as accelerators for chess engines is the host-device latency, aka. kernel-launch-overhead. Nvidia and AMD have not published official numbers, but in practice there is a measurable latency for null-kernels of 5 microseconds <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup> up to 100s of microseconds <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup>. One solution to overcome this limitation is to couple tasks to batches to be executed in one run <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Deep_Learning">Deep Learning</span></h1>
+<p>GPUs are much more suited than CPUs to implement and train <a href="Neural Networks.html#Convolutional" title="Neural Networks">Convolutional Neural Networks</a> (CNN), and were therefore also responsible for the <a href="Deep Learning.html" title="Deep Learning">deep learning</a> boom, also affecting game playing programs combining CNN with <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a>, as pioneered by <a class="new" href="index.php?title=Google&amp;action=edit&amp;redlink=1.html" title="Google (page does not exist)">Google</a> <a class="new" href="index.php?title=DeepMind&amp;action=edit&amp;redlink=1.html" title="DeepMind (page does not exist)">DeepMind's</a> <a class="new" href="index.php?title=AlphaGo&amp;action=edit&amp;redlink=1.html" title="AlphaGo (page does not exist)">AlphaGo</a> and <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a> entities in <a href="Go.html" title="Go">Go</a>, <a href="Shogi.html" title="Shogi">Shogi</a> and <a href="Chess.html" title="Chess">Chess</a> using <a class="external text" href="https://en.wikipedia.org/wiki/Tensor_processing_unit" rel="nofollow">TPUs</a>, and the open source projects <a class="new" href="index.php?title=Leela Zero&amp;action=edit&amp;redlink=1.html" title="Leela Zero (page does not exist)">Leela Zero</a> headed by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a> for <a href="Go.html" title="Go">Go</a> and its <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a> adaption.
+</p>
+<h1><span class="mw-headline" id="Architectures">Architectures</span></h1>
+<p>The market is split into two categories, integrated and discrete GPUs. The first being the most important by quantity, the second by performance. Discrete GPUs are divided as consumer brands for playing 3D games, professional brands for CAD/CGI programs and server brands for big-data and number-crunching workloads. Each brand offering different feature sets in driver, VRAM, or computation abilities.
+</p>
+<h2><span class="mw-headline" id="AMD_2">AMD</span></h2>
+<p>AMD line of discrete GPUs is branded as Radeon for consumer, Radeon Pro for professional and Radeon Instinct for server.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units" rel="nofollow">List of AMD graphics processing units on Wikipedia</a> </li></ul>
+<h3><span class="mw-headline" id="CDNA3">CDNA3</span></h3>
+<p>CDNA3 HPC architecture was unveiled in December, 2023. With MI300A APU model (CPU+GPU+HBM) and MI300X GPU model, both with multi-chip modules design. Featuring Matrix Cores with support for a broad type of precision, as INT8, FP8, BF16, FP16, TF32, FP32, FP64, as well as sparse matrix data (sparsity). Supported by AMD's ROCm open software stack for AMD Instinct accelerators. 
+</p>
+<ul><li> <a class="external text" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf" rel="nofollow">AMD CDNA3 Whitepaper</a></li>
+<li> <a class="external text" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf" rel="nofollow">AMD Instinct MI300/CDNA3 Instruction Set Architecture</a></li>
+<li> <a class="external text" href="https://www.amd.com/en/developer/resources/rocm-hub.html" rel="nofollow">AMD ROCm Developer Hub</a></li></ul>
+<h3><span class="mw-headline" id="Navi_3x_RDNA3">Navi 3x RDNA3</span></h3>
+<p>RDNA3 architecture in Radeon RX 7000 series was announced on November 3, 2022, featuring dedicated AI tensor operation acceleration.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Radeon_RX_7000_series" rel="nofollow">AMD Radeon RX 7000 on Wikipedia</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wp-content/resources/RDNA3_Shader_ISA_December2022.pdf" rel="nofollow">RDNA3 Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="CDNA2">CDNA2</span></h3>
+<p>CDNA2 architecture in MI200 HPC-GPU with optimized FP64 throughput (matrix and vector), multi-chip-module design and Infinity Fabric was unveiled in November, 2021.
+</p>
+<ul><li> <a class="external text" href="https://www.amd.com/system/files/documents/amd-cdna2-white-paper.pdf" rel="nofollow">AMD CDNA2 Whitepaper</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wp-content/resources/CDNA2_Shader_ISA_4February2022.pdf" rel="nofollow">CDNA2 Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="CDNA">CDNA</span></h3>
+<p>CDNA architecture in MI100 HPC-GPU with Matrix Cores was unveiled in November, 2020.
+</p>
+<ul><li> <a class="external text" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf" rel="nofollow">AMD CDNA Whitepaper</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wp-content/resources/CDNA1_Shader_ISA_14December2020.pdf" rel="nofollow">CDNA Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="Navi_2x_RDNA2">Navi 2x RDNA2</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/RDNA_(microarchitecture)#RDNA_2" rel="nofollow">RDNA2</a> cards were unveiled on October 28, 2020.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Radeon_RX_6000_series" rel="nofollow">AMD Radeon RX 6000 on Wikipedia</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wp-content/resources/RDNA2_Shader_ISA_November2020.pdf" rel="nofollow">RDNA 2 Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="Navi_RDNA">Navi RDNA</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/RDNA_(microarchitecture)" rel="nofollow">RDNA</a> cards were unveiled on July 7, 2019.
+</p>
+<ul><li> <a class="external text" href="https://www.amd.com/system/files/documents/rdna-whitepaper.pdf" rel="nofollow">RDNA Whitepaper</a></li>
+<li> <a class="external text" href="https://gpuopen.com/wp-content/uploads/2019/08/RDNA_Architecture_public.pdf" rel="nofollow">Architecture Slide Deck</a></li>
+<li> <a class="external text" href="https://gpuopen.com/wp-content/uploads/2019/08/RDNA_Shader_ISA_5August2019.pdf" rel="nofollow">RDNA Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="Vega_GCN_5th_gen">Vega GCN 5th gen</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Radeon_RX_Vega_series" rel="nofollow">Vega</a> cards were unveiled on August 14, 2017.
+</p>
+<ul><li> <a class="external text" href="https://www.techpowerup.com/gpu-specs/docs/amd-vega-architecture.pdf" rel="nofollow">Architecture Whitepaper</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wp-content/resources/Vega_Shader_ISA_28July2017.pdf" rel="nofollow">Vega Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="Polaris_GCN_4th_gen">Polaris GCN 4th gen</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Core_Next#Graphics_Core_Next_4" rel="nofollow">Polaris</a> cards were first released in 2016.
+</p>
+<ul><li> <a class="external text" href="https://www.amd.com/system/files/documents/polaris-whitepaper.pdf" rel="nofollow">Architecture Whitepaper</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wordpress/media/2013/12/AMD_GCN3_Instruction_Set_Architecture_rev1.1.pdf" rel="nofollow">GCN3/4 Instruction Set Architecture</a></li></ul>
+<h3><span class="mw-headline" id="Southern_Islands_GCN_1st_gen">Southern Islands GCN 1st gen</span></h3>
+<p>Southern Island cards introduced the <a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Core_Next" rel="nofollow">GCN</a> architecture in 2012.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Radeon_HD_7000_series" rel="nofollow">AMD Radeon HD 7000 on Wikipedia</a></li>
+<li> <a class="external text" href="https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/programmer-references/si_programming_guide_v2.pdf" rel="nofollow">Southern Islands Programming Guide</a></li>
+<li> <a class="external text" href="https://developer.amd.com/wordpress/media/2012/12/AMD_Southern_Islands_Instruction_Set_Architecture.pdf" rel="nofollow">Southern Islands Instruction Set Architecture</a></li></ul>
+<h2><span class="mw-headline" id="Apple_2">Apple</span></h2>
+<h3><span class="mw-headline" id="M_series">M series</span></h3>
+<p>Apple released its M series SoC (system on a chip) with integrated GPU for desktops and notebooks in 2020.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Apple_silicon#M_series" rel="nofollow">Apple M series on Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="ARM">ARM</span></h2>
+<p>The ARM Mali GPU variants can be found on various systems on chips (SoCs) from different vendors. Since Midgard (2012) with unified-shader-model OpenCL support is offered.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Mali_(GPU)#Variants" rel="nofollow">Mali variants on Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Valhall_.282019.29">Valhall (2019)</span></h3>
+<ul><li> <a class="external text" href="https://developer.arm.com/documentation/101574/latest" rel="nofollow">Bifrost and Valhall OpenCL Developer Guide</a></li></ul>
+<h3><span class="mw-headline" id="Bifrost_.282016.29">Bifrost (2016)</span></h3>
+<ul><li> <a class="external text" href="https://developer.arm.com/documentation/101574/latest" rel="nofollow">Bifrost and Valhall OpenCL Developer Guide</a></li></ul>
+<h3><span class="mw-headline" id="Midgard_.282012.29">Midgard (2012)</span></h3>
+<ul><li> <a class="external text" href="https://developer.arm.com/documentation/100614/latest" rel="nofollow">Midgard OpenCL Developer Guide</a></li></ul>
+<h2><span class="mw-headline" id="Intel_2">Intel</span></h2>
+<h3><span class="mw-headline" id="Xe">Xe</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Intel_Xe" rel="nofollow">Intel Xe</a> line of GPUs (released since 2020) is divided as Xe-LP (low-power), Xe-HPG (high-performance-gaming), Xe-HP (high-performace) and Xe-HPC (high-performance-computing).
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Gen12" rel="nofollow">List of Intel Gen12 GPUs on Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Arc#Alchemist" rel="nofollow">Arc Alchemist series on Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Nvidia_2">Nvidia</span></h2>
+<p>Nvidia line of discrete GPUs is branded as GeForce for consumer, Quadro for professional and Tesla for server.
+</p>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units" rel="nofollow">List of Nvidia graphics processing units on Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="Grace_Hopper_Superchip">Grace Hopper Superchip</span></h3>
+<p>The Nvidia GH200 Grace Hopper Superchip was unveiled August, 2023 and combines the Nvidia Grace CPU (<a class="new" href="index.php?title=ARM&amp;action=edit&amp;redlink=1.html" title="ARM (page does not exist)">ARM v9</a>) and  Nvidia Hopper GPU architectures via NVLink to deliver a CPU+GPU coherent memory model for accelerated AI and HPC applications.
+</p>
+<ul><li> <a class="external text" href="https://resources.nvidia.com/en-us-grace-cpu/grace-hopper-superchip" rel="nofollow">NVIDIA Grace Hopper Superchip Data Sheet</a></li>
+<li> <a class="external text" href="https://resources.nvidia.com/en-us-grace-cpu/nvidia-grace-hopper" rel="nofollow">NVIDIA Grace Hopper Superchip Architecture Whitepaper</a></li></ul>
+<h3><span class="mw-headline" id="Ada_Lovelace_Architecture">Ada Lovelace Architecture</span></h3>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Ada_Lovelace_(microarchitecture)" rel="nofollow">Ada Lovelace microarchitecture</a> was announced on September 20, 2022, featuring 4th-generation Tensor Cores with FP8, FP16, BF16, TF32 and sparsity acceleration.
+</p>
+<ul><li> <a class="external text" href="https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf" rel="nofollow">Ada GPU Whitepaper</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/ada-tuning-guide/index.html" rel="nofollow">Ada Tuning Guide</a></li></ul>
+<h3><span class="mw-headline" id="Hopper_Architecture">Hopper Architecture</span></h3>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Hopper_(microarchitecture)" rel="nofollow">Hopper GPU Datacenter microarchitecture</a> was announced on March 22, 2022, featuring Transfomer Engines for large language models.
+</p>
+<ul><li> <a class="external text" href="https://resources.nvidia.com/en-us-tensor-core" rel="nofollow">Hopper H100 Whitepaper</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html" rel="nofollow">Hopper Tuning Guide</a></li></ul>
+<h3><span class="mw-headline" id="Ampere_Architecture">Ampere Architecture</span></h3>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Ampere_(microarchitecture)" rel="nofollow">Ampere microarchitecture</a> was announced on May 14, 2020 <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup>. The Nvidia A100 GPU based on the Ampere architecture delivers a generational leap in accelerated computing in conjunction with CUDA 11 <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup>.
+</p>
+<ul><li> <a class="external text" href="https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/nvidia-ampere-architecture-whitepaper.pdf" rel="nofollow">Ampere GA100 Whitepaper</a></li>
+<li> <a class="external text" href="https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf" rel="nofollow">Ampere GA102 Whitepaper</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/ampere-tuning-guide/index.html" rel="nofollow">Ampere GPU Architecture Tuning Guide</a></li></ul>
+<h3><span class="mw-headline" id="Turing_Architecture">Turing Architecture</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Turing_(microarchitecture)" rel="nofollow">Turing</a> cards were first released in 2018. They are the first consumer cores to launch with RTX, for <a class="external text" href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)" rel="nofollow">raytracing</a>, features. These are also the first consumer cards to launch with TensorCores used for matrix multiplications to accelerate <a href="Neural Networks.html#Convolutional" title="Neural Networks">convolutional neural networks</a>. The Turing GTX line of chips do not offer RTX or TensorCores.
+</p>
+<ul><li> <a class="external text" href="https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/technologies/turing-architecture/NVIDIA-Turing-Architecture-Whitepaper.pdf" rel="nofollow">Turing Architecture Whitepaper</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/turing-tuning-guide/index.html" rel="nofollow">Turing Tuning Guide</a></li></ul>
+<h3><span class="mw-headline" id="Volta_Architecture">Volta Architecture</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Volta_(microarchitecture)" rel="nofollow">Volta</a> cards were released in 2017. They were the first cards to launch with TensorCores, supporting matrix multiplications to accelerate <a href="Neural Networks.html#Convolutional" title="Neural Networks">convolutional neural networks</a>.
+</p>
+<ul><li> <a class="external text" href="https://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf" rel="nofollow">Volta Architecture Whitepaper</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/volta-tuning-guide/index.html" rel="nofollow">Volta Tuning Guide</a></li></ul>
+<h3><span class="mw-headline" id="Pascal_Architecture">Pascal Architecture</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Pascal_(microarchitecture)" rel="nofollow">Pascal</a> cards were first released in 2016.
+</p>
+<ul><li> <a class="external text" href="https://images.nvidia.com/content/pdf/tesla/whitepaper/pascal-architecture-whitepaper.pdf" rel="nofollow">Pascal Architecture Whitepaper</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/pascal-tuning-guide/index.html" rel="nofollow">Pascal Tuning Guide</a></li></ul>
+<h3><span class="mw-headline" id="Maxwell_Architecture">Maxwell Architecture</span></h3>
+<p><a class="external text" href="https://en.wikipedia.org/wiki/Maxwell(microarchitecture)" rel="nofollow">Maxwell</a> cards were first released in 2014.
+</p>
+<ul><li> <a class="external text" href="https://web.archive.org/web/20170721113746/http://international.download.nvidia.com/geforce-com/international/pdfs/GeForce_GTX_980_Whitepaper_FINAL.PDF" rel="nofollow">Maxwell Architecture Whitepaper on archiv.org</a></li>
+<li> <a class="external text" href="https://docs.nvidia.com/cuda/maxwell-tuning-guide/index.html" rel="nofollow">Maxwell Tuning Guide</a></li></ul>
+<h2><span class="mw-headline" id="PowerVR">PowerVR</span></h2>
+<p>PowerVR (Imagination Technologies) licenses IP to third parties (most notable Apple) used for system on a chip (SoC) designs. Since Series5 SGX OpenCL support via licensees is available.
+</p>
+<h3><span class="mw-headline" id="PowerVR_2">PowerVR</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/PowerVR#PowerVR_Graphics" rel="nofollow">PowerVR series on Wikipedia</a></li></ul>
+<h3><span class="mw-headline" id="IMG">IMG</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/PowerVR#IMG_A-Series_(Albiorix)" rel="nofollow">IMG A series on Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/PowerVR#IMG_B-Series" rel="nofollow">IMG B series on Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Qualcomm">Qualcomm</span></h2>
+<p>Qualcomm offers Adreno GPUs in various types as a component of their Snapdragon SoCs. Since Adreno 300 series OpenCL support is offered.
+</p>
+<h3><span class="mw-headline" id="Adreno">Adreno</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Adreno#Variants" rel="nofollow">Adreno variants on Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Vivante_Corporation">Vivante Corporation</span></h2>
+<p>Vivante licenses IP to third parties for embedded systems, the GC series offers optional OpenCL support.
+</p>
+<h3><span class="mw-headline" id="GC-Series">GC-Series</span></h3>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Vivante_Corporation#Products" rel="nofollow">GC series on Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a></li>
+<li> <a href="FPGA.html" title="FPGA">FPGA</a></li>
+<li> <a href="Graphics Programming.html" title="Graphics Programming">Graphics Programming</a></li>
+<li> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a>
+<ul><li> <a href="MC%CE%B1%CE%B2.html" title="MCαβ">MCαβ</a></li>
+<li> <a href="UCT.html" title="UCT">UCT</a></li></ul></li>
+<li> <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="Perft.html#15" title="Perft">Perft(15)</a> </li>
+<li> <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD and SWAR Techniques</a></li>
+<li> <a href="Thread.html" title="Thread">Thread</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1986">1986</span></h2>
+<ul><li> <a href="Mathematician.html#Hillis" title="Mathematician">W. Daniel Hillis</a>, <a href="Mathematician.html#GSteele" title="Mathematician">Guy L. Steele, Jr.</a> (<b>1986</b>). <i><a class="external text" href="https://dl.acm.org/citation.cfm?id=7903" rel="nofollow">Data parallel algorithms</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 29, No. 12, Special Issue on Parallelism</li></ul>
+<h2><span class="mw-headline" id="1990">1990</span></h2>
+<ul><li> <a href="Mathematician.html#GEBlelloch" title="Mathematician">Guy E. Blelloch</a> (<b>1990</b>). <i><a class="external text" href="https://dl.acm.org/citation.cfm?id=91254" rel="nofollow">Vector Models for Data-Parallel Computing</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Press" rel="nofollow">MIT Press</a>, <a class="external text" href="https://www.cs.cmu.edu/~guyb/papers/Ble90.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2008_...">2008 ...</span></h2>
+<ul><li> <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a> (<b>2008</b>). <i>Real Time Photon Mapping Approximation on the GPU</i>. in <a class="external text" href="http://shaderx6.com/TOC.html.html" rel="nofollow">ShaderX6 - Advanced Rendering Techniques</a> <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup></li>
+<li> <a href="Ren Wu.html" title="Ren Wu">Ren Wu</a>, <a class="external text" href="http://www.cedar.buffalo.edu/~binzhang/.html" rel="nofollow">Bin Zhang</a>, <a class="external text" href="http://www.hpl.hp.com/people/meichun hsu/.html" rel="nofollow">Meichun Hsu</a> (<b>2009</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=1531668.html" rel="nofollow">Clustering billions of data points using GPUs</a></i>. <a class="external text" href="http://www.computingfrontiers.org/2009/.html" rel="nofollow">ACM International Conference on Computing Frontiers</a></li>
+<li> <a class="external text" href="https://github.com/markgovett" rel="nofollow">Mark Govett</a>, <a class="external text" href="https://www.linkedin.com/in/craig-tierney-9568545" rel="nofollow">Craig Tierney</a>, <a href="Jacques Middlecoff.html" title="Jacques Middlecoff">Jacques Middlecoff</a>, <a class="external text" href="https://www.researchgate.net/profile/Tom_Henderson4" rel="nofollow">Tom Henderson</a> (<b>2009</b>). <i>Using Graphical Processing Units (GPUs) for Next Generation Weather and Climate Prediction Models</i>. <a class="external text" href="http://www.cisl.ucar.edu/dir/CAS2K9/.html" rel="nofollow">CAS2K9 Workshop</a></li>
+<li> <a href="Hank Dietz.html" title="Hank Dietz">Hank Dietz</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/y/Young:Bobby_Dalton" rel="nofollow">Bobby Dalton Young</a> (<b>2009</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-642-13374-9_5" rel="nofollow">MIMD Interpretation on a GPU</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/lcpc/lcpc2009.html" rel="nofollow">LCPC 2009</a>, <a class="external text" href="http://aggregate.ee.engr.uky.edu/EXHIBITS/SC09/mogsimlcpc09final.pdf.html" rel="nofollow">pdf</a>, <a class="external text" href="http://aggregate.org/GPUMC/mogsimlcpc09slides.pdf.html" rel="nofollow">slides.pdf</a></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pid/28/7183.html" rel="nofollow">Sander van der Maar</a>, <a href="Joost Batenburg.html" title="Joost Batenburg">Joost Batenburg</a>, <a class="external text" href="https://scholar.google.com/citations?user=TtXZhj8AAAAJ&amp;hl=en" rel="nofollow">Jan Sijbers</a> (<b>2009</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-642-03138-0_33" rel="nofollow">Experiences with Cell-BE and GPU for Tomography</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/samos/samos2009.html#MaarBS09" rel="nofollow">SAMOS 2009</a> <sup class="reference" id="cite_ref-25"><a href="#cite note-25">[25]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2010...">2010...</span></h2>
+<ul><li> <a class="external text" href="https://www.linkedin.com/in/avi-bleiweiss-456a5644" rel="nofollow">Avi Bleiweiss</a> (<b>2010</b>). <i>Playing Zero-Sum Games on the GPU</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Nvidia" rel="nofollow">NVIDIA Corporation</a>, <a class="external text" href="http://www.nvidia.com/object/io 1269574709099.html.html" rel="nofollow">GPU Technology Conference 2010</a>, <a class="external text" href="http://www.nvidia.com/content/gtc-2010/pdfs/2207 gtc2010.pdf.html" rel="nofollow">slides as pdf</a></li>
+<li> <a class="external text" href="https://github.com/markgovett" rel="nofollow">Mark Govett</a>, <a href="Jacques Middlecoff.html" title="Jacques Middlecoff">Jacques Middlecoff</a>, <a class="external text" href="https://www.researchgate.net/profile/Tom_Henderson4" rel="nofollow">Tom Henderson</a> (<b>2010</b>). <i><a class="external text" href="https://dl.acm.org/citation.cfm?id=1845128" rel="nofollow">Running the NIM Next-Generation Weather Model on GPUs</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/ccgrid/ccgrid2010.html" rel="nofollow">CCGRID 2010</a></li>
+<li>  John Nickolls, William J. Dally (<b>2010</b>). <a class="external text" href="https://ieeexplore.ieee.org/document/5446251" rel="nofollow">The GPU Computing Era</a>. <a class="external text" href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=40" rel="nofollow">IEEE Micro</a>.</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="https://github.com/markgovett" rel="nofollow">Mark Govett</a>, <a href="Jacques Middlecoff.html" title="Jacques Middlecoff">Jacques Middlecoff</a>, <a class="external text" href="https://www.researchgate.net/profile/Tom_Henderson4" rel="nofollow">Tom Henderson</a>, <a class="external text" href="https://cug.org/5-publications/proceedings_attendee_lists/CUG09CD/S09_Proceedings/pages/authors/11-15Wednesday/12A-Rosinski/Rosinski-paper.html" rel="nofollow">Jim Rosinski</a>, <a class="external text" href="https://www.linkedin.com/in/craig-tierney-9568545" rel="nofollow">Craig Tierney</a> (<b>2011</b>). <i>Parallelization of the NIM Dynamical Core for GPUs</i>. <a class="external text" href="https://is.enes.org/archive-1/archive/documents/Govett.pdf" rel="nofollow">slides as pdf</a></li>
+<li> <a class="new" href="index.php?title=%C4%BDubom%C3%ADr Lackovi%C4%8D&amp;action=edit&amp;redlink=1.html" title="Ľubomír Lackovič (page does not exist)">Ľubomír Lackovič</a> (<b>2011</b>). <i><a class="external text" href="https://hgpu.org/?p=5772" rel="nofollow">Parallel Game Tree Search Using GPU</a></i>. Institute of Informatics and Software Engineering, <a class="external text" href="https://en.wikipedia.org/wiki/Faculty_of_Informatics_and_Information_Technologies" rel="nofollow">Faculty of Informatics and Information Technologies</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Slovak_University_of_Technology_in_Bratislava" rel="nofollow">Slovak University of Technology in Bratislava</a>, <a class="external text" href="http://acmbulletin.fiit.stuba.sk/vol3num2/lackovic.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Dan Anthony Feliciano Alcantara&amp;action=edit&amp;redlink=1.html" title="Dan Anthony Feliciano Alcantara (page does not exist)">Dan Anthony Feliciano Alcantara</a> (<b>2011</b>). <i>Efficient Hash Tables on the GPU</i>. Ph. D. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/University_of_California,_Davis" rel="nofollow">University of California, Davis</a>, <a class="external text" href="http://idav.ucdavis.edu/~dfalcant//downloads/dissertation.pdf.html" rel="nofollow">pdf</a> » <a href="Hash Table.html" title="Hash Table">Hash Table</a></li>
+<li> <a class="new" href="index.php?title=Damian Sulewski&amp;action=edit&amp;redlink=1.html" title="Damian Sulewski (page does not exist)">Damian Sulewski</a> (<b>2011</b>). <i>Large-Scale Parallel State Space Search Utilizing Graphics Processing Units and Solid State Disks</i>. Ph.D. thesis, <a href="University of Dortmund.html" title="University of Dortmund">University of Dortmund</a>, <a class="external text" href="https://eldorado.tu-dortmund.de/dspace/bitstream/2003/29418/1/Dissertation.pdf" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Damjan Strnad&amp;action=edit&amp;redlink=1.html" title="Damjan Strnad (page does not exist)">Damjan Strnad</a>, <a class="new" href="index.php?title=Nikola Guid&amp;action=edit&amp;redlink=1.html" title="Nikola Guid (page does not exist)">Nikola Guid</a> (<b>2011</b>). <i><a class="external text" href="http://cit.fer.hr/index.php/CIT/article/view/2029.html" rel="nofollow">Parallel Alpha-Beta Algorithm on the GPU</a></i>. <a class="external text" href="http://cit.fer.hr/index.php/CIT.html" rel="nofollow">CIT. Journal of Computing and Information Technology</a>, Vol. 19, No. 4 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a>, <a href="Othello.html" title="Othello">Reversi</a> </li>
+<li> <a href="Bal%C3%A1zs Jako.html" title="Balázs Jako">Balázs Jákó</a> (<b>2011</b>). <i>Fast Hydraulic and Thermal Erosion on GPU</i>. M.Sc. thesis, Supervisor <a class="external text" href="https://hu.linkedin.com/in/bal%C3%A1zs-t%C3%B3th-1b151329" rel="nofollow">Balázs Tóth</a>, <a class="external text" href="http://eg2011.bangor.ac.uk/.html" rel="nofollow">Eurographics 2011</a>, <a class="external text" href="http://old.cescg.org/CESCG-2011/papers/TUBudapest-Jako-Balazs.pdf.html" rel="nofollow">pdf</a></li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="new" href="index.php?title=Liang Li&amp;action=edit&amp;redlink=1.html" title="Liang Li (page does not exist)">Liang Li</a>, <a class="new" href="index.php?title=Hong Liu&amp;action=edit&amp;redlink=1.html" title="Hong Liu (page does not exist)">Hong Liu</a>, <a class="new" href="index.php?title=Peiyu Liu&amp;action=edit&amp;redlink=1.html" title="Peiyu Liu (page does not exist)">Peiyu Liu</a>, <a class="new" href="index.php?title=Taoying Liu&amp;action=edit&amp;redlink=1.html" title="Taoying Liu (page does not exist)">Taoying Liu</a>, <a class="new" href="index.php?title=Wei Li&amp;action=edit&amp;redlink=1.html" title="Wei Li (page does not exist)">Wei Li</a>, <a class="new" href="index.php?title=Hao Wang&amp;action=edit&amp;redlink=1.html" title="Hao Wang (page does not exist)">Hao Wang</a> (<b>2012</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/A-Node-based-Parallel-Game-Tree-Algorithm-Using-Li-Liu/be21d7b9b91957b700aab4ce002e6753b826ff54" rel="nofollow">A Node-based Parallel Game Tree Algorithm Using GPUs</a></i>. CLUSTER 2012 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a href="S. Ali Mirsoleimani.html" title="S. Ali Mirsoleimani">S. Ali Mirsoleimani</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/k/Karami:Ali" rel="nofollow">Ali Karami Ali Karami</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/k/Khunjush:Farshad" rel="nofollow">Farshad Khunjush</a> (<b>2013</b>). <i><a class="external text" href="https://scholar.google.de/citations?view_op=view_citation&amp;hl=en&amp;user=VvkRESgAAAAJ&amp;citation_for_view=VvkRESgAAAAJ:ufrVoPGSRksC" rel="nofollow">A parallel memetic algorithm on GPU to solve the task scheduling problem in heterogeneous environments</a></i>. <a class="external text" href="http://www.sigevo.org/gecco-2013/program.html.html" rel="nofollow">GECCO '13</a></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/k/Karami:Ali" rel="nofollow">Ali Karami</a>, <a href="S. Ali Mirsoleimani.html" title="S. Ali Mirsoleimani">S. Ali Mirsoleimani</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/k/Khunjush:Farshad" rel="nofollow">Farshad Khunjush</a> (<b>2013</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/6714232" rel="nofollow">A statistical performance prediction model for OpenCL kernels on NVIDIA GPUs</a></i>. <a class="external text" href="https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6708586" rel="nofollow">CADS 2013</a></li>
+<li> <a href="Diego Rodr%C3%ADguez-Losada.html" title="Diego Rodríguez-Losada">Diego Rodríguez-Losada</a>, <a href="Pablo San Segundo.html" title="Pablo San Segundo">Pablo San Segundo</a>, <a class="new" href="index.php?title=Miguel Hernando&amp;action=edit&amp;redlink=1.html" title="Miguel Hernando (page does not exist)">Miguel Hernando</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/p/Puente:Paloma_de_la" rel="nofollow">Paloma de la Puente</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/v/Valero=Gomez:Alberto" rel="nofollow">Alberto Valero-Gomez</a> (<b>2013</b>). <i>GPU-Mapping: Robotic Map Building with Graphical Multiprocessors</i>. <a class="external text" href="https://dblp.uni-trier.de/db/journals/ram/ram20.html" rel="nofollow">IEEE Robotics &amp; Automation Magazine, Vol. 20, No. 2</a>, <a class="external text" href="https://www.acin.tuwien.ac.at/fileadmin/acin/v4r/v4r/GPUMap_RAM2013.pdf" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="https://dblp.org/pid/28/977-2.html" rel="nofollow">David Williams</a>, <a href="Valeriu Codreanu.html" title="Valeriu Codreanu">Valeriu Codreanu</a>, <a class="external text" href="https://dblp.org/pid/88/5343-1.html" rel="nofollow">Po Yang</a>, <a class="external text" href="https://dblp.org/pid/54/784.html" rel="nofollow">Baoquan Liu</a>, <a class="external text" href="https://www.strath.ac.uk/staff/dongfengprofessor/" rel="nofollow">Feng Dong</a>, <a class="external text" href="https://dblp.org/pid/136/5430.html" rel="nofollow">Burhan Yasar</a>, <a class="external text" href="https://scholar.google.com/citations?user=FZVGYiQAAAAJ&amp;hl=en" rel="nofollow">Babak Mahdian</a>, <a class="external text" href="https://scholar.google.com/citations?user=8WO6cVUAAAAJ&amp;hl=en" rel="nofollow">Alessandro Chiarini</a>, <a class="external text" href="https://zhaoxiahust.github.io/" rel="nofollow">Xia Zhao</a>, <a class="external text" href="https://scholar.google.com/citations?user=jCFYHlkAAAAJ&amp;hl=en" rel="nofollow">Jos Roerdink</a> (<b>2013</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-642-55224-3_42" rel="nofollow">Evaluation of Autoparallelization Toolkits for Commodity GPUs</a></i>. <a class="external text" href="https://dblp.org/db/conf/ppam/ppam2013-1.html#WilliamsCYLDYMCZR13" rel="nofollow">PPAM 2013</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/d/Dang:Qingqing" rel="nofollow">Qingqing Dang</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/y/Yan:Shengen" rel="nofollow">Shengen Yan</a>, <a href="Ren Wu.html" title="Ren Wu">Ren Wu</a> (<b>2014</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/7097862" rel="nofollow">A fast integral image generation algorithm on GPUs</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/icpads/icpads2014.html" rel="nofollow">ICPADS 2014</a></li>
+<li> <a href="S. Ali Mirsoleimani.html" title="S. Ali Mirsoleimani">S. Ali Mirsoleimani</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/k/Karami:Ali" rel="nofollow">Ali Karami Ali Karami</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/k/Khunjush:Farshad" rel="nofollow">Farshad Khunjush</a> (<b>2014</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-319-04891-8_12" rel="nofollow">A Two-Tier Design Space Exploration Algorithm to Construct a GPU Performance Predictor</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/arcs/arcs2014.html" rel="nofollow">ARCS 2014</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Lecture_Notes_in_Computer_Science" rel="nofollow">Lecture Notes in Computer Science</a>, Vol. 8350, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li>
+<li> <a href="Steinar H. Gunderson.html" title="Steinar H. Gunderson">Steinar H. Gunderson</a> (<b>2014</b>). <i><a class="external text" href="https://archive.fosdem.org/2014/schedule/event/movit/" rel="nofollow">Movit: High-speed, high-quality video filters on the GPU</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/FOSDEM" rel="nofollow">FOSDEM</a> <a class="external text" href="https://archive.fosdem.org/2014/" rel="nofollow">2014</a>, <a class="external text" href="https://movit.sesse.net/movit-fosdem2014.pdf" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="https://dblp.org/pid/54/784.html" rel="nofollow">Baoquan Liu</a>, <a class="external text" href="https://scholar.google.com/citations?user=VspO6ZUAAAAJ&amp;hl=en" rel="nofollow">Alexandru Telea</a>, <a class="external text" href="https://scholar.google.com/citations?user=jCFYHlkAAAAJ&amp;hl=en" rel="nofollow">Jos Roerdink</a>, <a class="external text" href="https://dblp.org/pid/87/6797.html" rel="nofollow">Gordon Clapworthy</a>, <a class="external text" href="https://dblp.org/pid/28/977-2.html" rel="nofollow">David Williams</a>, <a class="external text" href="https://dblp.org/pid/88/5343-1.html" rel="nofollow">Po Yang</a>, <a class="external text" href="https://www.strath.ac.uk/staff/dongfengprofessor/" rel="nofollow">Feng Dong</a>, <a href="Valeriu Codreanu.html" title="Valeriu Codreanu">Valeriu Codreanu</a>, <a class="external text" href="https://scholar.google.com/citations?user=8WO6cVUAAAAJ&amp;hl=en" rel="nofollow">Alessandro Chiarini</a> (<b>2018</b>). <i>Parallel centerline extraction on the GPU</i>. <a class="external text" href="https://www.journals.elsevier.com/computers-and-graphics" rel="nofollow">Computers &amp; Graphics</a>, Vol. 41, <a class="external text" href="https://strathprints.strath.ac.uk/70614/1/Liu_etal_CG2014_Parallel_centerline_extraction_GPU.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Peter H. Jin&amp;action=edit&amp;redlink=1.html" title="Peter H. Jin (page does not exist)">Peter H. Jin</a>, <a class="new" href="index.php?title=Kurt Keutzer&amp;action=edit&amp;redlink=1.html" title="Kurt Keutzer (page does not exist)">Kurt Keutzer</a> (<b>2015</b>). <i>Convolutional Monte Carlo Rollouts in Go</i>. <a class="external text" href="http://arxiv.org/abs/1512.03375.html" rel="nofollow">arXiv:1512.03375</a> » <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a>, <a href="Go.html" title="Go">Go</a>, <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a></li>
+<li> <a class="new" href="index.php?title=Liang Li&amp;action=edit&amp;redlink=1.html" title="Liang Li (page does not exist)">Liang Li</a>, <a class="new" href="index.php?title=Hong Liu&amp;action=edit&amp;redlink=1.html" title="Hong Liu (page does not exist)">Hong Liu</a>, <a class="new" href="index.php?title=Hao Wang&amp;action=edit&amp;redlink=1.html" title="Hao Wang (page does not exist)">Hao Wang</a>, <a class="new" href="index.php?title=Taoying Liu&amp;action=edit&amp;redlink=1.html" title="Taoying Liu (page does not exist)">Taoying Liu</a>, <a class="new" href="index.php?title=Wei Li&amp;action=edit&amp;redlink=1.html" title="Wei Li (page does not exist)">Wei Li</a> (<b>2015</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/6868996" rel="nofollow">A Parallel Algorithm for Game Tree Search Using GPGPU</a></i>. <a href="IEEE.html#TPDS" title="IEEE">IEEE Transactions on Parallel and Distributed Systems</a>, Vol. 26, No. 8 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="Simon Portegies Zwart.html" title="Simon Portegies Zwart">Simon Portegies Zwart</a>, <a class="external text" href="https://github.com/jbedorf" rel="nofollow">Jeroen Bédorf</a> (<b>2015</b>). <i><a class="external text" href="https://www.computer.org/csdl/magazine/co/2015/11/mco2015110050/13rRUx0Pqwe" rel="nofollow">Using GPUs to Enable Simulation with Computational Gravitational Dynamics in Astrophysics</a></i>. <a href="IEEE.html#Computer" title="IEEE">IEEE Computer</a>, Vol. 48, No. 11</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <span id="Astro"></span><a class="external text" href="https://www.linkedin.com/in/sean-sheen-b99aba89" rel="nofollow">Sean Sheen</a> (<b>2016</b>). <i><a class="external text" href="https://digitalcommons.calpoly.edu/theses/1567/" rel="nofollow">Astro - A Low-Cost, Low-Power Cluster for CPU-GPU Hybrid Computing using the Jetson TK1</a></i>. Master's thesis, <a class="external text" href="https://en.wikipedia.org/wiki/California_Polytechnic_State_University" rel="nofollow">California Polytechnic State University</a>, <a class="external text" href="https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?referer=&amp;httpsredir=1&amp;article=2723&amp;context=theses" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-26"><a href="#cite note-26">[26]</a></sup> <sup class="reference" id="cite_ref-27"><a href="#cite note-27">[27]</a></sup></li>
+<li> <a class="external text" href="https://scholar.google.com/citations?user=YyD7mwcAAAAJ&amp;hl=en" rel="nofollow">Jingyue Wu</a>, <a class="external text" href="https://scholar.google.com/citations?user=EJcIByYAAAAJ&amp;hl=en" rel="nofollow">Artem Belevich</a>, <a class="external text" href="https://scholar.google.com/citations?user=X5WAGdEAAAAJ&amp;hl=en" rel="nofollow">Eli Bendersky</a>, <a class="external text" href="https://www.linkedin.com/in/mark-heffernan-873b663/" rel="nofollow">Mark Heffernan</a>, <a class="external text" href="https://scholar.google.com/citations?user=Guehv9sAAAAJ&amp;hl=en" rel="nofollow">Chris Leary</a>, <a class="external text" href="https://scholar.google.com/citations?user=fAmfZAYAAAAJ&amp;hl=en" rel="nofollow">Jacques Pienaar</a>, <a class="external text" href="http://www.broune.com/.html" rel="nofollow">Bjarke Roune</a>, <a class="external text" href="https://scholar.google.com/citations?user=Der7mNMAAAAJ&amp;hl=en" rel="nofollow">Rob Springer</a>, <a class="external text" href="https://scholar.google.com/citations?user=zvfOH0wAAAAJ&amp;hl=en" rel="nofollow">Xuetian Weng</a>, <a class="external text" href="https://scholar.google.com/citations?user=s7VCtl8AAAAJ&amp;hl=en" rel="nofollow">Robert Hundt</a> (<b>2016</b>). <i><a class="external text" href="https://dl.acm.org/citation.cfm?id=2854041" rel="nofollow">gpucc: an open-source GPGPU compiler</a></i>. <a class="external text" href="https://cgo.org/cgo2016/" rel="nofollow">CGO 2016</a></li>
+<li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Shih-Chieh Huang.html" title="Shih-Chieh Huang">Aja Huang</a>, <a href="Chris J. Maddison.html" title="Chris J. Maddison">Chris J. Maddison</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a class="new" href="index.php?title=George van den Driessche&amp;action=edit&amp;redlink=1.html" title="George van den Driessche (page does not exist)">George van den Driessche</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a class="new" href="index.php?title=Veda Panneershelvam&amp;action=edit&amp;redlink=1.html" title="Veda Panneershelvam (page does not exist)">Veda Panneershelvam</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a class="new" href="index.php?title=Sander Dieleman&amp;action=edit&amp;redlink=1.html" title="Sander Dieleman (page does not exist)">Sander Dieleman</a>, <a class="new" href="index.php?title=Dominik Grewe&amp;action=edit&amp;redlink=1.html" title="Dominik Grewe (page does not exist)">Dominik Grewe</a>, <a class="new" href="index.php?title=John Nham&amp;action=edit&amp;redlink=1.html" title="John Nham (page does not exist)">John Nham</a>, <a class="new" href="index.php?title=Nal Kalchbrenner&amp;action=edit&amp;redlink=1.html" title="Nal Kalchbrenner (page does not exist)">Nal Kalchbrenner</a>, <a href="Ilya Sutskever.html" title="Ilya Sutskever">Ilya Sutskever</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a class="new" href="index.php?title=Madeleine Leach&amp;action=edit&amp;redlink=1.html" title="Madeleine Leach (page does not exist)">Madeleine Leach</a>, <a href="Koray Kavukcuoglu.html" title="Koray Kavukcuoglu">Koray Kavukcuoglu</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2016</b>). <i><a class="external text" href="http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html.html" rel="nofollow">Mastering the game of Go with deep neural networks and tree search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Nature_%28journal%29" rel="nofollow">Nature</a>, Vol. 529 » <a class="new" href="index.php?title=AlphaGo&amp;action=edit&amp;redlink=1.html" title="AlphaGo (page does not exist)">AlphaGo</a></li>
+<li> <a href="Bal%C3%A1zs Jako.html" title="Balázs Jako">Balázs Jákó</a> (<b>2016</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Hardware-accelerated-hybrid-rendering-on-PowerVR-J%C3%A1k%C3%B3/d9d7f5784263c5abdcd6c1bf93267e334468b9b2" rel="nofollow">Hardware accelerated hybrid rendering on PowerVR GPUs</a></i>. <sup class="reference" id="cite_ref-28"><a href="#cite note-28">[28]</a></sup> <a href="IEEE.html" title="IEEE">IEEE</a> <a class="external text" href="https://ieeexplore.ieee.org/xpl/conhome/7547434/proceeding" rel="nofollow">20th Jubilee International Conference on Intelligent Engineering Systems</a></li>
+<li> <a href="Diogo R. Ferreira.html" title="Diogo R. Ferreira">Diogo R. Ferreira</a>, <a class="external text" href="https://dblp.uni-trier.de/pers/hd/s/Santos:Rui_M=" rel="nofollow">Rui M. Santos</a> (<b>2016</b>). <i><a class="external text" href="https://github.com/diogoff/transition-counting-gpu" rel="nofollow">Parallelization of Transition Counting for Process Mining on Multi-core CPUs and GPUs</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/bpm/bpmw2016.html" rel="nofollow">BPM 2016</a></li>
+<li> <a class="external text" href="https://dblp.org/pers/hd/s/Sch=uuml=tt:Ole" rel="nofollow">Ole Schütt</a>, <a class="external text" href="https://developer.nvidia.com/blog/author/peter-messmer/" rel="nofollow">Peter Messmer</a>, <a class="external text" href="https://scholar.google.ch/citations?user=ajbBWN0AAAAJ&amp;hl=en" rel="nofollow">Jürg Hutter</a>, <a href="Joost VandeVondele.html" title="Joost VandeVondele">Joost VandeVondele</a> (<b>2016</b>). <i><a class="external text" href="https://onlinelibrary.wiley.com/doi/10.1002/9781118670712.ch8" rel="nofollow">GPU Accelerated Sparse Matrix–Matrix Multiplication for Linear Scaling Density Functional Theory</a></i>. <a class="external text" href="https://www.cp2k.org/_media/gpu_book_chapter_submitted.pdf" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-29"><a href="#cite note-29">[29]</a></sup></li></ul>
+<dl><dd> Chapter 8 in <a class="external text" href="https://scholar.google.com/citations?user=AV307ZUAAAAJ&amp;hl=en" rel="nofollow">Ross C. Walker</a>, <a class="external text" href="https://scholar.google.com/citations?user=PJusscIAAAAJ&amp;hl=en" rel="nofollow">Andreas W. Götz</a> (<b>2016</b>). <i><a class="external text" href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781118670712" rel="nofollow">Electronic Structure Calculations on Graphics Processing Units: From Quantum Chemistry to Condensed Matter Physics</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Wiley_(publisher)" rel="nofollow">John Wiley &amp; Sons</a></dd></dl>
+<p><b>2017</b>
+</p>
+<ul><li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2017</b>). <i>Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</i>. <a class="external text" href="https://arxiv.org/abs/1712.01815" rel="nofollow">arXiv:1712.01815</a> » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a href="Tristan Cazenave.html" title="Tristan Cazenave">Tristan Cazenave</a> (<b>2017</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/document/7875402/.html" rel="nofollow">Residual Networks for Computer Go</a></i>.  <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. PP, No. 99, <a class="external text" href="http://www.lamsade.dauphine.fr/~cazenave/papers/resnet.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="https://scholar.google.com/citations?user=zLksndkAAAAJ&amp;hl=en" rel="nofollow">Jayvant Anantpur</a>, <a class="external text" href="https://dblp.org/pid/09/10702.html" rel="nofollow">Nagendra Gulur Dwarakanath</a>, <a class="external text" href="https://dblp.org/pid/16/4410.html" rel="nofollow">Shivaram Kalyanakrishnan</a>, <a href="Shalabh Bhatnagar.html" title="Shalabh Bhatnagar">Shalabh Bhatnagar</a>, <a class="external text" href="https://dblp.org/pid/45/3592.html" rel="nofollow">R. Govindarajan</a> (<b>2017</b>). <i>RLWS: A Reinforcement Learning based GPU Warp Scheduler</i>. <a class="external text" href="https://arxiv.org/abs/1712.04303" rel="nofollow">arXiv:1712.04303</a></li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2018</b>). <i><a class="external text" href="http://science.sciencemag.org/content/362/6419/1140.html" rel="nofollow">A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_(journal)" rel="nofollow">Science</a>, Vol. 362, No. 6419</li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5480.html" rel="nofollow">Hardware assist</a> by <a href="Nicolai Czempin.html" title="Nicolai Czempin">Nicolai Czempin</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, August 27, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22732.html" rel="nofollow">Monte carlo on a NVIDIA GPU ?</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2008</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32750.html" rel="nofollow">Using the GPU</a> by <a href="Louis Zulli.html" title="Louis Zulli">Louis Zulli</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38002.html" rel="nofollow">GPGPU and computer chess</a> by Wim Sjoho, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38478.html" rel="nofollow">Possible Board Presentation and Move Generation for GPUs?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 19, 2011</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38478&amp;start=8.html" rel="nofollow">Re: Possible Board Presentation and Move Generation for GPUs</a> by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a>, <a href="CCC.html" title="CCC">CCC</a>, March 20, 2011</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39459.html" rel="nofollow">Zeta plays chess on a gpu</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, June 23, 2011 » <a href="Zeta.html" title="Zeta">Zeta</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39606.html" rel="nofollow">GPU Search Methods</a> by <a class="new" href="index.php?title=Joshua Haglund&amp;action=edit&amp;redlink=1.html" title="Joshua Haglund (page does not exist)">Joshua Haglund</a>, <a href="CCC.html" title="CCC">CCC</a>, July 04, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=442052&amp;t=41853.html" rel="nofollow">Possible Search Algorithms for GPUs?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2012 <sup class="reference" id="cite_ref-30"><a href="#cite note-30">[30]</a></sup> <sup class="reference" id="cite_ref-31"><a href="#cite note-31">[31]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42590.html" rel="nofollow">uct on gpu</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2012 » <a href="UCT.html" title="UCT">UCT</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43971.html" rel="nofollow">Is there such a thing as branchless move generation?</a> by <a href="John Hamlen.html" title="John Hamlen">John Hamlen</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2012 » <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44014.html" rel="nofollow">Choosing a GPU platform: AMD and Nvidia</a> by <a href="John Hamlen.html" title="John Hamlen">John Hamlen</a>, <a href="CCC.html" title="CCC">CCC</a>, June 10, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46277.html" rel="nofollow">Nvidias K20 with Recursion</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, December 04, 2012 <sup class="reference" id="cite_ref-32"><a href="#cite note-32">[32]</a></sup></li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46974.html" rel="nofollow">Kogge Stone, Vector Based</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, January 22, 2013 » <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a> <sup class="reference" id="cite_ref-33"><a href="#cite note-33">[33]</a></sup> <sup class="reference" id="cite_ref-34"><a href="#cite note-34">[34]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47344.html" rel="nofollow">GPU chess engine</a> by Samuel Siltanen, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48387.html" rel="nofollow">Fast perft on GPU (upto 20 Billion nps w/o hashing)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, June 22, 2013 » <a href="Perft.html" title="Perft">Perft</a>, <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a> <sup class="reference" id="cite_ref-35"><a href="#cite note-35">[35]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2015_..._2">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60386.html" rel="nofollow">GPU chess update, local memory...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, June 06, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61761.html" rel="nofollow">Jetson GPU architecture</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 2016 » <a href="GPU.html#Astro" title="GPU">Astro</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61925.html" rel="nofollow">Pigeon is now running on the GPU</a> by <a href="Stuart Riffle.html" title="Stuart Riffle">Stuart Riffle</a>, <a href="CCC.html" title="CCC">CCC</a>, November 02, 2016 » <a href="Pigeon.html" title="Pigeon">Pigeon</a></li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63346.html" rel="nofollow">Back to the basics, generating moves on gpu in parallel...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2017 » <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64983&amp;start=9.html" rel="nofollow">Re: Perft(15): comparison of estimates with Ankan's result</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2017 » <a href="Perft.html#15" title="Perft">Perft(15)</a></li>
+<li> <a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=32317.html" rel="nofollow">Chess Engine and GPU</a> by Fishpov , <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, October 09, 2017 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66025.html" rel="nofollow">To TPU or not to TPU...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, December 16, 2017 » <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a> <sup class="reference" id="cite_ref-36"><a href="#cite note-36">[36]</a></sup></li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66280.html" rel="nofollow">Announcing lczero</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67347.html" rel="nofollow">GPU ANN, how to deal with host-device latencies?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, May 06, 2018 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=67357.html" rel="nofollow">GPU contention</a> by <a href="Ian Kennedy.html" title="Ian Kennedy">Ian Kennedy</a>, <a href="CCC.html" title="CCC">CCC</a>, May 07, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448.html" rel="nofollow">How good is the RTX 2080 Ti for Leela?</a> by Hai, September 15, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a> <sup class="reference" id="cite_ref-37"><a href="#cite note-37">[37]</a></sup></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68448&amp;start=2.html" rel="nofollow">Re: How good is the RTX 2080 Ti for Leela?</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2018</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=68973.html" rel="nofollow">My non-OC RTX 2070 is very fast with Lc0</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69400.html" rel="nofollow">LC0 using 4 x 2080 Ti GPU's on Chess.com tourney?</a> by M. Ansari, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69447.html" rel="nofollow">Generate EGTB with graphics cards?</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2019 » <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=69478.html" rel="nofollow">LCZero FAQ is missing one important fact</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2019 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/lczero/I0lTgR-fFFU/NGC3kJDzAwAJ" rel="nofollow">Michael Larabel benches lc0 on various GPUs</a> by <a href="Warren D. Smith.html" title="Warren D. Smith">Warren D. Smith</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">LCZero Forum</a>, January 14, 2019 » <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a> <sup class="reference" id="cite_ref-38"><a href="#cite note-38">[38]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70362.html" rel="nofollow">Using LC0 with one or two GPUs - a guide</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 30, 2019 » <a href="Leela Chess Zero.html#Lc0" title="Leela Chess Zero">Lc0</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70584.html" rel="nofollow">Wouldn't it be nice if C++ GPU</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="CCC.html" title="CCC">CCC</a>, April 25, 2019 » <a href="Cpp.html" title="Cpp">C++</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71058.html" rel="nofollow">Lazy-evaluation of futures for parallel work-efficient Alpha-Beta search</a> by  Percival Tiglao, <a href="CCC.html" title="CCC">CCC</a>, June 06, 2019</li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/viewtopic.php?f=21&amp;t=694" rel="nofollow">My home-made CUDA kernel for convolutions</a> by <a href="R%C3%A9mi Coulom.html" title="Rémi Coulom">Rémi Coulom</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Game-AI Forum</a>, November 09, 2019 » <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72320.html" rel="nofollow">GPU rumors 2020</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, November 13, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74771.html" rel="nofollow">AB search with NN on GPU...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, August 13, 2020 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a> <sup class="reference" id="cite_ref-39"><a href="#cite note-39">[39]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75073.html" rel="nofollow">I stumbled upon this article on the new Nvidia RTX GPUs</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, September 10, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75639.html" rel="nofollow">Will AMD RDNA2 based Radeon RX 6000 series kick butt with Lc0?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, November 01, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76986.html" rel="nofollow">Zeta with NNUE on GPU?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 31, 2021 » <a href="Zeta.html" title="Zeta">Zeta</a>, <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a class="external text" href="https://talkchess.com/forum3/viewtopic.php?f=2&amp;t=77097" rel="nofollow">GPU rumors 2021</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, April 16, 2021</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79078" rel="nofollow">Comparison of all known Sliding lookup algorithms [CUDA]</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2022 » <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a></li>
+<li> <a class="external text" href="https://talkchess.com/forum3/viewtopic.php?f=7&amp;t=72566&amp;p=955538#p955538" rel="nofollow">Re: China boosts in silicon...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2024</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Graphics_processing_unit" rel="nofollow">Graphics processing unit from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Video_card" rel="nofollow">Video card from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Heterogeneous_System_Architecture" rel="nofollow">Heterogeneous System Architecture from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tensor_processing_unit" rel="nofollow">Tensor processing unit from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units" rel="nofollow">General-purpose computing on graphics processing units (GPGPU) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units" rel="nofollow">List of AMD graphics processing units from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units" rel="nofollow">List of Intel graphics processing units from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units" rel="nofollow">List of Nvidia graphics processing units from Wikipedia</a></li>
+<li> <a class="external text" href="https://developer.nvidia.com/" rel="nofollow">NVIDIA Developer</a></li>
+<li> <a class="external text" href="https://developer.nvidia.com/nvidia-gpu-programming-guide" rel="nofollow">NVIDIA GPU Programming Guide</a></li></ul>
+<h2><span class="mw-headline" id="OpenCL">OpenCL</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/OpenCL" rel="nofollow">OpenCL from Wikipedia</a></li>
+<li> <a class="external text" href="https://www.codeproject.com/Articles/110685/Part-1-OpenCL-Portable-Parallelism" rel="nofollow">Part 1: OpenCL™ – Portable Parallelism - CodeProject</a></li>
+<li> <a class="external text" href="https://www.codeproject.com/Articles/122405/Part-2-OpenCL-Memory-Spaces" rel="nofollow">Part 2: OpenCL™ – Memory Spaces - CodeProject</a></li></ul>
+<h2><span class="mw-headline" id="CUDA">CUDA</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/CUDA" rel="nofollow">CUDA from Wikipedia</a></li>
+<li> <a class="external text" href="https://developer.nvidia.com/cuda-zone" rel="nofollow">CUDA Zone | NVIDIA Developer</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/NVIDIA_CUDA_Compiler" rel="nofollow">Nvidia CUDA Compiler (NVCC) from Wikipedia</a></li>
+<li> <a class="external text" href="https://llvm.org/docs/CompileCudaWithLLVM.html" rel="nofollow">Compiling CUDA with clang</a> — <a class="external text" href="https://en.wikipedia.org/wiki/LLVM" rel="nofollow">LLVM</a> <a class="external text" href="https://en.wikipedia.org/wiki/Clang" rel="nofollow">Clang</a>  documentation </li>
+<li> <a class="external text" href="https://github.com/cppcon/cppcon2016" rel="nofollow">CppCon 2016</a>: “Bringing Clang and C++ to GPUs: An Open-Source, CUDA-Compatible GPU C++ Compiler" by <a class="external text" href="https://github.com/jlebar" rel="nofollow">Justin Lebar</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video <sup class="reference" id="cite_ref-40"><a href="#cite note-40">[40]</a></sup></li></ul>
+<dl><dd> : <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/KHa-OSrZPGo?" width="640"></iframe></div></div></dd></dl>
+<h2><span class="mw-headline" id="Deep_Learning_2">Deep Learning</span></h2>
+<ul><li> <a class="external text" href="https://developer.nvidia.com/deep-learning" rel="nofollow">Deep Learning | NVIDIA Developer</a> » <a href="Deep Learning.html" title="Deep Learning">Deep Learning</a></li>
+<li> <a class="external text" href="https://developer.nvidia.com/cudnn" rel="nofollow">NVIDIA cuDNN | NVIDIA Developer</a></li>
+<li> <a class="external text" href="http://parse.ele.tue.nl/education/cluster2.html" rel="nofollow">Efficient mapping of the training of Convolutional Neural Networks to a CUDA-based cluster</a></li>
+<li> <a class="external text" href="https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts/" rel="nofollow">Deep Learning in a Nutshell: Core Concepts</a> by <a class="external text" href="http://timdettmers.com/.html" rel="nofollow">Tim Dettmers</a>, <a class="external text" href="https://devblogs.nvidia.com/parallelforall/" rel="nofollow">Parallel Forall</a>,  November 3, 2015</li>
+<li> <a class="external text" href="https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training/" rel="nofollow">Deep Learning in a Nutshell: History and Training</a> by <a class="external text" href="http://timdettmers.com/.html" rel="nofollow">Tim Dettmers</a>, <a class="external text" href="https://devblogs.nvidia.com/parallelforall/" rel="nofollow">Parallel Forall</a>,  December 16, 2015</li>
+<li> <a class="external text" href="https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-sequence-learning/" rel="nofollow">Deep Learning in a Nutshell: Sequence Learning</a> by <a class="external text" href="http://timdettmers.com/.html" rel="nofollow">Tim Dettmers</a>, <a class="external text" href="https://devblogs.nvidia.com/parallelforall/" rel="nofollow">Parallel Forall</a>, March 7, 2016</li>
+<li> <a class="external text" href="https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-reinforcement-learning/" rel="nofollow">Deep Learning in a Nutshell: Reinforcement Learning</a> by <a class="external text" href="http://timdettmers.com/.html" rel="nofollow">Tim Dettmers</a>, <a class="external text" href="https://devblogs.nvidia.com/parallelforall/" rel="nofollow">Parallel Forall</a>, September 8, 2016</li>
+<li> <a class="external text" href="https://blog.dominodatalab.com/gpu-computing-and-deep-learning/" rel="nofollow">Faster deep learning with GPUs and Theano</a> </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Theano_(software)" rel="nofollow">Theano (software) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/TensorFlow" rel="nofollow">TensorFlow from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Game_Programming">Game Programming</span></h2>
+<ul><li> <a class="external text" href="http://andy-thomason.github.io/lecture notes/agp/agp gpgpu programming.html.html" rel="nofollow">Advanced game programming | Session 5 - GPGPU programming</a> by <a href="Andy Thomason.html" title="Andy Thomason">Andy Thomason</a></li>
+<li> <a class="external text" href="https://zero.sjeng.org/" rel="nofollow">Leela Zero</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a> » <a class="new" href="index.php?title=Leela Zero&amp;action=edit&amp;redlink=1.html" title="Leela Zero (page does not exist)">Leela Zero</a></li></ul>
+<dl><dd> <a class="external text" href="https://github.com/gcp/leela-zero" rel="nofollow">GitHub - gcp/leela-zero: Go engine with no human-provided knowledge, modeled after the AlphaGo Zero paper</a></dd></dl>
+<h2><span class="mw-headline" id="Chess_Programming">Chess Programming</span></h2>
+<ul><li> <a class="external text" href="https://chessgpgpu.blogspot.com/" rel="nofollow">Chess on a GPGPU</a></li>
+<li> <a class="external text" href="http://gpuchess.blogspot.com/.html" rel="nofollow">GPU Chess Blog</a></li>
+<li> <a class="external text" href="https://github.com/ankan-ban/perft_gpu" rel="nofollow">ankan-ban/perft_gpu · GitHub</a> » <a href="Perft.html" title="Perft">Perft</a> <sup class="reference" id="cite_ref-41"><a href="#cite note-41">[41]</a></sup></li>
+<li> <a class="external text" href="https://github.com/LeelaChessZero" rel="nofollow">LCZero · GitHub</a> » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="external text" href="https://github.com/StuartRiffle/Jaglavak" rel="nofollow">GitHub - StuartRiffle/Jaglavak: Corvid Chess Engine</a> » <a href="Jaglavak.html" title="Jaglavak">Jaglavak</a></li>
+<li> <a class="external text" href="https://zeta-chess.app26.de/" rel="nofollow">Zeta OpenCL Chess</a> » <a href="Zeta.html" title="Zeta">Zeta</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://commons.wikimedia.org/wiki/File:NvidiaTesla.jpg" rel="nofollow">Image</a> by Mahogny, February 09, 2008, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75724.html" rel="nofollow">Pytorch NNUE training</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary Linscott</a>, <a href="CCC.html" title="CCC">CCC</a>, November 08, 2020</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external autonumber" href="https://en.wikipedia.org/w/index.php?title=General-purpose_computing_on_graphics_processing_units&amp;oldid=1231808094" rel="nofollow">[1]</a> Wikipedia contributors. (2024, June 30). General-purpose computing on graphics processing units. In Wikipedia, The Free Encyclopedia. Retrieved 13:27, July 7, 2024</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.nvidia.com/content/PDF/fermi_white_papers/NVIDIA_Fermi_Compute_Architecture_Whitepaper.pdf" rel="nofollow">Fermi white paper from Nvidia</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units#GeForce_500_series" rel="nofollow">GeForce 500 series on Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Core_Next" rel="nofollow">Graphics Core Next on Wikipedia</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units#Radeon_HD_7000_series" rel="nofollow">Radeon HD 7000 series on Wikipedia</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/CUDA#Technical_Specification" rel="nofollow">CUDA Technical_Specification on Wikipedia</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.olcf.ornl.gov/wp-content/uploads/2019/10/ORNL_Application_Readiness_Workshop-AMD_GPU_Basics.pdf" rel="nofollow">AMD GPU Hardware Basics</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text">CUDA C Programming Guide v7.0, Appendix G.COMPUTE CAPABILITIES</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text">AMD Accelerated Parallel Processing OpenCL Programming Guide rev2.7, Appendix D Device Parameters, Table D.1 Parameters for 7xxx Devices</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text">CUDA C Programming Guide v7.0, Chapter 5.4.1. Arithmetic Instructions</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text">AMD_OpenCL_Programming_Optimization_Guide.pdf 3.0beta, Chapter 2.7.1 Instruction Bandwidths</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="https://talkchess.com/forum3/viewtopic.php?f=7&amp;t=66025&amp;p=743355#p743355" rel="nofollow">Re: To TPU or not to TPU...</a> by <a href="R%C3%A9mi Coulom.html" title="Rémi Coulom">Rémi Coulom</a>, <a href="CCC.html" title="CCC">CCC</a>, December 16, 2017</span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="https://on-demand.gputechconf.com/gtc/2017/presentation/s7798-luke-durant-inside-volta.pdf" rel="nofollow">INSIDE VOLTA</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.anandtech.com/show/13282/nvidia-turing-architecture-deep-dive/6" rel="nofollow">AnandTech - Nvidia Turing Deep Dive page 6</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#Details" rel="nofollow">Wikipedia - Ampere microarchitecture</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Ada_Lovelace_(microarchitecture)" rel="nofollow">- Ada Lovelace microarchitecture</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="https://devtalk.nvidia.com/default/topic/1047965/cuda-programming-and-performance/host-device-latencies-/post/5318041/#5318041" rel="nofollow">host-device latencies?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, Nvidia CUDA ZONE, Feb 28, 2019</span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="https://community.amd.com/thread/237337#comment-2902071" rel="nofollow">host-device latencies?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a> AMD Developer Community, Feb 28, 2019</span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67347.html#p761239" rel="nofollow">Re: GPU ANN, how to deal with host-device latencies?</a> by <a href="Milos Stanisavljevic.html" title="Milos Stanisavljevic">Milos Stanisavljevic</a>, <a href="CCC.html" title="CCC">CCC</a>, May 06, 2018</span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="https://devblogs.nvidia.com/nvidia-ampere-architecture-in-depth/" rel="nofollow">NVIDIA Ampere Architecture In-Depth | NVIDIA Developer Blog</a> by <a class="external text" href="https://people.csail.mit.edu/ronny/" rel="nofollow">Ronny Krashinsky</a>, <a class="external text" href="https://cppcast.com/guest/ogiroux/" rel="nofollow">Olivier Giroux</a>, <a class="external text" href="https://blogs.nvidia.com/blog/author/stephenjones/" rel="nofollow">Stephen Jones</a>, <a class="external text" href="https://blogs.nvidia.com/blog/author/nick-stam/" rel="nofollow">Nick Stam</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Sridhar_Ramaswamy" rel="nofollow">Sridhar Ramaswamy</a>, May 14, 2020</span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="https://devblogs.nvidia.com/cuda-11-features-revealed/" rel="nofollow">CUDA 11 Features Revealed | NVIDIA Developer Blog</a> by <a class="external text" href="https://devblogs.nvidia.com/author/pramarao/" rel="nofollow">Pramod Ramarao</a>, May 14, 2020</span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Photon_mapping" rel="nofollow">Photon mapping from Wikipedia</a></span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite ref-25">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Cell_(microprocessor)" rel="nofollow">Cell (microprocessor) from Wikipedia</a></span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><a href="#cite ref-26">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html.html" rel="nofollow">Jetson TK1 Embedded Development Kit | NVIDIA</a></span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><a href="#cite ref-27">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61761.html" rel="nofollow">Jetson GPU architecture</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 2016</span>
+</li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><a href="#cite ref-28">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/PowerVR" rel="nofollow">PowerVR from Wikipedia</a></span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><a href="#cite ref-29">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Density_functional_theory" rel="nofollow">Density functional theory from Wikipedia</a></span>
+</li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><a href="#cite ref-30">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Yaron Shoham&amp;action=edit&amp;redlink=1.html" title="Yaron Shoham (page does not exist)">Yaron Shoham</a>, <a class="new" href="index.php?title=Sivan Toledo&amp;action=edit&amp;redlink=1.html" title="Sivan Toledo (page does not exist)">Sivan Toledo</a> (<b>2002</b>). <i><a class="external text" href="https://www.sciencedirect.com/science/article/pii/S0004370202001959" rel="nofollow">Parallel Randomized Best-First Minimax Search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_(journal)" rel="nofollow">Artificial Intelligence</a>, Vol. 137, Nos. 1-2</span>
+</li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><a href="#cite ref-31">↑</a></span> <span class="reference-text"><a href="Alberto Maria Segre.html" title="Alberto Maria Segre">Alberto Maria Segre</a>, <a class="new" href="index.php?title=Sean Forman&amp;action=edit&amp;redlink=1.html" title="Sean Forman (page does not exist)">Sean Forman</a>, <a class="new" href="index.php?title=Giovanni Resta&amp;action=edit&amp;redlink=1.html" title="Giovanni Resta (page does not exist)">Giovanni Resta</a>, <a class="new" href="index.php?title=Andrew Wildenberg&amp;action=edit&amp;redlink=1.html" title="Andrew Wildenberg (page does not exist)">Andrew Wildenberg</a> (<b>2002</b>). <i><a class="external text" href="https://www.sciencedirect.com/science/article/pii/S000437020200228X" rel="nofollow">Nagging: A Scalable Fault-Tolerant Paradigm for Distributed Search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 140, Nos. 1-2</span>
+</li>
+<li id="cite_note-32"><span class="mw-cite-backlink"><a href="#cite ref-32">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.techpowerup.com/173846/Tesla-K20-GPU-Compute-Processor-Specifications-Released.html.html" rel="nofollow">Tesla K20 GPU Compute Processor Specifications Released | techPowerUp</a></span>
+</li>
+<li id="cite_note-33"><span class="mw-cite-backlink"><a href="#cite ref-33">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Parallel_Thread_Execution" rel="nofollow">Parallel Thread Execution from Wikipedia</a></span>
+</li>
+<li id="cite_note-34"><span class="mw-cite-backlink"><a href="#cite ref-34">↑</a></span> <span class="reference-text">NVIDIA Compute PTX: Parallel Thread Execution, ISA Version 1.4, March 31, 2009, <a class="external text" href="http://www.nvidia.com/content/CUDA-ptx isa 1.4.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-35"><span class="mw-cite-backlink"><a href="#cite ref-35">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/ankan-ban/perft_gpu" rel="nofollow">ankan-ban/perft_gpu · GitHub</a></span>
+</li>
+<li id="cite_note-36"><span class="mw-cite-backlink"><a href="#cite ref-36">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Tensor_processing_unit" rel="nofollow">Tensor processing unit from Wikipedia</a></span>
+</li>
+<li id="cite_note-37"><span class="mw-cite-backlink"><a href="#cite ref-37">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/GeForce_20_series" rel="nofollow">GeForce 20 series from Wikipedia</a></span>
+</li>
+<li id="cite_note-38"><span class="mw-cite-backlink"><a href="#cite ref-38">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Phoronix_Test_Suite" rel="nofollow">Phoronix Test Suite from Wikipedia</a></span>
+</li>
+<li id="cite_note-39"><span class="mw-cite-backlink"><a href="#cite ref-39">↑</a></span> <span class="reference-text"><a class="external text" href="https://forums.developer.nvidia.com/t/kernel-launch-latency/62455" rel="nofollow">kernel launch latency - CUDA / CUDA Programming and Performance - NVIDIA Developer Forums</a> by LukeCuda, June 18, 2018</span>
+</li>
+<li id="cite_note-40"><span class="mw-cite-backlink"><a href="#cite ref-40">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69447&amp;start=1.html" rel="nofollow">Re: Generate EGTB with graphics cards?</a> by <a class="external text" href="http://www.indriid.com/.html" rel="nofollow">Graham Jones</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2019</span>
+</li>
+<li id="cite_note-41"><span class="mw-cite-backlink"><a href="#cite ref-41">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48387.html" rel="nofollow">Fast perft on GPU (upto 20 Billion nps w/o hashing)</a> by <a href="Ankan Banerjee.html" title="Ankan Banerjee">Ankan Banerjee</a>, <a href="CCC.html" title="CCC">CCC</a>, June 22, 2013</span>
+</li>
+</ol></div>
+<p><b><a href="Hardware.html" title="Hardware">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721233051
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.133 seconds
+Real time usage: 0.914 seconds
+Preprocessor visited node count: 918/1000000
+Preprocessor generated node count: 1716/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4980-0!canonical and timestamp 20240721233050 and revision id 27032
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=GPU&amp;oldid=27032">https://www.chessprogramming.org/index.php?title=GPU&amp;oldid=27032</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Videos.html" title="Category:Videos">Videos</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=GPU&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="GPU.html" title="View the content page [c]">Page</a></span></li>
+<li id="ca-talk"><span><a accesskey="t" href="Talk:GPU.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="GPU.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=GPU&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=GPU&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/GPU.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/GPU.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=GPU&amp;oldid=27032.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=GPU&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 July 2024, at 15:32.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=GPU&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.133","walltime":"0.914","ppvisitednodes":{"value":918,"limit":1000000},"ppgeneratednodes":{"value":1716,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721233051","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":50});});</script>
+</body>
+</html>

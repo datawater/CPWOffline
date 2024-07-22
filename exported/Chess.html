@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chess","wgTitle":"Chess","wgCurRevisionId":26868,"wgRevisionId":26868,"wgArticleId":1053,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Anthony Braxton","Marcel Duchamp"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chess","wgRelevantArticleId":1053,"wgRequestId":"Zp7DOc@utCIUdSQUVimlNQAAAAU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.FenTT.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chess rootpage-Chess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * Chess</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Breaking Point 1.png.html"><img alt="" class="thumbimage" height="437" src="wikipedia/commons/thumb/b/b0/Breaking_Point_1.png/300px-Breaking_Point_1.png" srcset="https://upload.wikimedia.org/wikipedia/commons/b/b0/Breaking_Point_1.png 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Breaking Point 1.png.html" title="Enlarge"></a></div>Chess <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Chess</b>,<br/>
+a <a class="external text" href="https://en.wikipedia.org/wiki/Two-player_game" rel="nofollow">two-player</a> <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum_%28game_theory%29" rel="nofollow">zero-sum</a> <a class="external text" href="https://en.wikipedia.org/wiki/Abstract_strategy" rel="nofollow">abstract strategy</a> <a class="external text" href="https://en.wikipedia.org/wiki/Board_game" rel="nofollow">board game</a> with <a class="external text" href="https://en.wikipedia.org/wiki/Perfect_information" rel="nofollow">perfect information</a> as classified by <a href="John von Neumann.html" title="John von Neumann">John von Neumann</a>. Chess has an estimated <a class="external text" href="https://en.wikipedia.org/wiki/Game_complexity#State-space_complexity" rel="nofollow">state-space complexity</a> of 10<span style="font-size: 80%; vertical-align: super;">46</span> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> , the estimated <a class="external text" href="https://en.wikipedia.org/wiki/Game_complexity#Game-tree_complexity" rel="nofollow">game tree complexity</a> of 10<span style="font-size: 80%; vertical-align: super;">123</span> is based on an <a href="Branching Factor.html" title="Branching Factor">average branching factor</a> of 35 and an average game length of 80 <a href="Ply.html" title="Ply">ply</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> .
+This page is about the basic chess items, <a href="Chessboard.html" title="Chessboard">chessboard</a>, <a href="Pieces.html" title="Pieces">pieces</a> and <a href="Moves.html" title="Moves">moves</a>, and how they are considered or encoded inside a chess program, to either represent a <a href="Chess Position.html" title="Chess Position">chess position</a> inside its <a href="Search.html" title="Search">search</a> and to play the <a href="Chess Game.html" title="Chess Game">game of chess</a>. It sub-pages intersect with <a href="Evaluation.html" title="Evaluation">evaluation</a>, <a href="Board Representation.html" title="Board Representation">board representation</a> and even <a href="Search.html" title="Search">search</a> topics. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Board and Squares"><span class="tocnumber">1</span> <span class="toctext">Board and Squares</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pieces and Moves"><span class="tocnumber">2</span> <span class="toctext">Pieces and Moves</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Color and Side"><span class="tocnumber">3</span> <span class="toctext">Color and Side</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#The Game of Chess"><span class="tocnumber">4</span> <span class="toctext">The Game of Chess</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#During the Game"><span class="tocnumber">4.1</span> <span class="toctext">During the Game</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#The End"><span class="tocnumber">4.2</span> <span class="toctext">The End</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Chess Variants"><span class="tocnumber">5</span> <span class="toctext">Chess Variants</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Chess Problems"><span class="tocnumber">6</span> <span class="toctext">Chess Problems</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Chess and Mathematics"><span class="tocnumber">7</span> <span class="toctext">Chess and Mathematics</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Chess Maxima"><span class="tocnumber">8</span> <span class="toctext">Chess Maxima</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Chess and Psychology"><span class="tocnumber">9</span> <span class="toctext">Chess and Psychology</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Chess and Philosophy"><span class="tocnumber">10</span> <span class="toctext">Chess and Philosophy</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Chess Programs called Chess"><span class="tocnumber">11</span> <span class="toctext">Chess Programs called Chess</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Categories"><span class="tocnumber">12</span> <span class="toctext">Categories</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#See also"><span class="tocnumber">13</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Publications"><span class="tocnumber">14</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#1949"><span class="tocnumber">14.1</span> <span class="toctext">1949</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#1950 ..."><span class="tocnumber">14.2</span> <span class="toctext">1950 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#1955 ..."><span class="tocnumber">14.3</span> <span class="toctext">1955 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#1960 ..."><span class="tocnumber">14.4</span> <span class="toctext">1960 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#1965 ..."><span class="tocnumber">14.5</span> <span class="toctext">1965 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#1970 ..."><span class="tocnumber">14.6</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#1975 ..."><span class="tocnumber">14.7</span> <span class="toctext">1975 ...</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#1980 ..."><span class="tocnumber">14.8</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#1985 ..."><span class="tocnumber">14.9</span> <span class="toctext">1985 ...</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#1990 ..."><span class="tocnumber">14.10</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#1995 ..."><span class="tocnumber">14.11</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#2000 ..."><span class="tocnumber">14.12</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#2005 ..."><span class="tocnumber">14.13</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#2010 ..."><span class="tocnumber">14.14</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#2015 ..."><span class="tocnumber">14.15</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#2020 ..."><span class="tocnumber">14.16</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Forum Posts"><span class="tocnumber">15</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#1989"><span class="tocnumber">15.1</span> <span class="toctext">1989</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#1990 ... 2"><span class="tocnumber">15.2</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#2000 ... 2"><span class="tocnumber">15.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#2010 ... 2"><span class="tocnumber">15.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#2015 ... 2"><span class="tocnumber">15.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#2020 ... 2"><span class="tocnumber">15.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="#External Links"><span class="tocnumber">16</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-41"><a href="#Wikipedia"><span class="tocnumber">16.1</span> <span class="toctext">Wikipedia</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#Chess"><span class="tocnumber">16.2</span> <span class="toctext">Chess</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#Chess Variants 2"><span class="tocnumber">16.3</span> <span class="toctext">Chess Variants</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#Misc"><span class="tocnumber">16.4</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-45"><a href="#References"><span class="tocnumber">17</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Board_and_Squares">Board and Squares</span></h1>
+<ul><li> <a href="Chessboard.html" title="Chessboard">Chessboard</a></li>
+<li> <a href="Squares.html" title="Squares">Squares</a></li>
+<li> <a href="Ranks.html" title="Ranks">Ranks</a></li>
+<li> <a href="Files.html" title="Files">Files</a></li>
+<li> <a href="Diagonals.html" title="Diagonals">Diagonals</a></li>
+<li> <a href="Anti-Diagonals.html" title="Anti-Diagonals">Anti-Diagonals</a></li>
+<li> <a href="Rays.html" title="Rays">Rays</a> as subset of Lines</li></ul>
+<h1><span class="mw-headline" id="Pieces_and_Moves">Pieces and Moves</span></h1>
+<ul><li> <a href="Moves.html" title="Moves">Moves</a></li>
+<li> <a href="Pieces.html" title="Pieces">Pieces</a></li>
+<li> <a href="Trajectory.html" title="Trajectory">Trajectory</a></li></ul>
+<h1><span class="mw-headline" id="Color_and_Side">Color and Side</span></h1>
+<ul><li> <a href="Color.html" title="Color">Color</a></li>
+<li> <a href="Side to move.html" title="Side to move">Side to move</a></li></ul>
+<h1><span class="mw-headline" id="The_Game_of_Chess">The Game of Chess</span></h1>
+<ul><li> <a href="Chess Game.html" title="Chess Game">Chess Game</a></li>
+<li> <a href="Chess Position.html" title="Chess Position">Chess Position</a></li>
+<li> <a href="Chess Server.html" title="Chess Server">Chess Server</a></li>
+<li> <a href="Game Notation.html" title="Game Notation">Game Notation</a></li>
+<li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a href="Rules of Chess.html" title="Rules of Chess">Rules of Chess</a></li>
+<li> <a href="Time Management.html" title="Time Management">Time Management</a></li></ul>
+<h2><span class="mw-headline" id="During_the_Game">During the Game</span></h2>
+<ul><li> <a href="Blockade.html" title="Blockade">Blockade</a></li>
+<li> <a href="Check.html" title="Check">Check</a></li>
+<li> <a href="Fortress.html" title="Fortress">Fortress</a></li>
+<li> <a href="Strategy.html" title="Strategy">Strategy</a></li>
+<li> <a href="Tactics.html" title="Tactics">Tactics</a></li>
+<li> <a href="Tempo.html" title="Tempo">Tempo</a></li>
+<li> <a href="Transposition.html" title="Transposition">Transposition</a></li></ul>
+<h2><span class="mw-headline" id="The_End">The End</span></h2>
+<ul><li> <a href="Checkmate.html" title="Checkmate">Checkmate</a></li>
+<li> <a href="Draw.html" title="Draw">Draw</a></li></ul>
+<p><span id="Variants"></span>
+</p>
+<h1><span class="mw-headline" id="Chess_Variants">Chess Variants</span></h1>
+<ul><li> <a href="Losing Chess.html" title="Losing Chess">Antichess</a> (Losing Chess)</li>
+<li> <a href="Atomic Chess.html" title="Atomic Chess">Atomic Chess</a></li>
+<li> <a class="new" href="index.php?title=Capablanca Chess&amp;action=edit&amp;redlink=1.html" title="Capablanca Chess (page does not exist)">Capablanca Chess</a></li>
+<li> <a href="Chess960.html" title="Chess960">Chess960</a> or Fischer Random Chess (FRC)</li>
+<li> <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a></li>
+<li> <a href="Crazyhouse.html" title="Crazyhouse">Crazyhouse</a></li>
+<li> <a class="new" href="index.php?title=Gothic Chess&amp;action=edit&amp;redlink=1.html" title="Gothic Chess (page does not exist)">Gothic Chess</a></li>
+<li> <a class="new" href="index.php?title=Kinglet&amp;action=edit&amp;redlink=1.html" title="Kinglet (page does not exist)">Kinglet</a></li>
+<li> <a href="Knightmate Chess.html" title="Knightmate Chess">Knightmate Chess</a></li>
+<li> <a href="Losing Chess.html" title="Losing Chess">Losing Chess</a></li>
+<li> <a class="new" href="index.php?title=Nightrider Chess&amp;action=edit&amp;redlink=1.html" title="Nightrider Chess (page does not exist)">Nightrider Chess</a></li>
+<li> <a class="new" href="index.php?title=Seirawan Chess&amp;action=edit&amp;redlink=1.html" title="Seirawan Chess (page does not exist)">Seirawan Chess</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li>
+<li> <a href="Shatranj.html" title="Shatranj">Shatranj</a></li>
+<li> <a href="Shogi.html" title="Shogi">Shogi</a> (Japanese Chess)</li>
+<li> <a class="new" href="index.php?title=Shuffle Chess&amp;action=edit&amp;redlink=1.html" title="Shuffle Chess (page does not exist)">Shuffle Chess</a></li>
+<li> <a href="Losing Chess.html" title="Losing Chess">Suicide Chess</a> (Losing Chess)</li></ul>
+<h1><span class="mw-headline" id="Chess_Problems">Chess Problems</span></h1>
+<ul><li> <a href="Chess Problems, Compositions and Studies.html" title="Chess Problems, Compositions and Studies">Chess Problems, Compositions and Studies</a></li>
+<li> <a href="Retrograde Analysis.html" title="Retrograde Analysis">Retrograde Analysis</a></li></ul>
+<p><span id="ChessAndMathematics"></span>
+</p>
+<h1><span class="mw-headline" id="Chess_and_Mathematics">Chess and Mathematics</span></h1>
+<ul><li> <a href="Albrecht Heeffer.html" title="Albrecht Heeffer">Albrecht Heeffer</a></li>
+<li> <a href="Butterfly Boards.html" title="Butterfly Boards">Butterfly Boards</a></li>
+<li> <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a></li>
+<li> <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">Flipping Mirroring and Rotating</a></li>
+<li> <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a></li>
+<li> <a href="Influence Quantity of Pieces.html" title="Influence Quantity of Pieces">Influence Quantity of Pieces</a></li>
+<li> <a href="Intersection Squares.html" title="Intersection Squares">Intersection Squares</a></li>
+<li> <a href="Mathematician.html" title="Mathematician">Mathematician</a></li>
+<li> <a href="Traversing Subsets of a Set.html" title="Traversing Subsets of a Set">Traversing Subsets of a Set</a></li>
+<li> <a href="Workshop Chess and Mathematics.html" title="Workshop Chess and Mathematics">Workshop Chess and Mathematics</a></li></ul>
+<p><span id="Maxima"></span>
+</p>
+<h1><span class="mw-headline" id="Chess_Maxima">Chess Maxima</span></h1>
+<ul><li> In 1950 <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a> gave a conservative lower bound (<a class="external text" href="https://en.wikipedia.org/wiki/Shannon_number" rel="nofollow">the Shannon number</a>) of the game-tree complexity of chess of 10^120 (possible games), and 10^43 for the amount of possible positions.<sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup></li>
+<li> In 1966, Eero Bonsdorff, <a class="external text" href="https://en.wikipedia.org/wiki/Karl_Fabel" rel="nofollow">Karl Fabel</a>, and Olvai Riihimaa gave 5899 as the maximum number of <a href="Moves.html" title="Moves">moves</a> in a chess game <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></li>
+<li> <a href="Shirish Chinchalkar.html" title="Shirish Chinchalkar">Shirish Chinchalkar</a> has determined a <a class="external text" href="https://en.wikipedia.org/wiki/Game_complexity#State-space_complexity" rel="nofollow">state-space complexity</a> of 10<span style="font-size: 80%; vertical-align: super;">46.25</span> as upper bound for the number of reachable <a href="Chess Position.html" title="Chess Position">chess positions</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>, <a href="John Tromp.html" title="John Tromp">John Tromp</a> gives about 10^45.888 <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup></li>
+<li> The <a href="Encoding Moves.html#MoveIndex" title="Encoding Moves">maximum number of moves</a> per <a href="Chess Position.html" title="Chess Position">chess position</a> seems 218 <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> </li></ul>
+<dl><dd> <table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">      <br/>       <br/>      <br/>       <br/>      <br/>      <br/>     <br/>  <br/></div><div class="pcfg">♖      ♖<br/>   ♕    <br/> ♕    ♕ <br/>    ♕   <br/>  ♕    ♕<br/>♕    ♕  <br/>♟♟ ♕    <br/>♚♗♘♘ ♔♗ <br/></div></div></td></tr></table></dd></dl>
+<pre>R6R/3Q4/1Q4Q1/4Q3/2Q4Q/Q4Q2/pp1Q4/kBNN1KB1 w - - 0 1
+</pre>
+<h1><span class="mw-headline" id="Chess_and_Psychology">Chess and Psychology</span></h1>
+<ul><li> <a href="Adriaan de Groot.html" title="Adriaan de Groot">Adriaan de Groot</a></li>
+<li> <a href="Alex de Voogt.html" title="Alex de Voogt">Alex de Voogt</a></li>
+<li> <a class="new" href="index.php?title=Alexandre Linhares&amp;action=edit&amp;redlink=1.html" title="Alexandre Linhares (page does not exist)">Alexandre Linhares</a></li>
+<li> <a href="CHREST.html" title="CHREST">CHREST</a></li>
+<li> <a href="Christopher Chabris.html" title="Christopher Chabris">Christopher Chabris</a></li>
+<li> <a href="Cognition.html" title="Cognition">Cognition</a></li>
+<li> <a class="new" href="index.php?title=Eliot Hearst&amp;action=edit&amp;redlink=1.html" title="Eliot Hearst (page does not exist)">Eliot Hearst</a></li>
+<li> <a class="new" href="index.php?title=Eyal Reingold&amp;action=edit&amp;redlink=1.html" title="Eyal Reingold (page does not exist)">Eyal Reingold</a></li>
+<li> <a href="Herbert Simon.html" title="Herbert Simon">Herbert Simon</a></li>
+<li> <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a></li>
+<li> <a class="new" href="index.php?title=Jean Retschitzki&amp;action=edit&amp;redlink=1.html" title="Jean Retschitzki (page does not exist)">Jean Retschitzki</a></li>
+<li> <a class="new" href="index.php?title=Judith Spencer Olson&amp;action=edit&amp;redlink=1.html" title="Judith Spencer Olson (page does not exist)">Judith Spencer Olson</a></li>
+<li> <a href="Kevin J. Gilmartin.html" title="Kevin J. Gilmartin">Kevin J. Gilmartin</a></li>
+<li> <a class="new" href="index.php?title=Merim Bilali%C4%87&amp;action=edit&amp;redlink=1.html" title="Merim Bilalić (page does not exist)">Merim Bilalić</a></li>
+<li> <a href="Michael Barenfeld.html" title="Michael Barenfeld">Michael Barenfeld</a></li>
+<li> <a class="new" href="index.php?title=Neil Charness&amp;action=edit&amp;redlink=1.html" title="Neil Charness (page does not exist)">Neil Charness</a></li>
+<li> <a class="new" href="index.php?title=Oleg K. Tichomirov&amp;action=edit&amp;redlink=1.html" title="Oleg K. Tichomirov (page does not exist)">Oleg K. Tichomirov</a></li>
+<li> <a class="new" href="index.php?title=Pertti Saariluoma&amp;action=edit&amp;redlink=1.html" title="Pertti Saariluoma (page does not exist)">Pertti Saariluoma</a></li>
+<li> <a class="new" href="index.php?title=Peter Lane&amp;action=edit&amp;redlink=1.html" title="Peter Lane (page does not exist)">Peter Lane</a></li>
+<li> <a class="new" href="index.php?title=Philippe Chassy&amp;action=edit&amp;redlink=1.html" title="Philippe Chassy (page does not exist)">Philippe Chassy</a></li>
+<li> <a class="new" href="index.php?title=Psychology&amp;action=edit&amp;redlink=1.html" title="Psychology (page does not exist)">Psychology</a></li>
+<li> <a href="Robert I. Reynolds.html" title="Robert I. Reynolds">Robert I. Reynolds</a></li>
+<li> <a class="new" href="index.php?title=Robert W. Howard&amp;action=edit&amp;redlink=1.html" title="Robert W. Howard (page does not exist)">Robert W. Howard</a></li>
+<li> <a href="Ruslan Hajiev.html" title="Ruslan Hajiev">Ruslan Hajiev</a></li>
+<li> <a class="new" href="index.php?title=Russell M. Church&amp;action=edit&amp;redlink=1.html" title="Russell M. Church (page does not exist)">Russell M. Church</a></li>
+<li> <a class="new" href="index.php?title=Sarah E. Goldin&amp;action=edit&amp;redlink=1.html" title="Sarah E. Goldin (page does not exist)">Sarah E. Goldin</a></li>
+<li> <a href="Simona Tancig.html" title="Simona Tancig">Simona Tancig</a></li>
+<li> <a class="new" href="index.php?title=Tei Laine&amp;action=edit&amp;redlink=1.html" title="Tei Laine (page does not exist)">Tei Laine</a></li>
+<li> <a href="William Chase.html" title="William Chase">William Chase</a></li></ul>
+<h1><span class="mw-headline" id="Chess_and_Philosophy">Chess and Philosophy</span></h1>
+<p>Quote from <i>Philosophy Looks at Chess</i> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup> :
+</p>
+<pre>The game of chess has endured since at least the sixth century. Its earliest variant, the Indian game of <a class="external text" href="https://en.wikipedia.org/wiki/Chaturanga" rel="nofollow">Chaturanga</a>, was from the beginning a game for thinkers. Since its inception, scholars, statesmen, strategists, and warriors have been fascinated by the game and its variants. German <a class="external text" href="https://en.wikipedia.org/wiki/Philosophy" rel="nofollow">philosopher</a> <a href="Mathematician.html#EmanuelLasker" title="Mathematician">Emanuel Lasker</a> and famed French artist <a href="Arts.html#Duchamp" title="Arts">Marcel Duchamp</a> were both Grandmasters at chess. <a class="external text" href="https://en.wikipedia.org/wiki/Karl_Marx" rel="nofollow">Karl Marx</a> played chess avidly, as did <a href="Mathematician.html#BRussell" title="Mathematician">Sir Bertrand Russell</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Jean-Paul_Sartre" rel="nofollow">Jean-Paul Sartre</a>, and the logical positivist <a class="external text" href="https://en.wikipedia.org/wiki/Max_Black" rel="nofollow">Max Black</a>. <a class="external text" href="https://en.wikipedia.org/wiki/Jean-Jacques_Rousseau" rel="nofollow">Jean-Jacques Rousseau</a> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup> mentions in his Confessions that, at the time, he "had another expedient, not less solid, in the game of chess, to which I regularly dedicated, at Maugis's, the evenings on which I did not go to the theater. I became acquainted with <a class="external text" href="https://en.wikipedia.org/wiki/Legall_de_Kermeur" rel="nofollow">M. de Légal</a>, M. Husson, <a class="external text" href="https://en.wikipedia.org/wiki/Fran%C3%A7ois-Andr%C3%A9_Danican_Philidor" rel="nofollow">Philidor</a>, and all the great chess players of the day, without making the least improvement in the game." More recently, philosopher <a class="external text" href="https://en.wikipedia.org/wiki/Stuart_Rachels" rel="nofollow">Stuart Rachels</a> reports that his father, the late philosopher and prominent <a class="external text" href="https://en.wikipedia.org/wiki/Ethicist" rel="nofollow">ethicist</a> <a class="external text" href="https://en.wikipedia.org/wiki/James_Rachels" rel="nofollow">James Rachels</a>, received a bribe from a Russian Grandmaster while he was the chair of the <a class="external text" href="https://en.wikipedia.org/wiki/United_States_Chess_Federation" rel="nofollow">U.S. Chess Federation's</a> Ethics committee. 
+</pre>
+<h1><span class="mw-headline" id="Chess_Programs_called_Chess">Chess Programs called Chess</span></h1>
+<ul><li> <a href="Chess (Program).html" title="Chess (Program)">Chess</a> the <a href="Northwestern University.html" title="Northwestern University">Northwestern University</a> Chess Program by <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> and <a href="David Slate.html" title="David Slate">David Slate</a></li>
+<li> <a href="Chess 0.5.html" title="Chess 0.5">Chess 0.5</a> by <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> and <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a></li>
+<li> <a href="Chess 0.5X.html" title="Chess 0.5X">Chess 0.5X</a> by <a href="Wim Elsenaar.html" title="Wim Elsenaar">Wim Elsenaar</a></li>
+<li> <a href="Chess 2001.html" title="Chess 2001">Chess 2001</a>, <a href="Dedicated Chess Computers.html" title="Dedicated Chess Computers">Dedicated Chess Computers</a></li>
+<li> <a href="Chess 2020.html" title="Chess 2020">Chess 20xx</a> by <a href="Filip H%C3%B6fer.html" title="Filip Höfer">Filip Höfer</a></li>
+<li> <a href="Chess-64.html" title="Chess-64">Chess-64</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a></li>
+<li> <a href="Chess 7.0.html" title="Chess 7.0">Chess 7.0</a> by <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a></li></ul>
+<h1><span class="mw-headline" id="Categories">Categories</span></h1>
+<ul><li> <a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Category: Chess Suffix</a> </li>
+<li> <a href="Category:CP Suffix.html" title="Category:CP Suffix">Category: Chess Program (CP) Suffix</a> </li>
+<li> <a href="Category:Chess Legend.html" title="Category:Chess Legend">Category: Chess Legends</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a class="new" href="index.php?title=Anti-Computerchess&amp;action=edit&amp;redlink=1.html" title="Anti-Computerchess (page does not exist)">Anti-Computerchess</a></li>
+<li> <a href="Cartoons.html" title="Cartoons">Cartoons</a></li>
+<li> <a href="Databases.html" title="Databases">Chess Databases</a></li>
+<li> <a href="Engines.html" title="Engines">Chess Engines</a></li>
+<li> <a href="Morphy.html#ChessFever" title="Morphy">Chess Fever (Shakhmatnaya goryachka)</a></li>
+<li> <a href="Chess Query Language.html" title="Chess Query Language">Chess Query Language</a></li>
+<li> <a href="Cognition.html" title="Cognition">Cognition</a></li>
+<li> <a href="History.html#ComputerChess" title="History">Computer Chess - A Movie</a></li>
+<li> <a href="Artificial Intelligence.html" title="Artificial Intelligence">Computer Chess and AI</a></li>
+<li> <a href="Knowledge.html" title="Knowledge">Knowledge</a></li>
+<li> <a href="Learning.html" title="Learning">Learning</a></li>
+<li> <a class="new" href="index.php?title=Psychology&amp;action=edit&amp;redlink=1.html" title="Psychology (page does not exist)">Psychology</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1949">1949</span></h2>
+<ul><li> <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a> (<b>1949</b>). <i><a class="external text" href="http://www.pi.infn.it/%7Ecarosi/chess/shannon.txt.html" rel="nofollow">Programming a Computer for Playing Chess</a></i>. <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-0%20and%202-1.Programming a computer for playing chess.shannon/2-0%20and%202-1.Programming a computer for playing chess.shannon.062303002.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a></li></ul>
+<h2><span class="mw-headline" id="1950_...">1950 ...</span></h2>
+<ul><li> <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a> (<b>1950</b>). <i>A Chess-Playing Machine</i>. <a href="Scientific American.html" title="Scientific American">Scientific American</a>, Vol. 182 (No. 2, February 1950), pp. 48-51. Reprinted in <a class="external text" href="http://www.amazon.com/World-Mathematics-Vol-4/dp/0486411524/ref=pd sim b 1.html" rel="nofollow">The World of Mathematics</a>, edited by <a class="external text" href="https://en.wikipedia.org/wiki/James_R._Newman" rel="nofollow">James R. Newman</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Simon_&amp;_Schuster" rel="nofollow">Simon &amp; Schuster, NY</a>, Vol. 4, 1956, pp. 2124-2133. Included in Part B</li>
+<li> <a href="Mathematician.html#JBSHaldane" title="Mathematician">J. B. S. Haldane</a> (<b>1952</b>). <i><a class="external text" href="http://bjps.oxfordjournals.org/content/III/10/189.full.pdf+html.html" rel="nofollow">The mechanical chess-player</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/British_Journal_for_the_Philosophy_of_Science" rel="nofollow">British Journal of Philosophy of Science</a>, <a class="external text" href="http://ftp.math.utah.edu/pub/tex/bib/toc/bjps.html.html#III%289%29:May:1952" rel="nofollow">Vol. 3, No. 10</a></li>
+<li> <a href="Alan Turing.html" title="Alan Turing">Alan Turing</a> (<b>1953</b>). <i><b>Chess</b></i>. part of the collection <i>Digital Computers Applied to Games</i>. in <a class="external text" href="https://en.wikipedia.org/wiki/B._V._Bowden,_Baron_Bowden" rel="nofollow">Bertram Vivian Bowden</a> (editor), <i><a class="external text" href="http://www.computinghistory.org.uk/cgi-bin/sitewise.pl?act=det&amp;p=10719.html" rel="nofollow">Faster Than Thought</a></i>, a symposium on digital computing machines, reprinted 1988 in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a>, reprinted 2004 in Chapter 16 of <i>The Essential Turing</i>.</li></ul>
+<h2><span class="mw-headline" id="1955_...">1955 ...</span></h2>
+<ul><li> <a href="Paul Stein.html" title="Paul Stein">Paul Stein</a>, <a href="Stanislaw Ulam.html" title="Stanislaw Ulam">Stanislaw Ulam</a> (<b>1957</b>). <i>Experiments in chess on electronic computing machines</i>. Chess Review, 13 January 1957.</li>
+<li> <a href="James Kister.html" title="James Kister">James Kister</a>, <a href="Paul Stein.html" title="Paul Stein">Paul Stein</a>, <a href="Stanislaw Ulam.html" title="Stanislaw Ulam">Stanislaw Ulam</a>, <a href="William Walden.html" title="William Walden">William Walden</a>, <a href="Mark Wells.html" title="Mark Wells">Mark Wells</a> (<b>1957</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=320868.320877&amp;coll=DL&amp;dl=GUIDE&amp;CFID=628969023&amp;CFTOKEN=30690604.html" rel="nofollow">Experiments in Chess</a></i>. <a href="ACM.html#Journal" title="ACM">Journal of the ACM</a>, Vol. 4, No. 2</li>
+<li> <a href="Allen Newell.html" title="Allen Newell">Allen Newell</a>, <a href="Cliff Shaw.html" title="Cliff Shaw">Cliff Shaw</a>, <a href="Herbert Simon.html" title="Herbert Simon">Herbert Simon</a> (<b>1958</b>). <i>Chess Playing Programs and the Problem of Complexity</i>. IBM Journal of Research and Development, Vol. 4, No. 2, pp. 320-335</li>
+<li> <a href="Alex Bernstein.html" title="Alex Bernstein">Alex Bernstein</a>, <a href="Michael de V. Roberts.html" title="Michael de V. Roberts">Michael de V. Roberts</a> (<b>1958</b>). <i><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=doc-431614f690f16.html" rel="nofollow">Computer vs. Chess-Player</a></i>. <a href="Scientific American.html" title="Scientific American">Scientific American</a>, Vol. 198, pp. 96-105. <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-2.Computer V ChessPlayer.Bernstein Roberts.Scientific American.June-1958/Computer V ChessPlayer.Bernstein Roberts.Scientific American.June-1958.062303059.sm.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a>, reprinted 1988 in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li>
+<li> <a href="Alex Bernstein.html" title="Alex Bernstein">Alex Bernstein</a>, <a href="Michael de V. Roberts.html" title="Michael de V. Roberts">Michael de V. Roberts</a>, <a href="Timothy Arbuckle.html" title="Timothy Arbuckle">Timothy Arbuckle</a>, <a href="Martin Belsky.html" title="Martin Belsky">Martin Belsky</a> (<b>1958</b>). <i><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=doc-431e18a41d415.html" rel="nofollow">A chess playing program for the IBM 704</a></i>. Proceedings of the 1958 Western Joint Computer Conference, pp. 157-159, Los Angeles, California. <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/2-2.A Chess Playing Program for the IBM 704.Bernstein Roberts Arbuckle Belsky/A Chess Playing Program for the IBM 704.Bernstein Roberts Arbuckle Belsky.062303011.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a></li></ul>
+<h2><span class="mw-headline" id="1960_...">1960 ...</span></h2>
+<ul><li> <a href="Alan Kotok.html" title="Alan Kotok">Alan Kotok</a> (<b>1962</b>). <i>A Chess Playing Program for the IBM 7090</i>, B.S. Thesis, MIT, AI Project Memo 41, Computation Center, Cambridge MA. <a class="external text" href="http://www.kotok.org/AK-Thesis-1962.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="1965_...">1965 ...</span></h2>
+<ul><li> <a href="Jack Good.html" title="Jack Good">Jack Good</a> (<b>1968</b>). <i>A Five-Year Plan for Automatic Chess</i>. <a class="external text" href="http://www.doc.ic.ac.uk/~shm/MI/mi2.html.html" rel="nofollow">Machine Intelligence Vol. 2</a>, pp. 110-115</li>
+<li> <a href="Mikhail Botvinnik.html" title="Mikhail Botvinnik">Mikhail Botvinnik</a> (<b>1968</b>). <i>Algoritm igry v shakhmaty</i>. (The algorithm of chess)</li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a>, <a href="Vladimir Arlazarov.html" title="Vladimir Arlazarov">Vladimir Arlazarov</a>, <a href="Alexander Bitman.html" title="Alexander Bitman">Alexander Bitman</a>, <a href="Alexander Zhivotovsky.html" title="Alexander Zhivotovsky">Alexander Zhivotovsky</a>, <a href="Anatoly Uskov.html" title="Anatoly Uskov">Anatoly Uskov</a> (<b>1970</b>). <i><a class="external text" href="http://iopscience.iop.org/0036-0279/25/2/R07.html" rel="nofollow">Programming a Computer to Play Chess</a></i>. <a class="external text" href="http://iopscience.iop.org/0036-0279/25/2.html" rel="nofollow">Russian Mathematical Surveys, Vol. 25</a>, pp. 221-262.</li></ul>
+<h2><span class="mw-headline" id="1975_...">1975 ...</span></h2>
+<ul><li> <a href="Ron Atkin.html" title="Ron Atkin">Ron Atkin</a>, <a href="Ian H. Witten.html" title="Ian H. Witten">Ian H. Witten</a> (<b>1975</b>). <i><a class="external text" href="http://www.bibsonomy.org/bibtex/2b91106ea980eb48aa505f6b54c130707/dblp.html" rel="nofollow">A Multi-Dimensional Approach to Positional Chess</a></i>. <a class="external text" href="http://www.interaction-design.org/references/periodicals/international journal of man-machine studies volume 7.html.html" rel="nofollow">International Journal of Man-Machine Studies, Vol. 7, No. 6</a></li>
+<li> <a href="Ron Atkin.html" title="Ron Atkin">Ron Atkin</a>, <a class="external text" href="https://en.wikipedia.org/wiki/William_Hartston" rel="nofollow">William Hartston</a>, <a href="Ian H. Witten.html" title="Ian H. Witten">Ian H. Witten</a> (<b>1976</b>). <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/S0020737376800181.html" rel="nofollow">Fred CHAMP, Positional-Chess Analyst</a></i>. <a class="external text" href="http://www.interaction-design.org/references/periodicals/international journal of man-machine studies volume 8.html.html" rel="nofollow">International Journal of Man-Machine Studies, Vol. 8, No. 5</a></li>
+<li> <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a> (<b>1976</b>). <i>An Advice-Taking System for Computer Chess.</i> Computer Bulletin, Ser. 2, Vol. 10, pp. 12-14. ISSN 0010-4531.</li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Aviezri Fraenkel.html" title="Aviezri Fraenkel">Aviezri Fraenkel</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/l/Lichtenstein:David.html.html" rel="nofollow">David Lichtenstein</a> (<b>1981</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-10843-2 23.html" rel="nofollow">Computing a Perfect Strategy for n x n Chess Requires Time Exponential in N</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/journals/jct/jcta31.html.html#FraenkelL81" rel="nofollow">Journal of Combinatorial Theory, Ser. A, Vol. 31, No. 2</a></li></ul>
+<h2><span class="mw-headline" id="1985_...">1985 ...</span></h2>
+<ul><li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1985</b>). <i>Das 3-Hirn - Entscheidungsteilung im Schach.</i> <a href="Computerschach und Spiele.html" title="Computerschach und Spiele">Computerschach und Spiele</a>, pp. 20-22 (German)</li>
+<li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1989</b>). <i>A Survey of Some Results in Theoretical Game Tree Search and the 'Dreihirn'-experiment.</i> Proceedings Workshop on New Directions in Game-tree Search, pp. 16-32. Edmonton, Canada.</li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1991</b>). <i>Selective trees and majority systems: two experiments with commercial chess computers</i>. <a href="Advances in Computer Chess 6.html" title="Advances in Computer Chess 6">Advances in Computer Chess 6</a></li>
+<li> <a href="Robert Levinson.html" title="Robert Levinson">Robert Levinson</a>, <a href="Feng-hsiung Hsu.html" title="Feng-hsiung Hsu">Feng-hsiung Hsu</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="David Wilkins.html" title="David Wilkins">David Wilkins</a> (<b>1991</b>). <i>The Role of Chess in Artificial Intelligence Research</i>. <a class="external text" href="http://dli.iiit.ac.in/ijcai/IJCAI-91-VOL1/CONTENT/content.htm.html" rel="nofollow">IJCAI 1991</a>, <a class="external text" href="http://dli.iiit.ac.in/ijcai/IJCAI-91-VOL1/PDF/084.pdf.html" rel="nofollow">pdf</a>, also in <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 14, No. 3, pp. 153-161, <a class="external text" href="http://www.ai.sri.com/%7Ewilkins/papers/chess-panel.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Fernand Gobet.html" title="Fernand Gobet">Fernand Gobet</a>, <a href="Peter Jansen.html" title="Peter Jansen">Peter Jansen</a> (<b>1994</b>). <i><a class="external text" href="http://people.brunel.ac.uk/~hsstffg/abstracts/chess program.html.html" rel="nofollow">Towards a Chess Program Based on a Model of Human Memory</a>.</i> <a href="Advances in Computer Chess 7.html" title="Advances in Computer Chess 7">Advances in Computer Chess 7</a></li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1997</b>). <i>A Symbiosis of Man and Machine Beats Grandmaster Timoshchenko.</i> <a href="ICGA Journal.html#20 1" title="ICGA Journal">ICCA Journal, Vol. 20, No. 1</a></li>
+<li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1997</b>). <i>On the k-best Mode in Computer Chess: Measuring the Similarity of Move Proposals.</i> <a href="ICGA Journal.html#20 3" title="ICGA Journal">ICCA Journal, Vol. 20, No. 3</a></li>
+<li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1998</b>). <i>LIST-3-HIRN vs. Grandmaster Yusupov. - A Report on a Very Experimental Match, Part I: The Games.</i> <a href="ICGA Journal.html#21 1" title="ICGA Journal">ICCA Journal, Vol. 21, No. 1</a></li>
+<li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>1998</b>). <i>13 Jahre 3-Hirn – Meine Schach-Experimente mit Mensch-Maschinen-Kombinationen.</i> ISBN 3-00-003100-6. (German)</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a> (<b>2001</b>). <i>Grandmaster Chess with one-sided Computer Help.</i> <a href="ICGA Journal.html#24 4" title="ICGA Journal">ICGA Journal, Vol. 24, No.4</a></li>
+<li> <a href="Marek Strejczek.html" title="Marek Strejczek">Marek Strejczek</a> (<b>2004</b>). <i>Some aspects of chess programming</i>. M.Sc. thesis, <a href="Technical University of %C5%81%C3%B3d%C5%BA.html" title="Technical University of Łódź">Technical University of Łódź</a></li>
+<li> <a href="Henk Mannen.html" title="Henk Mannen">Henk Mannen</a>, <a href="Marco Wiering.html" title="Marco Wiering">Marco Wiering</a> (<b>2004</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Learning-to-Play-Chess-using-TD(lambda)-learning-Mannen-Wiering/00a6f81c8ebe8408c147841f26ed27eb13fb07f3" rel="nofollow">Learning to play chess using TD(λ)-learning with database games</a></i>. Cognitive Artiﬁcial Intelligence, <a class="external text" href="https://en.wikipedia.org/wiki/Utrecht_University" rel="nofollow">Utrecht University</a>, Benelearn’04, <a class="external text" href="https://www.ai.rug.nl/~mwiering/GROUP/ARTICLES/learning-chess.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a href="Fernand Gobet.html" title="Fernand Gobet">Fernand Gobet</a>, <a href="Peter Jansen.html" title="Peter Jansen">Peter Jansen</a> (<b>2005</b>). <i>Training in Chess: A Scientific Approach</i>. <a class="external text" href="http://www.brunel.ac.uk/~hsstffg/preprints/Training in chess.PDF.html" rel="nofollow">pdf</a></li>
+<li> <a href="Aviezri Fraenkel.html" title="Aviezri Fraenkel">Aviezri Fraenkel</a> (<b>2006</b>). <i>Nim is Easy, Chess is Hard – But Why??</i> <a href="ICGA Journal.html#29 4" title="ICGA Journal">ICGA Journal, Vol. 29, No. 4</a>, <a class="external text" href="http://www.wisdom.weizmann.ac.il/~fraenkel/Papers/ICGA.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Diego Rasskin-Gutman&amp;action=edit&amp;redlink=1.html" title="Diego Rasskin-Gutman (page does not exist)">Diego Rasskin-Gutman</a> (<b>2009</b>). <i><a class="external text" href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&amp;tid=11847.html" rel="nofollow">Chess Metaphors - Artificial Intelligence and the Human Mind</a></i>. ISBN-13: 978-0-262-18267-6, translated by <a class="external text" href="http://mitpress.mit.edu/catalog/author/default.asp?aid=36831.html" rel="nofollow">Deborah Klosky</a>, <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Press" rel="nofollow">MIT Press</a> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup></li>
+<li> <a class="new" href="index.php?title=Bernd Blasius&amp;action=edit&amp;redlink=1.html" title="Bernd Blasius (page does not exist)">Bernd Blasius</a>, <a class="new" href="index.php?title=Ralf T%C3%B6njes&amp;action=edit&amp;redlink=1.html" title="Ralf Tönjes (page does not exist)">Ralf Tönjes</a> (<b>2009</b>). <i><a class="external text" href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.218701.html" rel="nofollow">Zipf's Law in the Popularity Distribution of Chess Openings</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Physical_Review_Letters" rel="nofollow">Physical Review Letters</a>, 103, 218701, <a class="external text" href="http://www.icbm.de/fileadmin/user upload/icbm/ag/mathmod/download/BlasiusToenjes2009.pdf.html" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup></li>
+<li> <a href="Shay Bushinsky.html" title="Shay Bushinsky">Shay Bushinsky</a> (<b>2009</b>). <i><a class="external text" href="http://www.aaai.org/ojs/index.php/aimagazine/article/view/2255.html" rel="nofollow">Deus Ex Machina— A Higher Creative Species in the Game of Chess</a></i>. <a href="AAAI.html#AIMAG" title="AAAI">AI Magazine</a>, Vol. 30, No. 3 » <a href="Artificial Intelligence.html#MachineCreativity" title="Artificial Intelligence">Machine Creativity</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup></li>
+<li> <a href="Stephen Muggleton.html" title="Stephen Muggleton">Stephen Muggleton</a>, <a class="new" href="index.php?title=Aline Paes&amp;action=edit&amp;redlink=1.html" title="Aline Paes (page does not exist)">Aline Paes</a>, <a class="new" href="index.php?title=V%C3%ADtor Santos Costa&amp;action=edit&amp;redlink=1.html" title="Vítor Santos Costa (page does not exist)">Vítor Santos Costa</a>, <a class="new" href="index.php?title=Gerson Zaverucha&amp;action=edit&amp;redlink=1.html" title="Gerson Zaverucha (page does not exist)">Gerson Zaverucha</a> (<b>2009</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-642-13840-9_12" rel="nofollow">Chess Revision: Acquiring the Rules of Chess Variants through FOL Theory Revision from Examples</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/ilp/ilp2009.html" rel="nofollow">ILP 2009</a>, <a class="external text" href="https://www.doc.ic.ac.uk/~shm/Papers/paeschess.pdf" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Christian Hesse.html" title="Christian Hesse">Christian Hesse</a> (<b>2011</b>). <i><a class="external text" href="http://www.newinchess.com/The Joys of Chess-p-953.html.html" rel="nofollow">The Joys of Chess - Heroes, Battles &amp; Brilliancies</a></i>. ISBN: 978-90-5691-355-7, <a class="external text" href="https://en.wikipedia.org/wiki/New_In_Chess" rel="nofollow">New In Chess</a> <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup></li>
+<li> <a href="Fr%C3%A9d%C3%A9ric Prost.html" title="Frédéric Prost">Frédéric Prost</a> (<b>2012</b>). <i>On the Impact of Information Technologies on Society: an Historical Perspective through the Game of Chess</i>. Turing-100. The <a href="Alan Turing.html" title="Alan Turing">Alan Turing</a> Centenary, <a class="external text" href="http://www.easychair.org/publications/?page=1900403647.html" rel="nofollow">EPiC Volume 10</a></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2012</b>). <i>Detecting Fortresses in Chess</i>. <a class="external text" href="http://ev.fe.uni-lj.si/.html" rel="nofollow">Elektrotehniški vestnik</a>, Vol. 79, Nos. 1-2, <a class="external text" href="https://ailab.si/matej/doc/Detecting_Fortresses_in_Chess.pdf" rel="nofollow">pdf</a> » <a href="Rybka.html" title="Rybka">Rybka</a>, <a href="Houdini.html" title="Houdini">Houdini</a> <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup></li>
+<li> <a class="new" href="index.php?title=Kristian Spoerer&amp;action=edit&amp;redlink=1.html" title="Kristian Spoerer (page does not exist)">Kristian Spoerer</a>, <a class="new" href="index.php?title=Toshihisa Okaneya&amp;action=edit&amp;redlink=1.html" title="Toshihisa Okaneya (page does not exist)">Toshihisa Okaneya</a>, <a href="Kokolo Ikeda.html" title="Kokolo Ikeda">Kokolo Ikeda</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (<b>2013</b>). <i>Further Investigations of 3-Member Simple Majority Voting for Chess</i>. <a href="CG 2013.html" title="CG 2013">CG 2013</a></li>
+<li> <a class="new" href="index.php?title=Katja Grace&amp;action=edit&amp;redlink=1.html" title="Katja Grace (page does not exist)">Katja Grace</a> (<b>2013</b>). <i>Algorithmic Progress in Six Domains</i>. Technical report 2013-3, <a class="external text" href="https://en.wikipedia.org/wiki/Machine_Intelligence_Research_Institute" rel="nofollow">Machine Intelligence Research Institute</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Berkeley,_California" rel="nofollow">Berkeley, CA</a>, <a class="external text" href="http://intelligence.org/files/AlgorithmicProgress.pdf.html" rel="nofollow">pdf</a>, 5 <a href="Games.html" title="Games">Game Playing</a>, 5.1 <a class="mw-selflink selflink">Chess</a>, 5.2 <a href="Go.html" title="Go">Go</a>, 9 <a href="Learning.html" title="Learning">Machine Learning</a></li>
+<li> <a href="Nick Pelling.html" title="Nick Pelling">Nick Pelling</a> (<b>2013</b>). <i><a class="external text" href="https://www.amazon.co.uk/Chess-Superminiatures-Nick-Pelling-ebook/dp/B00HEOZ8B6" rel="nofollow">Chess Superminiatures</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/E-book" rel="nofollow">eBook</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Amazon_Kindle" rel="nofollow">Kindle edition</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Amazon.com" rel="nofollow">Amazon</a></li>
+<li> <a href="John Nunn.html" title="John Nunn">John Nunn</a> (<b>2014</b>). <i>Maths and Chess</i>. <a href="ICGA Journal.html#37 4" title="ICGA Journal">ICGA Journal, Vol. 37, No. 4</a></li>
+<li> <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Kenneth W. Regan</a>,  <a href="Tamal T. Biswas.html" title="Tamal T. Biswas">Tamal T. Biswas</a>, <a class="new" href="index.php?title=Jason Zhou&amp;action=edit&amp;redlink=1.html" title="Jason Zhou (page does not exist)">Jason Zhou</a> (<b>2014</b>). <i>Human and Computer Preferences at Chess</i>. <a class="external text" href="http://www.cse.buffalo.edu/~regan/papers/pdf/RBZ14aaai.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a href="Tamal T. Biswas.html" title="Tamal T. Biswas">Tamal T. Biswas</a>, <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Kenneth W. Regan</a> (<b>2015</b>). <i>Measuring Level-K Reasoning, Satisficing, and Human Error in Game-Play Data</i>. <a href="IEEE.html" title="IEEE">IEEE</a> <a class="external text" href="http://www.icmla-conference.org/icmla15/.html" rel="nofollow">ICMLA 2015</a>, <a class="external text" href="http://www.cse.buffalo.edu/~regan/papers/pdf/BiRe15 ICMLA2015.pdf.html" rel="nofollow">pdf preprint</a></li>
+<li> <a class="new" href="index.php?title=Vito Janko&amp;action=edit&amp;redlink=1.html" title="Vito Janko (page does not exist)">Vito Janko</a>, <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a> (<b>2015</b>). <i>Development of a Program for Playing Progressive Chess</i>. <a href="Advances in Computer Games 14.html" title="Advances in Computer Games 14">Advances in Computer Games 14</a> <sup class="reference" id="cite_ref-22"><a href="#cite note-22">[22]</a></sup></li>
+<li> <a href="Guy Haworth.html" title="Guy Haworth">Guy Haworth</a>, <a href="Tamal T. Biswas.html" title="Tamal T. Biswas">Tamal T. Biswas</a>, <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Kenneth W. Regan</a> (<b>2015</b>). <i><a class="external text" href="http://centaur.reading.ac.uk/39431/.html" rel="nofollow">A Comparative Review of Skill Assessment: Performance, Prediction and Profiling</a></i>. <a href="Advances in Computer Games 14.html" title="Advances in Computer Games 14">Advances in Computer Games 14</a></li>
+<li> <a class="new" href="index.php?title=Muthuraman Chidambaram&amp;action=edit&amp;redlink=1.html" title="Muthuraman Chidambaram (page does not exist)">Muthuraman Chidambaram</a>, <a class="new" href="index.php?title=Yanjun Qi&amp;action=edit&amp;redlink=1.html" title="Yanjun Qi (page does not exist)">Yanjun Qi</a> (<b>2017</b>). <i>Style Transfer Generative Adversarial Networks: Learning to Play Chess Differently</i>. <a class="external text" href="https://arxiv.org/abs/1702.06762v1" rel="nofollow">arXiv:1702.06762v1</a> <sup class="reference" id="cite_ref-23"><a href="#cite note-23">[23]</a></sup> » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li>
+<li> <a href="Lyudmil Tsvetkov.html" title="Lyudmil Tsvetkov">Lyudmil Tsvetkov</a> (<b>2017</b>). <i><a class="external text" href="http://www.secretofchess.com/.html" rel="nofollow">The Secret of Chess</a></i>. <sup class="reference" id="cite_ref-24"><a href="#cite note-24">[24]</a></sup></li>
+<li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2017</b>). <i>Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</i>. <a class="external text" href="https://arxiv.org/abs/1712.01815" rel="nofollow">arXiv:1712.01815</a> » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2018</b>). <i><a class="external text" href="http://science.sciencemag.org/content/362/6419/1140.html" rel="nofollow">A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_(journal)" rel="nofollow">Science</a>, Vol. 362, No. 6419 <sup class="reference" id="cite_ref-25"><a href="#cite note-25">[25]</a></sup></li>
+<li> <a href="Garry Kasparov.html" title="Garry Kasparov">Garry Kasparov</a> (<b>2018</b>). <i><a class="external text" href="http://science.sciencemag.org/content/362/6419/1087.html" rel="nofollow">Chess, a Drosophila of reasoning</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_(journal)" rel="nofollow">Science</a>, Vol. 362, No. 6419</li>
+<li> <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>2018</b>). <i>Computer chess: From idea to DeepMind</i>. <a href="ICGA Journal.html#40 3" title="ICGA Journal">ICGA Journal, Vol. 40, No. 3</a></li>
+<li> <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a class="new" href="index.php?title=Simon Schmitt&amp;action=edit&amp;redlink=1.html" title="Simon Schmitt (page does not exist)">Simon Schmitt</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Edward Lockhart.html" title="Edward Lockhart">Edward Lockhart</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2019</b>). <i>Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model</i>. <a class="external text" href="https://arxiv.org/abs/1911.08265" rel="nofollow">arXiv:1911.08265</a> <sup class="reference" id="cite_ref-26"><a href="#cite note-26">[26]</a></sup></li>
+<li> <a class="new" href="index.php?title=Vladimir Vargas-Calder%C3%B3n&amp;action=edit&amp;redlink=1.html" title="Vladimir Vargas-Calderón (page does not exist)">Vladimir Vargas-Calderón</a> (<b>2019</b>). <i>Are Armageddon chess games implemented fairly?</i> <a href="ICGA Journal.html#41 4" title="ICGA Journal">ICGA Journal, Vol. 41, No. 4</a> <sup class="reference" id="cite_ref-27"><a href="#cite note-27">[27]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a href="Manuel Crist%C3%B3bal L%C3%B3pez-Michelone.html" title="Manuel Cristóbal López-Michelone">Manuel Cristóbal López-Michelone</a>, <a href="Jorge Luis Ortega-Arjona.html" title="Jorge Luis Ortega-Arjona">Jorge Luis Ortega-Arjona</a> (<b>2020</b>). <i>A description language for chess</i>. <a href="ICGA Journal.html#42 1" title="ICGA Journal">ICGA Journal, Vol. 42, No. 1</a></li>
+<li> <a class="new" href="index.php?title=Nenad Toma%C5%A1ev&amp;action=edit&amp;redlink=1.html" title="Nenad Tomašev (page does not exist)">Nenad Tomašev</a>, <a class="new" href="index.php?title=Ulrich Paquet&amp;action=edit&amp;redlink=1.html" title="Ulrich Paquet (page does not exist)">Ulrich Paquet</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a class="new" href="index.php?title=Vladimir Kramnik&amp;action=edit&amp;redlink=1.html" title="Vladimir Kramnik (page does not exist)">Vladimir Kramnik</a> (<b>2020</b>). <i>Assessing Game Balance with AlphaZero: Exploring Alternative Rule Sets in Chess</i>. <a class="external text" href="https://arxiv.org/abs/2009.04374" rel="nofollow">arXiv:2009.04374</a> » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a class="new" href="index.php?title=Simon Schmitt&amp;action=edit&amp;redlink=1.html" title="Simon Schmitt (page does not exist)">Simon Schmitt</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Edward Lockhart.html" title="Edward Lockhart">Edward Lockhart</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2020</b>). <i><a class="external text" href="https://www.nature.com/articles/s41586-020-03051-4" rel="nofollow">Mastering Atari, Go, chess and shogi by planning with a learned model</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Nature_%28journal%29" rel="nofollow">Nature</a>, Vol. 588 <sup class="reference" id="cite_ref-28"><a href="#cite note-28">[28]</a></sup></li>
+<li> <a href="Monroe Newborn.html" title="Monroe Newborn">Monty Newborn</a> (<b>2021</b>). <i>Mad Monty Chess</i>. <a href="ICGA Journal.html#43 1" title="ICGA Journal">ICGA Journal, Vol. 43, No. 1</a></li>
+<li> <a class="new" href="index.php?title=Maximilian Alexander Gehrke&amp;action=edit&amp;redlink=1.html" title="Maximilian Alexander Gehrke (page does not exist)">Maximilian Alexander Gehrke</a> (<b>2021</b>). <i>Assessing Popular Chess Variants Using Deep Reinforcement Learning</i>. Master thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">TU Darmstadt</a>, <a class="external text" href="https://ml-research.github.io/papers/gehrke2021assessing.pdf" rel="nofollow">pdf</a> » <a href="CrazyAra.html" title="CrazyAra">CrazyAra</a></li>
+<li> <a href="Dominik Klein.html" title="Dominik Klein">Dominik Klein</a> (<b>2021</b>). <i><a class="external text" href="https://github.com/asdfjkl/neural_network_chess" rel="nofollow">Neural Networks For Chess</a></i>. <a class="external text" href="https://github.com/asdfjkl/neural_network_chess/releases/tag/v1.1" rel="nofollow">Release Version 1.1 · GitHub</a> <sup class="reference" id="cite_ref-29"><a href="#cite note-29">[29]</a></sup></li>
+<li> <a href="Guy Haworth.html" title="Guy Haworth">Guy Haworth</a> (<b>2021</b>). <i>Chess without draws</i>. <a href="ICGA Journal.html#43 2" title="ICGA Journal">ICGA Journal, Vol. 43, No. 2</a></li>
+<li> <a class="new" href="index.php?title=Thomas McGrath&amp;action=edit&amp;redlink=1.html" title="Thomas McGrath (page does not exist)">Thomas McGrath</a>, <a class="new" href="index.php?title=Andrei Kapishnikov&amp;action=edit&amp;redlink=1.html" title="Andrei Kapishnikov (page does not exist)">Andrei Kapishnikov</a>, <a class="new" href="index.php?title=Nenad Toma%C5%A1ev&amp;action=edit&amp;redlink=1.html" title="Nenad Tomašev (page does not exist)">Nenad Tomašev</a>, <a class="new" href="index.php?title=Adam Pearce&amp;action=edit&amp;redlink=1.html" title="Adam Pearce (page does not exist)">Adam Pearce</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a class="new" href="index.php?title=Been Kim&amp;action=edit&amp;redlink=1.html" title="Been Kim (page does not exist)">Been Kim</a>, <a class="new" href="index.php?title=Ulrich Paquet&amp;action=edit&amp;redlink=1.html" title="Ulrich Paquet (page does not exist)">Ulrich Paquet</a>, <a class="new" href="index.php?title=Vladimir Kramnik&amp;action=edit&amp;redlink=1.html" title="Vladimir Kramnik (page does not exist)">Vladimir Kramnik</a> (<b>2021</b>). <i>Acquisition of Chess Knowledge in AlphaZero</i>. <a class="external text" href="https://arxiv.org/abs/2111.09259" rel="nofollow">arXiv:2111.09259</a> » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a> <sup class="reference" id="cite_ref-30"><a href="#cite note-30">[30]</a></sup></li>
+<li> <a class="new" href="index.php?title=Miha Bizjak&amp;action=edit&amp;redlink=1.html" title="Miha Bizjak (page does not exist)">Miha Bizjak</a>, <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a> (<b>2021</b>). <i>Automatic Recognition of Similar Chess Motifs</i>. <a href="Advances in Computer Games 17.html" title="Advances in Computer Games 17">Advances in Computer Games 17</a></li>
+<li> <a class="new" href="index.php?title=Nenad Toma%C5%A1ev&amp;action=edit&amp;redlink=1.html" title="Nenad Tomašev (page does not exist)">Nenad Tomašev</a>, <a class="new" href="index.php?title=Ulrich Paquet&amp;action=edit&amp;redlink=1.html" title="Ulrich Paquet (page does not exist)">Ulrich Paquet</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a class="new" href="index.php?title=Vladimir Kramnik&amp;action=edit&amp;redlink=1.html" title="Vladimir Kramnik (page does not exist)">Vladimir Kramnik</a> (<b>2022</b>). <i><a class="external text" href="https://cacm.acm.org/magazines/2022/2/258230-reimagining-chess-with-alphazero/fulltext" rel="nofollow">Reimagining Chess with AlphaZero</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 65, No. 2 » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1989">1989</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/wqAWR7ylU4w/PTvP5DbWadcJ" rel="nofollow">Can Chess Help Adapt to Life?</a> by <a href="Michael Valvo.html" title="Michael Valvo">Mike Valvo</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, September 06, 1989</li></ul>
+<h2><span class="mw-headline" id="1990_..._2">1990 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/dkvZ38gzk-8/TiJTI6c2A-IJ" rel="nofollow">Chess is not solvable</a> by Teri A. Meyers, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, September 23, 1992</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/xE0LXST4cE0/pMHY9BYQbKMJ" rel="nofollow">Solvability</a> by Teri A. Meyers, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, September 30, 1992</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.programmer/0Mctf2NWmr0/wv5AofD6T28J" rel="nofollow">Is chess in NP?</a> by Antti Juhani Ylikoski, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rec.games.programmer</a>, May 26, 1997</li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=272654" rel="nofollow">Does this position blow up your program?</a> by <a href="Michael Byrne.html" title="Michael Byrne">Mike Byrne</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=424966" rel="nofollow">Subject: Maximum Number of Legal Moves</a> by <a href="Andrew Shapira.html" title="Andrew Shapira">Andrew Shapira</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17338.html" rel="nofollow">Variants and Board Size</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 25, 2007</li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39332.html" rel="nofollow">max amount of moves from a position?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, June 10, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41388.html" rel="nofollow">Contest: Find Position with the most moves</a> by <a href="Charles Roberson.html" title="Charles Roberson">Charles Roberson</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43291.html" rel="nofollow">New chess variants</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, March 03, 2012 » <a href="Games.html#ChessVariants" title="Games">Chess Variants</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46490.html" rel="nofollow">Chess and the "Golden Ratio"...</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, December 19, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50473.html" rel="nofollow">Chess with incomplete information</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 2013</li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51744.html" rel="nofollow">Total possible chess positions?</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, March 26, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53734.html" rel="nofollow">for Chess-variant authors</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, September 17, 2014  » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a>, <a href="XBoard.html" title="XBoard">XBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54124.html" rel="nofollow">XBoard and chess variants</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54162.html" rel="nofollow">UCCI2WB</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2014 » <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a> (Universal Chinese Chess Interface, UCCI)</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54167.html" rel="nofollow">UCI protocol for chess variants</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2014 » <a href="UCI.html" title="UCI">UCI</a></li></ul>
+<h2><span class="mw-headline" id="2015_..._2">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56007.html" rel="nofollow">Most common chess variant?</a> by <a href="Stefano Gemma.html" title="Stefano Gemma">Stefano Gemma</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2015 » <a href="Games.html#ChessVariants" title="Games">Chess Variants</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57696.html" rel="nofollow">The future of chess and elo ratings</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, September 20, 2015 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a>, <a href="Opening Book.html" title="Opening Book">Opening Book</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58482.html" rel="nofollow">Winboard 4.8.0b and Amazon chess variant</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, December 05, 2015 » <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58518.html" rel="nofollow">Matibay an amazon chess variant engine</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58533.html" rel="nofollow">Masipag, a nightrider chess variant engine</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58808.html" rel="nofollow">Grande Acedrex</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59080.html" rel="nofollow">Tamerlane Chess</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60387.html" rel="nofollow">New chess variant</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, June 06, 2016 » <a href="Games.html#ChessVariants" title="Games">Chess Variants</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61792.html" rel="nofollow">Max moves in a position</a> by <a href="Laurie Tunnicliffe.html" title="Laurie Tunnicliffe">Laurie Tunnicliffe</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2016 » <a href="Chess.html#Maxima" title="Chess">Chess Maxima</a></li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63525.html" rel="nofollow">Winboard variants online</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2017 » <a href="Games.html#ChessVariants" title="Games">Chess Variants</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65268.html" rel="nofollow">The Peace-Chess Challenge</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, September 24, 2017 » <a href="Games.html#ChessVariants" title="Games">Chess Variants</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65292.html" rel="nofollow">Weakly vs strongly solving chess</a> by Greg Simpson, <a href="CCC.html" title="CCC">CCC</a>, September 26, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65962.html" rel="nofollow">best board representation for variants (javascript) ?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2017 » <a href="Board Representation.html" title="Board Representation">Board Representation</a>, <a href="JavaScript.html" title="JavaScript">JavaScript</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=66003.html" rel="nofollow">One idea to solve chess?</a> by <a href="Mario Carbonell Martinez.html" title="Mario Carbonell Martinez">Mario Carbonell</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 2017</li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66298.html" rel="nofollow">Is modern chess software lossless or lossy?</a> by Meni Rosenfeld, <a href="CCC.html" title="CCC">CCC</a>, January 10, 2018 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a>, <a href="Selectivity.html" title="Selectivity">Selectivity</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66302.html" rel="nofollow">Is chess still 99% tactics?</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, January 11, 2018 » <a href="Tactics.html" title="Tactics">Tactics</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66364.html" rel="nofollow">A Chess variant with low draw rate</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, January 19, 2018 » <a href="Games.html#ChessVariants" title="Games">Chess Variants</a></li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70723.html" rel="nofollow">The Plan-9 to finally solve chess :)</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei S. Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, May 11, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_..._2">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75606.html" rel="nofollow">Transhuman Chess with NN and RL...</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, October 30, 2020 » <a href="Neural Networks.html" title="Neural Networks">NN</a>, <a href="Reinforcement Learning.html" title="Reinforcement Learning">RL</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75667.html" rel="nofollow">New PGN Tag: VariantFamily</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, November 03, 2020 » <a href="#Variants">Chess Variants</a>, <a href="Portable Game Notation.html" title="Portable Game Notation">PGN</a></li></ul>
+<p><b>2021</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=76382.html" rel="nofollow">correspondence chess in the age of NNUE</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2021 » <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77685.html" rel="nofollow">On the number of chess positions</a> by <a href="John Tromp.html" title="John Tromp">John Tromp</a>, <a href="CCC.html" title="CCC">CCC</a>, July 09, 2021 » <a href="Chess Position.html" title="Chess Position">Chess Position</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78464" rel="nofollow">Open Chess Game Database Standard (OCGDB)</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2021 » <a href="Databases.html" title="Databases">Chess Databases</a></li></ul>
+<p><b>2022</b>
+</p>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77685&amp;start=34" rel="nofollow">Re: On the number of chess positions</a> by <a href="John Tromp.html" title="John Tromp">John Tromp</a>, <a href="CCC.html" title="CCC">CCC</a>, April 02, 2022 » <a href="Chess Position.html" title="Chess Position">Chess Position</a></li></ul>
+<p><b>2023</b>
+</p>
+<ul><li> <a class="external text" href="https://talkchess.com/forum3/viewtopic.php?f=2&amp;t=81858" rel="nofollow">The Next Big Thing in Computer Chess?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2023 » <a href="Artificial Intelligence.html" title="Artificial Intelligence">Artificial Intelligence</a>, <a href="Programming.html" title="Programming">Programming</a>, <a href="Hardware.html" title="Hardware">Hardware</a></li></ul>
+<dl><dd><a class="external text" href="https://talkchess.com/forum3/viewtopic.php?f=2&amp;t=81858&amp;start=100#p951488" rel="nofollow">Re: The Next Big Thing in Computer Chess?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>,  August 20, 2023</dd></dl>
+<ul><li> <a class="external text" href="https://talkchess.com/forum3/viewtopic.php?f=2&amp;t=82826" rel="nofollow">Is there any project coming to solve chess?</a> by Jouni, <a href="CCC.html" title="CCC">CCC</a>, November 06, 2023</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Wikipedia">Wikipedia</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess" rel="nofollow">Chess from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_theory" rel="nofollow">Chess theory from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Computer_chess" rel="nofollow">Computer chess from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/First-move_advantage_in_chess" rel="nofollow">First-move advantage in chess from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Outline_of_chess" rel="nofollow">Outline of chess from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Rules_of_chess" rel="nofollow">Rules of Chess from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/School_of_chess" rel="nofollow">School of chess from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Solving_chess" rel="nofollow">Solving chess from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_terminology" rel="nofollow">Glossary of chess from Wikipedia</a></dd></dl>
+<h2><span class="mw-headline" id="Chess">Chess</span></h2>
+<ul><li> <a class="external text" href="http://en.wikibooks.org/wiki/Chess.html" rel="nofollow">Chess from Wikibooks</a></li>
+<li> <a class="external text" href="http://www.chess-museum.com/links.html.html" rel="nofollow">Welcome to the Chess Museum - Links</a></li>
+<li> <a class="external text" href="http://www.chesshistory.com/winter/extra/earliest.html.html" rel="nofollow">Earliest Occurrences of Chess Terms</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Edward_Winter_%28chess_historian%29" rel="nofollow">Edward Winter</a></li>
+<li> <a class="external text" href="http://www.chesshistory.com/.html" rel="nofollow">Chess History Center - Chess Notes</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Edward_Winter_%28chess_historian%29" rel="nofollow">Edward Winter</a></li>
+<li> <a class="external text" href="http://mathworld.wolfram.com/Chess.html.html" rel="nofollow">Chess</a> from <a class="external text" href="https://en.wikipedia.org/wiki/MathWorld" rel="nofollow">MathWorld - A Wolfram Web Resource</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Eric_W._Weisstein" rel="nofollow">Eric W. Weisstein</a></li></ul>
+<h2><span class="mw-headline" id="Chess_Variants_2">Chess Variants</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_variant" rel="nofollow">Chess variant from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.chessvariants.org/.html" rel="nofollow">The Chess Variant Pages</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Hans_L._Bodlaender" rel="nofollow">Hans L. Bodlaender</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fairy_chess" rel="nofollow">Fairy chess from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Fairy_chess_piece" rel="nofollow">Fairy chess piece from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.gnu.org/software/xboard/Betza.html.html" rel="nofollow">Betza notation and XBoard</a> » <a href="Moves.html" title="Moves">Moves</a>,  <a href="XBoard.html" title="XBoard">XBoard</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="http://research.microsoft.com/en-us/projects/chess/.html" rel="nofollow">CHESS - Microsoft Research</a> a tool for finding and reproducing <a class="external text" href="https://en.wikipedia.org/wiki/Unusual_software_bug" rel="nofollow">Heisenbugs</a> in concurrent programs.</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chess_%28musical%29" rel="nofollow">Chess (musical) from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.bbc.co.uk/programmes/p009jfnh.html" rel="nofollow">BBC World Service Programmes - The Friday Documentary: Seeking The Endgame</a>, by Simon Terrington, with statements by <a href="David Levy.html" title="David Levy">David Levy</a> et al. <sup class="reference" id="cite_ref-31"><a href="#cite note-31">[31]</a></sup></li>
+<li> <a class="external text" href="http://www.bbc.com/future/story/20151201-the-cyborg-chess-players-that-cant-be-beaten.html" rel="nofollow">BBC - Future - The cyborg chess players that can’t be beaten</a> by <a class="external text" href="http://www.chrisbaraniuk.com/.html" rel="nofollow">Chris Baraniuk</a>, December 04, 2015 » <a href="David Levy.html" title="David Levy">David Levy</a>, <a class="new" href="index.php?title=Boris Alterman&amp;action=edit&amp;redlink=1.html" title="Boris Alterman (page does not exist)">Boris Alterman</a>, <a href="Shay Bushinsky.html" title="Shay Bushinsky">Shay Bushinsky</a>, <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a></li>
+<li> <a class="external text" href="http://www.permutationpuzzles.org/chess/math chess.html.html" rel="nofollow">Mathematics and Chess Page</a></li>
+<li> <a class="external text" href="http://www.sf-encyclopedia.com/entry/chess.html" rel="nofollow">SFE - The Science Fiction Encyclopedia - Chess</a></li>
+<li> <a href="Category:Anthony Braxton.html" title="Category:Anthony Braxton">Anthony Braxton</a> Interview - Chess, Math &amp; Music, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/jgn1gdvgYQo?" width="640"></iframe></div></div></dd></dl>
+<ul><li> <a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a> on Chess, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/PIOyUEGBn-U?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">An <a class="external text" href="https://commons.wikimedia.org/wiki/File:Breaking_Point_1.png" rel="nofollow">illustration</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Alex_Ebel" rel="nofollow">Ebel</a> for <a class="external text" href="https://en.wikipedia.org/wiki/James_E._Gunn_(writer)" rel="nofollow">James E. Gunn's</a> Breaking Point, appeared in <a class="external text" href="https://en.wikipedia.org/wiki/Space_Science_Fiction" rel="nofollow">Space Science Fiction</a>, March 1953</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Shirish Chinchalkar.html" title="Shirish Chinchalkar">Shirish Chinchalkar</a> (<b>1996</b>). <i>An Upper Bound for the Number of Reachable Positions</i>. <a href="ICGA Journal.html" title="ICGA Journal">ICCA Journal</a>, Vol. 19, No. 3, pp. 181-183</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Victor Allis.html" title="Victor Allis">Victor Allis</a> (<b>1994</b>). <i>Searching for Solutions in Games and Artificial Intelligence</i>. Ph.D. Thesis, <a href="Maastricht University.html" title="Maastricht University">University of Limburg</a>, <a class="external text" href="http://fragrieu.free.fr/SearchingForSolutions.pdf.html" rel="nofollow">pdf</a>, 6.3.9 Chess pp. 171</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Seirawan_chess" rel="nofollow">Seirawan chess from Wikipedia</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.computerhistory.org/chess/doc-431614f453dde/" rel="nofollow">Programming a Computer for Playing Chess. download pdf from The Computer History Museum</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text">Eero Bonsdorff, <a class="external text" href="https://en.wikipedia.org/wiki/Karl_Fabel" rel="nofollow">Karl Fabel</a>, Olvai Riihimaa (<b>1966</b>) <i>Schach und Zahl - Unterhaltsame Schachmathematik</i>. Seite 11-13, Walter Rau Verlag, Düsseldorf (German)</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://de.wikipedia.org/wiki/50-Z%C3%BCge-Regel.html#Schachmathematik" rel="nofollow">50-Züge-Regel - Schachmathematik from Wikipedia.de</a> (German)</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.xs4all.nl/~timkr/chess2/honor.htm.html" rel="nofollow">Defending Humanity's Honor</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Tim_Krabb%C3%A9" rel="nofollow">Tim Krabbé</a>, see game <a href="Rival.html" title="Rival">NewRival</a> - <a href="Faile.html" title="Faile">Faile</a> with 493 moves, and playing 402 moves with bare kings!</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Shirish Chinchalkar.html" title="Shirish Chinchalkar">Shirish Chinchalkar</a> (<b>1996</b>). <i>An Upper Bound for the Number of Reachable Positions</i>. <a href="ICGA Journal.html#19 3" title="ICGA Journal">ICCA Journal, Vol. 19, No. 3</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://tromp.github.io/chess/chess.html.html" rel="nofollow">John's Chess Playground - Number of chess diagrams and positions</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51744&amp;start=3.html" rel="nofollow">Re: Total possible chess positions?</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, March 26, 2014</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=272654" rel="nofollow">Does this position blow up your program?</a> by <a href="Michael Byrne.html" title="Michael Byrne">Mike Byrne</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2002</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=424966" rel="nofollow">Subject: Maximum Number of Legal Moves</a> by <a href="Andrew Shapira.html" title="Andrew Shapira">Andrew Shapira</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2005</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.opencourtbooks.com/books n/philosophy looks at chess.htm.html" rel="nofollow">Philosophy Looks at Chess</a> by <a class="external text" href="http://www.practicalreason.com/.html" rel="nofollow">Benjamin Hale</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chesshistory.com/winter/extra/rousseau.html.html" rel="nofollow">Jean-Jacques Rousseau and Chess</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Edward_Winter_%28chess_historian%29" rel="nofollow">Edward Winter</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chessbase.com/newsdetail.asp?newsid=6097.html" rel="nofollow">Chess Metaphors – Artificial Intelligence and the Human Mind</a> by <a class="new" href="index.php?title=Diego Rasskin-Gutman&amp;action=edit&amp;redlink=1.html" title="Diego Rasskin-Gutman (page does not exist)">Diego Rasskin-Gutman</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, January 28, 2010</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Zipf%27s_law" rel="nofollow">Zipf's law from WIkipedia</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="http://en.chessbase.com/post/machine-creativity-what-it-is-and-what-it-isn-t.html" rel="nofollow">Machine creativity: what it is and what it isn't</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, August 28, 2016</span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/First-order_logic" rel="nofollow">First-order logic from Wikipedia</a></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.chessbase.com/newsdetail.asp?newsid=7775.html" rel="nofollow">The joys of chess – and the value of the pieces</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, December 21, 2011</span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64306&amp;start=27.html" rel="nofollow">Re: Tony's positional test suite</a> by <a href="Louis Zulli.html" title="Louis Zulli">Louis Zulli</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2017</span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><a href="#cite ref-22">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Progressive_chess" rel="nofollow">Progressive chess from Wikipedia</a></span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite ref-23">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63252.html" rel="nofollow">Using GAN to play chess</a> by Evgeniy Zheltonozhskiy, <a href="CCC.html" title="CCC">CCC</a>, February 23, 2017</span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite ref-24">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64776.html" rel="nofollow">The Secret of Chess</a> by  <a href="Lyudmil Tsvetkov.html" title="Lyudmil Tsvetkov">Lyudmil Tsvetkov</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2017</span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite ref-25">↑</a></span> <span class="reference-text"><a class="external text" href="https://deepmind.com/blog/alphazero-shedding-new-light-grand-games-chess-shogi-and-go/" rel="nofollow">AlphaZero: Shedding new light on the grand games of chess, shogi and Go</a> by <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a> and <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a class="new" href="index.php?title=DeepMind&amp;action=edit&amp;redlink=1.html" title="DeepMind (page does not exist)">DeepMind</a>, December 03, 2018</span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><a href="#cite ref-26">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72381.html" rel="nofollow">New DeepMind paper</a> by GregNeto, <a href="CCC.html" title="CCC">CCC</a>, November 21, 2019</span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><a href="#cite ref-27">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Fast_chess#Armageddon" rel="nofollow">Armageddon chess from Wikipedia</a></span>
+</li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><a href="#cite ref-28">↑</a></span> <span class="reference-text"><a class="external text" href="https://deepmind.com/blog/article/muzero-mastering-go-chess-shogi-and-atari-without-rules?fbclid=IwAR3mSwrn1YXDKr9uuGm2GlFKh76wBilex7f8QvBiQecwiVmAvD6Bkyjx-rE" rel="nofollow">MuZero: Mastering Go, chess, shogi and Atari without rules</a></span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><a href="#cite ref-29">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=78283" rel="nofollow">Book about Neural Networks for Chess</a> by dkl, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2021</span>
+</li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><a href="#cite ref-30">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.chessbase.com/post/acquisition-of-chess-knowledge-in-alphazero" rel="nofollow">Acquisition of Chess Knowledge in AlphaZero</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, November 18, 2021</span>
+</li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><a href="#cite ref-31">↑</a></span> <span class="reference-text"><a class="external text" href="http://hiarcs.net/forums/viewtopic.php?t=3674.html" rel="nofollow">BBC Computer Chess Radio Programme</a> by <a href="Harvey Williamson.html" title="Harvey Williamson">Harvey Williamson</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Hiarcs Forum</a>, September 11, 2010</span>
+</li>
+</ol></div>
+<p><b><a href="Main Page.html" title="Main Page">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722135416
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.124 seconds
+Real time usage: 0.861 seconds
+Preprocessor visited node count: 642/1000000
+Preprocessor generated node count: 1290/1000000
+Post‐expand include size: 54/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1053-0!canonical and timestamp 20240722135416 and revision id 26868
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chess&amp;oldid=26868">https://www.chessprogramming.org/index.php?title=Chess&amp;oldid=26868</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Anthony Braxton.html" title="Category:Anthony Braxton">Anthony Braxton</a></li><li><a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chess&amp;oldid=26868.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 22 November 2023, at 20:47.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.124","walltime":"0.861","ppvisitednodes":{"value":642,"limit":1000000},"ppgeneratednodes":{"value":1290,"limit":1000000},"postexpandincludesize":{"value":54,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722135416","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

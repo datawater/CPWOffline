@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Lazy Evaluation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Lazy_Evaluation","wgTitle":"Lazy Evaluation","wgCurRevisionId":15512,"wgRevisionId":15512,"wgArticleId":1548,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heinrich Kley","Deep Purple"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Lazy_Evaluation","wgRelevantArticleId":1548,"wgRequestId":"Zp7DaKr3TkUYSeSKrHxdXgAAAA8","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Lazy_Evaluation rootpage-Lazy_Evaluation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Lazy Evaluation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * Lazy Evaluation</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Kley Kr%C3%A4nzchen.jpg.html"><img alt="" class="thumbimage" height="199" src="wikipedia/commons/thumb/d/d4/Kley_Kr%C3%A4nzchen.jpg/300px-Kley_Kr%C3%A4nzchen.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kley_Kr%C3%A4nzchen.jpg/450px-Kley_Kr%C3%A4nzchen.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kley_Kr%C3%A4nzchen.jpg/600px-Kley_Kr%C3%A4nzchen.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Kley Kr%C3%A4nzchen.jpg.html" title="Enlarge"></a></div><a href="Category:Heinrich Kley.html" title="Category:Heinrich Kley">Heinrich Kley</a> - Das Kränzchen <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><br/>
+In the chess programming sense of the phrase <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, <b>Lazy Evaluation</b> means dividing all the tasks performed by <a href="Evaluation Function.html" title="Evaluation Function">evaluation function</a> in (usually two) stages. If after performing all the tasks for a given stage score exceeds <a href="Beta.html" title="Beta">beta</a> by a certain margin or if it falls below <a href="Alpha.html" title="Alpha">alpha</a> by the same margin, the score is returned and no more evaluation is conducted. The first stage usually consists of the evaluation terms that are relatively cheap, possibly <a href="Incremental Updates.html" title="Incremental Updates">incrementally updated</a>, like <a href="Material.html" title="Material">material</a> and <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a>. Lazy evaluation may be viewed as taking the <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> principle one step further. If some parts of the evaluation function are omitted due to this heuristics, it means that one side is already winning "the evaluation game" by the margin unacceptable to the opponent, and therefore a cutoff occurs. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#See also"><span class="tocnumber">1</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Forum Posts"><span class="tocnumber">2</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#1995 ..."><span class="tocnumber">2.1</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#2000 ..."><span class="tocnumber">2.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#2010 ..."><span class="tocnumber">2.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#2015 ..."><span class="tocnumber">2.4</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#External Links"><span class="tocnumber">3</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="CPW-Engine eval.html" title="CPW-Engine eval">CPW-Engine_eval</a></li>
+<li> <a href="Rookie.html#Evaluation" title="Rookie">Evaluation in Rookie 2.0</a></li>
+<li> <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a href="Razoring.html" title="Razoring">Razoring</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/12607986c47b8ef6.html" rel="nofollow">approximate eval function</a> by <a href="Jo%C3%ABl Rivat.html" title="Joël Rivat">Joël Rivat</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, September 20, 1995</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=110681" rel="nofollow">Caution K v KBN and lazy eval or futility</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, May 14, 2000 » <a href="KBNK Endgame.html" title="KBNK Endgame">KBNK Endgame</a>, <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=192813" rel="nofollow">Chess Programming: "lazy eval"</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2001</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=37223.html" rel="nofollow">doing lazy exit in eval or better not ?</a> by <a href="Engin %C3%9Cst%C3%BCn.html" title="Engin Üstün">Engin Üstün</a>, <a href="CCC.html" title="CCC">CCC</a>, December 22, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38499.html" rel="nofollow">lazy eval discussion</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, March 21, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41236.html" rel="nofollow">Lazy eval</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46130.html" rel="nofollow">Razoring / Lazy eval question</a> by <a class="new" href="index.php?title=Jerry Donald&amp;action=edit&amp;redlink=1.html" title="Jerry Donald (page does not exist)">Jerry Donald</a>, <a href="CCC.html" title="CCC">CCC</a>, November 24, 2012 » <a href="Razoring.html" title="Razoring">Razoring</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52676&amp;start=28.html" rel="nofollow">Re: lazy eval</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, June 19, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53199.html" rel="nofollow">Lazy evaluation</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 07, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54387.html" rel="nofollow">Implications of Lazy eval on Don Beal effect in Fail Soft</a> by <a class="new" href="index.php?title=Henk van den Belt&amp;action=edit&amp;redlink=1.html" title="Henk van den Belt (page does not exist)">Henk van den Belt</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2014 » <a href="Fail-Soft.html" title="Fail-Soft">Fail-Soft</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64674.html" rel="nofollow">Is expensive eval required for QS?</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2017 » <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65047.html" rel="nofollow">adaptive lazy eval</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, August 31, 2017</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://macechess.blogspot.de/2014/06/not-being-lazy-anymore.html.html" rel="nofollow">Not being lazy anymore </a> by <a href="Thomas Petzke.html" title="Thomas Petzke">Thomas Petzke</a>, <a class="external text" href="http://macechess.blogspot.de/.html" rel="nofollow">mACE Chess</a>, June 28, 2014 » <a href="ICE.html" title="ICE">iCE</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Lazy_evaluation" rel="nofollow">Lazy evaluation from Wikipedia</a> as general programming term </li>
+<li> <a href="Category:Deep Purple.html" title="Category:Deep Purple">Deep Purple</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Lazy_%28Deep_Purple_song%29" rel="nofollow">Lazy</a>  (<a class="external text" href="https://www.setlist.fm/setlist/deep-purple/1984/sydney-entertainment-centre-sydney-australia-4bde3f66.html" rel="nofollow">Sydney 1984</a>),  <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video </li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/iFSKvWICseQ?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Category:Heinrich Kley.html" title="Category:Heinrich Kley">Heinrich Kley</a> - Das Kränzchen. Federzeichnung (aus: Skizzenbuch I, 1909)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">In general computer programming, <a class="external text" href="https://en.wikipedia.org/wiki/Lazy_evaluation" rel="nofollow">Lazy evaluation</a> refers a technique of delaying a computation until the result is required.</span>
+</li>
+</ol></div>
+<p><b><a href="Evaluation.html" title="Evaluation">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722065631
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.064 seconds
+Real time usage: 0.758 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 150/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1548-0!canonical and timestamp 20240722065630 and revision id 15512
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Lazy_Evaluation&amp;oldid=15512">https://www.chessprogramming.org/index.php?title=Lazy_Evaluation&amp;oldid=15512</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Heinrich Kley.html" title="Category:Heinrich Kley">Heinrich Kley</a></li><li><a href="Category:Deep Purple.html" title="Category:Deep Purple">Deep Purple</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Lazy+Evaluation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Lazy Evaluation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Lazy Evaluation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Lazy Evaluation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Lazy Evaluation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Lazy Evaluation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Lazy Evaluation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Lazy Evaluation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Lazy Evaluation&amp;oldid=15512.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Lazy Evaluation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 15 November 2019, at 22:46.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Lazy_Evaluation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.064","walltime":"0.758","ppvisitednodes":{"value":68,"limit":1000000},"ppgeneratednodes":{"value":150,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722065631","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

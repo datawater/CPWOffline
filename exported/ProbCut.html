@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ProbCut - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ProbCut","wgTitle":"ProbCut","wgCurRevisionId":19031,"wgRevisionId":19031,"wgArticleId":984,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ProbCut","wgRelevantArticleId":984,"wgRequestId":"Zp7DmIY8AD1K7zdlkfzeFAAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ProbCut rootpage-ProbCut skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">ProbCut</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Selectivity.html" title="Selectivity">Selectivity</a> * <a href="Pruning.html" title="Pruning">Pruning</a> * ProbCut</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:MProbeCut.JPG.html"><img alt="" class="thumbimage" height="169" src="images/thumb/d/dc/MProbeCut.JPG/300px-MProbeCut.JPG" srcset="/images/d/dc/MProbeCut.JPG 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:MProbeCut.JPG.html" title="Enlarge"></a></div><a href="Search Tree.html" title="Search Tree">Search Trees</a> with two ProbCut generalizations <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>ProbCut</b>,<br/>
+a selective search enhancement of the <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> algorithm created in 1994 by <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> as introduced in his Ph.D. thesis <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. It permits to exclude probably irrelevant subtrees from beeing searched deeply. ProbCut and its improved variant <b>Multi–ProbCut</b> (MPC) have been shown to be effective in <a href="Othello.html" title="Othello">Othello</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> and <a href="Shogi.html" title="Shogi">Shogi</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, and a technique similar to ProbCut is used in the <a href="Checkers.html" title="Checkers">checkers</a> program <a class="new" href="index.php?title=Chinook&amp;action=edit&amp;redlink=1.html" title="Chinook (page does not exist)">Chinook</a> by <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Schaeffer</a> et al. (1992) <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> described their approach in a footnote: Chinook performs forward cuts in positions with a <a href="Material.html" title="Material">material</a> deficit, where a shallow search does not show an escape. ProbCut is a generalization of this method in that it is game independent. It was tested by incorporating it in Buro's already strong Othello program <i>Logistello</i> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> and increased the program's playing strength <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>. Despite some promising results reported by <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a> and Michael Buro with <a href="Crafty.html" title="Crafty">Crafty</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>, it seemed not that successful in chess programs which already perform <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a> and <a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a>, until <a href="Stockfish.html" title="Stockfish">Stockfish</a> proved otherwise as implemened by <a href="Gary Linscott.html" title="Gary Linscott">Gary Linscott</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The Idea"><span class="tocnumber">1</span> <span class="toctext">The Idea</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pseudo Code"><span class="tocnumber">2</span> <span class="toctext">Pseudo Code</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Multi.E2.80.93ProbCut"><span class="tocnumber">3</span> <span class="toctext">Multi–ProbCut</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#ProbeCut or MPC in Chess"><span class="tocnumber">4</span> <span class="toctext">ProbeCut or MPC in Chess</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Publications"><span class="tocnumber">6</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="The_Idea">The Idea</span></h1>
+<p>ProbCut is based on the idea that the result <i>v<b> of a shallow search with <a href="Depth.html" title="Depth">depth</a> </b></i><b>d</b> is a rough estimate of the result <i>v</i> of a deeper search with depth <i>d &gt; d'</i>. A way to model this relationship is by means of a <a class="external text" href="https://en.wikipedia.org/wiki/Linear_model" rel="nofollow">linear model</a>:
+</p>
+<pre>v = a*v' + b + e
+</pre>
+<p>where e is a <a class="external text" href="https://en.wikipedia.org/wiki/Normal_distribution" rel="nofollow">normally distributed</a> <a class="external text" href="https://en.wikipedia.org/wiki/Standard_error_%28statistics%29" rel="nofollow">error variable</a> with <a class="external text" href="https://en.wikipedia.org/wiki/Mean" rel="nofollow">mean</a> 0 and <a class="external text" href="https://en.wikipedia.org/wiki/Standard_deviation" rel="nofollow">standard deviation</a> σ (<a class="external text" href="https://en.wikipedia.org/wiki/Sigma" rel="nofollow">sigma</a>) or <a class="external text" href="https://en.wikipedia.org/wiki/Variance" rel="nofollow">variance</a> σ². If the evaluation function is relative stable, the <a class="external text" href="https://en.wikipedia.org/wiki/Slope" rel="nofollow">slope</a> a is about 1.0, offset b about 0.0 and a small variance σ². The cutoff condition of depth d
+</p>
+<pre>v ≥ β
+</pre>
+<p>becomes
+</p>
+<pre>(v' + b - β)/σ ≥ -e/σ
+</pre>
+<p>since -e/σ is normally distributed with mean 0 and variance 1 (and <a class="external text" href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" rel="nofollow">distribution function</a> Φ, <a class="external text" href="https://en.wikipedia.org/wiki/Phi" rel="nofollow">phi</a>), the condition holds true with <a class="external text" href="https://en.wikipedia.org/wiki/Probability" rel="nofollow">probability</a> of at least <i>p</i> <a class="external text" href="https://en.wikipedia.org/wiki/If_and_only_if" rel="nofollow">iff</a>
+</p>
+<pre>(v' + b - β)/σ ≥ Φ<span style="vertical-align: super;">-1</span>(p)
+</pre>
+<p>which is equivalent to
+</p>
+<pre>v' ≥ (Φ<span style="vertical-align: super;">-1</span>(p) * σ + β - b) / a
+</pre>
+<p>Similar for
+</p>
+<pre>v ≤ α
+</pre>
+<p>the condition becomes
+</p>
+<pre>v' ≤ (-Φ<span style="vertical-align: super;">-1</span>(p) * σ + α - b) / a
+</pre>
+<h1><span class="mw-headline" id="Pseudo_Code">Pseudo Code</span></h1>
+<p>This observation immediately leads to the implementation of the ProbCut alpha-beta extension for one depth and reduced depth pair using <a href="Float.html" title="Float">floats</a>. Before <a class="external text" href="https://en.wikipedia.org/wiki/Sigma" rel="nofollow">sigma</a>, a and b are estimated by <a class="external text" href="https://en.wikipedia.org/wiki/Linear_regression" rel="nofollow">linear regression</a> likely for different <a href="Game Phases.html" title="Game Phases">game phases</a>, the search depths d and d' &lt; d and cut threshold must be chosen or be determined <a class="external text" href="https://en.wikipedia.org/wiki/Empirical" rel="nofollow">empirically</a>, by checking the performance of the program with various parameter settings <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> .
+</p>
+<pre>
+int alphaBetaProbCut(int α, int β, int depth) {
+   const float T(1.5);
+   const int DP(4);
+   const int D(8);
+
+   if ( depth == 0 ) return evaluate();
+
+   if ( depth == D ) {
+      int bound;
+
+      /* v &gt;= β with prob. of at least p? yes =&gt; cutoff */
+      bound = round( ( T * σ + β - b) / a );
+      if ( alphaBetaProbCut( bound-1, bound, DP) &gt;= bound )
+         return β;
+
+      /* v &lt;= α with prob. of at least p? yes =&gt; cutoff */
+      bound = round( (-T * σ + α - b) / a );
+      if ( alphaBetaProbCut( bound, bound+1, DP) &lt;= bound )
+         return α;
+   }
+   /* the remainder of alpha-beta goes here */
+   ...
+}
+</pre>
+<p><span id="MPC"></span>
+</p>
+<h1><span class="mw-headline" id="Multi.E2.80.93ProbCut">Multi–ProbCut</span></h1>
+<p>Multi–ProbCut (MPC) enhances ProbCut by
+</p>
+<ul><li> Allowing different regression parameters and cut thresholds for different stages of the game</li>
+<li> Using more than one depth pair</li>
+<li> Using <a href="Internal Iterative Deepening.html" title="Internal Iterative Deepening">internal iterative deepening</a> for shallow searches</li></ul>
+<pre>
+struct Param {
+   int d;         /* shallow search depth */
+   float t;       /* cut threshold */
+   float a, b, σ; /* slope, offset, standard deviation */
+} param[MAX_STAGE+1][MAX_HEIGHT+1][NUM_TRY];
+
+
+int alphaBetaMPC(int α, int β, int depth)
+{
+   if ( depth == 0 ) return evaluate();
+
+   if ( depth &lt;= MAX_D ) {
+      for (int i=0; i &lt; NUM_TRY; i++) {
+         int bound;
+         const Param &amp;pa = param[stage][depth][i];
+
+         if (pa.d &lt; 0 )
+            break; /* no more parameters available */
+
+         /* v &gt;= β with prob. of at least p? yes =&gt; cutoff */
+         bound = round( ( pa.t * pa.σ + β - pa.b) / pa.a );
+         if ( alphaBetaMPC( bound-1, bound, pa.d) &gt;= bound )
+            return β;
+
+         /* v &lt;= α with prob. of at least p? yes =&gt; cutoff */
+         bound = round( (-pa.t * pa.σ + α - pa.b) / pa.a );
+         if ( alphaBetaMPC( bound, bound+1, pa.d) &lt;= bound )
+            return α;
+      }
+   }
+   /* the remainder of alpha-beta goes here */
+   ...
+}
+</pre>
+<h1><span class="mw-headline" id="ProbeCut_or_MPC_in_Chess">ProbeCut or MPC in Chess</span></h1>
+<p>In 2003, <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a> implemented ProbCut and MPC in <a href="Crafty.html" title="Crafty">Crafty</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>. In his thesis he introductory elaborates on ProbCut in Chess <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> :
+</p>
+<pre>There has been no report of success for ProbCut or MPC in chess thus far. There are at least two reasons for this:
+</pre>
+<ol><li> <code>Null-move is available for chess. Null-move and ProbCut are based on similar ideas, as a result they tend to prune the same type of positions. Part of the reason why ProbCut is so successful in Othello is that null-move does not work in Othello. But in chess, ProbCut and MPC have to compete with null-move, which is way better than brute-force alpha-beta.</code></li>
+<li> <code>Chess searches tend to make more mistakes than Othello searches</code> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup><code>. This leads to a larger standard deviation in the linear relationship between shallow and deep search results, which makes it harder to get ProbCut cuts</code>. </li></ol>
+<p><br/>
+In his research, Albert Xin Jiang further determined following parameters by <a class="external text" href="https://en.wikipedia.org/wiki/Linear_regression" rel="nofollow">linear regression</a>. The about 2700 positions were chosen randomly from some computer chess tournament games and some of Crafty’s games against human grandmasters on internet chess servers:
+</p>
+<div class="floatnone"><a class="image" href="File:CraftyLinearReg.JPG.html"><img alt="CraftyLinearReg.JPG" class="thumbborder" height="386" src="images/a/ac/CraftyLinearReg.JPG" style="vertical-align: text-bottom" width="541"/></a></div>
+<p>v' versus v for depth pair (4,8) <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>
+</p><p>Linear regression results. The evaluation function’s scale is 100 = one pawn. r is the <a class="external text" href="https://en.wikipedia.org/wiki/Correlation_and_dependence" rel="nofollow">regression correlation coefficient</a>, a measure of how good the data fits the linear model:
+</p>
+<table class="wikitable">
+<tr>
+<th> Pairs
+</th>
+<th> Stage
+</th>
+<th> a
+</th>
+<th> b
+</th>
+<th> σ
+</th>
+<th> r
+</th></tr>
+<tr>
+<td>  (3,5)
+</td>
+<td> <a href="Middlegame.html" title="Middlegame">Middlegame</a>
+</td>
+<td>  0.998
+</td>
+<td style="text-align:right;"> -7.000
+</td>
+<td>  55.80
+</td>
+<td>  0.90
+</td></tr>
+<tr>
+<td>  (3,5)
+</td>
+<td> <a href="Endgame.html" title="Endgame">Endgame</a>
+</td>
+<td>  1.026
+</td>
+<td style="text-align:right;"> -4.100
+</td>
+<td>  51.80
+</td>
+<td>  0.94
+</td></tr>
+<tr>
+<td>  (4,8)
+</td>
+<td>  Middlegame
+</td>
+<td>  1.020
+</td>
+<td style="text-align:right;"> 2.360
+</td>
+<td>  82.00
+</td>
+<td>  0.82
+</td></tr>
+<tr>
+<td>  (4,8)
+</td>
+<td>  Endgame
+</td>
+<td>  1.110
+</td>
+<td style="text-align:right;"> 1.750
+</td>
+<td>  75.00
+</td>
+<td>  0.90
+</td></tr></table>
+<p>While ProbCut did not result in better playing strength of Crafty, Albert Xin Jiang and Michael Buro report an improvement with MPC while playing two times three 64-game <a href="Match Statistics.html" title="Match Statistics">matches</a> with three Crafty versions and two time controls versus <a href="Dieter B%C3%BCr%C3%9Fner.html" title="Dieter Bürßner">Dieter Bürßner's</a> program <a href="Yace.html" title="Yace">Yace</a> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup> :
+</p>
+<table class="wikitable">
+<tr>
+<th rowspan="2"> Pairing
+</th>
+<th colspan="2"> Crafty %
+</th></tr>
+<tr>
+<th> 2min + <br/>10sec/move
+</th>
+<th> 8min + <br/>20sec/move
+</th></tr>
+<tr>
+<th>  Crafty - Yace
+</th>
+<td style="text-align:right;"> 42.0
+</td>
+<td style="text-align:right;"> 50.8
+</td></tr>
+<tr>
+<th>  MPC Crafty(1.2, 1.0) - Yace
+</th>
+<td style="text-align:right;"> 53.1
+</td>
+<td style="text-align:right;"> 56.3
+</td></tr>
+<tr>
+<th>  MPC Crafty(1.0, 1.0) - Yace
+</th>
+<td style="text-align:right;"> 57.0
+</td>
+<td style="text-align:right;"> 55.5
+</td></tr></table>
+<p>However, <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> first stated results were inconclusive <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup> , and later that MPC was somewhat worse in every test he tried <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup> , also confirmed by <a class="new" href="index.php?title=Robert Allgeuer&amp;action=edit&amp;redlink=1.html" title="Robert Allgeuer (page does not exist)">Robert Allgeuer</a>, who performed Crafty MPC tests with following conclusion in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup> :
+</p>
+<pre>My tests indicate that the overall playing strength of Crafty 18.15 remains more or less unchanged by the addition of Multi-ProbCut. However, the characteristic of the engine changes significantly due to ProbCut: Even though nominal search depth is increased by one to two plies, tactical strength is severely reduced.
+</pre>
+<pre>Furthermore with ProbCut match results become more unpredictable and inconsistent: Apparently there are types of opponents against which ProbCut works very well and results in significantly improved results, but there are also other opponents (the tactically stronger ones?) where ProbCut has exactly the opposite effect. 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Enhanced Forward Pruning.html" title="Enhanced Forward Pruning">Enhanced Forward Pruning</a></li>
+<li> <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a></li>
+<li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="Multi-Cut.html" title="Multi-Cut">Multi-Cut</a></li>
+<li> <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a href="RankCut.html" title="RankCut">RankCut</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<p><sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup> <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup>
+</p>
+<ul><li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1994</b>). <i>Techniken für die Bewertung von Spielsituationen anhand von Beispielen.</i> Ph.D. Thesis. <a href="Paderborn University.html" title="Paderborn University">Paderborn University</a>, Paderborn, Germany. (German), <a class="external text" href="http://www.cs.ualberta.ca/%7Emburo/ps/mics dis.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1995</b>). <i>ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm.</i> <a href="ICGA Journal.html#18 2" title="ICGA Journal">ICCA Journal, Vol 18, No. 2</a>, <a class="external text" href="https://skatgame.net/mburo/ps/probcut.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1997</b>). <i>Experiments with Multi-ProbCut and a New High-quality Evaluation Function for Othello.</i> Technical Report No. 96, NEC Research Institute, <a class="external text" href="https://skatgame.net/mburo/ps/improve.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>2000</b>). <i>Experiments with Multi-ProbCut and a new High-Quality Evaluation Function for Othello.</i> Games in AI Research</li>
+<li> <a href="Kazutomo Shibahara.html" title="Kazutomo Shibahara">Kazutomo Shibahara</a>, <a class="new" href="index.php?title=Nobuo Inui&amp;action=edit&amp;redlink=1.html" title="Nobuo Inui (page does not exist)">Nobuo Inui</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2002</b>). <i>Effect of ProbCut in Shogi - by changing parameters according to position category</i>. <a href="Conferences.html#GPW" title="Conferences">7th Game Programming Workshop</a> </li>
+<li> <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>2002</b>). <i>Multi-ProbCut Search</i>. slides as <a class="external text" href="https://skatgame.net/mburo/ps/mpc.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a> (<b>2003</b>). <i>Implementation of Multi-ProbCut in Chess</i>. CPSC 449 Thesis, <a class="external text" href="http://www.cs.ubc.ca/%7Ejiang/papers/thesis.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a>, <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>2003</b>). <i>First Experimental Results of ProbCut Applied to Chess</i>. <a href="Advances in Computer Games 10.html" title="Advances in Computer Games 10">Advances in Computer Games 10</a></li>
+<li> <a class="new" href="index.php?title=Maarten Schadd&amp;action=edit&amp;redlink=1.html" title="Maarten Schadd (page does not exist)">Maarten Schadd</a>, <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a> (<b>2009</b>). <i>ChanceProbCut: Forward Pruning in Chance Nodes</i>. in IEEE Symposium on Computational Intelligence and Games (CIG 2009)</li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=66467" rel="nofollow">whats probcut?</a> by vitor, <a href="CCC.html" title="CCC">CCC</a>, August 29, 1999</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=178124" rel="nofollow">muliti probcut</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, July 04, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=303536" rel="nofollow">Multi-ProbCut and Crafty : does it work ?</a> by <a href="Fr%C3%A9d%C3%A9ric Louguet.html" title="Frédéric Louguet">Frédéric Louguet</a>, <a href="CCC.html" title="CCC">CCC</a>, June 28, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=322133" rel="nofollow">Crafty MPC tests (long post)</a> by <a class="new" href="index.php?title=Robert Allgeuer&amp;action=edit&amp;redlink=1.html" title="Robert Allgeuer (page does not exist)">Robert Allgeuer</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=378283" rel="nofollow">ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm</a> by <a href="Albert Silver.html" title="Albert Silver">Albert Silver</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2004</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=274486&amp;t=28459.html" rel="nofollow">Re: Possible search improvment</a> by <a href="Ryan Benitez.html" title="Ryan Benitez">Ryan Benitez</a>, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2009 » <a href="History Leaf Pruning.html" title="History Leaf Pruning">History Leaf Pruning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38407.html" rel="nofollow">Bad Pruning</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, March 13, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=518426.html" rel="nofollow">Probcut</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2013 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://radagast.se/othello/howto.html.html" rel="nofollow">Writing an Othello program</a> by <a href="Gunnar Andersson.html" title="Gunnar Andersson">Gunnar Andersson</a></li>
+<li> <a class="external text" href="http://fuego.sourceforge.net/fuego-doc-1.1/smartgame-doc/SgProbCut 8h.html.html# details" rel="nofollow">SmartGame Library: SgProbCut.h File Reference</a>, <a class="external text" href="http://fuego.sourceforge.net/fuego-doc-1.1/.html" rel="nofollow">Fuego Documentation</a> <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Illustrations of the first two ProbCut generalizations: a) allowing forward cuts at several heights and b) performing a sequence of check searches of increasing depth from <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1997</b>). <i>Experiments with Multi-ProbCut and a New High-quality Evaluation Function for Othello.</i> Technical Report No. 96, NEC Research Institute, Princeton, N.J. <a class="external text" href="http://skatgame.net/mburo/ps/improve.pdf.html" rel="nofollow">pdf</a>, 8 Multi-ProbCut, pp 7.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1994</b>). <i>Techniken für die Bewertung von Spielsituationen anhand von Beispielen.</i> Ph.D. Thesis. <a href="Paderborn University.html" title="Paderborn University">Paderborn University</a>, Paderborn, Germany. (German), Kapitel 4. Selektive Suche</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1997</b>). <i>Experiments with Multi-ProbCut and a New High-quality Evaluation Function for Othello.</i> Technical Report No. 96, NEC Research Institute, Princeton, N.J. <a class="external text" href="https://skatgame.net/mburo/ps/improve.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Kazutomo Shibahara.html" title="Kazutomo Shibahara">Kazutomo Shibahara</a>, <a class="new" href="index.php?title=Nobuo Inui&amp;action=edit&amp;redlink=1.html" title="Nobuo Inui (page does not exist)">Nobuo Inui</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2002</b>). <i>Effect of ProbCut in Shogi - by changing parameters according to position category</i>. <a href="Conferences.html#GPW" title="Conferences">7th Game Programming Workshop</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Joe Culberson.html" title="Joe Culberson">Joe Culberson</a>, <a class="new" href="index.php?title=Norman Treloar&amp;action=edit&amp;redlink=1.html" title="Norman Treloar (page does not exist)">Norman Treloar</a>, <a class="new" href="index.php?title=Brent Knight&amp;action=edit&amp;redlink=1.html" title="Brent Knight (page does not exist)">Brent Knight</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a href="Duane Szafron.html" title="Duane Szafron">Duane Szafron</a> (<b>1992</b>). <i>A World Championship Caliber Checkers Program</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 53, Nos. 2-3, pp. 6, "If a line leads to a material deficit and there is insufficient positional compensation (the positional assessment of the position does not reach a fixed threshold) then the remaining search depth is cut in half. If the result of this search does not restore the material deficit, or result in sufficient positional compensation, this line is abandoned. Otherwise, the line is researched to the full search depth".</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://skatgame.net/mburo/log.html.html" rel="nofollow">LOGISTELLO's Homepage</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1995</b>). <i>ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm.</i> <a href="ICGA Journal.html#18 2" title="ICGA Journal">ICCA Journal, Vol 18, No. 2</a>, <a class="external text" href="https://skatgame.net/mburo/ps/probcut.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a>, <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>2003</b>). <i>First Experimental Results of ProbCut Applied to Chess</i>. <a href="Advances in Computer Games 10.html" title="Advances in Computer Games 10">Advances in Computer Games 10</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=518426.html" rel="nofollow">Probcut</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2013</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/official-stockfish/Stockfish/blob/master/src/search.cpp" rel="nofollow">Stockfish/search.cpp at master · official-stockfish/Stockfish · GitHub</a>, Step 9. ProbCut</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>1995</b>). <i>ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm.</i> <a href="ICGA Journal.html#18 2" title="ICGA Journal">ICCA Journal, Vol 18, No. 2</a>, <a class="external text" href="https://skatgame.net/mburo/ps/probcut.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a> (<b>2003</b>). <i>Implementation of Multi-ProbCut and Chess</i>. CPSC 449 Thesis, <a class="external text" href="http://www.cs.ubc.ca/%7Ejiang/papers/thesis.pdf.html" rel="nofollow">pdf</a>, 2.5 ProbeCut in Chess, pp. 6</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a href="Andreas Junghanns.html" title="Andreas Junghanns">Andreas Junghanns</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Mark Brockington.html" title="Mark Brockington">Mark Brockington</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>,  <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1997</b>). <i>Diminishing Returns for Additional Search in Chess.</i> <a href="Advances in Computer Chess 8.html" title="Advances in Computer Chess 8">Advances in Computer Chess 8</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text">Image from <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a> (<b>2003</b>). <i>Implementation of Multi-ProbCut in Chess</i>. CPSC 449 Thesis, <a class="external text" href="http://www.cs.ubc.ca/%7Ejiang/papers/thesis.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text">Page 30 in <a href="Albert Xin Jiang.html" title="Albert Xin Jiang">Albert Xin Jiang</a>, <a href="Michael Buro.html" title="Michael Buro">Michael Buro</a> (<b>2003</b>). <i>First Experimental Results of ProbCut Applied to Chess</i>. <a href="Advances in Computer Games 10.html" title="Advances in Computer Games 10">Advances in Computer Games 10</a>, <a class="external text" href="http://cs.ubc.ca/%7Ejiang/papers/mpc main.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=303565" rel="nofollow">Re: Multi-ProbCut and Crafty : does it work ?</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, June 28, 2003</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=378374" rel="nofollow">Re: ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2004</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=322133" rel="nofollow">Crafty MPC tests (long post)</a> by <a class="new" href="index.php?title=Robert Allgeuer&amp;action=edit&amp;redlink=1.html" title="Robert Allgeuer (page does not exist)">Robert Allgeuer</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 2003</span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://skatgame.net/mburo/publications.html.html" rel="nofollow">Michael Buro's Publication List</a></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.cs.ubc.ca/%7Ejiang/.html" rel="nofollow">Albert Xin Jiang - publications</a></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.grappa.univ-lille3.fr/icga/program.php?id=535.html" rel="nofollow">Fuego</a>, <a href="Go.html" title="Go">Go</a> playing program by <a href="Markus Enzenberger.html" title="Markus Enzenberger">Markus Enzenberger</a>, <a href="Martin M%C3%BCller.html" title="Martin Müller">Martin Müller</a>, <a class="new" href="index.php?title=Broderick Arneson&amp;action=edit&amp;redlink=1.html" title="Broderick Arneson (page does not exist)">Broderick Arneson</a>, <a class="new" href="index.php?title=Richard Segal&amp;action=edit&amp;redlink=1.html" title="Richard Segal (page does not exist)">Richard Segal</a>, <a href="Gerald Tesauro.html" title="Gerald Tesauro">Gerald Tesauro</a> and <a class="new" href="index.php?title=Arpad Rimmel&amp;action=edit&amp;redlink=1.html" title="Arpad Rimmel (page does not exist)">Arpad Rimmel</a></span>
+</li>
+</ol></div>
+<p><b><a href="Pruning.html" title="Pruning">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722070211
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.039 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 355/1000000
+Preprocessor generated node count: 778/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:984-0!canonical and timestamp 20240722070211 and revision id 19031
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=ProbCut&amp;oldid=19031">https://www.chessprogramming.org/index.php?title=ProbCut&amp;oldid=19031</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=ProbCut&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="ProbCut.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:ProbCut&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="ProbCut.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=ProbCut&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=ProbCut&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/ProbCut.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/ProbCut.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=ProbCut&amp;oldid=19031.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=ProbCut&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 2 May 2020, at 12:12.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=ProbCut&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.039","walltime":"0.042","ppvisitednodes":{"value":355,"limit":1000000},"ppgeneratednodes":{"value":778,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722070211","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>DirGolem - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"DirGolem","wgTitle":"DirGolem","wgCurRevisionId":1633,"wgRevisionId":1633,"wgArticleId":1267,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"DirGolem","wgRelevantArticleId":1267,"wgRequestId":"Zp7DM@WZo7QkwsW0UTn40wAAAAw","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-DirGolem rootpage-DirGolem skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">DirGolem</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Move Generation.html" title="Move Generation">Move Generation</a> * DirGolem</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:202px;"><a class="image" href="File:Golem 1920 Poster.jpg.html"><img alt="" class="thumbimage" height="302" src="wikipedia/commons/3/32/Golem_1920_Poster.jpg" width="200"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Golem 1920 Poster.jpg.html" title="Enlarge"></a></div>The Golem <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>DirGolem</b>,<br/>
+Direction-wise Generation of <a href="Legal Move.html" title="Legal Move">Legal Moves</a>, is best done with vectors of <a href="Bitboards.html" title="Bitboards">bitboards</a> applying <a href="AltiVec.html" title="AltiVec">AltiVec</a>, <a href="SSE2.html" title="SSE2">SSE2</a>, <a href="AVX2.html" title="AVX2">AVX2</a> or similar <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD architectures</a> with appropriate register sets. Legal moves are stored as target-bitboards for all 16 <a href="Direction.html#MoveDirections" title="Direction">move directions</a> as a kind of unsorted <a href="Move List.html" title="Move List">move list</a> inside the state of a <a href="Node.html" title="Node">node</a>. That are four orthogonal directions with rook-, queen- and king-moves including <a href="Castling.html" title="Castling">castling</a> and vertical <a href="Pawn Push.html" title="Pawn Push">pawn-pushes</a>, four diagonal directions with bishop-, queen- and king-moves and pawn-captures including <a href="En passant.html" title="En passant">en passant</a>, and eight knight directions.  Each <a href="Target Square.html" title="Target Square">target square</a> of each direction set has an unique one-to-one relation to it's <a href="Origin Square.html" title="Origin Square">source square</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Prospect"><span class="tocnumber">1</span> <span class="toctext">Prospect</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Basics"><span class="tocnumber">2</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Move Target Sets"><span class="tocnumber">3</span> <span class="toctext">Move Target Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Black Attacks"><span class="tocnumber">3.1</span> <span class="toctext">Black Attacks</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Sliders .26 Super King"><span class="tocnumber">3.1.1</span> <span class="toctext">Sliders &amp; Super King</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#None Sliding Pieces"><span class="tocnumber">3.1.2</span> <span class="toctext">None Sliding Pieces</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Generating White Moves"><span class="tocnumber">3.2</span> <span class="toctext">Generating White Moves</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#In Check.3F"><span class="tocnumber">3.2.1</span> <span class="toctext">In Check?</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Sliding Pieces"><span class="tocnumber">3.2.2</span> <span class="toctext">Sliding Pieces</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#None Sliding Pieces 2"><span class="tocnumber">3.2.3</span> <span class="toctext">None Sliding Pieces</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Finally"><span class="tocnumber">3.3</span> <span class="toctext">Finally</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Prospect">Prospect</span></h1>
+<p>To get the idea, the following description with scalar <a href="Cpp.html" title="Cpp">C++</a> code intended as pseudo code, is a rough translation of <a class="new" href="index.php?title=HansDamf&amp;action=edit&amp;redlink=1.html" title="HansDamf (page does not exist)">HansDamf's</a> intrinsic SSE2 code by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>. It assumes White to move within a <a href="Color Flipping.html" title="Color Flipping">color flipper</a> approach. More information for a set-wise <a href="Static Exchange Evaluation.html" title="Static Exchange Evaluation">SEE</a>, determining <a href="Check.html" title="Check">check</a> giving moves including <a href="Discovered Check.html" title="Discovered Check">discovered checks</a>, etc. may be collected and considered. There are zillions of implementation nuances to utilize up to 16 128-bit XMM-, 16 256-bit YMM (AVX2), or even <a href="AVX-512.html" title="AVX-512">AVX-512</a> 32 512-bit ZMM-SIMD registers <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. The generation is completely branch-less, does not use huge lookup tables, and is intended to hide the latency of a <a class="external text" href="https://en.wikipedia.org/wiki/Prefetching" rel="nofollow">prefetched</a> <a href="Transposition Table.html" title="Transposition Table">TT</a> probe. However, picking any moves or move proposals like <a href="Hash Move.html" title="Hash Move">hash</a>- or <a href="Killer Move.html" title="Killer Move">killer moves</a> from that list is more expensive and is typically done by a <a class="external text" href="https://en.wikipedia.org/wiki/Finite-state_machine" rel="nofollow">finite state machine</a> to ensure proper <a href="Move Ordering.html" title="Move Ordering">move ordering</a> considering <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a>, <a href="Hanging Piece.html" title="Hanging Piece">hanging pieces</a>, etc., as mentioned in <a href="Pieces versus Directions.html#DirectionWise" title="Pieces versus Directions">pieces versus directions</a>. 
+</p>
+<h1><span class="mw-headline" id="Basics">Basics</span></h1>
+<ul><li> <a href="King Pattern.html#byCalculation" title="King Pattern">King Attacks by Calculation</a> </li>
+<li> <a href="Knight Pattern.html#MultipleKnightAttacks" title="Knight Pattern">Multiple Knight Attacks</a></li>
+<li> <a href="Sliding Piece Attacks.html#Multiple" title="Sliding Piece Attacks">Multiple Sliding Pieces</a></li>
+<li> <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">One Step Only</a></li>
+<li> <a href="Checks and Pinned Pieces (Bitboards).html#OppositeRay" title="Checks and Pinned Pieces (Bitboards)">Opposite Ray-Directions</a></li>
+<li> <a href="Pawn Attacks (Bitboards).html#PawnAttacks" title="Pawn Attacks (Bitboards)">Pawn Attacks set-wise</a></li>
+<li> <a href="Pawn Pushes (Bitboards).html#PawnPushSetwise" title="Pawn Pushes (Bitboards)">Pawn Pushes set-wise</a></li>
+<li> <a href="Pieces versus Directions.html" title="Pieces versus Directions">Pieces versus Directions</a></li></ul>
+<table>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:51px;"><a href="Square Mapping Considerations.html" title="Square Mapping Considerations"><img alt="Cpwmappinghint.JPG" class="thumbimage" height="48" src="images/4/43/Cpwmappinghint.JPG" width="49"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Cpwmappinghint.JPG.html" title="Enlarge"></a></div></div></div></div>
+</td>
+<td> <i>Code samples and bitboard diagrams rely on <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">Little endian file and rank mapping</a></i>.
+</td></tr></table>
+<h1><span class="mw-headline" id="Move_Target_Sets">Move Target Sets</span></h1>
+<p>To determine white <a href="Pin.html#AbsolutePin" title="Pin">absolutely pinned pieces</a> and squares attacked by black pieces, pawns, and king, taboo for the white king, black attacks are generated in a first phase. Those attacks are also utilized to detect whether the own king is in <a href="Check.html" title="Check">check</a>. Aggregated collected information is then used in a second phase of legal move target generation. 
+</p>
+<h2><span class="mw-headline" id="Black_Attacks">Black Attacks</span></h2>
+<h3><span class="mw-headline" id="Sliders_.26_Super_King">Sliders &amp; Super King</span></h3>
+<p>First, all black sliding attacks are generated by <a href="Dumb7Fill.html" title="Dumb7Fill">Dumb7</a>- or <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone fill</a>, unrolled for all eight <a href="Direction.html#RayDirections" title="Direction">ray directions</a>, to aggregate them into a white king taboo bitboard, and to determine and keep line-wise <a href="Square Attacked By.html#InBetween" title="Square Attacked By">in-between</a> bitboards by intersection with <a href="Checks and Pinned Pieces (Bitboards).html#OppositeRay" title="Checks and Pinned Pieces (Bitboards)">opposite ray-direction</a> attacks of the white king as sliding super piece, best generated by the <a href="Classical Approach.html" title="Classical Approach">classical approach</a>, or alternatively along with the sliding pieces itself as additional SIMD data element processing two opponent fill direction in one run. 
+</p><p><span id="Xray"></span>The occupancy for the black sliding attacks has the white king excluded, so that in case of check by a sliding piece the king is <a href="X-ray.html" title="X-ray">x-rayed</a> to later avoid king moves to otherwise non attacked squares. The in-between sets intersected with own pieces leave <a href="Pin.html#AbsolutePin" title="Pin">pinned pieces</a>, but are also handy to determine an interposing block target set in case of distant sliding checks. In total, seven bitboards are processed as used in the second part of the routine, four line-wise in-between sets, orthogonal and diagonal white king super piece attacks to later determine a possible sliding checking piece, and the aggregated black attacks.
+</p>
+<pre>
+  U64 horInbetween, verInbetween, diaInbetween, antInbetween;   
+  U64 wKSuperAttacksOrth, wKSuperAttacksDia , bAnyAttacks;
+</pre>
+<p>Intended members associated with a position object have a m_-prefix, scratch or register variables an underscore:
+</p>
+<pre>
+  /* black rooks and queens west */
+  _bAttacks = westAttacks (m_bRooks | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks         = _bAttacks;
+  _wKSuperAttacks     = slidingRayEastAttacks(m_wKsq, m_occ);
+  wKSuperAttacksOrth  = _wKSuperAttacks;
+  horInbetween        = _bAttacks &amp; _wKSuperAttacks;
+  /* black rooks and queens east */
+  _bAttacks = eastAttacks (m_bRooks | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRayWestAttacks(m_wKsq, m_occ);
+  wKSuperAttacksOrth |= _wKSuperAttacks;
+  horInbetween       |= _bAttacks &amp; _wKSuperAttacks;
+  /* black rooks and queens north */
+  _bAttacks = nortAttacks (m_bRooks | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRaySoutAttacks(m_wKsq, m_occ);
+  wKSuperAttacksOrth |= _wKSuperAttacks;
+  verInbetween        = _bAttacks &amp; _wKSuperAttacks;
+  /* black rooks and queens south */
+  _bAttacks = soutAttacks (m_bRooks | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRayNortAttacks(m_wKsq, m_occ);
+  wKSuperAttacksOrth |= _wKSuperAttacks;
+  verInbetween       |= _bAttacks &amp; _wKSuperAttacks;
+
+  /* black bishops and queens north east */
+  _bAttacks = noEaAttacks (m_bBishops | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRaySoWeAttacks(m_wKsq, m_occ);
+  wKSuperAttacksDia   = _wKSuperAttacks;
+  diaInbetween        = _bAttacks &amp; _wKSuperAttacks;
+  /* black bishops and queens south west */
+  _bAttacks = soWeAttacks (m_bBishops | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRayNoEaAttacks(m_wKsq, m_occ);
+  wKSuperAttacksDia  |= _wKSuperAttacks;
+  diaInbetween       |= _bAttacks &amp; _wKSuperAttacks;
+  /* black bishops and queens north west */
+  _bAttacks = noWeAttacks (m_bBishops | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRaySoEaAttacks(m_wKsq, m_occ);
+  wKSuperAttacksDia  |= _wKSuperAttacks;
+  antInbetween        = _bAttacks &amp; _wKSuperAttacks;
+  /* black bishops and queens south east */
+  _bAttacks = soEaAttacks (m_bBishops | m_bQueens, m_occ ^ m_wKbb);
+  bAnyAttacks        |= _bAttacks;
+  _wKSuperAttacks     = slidingRayNoWeAttacks(m_wKsq, m_occ);
+  wKSuperAttacksDia  |= _wKSuperAttacks;
+  antInbetween       |= _bAttacks &amp; _wKSuperAttacks;
+</pre>
+<h3><span class="mw-headline" id="None_Sliding_Pieces">None Sliding Pieces</span></h3>
+<p>Black <a href="Pawn Attacks (Bitboards).html#PawnAttacks" title="Pawn Attacks (Bitboards)">pawn-</a> and knight- attacks are best determined by disjoint direction-wise steps and the <a href="Knight Pattern.html#MultipleKnightAttacks" title="Knight Pattern">multiple knight attacks</a> routine. Black <a href="King Pattern.html#KingAttacks" title="King Pattern">king attacks</a> may be determined by lookup or <a href="King Pattern.html#byCalculation" title="King Pattern">calculation</a>:
+</p>
+<pre>
+  /* black knight attacks */
+  bAnyAttacks  |= _knightAttacks  (m_bKnights);
+  /* black pawn attacks */
+  bAnyAttacks |= _bPawnEastAttacks(m_bPawns);
+  bAnyAttacks |= _bPawnWestAttacks(m_bPawns);
+  /* black king attacks */
+  bAnyAttacks |= _kingAttacks(m_bKbb);
+</pre>
+<h2><span class="mw-headline" id="Generating_White_Moves">Generating White Moves</span></h2>
+<p>Now, with all black attacks and black sliding vs white king in-between sets processed, one generates all legal white moves into 16 move-target bitboards. 
+</p>
+<h3><span class="mw-headline" id="In_Check.3F">In Check?</span></h3>
+<p>To make <a href="Check.html" title="Check">in check</a> or <a href="Double Check.html" title="Double Check">double check</a> handling <a href="Avoiding Branches.html" title="Avoiding Branches">branch-less</a>, a target mask for all non king moves is calculated, which is needed anyway to remove own white pieces from the attack sets. In case of check it only contains the check giving piece as capture target - distant sliding checks include the in-between set intersected with empty squares as target set for blocking the check. The rare case of double check is considered by a mask (_nullIfDblCheck) computed from the set of check giving pieces - which leaves <a href="General Setwise Operations.html#EmptyAndUniverse" title="General Setwise Operations">empty</a> if <a href="Population Count.html#SinglePopulatedBitboards" title="Population Count">population greater one</a> and the universe (~empty) otherwise. Note that the ones' decrement of any single populated bitboard is always positive and leaves the empty set if shifted right 63 arithmetically:
+</p>
+<pre>
+  U64 allInbetween = horInbetween | verInbetween | diaInbetween | antInbetween;
+  _blocks      =  allInbetween &amp; ~m_occ; /* in case of distant check */
+  _checkFrom   = (wKSuperAttacksOrth    &amp; (m_bRooks  | m_bQueens) )
+               | (wKSuperAttacksDia     &amp; (m_bBishop | m_bQueens) )
+               | (knightAttacks(m_wKbb) &amp;  m_bKnights )
+               | (wPawnAttacks (m_wKbb) &amp;  m_bPawns )
+               ;
+  I64 _nullIfcheck    = ( (I64)( bAnyAttacks &amp; m_wKbb ) - 1) &gt;&gt; 63; /* signed shifts */
+  I64 _nullIfDblCheck = ( (I64)( checkFrom &amp; (checkFrom-1) ) - 1) &gt;&gt; 63; 
+
+  _checkTo     = _checkFrom | _blocks  | _nullIfcheck;
+  targetMask   = ~m_wPieces &amp; _checkTo &amp; _nullIfDblCheck;
+</pre>
+<h3><span class="mw-headline" id="Sliding_Pieces">Sliding Pieces</span></h3>
+<p>Moves by white sliding pieces are computed with eight Dumb7 or Kogge-Stone fills. Pinned sliders are considered <a href="Pin.html#PartialPin" title="Pin">partial pinned</a> to move along the pinned direction:
+</p>
+<pre>
+  /* horizontal rook and queen moves */
+  _sliders = (m_wRooks | m_wQueens) &amp; ~(allInbetween ^ horInbetween);
+  m_moveTargets[eWest] = westAttacks (_sliders, m_occ) &amp; targetMask;
+  m_moveTargets[eEast] = eastAttacks (_sliders, m_occ) &amp; targetMask;
+  /* vertical rook and queen moves*/
+  _sliders = (m_wRooks | m_wQueens) &amp; ~(allInbetween ^ verInbetween);
+  m_moveTargets[eNort] = nortAttacks (_sliders, m_occ) &amp; targetMask;
+  m_moveTargets[eSout] = soutAttacks (_sliders, m_occ) &amp; targetMask;
+  /* diagonal bishop and queen moves */
+  _sliders = (m_wBishops | m_wQueens) &amp; ~(allInbetween ^ diaInbetween);
+  m_moveTargets[eNoEa] = noEaAttacks (_sliders, m_occ) &amp; targetMask;
+  m_moveTargets[eSoWe] = soWeAttacks (_sliders, m_occ) &amp; targetMask;
+  /* antidiagonal bishop and queen moves */
+  _sliders = (m_wBishops | m_wQueens) &amp; ~(allInbetween ^ antInbetween);
+  m_moveTargets[eNoWe] = noWeAttacks (_sliders, m_occ) &amp; targetMask;
+  m_moveTargets[eSoEa] = soEaAttacks (_sliders, m_occ) &amp; targetMask;
+</pre>
+<h3><span class="mw-headline" id="None_Sliding_Pieces_2">None Sliding Pieces</span></h3>
+<p>Knight moves with their disjoint unique directions are generated by eight appropriate <a href="Knight Pattern.html#Calculation" title="Knight Pattern">direction shifts</a> with all white knights not <a href="Pin.html" title="Pin">pinned</a>, using the same targetMask considering in check. Pawn captures and <a href="Pawn Pushes (Bitboards).html" title="Pawn Pushes (Bitboards)">Pawn pushes</a> also consider <a href="Pin.html#PartialPin" title="Pin">partial pins</a>. A given <a href="En passant.html" title="En passant">en passant</a> target square implies a strictly legal move, as already secured while making the triggering double pawn push.
+</p><p>Finally king move targets are generated by eight <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">one step direction shifts</a>, masking off target squares occupied by own pieces, or attacked by black, including <a href="DirGolem.html#Xray" title="DirGolem">x-rays</a> through the white king in case of check by a sliding piece. <a href="Castling.html" title="Castling">Castling</a> is left to the ambitious reader. In orthodox chess, west or east castling can simply distinguished from ordinal king moves due to the double king step, but requires some more tinkering in <a href="Chess960.html" title="Chess960">Chess960</a>.
+</p>
+<pre>
+  /* knight moves */
+  _knights = m_wKnights &amp; ~allInbetween;
+  m_moveTargets[eNoNoEa] = noNoEa(_knights) &amp; targetMask; 
+  m_moveTargets[eNoEaEa] = noEaEa(_knights) &amp; targetMask; 
+  m_moveTargets[eSoEaEa] = soEaEa(_knights) &amp; targetMask; 
+  m_moveTargets[eSoSoEa] = soSoEa(_knights) &amp; targetMask; 
+  m_moveTargets[eNoNoWe] = noNoWe(_knights) &amp; targetMask; 
+  m_moveTargets[eNoWeWe] = noWeWe(_knights) &amp; targetMask; 
+  m_moveTargets[eSoWeWe] = soWeWe(_knights) &amp; targetMask; 
+  m_moveTargets[eSoSoWe] = soSoWe(_knights) &amp; targetMask; 
+  /* pawn captures and en passant */
+  _targets = ( m_bPieces &amp; targetMask) | (C64(1) &lt;&lt; m_epTarget);
+  _pawns   = m_wPans &amp; ~(allInbetween ^ diaInbetween);
+  m_moveTargets[eNoEa] |=  noEaOne (_pawns) &amp; _targets ;
+  _pawns   = m_wPans &amp; ~(allInbetween ^ antInbetween);
+  m_moveTargets[eNoWe] |= noWeOne(_pawns) &amp; _targets;
+  /* pawn pushes ... */
+  _pawns   = m_wPans  &amp; ~(allInbetween ^ verInbetween);
+  _pawnPushs = nortOne (_pawns) &amp; ~m_occ;
+  m_moveTargets[eNort] |= _pawnPushs &amp; targetMask;
+  /* and double pushs */
+  _rank4 = C64(0x00000000FF000000);
+  m_moveTargets[eNort] |= nortOne (_pawnPushs) &amp; ~m_occ &amp; targetMask &amp; _rank4;
+  /* king moves */
+  targetMask = ~(m_wPieces | bAnyAttacks);
+  m_moveTargets[eWest] |= westOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eEast] |= eastOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eNort] |= nortOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eSout] |= soutOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eNoEa] |= noEaOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eSoWe] |= soWeOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eNoWe] |= noWeOne (m_wKbb) &amp; targetMask;
+  m_moveTargets[eSoEa] |= soEaOne (m_wKbb) &amp; targetMask;
+</pre>
+<h2><span class="mw-headline" id="Finally">Finally</span></h2>
+<p>Additionally, all 16 move target bitboards might be aggregated into a union set, so that <a href="Checkmate.html" title="Checkmate">checkmate</a> and <a href="Stalemate.html" title="Stalemate">stalemate</a> is indicated by the zero flag for early returns, wasting a TT prefetch. Further, some disjoint and aggregated attack and pinned piece information might be utilized in <a href="Evaluation.html" title="Evaluation">evaluation</a>, maybe best associated with <a href="Thread.html" title="Thread">thread</a> local memory shared by all <a href="Node.html" title="Node">nodes</a> searched, and allocated at the bottom of the <a href="Stack.html" title="Stack">stack</a> referred by a (this) pointer, with the limited validity from generation until evaluation or the first (null) move is deepened. 
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="AVX2.html" title="AVX2">AVX2</a></li>
+<li> <a href="AVX2.html#Dumb7Fill" title="AVX2">AVX2 Dumb7Fill</a></li>
+<li> <a href="AVX2.html#KnightAttacks" title="AVX2">AVX2 Knight Attacks</a></li>
+<li> <a href="Checks and Pinned Pieces (Bitboards).html" title="Checks and Pinned Pieces (Bitboards)">Checks and Pinned Pieces (Bitboards)</a></li>
+<li> <a href="Dumb7Fill.html" title="Dumb7Fill">Dumb7Fill</a></li>
+<li> <a href="Fill by Subtraction.html" title="Fill by Subtraction">Fill by Subtraction</a></li>
+<li> <a href="Fill Algorithms.html" title="Fill Algorithms">Fill Algorithms</a></li>
+<li> <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li>
+<li> <a href="Pigeon.html" title="Pigeon">Pigeon</a></li>
+<li> <a href="SSE2.html" title="SSE2">SSE2</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=43971.html" rel="nofollow">Is there such a thing as branchless move generation?</a> by <a href="John Hamlen.html" title="John Hamlen">John Hamlen</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2012</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Golem" rel="nofollow">Golem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Golem_%28disambiguation%29" rel="nofollow">Golem (disambiguation) from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/The_Golem:_How_He_Came_into_the_World" rel="nofollow">The Golem: How He Came Into the World, from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://software.intel.com/en-us/blogs/2013/avx-512-instructions.html" rel="nofollow">AVX-512 instructions | Intel® Developer Zone</a>,  by <a class="external text" href="http://software.intel.com/en-us/user/335550.html" rel="nofollow">James Reinders</a>, July 23, 2013</span>
+</li>
+</ol></div>
+<p><b><a href="Move Generation.html" title="Move Generation">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722102120
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.074 seconds
+Real time usage: 0.716 seconds
+Preprocessor visited node count: 150/1000000
+Preprocessor generated node count: 278/1000000
+Post‐expand include size: 243/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.030      1 Template:MappingHint
+100.00%    1.030      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1267-0!canonical and timestamp 20240722102119 and revision id 1633
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=DirGolem&amp;oldid=1633">https://www.chessprogramming.org/index.php?title=DirGolem&amp;oldid=1633</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=DirGolem&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="DirGolem.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:DirGolem&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="DirGolem.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=DirGolem&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=DirGolem&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/DirGolem.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/DirGolem.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=DirGolem&amp;oldid=1633.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=DirGolem&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 10 May 2018, at 19:03.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=DirGolem&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.074","walltime":"0.716","ppvisitednodes":{"value":150,"limit":1000000},"ppgeneratednodes":{"value":278,"limit":1000000},"postexpandincludesize":{"value":243,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    1.030      1 Template:MappingHint","100.00%    1.030      1 -total"]},"cachereport":{"timestamp":"20240722102120","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Triangular PV-Table - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Triangular_PV-Table","wgTitle":"Triangular PV-Table","wgCurRevisionId":25215,"wgRevisionId":25215,"wgArticleId":1356,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Music"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Triangular_PV-Table","wgRelevantArticleId":1356,"wgRequestId":"Zp7Dy7G9G67YuqUGxlgc1wAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Triangular_PV-Table rootpage-Triangular_PV-Table skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Triangular PV-Table</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * Triangular PV-Table</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:290px;"><a href="http://www.elementsbylizzie.com/Furn Tables.html.html"><img alt="" class="thumbimage" height="290" src="images/1/12/Triangular_table.JPG" width="288"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Triangular table.JPG.html" title="Enlarge"></a></div>Triangular Table <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>A <b>Triangular PV-Table</b> is an <a href="Array.html" title="Array">array</a> of <a href="Principal Variation.html" title="Principal Variation">principal variations</a> indexed by <a href="Ply.html" title="Ply">ply</a> (distance to <a href="Root.html" title="Root">root</a>). It is employed to <a href="Principal Variation.html#CollectionDuringSearch" title="Principal Variation">collect the principal variation</a> of <a href="Best Move.html" title="Best Move">best moves</a> inside an <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> or <a href="Principal Variation Search.html" title="Principal Variation Search">principal variation search</a> - like the best score propagated up to the root. Inside an <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> framework, it is most important to play the principal variation first during the next iteration. With some care in not overwriting <a href="Node Types.html#PV" title="Node Types">PV-nodes</a>, many programmers have abandoned PV-Table and reveal the PV from the <a href="Transposition Table.html" title="Transposition Table">transposition table</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Layout"><span class="tocnumber">1</span> <span class="toctext">Layout</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Implementations"><span class="tocnumber">2</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#One-Dimensional Array"><span class="tocnumber">2.1</span> <span class="toctext">One-Dimensional Array</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Size"><span class="tocnumber">2.1.1</span> <span class="toctext">Size</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Index"><span class="tocnumber">2.1.2</span> <span class="toctext">Index</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Pseudo Code"><span class="tocnumber">2.1.3</span> <span class="toctext">Pseudo Code</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Quadratic PV-Table"><span class="tocnumber">2.2</span> <span class="toctext">Quadratic PV-Table</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Linked List on the Stack"><span class="tocnumber">2.3</span> <span class="toctext">Linked List on the Stack</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Pointer Array"><span class="tocnumber">2.4</span> <span class="toctext">Pointer Array</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#PV in PVS"><span class="tocnumber">3</span> <span class="toctext">PV in PVS</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#1998 ..."><span class="tocnumber">5.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2020 ..."><span class="tocnumber">5.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Layout">Layout</span></h1>
+<p>Assuming a <a href="Depth.html#MaxPly" title="Depth">maximum search depth</a> of N plies with pre-allocated <a href="Stack.html" title="Stack">stacks</a>, the maximum possible PV-length decreases with increasing distance to root aka ply index during search, and actually needs one move less each ply deeper.
+</p>
+<pre>maxLengthPV(ply) = N - ply
+</pre>
+<p>Therefor the triangular structure.
+</p>
+<pre>
+ply  maxLengthPV
+    +--------------------------------------------+
+0   |N                                           |
+    +------------------------------------------+-+
+1   |N-1                                       |
+    +----------------------------------------+-+
+2   |N-2                                     |
+    +--------------------------------------+-+
+3   |N-3                                   |
+    +------------------------------------+-+
+4   |N-4                                 |
+...                        /
+N-4 |4      |
+    +-----+-+
+N-3 |3    |
+    +---+-+
+N-2 |2  |
+    +-+-+
+N-1 |1|
+    +-+
+</pre>
+<h1><span class="mw-headline" id="Implementations">Implementations</span></h1>
+<h2><span class="mw-headline" id="One-Dimensional_Array">One-Dimensional Array</span></h2>
+<h3><span class="mw-headline" id="Size">Size</span></h3>
+<p>The total size of the triangular array in moves can be calculated by the <a class="external text" href="https://en.wikipedia.org/wiki/Triangular_number" rel="nofollow">Triangular number</a>:
+</p>
+<pre>size = 1+2+3+ ... +(N-1)+N = ½ N(N+1)
+</pre>
+<h3><span class="mw-headline" id="Index">Index</span></h3>
+<p>To calculate the index or offset of a PV into a one-dimensional move array by ply either requires storing incremental offsets
+</p>
+<pre>index(0) = 0 
+index(ply+1) = index(ply) + N - ply 
+</pre>
+<p>or variable multiplication from scratch:
+</p>
+<pre>index(ply) = ½ ply (2N + 1 - ply )
+</pre>
+<p>This index calculation might as well be replaced by a redirection via a small pre-calculated lookup table with N entries of indices, pointers or references, similar to two-dimensional <a href="Java.html" title="Java">Java</a> arrays as arrays of arrays with different size <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> .
+</p>
+<h3><span class="mw-headline" id="Pseudo_Code">Pseudo Code</span></h3>
+<p>A didactic implementation of the Triangular PV-Table inside an <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> routine. The routine <i>movcpy</i> copies up to <i>n</i> moves, but may terminate after copying a null move. To avoid the second condition, it is quite common to store the current length of the PV inside a PV structure.
+</p>
+<pre>
+MoveType pvArray[(N*N + N)/2];
+
+void movcpy (MoveType* pTarget, const MoveType* pSource, int n) {
+   while (n-- &amp;&amp; (*pTarget++ = *pSource++));
+}
+
+int AlphaBeta(int alpha, int beta, int depth, int ply, int pvIndex) {
+   ...
+   pvArray[pvIndex] = 0; // no pv yet
+   pvNextIndex = pvIndex + N - ply;
+   while ( move = getNextMove() ) {
+      make (move);
+      score = -AlphaBeta(-beta, -alpha, depth-1, ply+1, pvNextIndex);
+      unmake (move);
+      ...
+      if (score &gt; alpha) {
+         alpha = score;
+         pvArray[pvIndex] = move;
+         movcpy (pvArray + pvIndex + 1, pvArray + pvNextIndex, N - ply - 1);
+      }
+   }
+   ...
+</pre>
+<h2><span class="mw-headline" id="Quadratic_PV-Table">Quadratic PV-Table</span></h2>
+<p>To avoid the above index calculation, many programmers roughly double the table space for an homogeneous two-dimensional array with all PVs of maximum size N. This allows cheaper indexing due the multiplication by the constant N only, possibly replaced by cheap instructions, i.e. shift for N == 128 (power of two).
+<span id="LinkedListontheStack"></span>
+</p>
+<h2><span class="mw-headline" id="Linked_List_on_the_Stack">Linked List on the Stack</span></h2>
+<p>An option in <a href="C.html" title="C">C</a> as well in <a href="Java.html" title="Java">Java</a> is to reserve space for one PV on the <a href="Stack.html" title="Stack">stack</a> as automatic variable inside the <a href="Recursion.html" title="Recursion">recursive</a> search routine, and to pass a reference or pointer to the child nodes as <a class="new" href="index.php?title=Principal variation&amp;action=edit&amp;redlink=1.html" title="Principal variation (page does not exist)">demonstrated</a> by <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> . Inside <a href="Principal Variation Search.html" title="Principal Variation Search">PVS</a>, these arrays are not needed in the <a href="Principal Variation Search.html#ZWS" title="Principal Variation Search">zero window search</a> at all, and, <a href="C.html" title="C">C99</a> conform <a class="external text" href="https://en.wikipedia.org/wiki/Variable-length_array" rel="nofollow">variable-length arrays</a> on <a href="Array.html#Stack" title="Array">the stack</a> are the way to "half" the required stacksize for linked "triangular" PV-arrays.
+</p>
+<h2><span class="mw-headline" id="Pointer_Array">Pointer Array</span></h2>
+<p>Another alternative is an array of N pointers to global, homogeneous PV-arrays with size N each. Instead of copying moves alá memcpy, one may swap pointers. While this sounds promising at the first glance, the copy costs are negligible since PV-Nodes and raising alpha are quite rare.
+<span id="PVinPVS"></span>
+</p>
+<h1><span class="mw-headline" id="PV_in_PVS">PV in PVS</span></h1>
+<p>As demonstrated by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a> with <a href="TSCP.html" title="TSCP">TSCP</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> , and explained by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> , inside a <a href="Search Instability.html" title="Search Instability">perfectly stable</a> <a href="NegaScout.html" title="NegaScout">NegaScout</a> aka <a href="Principal Variation Search.html" title="Principal Variation Search">Principal Variation Search</a>, a <a href="Fail-High.html" title="Fail-High">fail-high</a> at a <a href="Node Types.html#PV" title="Node Types">PV-node</a> compared to a <a href="Null Window.html" title="Null Window">null window</a> is always confirmed by the re-search with an <a href="Exact Score.html" title="Exact Score">exact score</a> improving <a href="Alpha.html" title="Alpha">alpha</a> and will either become part of a new PV at the <a href="Root.html" title="Root">root</a> or overwritten by a further improvement. Thus, under such conditions, there is no need to keep an array of <a href="Principal Variation.html" title="Principal Variation">principal variations</a>, but only one.
+</p>
+<pre>
+MoveType pvArray[N];
+</pre>
+<p>However, with a <a href="Transposition Table.html" title="Transposition Table">transposition table</a>, <a href="Aspiration Windows.html" title="Aspiration Windows">aspiration</a>, <a href="Selectivity.html" title="Selectivity">selectivity</a> and that like, one cannot guarantee such stable behavior.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Best Move.html" title="Best Move">Best Move</a></li>
+<li> <a href="Hash Move.html" title="Hash Move">Hash Move</a></li>
+<li> <a href="Killer Move.html" title="Killer Move">Killer Move</a></li>
+<li> <a href="Principal Variation.html" title="Principal Variation">Principal Variation</a></li>
+<li> <a href="PV-Move.html" title="PV-Move">PV-Move</a></li>
+<li> <a href="Refutation Table.html" title="Refutation Table">Refutation Table</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=20265" rel="nofollow">Storing the PV in a search routine</a> by <a href="Scott Gasch.html" title="Scott Gasch">Scott Gasch</a>, <a href="CCC.html" title="CCC">CCC</a>, June 09, 1998</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=258053" rel="nofollow">PV array</a> by Nagendra Singh Tomar, <a href="CCC.html" title="CCC">CCC</a>, October 10, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=387179" rel="nofollow">triangular pv vs. hash move pv</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, September 11, 2004</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=388106" rel="nofollow">Instability thing...</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, September 18, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=29730.html" rel="nofollow">Extracting PV from TT</a> by Colin, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=434.html" rel="nofollow">Taken from CCC (Stockfish &amp; mainlines)</a> by <a href="Ed Schroder.html" title="Ed Schroder">Rebel</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Programming Forum</a>, July 12, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35982.html" rel="nofollow">Full Principal Variation Retrieval</a> by <a class="new" href="index.php?title=Hieu Nguyen&amp;action=edit&amp;redlink=1.html" title="Hieu Nguyen (page does not exist)">Hieu Nguyen</a>, <a href="CCC.html" title="CCC">CCC</a>, September 06, 2010 <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44371.html" rel="nofollow">restartable nodes and the tri-angular array</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, July 11, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47573.html" rel="nofollow">triangular pv</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2013</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55819.html" rel="nofollow">Collecting Principal variation</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, March 29, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61796.html" rel="nofollow">Collecting PVs of Qsearch ?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2016 » <a href="Principal Variation.html" title="Principal Variation">Principal Variation</a>, <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=3072.html" rel="nofollow">capturing PV in QSearch</a> by thevinenator, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 20, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64256.html" rel="nofollow">Collecting PV in a PVS search ?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, June 11, 2017 » <a href="Principal Variation.html" title="Principal Variation">Principal Variation</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77431.html" rel="nofollow">Confused About Triangular PV Table</a> by shahil4242, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20040427013839/brucemo.com/compchess/programming/pv.htm.html" rel="nofollow">Collecting the Principal Variation</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20040403211728/brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Sonny_Stitt" rel="nofollow">Sonny Stitt</a> - <a class="external text" href="https://en.wikipedia.org/wiki/The_Champ_(Sonny_Stitt_album)" rel="nofollow">The Eternal Triangle</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat.: <a class="external text" href="https://en.wikipedia.org/wiki/Joe_Newman_(trumpeter)" rel="nofollow">Joe Newman</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Duke_Jordan" rel="nofollow">Duke Jordan</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Sam_Jones_(musician)" rel="nofollow">Sam Jones</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Roy_Brooks" rel="nofollow">Roy Brooks</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/cBbnBHdr1Eg?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.elementsbylizzie.com/Furn Tables.html.html" rel="nofollow">Elements by Lizzie Furniture - Tables</a> by <a class="external text" href="http://www.elementsbylizzie.com/Home Page.html.html" rel="nofollow">Elizabeth Battaglia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=387179" rel="nofollow">triangular pv vs. hash move pv</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, September 11, 2004</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=29730.html" rel="nofollow">Extracting PV from TT</a> by Colin, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2009</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://leepoint.net/notes-java/data/arrays/arrays-2D-2.html.html" rel="nofollow">Java: Two-dimensional arrays as arrays of arrays</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://web.archive.org/web/20040427013839/brucemo.com/compchess/programming/pv.htm.html" rel="nofollow">Collecting the Principal Variation</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20040403211728/brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47573&amp;start=4.html" rel="nofollow">Re: triangular pv</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2013</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47573&amp;start=10.html" rel="nofollow">Re: triangular pv</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2013</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text">See also <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt's</a> <a href="Principal Variation.html#SeparateTT" title="Principal Variation">idea</a> from the <a href="Principal Variation.html" title="Principal Variation">principal variation page</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/List_of_jazz_contrafacts" rel="nofollow">List of jazz contrafacts from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Data.html" title="Data">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721234702
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.025 seconds
+Real time usage: 0.026 seconds
+Preprocessor visited node count: 243/1000000
+Preprocessor generated node count: 486/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1356-0!canonical and timestamp 20240721234702 and revision id 25215
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Triangular_PV-Table&amp;oldid=25215">https://www.chessprogramming.org/index.php?title=Triangular_PV-Table&amp;oldid=25215</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Music.html" title="Category:Music">Music</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Triangular+PV-Table&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Triangular PV-Table.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Triangular PV-Table&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Triangular PV-Table.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Triangular PV-Table&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Triangular PV-Table&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Triangular PV-Table.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Triangular PV-Table.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Triangular PV-Table&amp;oldid=25215.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Triangular PV-Table&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 24 June 2021, at 15:38.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Triangular_PV-Table&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.025","walltime":"0.026","ppvisitednodes":{"value":243,"limit":1000000},"ppgeneratednodes":{"value":486,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721234702","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":42});});</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Philou - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Philou","wgTitle":"Philou","wgCurRevisionId":25080,"wgRevisionId":25080,"wgArticleId":7898,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UCI","Delphi","PC","Windows","X86","X64","Given Name","Music"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Philou","wgRelevantArticleId":7898,"wgRequestId":"Zp7DnLG9G67YuqUGxlgcVgAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Philou rootpage-Philou skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Philou</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Philou</b>
+</p><p><b>Philou</b>,<br/>
+an <a href="UCI.html" title="UCI">UCI</a> compatible chess engine by <a href="Philippe Gailhac.html" title="Philippe Gailhac">Philippe Gailhac</a>, written in <a href="Delphi.html" title="Delphi">Delphi</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, first released in 2008.
+Philou uses standard techniques such as <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> and <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> search with <a href="Transposition Table.html" title="Transposition Table">transposition table</a>, and is able to <a href="Pondering.html" title="Pondering">ponder</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Etymology"><span class="tocnumber">1</span> <span class="toctext">Etymology</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Selected Games"><span class="tocnumber">2</span> <span class="toctext">Selected Games</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Forum Posts"><span class="tocnumber">3</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#External Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Chess Engine"><span class="tocnumber">4.1</span> <span class="toctext">Chess Engine</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Misc"><span class="tocnumber">4.2</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Etymology">Etymology</span></h1>
+<p>The program's name is a <a class="external text" href="https://en.wikipedia.org/wiki/Diminutive" rel="nofollow">diminutive</a> form of its author's given name <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Selected_Games">Selected Games</span></h1>
+<p><a href="TCEC Season 2.html#Division F" title="TCEC Season 2">TCEC Season 2, Division F</a>, <a href="GNU Chess.html" title="GNU Chess">GNU Chess 5.07.170.5b</a> - Philou 3.5 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p>
+<pre>
+[Event "TCEC Season 2 - Division F"]
+[Site "http://tcec.chessdom.com"]
+[Date "2011.02.17"]
+[Round "8.3"]
+[White "GNU Chess 5.07.170.5b"]
+[Black "Philou 3.5"]
+[Result "0-1"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.O-O Nd4 5.Nxd4 Bxd4 6.c3 Bb6 7.d4 c6 8.Bc4 d6 9.Qb3 Qe7 10.Be3 Nf6 
+11.dxe5 dxe5 12.Bxb6 axb6 13.Qxb6 Nxe4 14.Re1 Bf5 15.Qe3 f6 16.a4 Nd6 17.Be2 O-O 18.Nd2 Be6 19.Qc5 
+Rfd8 20.a5 Qf7 21.Rad1 Bd5 22.Bd3 g6 23.b4 Be6 24.Qe3 Bg4 25.f3 Bf5 26.Ne4 Nxe4 27.fxe4 Be6 28.Be2 
+Kg7 29.Rf1 Qe7 30.Ra1 Rd7 31.Kh1 Qd6 32.Rf2 Qd2 33.Qg3 Qg5 34.Qxg5 fxg5 35.Kg1 h6 36.Ra3 h5 37.h3 
+Rdd8 38.Ra1 Rd2 39.Bf1 Rd7 40.Kh2 b6 41.Kg3 Bg8 42.Rf3 Rda7 43.a6 b5 44.Rd1 h4+ 45.Kf2 Rc7 46.Ra1 
+Bb3 47.Ra5 Rca7 48.c4 Bxc4 49.Bxc4 bxc4 50.Rfa3 Kf6 51.Ke3 Ke6 52.Ra1 Rb8 53.Rc5 Kd6 54.Rd1+ Kc7 
+55.Rxe5 Rxa6 56.Rxg5 Ra3+ 57.Kf4 Rf8+ 58.Kg4 Re3 59.Kxh4 Rxe4+ 60.Kg3 Re3+ 61.Kh2 Rf5 62.Rxg6 Kb6 
+63.Rdd6 Kb5 64.Rxc6 Kxb4 65.Rg4 Rc5 66.Rb6+ Ka3 67.Ra6+ Kb2 68.Rd4 Ra3 69.Rd2+ Kc1 70.Rad6 c3 71.Rd1+
+Kb2 72.h4 c2 73.R1d2 Rb3 74.g3 Kb1 75.Rd1+ cxd1=R 76.Rxd1+ Kc2 77.Rd6 Rcc3 78.Rg6 Kd3 79.Kh3 Rc5 
+80.Re6 Kd4 81.Rf6 Ke5 82.Rf4 Rcc3 83.Rg4 Rb1 84.Rg7 Kf5 85.Ra7 Rg1 86.Ra5+ Ke4 87.Rg5 Kf3 88.Kh2 Rg2+ 
+89.Kh3 Kf2 90.h5 Rf3 91.Rg6 Rg1 92.Kh4 Rh1+ 93.Kg5 Rxg3+ 94.Kh6 Rb3 95.Rg7 Kf3 96.Rg6 Rb8 97.Rg5 Kf4 
+98.Ra5 Rhb1 99.Ra2 R1b6+ 100.Kg7 R8b7+ 101.Kg8 Kg5 102.Kf8 Rh7 0-1
+</pre>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=22152.html" rel="nofollow">Philou 1.0</a> by <a href="Patrick Buchmann.html" title="Patrick Buchmann">Patrick Buchmann</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=32582.html" rel="nofollow">Philou 3.1 Download</a> by <a href="Swaminathan Natarajan.html" title="Swaminathan Natarajan">Swaminathan Natarajan</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=42099.html" rel="nofollow">Philou 3.7 problem ...</a> by Aser Huerga, <a href="CCC.html" title="CCC">CCC</a>, January 21, 2012 </li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=42099&amp;start=9.html" rel="nofollow">Re: Philou 3.7 problem ...</a> by <a href="Philippe Gailhac.html" title="Philippe Gailhac">Philippe Gailhac</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2012</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=6&amp;t=51199&amp;start=12.html" rel="nofollow">Re: Final Standings</a> by <a href="Philippe Gailhac.html" title="Philippe Gailhac">Philippe Gailhac</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2014</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Engine">Chess Engine</span></h2>
+<ul><li> <a class="external text" href="https://web.archive.org/web/20130104213410/http://wbec-ridderkerk.nl:80/html/details1/Philou.html" rel="nofollow">Philou</a> from <a href="WBEC.html" title="WBEC">WBEC Ridderkerk</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>, January 04, 2013)</li>
+<li> <a class="external text" href="http://www.computer-chess.org/doku.php?id=computer chess:wiki:download:engine download list.html" rel="nofollow">Engine Download List</a> from <a href="Ron Murawski.html" title="Ron Murawski">Ron Murawski's</a> <a class="external text" href="http://computer-chess.org/doku.php?id=home.html" rel="nofollow">Computer-Chess Wiki</a></li>
+<li> <a class="external text" href="https://ccrl.chessdom.com/ccrl/4040/cgi/compare_engines.cgi?family=Philou&amp;print=Rating+list&amp;print=Results+table&amp;print=LOS+table&amp;print=Ponder+hit+table&amp;print=Eval+difference+table&amp;print=Comopp+gamenum+table&amp;print=Overlap+table&amp;print=Score+with+common+opponents" rel="nofollow">Philou</a> in <a href="CCRL.html" title="CCRL">CCRL 40/15</a></li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://fr.wiktionary.org/wiki/Philippe" rel="nofollow">Philippe — Wiktionnaire</a> (French)</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_diminutives_by_language#French" rel="nofollow">List of diminutives by language - Wikipedia</a></li>
+<li> <a class="external text" href="https://www.meanwhile.nl/artist/philou-louzolo/" rel="nofollow">Philou Louzolo</a> - <a class="external text" href="https://lumberjacksinhell.bandcamp.com/track/kinshasa-anthem" rel="nofollow">Kinshasa Anthem</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/mgSnJ0-POBY?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20130104213410/http://wbec-ridderkerk.nl:80/html/details1/Philou.html" rel="nofollow">Philou</a> from <a href="WBEC.html" title="WBEC">WBEC Ridderkerk</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>, January 04, 2013)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://fr.wiktionary.org/wiki/Philippe" rel="nofollow">Philippe — Wiktionnaire</a> (French)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://tcec-chess.com/#div=f&amp;game=24&amp;season=2" rel="nofollow">GNU Chess 5.07.170.5b vs Philou 3.5 - TCEC Season 2, Division F</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722051429
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.009 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 87/1000000
+Preprocessor generated node count: 198/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7898-0!canonical and timestamp 20240722051429 and revision id 25080
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Philou&amp;oldid=25080">https://www.chessprogramming.org/index.php?title=Philou&amp;oldid=25080</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Delphi.html" title="Category:Delphi">Delphi</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a href="Category:X86.html" title="Category:X86">X86</a></li><li><a href="Category:X64.html" title="Category:X64">X64</a></li><li><a href="Category:Given Name.html" title="Category:Given Name">Given Name</a></li><li><a href="Category:Music.html" title="Category:Music">Music</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Philou&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Philou.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Philou&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Philou.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Philou&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Philou&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Philou.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Philou.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Philou&amp;oldid=25080.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Philou&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 15 June 2021, at 13:02.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Philou&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.009","walltime":"0.009","ppvisitednodes":{"value":87,"limit":1000000},"ppgeneratednodes":{"value":198,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722051429","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

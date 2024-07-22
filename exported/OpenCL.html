@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>OpenCL - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"OpenCL","wgTitle":"OpenCL","wgCurRevisionId":27033,"wgRevisionId":27033,"wgArticleId":5178,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"OpenCL","wgRelevantArticleId":5178,"wgRequestId":"Zp7DjQAL2SoIDHtirCvjFwAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-OpenCL rootpage-OpenCL skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">OpenCL</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Languages.html" title="Languages">Languages</a> * OpenCL</b>
+</p><p><b>OpenCL</b>, (Open Computing Language)<br/>
+an open standard for cross-platform, task-based as well as data-based parallel programming of CPUs, <a href="GPU.html" title="GPU">GPUs</a>, <a href="FPGA.html" title="FPGA">FPGAs</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Digital_signal_processor" rel="nofollow">DSPs</a>, including the <a href="C.html" title="C">C99</a> based programming language OpenCL C. OpenCL C forbids <a href="Recursion.html" title="Recursion">recursion</a>, and omits <a class="external text" href="https://en.wikipedia.org/wiki/Function_pointer" rel="nofollow">function pointers</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Bit_field" rel="nofollow">bit fields</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Variable-length_array" rel="nofollow">variable-length</a> <a href="Array.html" title="Array">arrays</a>, but has fixed-length vector types, supporting <a href="SIMD and SWAR Techniques.html" title="SIMD and SWAR Techniques">SIMD instructions</a> if available on the target platforms. OpenCL 2.0 adds features like nested parallelism and shared virtual memory, version 2.1 extends OpenCL C to a subset of C++14. OpenCL 3.0 makes version 1.2 functionality a mandatory baseline with 2.x and 3.x as optional features and replaces 'OpenCL C++' with 'C++ for OpenCL' as a subset of C++17<sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. OpenCL is maintained by the <a class="external text" href="https://en.wikipedia.org/wiki/Nonprofit_organization" rel="nofollow">nonprofit</a> technology consortium <a class="external text" href="https://en.wikipedia.org/wiki/Khronos_Group" rel="nofollow">Khronos Group</a>, adopted by <a class="new" href="index.php?title=Apple&amp;action=edit&amp;redlink=1.html" title="Apple (page does not exist)">Apple</a><sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, <a href="Intel.html" title="Intel">Intel</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Qualcomm" rel="nofollow">Qualcomm</a>, <a href="AMD.html" title="AMD">AMD</a>, <a href="Nvidia.html" title="Nvidia">Nvidia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Altera" rel="nofollow">Altera</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Samsung" rel="nofollow">Samsung</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Vivante_Corporation" rel="nofollow">Vivante</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Imagination_Technologies" rel="nofollow">Imagination Technologies</a> and <a class="new" href="index.php?title=ARM&amp;action=edit&amp;redlink=1.html" title="ARM (page does not exist)">ARM</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Specifications"><span class="tocnumber">1</span> <span class="toctext">Specifications</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#OpenCL to Vulkan"><span class="tocnumber">2</span> <span class="toctext">OpenCL to Vulkan</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Chess Projects"><span class="tocnumber">3</span> <span class="toctext">Chess Projects</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Specifications">Specifications</span></h1>
+<ul><li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/opencl-1.2.pdf" rel="nofollow">OpenCL 1.2 Specification</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL//sdk/1.2/docs/man/xhtml/" rel="nofollow">OpenCL 1.2 Reference</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/opencl-2.0.pdf" rel="nofollow">OpenCL 2.0 Specification</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/2.2/pdf/OpenCL_C.pdf" rel="nofollow">OpenCL 2.0 C Language Specification</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL//sdk/2.0/docs/man/xhtml/" rel="nofollow">OpenCL 2.0 Reference</a></li>
+<li> <a class="external text" href="https://www.khronos.org/registry/OpenCL/specs/3.0-unified/pdf/" rel="nofollow">OpenCL 3.0 Specifications</a></li></ul>
+<h1><span class="mw-headline" id="OpenCL_to_Vulkan">OpenCL to Vulkan</span></h1>
+<p>The OpenGL graphics API specified by Khronos Group is deprecated in favor for <a class="external text" href="https://en.wikipedia.org/wiki/Vulkan" rel="nofollow">Vulkan</a>, since Vulkan and OpenCL v1.2/v2.x share <a class="external text" href="https://en.wikipedia.org/wiki/Standard_Portable_Intermediate_Representation" rel="nofollow">SPIR-V</a> as an intermediate representation it is possible to cross-compile OpenCL code via SPIR-V to run on Vulkan enabled devices <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Chess_Projects">Chess Projects</span></h1>
+<ul><li> <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li>
+<li> <a class="new" href="index.php?title=Oscar&amp;action=edit&amp;redlink=1.html" title="Oscar (page does not exist)">Oscar</a>, a <a href="Perft.html" title="Perft">Perft</a> project by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a></li>
+<li> <a href="Zeta.html" title="Zeta">Zeta</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a class="external text" href="https://www.informit.com/authors/bio/ba2cf654-0769-47a6-9d60-01b6e6da4a60" rel="nofollow">Aaftab Munshi</a>, <a class="external text" href="http://www.informit.com/authors/bio/056a0573-0374-4183-96db-e94b962d2046.html" rel="nofollow">Benedict Gaster</a>, <a class="external text" href="http://www.informit.com/authors/bio/203bb6b7-d0bb-48ca-984c-a627e8b33ce2.html" rel="nofollow">Timothy Mattsonm</a>, James Fung, <a class="external text" href="http://www.informit.com/authors/bio/5bd00f25-b8c1-49de-85a0-423e49663d06.html" rel="nofollow">Dan Ginsburg</a> (<b>2011</b>). <i><a class="external text" href="http://www.informit.com/store/opencl-programming-guide-9780321749642?w ptgrevartcl=Programming+with+OpenCL+C 1732873.html" rel="nofollow">OpenCL Programming Guide</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Pearson_Education" rel="nofollow">InformIT</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li>
+<li> <a class="external text" href="https://scholar.google.de/citations?user=ByAvYg4AAAAJ&amp;hl=en" rel="nofollow">Wolfram Schenck</a> (<b>2017</b>).  <i>OpenCL Basics</i>. <a class="external text" href="https://www.fz-juelich.de/SharedDocs/Downloads/IAS/JSC/EN/slides/opencl/opencl-03-basics.pdf?__blob=publicationFile" rel="nofollow">slides as pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33315.html" rel="nofollow">Zeta, a chess engine in OpenCL</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, March 17, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53439.html" rel="nofollow">OpenCL perft() Technical Issues</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2014</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://www.khronos.org/conformance/adopters/conformant-products/opencl" rel="nofollow">Khronos - OpenCL Conformant Products</a></li>
+<li> <a class="external text" href="https://www.khronos.org/opencl/" rel="nofollow">OpenCL - The open standard for parallel programming of heterogeneous systems</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/OpenCL" rel="nofollow">OpenCL from Wikipedia</a></li>
+<li> <a class="external text" href="https://code.google.com/archive/p/simple-opencl/" rel="nofollow">SimpleOpenCL - a library created to reduce the amount of host code needed to write an OpenCL program. - Google Project Hosting</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external autonumber" href="https://en.wikipedia.org/w/index.php?title=OpenCL&amp;oldid=1226652394" rel="nofollow">[1]</a>Wikipedia contributors. (2024, June 1). OpenCL. In Wikipedia, The Free Encyclopedia. Retrieved 13:48, July 7, 2024</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://appleinsider.com/articles/18/06/04/opengl-opencl-deprecated-in-favor-of-metal-2-in-macos-1014-mojave" rel="nofollow">OpenGL, OpenCL deprecated in favor of Metal 2 in macOS 10.14 Mojave</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/google/clspv" rel="nofollow">clspv</a> by <a class="new" href="index.php?title=Google&amp;action=edit&amp;redlink=1.html" title="Google (page does not exist)">Google</a> on GitHub</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.informit.com/articles/article.aspx?p=1732873.html" rel="nofollow">Programming with OpenCL C | Writing a Data-Parallel Kernel Using OpenCL C | InformIT</a></span>
+</li>
+</ol></div>
+<p><b><a href="Languages.html" title="Languages">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722142740
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.010 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 87/1000000
+Preprocessor generated node count: 178/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:5178-0!canonical and timestamp 20240722142740 and revision id 27033
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=OpenCL&amp;oldid=27033">https://www.chessprogramming.org/index.php?title=OpenCL&amp;oldid=27033</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=OpenCL&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="OpenCL.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:OpenCL&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="OpenCL.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=OpenCL&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=OpenCL&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/OpenCL.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/OpenCL.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=OpenCL&amp;oldid=27033.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=OpenCL&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 7 July 2024, at 15:50.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=OpenCL&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.010","ppvisitednodes":{"value":87,"limit":1000000},"ppgeneratednodes":{"value":178,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722142740","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

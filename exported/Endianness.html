@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Endianness - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Endianness","wgTitle":"Endianness","wgCurRevisionId":11837,"wgRevisionId":11837,"wgArticleId":5456,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Endianness","wgRelevantArticleId":5456,"wgRequestId":"Zp7DNgAL2SoIDHtirCviMQAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Endianness rootpage-Endianness skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Endianness</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Data.html" title="Data">Data</a> * Endianness</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://vadmyst.blogspot.com/2009/04/discovering-system-endianess.html.html"><img alt="" class="thumbimage" height="286" src="images/thumb/1/12/Endianess.jpg/300px-Endianess.jpg" srcset="/images/1/12/Endianess.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Endianess.jpg.html" title="Enlarge"></a></div><a href="Little-endian.html" title="Little-endian">Little-</a> and <a href="Big-endian.html" title="Big-endian">Big-endian</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Endianness</b> is about the order to concatenate sub-items to composite items with respect to reading and writing, or related, storing or transmitting such items, also referred to as <a class="external text" href="http://catb.org/jargon/html/N/NUXI-problem.html.html" rel="nofollow">NUXI problem</a>. The related term <a href="Big-endian.html" title="Big-endian">big-endian</a> (as opposed to <a href="Little-endian.html" title="Little-endian">little-endian</a>) comes from <a class="external text" href="https://en.wikipedia.org/wiki/Jonathan_Swift" rel="nofollow">Jonathan Swift's</a> satirical novel <a class="external text" href="https://en.wikipedia.org/wiki/Gulliver%27s_Travels" rel="nofollow">Gulliver’s Travels</a>, where tensions are described in <a class="external text" href="https://en.wikipedia.org/wiki/Lilliput_and_Blefuscu" rel="nofollow">Lilliput and Blefuscu</a>: whereas royal edict in Lilliput requires cracking open one's <a class="external text" href="https://en.wikipedia.org/wiki/Boiled_egg" rel="nofollow">soft-boiled egg</a> at the small end, inhabitants of the rival kingdom of Blefuscu crack theirs at the big end <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Digits in Numbers"><span class="tocnumber">1</span> <span class="toctext">Digits in Numbers</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Numbers in Dates"><span class="tocnumber">2</span> <span class="toctext">Numbers in Dates</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Bytes in Words"><span class="tocnumber">3</span> <span class="toctext">Bytes in Words</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Chessboard Endianness"><span class="tocnumber">4</span> <span class="toctext">Chessboard Endianness</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Files versus Ranks"><span class="tocnumber">4.1</span> <span class="toctext">Files versus Ranks</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Rank-Endianness"><span class="tocnumber">4.2</span> <span class="toctext">Rank-Endianness</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#File-Endianness"><span class="tocnumber">4.3</span> <span class="toctext">File-Endianness</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Digits_in_Numbers">Digits in Numbers</span></h1>
+<p>With endianness, we have to consider how we usually write text (letters of a word, word of a sentence) and numbers (left to right LTR, right to left RTL, top to bottom TTB, bottom to top BTT). Assuming <a class="external text" href="https://en.wikipedia.org/wiki/Bi-directional_text" rel="nofollow">textflow</a> is from left-to-right (LTR) and <a class="external text" href="https://en.wikipedia.org/wiki/Hindu-Arabic_numeral_system" rel="nofollow">Hindu-Arabic numeral system</a>, we write numbers (decimal, as well as binary, octal and hexadecimal) <a href="Big-endian.html" title="Big-endian">big-endian</a> wise ("big end first") - that is, we write (or transmit) from most significant to least significant digit from left (first) to right (last).
+</p>
+<h1><span class="mw-headline" id="Numbers_in_Dates">Numbers in Dates</span></h1>
+<p>That was about the endianness of digits in numbers, e.g. 1234 versus 4321. Assume we have three numbers representing a date, the year (two or four digits, yy or yyyy), the month of that year (1..12, mm) and the day of the month (1..31, dd). How do we concatenate the three sub-items?
+</p><p>With respect to the significance of the sub-items, we would use big-endian as well, the biggest item left (first), thus yyyy-mm-dd. Anyway, <a class="external text" href="https://en.wikipedia.org/wiki/Calendar_date" rel="nofollow">Calendar dates</a> are written quite differently in various countries and cultures, also with various separators.
+</p>
+<ul><li> <a href="Little-endian.html" title="Little-endian">Little-endian</a>, dd-mm-yyyy common to the vast majority of the world's countries</li>
+<li> Middle-endian mm-dd-yyyy as used in the <a class="external text" href="https://en.wikipedia.org/wiki/Calendar_date#mm.2Fdd.2Fyy_or_mm.2Fdd.2Fyyyy_.28month.2C_day.2C_year.29" rel="nofollow">United States</a> and a few other <a class="external text" href="https://en.wikipedia.org/wiki/Calendar_date#mm.2Fdd.2Fyy_or_mm.2Fdd.2Fyyyy_.28month.2C_day.2C_year.29" rel="nofollow">countries</a>, likely more desciptive with name of the month.</li>
+<li> <a href="Big-endian.html" title="Big-endian">Big-endian</a> yyyy-mm-dd as defined by <a class="external text" href="https://en.wikipedia.org/wiki/ISO_8601" rel="nofollow">ISO 8601</a></li></ul>
+<p>One of the advantages of using the ISO 8601 big-endian standard date format is that when dates in this format are ordered by a standard <a class="external text" href="https://en.wikipedia.org/wiki/Collation" rel="nofollow">collation</a> by leading characters first, they are also in date order.
+</p>
+<h1><span class="mw-headline" id="Bytes_in_Words">Bytes in Words</span></h1>
+<p>How to store <a href="Byte.html" title="Byte">bytes</a> of a <a href="Word.html" title="Word">word</a> (or double- and quadword) in <a href="Memory.html" title="Memory">memory</a> (also called byte-order or byte-sex), where each byte has a unique address, was an disputed issue in the history of computers and micro-processors, especially <a href="Intel.html" title="Intel">Intel</a> (little-endian) versus <a class="new" href="index.php?title=Motorola&amp;action=edit&amp;redlink=1.html" title="Motorola (page does not exist)">Motorola</a> (big-endian). The byte-order is also the primary meaning of endianness.
+</p><p>Big-endian associates the "first" (lower) address with the most significant byte (as we write the most significant digit first). Little-endian stores the least significant (or lower) byte at the lower byte-address of a word. While there are some advantages and disadvantages, endianness is a matter of convention and customization.
+</p><p>Still other architectures, generically called middle-endian or mixed-endian, may have a more complicated ordering; <a href="PDP-11.html" title="PDP-11">PDP-11</a>, for instance, stored some 32-bit words, counting from the most significant, as: 2nd byte first, then 1st, then 4th, and finally 3rd.
+</p><p>As a useful side-effect for computerchess from that war of endianness <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> - almost every common processor has instructions to reverse the byte order of a word, a doubleword or a quadword inside a register, and there are applications to take advantage of that for a kind of reversed arithmetic, most notable as used inside the <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a>.
+</p><p>If we like to access the i-th byte of a quadword (e.g. a <a href="Bitboards.html" title="Bitboards">Bitboard</a>), the following code is not endian-independent:
+</p>
+<pre>
+U64 *p64 = ...;
+BYTE *pbyte = (BYTE*) p64;
+BYTE byte = *(pbyte+i-1); // pbyte[i-1] i = 1..8
+</pre>
+<p>Endian-independent code would look like this:
+</p>
+<pre>
+U64 *p64 = ...;
+U64  quadword = *p64; // p64[0]
+BYTE byte = (BYTE)(quadword &gt;&gt; (8*(i-1))); // i = 1..8
+</pre>
+<h1><span class="mw-headline" id="Chessboard_Endianness">Chessboard Endianness</span></h1>
+<p>The common notation to label <a href="Squares.html" title="Squares">Squares</a> on the <a href="Chessboard.html" title="Chessboard">Chessboard</a> is to write the file-coordinate at the big-end (left) and the rank-coordinate at the little-end, e.g. "a3" or "f7". Since both sets of labels use distinct sets of characters, the order doesn't matter that much, so even "3a" or "7f" would be sufficient, but not common. However, that is no longer the case if we enumerate bot items from one to eight, or more commonly for zero-based indices, from zero to seven as two octal-digits. Then we have to define the endianness of the square coordinates.
+</p>
+<h2><span class="mw-headline" id="Files_versus_Ranks">Files versus Ranks</span></h2>
+<p>While this is still arbitrary and a matter of convention, more common is to have the file-coordinate at the little-end, nominated as Least Significant File (LSF) Mapping with following relations:
+</p>
+<pre>
+squareIndex = 8*rankIndex + fileIndex
+rankIndex   = squareIndex div 8
+fileIndex   = squareIndex mod 8
+</pre>
+<h2><span class="mw-headline" id="Rank-Endianness">Rank-Endianness</span></h2>
+<p><i>Is the first rank the little-end or the big-end of the board?</i>
+</p><p>It don't cares, but it has to be defined and considered thoroughly the chess program's internal <a href="Board Representation.html" title="Board Representation">Board Representation</a>. Likely the first rank is considered as little-end, since one is less eight - despite there is no arithmetical significance in the sense of numbers. But one may also argue Rank-Endianness depends on the White's or Black's point of view, and own base-rank is the perspective big-end.
+</p><p>While one mapping is as good as the other - with the same little-endian argument to order the bytes like their addresses, we define first rank with index 0 as little-endian rank-mapping, as used in in most of our code snippets, specially in <a href="Bitboards.html" title="Bitboards">Bitboards</a>. Big-endian rank-mapping is defined as index zero maps the eighth rank.
+</p><p>The <a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">Forsyth-Edwards Notation</a> starts left with the big-end rank8 and may therefor considered big-endian. The advantage of big-endian ranks in LSF (Least Significant File) is, if printing a board rank by rank from top to bottom, the printed board appears in the typical and natural 2D bird's eye perspective of the white player.
+</p>
+<h2><span class="mw-headline" id="File-Endianness">File-Endianness</span></h2>
+<p><i>Is the A-File or the H-File the little-end of the board?</i>
+</p><p>Having the big-end left seems more natural, due to White's bird's eye perspective, having the A-File left, as well as the big-end digit in numbers. On the other hand, 'a' is less than 'h' in most character codes, and indeed we most often use little-endian file-mapping with the A-File addressed by index zero and the H-file addressed by index seven.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Big-endian.html" title="Big-endian">Big-endian</a></li>
+<li> <a href="Little-endian.html" title="Little-endian">Little-endian</a></li>
+<li> <a href="Square Mapping Considerations.html" title="Square Mapping Considerations">Square Mapping Considerations</a></li>
+<li> <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">Flipping Mirroring and Rotating</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Endianness" rel="nofollow">Endianness from Wikipedia</a></li>
+<li> <a class="external text" href="https://www.ietf.org/rfc/ien/ien137.txt" rel="nofollow">IEN 137 - DAV's Endian FAQ - On Holy Wars and a Plea for Peace</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Danny_Cohen_(engineer)" rel="nofollow">Danny Cohen</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Information_Sciences_Institute" rel="nofollow">USC/ISI</a>, April 1, 1980</li>
+<li> <a class="external text" href="https://developer.ibm.com/articles/au-endianc/" rel="nofollow">Writing endian-independent code in C</a> <i>Don't let endianness "byte" you</i> by Harsha Adiga, <a class="external text" href="https://developer.ibm.com/" rel="nofollow">IBM Developer</a>, April 24, 2007</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://vadmyst.blogspot.com/2009/04/discovering-system-endianess.html.html" rel="nofollow">Discovering System Endianess</a> from <a class="external text" href="http://vadmyst.blogspot.com/.html" rel="nofollow">Software Development Blog</a>, April 27, 2009</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://en.wikisource.org/wiki/Gulliver%27s Travels/Part I/Chapter IV.html" rel="nofollow">Gulliver's Travels (Part I, Chapter IV) on Wikisource</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.ietf.org/rfc/ien/ien137.txt" rel="nofollow">IEN 137 - DAV's Endian FAQ - On Holy Wars and a Plea for Peace</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Danny_Cohen_(engineer)" rel="nofollow">Danny Cohen</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Information_Sciences_Institute" rel="nofollow">USC/ISI</a>, April 1, 1980</span>
+</li>
+</ol></div>
+<p><b><a href="Data.html" title="Data">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722121011
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.016 seconds
+Real time usage: 0.017 seconds
+Preprocessor visited node count: 112/1000000
+Preprocessor generated node count: 218/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:5456-0!canonical and timestamp 20240722121011 and revision id 11837
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Endianness&amp;oldid=11837">https://www.chessprogramming.org/index.php?title=Endianness&amp;oldid=11837</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Endianness&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Endianness.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Endianness&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Endianness.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Endianness&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Endianness&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Endianness.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Endianness.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Endianness&amp;oldid=11837.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Endianness&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 26 April 2019, at 20:34.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Endianness&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.017","ppvisitednodes":{"value":112,"limit":1000000},"ppgeneratednodes":{"value":218,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722121011","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

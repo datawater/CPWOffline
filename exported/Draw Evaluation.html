@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Draw Evaluation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Draw_Evaluation","wgTitle":"Draw Evaluation","wgCurRevisionId":25235,"wgRevisionId":25235,"wgArticleId":1533,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Marcel Duchamp"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Draw_Evaluation","wgRelevantArticleId":1533,"wgRequestId":"Zp7DLOWZo7QkwsW0UTn4uQAAAAw","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Draw_Evaluation rootpage-Draw_Evaluation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Draw Evaluation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * <a href="Game Phases.html" title="Game Phases">Game Phases</a> * <a href="Endgame.html" title="Endgame">Endgame</a> * Draw Evaluation</b>
+</p><p>It is important for the evaluation function to recognize the endgame positions which are likely <a href="Draw.html" title="Draw">drawn</a>, even though one side has a nominal advantage. This page is devoted to listing some of them. More of that kind of knowledge can be found in the <a href="KPK.html" title="KPK">KPK</a> section.
+<span id="immediate"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Obvious Draws"><span class="tocnumber">1</span> <span class="toctext">Obvious Draws</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Simple Heuristics"><span class="tocnumber">2</span> <span class="toctext">Simple Heuristics</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Complex Heuristics"><span class="tocnumber">3</span> <span class="toctext">Complex Heuristics</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#One-sided Heuristics"><span class="tocnumber">4</span> <span class="toctext">One-sided Heuristics</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#2000 ..."><span class="tocnumber">6.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#2010 ..."><span class="tocnumber">6.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2015 ..."><span class="tocnumber">6.3</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2020 ..."><span class="tocnumber">6.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Obvious_Draws">Obvious Draws</span></h1>
+<p>According to the rules of a dead position, Article 5.2 b, when there is no possibility of <a href="Checkmate.html" title="Checkmate">checkmate</a> for either side with any series of legal moves, the position is an immediate draw if
+</p>
+<ul><li> Both Sides have a bare King </li>
+<li> One Side has a King and a Minor Piece against a bare King </li>
+<li> Both Sides have a King and a Bishop, the Bishops being the same Color</li></ul>
+<h1><span class="mw-headline" id="Simple_Heuristics">Simple Heuristics</span></h1>
+<p>The bishops of different colors are not counted as an immediate draw, because of the possibility of a helpmate in the corner. Since this is unlikely given even a four ply search, we may introduce another class of drawn positions: those that cannot be claimed, but can be evaluated as draws:
+</p>
+<ul><li> Two Knights against the bare King <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></li>
+<li> Both Sides have a King and a Minor Piece each </li>
+<li> The Weaker Side has a Minor Piece against two Knights </li>
+<li> Two Bishops draw against a Bishop </li>
+<li> Two Minor Pieces against one draw, except when the Stronger Side has a <a href="Bishop Pair.html" title="Bishop Pair">Bishop Pair</a></li></ul>
+<p>Please note that a knight or even two knights against two bishops are not included here, as it is possible to win this ending.
+</p><p><b>Implementation note:</b> When a program uses heuristics of that kind, it is of utmost importance to be consistent. For example, if KBN vs KB is scored as a draw, the same must be done with KBN vs KBP. A possible idea is to divide a score by a large constant, such as 16 or 32, when the side nominally ahead has the wrong piece combination.
+</p>
+<h1><span class="mw-headline" id="Complex_Heuristics">Complex Heuristics</span></h1>
+<ul><li> If the Stronger Side has a Pawn and a Bishop against the Minor Piece, the Position is almost certainly drawn if the Weaker Side's King occupies a Square on the Path of a Pawn that is inaccessible to the enemy Bishop (The degenerate cases like Trapping the Minor Piece are best left for Search). </li>
+<li> <a href="Queen versus Pawn.html#RookPawn7" title="Queen versus Pawn">Queen versus Rook Pawn on 7th</a> and <a href="Queen versus Pawn.html#BishopPawn7" title="Queen versus Pawn">Queen versus Bishop Pawn on 7th</a></li>
+<li> <a href="Wrong Color Bishop and Rook Pawn.html" title="Wrong Color Bishop and Rook Pawn">Wrong Color Bishop and Rook Pawn</a></li></ul>
+<h1><span class="mw-headline" id="One-sided_Heuristics">One-sided Heuristics</span></h1>
+<p>There are some heuristics that tells us only that one of the players cannot win the endgame
+</p>
+<ul><li> A single Minor Piece should not win against any number of Pawns (again, there is a special case of a smothered mate in the corner, but it is Search issue, not to be taken into account by the <a href="Evaluation Function.html" title="Evaluation Function">evaluation function</a>)</li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Blockage Detection.html" title="Blockage Detection">Blockage Detection</a></li>
+<li> <a href="Contempt Factor.html" title="Contempt Factor">Contempt Factor</a></li>
+<li> <a href="Draw.html" title="Draw">Draw</a></li>
+<li> <a href="Fifty-move Rule.html" title="Fifty-move Rule">Fifty-move Rule</a></li>
+<li> <a href="Fortress.html" title="Fortress">Fortress</a></li>
+<li> <a href="Material.html#InsufficientMaterial" title="Material">Insufficient Material</a></li>
+<li> <a href="Interior Node Recognizer.html" title="Interior Node Recognizer">Interior Node Recognizer</a></li>
+<li> <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a href="Stalemate.html" title="Stalemate">Stalemate</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=182927" rel="nofollow">"Don't trust draw score" &lt;=Is it true?</a> by <a href="Teerapong Tovirat.html" title="Teerapong Tovirat">Teerapong Tovirat</a>, <a href="CCC.html" title="CCC">CCC</a>, August 08, 2001 » <a href="Repetitions.html" title="Repetitions">Repetitions</a>, <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a>, <a href="Path-Dependency.html" title="Path-Dependency">Path-Dependency</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=193257" rel="nofollow">Draw recognition by eval problems</a> by <a href="Rafael B. Andrist.html" title="Rafael B. Andrist">Rafael B. Andrist</a>, <a href="CCC.html" title="CCC">CCC</a>, October 17, 2001 » <a href="Wrong Color Bishop and Rook Pawn.html" title="Wrong Color Bishop and Rook Pawn">Wrong Color Bishop and Rook Pawn</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=42991.html" rel="nofollow">When can a game be declared as a draw?</a> by <a href="Josu%C3%A9 Forte.html" title="Josué Forte">Josué Forte</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, June 15, 2003</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34673.html" rel="nofollow">question on draw evaluation</a> by liuzy, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2010</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34673&amp;start=8.html" rel="nofollow">Re: question on draw evaluation</a> by <a href="Robert Houdart.html" title="Robert Houdart">Robert Houdart</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2010</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50150.html" rel="nofollow">handling draw by insufficient material</a> by <a href="Youri Matiounine.html" title="Youri Matiounine">Youri Matiounine</a>, November 19, 2013 » <a href="Material.html#InsufficientMaterial" title="Material">Insufficient Material</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50194.html" rel="nofollow">evaluating tablebases draws</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, November 23, 2013 » <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50223.html" rel="nofollow">Discocheck 5.01: Bishop related endgame problems</a> by <a class="new" href="index.php?title=Michael Scheidl&amp;action=edit&amp;redlink=1.html" title="Michael Scheidl (page does not exist)">Mike Scheidl</a>, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2013 » <a href="DiscoCheck.html" title="DiscoCheck">DiscoCheck</a>, <a href="Color of a Square.html" title="Color of a Square">Color of a Square</a>, <a href="Wrong Color Bishop and Rook Pawn.html" title="Wrong Color Bishop and Rook Pawn">Wrong Color Bishop and Rook Pawn</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61250.html" rel="nofollow">Stockfish eval output</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, August 27, 2016 » <a href="Wrong Color Bishop and Rook Pawn.html" title="Wrong Color Bishop and Rook Pawn">Wrong Color Bishop and Rook Pawn</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62380.html" rel="nofollow">draw endgame scaling</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, December 04, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64115.html" rel="nofollow">insufficient mating material</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, May 29, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66640.html" rel="nofollow">Marcel Duchamp endgame "splits" engines / hash phenomenon</a> by <a href="Kenneth W. Regan.html" title="Kenneth W. Regan">Kenneth Regan</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2018 » <a href="Chess Problems, Compositions and Studies.html" title="Chess Problems, Compositions and Studies">Chess Problems, Compositions and Studies</a>, <a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a>, <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66798.html" rel="nofollow">what to do when all depths give the exact same score?</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70827.html" rel="nofollow">KQKP and the like</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, May 25, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71707.html" rel="nofollow">Why does stockfish randomise draw evaluations?</a> by <a href="Vincent Tang.html" title="Vincent Tang">Vincent Tang</a>, <a href="CCC.html" title="CCC">CCC</a>, September 01, 2019 » <a href="Stockfish.html" title="Stockfish">Stockfish</a>, <a href="Score.html#DrawScore" title="Score">Draw Score</a>, <a href="Search with Random Leaf Values.html" title="Search with Random Leaf Values">Search with Random Leaf Values</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73012.html" rel="nofollow">Endgame woes</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, February 07, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74203.html" rel="nofollow">OliThink 5.4.0 has been published with an big leap in strength for only 3 lines of code</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2020 » <a href="OliThink.html" title="OliThink">OliThink</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77497.html" rel="nofollow">Alpha-beta search for drawing endgames</a> by Emanuel Torres, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2021 » <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a>, <a href="Graph History Interaction.html" title="Graph History Interaction">Graph History Interaction</a>, <a href="Repetitions.html" title="Repetitions">Repetitions</a> </li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=42991.html" rel="nofollow">When can a game be declared as a draw?</a> by <a href="Josu%C3%A9 Forte.html" title="Josué Forte">Josué Forte</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, June 15, 2003</span>
+</li>
+</ol></div>
+<p><b><a href="Endgame.html" title="Endgame">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722084028
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.010 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 62/1000000
+Preprocessor generated node count: 100/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1533-0!canonical and timestamp 20240722084028 and revision id 25235
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Draw_Evaluation&amp;oldid=25235">https://www.chessprogramming.org/index.php?title=Draw_Evaluation&amp;oldid=25235</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Marcel Duchamp.html" title="Category:Marcel Duchamp">Marcel Duchamp</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Draw+Evaluation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Draw Evaluation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Draw Evaluation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Draw Evaluation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Draw Evaluation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Draw Evaluation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Draw Evaluation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Draw Evaluation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Draw Evaluation&amp;oldid=25235.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Draw Evaluation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 26 June 2021, at 11:50.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Draw_Evaluation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.010","ppvisitednodes":{"value":62,"limit":1000000},"ppgeneratednodes":{"value":100,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722084028","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

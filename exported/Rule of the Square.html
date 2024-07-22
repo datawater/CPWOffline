@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Rule of the Square - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rule_of_the_Square","wgTitle":"Rule of the Square","wgCurRevisionId":18635,"wgRevisionId":18635,"wgArticleId":1497,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Steps Ahead","Mike Mainieri","Bill Evans","Steve Smith"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Rule_of_the_Square","wgRelevantArticleId":1497,"wgRequestId":"Zp7DqbG9G67YuqUGxlgcegAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.FenTT.styles":"ready","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Rule_of_the_Square rootpage-Rule_of_the_Square skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Rule of the Square</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * <a href="Pawn Structure.html" title="Pawn Structure">Pawn Structure</a> * <a href="Passed Pawn.html" title="Passed Pawn">Passed Pawn</a> * Rule of the Square</b>
+</p><p>The <b>Rule of the Square</b> is a didactic auxiliary expedient in <a href="King.html" title="King">king</a> versus opponent <a href="Passed Pawn.html" title="Passed Pawn">passed pawn</a> races in very late <a href="Endgame.html" title="Endgame">endings</a>, basically <a href="Pawn Endgame.html" title="Pawn Endgame">pawn endgames</a> or even <a href="KPK.html" title="KPK">KPK</a>, assuming the passer may not supported and the king has no obstructions otherwise. It is based on the <a href="Distance.html" title="Distance">Chebyshev distance</a> due to possible diagonal king moves. If the king stays outside the <i>Square of the Pawn</i>, the passer <a href="Side to move.html" title="Side to move">to move</a> is guaranteed to <a href="Promotions.html" title="Promotions">promote</a> without being immediately <a href="Captures.html" title="Captures">captured</a> by the king afterwards.
+<span id="TheSquareofthePawn"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The Square of the Pawn"><span class="tocnumber">1</span> <span class="toctext">The Square of the Pawn</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Area of Hope"><span class="tocnumber">2</span> <span class="toctext">Area of Hope</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Implementation"><span class="tocnumber">3</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Sample Game"><span class="tocnumber">4</span> <span class="toctext">Sample Game</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="The_Square_of_the_Pawn">The Square of the Pawn</span></h1>
+<p>The <a class="external text" href="https://en.wikipedia.org/wiki/Square_%28geometry%29" rel="nofollow">Square</a> (of <a href="Squares.html" title="Squares">squares</a>) is defined vertically by the passer's <a href="Pawn Fills.html" title="Pawn Fills">front fill</a> with the horizontal edge in king <a href="Direction.html" title="Direction">direction</a>, who is assumed on a different <a href="Files.html" title="Files">file</a> either on the <a href="Pawn Spans.html" title="Pawn Spans">luff- or lee side</a> of the passer. If the respective side span is shorter than the <a href="Pawn Spans.html" title="Pawn Spans">front span</a> due to border restrictions, the "Square" becomes oblong. The square of a pawn, usually including the pawn itself except the home <a href="Ranks.html" title="Ranks">rank</a>, due to <a href="Pawn Push.html#DoublePush" title="Pawn Push">double step</a> ability, has a maximum size of six times six squares.
+</p><p>King <a href="Side to move.html" title="Side to move">to move</a> may enter the "Square" to catch the passer: 
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">  <span class="parens">  </span><br/> <span class="parens">  </span> <br/>  <span class="parens">  </span><br/> <span class="parens">  </span> <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">        <br/>        <br/>        <br/>       <br/>       <br/>        <br/>        <br/>        <br/></div><div class="pcfg">   •    <br/>   •    <br/>   •    <br/>   ♙••• <br/>       ♚<br/>        <br/>        <br/>        <br/></div></div></td></tr></table>
+<h1><span class="mw-headline" id="Area_of_Hope">Area of Hope</span></h1>
+<p>The whole area, where a king may catch the passer latest after <a href="Promotions.html" title="Promotions">queening</a>, is the union of both squares from both luff- and lee directions. 
+</p>
+<table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq"><span class="parens">    </span><br/><span class="parens">   </span> <br/><span class="parens">    </span><br/><span class="parens">   </span> <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">        <br/>        <br/>        <br/>       <br/>        <br/>        <br/>        <br/>        <br/></div><div class="pcfg">   •    <br/>   •    <br/>   •    <br/>•••♙••• <br/>        <br/>        <br/>        <br/>        <br/></div></div></td></tr></table>
+<h1><span class="mw-headline" id="Implementation">Implementation</span></h1>
+<p>The complete area is already implicit in what most programs do, comparisons of absolute <a href="Distance.html" title="Distance">Chebyshev distance</a> from king- and pawn squares to <a href="Promotion Square.html" title="Promotion Square">promotion square</a> considering <a href="Side to move.html" title="Side to move">side to move</a> aka <a href="Tempo.html" title="Tempo">tempo</a> and possible <a href="Pawn Push.html#DoublePush" title="Pawn Push">double step</a> of the passer. 
+</p>
+<pre>
+if ( min( 5, distance(pawnSq, promoSq) ) &lt; (distance(kingSq, promoSq) - king2move) )
+   pawn can safely promote
+</pre>
+<p><span id="NuchessCrayBlitz"></span>
+</p>
+<h1><span class="mw-headline" id="Sample_Game">Sample Game</span></h1>
+<p>During the <a href="ACM 1984.html" title="ACM 1984">ACM 1984</a>, last round 4, in <a href="Nuchess.html" title="Nuchess">Nuchess</a> (2/3) versus <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a> (3/3), it seemed as if Nuchess would win, forcing a massive tie for first place. The decisive position anatomized by <a href="Boris Baczynskyj.html" title="Boris Baczynskyj">Boris Baczynskyj</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>:
+</p>
+<pre>After 44... Nc8, the following position was found on the board.
+</pre>
+<dl><dd> <table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">     <br/>       <br/>     <br/>    <br/>        <br/>      <br/>      <br/>        <br/></div><div class="pcfg">  ♞ ♚ ♜ <br/>♟       <br/>   ♗ ♖♟ <br/>  ♙  ♟♔♟<br/>        <br/>    ♙ ♙ <br/>     ♙ ♙<br/>        <br/></div></div></td></tr></table></dd></dl>
+<pre>2n1k1r1/p7/3B1Rp1/2P2pKp/8/4P1P1/5P1P/8 w - - 17 45
+While Nuchess has hardly produced an immortal gem of chess, its performance so far has been fairly thematic - for a computer. White is up a Pawn, but an even more important factor in its favor is the superior activity of all three of its pieces. One good move is 45.Kh6, threatening to trap the black Rook with 46.Kh7. Another approach toward a win is 45.Be5, and the threat of 46.Rxg6 forces 46...Ne7, after which White shifts the Rook by 47.Ra6, and Black has to lose more material. Instead, Nuchess played
+45. Rxg6??
+This is the move which turned a win into a loss, and allowed Cray to clinch its undisputed first. White wins a second Pawn, but in the coming Pawn ending its material edge is worthless as the white King is too far removed to cope with Black's lone, but distant passed a-Pawn. <a href="William Blanchard.html" title="William Blanchard">William Blanchard</a> of the Nuchess team dejectedly confirmed that this program failed to include the principle of the King having to be inside the square of the Pawn to catch it. Of course, Nuchess's search did not extend so deeply that it could see the a-Pawn queening. <a href="Robert Hyatt.html" title="Robert Hyatt">Hyatt</a> said that Cray knew about the square of the Pawn rule, but that this was the first time he was aware the principle was relevant to the computer's move choice... 
+</pre>
+<p><a href="ACM 1984.html" title="ACM 1984">ACM 1984</a>, round 4, <a href="Nuchess.html" title="Nuchess">Nuchess</a> - <a href="Cray Blitz.html" title="Cray Blitz">Cray Blitz</a>
+</p>
+<pre>
+[Event "ACM 1984"]
+[Site "San Francisco USA"]
+[Date "1984.10.09"]
+[Round "4"]
+[White "Nuchess"]
+[Black "Cray Blitz"]
+[Result "0-1"]
+
+1.c4 e5 2.Nc3 Bb4 3.a3 Bxc3 4.dxc3 Ne7 5.g3 d5 6.cxd5 Qxd5 7.Qxd5 Nxd5 8.Bg2 Nb6 
+9.a4 O-O 10.a5 Nc4 11.Ra4 Nd6 12.a6 Nd7 13.Be3 Nb6 14.Rh4 Rd8 15.axb7 Bxb7 16.Bxb7 
+Nxb7 17.Nf3 Rd5 18.c4 Ra5 19.O-O Ra2 20.Rd1 Rxb2 21.c5 Nc8 22.Rd7 f6 23.Rg4 g6 
+24.Rh4 h5 25.Rxc7 Nd8 26.Ra4 Rb7 27.Rxb7 Nxb7 28.Ra6 Kf7 29.Nd2 Nd8 30.Ne4 f5 
+31.Ng5+ Kg7 32.Nf3 Nf7 33.Nxe5 Nxe5 34.Bd4 Kg8 35.Bxe5 Ne7 36.e3 Kf7 37.Rf6+ Kg8 
+38.Kg2 Rc8 39.Kf3 Re8 40.Ra6 Ra8 41.Kf4 Kf7 42.Kg5 Rg8 43.Rf6+ Ke8 44.Bd6 Nc8 
+45.Rxg6 Rxg6+ 46.Kxg6 Nxd6 47.cxd6 a5 48.g4 hxg4 49.Kxf5 a4 50.e4 a3 51.Kxg4 a2
+52.e5 a1=Q 53.f4 Qg1+ 54.Kf5 Qxh2 55.e6 Qc2+ 0-1
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Pawn Race.html" title="Pawn Race">Pawn Race</a></li>
+<li> <a href="Promotions.html" title="Promotions">Promotions</a></li>
+<li> <a href="R%C3%A9ti Endgame Study.html" title="Réti Endgame Study">Réti Endgame Study</a></li>
+<li> <a href="King Pattern.html#SetwiseRuleoftheSquare" title="King Pattern">Set-wise Rule of the Square</a></li>
+<li> <a href="Unstoppable Passer.html" title="Unstoppable Passer">Unstoppable Passer</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=14001" rel="nofollow">Square-of-the-pawn</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 1998</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21149.html" rel="nofollow">Rule of Square test position</a> by <a href="Charles Roberson.html" title="Charles Roberson">Charles Roberson</a>, <a href="CCC.html" title="CCC">CCC</a>, May 15, 2008</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/T7OFWxD4LK8/pzurkRQNLjwJ" rel="nofollow">Rule of the square</a> by <a href="Mikael B%C3%A4ckman.html" title="Mikael Bäckman">Mikael</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, September 24, 2014 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/King_and_pawn_versus_king_endgame#Rule_of_the_square" rel="nofollow">Rule of the square</a> from <a class="external text" href="https://en.wikipedia.org/wiki/King_and_pawn_versus_king_endgame" rel="nofollow">King and pawn versus king endgame from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikibooks.org/wiki/Chess/The_Endgame/Pawn_Endings#The_Rule_of_the_Square" rel="nofollow">Rule of the Square from Chess/The Endgame/Pawn Endings - Wikibooks</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Square" rel="nofollow">Square from Wikipedia</a></li>
+<li> <a href="Category:Steps Ahead.html" title="Category:Steps Ahead">Steps Ahead</a> - <a class="external text" href="https://stepsahead.bandcamp.com/album/steppin-out" rel="nofollow">Steppin Out</a> Album Preview, 2016, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat.  <a href="Category:Mike Mainieri.html" title="Category:Mike Mainieri">Mike Mainieri</a>, <a href="Category:Bill Evans.html" title="Category:Bill Evans">Bill Evans</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Chuck_Loeb" rel="nofollow">Chuck Loeb</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Tom_Kennedy_(musician)" rel="nofollow">Tom Kennedy</a>, <a href="Category:Steve Smith.html" title="Category:Steve Smith">Steve Smith</a> and the <a class="external text" href="https://de.wikipedia.org/wiki/WDR_Big_Band_K%C3%B6ln" rel="nofollow">WDR Big Band</a> conducted by <a class="external text" href="https://en.wikipedia.org/wiki/Mike_Abene" rel="nofollow">Mike Abene</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/a0XfBKTJMbo?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Boris Baczynskyj.html" title="Boris Baczynskyj">Boris Baczynskyj</a> (<b>1985</b>). <i>The 15th ACM NACCC Anatomized</i>. <a href="ICGA Journal.html#8 3" title="ICGA Journal">ICCA Journal, Vol. 8, No. 3</a></span>
+</li>
+</ol></div>
+<p><b><a href="Passed Pawn.html" title="Passed Pawn">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722112452
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.010 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 101/1000000
+Preprocessor generated node count: 222/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1497-0!canonical and timestamp 20240722112452 and revision id 18635
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Rule_of_the_Square&amp;oldid=18635">https://www.chessprogramming.org/index.php?title=Rule_of_the_Square&amp;oldid=18635</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Steps Ahead.html" title="Category:Steps Ahead">Steps Ahead</a></li><li><a href="Category:Mike Mainieri.html" title="Category:Mike Mainieri">Mike Mainieri</a></li><li><a href="Category:Bill Evans.html" title="Category:Bill Evans">Bill Evans</a></li><li><a href="Category:Steve Smith.html" title="Category:Steve Smith">Steve Smith</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Rule+of+the+Square&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Rule of the Square.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Rule of the Square&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Rule of the Square.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Rule of the Square&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Rule of the Square&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Rule of the Square.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Rule of the Square.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Rule of the Square&amp;oldid=18635.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Rule of the Square&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 April 2020, at 09:26.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Rule_of_the_Square&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.010","walltime":"0.010","ppvisitednodes":{"value":101,"limit":1000000},"ppgeneratednodes":{"value":222,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722112452","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

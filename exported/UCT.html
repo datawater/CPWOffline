@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>UCT - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"UCT","wgTitle":"UCT","wgCurRevisionId":21876,"wgRevisionId":21876,"wgArticleId":2096,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Quotes","Weather Report","Alphonso Johnson","Dom Um Romão","Wayne Shorter","Joe Zawinul"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UCT","wgRelevantArticleId":2096,"wgRequestId":"Zp7Ds42xCJ5uo1xYemabMAAAAAg","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-UCT rootpage-UCT skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">UCT</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a> * UCT</b>
+</p><p><b>UCT</b>  (<b>U</b>pper <b>C</b>onfidence bounds applied to <b>T</b>rees),<br/>
+a popular <a href="Algorithms.html" title="Algorithms">algorithm</a> that deals with the flaw of Monte-Carlo Tree Search, when a program may favor a losing move with only one or a few forced refutations, but due to the vast majority of other moves provides a better random playout score than other, better moves. UCT was introduced by <a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a> and <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a> in 2006 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, which accelerated the Monte-Carlo revolution in computer <a href="Go.html" title="Go">Go</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> and games difficult to <a href="Evaluation.html" title="Evaluation">evaluate</a> statically. If given infinite time and <a href="Memory.html" title="Memory">memory</a>, UCT theoretically converges to <a href="Minimax.html" title="Minimax">Minimax</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Selection"><span class="tocnumber">1</span> <span class="toctext">Selection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#RAVE"><span class="tocnumber">1.1</span> <span class="toctext">RAVE</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#PUCT"><span class="tocnumber">1.2</span> <span class="toctext">PUCT</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Quotes"><span class="tocnumber">2</span> <span class="toctext">Quotes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Gian-Carlo Pascutto"><span class="tocnumber">2.1</span> <span class="toctext">Gian-Carlo Pascutto</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Raghuram Ramanujan et al."><span class="tocnumber">2.2</span> <span class="toctext">Raghuram Ramanujan et al.</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">4.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2005 ..."><span class="tocnumber">4.2</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2010 ..."><span class="tocnumber">4.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2015 ..."><span class="tocnumber">4.4</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ... 2"><span class="tocnumber">5.1</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2015 ... 2"><span class="tocnumber">5.2</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2020 ..."><span class="tocnumber">5.3</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Selection">Selection</span></h1>
+<p>In UCT, upper <a class="external text" href="https://en.wikipedia.org/wiki/Confidence_interval" rel="nofollow">confidence bounds</a> (UCB1)  guide the selection of a node <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, treating selection as a <a class="external text" href="https://en.wikipedia.org/wiki/Multi-armed_bandit" rel="nofollow">multi-armed bandit problem</a>, where the crucial tradeoff the <a class="external text" href="https://en.wikipedia.org/wiki/Gambling" rel="nofollow">gambler</a> faces at each trial is between <a class="external text" href="https://en.wikipedia.org/wiki/Monte_Carlo_tree_search#Exploration_and_exploitation" rel="nofollow">exploration and exploitation</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Exploitation_%28disambiguation%29" rel="nofollow">exploitation</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/Slot_machine" rel="nofollow">slot machine</a> that has the highest expected payoff and <a class="external text" href="https://en.wikipedia.org/wiki/Exploration" rel="nofollow">exploration</a> to get more information about the expected payoffs of the other machines. Child node j is selected which maximizes the UCT Evaluation: 
+</p>
+<div class="floatnone"><a class="image" href="File:UCTFormula.jpg.html"><img alt="UCTFormula.jpg" class="thumbborder" height="67" src="images/5/50/UCTFormula.jpg" style="vertical-align: text-bottom" width="267"/></a></div>
+<p>where:
+</p>
+<ul><li> X<span style="font-size: 80%; vertical-align: sub;">j</span> is the <a href="Match Statistics.html#ratio" title="Match Statistics">win ratio</a> of the child</li>
+<li> n is the number of times the parent has been visited</li>
+<li> n<span style="font-size: 80%; vertical-align: sub;">j</span> is the number of times the child has been visited</li>
+<li> C is a constant to adjust the amount of exploration and incorporates the sqrt(2) from the UCB1 formula</li></ul>
+<p>The first component of the UCB1 formula above corresponds to exploitation, as it is high for moves with high average win ratio. The second component corresponds to exploration, since it is high for moves with few simulations. 
+</p>
+<h2><span class="mw-headline" id="RAVE">RAVE</span></h2>
+<p>Most contemporary implementations of MCTS are based on some variant of UCT <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. Modifications have been proposed, with the aim of shortening the time to find good moves. They can be divided into improvements based on expert knowledge and into domain-independent improvements in the playouts, and in building the tree in modifying the exploitation part of the UCB1 formula, for instance in <a class="external text" href="https://en.wikipedia.org/wiki/Monte_Carlo_tree_search#Improvements" rel="nofollow">Rapid Action Value Estimation</a> (<b>RAVE</b>) <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> considering <a href="Transposition.html" title="Transposition">transpositions</a>. 
+</p>
+<h2><span class="mw-headline" id="PUCT">PUCT</span></h2>
+<p><a href="Christopher D. Rosin.html" title="Christopher D. Rosin">Chris Rosin's</a> <a href="Christopher D. Rosin.html#PUCT" title="Christopher D. Rosin">PUCT</a> modifies the original UCB1 multi-armed bandit policy by approximately predicting good arms at the start of a sequence of multi-armed bandit trials ('Predictor' + UCB = PUCB) <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>. A variation of PUCT was used in the <a class="new" href="index.php?title=AlphaGo&amp;action=edit&amp;redlink=1.html" title="AlphaGo (page does not exist)">AlphaGo</a> and <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a> projects <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> , and subsequently also in <a class="new" href="index.php?title=Leela Zero&amp;action=edit&amp;redlink=1.html" title="Leela Zero (page does not exist)">Leela Zero</a> and <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>.
+</p><p><br/>
+</p>
+<h1><span class="mw-headline" id="Quotes">Quotes</span></h1>
+<h2><span class="mw-headline" id="Gian-Carlo_Pascutto">Gian-Carlo Pascutto</span></h2>
+<p>Quote by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a> in 2010 <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>:
+</p>
+<pre>There is no significant difference between an <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta search</a> with heavy <a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a>  and a <a href="Evaluation.html" title="Evaluation">static evaluator</a> (current state of the art in <a href="Chess.html" title="Chess">chess</a>) and an UCT searcher with a small exploration constant that does playouts (state of the art in <a href="Go.html" title="Go">go</a>).
+</pre>
+<pre>The shape of the <a href="Search Tree.html" title="Search Tree">tree</a> they search is very similar. The main breakthrough in Go the last few years was how to backup an uncertain Monte Carlo score. This was solved. For chess this same problem was solved around the time <a href="Quiescence Search.html" title="Quiescence Search">quiescent search</a> was developed.
+</pre>
+<pre>Both are producing strong programs and we've proven for both the methods that they scale in strength as hardware speed goes up.
+</pre>
+<pre>So I would say that we've successfully adopted the simple, brute force methods for chess to Go and they already work without increases in computer speed. The increases will make them progressively stronger though, and with further software tweaks they will eventually surpass humans. 
+</pre>
+<h2><span class="mw-headline" id="Raghuram_Ramanujan_et_al.">Raghuram Ramanujan et al.</span></h2>
+<p>Quote by <a href="Raghuram Ramanujan.html" title="Raghuram Ramanujan">Raghuram Ramanujan</a>, <a href="Ashish Sabharwal.html" title="Ashish Sabharwal">Ashish Sabharwal</a>, and <a href="Bart Selman.html" title="Bart Selman">Bart Selman</a> from their abstract <i>On Adversarial Search Spaces and Sampling-Based Planning</i> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>:
+</p>
+<pre>UCT has been shown to outperform traditional <a href="Minimax.html" title="Minimax">minimax</a> based approaches in several challenging domains such as <a href="Go.html" title="Go">Go</a> and <a href="KriegSpiel.html" title="KriegSpiel">KriegSpiel</a>, although minimax search still prevails in other domains such as <a href="Chess.html" title="Chess">Chess</a>. This work provides insights into the properties of adversarial search spaces that play a key role in the success or failure of UCT and similar sampling-based approaches. We show that certain "early loss" or "shallow trap" configurations, while unlikely in Go, occur surprisingly often in games like Chess (even in grandmaster games). We provide evidence that UCT, unlike minimax search, is unable to identify such traps in Chess and spends a great deal of time exploring much deeper game play than needed. 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Ari Weinstein.html#FSSS-Minimax" title="Ari Weinstein">FSSS-Minimax</a></li>
+<li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="Jakob Erdmann.html#UCT" title="Jakob Erdmann">MC and UCT poster</a> by <a href="Jakob Erdmann.html" title="Jakob Erdmann">Jakob Erdmann</a></li>
+<li> <a href="MC%CE%B1%CE%B2.html" title="MCαβ">MCαβ</a></li>
+<li> <a href="Christopher D. Rosin.html#PUCT" title="Christopher D. Rosin">PUCT</a></li>
+<li> <a href="Reinforcement Learning.html" title="Reinforcement Learning">Reinforcement Learning</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Peter Auer.html" title="Peter Auer">Peter Auer</a>, <a href="Nicol%C3%B2 Cesa-Bianchi.html" title="Nicolò Cesa-Bianchi">Nicolò Cesa-Bianchi</a>, <a href="Paul Fischer.html" title="Paul Fischer">Paul Fischer</a> (<b>2002</b>). <i><a class="external text" href="http://link.springer.com/article/10.1023%2FA%3A1013689704352.html" rel="nofollow">Finite-time Analysis of the Multiarmed Bandit Problem</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Machine_Learning_%28journal%29" rel="nofollow">Machine Learning</a>, Vol. 47, No. 2, <a class="external text" href="http://homes.di.unimi.it/~cesabian/Pubblicazioni/ml-02.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<p><b>2006</b>
+</p>
+<ul><li> <a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a>, <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a> (<b>2006</b>). <i><a class="external text" href="http://www.computer-go.info/resources/bandit.html.html" rel="nofollow">Bandit based Monte-Carlo Planning</a></i>. ECML-06, LNCS/LNAI 4212, <a class="external text" href="http://old.sztaki.hu/~szcsaba/papers/ecml06.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a>, <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a>, <a class="new" href="index.php?title=Jan Willemson&amp;action=edit&amp;redlink=1.html" title="Jan Willemson (page does not exist)">Jan Willemson</a> (<b>2006</b>). <i>Improved Monte-Carlo Search</i>. <a class="external text" href="http://www.sztaki.hu/~szcsaba/papers/cg06-ext.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="Yizao Wang.html" title="Yizao Wang">Yizao Wang</a> (<b>2006</b>). <i>Exploration exploitation in Go: UCT for Monte-Carlo Go</i>. <a class="external text" href="http://www.lri.fr/%7Egelly/paper/nips exploration exploitation mogo.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="Yizao Wang.html" title="Yizao Wang">Yizao Wang</a>, <a href="R%C3%A9mi Munos.html" title="Rémi Munos">Rémi Munos</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a> (<b>2006</b>). <i>Modiﬁcation of UCT with Patterns in Monte-Carlo Go</i>. <a class="external text" href="http://hal.inria.fr/inria-00117266.html" rel="nofollow">INRIA</a></li></ul>
+<p><b>2007</b>
+</p>
+<ul><li> <a href="Yizao Wang.html" title="Yizao Wang">Yizao Wang</a>, <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a> (<b>2007</b>). <i>Modifications of UCT and Sequence-Like Simulations for Monte-Carlo Go</i>. IEEE Symposium on Computational Intelligence and Games, Honolulu, USA, 2007, <a class="external text" href="http://www.stat.lsa.umich.edu/%7Eyizwang/publications/wang07modifications.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Shugo Nakamura&amp;action=edit&amp;redlink=1.html" title="Shugo Nakamura (page does not exist)">Shugo Nakamura</a>, <a href="Makoto Miwa.html" title="Makoto Miwa">Makoto Miwa</a>, <a href="Takashi Chikayama.html" title="Takashi Chikayama">Takashi Chikayama</a> (<b>2007</b>). <i>Improvement of UCT using evaluation function</i>. <a class="external text" href="http://www.computer-shogi.org/gpw/gpw12 e.html.html" rel="nofollow">12th Game Programming Workshop 2007</a></li>
+<li> <a href="Tristan Cazenave.html" title="Tristan Cazenave">Tristan Cazenave</a>, <a class="new" href="index.php?title=Nicolas Jouandeau&amp;action=edit&amp;redlink=1.html" title="Nicolas Jouandeau (page does not exist)">Nicolas Jouandeau</a> (<b>2007</b>). <i>On the Parallelization of UCT</i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a>, <a class="external text" href="http://www.lamsade.dauphine.fr/%7Ecazenave/papers/parallelUCT.pdf.html" rel="nofollow">pdf</a> » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="Jean-Yves Audibert.html" title="Jean-Yves Audibert">Jean-Yves Audibert</a>, <a href="R%C3%A9mi Munos.html" title="Rémi Munos">Rémi Munos</a>, <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a> (<b>2007</b>). <i>Tuning Bandit Algorithms in Stochastic Environments</i>. <a class="external text" href="http://certis.enpc.fr/~audibert/ucb alt.pdf.html" rel="nofollow">pdf</a></li></ul>
+<p><b>2008</b>
+</p>
+<ul><li> <a href="Nathan Sturtevant.html" title="Nathan Sturtevant">Nathan Sturtevant</a> (<b>2008</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-87608-3 4.html" rel="nofollow">An Analysis of UCT in Multi-player Games</a></i>. <a href="CG 2008.html" title="CG 2008">CG 2008</a></li>
+<li> <a href="Guillaume Chaslot.html" title="Guillaume Chaslot">Guillaume Chaslot</a>, <a href="Mark Winands.html" title="Mark Winands">Mark Winands</a>, <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>2008</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-87608-3 6.html" rel="nofollow">Parallel Monte-Carlo Tree Search</a></i>. <a href="CG 2008.html" title="CG 2008">CG 2008</a>, <a class="external text" href="https://dke.maastrichtuniversity.nl/m.winands/documents/multithreadedMCTS2.pdf" rel="nofollow">pdf</a></li></ul>
+<p><b>2009</b>
+</p>
+<ul><li> <a href="R%C3%A9mi Coulom.html" title="Rémi Coulom">Rémi Coulom</a> (<b>2009</b>). <i>The Monte-Carlo Revolution in Go</i>. JFFoS'2008: Japanese-French Frontiers of Science Symposium, <a class="external text" href="http://remi.coulom.free.fr/JFFoS/JFFoS.pdf.html" rel="nofollow">slides as pdf</a></li>
+<li> <a href="Fabien Teytaud.html" title="Fabien Teytaud">Fabien Teytaud</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a> (<b>2009</b>). <i>Creating an Upper-Confidence-Tree program for Havannah</i>. <a href="Advances in Computer Games 12.html" title="Advances in Computer Games 12">Advances in Computer Games 12</a>, <a class="external text" href="http://hal.inria.fr/docs/00/38/05/39/PDF/hav.pdf.html" rel="nofollow">inria-00380539 as pdf</a> » <a href="Havannah.html" title="Havannah">Havannah</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Jean M%C3%A9hat.html" title="Jean Méhat">Jean Méhat</a>, <a href="Tristan Cazenave.html" title="Tristan Cazenave">Tristan Cazenave</a> (<b>2010</b>). <i>Combining UCT and Nested Monte-Carlo Search for Single-Player General Game Playing</i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 2, No. 4, <a class="external text" href="http://www.lamsade.dauphine.fr/~cazenave/papers/ggp2009.pdf.html" rel="nofollow">pdf 2009</a> » <a href="General Game Playing.html" title="General Game Playing">General Game Playing</a></li>
+<li> <a href="Raghuram Ramanujan.html" title="Raghuram Ramanujan">Raghuram Ramanujan</a>, <a href="Ashish Sabharwal.html" title="Ashish Sabharwal">Ashish Sabharwal</a>, <a href="Bart Selman.html" title="Bart Selman">Bart Selman</a> (<b>2010</b>). <i><a class="external text" href="http://www.aaai.org/ocs/index.php/ICAPS/ICAPS10/paper/view/1458.html" rel="nofollow">On Adversarial Search Spaces and Sampling-Based Planning</a></i>. <a class="external text" href="http://www.aaai.org/Press/Proceedings/icaps10.php.html" rel="nofollow">ICAPS 2010</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup></li>
+<li> <a class="new" href="index.php?title=Damien Pellier&amp;action=edit&amp;redlink=1.html" title="Damien Pellier (page does not exist)">Damien Pellier</a>, <a href="Bruno Bouzy.html" title="Bruno Bouzy">Bruno Bouzy</a>, <a class="new" href="index.php?title=Marc M%C3%A9tivier&amp;action=edit&amp;redlink=1.html" title="Marc Métivier (page does not exist)">Marc Métivier</a> (<b>2010</b>). <i>An UCT Approach for Anytime Agent-based Planning</i>. <a class="external text" href="http://www.springer.com/de/book/9783642123832.html" rel="nofollow">PAAMS'10</a>, <a class="external text" href="http://www.mi.parisdescartes.fr/~bouzy/publications/pellier-bouzy-metivier-paams10.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Thomas J. Walsh&amp;action=edit&amp;redlink=1.html" title="Thomas J. Walsh (page does not exist)">Thomas J. Walsh</a>, <a class="new" href="index.php?title=Sergiu Goschin&amp;action=edit&amp;redlink=1.html" title="Sergiu Goschin (page does not exist)">Sergiu Goschin</a>, <a href="Michael L. Littman.html" title="Michael L. Littman">Michael L. Littman</a> (<b>2010</b>). <i>Integrating sample-based planning and model-based reinforcement learning.</i> <a href="AAAI.html" title="AAAI">AAAI</a>, <a class="external text" href="https://pdfs.semanticscholar.org/bdc9/bfb6ecc6fb5afb684df03d7220c46ebdbf4e.pdf" rel="nofollow">pdf</a> » <a href="Reinforcement Learning.html" title="Reinforcement Learning">Reinforcement Learning</a></li>
+<li> <a class="new" href="index.php?title=Takayuki Yajima&amp;action=edit&amp;redlink=1.html" title="Takayuki Yajima (page does not exist)">Takayuki Yajima</a>, <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a>, <a class="new" href="index.php?title=Toshiki Matsui&amp;action=edit&amp;redlink=1.html" title="Toshiki Matsui (page does not exist)">Toshiki Matsui</a>, <a href="Junichi Hashimoto.html" title="Junichi Hashimoto">Junichi Hashimoto</a>, <a class="new" href="index.php?title=Kristian Spoerer&amp;action=edit&amp;redlink=1.html" title="Kristian Spoerer (page does not exist)">Kristian Spoerer</a> (<b>2010</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007%2F978-3-642-17928-0_11" rel="nofollow">Node-Expansion Operators for the UCT Algorithm</a></i>. <a href="CG 2010.html" title="CG 2010">CG 2010</a></li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a href="Junichi Hashimoto.html" title="Junichi Hashimoto">Junichi Hashimoto</a>, <a href="Akihiro Kishimoto.html" title="Akihiro Kishimoto">Akihiro Kishimoto</a>, <a class="new" href="index.php?title=Kazuki Yoshizoe&amp;action=edit&amp;redlink=1.html" title="Kazuki Yoshizoe (page does not exist)">Kazuki Yoshizoe</a>, <a href="Kokolo Ikeda.html" title="Kokolo Ikeda">Kokolo Ikeda</a> (<b>2011</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-642-31866-5 1.html" rel="nofollow">Accelerated UCT and Its Application to Two-Player Games</a></i>. <a href="Advances in Computer Games 13.html" title="Advances in Computer Games 13">Advances in Computer Games 13</a></li>
+<li> <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2011</b>). <i><a class="external text" href="http://www.aifactory.co.uk/newsletter/2011 02 mcts static.htm.html" rel="nofollow">Mixing MCTS with Conventional Static Evaluation: Experiments and shortcuts en-route to full UCT</a></i>. <a href="AI Factory.html" title="AI Factory">AI Factory</a>, Winter 2011 » <a href="Evaluation.html" title="Evaluation">Evaluation</a></li>
+<li> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2011</b>). <i>Monte-Carlo tree search and rapid action value estimation in computer Go</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 175, No. 11, <a class="external text" href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Applications files/mcrave.pdf.html" rel="nofollow">preprint as pdf</a></li>
+<li> <a class="new" href="index.php?title=Lars Schaefers&amp;action=edit&amp;redlink=1.html" title="Lars Schaefers (page does not exist)">Lars Schaefers</a>, <a class="new" href="index.php?title=Marco Platzner&amp;action=edit&amp;redlink=1.html" title="Marco Platzner (page does not exist)">Marco Platzner</a>, <a href="Ulf Lorenz.html" title="Ulf Lorenz">Ulf Lorenz</a> (<b>2011</b>). <i>UCT-Treesplit - Parallel MCTS on Distributed Memory</i>. <a class="external text" href="http://www.aaai.org/Press/Proceedings/icaps11.php.html" rel="nofollow">ICAPS 2011</a>, <a class="external text" href="http://www.cs.uni-paderborn.de/fileadmin/Informatik/AG-Platzner/People/Schaefers/TreesplitICAPS.pdf.html" rel="nofollow">pdf</a> » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a></li>
+<li> <a href="Raghuram Ramanujan.html" title="Raghuram Ramanujan">Raghuram Ramanujan</a>, <a href="Bart Selman.html" title="Bart Selman">Bart Selman</a> (<b>2011</b>). <i><a class="external text" href="http://aaai.org/ocs/index.php/ICAPS/ICAPS11/paper/view/2708.html" rel="nofollow">Trade-Offs in Sampling-Based Adversarial Planning</a></i>. <a class="external text" href="http://www.aaai.org/Press/Proceedings/icaps11.php.html" rel="nofollow">ICAPS 2011</a></li>
+<li> <a href="Christopher D. Rosin.html" title="Christopher D. Rosin">Christopher D. Rosin</a> (<b>2011</b>). <i><a class="external text" href="https://link.springer.com/article/10.1007/s10472-011-9258-6" rel="nofollow">Multi-armed bandits with episode context</a></i>. Annals of Mathematics and Artificial Intelligence, Vol. 61, No. 3, <a class="external text" href="http://gauss.ececs.uc.edu/Workshops/isaim2010/papers/rosin.pdf.html" rel="nofollow">ISAIM 2010 pdf</a> » <a href="Christopher D. Rosin.html#PUCT" title="Christopher D. Rosin">PUCT</a></li>
+<li> <a class="new" href="index.php?title=Adrien Cou%C3%ABtoux&amp;action=edit&amp;redlink=1.html" title="Adrien Couëtoux (page does not exist)">Adrien Couëtoux</a>, <a href="Jean-Baptiste Hoock.html" title="Jean-Baptiste Hoock">Jean-Baptiste Hoock</a>, <a class="new" href="index.php?title=Nataliya Sokolovska&amp;action=edit&amp;redlink=1.html" title="Nataliya Sokolovska (page does not exist)">Nataliya Sokolovska</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a class="new" href="index.php?title=Nicolas Bonnard&amp;action=edit&amp;redlink=1.html" title="Nicolas Bonnard (page does not exist)">Nicolas Bonnard</a> (<b>2011</b>). <i>Continuous Upper Confidence Trees</i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/lion/lion2011.html" rel="nofollow">LION 2011</a>, <a class="external text" href="https://hal.archives-ouvertes.fr/hal-00542673v1/document" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=David Tolpin&amp;action=edit&amp;redlink=1.html" title="David Tolpin (page does not exist)">David Tolpin</a>, <a href="Solomon Eyal Shimony.html" title="Solomon Eyal Shimony">Solomon Eyal Shimony</a> (<b>2011</b>). <i>Doing Better Than UCT: Rational Monte Carlo Sampling in Trees</i>. <a class="external text" href="https://arxiv.org/abs/1108.3711" rel="nofollow">arXiv:1108.3711</a></li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="new" href="index.php?title=Oleg Arenz&amp;action=edit&amp;redlink=1.html" title="Oleg Arenz (page does not exist)">Oleg Arenz</a> (<b>2012</b>). <i>Monte Carlo Chess</i>.  B.Sc. thesis, <a href="Darmstadt University of Technology.html" title="Darmstadt University of Technology">Darmstadt University of Technology</a>, advisor <a href="Johannes F%C3%BCrnkranz.html" title="Johannes Fürnkranz">Johannes Fürnkranz</a>, <a class="external text" href="http://www.ke.tu-darmstadt.de/lehre/arbeiten/bachelor/2012/Arenz Oleg.pdf.html" rel="nofollow">pdf</a> » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a href="Cameron Browne.html" title="Cameron Browne">Cameron Browne</a>, <a class="new" href="index.php?title=Edward Powley&amp;action=edit&amp;redlink=1.html" title="Edward Powley (page does not exist)">Edward Powley</a>, <a class="new" href="index.php?title=Daniel Whitehouse&amp;action=edit&amp;redlink=1.html" title="Daniel Whitehouse (page does not exist)">Daniel Whitehouse</a>, <a href="Simon Lucas.html" title="Simon Lucas">Simon Lucas</a>, <a class="new" href="index.php?title=Peter Cowling&amp;action=edit&amp;redlink=1.html" title="Peter Cowling (page does not exist)">Peter Cowling</a>, <a class="new" href="index.php?title=Philipp Rohlfshagen&amp;action=edit&amp;redlink=1.html" title="Philipp Rohlfshagen (page does not exist)">Philipp Rohlfshagen</a>, <a class="new" href="index.php?title=Stephen Tavener&amp;action=edit&amp;redlink=1.html" title="Stephen Tavener (page does not exist)">Stephen Tavener</a>, <a class="new" href="index.php?title=Diego Perez&amp;action=edit&amp;redlink=1.html" title="Diego Perez (page does not exist)">Diego Perez</a>, <a class="new" href="index.php?title=Spyridon Samothrakis&amp;action=edit&amp;redlink=1.html" title="Spyridon Samothrakis (page does not exist)">Spyridon Samothrakis</a>, <a class="new" href="index.php?title=Simon Colton&amp;action=edit&amp;redlink=1.html" title="Simon Colton (page does not exist)">Simon Colton</a> (<b>2012</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/6145622" rel="nofollow">A Survey of Monte Carlo Tree Search Methods</a></i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 4, No. 1, <a class="external text" href="http://ccg.doc.gold.ac.uk/ccg old/papers/browne tciaig12 1.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="Marc Schoenauer.html" title="Marc Schoenauer">Marc Schoenauer</a>, <a href="Mich%C3%A8le Sebag.html" title="Michèle Sebag">Michèle Sebag</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a>, <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a> (<b>2012</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=2093548.2093574.html" rel="nofollow">The Grand Challenge of Computer Go: Monte Carlo Tree Search and Extensions</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 55, No. 3, <a class="external text" href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Applications files/grand-challenge.pdf.html" rel="nofollow">pdf preprint</a></li>
+<li> <a class="new" href="index.php?title=Adrien Couetoux&amp;action=edit&amp;redlink=1.html" title="Adrien Couetoux (page does not exist)">Adrien Couetoux</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a class="new" href="index.php?title=Hassen Doghmen&amp;action=edit&amp;redlink=1.html" title="Hassen Doghmen (page does not exist)">Hassen Doghmen</a> (<b>2012</b>). <i>Learning a Move-Generator for Upper Confidence Trees</i>. <a class="external text" href="http://ics2012.ndhu.edu.tw/.html" rel="nofollow">ICS 2012</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Hualien_City" rel="nofollow">Hualien</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Taiwan" rel="nofollow">Taiwan</a>, December 2012 » <a href="Learning.html" title="Learning">Learning</a>, <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a href="Ashish Sabharwal.html" title="Ashish Sabharwal">Ashish Sabharwal</a>, <a class="new" href="index.php?title=Horst Samulowitz&amp;action=edit&amp;redlink=1.html" title="Horst Samulowitz (page does not exist)">Horst Samulowitz</a>, <a class="new" href="index.php?title=Chandra Reddy&amp;action=edit&amp;redlink=1.html" title="Chandra Reddy (page does not exist)">Chandra Reddy</a> (<b>2012</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007%2F978-3-642-29828-8 23.html" rel="nofollow">Guiding Combinatorial Optimization with UCT</a></i>. <a class="external text" href="http://dblp.uni-trier.de/db/conf/cpaior/cpaior2012.html.html#SabharwalSR12" rel="nofollow">CPAIOR 2012</a>, <a class="external text" href="http://web.emn.fr/x-info/cpaior-2012/uploads/Abstracts/CPAIOR%20-%2072980356.pdf.html" rel="nofollow">abstract as pdf</a>, <a class="external text" href="http://www.cs.toronto.edu/~horst/cogrobo/papers/uctmip.pdf.html" rel="nofollow">draft as pdf</a></li>
+<li> <a href="Raghuram Ramanujan.html" title="Raghuram Ramanujan">Raghuram Ramanujan</a>, <a href="Ashish Sabharwal.html" title="Ashish Sabharwal">Ashish Sabharwal</a>, <a href="Bart Selman.html" title="Bart Selman">Bart Selman</a> (<b>2012</b>). <i>Understanding Sampling Style Adversarial Search Methods</i>. <a class="external text" href="http://arxiv.org/abs/1203.4011.html" rel="nofollow">arXiv:1203.4011</a></li>
+<li> <a href="Cheng-Wei Chou.html" title="Cheng-Wei Chou">Cheng-Wei Chou</a>, <a class="new" href="index.php?title=Ping-Chiang Chou&amp;action=edit&amp;redlink=1.html" title="Ping-Chiang Chou (page does not exist)">Ping-Chiang Chou</a>, <a href="Chang-Shing Lee.html" title="Chang-Shing Lee">Chang-Shing Lee</a>, <a class="new" href="index.php?title=David L. Saint-Pierre&amp;action=edit&amp;redlink=1.html" title="David L. Saint-Pierre (page does not exist)">David L. Saint-Pierre</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a href="Mei-Hui Wang.html" title="Mei-Hui Wang">Mei-Hui Wang</a>, <a class="new" href="index.php?title=Li-Wen Wu&amp;action=edit&amp;redlink=1.html" title="Li-Wen Wu (page does not exist)">Li-Wen Wu</a>, <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a> (<b>2012</b>). <i>Strategic Choices: Small Budgets and Simple Regret</i>. <a class="new" href="index.php?title=TAAI 2012&amp;action=edit&amp;redlink=1.html" title="TAAI 2012 (page does not exist)">TAAI 2012</a>, <a class="external text" href="http://www.csie.ndhu.edu.tw/csieweb/en/node/685.html" rel="nofollow">Excellent Paper Award</a>, <a class="external text" href="https://hal.inria.fr/hal-00753145v2/document" rel="nofollow">pdf</a></li>
+<li> <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Peter Dayan.html" title="Peter Dayan">Peter Dayan</a> (<b>2012</b>). <i>Efficient Bayes-Adaptive Reinforcement Learning using Sample-Based Search</i>. <a class="external text" href="https://arxiv.org/abs/1205.3109" rel="nofollow">arXiv:1205.3109</a></li>
+<li> <a href="Truong-Huy Dinh Nguyen.html" title="Truong-Huy Dinh Nguyen">Truong-Huy Dinh Nguyen</a>, <a href="Wee Sun Lee.html" title="Wee Sun Lee">Wee Sun Lee</a>, <a class="new" href="index.php?title=Tze-Yun Leong&amp;action=edit&amp;redlink=1.html" title="Tze-Yun Leong (page does not exist)">Tze-Yun Leong</a> (<b>2012</b>). <i>Bootstrapping Monte Carlo Tree Search with an Imperfect Heuristic</i>. <a class="external text" href="https://arxiv.org/abs/1206.5940" rel="nofollow">arXiv:1206.5940</a></li>
+<li> <a class="new" href="index.php?title=David Tolpin&amp;action=edit&amp;redlink=1.html" title="David Tolpin (page does not exist)">David Tolpin</a>, <a href="Solomon Eyal Shimony.html" title="Solomon Eyal Shimony">Solomon Eyal Shimony</a> (<b>2012</b>). <i>MCTS Based on Simple Regret</i>. <a href="Conferences.html#AAAI-2012" title="Conferences">AAAI-2012</a>, <a class="external text" href="https://arxiv.org/abs/1207.5536" rel="nofollow">arXiv:1207.5536</a></li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a href="Simon Viennot.html" title="Simon Viennot">Simon Viennot</a>, <a href="Kokolo Ikeda.html" title="Kokolo Ikeda">Kokolo Ikeda</a> (<b>2013</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007%2F978-3-319-09165-5 3.html" rel="nofollow">Efficiency of Static Knowledge Bias in Monte-Carlo Tree Search</a></i>. <a href="CG 2013.html" title="CG 2013">CG 2013</a></li>
+<li> <a class="new" href="index.php?title=Rui Li&amp;action=edit&amp;redlink=1.html" title="Rui Li (page does not exist)">Rui Li</a>, <a class="new" href="index.php?title=Yueqiu Wu&amp;action=edit&amp;redlink=1.html" title="Yueqiu Wu (page does not exist)">Yueqiu Wu</a>, <a class="new" href="index.php?title=Andi Zhang&amp;action=edit&amp;redlink=1.html" title="Andi Zhang (page does not exist)">Andi Zhang</a>, <a class="new" href="index.php?title=Chen Ma&amp;action=edit&amp;redlink=1.html" title="Chen Ma (page does not exist)">Chen Ma</a>, <a class="new" href="index.php?title=Bo Chen&amp;action=edit&amp;redlink=1.html" title="Bo Chen (page does not exist)">Bo Chen</a>, <a class="new" href="index.php?title=Shuliang Wang&amp;action=edit&amp;redlink=1.html" title="Shuliang Wang (page does not exist)">Shuliang Wang</a> (<b>2013</b>). <i><a class="external text" href="http://cpfd.cnki.com.cn/Article/CPFDTOTAL-KZJC201309001170.htm.html" rel="nofollow">Technique Analysis and Designing of Program with UCT Algorithm for NoGo</a></i>. <a class="external text" href="http://www.ccdc.neu.edu.cn/CCDC2013/.html" rel="nofollow">CCDC2013</a></li>
+<li> <a href="Ari Weinstein.html" title="Ari Weinstein">Ari Weinstein</a>, <a href="Michael L. Littman.html" title="Michael L. Littman">Michael L. Littman</a>, <a class="new" href="index.php?title=Sergiu Goschin&amp;action=edit&amp;redlink=1.html" title="Sergiu Goschin (page does not exist)">Sergiu Goschin</a> (<b>2013</b>). <i><a class="external text" href="http://proceedings.mlr.press/v24/weinstein12a.html.html" rel="nofollow">Rollout-based Game-tree Search Outprunes Traditional Alpha-beta</a></i>. <a class="external text" href="http://proceedings.mlr.press/.html" rel="nofollow">PMLR</a>, Vol. 24 » <a href="Ari Weinstein.html#FSSS-Minimax" title="Ari Weinstein">FSSS-Minimax</a>, <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">MCTS</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a href="R%C3%A9mi Munos.html" title="Rémi Munos">Rémi Munos</a> (<b>2014</b>). <i>From Bandits to Monte-Carlo Tree Search: The Optimistic Principle Applied to Optimization and Planning</i>. <a class="external text" href="http://dblp.uni-trier.de/db/journals/ftml/ftml7.html.html#Munos14" rel="nofollow">Foundations and Trends in Machine Learning, Vol. 7, No 1</a>, <a class="external text" href="https://hal.archives-ouvertes.fr/hal-00747575" rel="nofollow">hal-00747575v5</a>, <a class="external text" href="http://chercheurs.lille.inria.fr/~munos/papers/files/AAAI2013 slides.pdf.html" rel="nofollow">slides as pdf</a></li>
+<li> <a class="new" href="index.php?title=David W. King&amp;action=edit&amp;redlink=1.html" title="David W. King (page does not exist)">David W. King</a> (<b>2014</b>). <i>Complexity, Heuristic, and Search Analysis for the Games of Crossings and Epaminondas</i>. Masters thesis, <a class="external text" href="https://en.wikipedia.org/wiki/Air_Force_Institute_of_Technology" rel="nofollow">Air Force Institute of Technology</a>, <a class="external text" href="http://www.afit.edu/docs/AFIT-ENG-14-M-44 King.pdf.html" rel="nofollow">pdf</a> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup></li>
+<li> <a class="new" href="index.php?title=David W. King&amp;action=edit&amp;redlink=1.html" title="David W. King (page does not exist)">David W. King</a>, <a class="new" href="index.php?title=Gilbert L. Peterson&amp;action=edit&amp;redlink=1.html" title="Gilbert L. Peterson (page does not exist)">Gilbert L. Peterson</a> (<b>2014</b>). <i>Epaminondas: Exploring Combat Tactics</i>. <a href="ICGA Journal.html#37 3" title="ICGA Journal">ICGA Journal, Vol. 37, No. 3</a> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup></li>
+<li> <a href="Truong-Huy Dinh Nguyen.html" title="Truong-Huy Dinh Nguyen">Truong-Huy Dinh Nguyen</a>, <a class="new" href="index.php?title=Tomi Silander&amp;action=edit&amp;redlink=1.html" title="Tomi Silander (page does not exist)">Tomi Silander</a>, <a href="Wee Sun Lee.html" title="Wee Sun Lee">Wee Sun Lee</a>, <a class="new" href="index.php?title=Tze-Yun Leong&amp;action=edit&amp;redlink=1.html" title="Tze-Yun Leong (page does not exist)">Tze-Yun Leong</a> (<b>2014</b>). <i><a class="external text" href="https://www.aaai.org/ocs/index.php/ICAPS/ICAPS14/paper/view/7934" rel="nofollow">Bootstrapping Simulation-Based Algorithms with a Suboptimal Policy</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/aips/icaps2014.html" rel="nofollow">ICAPS 2014</a>, <a class="external text" href="https://youtu.be/ccwcZZj5vKM" rel="nofollow">YouTube Video</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a href="Xi Liang.html" title="Xi Liang">Xi Liang</a>, <a href="Ting-Han Wei.html" title="Ting-Han Wei">Ting-Han Wei</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a> (<b>2015</b>). <i>Job-level UCT search for solving Hex</i>. <a class="external text" href="http://dblp.uni-trier.de/db/conf/cig/cig2015.html.html#LiangWW15" rel="nofollow">CIG 2015</a></li>
+<li> <a class="new" href="index.php?title=Yusaku Mandai&amp;action=edit&amp;redlink=1.html" title="Yusaku Mandai (page does not exist)">Yusaku Mandai</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2015</b>). <i>LinUCB Applied to Monte Carlo Tree Search</i>. <a href="Advances in Computer Games 14.html" title="Advances in Computer Games 14">Advances in Computer Games 14</a></li>
+<li> <a class="new" href="index.php?title=Yun-Ching Liu&amp;action=edit&amp;redlink=1.html" title="Yun-Ching Liu (page does not exist)">Yun-Ching Liu</a>, <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a> (<b>2015</b>). <i>Adapting Improved Upper Confidence Bounds for Monte-Carlo Tree Search</i>. <a href="Advances in Computer Games 14.html" title="Advances in Computer Games 14">Advances in Computer Games 14</a></li>
+<li> <a href="S. Ali Mirsoleimani.html" title="S. Ali Mirsoleimani">S. Ali Mirsoleimani</a>, <a href="Aske Plaat.html" title="Aske Plaat">Aske Plaat</a>, <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>2015</b>). <i>Ensemble UCT Needs High Exploitation</i>. <a class="external text" href="http://arxiv.org/abs/1509.08434.html" rel="nofollow">CoRR abs/1509.08434</a></li>
+<li> <a class="new" href="index.php?title=Johannes Heinrich&amp;action=edit&amp;redlink=1.html" title="Johannes Heinrich (page does not exist)">Johannes Heinrich</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2015</b>). <i>Smooth UCT Search in Computer Poker</i>. <a href="Conferences.html#IJCA2015" title="Conferences">IJCAI 2015</a>, <a class="external text" href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Publications files/smooth uct.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Xi Liang.html" title="Xi Liang">Xi Liang</a>, <a href="Ting-Han Wei.html" title="Ting-Han Wei">Ting-Han Wei</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a> (<b>2015</b>). <i>Solving Hex Openings Using Job-Level UCT Search</i>. <a href="ICGA Journal.html#38 3" title="ICGA Journal">ICGA Journal, Vol. 38, No. 3</a></li>
+<li> <a href="Naoki Mizukami.html" title="Naoki Mizukami">Naoki Mizukami</a>, <a class="new" href="index.php?title=Jun Suzuki&amp;action=edit&amp;redlink=1.html" title="Jun Suzuki (page does not exist)">Jun Suzuki</a>, <a class="new" href="index.php?title=Hirotaka Kameko&amp;action=edit&amp;redlink=1.html" title="Hirotaka Kameko (page does not exist)">Hirotaka Kameko</a>, <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a> (<b>2017</b>). <i>Exploration Bonuses Based on Upper Confidence Bounds for Sparse Reward Games</i>. <a href="Advances in Computer Games 15.html" title="Advances in Computer Games 15">Advances in Computer Games 15</a></li>
+<li> <a href="Jacek Ma%C5%84dziuk.html" title="Jacek Mańdziuk">Jacek Mańdziuk</a> (<b>2018</b>). <i>MCTS/UCT in Solving Real-Life Problems</i>. <a class="external text" href="https://www.springer.com/us/book/9783319679457" rel="nofollow">Advances in Data Analysis with Computational Intelligence Methods</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li>
+<li> <a class="new" href="index.php?title=Kiminori Matsuzaki&amp;action=edit&amp;redlink=1.html" title="Kiminori Matsuzaki (page does not exist)">Kiminori Matsuzaki</a> (<b>2018</b>). <i>Empirical Analysis of PUCT Algorithm with Evaluation Functions of Different Quality</i>. <a href="TAAI 2018.html" title="TAAI 2018">TAAI 2018</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://computer-go.org/pipermail/computer-go/2010-June/000376.html.html" rel="nofollow">Re: Chess vs Go // AI vs IA</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, June 02, 2010</li>
+<li> <a class="external text" href="http://www.lifein19x19.com/forum/viewtopic.php?f=18&amp;t=2184.html" rel="nofollow">Monte Carlo (upper confidence bounds applied to trees)</a> by ChessGO, <a class="external text" href="http://www.lifein19x19.com/forum/viewforum.php?f=18.html" rel="nofollow">Computer Go</a>, October 22, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38554.html" rel="nofollow">UCT surprise for checkers !</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, March 25, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42590.html" rel="nofollow">uct on gpu</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2012 » <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50721.html" rel="nofollow">My new book</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, January 02, 2014 » <a href="Opening Book.html" title="Opening Book">Opening Book</a></li></ul>
+<h2><span class="mw-headline" id="2015_..._2">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65964.html" rel="nofollow">Nebiyu-MCTS vs TSCP 1-0</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2017 » <a href="Nebiyu.html" title="Nebiyu">Nebiyu</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66125.html" rel="nofollow">Search traps in MCTS and chess</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, December 25, 2017 » <a href="Raghuram Ramanujan.html#UCT" title="Raghuram Ramanujan">Sampling-Based Planning</a></li>
+<li> <a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=32429.html" rel="nofollow">MCTS weakness wrt AB (via Daniel Shawul)</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, December 25, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66280.html" rel="nofollow">Announcing lczero</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2018 » <a href="Leela Chess Zero.html" title="Leela Chess Zero">Leela Chess Zero</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75484.html" rel="nofollow">uct algorithm bad at chess?</a> by Ofek Shochat, <a href="CCC.html" title="CCC">CCC</a>, October 21, 2020</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Monte_Carlo_tree_search#Exploration_and_exploitation" rel="nofollow">Exploration and exploitation - in Monte Carlo tree search from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Confidence_interval" rel="nofollow">Confidence interval from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Multi-armed_bandit" rel="nofollow">Multi-armed bandit from Wikipedia</a></li>
+<li> <a class="external text" href="https://github.com/theKGS/MCTS" rel="nofollow">GitHub - theKGS/MCTS: Java implementation of UCT based MCTS and Flat MCTS</a></li>
+<li> <a class="external text" href="https://senseis.xmp.net/?UCT" rel="nofollow">Sensei's Library: UCT</a></li>
+<li> <a class="external text" href="https://althofer.de/lange-nacht-jena.html" rel="nofollow">Lange Nacht der Wissenschaften - Long Night of Sciences Jena - 2007</a> by <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a>, <a href="Jakob Erdmann.html#UCT" title="Jakob Erdmann">MC and UCT poster</a> by <a href="Jakob Erdmann.html" title="Jakob Erdmann">Jakob Erdmann</a></li>
+<li> <a href="Category:Weather Report.html" title="Category:Weather Report">Weather Report</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Sweetnighter" rel="nofollow">Boogie Woogie Waltz</a>, 1974, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a>, <a href="Category:Wayne Shorter.html" title="Category:Wayne Shorter">Wayne Shorter</a>, <a href="Category:Alphonso Johnson.html" title="Category:Alphonso Johnson">Alphonso Johnson</a>, <a class="external text" href="https://www.allmusic.com/artist/darryl-brown-mn0001213839" rel="nofollow">Darryl Brown</a>, <a href="Category:Dom Um Rom%C3%A3o.html" title="Category:Dom Um Romão">Dom Um Romão</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/MRs5ROwfgW4?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a>, <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a> (<b>2006</b>). <i><a class="external text" href="http://www.computer-go.info/resources/bandit.html.html" rel="nofollow">Bandit based Monte-Carlo Planning</a></i> ECML-06, LNCS/LNAI 4212, <a class="external text" href="http://www.sztaki.hu/%7Eszcsaba/papers/ecml06.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="Marc Schoenauer.html" title="Marc Schoenauer">Marc Schoenauer</a>, <a href="Mich%C3%A8le Sebag.html" title="Michèle Sebag">Michèle Sebag</a>, <a href="Olivier Teytaud.html" title="Olivier Teytaud">Olivier Teytaud</a>, <a href="Levente Kocsis.html" title="Levente Kocsis">Levente Kocsis</a>, <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Csaba Szepesv%C3%A1ri.html" title="Csaba Szepesvári">Csaba Szepesvári</a> (<b>2012</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=2093548.2093574.html" rel="nofollow">The Grand Challenge of Computer Go: Monte Carlo Tree Search and Extensions</a></i>. <a href="ACM.html#Communications" title="ACM">Communications of the ACM</a>, Vol. 55, No. 3, <a class="external text" href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Applications files/grand-challenge.pdf.html" rel="nofollow">pdf preprint</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">see UCB1 in <a href="Peter Auer.html" title="Peter Auer">Peter Auer</a>, <a href="Nicol%C3%B2 Cesa-Bianchi.html" title="Nicolò Cesa-Bianchi">Nicolò Cesa-Bianchi</a>, <a href="Paul Fischer.html" title="Paul Fischer">Paul Fischer</a> (<b>2002</b>). <i><a class="external text" href="http://link.springer.com/article/10.1023%2FA%3A1013689704352.html" rel="nofollow">Finite-time Analysis of the Multiarmed Bandit Problem</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Machine_Learning_%28journal%29" rel="nofollow">Machine Learning</a>, Vol. 47, No. 2</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Monte_Carlo_tree_search#Exploration_and_exploitation" rel="nofollow">Exploration and exploitation - in Monte Carlo tree search from Wikipedia</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"> <a href="Sylvain Gelly.html" title="Sylvain Gelly">Sylvain Gelly</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2011</b>). <i>Monte-Carlo tree search and rapid action value estimation in computer Go</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 175, No. 11, <a class="external text" href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Applications files/mcrave.pdf.html" rel="nofollow">preprint as pdf</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Christopher D. Rosin.html" title="Christopher D. Rosin">Christopher D. Rosin</a> (<b>2011</b>). <i><a class="external text" href="https://link.springer.com/article/10.1007/s10472-011-9258-6" rel="nofollow">Multi-armed bandits with episode context</a></i>. Annals of Mathematics and Artificial Intelligence, Vol. 61, No. 3, <a class="external text" href="http://gauss.ececs.uc.edu/Workshops/isaim2010/papers/rosin.pdf.html" rel="nofollow">ISAIM 2010 pdf</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Shih-Chieh Huang.html" title="Shih-Chieh Huang">Aja Huang</a>, <a href="Chris J. Maddison.html" title="Chris J. Maddison">Chris J. Maddison</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a class="new" href="index.php?title=George van den Driessche&amp;action=edit&amp;redlink=1.html" title="George van den Driessche (page does not exist)">George van den Driessche</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a class="new" href="index.php?title=Veda Panneershelvam&amp;action=edit&amp;redlink=1.html" title="Veda Panneershelvam (page does not exist)">Veda Panneershelvam</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a class="new" href="index.php?title=Sander Dieleman&amp;action=edit&amp;redlink=1.html" title="Sander Dieleman (page does not exist)">Sander Dieleman</a>, <a class="new" href="index.php?title=Dominik Grewe&amp;action=edit&amp;redlink=1.html" title="Dominik Grewe (page does not exist)">Dominik Grewe</a>, <a class="new" href="index.php?title=John Nham&amp;action=edit&amp;redlink=1.html" title="John Nham (page does not exist)">John Nham</a>, <a class="new" href="index.php?title=Nal Kalchbrenner&amp;action=edit&amp;redlink=1.html" title="Nal Kalchbrenner (page does not exist)">Nal Kalchbrenner</a>, <a href="Ilya Sutskever.html" title="Ilya Sutskever">Ilya Sutskever</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a class="new" href="index.php?title=Madeleine Leach&amp;action=edit&amp;redlink=1.html" title="Madeleine Leach (page does not exist)">Madeleine Leach</a>, <a href="Koray Kavukcuoglu.html" title="Koray Kavukcuoglu">Koray Kavukcuoglu</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2016</b>). <i><a class="external text" href="http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html.html" rel="nofollow">Mastering the game of Go with deep neural networks and tree search</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Nature_%28journal%29" rel="nofollow">Nature</a>, Vol. 529</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/LeelaChessZero/lc0/wiki/FAQ" rel="nofollow">FAQ · LeelaChessZero/lc0 Wiki · GitHub</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://computer-go.org/pipermail/computer-go/2010-June/000376.html.html" rel="nofollow">Re: Chess vs Go // AI vs IA</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, June 02, 2010</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a href="Raghuram Ramanujan.html" title="Raghuram Ramanujan">Raghuram Ramanujan</a>, <a href="Ashish Sabharwal.html" title="Ashish Sabharwal">Ashish Sabharwal</a>, <a href="Bart Selman.html" title="Bart Selman">Bart Selman</a> (<b>2010</b>). <i><a class="external text" href="http://www.aaai.org/ocs/index.php/ICAPS/ICAPS10/paper/view/1458.html" rel="nofollow">On Adversarial Search Spaces and Sampling-Based Planning</a></i>. <a class="external text" href="http://www.aaai.org/Press/Proceedings/icaps10.php.html" rel="nofollow">ICAPS 2010</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66125.html" rel="nofollow">Search traps in MCTS and chess</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, December 25, 2017</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Crossings_%28game%29" rel="nofollow">Crossings from Wikipedia</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"> <a class="external text" href="https://en.wikipedia.org/wiki/Epaminondas_%28game%29" rel="nofollow">Epaminondas from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722085331
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.043 seconds
+Real time usage: 0.046 seconds
+Preprocessor visited node count: 264/1000000
+Preprocessor generated node count: 546/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2096-0!canonical and timestamp 20240722085331 and revision id 21876
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=UCT&amp;oldid=21876">https://www.chessprogramming.org/index.php?title=UCT&amp;oldid=21876</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Quotes.html" title="Category:Quotes">Quotes</a></li><li><a href="Category:Weather Report.html" title="Category:Weather Report">Weather Report</a></li><li><a href="Category:Alphonso Johnson.html" title="Category:Alphonso Johnson">Alphonso Johnson</a></li><li><a href="Category:Dom Um Rom%C3%A3o.html" title="Category:Dom Um Romão">Dom Um Romão</a></li><li><a href="Category:Wayne Shorter.html" title="Category:Wayne Shorter">Wayne Shorter</a></li><li><a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=UCT&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="UCT.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:UCT&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="UCT.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=UCT&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=UCT&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/UCT.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/UCT.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=UCT&amp;oldid=21876.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=UCT&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 23 October 2020, at 12:36.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=UCT&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.043","walltime":"0.046","ppvisitednodes":{"value":264,"limit":1000000},"ppgeneratednodes":{"value":546,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722085331","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

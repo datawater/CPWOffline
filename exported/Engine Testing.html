@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Engine Testing - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Engine_Testing","wgTitle":"Engine Testing","wgCurRevisionId":27016,"wgRevisionId":27016,"wgArticleId":1257,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Jon Christensen","Palle Mikkelborg","Terje Rypdal"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Engine_Testing","wgRelevantArticleId":1257,"wgRequestId":"Zp7DO7G9G67YuqUGxlgbYwAAAAE","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Engine_Testing rootpage-Engine_Testing skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Engine Testing</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * Engine Testing</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://sanseverything.wordpress.com/2008/01/16/hope-springs-eternal/.html"><img alt="" class="thumbimage" height="222" src="images/thumb/c/ce/WileECoyote.jpg/300px-WileECoyote.jpg" srcset="/images/thumb/c/ce/WileECoyote.jpg/450px-WileECoyote.jpg 1.5x, /images/c/ce/WileECoyote.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:WileECoyote.jpg.html" title="Enlarge"></a></div>The ever-optimistic <a class="external text" href="https://en.wikipedia.org/wiki/Wile_E._Coyote_and_Road_Runner" rel="nofollow">Wile E. Coyote</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Engine Testing</b>,<br/>
+the process either to eliminate <a class="external text" href="https://en.wikipedia.org/wiki/Software_bug" rel="nofollow">bugs</a> and to measure <a href="Playing Strength.html" title="Playing Strength">performance</a> of a chess engine. New implementations of <a href="Move Generation.html" title="Move Generation">move generation</a> are tested with <a href="Perft.html" title="Perft">Perft</a>, while new features and <a href="Automated Tuning.html" title="Automated Tuning">tuning</a> of <a href="Search.html" title="Search">search</a> and <a href="Evaluation.html" title="Evaluation">evaluation</a> are verified via <a href="Sequential Probability Ratio Test.html" title="Sequential Probability Ratio Test">SPRT</a> testing, (historically) <a href="Test-Positions.html" title="Test-Positions">test-positions</a> and by playing <a href="Match Statistics.html" title="Match Statistics">matches</a> against other engines. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bug Hunting"><span class="tocnumber">1</span> <span class="toctext">Bug Hunting</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Analyzing"><span class="tocnumber">2</span> <span class="toctext">Analyzing</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Tuning"><span class="tocnumber">3</span> <span class="toctext">Tuning</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SPRT"><span class="tocnumber">4</span> <span class="toctext">SPRT</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Test-Positions"><span class="tocnumber">5</span> <span class="toctext">Test-Positions</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Matches"><span class="tocnumber">6</span> <span class="toctext">Matches</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Time Controls"><span class="tocnumber">6.1</span> <span class="toctext">Time Controls</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Opening"><span class="tocnumber">6.2</span> <span class="toctext">Opening</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Tournament Manager"><span class="tocnumber">6.3</span> <span class="toctext">Tournament Manager</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Frameworks"><span class="tocnumber">6.4</span> <span class="toctext">Frameworks</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Chess Server"><span class="tocnumber">6.5</span> <span class="toctext">Chess Server</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Statistics"><span class="tocnumber">6.6</span> <span class="toctext">Statistics</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Ratings"><span class="tocnumber">6.7</span> <span class="toctext">Ratings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Test Results"><span class="tocnumber">7</span> <span class="toctext">Test Results</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Notable Bugs"><span class="tocnumber">8</span> <span class="toctext">Notable Bugs</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Publications"><span class="tocnumber">9</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Forum Posts"><span class="tocnumber">10</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#1995 ..."><span class="tocnumber">10.1</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2000 ..."><span class="tocnumber">10.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2005 ..."><span class="tocnumber">10.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2010 ..."><span class="tocnumber">10.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2015 ..."><span class="tocnumber">10.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#2020 ..."><span class="tocnumber">10.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#External Links"><span class="tocnumber">11</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Bug_Hunting">Bug Hunting</span></h1>
+<ul><li> <a href="Perft.html" title="Perft">Perft</a> (<a href="Perft Results.html" title="Perft Results">Perft Results</a>)</li>
+<li> <a href="Debugging.html" title="Debugging">Debugging</a></li></ul>
+<h1><span class="mw-headline" id="Analyzing">Analyzing</span></h1>
+<ul><li> <a href="Logging.html" title="Logging">Logging</a></li>
+<li> <a class="new" href="index.php?title=Profiling&amp;action=edit&amp;redlink=1.html" title="Profiling (page does not exist)">Profiling</a></li>
+<li> <a href="Search Statistics.html" title="Search Statistics">Search Statistics</a></li></ul>
+<h1><span class="mw-headline" id="Tuning">Tuning</span></h1>
+<ul><li> <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a></li>
+<li> <a href="Engine Similarity.html" title="Engine Similarity">Engine Similarity</a></li></ul>
+<h1><span class="mw-headline" id="SPRT">SPRT</span></h1>
+<p>The modern, preferred method to test strength modifications.
+</p>
+<ul><li> <a href="Sequential Probability Ratio Test.html" title="Sequential Probability Ratio Test">Sequential Probability Ratio Test</a></li></ul>
+<h1><span class="mw-headline" id="Test-Positions">Test-Positions</span></h1>
+<p>Running sets of test-positions with number of solutions per fixed time-frame is useful to prove whether things are broken after program changes or to get hints about missing knowledge. But one should be careful to tune engines based on test-position results, since solving (possible tactical) test-positions does not necessarily correlate with practical <a href="Playing Strength.html" title="Playing Strength">playing strength</a> in matches against other opponents.
+</p>
+<ul><li> <a href="Test-Positions.html" title="Test-Positions">Test-Positions</a></li></ul>
+<p><span id="Matches"></span>
+</p>
+<h1><span class="mw-headline" id="Matches">Matches</span></h1>
+<p>Most testing involves running different versions of a program in matches, and comparing results.
+</p>
+<h2><span class="mw-headline" id="Time_Controls">Time Controls</span></h2>
+<p>Generally speaking, for testing changes that don't alter the search tree itself, but only affect performance (eg. <a href="Move Generation.html" title="Move Generation">move generation</a>) can be tested with given fixed nodes, fixed time or fixed depth. In all other cases the <a href="Time Management.html" title="Time Management">time management</a> should be left to the engine to simulate real tournament conditions. On the other hand, <a href="Debugging.html" title="Debugging">debugging</a> is much easier under fixed conditions as the games become deterministic.
+</p><p>A side from the type of <a href="Time Management.html#Time Controls" title="Time Management">time control</a> one also has to decide on how much time should be spent per game, ie. what the average quality of the games should be like. While one can test more changes in the a certain time at short time controls, it is also relevant how a certain change scales to different strengths. So for example should one increase the <a href="Depth Reduction R.html" title="Depth Reduction R">R</a> in <a href="Null Move Pruning.html" title="Null Move Pruning">Null move pruning</a> to 3 in depths &gt; 7, this change may only be effectively tested on time controls where this new condition is triggered frequently enough, ie. where the average search depth is far greater than seven. It is hard to generalize, but on average changes of the search functions (<a href="Late Move Reductions.html" title="Late Move Reductions">LMR</a>, <a href="Null Move.html" title="Null Move">nullmove</a>, <a href="Futility Pruning.html" title="Futility Pruning">futility</a> or similar <a href="Pruning.html" title="Pruning">pruning</a>, <a href="Reductions.html" title="Reductions">reductions</a> and <a href="Extensions.html" title="Extensions">extensions</a> ) tend to be more sensitive to the time control than the tuning of <a href="Evaluation.html" title="Evaluation">evaluation</a> parameters.
+</p>
+<h2><span class="mw-headline" id="Opening">Opening</span></h2>
+<p>During testing the engines should ideally play the same style of openings they would play in a normal tournament, so not to optimize them for different types of positions. One option is to use the engines own <a href="Opening Book.html" title="Opening Book">opening book</a> or one can use <a href="Test-Positions.html#OpeningSuites" title="Test-Positions">opening suites</a>, a set of quiet test positions. In the latter case the same opening suit would be used for each tournament conducted and furthermore each position is played a second time with colors reversed. With these measures one can try to minimize the disparity between tests caused by different openings.
+</p>
+<h2><span class="mw-headline" id="Tournament_Manager">Tournament Manager</span></h2>
+<p><a href="User Interface.html" title="User Interface">User interfaces</a> or <a href="CLI.html" title="CLI">command line tools</a> for <a href="UCI.html" title="UCI">UCI</a> and <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> compatible engines in engine-engine matches are mentioned under <a href="Tournament Manager.html" title="Tournament Manager">Tournament Manager</a>.
+</p>
+<h2><span class="mw-headline" id="Frameworks">Frameworks</span></h2>
+<ul><li> <a href="Stockfish.html#TestingFramework" title="Stockfish">Fishtest</a></li>
+<li> <a href="OpenBench.html" title="OpenBench">OpenBench</a></li></ul>
+<p><span id="ChessServer"></span>
+</p>
+<h2><span class="mw-headline" id="Chess_Server">Chess Server</span></h2>
+<p>One can also test an engine's performance by comparing it to other programs on the various internet platforms <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . In this case the different hardware and features like different <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a> or <a href="Opening Book.html" title="Opening Book">Opening Books</a> have to be considered.
+</p>
+<ul><li> <a href="Chess Server.html" title="Chess Server">Chess Server</a></li>
+<li> <a href="Tournaments and Matches.html" title="Tournaments and Matches">Tournaments</a></li></ul>
+<h2><span class="mw-headline" id="Statistics">Statistics</span></h2>
+<p>The question whether certain results actually indicates a <a href="Playing Strength.html" title="Playing Strength">strength</a> increase or not, can be answered with 
+</p>
+<ul><li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Pawn Advantage, Win Percentage, and Elo</a></li>
+<li> <a href="LOS Table.html" title="LOS Table">LOS Table</a></li></ul>
+<p><span id="Ratings"></span>
+</p>
+<h2><span class="mw-headline" id="Ratings">Ratings</span></h2>
+<ul><li> <a class="new" href="index.php?title=Rating System&amp;action=edit&amp;redlink=1.html" title="Rating System (page does not exist)">Rating System</a></li>
+<li> <a href="Engine Rating Lists.html" title="Engine Rating Lists">Engine Rating Lists</a></li></ul>
+<p><span id="TestResults"></span>
+</p>
+<h1><span class="mw-headline" id="Test_Results">Test Results</span></h1>
+<ul><li> <a href="Null Move Pruning Test Results.html" title="Null Move Pruning Test Results">Null Move Pruning Test Results</a></li>
+<li> <a href="Late Move Reduction Test Results.html" title="Late Move Reduction Test Results">Late Move Reduction Test Results</a></li></ul>
+<p><span id="bugs"></span>
+</p>
+<h1><span class="mw-headline" id="Notable_Bugs">Notable Bugs</span></h1>
+<ul><li> <a href="Brute Force (Program).html" title="Brute Force (Program)">Brute Force (Program)</a>, <a href="En passant.html#bugs" title="En passant">En passant bug</a>, <a href="ACM 1977.html" title="ACM 1977">ACM 1977</a> and <a href="ACM 1978.html" title="ACM 1978">ACM 1978</a></li>
+<li> <a href="Coko.html#MateBug" title="Coko">Coko - Mate in One?</a>, <a href="ACM 1971.html" title="ACM 1971">ACM 1971</a></li>
+<li> <a href="4th Computer Olympiad.html#PromotionBug" title="4th Computer Olympiad">Chess 2175X vs. Genesis</a>, <a href="Promotions.html" title="Promotions">Promotion</a> bug, <a href="4th Computer Olympiad.html#Chess" title="4th Computer Olympiad">4th Computer Olympiad 1992</a></li>
+<li> <a href="WMCCC 1993.html#NimzoBug" title="WMCCC 1993">Nimzo's winning white-black bug</a>, <a href="WMCCC 1993.html" title="WMCCC 1993">WMCCC 1993</a></li>
+<li> <a href="Novag Micro Chess.html#CastlingBug" title="Novag Micro Chess">Novag Micro Chess - Castling bug</a>, <a href="CPWTIPC 1981.html" title="CPWTIPC 1981">CPWTIPC 1981</a></li>
+<li> <a href="Proscha.html#bugs" title="Proscha">Proscha</a> capturing its own king versus <a href="Daja.html" title="Daja">Daja</a>, <a href="First GI Computer Chess Tournament.html" title="First GI Computer Chess Tournament">First GI Computer Chess Tournament 1975</a></li>
+<li> <a href="WMCCC 1995.html#TalXXXX" title="WMCCC 1995">System Tal vs. XXXX</a>, <a href="Promotions.html" title="Promotions">Promotion</a> bug, <a href="WMCCC 1995.html" title="WMCCC 1995">WMCCC 1995</a></li>
+<li> <a href="XiniX.html" title="XiniX">Xinix - Mate in One</a>, <a href="DOCCC 2000.html" title="DOCCC 2000">DOCCC 2000</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a>, <a href="Paul Rushton.html" title="Paul Rushton">Paul Rushton</a> (<b>1973</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=805703.html" rel="nofollow">Mechanisms for Comparing Chess Programs</a>.</i> <a href="ACM 1973.html" title="ACM 1973">ACM Annual Conference</a>, <a class="external text" href="http://webdocs.cs.ualberta.ca/~tony/OldPapers/Marsland-Rushton-ACM73.html" rel="nofollow">pdf</a></li>
+<li> <a href="Tim Breitkreutz.html" title="Tim Breitkreutz">Tim Breitkreutz</a>, <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>1984</b>). <i>Computer vs Computer via Computer</i>. <a href="ICGA Journal.html#7 4" title="ICGA Journal">ICCA Journal, Vol. 7, No. 4</a>, reprinted in <a href="Computer Chess Reports.html" title="Computer Chess Reports">Computer Chess Reports 1985</a>, Vol. 3, No. 2 » <a href="Phoenix.html" title="Phoenix">Phoenix</a>, <a href="Super Constellation.html" title="Super Constellation">Super Constellation</a></li>
+<li> <a href="John Stanback.html" title="John Stanback">John Stanback</a> (<b>1990</b>). <i>Supercomputing '90: Computer-Chess Testing and Programming Session</i>. <a href="ICGA Journal.html#13 4" title="ICGA Journal">ICCA Journal, Vol. 13, No. 4</a> » <a href="ACM 1990.html" title="ACM 1990">ACM 1990</a></li>
+<li> <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a> (<b>1993</b>). <i>How Our PC Chess Programs Are Developed</i>. <a href="Computer Chess Reports.html" title="Computer Chess Reports">Computer Chess Reports</a> 1992-93, Vol. 3, No. 2, pp. 12</li>
+<li> <a href="Thomas Mally.html" title="Thomas Mally">Thomas Mally</a> (<b>1993</b>). <i>Matt in Wieviel?</i> <a href="PC Schach.html" title="PC Schach">PC Schach</a> 3/93 (German)</li>
+<li> <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2007</b>). <i><a class="external text" href="http://www.aifactory.co.uk/newsletter/2007 04 stat minefields.htm.html" rel="nofollow">Statistical Minefields with Version Testing</a></i>. <a href="AI Factory.html" title="AI Factory">AI Factory</a>, Winter 2007 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a href="J%C3%B3nhei%C3%B0ur %C3%8Dsleifsd%C3%B3ttir.html" title="Jónheiður Ísleifsdóttir">Jónheiður Ísleifsdóttir</a> (<b>2007</b>). <i>GTQL: A Query Language for Game Trees</i>. M.Sc. thesis, <a class="external text" href="https://en.wikipedia.org/wiki/Reykjav%C3%ADk_University" rel="nofollow">Reykjavík University</a>, <a class="external text" href="http://www.ru.is/lisalib/getfile.aspx?itemid=9655.html" rel="nofollow">pdf</a></li>
+<li> <a href="J%C3%B3nhei%C3%B0ur %C3%8Dsleifsd%C3%B3ttir.html" title="Jónheiður Ísleifsdóttir">Jónheiður Ísleifsdóttir</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>. (<b>2008</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-87608-3 20.html" rel="nofollow">GTQ: A Language and Tool for Game-Tree Analysis</a></i>. <a href="CG 2008.html" title="CG 2008">CG 2008</a>, <a class="external text" href="http://www.ru.is/faculty/yngvi/pdf/IsleifsdottirB08.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/2aaa054105f1445e.html" rel="nofollow">Testing Chess Programs</a> by <a href="Jan Eric Larsson.html" title="Jan Eric Larsson">Jan Eric Larsson</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 09, 1996</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=13569" rel="nofollow">Self-test and others rating stuffs...</a> by <a href="Christophe Th%C3%A9ron.html" title="Christophe Théron">Christophe Théron</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=16851" rel="nofollow">Proposal: New testing methods for SSDF (1)</a> by <a href="Jeroen Noomen.html" title="Jeroen Noomen">Jeroen Noomen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 13, 1998</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=176716" rel="nofollow">Using 2 machines for matches (Linux)</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, June 24, 2001 » <a href="XBoard.html" title="XBoard">XBoard</a>, <a href="Linux.html" title="Linux">Linux</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=189308" rel="nofollow">A proposed WAC replacement for testing</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, September 18, 2001 » <a href="Win at Chess.html" title="Win at Chess">Win at Chess</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=275347" rel="nofollow">Value of playing different versions of a program against each other</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, January 06, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=293815" rel="nofollow">testing of evaluation function</a> by Steven Chu, <a href="CCC.html" title="CCC">CCC</a>, April 17, 2003 » <a href="Evaluation.html" title="Evaluation">Evaluation</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=296689" rel="nofollow">Testing the reliability of forward pruning</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 15, 2003 » <a href="Pruning.html" title="Pruning">Pruning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334370" rel="nofollow">To programmers: Hints for testing after a partial rewrite</a> by <a href="Federico Andr%C3%A9s Corigliano.html" title="Federico Andrés Corigliano">Federico Corigliano</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=400589" rel="nofollow">Is there a way?</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, December 13, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=484357" rel="nofollow">table for detecting significant difference between two engines</a> by Joseph Ciarrochi, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5866.html" rel="nofollow">test methodology</a> by <a href="Giuseppe Cannella.html" title="Giuseppe Cannella">Giuseppe Cannella</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, November 13, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5955.html" rel="nofollow">Testing and debugging chess engines</a> by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, December 03, 2006</li></ul>
+<p><b>2007</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13557.html" rel="nofollow">Programmer bug hunt challenge</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 2007 » <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a>, <a href="En passant.html" title="En passant">En passant</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13800.html" rel="nofollow">a beat b,b beat c,c beat a question</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, May 16, 2007 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=16412.html" rel="nofollow">An objective test process for the rest of us?</a> by <a href="Nicolai Czempin.html" title="Nicolai Czempin">Nicolai Czempin</a>, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17947.html" rel="nofollow">My new testing scheme</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, November 20, 2007</li></ul>
+<p><b>2008</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=20082.html" rel="nofollow">Test you engine</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22832.html" rel="nofollow">New testing thread</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, August 07, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=24590.html" rel="nofollow">Comparing two version of the same engine</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, October 26, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=25461.html" rel="nofollow">Debate: testing at fast time controls</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, December 15, 2008</li></ul>
+<p><b>2009</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27024.html" rel="nofollow">Cutechess-cli: A command line tool for engine-engine matches</a>, by <a href="Ilari Pihlajisto.html" title="Ilari Pihlajisto">Ilari Pihlajisto</a>, <a href="CCC.html" title="CCC">CCC</a>, March 16, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=28130.html" rel="nofollow">Testing procedure</a> by <a href="Matt Gingell.html" title="Matt Gingell">Matt Gingell</a>, <a href="CCC.html" title="CCC">CCC</a>, May 27, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=293506&amp;t=27024.html" rel="nofollow">Cutechess-cli version 0.1.8 released</a> by <a href="Ilari Pihlajisto.html" title="Ilari Pihlajisto">Ilari Pihlajisto</a>, <a href="CCC.html" title="CCC">CCC</a>, September 29, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30513.html" rel="nofollow">A reason for testing at fixed number of nodes</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, November 06, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30550.html" rel="nofollow">different kinds of testing</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, November 09, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30565.html" rel="nofollow">more on fixed nodes</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, November 10, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=32254.html" rel="nofollow">XBoard and epd tournament</a> by <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a>, <a href="CCC.html" title="CCC">CCC</a>, January 31, 2010 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33685.html" rel="nofollow">Long game vs short game testing</a> by <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a>, <a href="CCC.html" title="CCC">CCC</a>, April 08, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35537.html" rel="nofollow">Pairings generation based on a big PGN file</a> by <a href="Harun Taner.html" title="Harun Taner">Harun Taner</a>, <a href="CCC.html" title="CCC">CCC</a>, July 22, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?p=358600.html" rel="nofollow">hiatus good for bug-finding</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, June 27, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39255.html" rel="nofollow">testing question</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, June 01, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39390.html" rel="nofollow">Debugging regression tests</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2011 <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup></li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41876.html" rel="nofollow">fast game testing</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=477389&amp;t=44706&amp;sid=8b10031146b44f86ac4c4a129debf451.html" rel="nofollow">Your best bug ?</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, August 06, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45158.html" rel="nofollow">Yet Another Testing Question</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, September 15, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45287.html" rel="nofollow">Another testing question</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, September 23, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46572.html" rel="nofollow">A word for casual testers</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, December 25, 2012</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46759.html" rel="nofollow">A poor man's testing environment</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2013 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46948.html" rel="nofollow">engine-engine testing isues</a> by <a href="Jens B%C3%A6k Nielsen.html" title="Jens Bæk Nielsen">Jens Bæk Nielsen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 20, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47407.html" rel="nofollow">Beta for Stockfish distributed testing</a> by <a href="Gary Linscott.html" title="Gary Linscott">Gary</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2013 » <a href="Stockfish.html#TestingFramework" title="Stockfish">Fishtest</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47885.html" rel="nofollow">Fishtest Distributed Testing Framework</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, May 01, 2013  » <a href="Stockfish.html#TestingFramework" title="Stockfish">Fishtest</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48626.html" rel="nofollow">cutechess-cli 0.6.0 released</a> by <a href="Ilari Pihlajisto.html" title="Ilari Pihlajisto">Ilari Pihlajisto</a>, <a href="CCC.html" title="CCC">CCC</a>, July 12, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49054.html" rel="nofollow">fast testing NIT algorithm</a> by <a href="Don Dailey.html" title="Don Dailey">Don Dailey</a>, <a href="CCC.html" title="CCC">CCC</a>, August 22, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49103.html" rel="nofollow">OICS: Computers Only ICS based Chess server for anyone</a> by <a class="new" href="index.php?title=Joshua Shriver&amp;action=edit&amp;redlink=1.html" title="Joshua Shriver (page does not exist)">Joshua Shriver</a>, <a href="CCC.html" title="CCC">CCC</a>, August 26, 2013 » <a class="new" href="index.php?title=OICS&amp;action=edit&amp;redlink=1.html" title="OICS (page does not exist)">OICS</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51383.html" rel="nofollow">testing procedure</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, February 23, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57437.html" rel="nofollow">Bullet vs regular time control, say 40/4m CCRL/CEGT</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, August 29, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58359.html" rel="nofollow">Static evaluation test posistions</a> by <a href="Shawn Chidester.html" title="Shawn Chidester">Shawn Chidester</a>, <a href="CCC.html" title="CCC">CCC</a>, November 25, 2015</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58359&amp;start=2.html" rel="nofollow">Re: Static evaluation test posistions</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, November 26, 2015 » <a href="Python.html" title="Python">Python</a></dd></dl>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59038.html" rel="nofollow">Ordo 1.0.9 (new features for testers)</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, January 25, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59984.html" rel="nofollow">cluster versus single server</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, April 28, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61422.html" rel="nofollow">Testing using many computers and architectures</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61988.html" rel="nofollow">command line engine match?</a> by <a href="Erin Dame.html" title="Erin Dame">Erin Dame</a>, <a href="CCC.html" title="CCC">CCC</a>, November 06, 2016 » <a href="CLI.html" title="CLI">CLI</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=61991.html" rel="nofollow">Looking for an epd file for sanity checks...</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, November 06, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62576.html" rel="nofollow">Testing with different EPD suits for search vs eval changes</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, December 23, 2016 </li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62922.html" rel="nofollow">sprt tourney manager</a> by <a href="Richard Delorme.html" title="Richard Delorme">Richard Delorme</a>, <a href="CCC.html" title="CCC">CCC</a>, January 24, 2017 »  <a href="Amoeba.html#TournamentManager" title="Amoeba">Amoeba Tournament Manager</a>, <a href="Match Statistics.html#SPRT" title="Match Statistics">SPRT</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63001.html" rel="nofollow">how to properly test the changes to the engine ?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, February 01, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63119.html" rel="nofollow">How to go about chasing a bug like this?</a> by <a href="Colin Jenkins.html" title="Colin Jenkins">Colin Jenkins</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2017 » <a href="Debugging.html" title="Debugging">Debugging</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63454.html" rel="nofollow">How to find SMP bugs ?</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2017 »  <a href="Debugging.html" title="Debugging">Debugging</a>, <a href="Lazy SMP.html" title="Lazy SMP">Lazy SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63555.html" rel="nofollow">Testing for Move Ordering Improvements</a> by <a class="new" href="index.php?title=Cheney Nattress&amp;action=edit&amp;redlink=1.html" title="Cheney Nattress (page does not exist)">Cheney Nattress</a>, <a href="CCC.html" title="CCC">CCC</a>, March 25, 2017 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a>, <a href="Search Statistics.html" title="Search Statistics">Search Statistics</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64356.html" rel="nofollow">Testing endgame strength</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, June 21, 2017 » <a href="Endgame.html" title="Endgame">Endgame</a>, <a href="RuyDos.html" title="RuyDos">RuyDos</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64358.html" rel="nofollow">Opening testing suites efficiency</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, June 21, 2017 » <a href="Opening.html" title="Opening">Opening</a>, <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64394.html" rel="nofollow">Testing A against B by playing a pool of others</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, June 24, 2017 » <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64441.html" rel="nofollow">Core behaviour</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schroder</a>, <a href="CCC.html" title="CCC">CCC</a>, June 28, 2017 » <a href="Process.html" title="Process">Process</a>, <a href="Thread.html" title="Thread">Thread</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64519.html" rel="nofollow">Engine testing &amp; error margin ?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65766.html" rel="nofollow">Engines for testing (Linux, fast time control)</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2017 » <a href="Linux.html" title="Linux">Linux</a></li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67485.html" rel="nofollow">Issue with self play testing</a> by <a href="Charles Roberson.html" title="Charles Roberson">Charles Roberson</a>, <a href="CCC.html" title="CCC">CCC</a>, May 18, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68531.html" rel="nofollow">Basic automated testing</a> by Josh Odom, <a href="CCC.html" title="CCC">CCC</a>, September 28, 2018</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68531&amp;start=6.html" rel="nofollow">Re:Basic automated testing</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, September 30, 2018 » <a href="OpenBench.html" title="OpenBench">OpenBench</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69284.html" rel="nofollow">testing consistency</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, December 16, 2018 </li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70383.html" rel="nofollow">Any testing framwork similair to Fishtest that can be run locally ?</a> by  <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, April 02, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71848.html" rel="nofollow">self test</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, September 18, 2019</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73129.html" rel="nofollow">EPD destruction tests</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73208.html" rel="nofollow">EPD destruction tests, part 2</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74503.html" rel="nofollow">Looking for automatic Engine Testing Software</a> by <a href="Oliver Brausch.html" title="Oliver Brausch">Oliver Brausch</a>, <a href="CCC.html" title="CCC">CCC</a>, July 19, 2020</li></ul>
+<p><b>2021</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76225.html" rel="nofollow">Testing strategies for my engines playing strength</a> by Thomas Jahn, <a href="CCC.html" title="CCC">CCC</a>, January 04, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76536.html" rel="nofollow">Effect of adjudication and TC on testing process</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2021 » <a href="Minic.html" title="Minic">Minic</a></li></ul>
+<p><b>2022</b>
+</p>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79276" rel="nofollow">Strategies to unit testing the search</a> by Olexiy Svitashev, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2022 » <a href="Search.html" title="Search">Search</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79280" rel="nofollow">How do you know you improved ?</a> by Philippe Chevalier, <a href="CCC.html" title="CCC">CCC</a>, February 03, 2022</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://ajonsson.kapsi.fi/cutechess.html.html" rel="nofollow">Cute Chess</a></li>
+<li> <a class="external text" href="https://github.com/cutechess/cutechess" rel="nofollow">cutechess · GitHub</a></li>
+<li> <a class="external text" href="https://github.com/AndyGrant/OpenBench" rel="nofollow">GitHub - OpenBench a Distributed SPRT Testing Framework for Chess Engines</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a> » <a href="OpenBench.html" title="OpenBench">OpenBench</a>, <a href="Match Statistics.html#SPRT" title="Match Statistics">SPRT</a> </li>
+<li> <a class="external text" href="https://github.com/ChrisWhittington/Chess-EPDs" rel="nofollow">GitHub - ChrisWhittington/Chess-EPDs: Various EPD test suites</a> by <a href="Chris Whittington.html" title="Chris Whittington">Chris Whittington</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Regression_testing" rel="nofollow">Regression testing from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.sp-cc.de/index.htm.html" rel="nofollow">SPCC</a> by <a class="new" href="index.php?title=Stefan Pohl&amp;action=edit&amp;redlink=1.html" title="Stefan Pohl (page does not exist)">Stefan Pohl</a></li>
+<li> <a class="external text" href="http://research.microsoft.com/en-us/projects/chess/.html" rel="nofollow">CHESS - Microsoft Research</a> a tool for finding and reproducing <a class="external text" href="https://en.wikipedia.org/wiki/Unusual_software_bug" rel="nofollow">Heisenbugs</a> in concurrent programs.</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Engine_test_stand" rel="nofollow">Engine test stand from Wikipedia</a></li>
+<li> <a href="Category:Terje Rypdal.html" title="Category:Terje Rypdal">Terje Rypdal Group</a> feat. <a href="Category:Palle Mikkelborg.html" title="Category:Palle Mikkelborg">Palle Mikkelborg</a>, <a class="external text" href="https://de.wikipedia.org/wiki/Haakon_Graf" rel="nofollow">Håkon Graf</a>, <a class="external text" href="http://no.wikipedia.org/wiki/Sveinung Hovensj%C3%B8.html" rel="nofollow">Sveinung Hovensjø</a> and <a href="Category:Jon Christensen.html" title="Category:Jon Christensen">Jon Christensen</a> -  <a class="external text" href="http://no.wikipedia.org/wiki/Per Ulv.html" rel="nofollow">Per Ulv</a>, 1978, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/B5HwFDVWzFs?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://sanseverything.wordpress.com/2008/01/16/hope-springs-eternal/.html" rel="nofollow">Hope Springs Eternal</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Category:Internet_chess_servers" rel="nofollow">Internet chess servers from Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.xs4all.nl/~timkr/chess2/honor.htm.html" rel="nofollow">Defending Humanity's Honor</a> by <a class="external text" href="https://en.wikipedia.org/wiki/Tim_Krabb%C3%A9" rel="nofollow">Tim Krabbé</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Regression_testing" rel="nofollow">Regression testing from Wikipedia</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.top-5000.nl/tuning.htm.html" rel="nofollow">Testing a chess engine from the ground up</a> from <a class="external text" href="http://www.top-5000.nl/.html" rel="nofollow">Home of the Dutch Rebel</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></span>
+</li>
+</ol></div>
+<p><b><a href="Main Page.html" title="Main Page">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722084503
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.034 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 183/1000000
+Preprocessor generated node count: 324/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1257-0!canonical and timestamp 20240722084503 and revision id 27016
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Engine_Testing&amp;oldid=27016">https://www.chessprogramming.org/index.php?title=Engine_Testing&amp;oldid=27016</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Jon Christensen.html" title="Category:Jon Christensen">Jon Christensen</a></li><li><a href="Category:Palle Mikkelborg.html" title="Category:Palle Mikkelborg">Palle Mikkelborg</a></li><li><a href="Category:Terje Rypdal.html" title="Category:Terje Rypdal">Terje Rypdal</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Engine+Testing&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Engine Testing.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Engine Testing&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Engine Testing.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Engine Testing&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Engine Testing&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Engine Testing.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Engine Testing.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Engine Testing&amp;oldid=27016.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Engine Testing&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 6 July 2024, at 07:25.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Engine_Testing&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.034","walltime":"0.036","ppvisitednodes":{"value":183,"limit":1000000},"ppgeneratednodes":{"value":324,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722084503","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

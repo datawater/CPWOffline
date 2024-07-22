@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Point Value by Regression Analysis - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Point_Value_by_Regression_Analysis","wgTitle":"Point Value by Regression Analysis","wgCurRevisionId":21566,"wgRevisionId":21566,"wgArticleId":4410,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Point_Value_by_Regression_Analysis","wgRelevantArticleId":4410,"wgRequestId":"Zp7DhYY8AD1K7zdlkfzd5wAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Point_Value_by_Regression_Analysis rootpage-Point_Value_by_Regression_Analysis skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Point Value by Regression Analysis</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a> * Point Value By Regression Analysis</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://habrahabr.ru/post/254753/.html"><img alt="MedvedevArticlePieceEquations.jpg" class="thumbimage" height="82" src="images/thumb/5/5a/MedvedevArticlePieceEquations.jpg/300px-MedvedevArticlePieceEquations.jpg" srcset="/images/thumb/5/5a/MedvedevArticlePieceEquations.jpg/450px-MedvedevArticlePieceEquations.jpg 1.5x, /images/5/5a/MedvedevArticlePieceEquations.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:MedvedevArticlePieceEquations.jpg.html" title="Enlarge"></a></div></div></div></div>
+<p><b>Point Value by Regression Analysis</b>,<br/>
+an article by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">Vladimir Medvedev</a> on determining <a href="Point Value.html" title="Point Value">point values</a> by <a href="Automated Tuning.html#LogisticRegression" title="Automated Tuning">logistic regression</a>, posted as "Определяем веса шахматных фигур регрессионным анализом" on April 30, 2015 in <a class="external text" href="https://en.wikipedia.org/wiki/Habrahabr" rel="nofollow">Habrahabr</a>, a popular Russian IT portal <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, translated with the help of <a class="external text" href="https://en.wikipedia.org/wiki/Google_Translate" rel="nofollow">Google Translate</a>, slightly edited, and published here with the permission of Vladimir Medvedev.
+</p>
+<hr/>
+<p>Hello Habr!<br/>
+<span id="course"></span>
+This article deals with a programmer's study on <a href="Learning.html" title="Learning">machine learning</a>, inspired by an online course <i>Machine Learning</i> by <a class="new" href="index.php?title=Andrew Ng&amp;action=edit&amp;redlink=1.html" title="Andrew Ng (page does not exist)">Andrew Ng</a> at <a href="Stanford University.html" title="Stanford University">Stanford University</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Coursera" rel="nofollow">Coursera</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. After becoming familar with some methods discussed in the lectures, such as <a class="external text" href="https://en.wikipedia.org/wiki/Regression_analysis" rel="nofollow">regression analysis</a>, the author was keen to apply them to real problems - in the domain of chess engine optimization.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Evaluation"><span class="tocnumber">2</span> <span class="toctext">Evaluation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Point Values - Simple Model"><span class="tocnumber">3</span> <span class="toctext">Point Values - Simple Model</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Material Advantage and Logistic Function"><span class="tocnumber">4</span> <span class="toctext">Material Advantage and Logistic Function</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Problem Statement"><span class="tocnumber">5</span> <span class="toctext">Problem Statement</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Program and Results"><span class="tocnumber">6</span> <span class="toctext">Program and Results</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Human Players"><span class="tocnumber">7</span> <span class="toctext">Human Players</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Conclusion"><span class="tocnumber">8</span> <span class="toctext">Conclusion</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">10</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">11</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Introduction">Introduction</span></h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://habrahabr.ru/post/254753/.html"><img alt="MedvedevArticleSearchTree.jpg" class="thumbimage" height="379" src="images/thumb/c/c6/MedvedevArticleSearchTree.jpg/300px-MedvedevArticleSearchTree.jpg" srcset="/images/c/c6/MedvedevArticleSearchTree.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:MedvedevArticleSearchTree.jpg.html" title="Enlarge"></a></div></div></div></div>
+<p>The main components of virtually any chess program are <a href="Search.html" title="Search">search</a> and <a href="Evaluation.html" title="Evaluation">evaluation</a>. The evaluation function maps a set of positional features to a numerical scale and serves as an objective function to find the best move. It is applied at the <a href="Leaf Node.html" title="Leaf Node">leaves</a> of the <a href="Search Tree.html" title="Search Tree">tree</a>, gradually backed up to the <a href="Root.html" title="Root">root</a> using <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta procedure</a> or its variations along with <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a>.
+</p><p>Strictly speaking, this evaluation has only three values: win, loss or draw - 1, 0, or ½, as determined to any given position due to the <a class="external text" href="https://en.wikipedia.org/wiki/Zermelo%27s_theorem_%28game_theory%29" rel="nofollow">theorem</a> by <a href="Ernst Zermelo.html" title="Ernst Zermelo">Zermelo</a>. In practice, due to the <a class="external text" href="https://en.wikipedia.org/wiki/Combinatorial_explosion" rel="nofollow">combinatorial explosion</a>, no computer will be able to calculate all variations through the complete game tree. Therefore, chess programs work in the model by <a href="Claude Shannon.html" title="Claude Shannon">Claude Shannon</a> with truncated games trees and approximate estimate at the leaves based on various heuristics.
+</p><p>Search and evaluation are not independently from each other, and must be well balanced. Modern search algorithms no longer apply a pure <a href="Brute-Force.html" title="Brute-Force">brute-force</a> approach, but apply <a href="Selectivity.html" title="Selectivity">selectivity</a> searching heterogeneous trees due to <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, <a href="Extensions.html" title="Extensions">extensions</a> specially along the <a href="Principal Variation.html" title="Principal Variation">principal variation</a>, but also <a href="Pruning.html" title="Pruning">prune</a> and <a href="Reductions.html" title="Reductions">reduce</a> not so promising branches also based on static evaluation.
+</p><p>Search optimization by machine learning methods is another interesting topic, but for now we focus on evaluation. 
+</p>
+<h1><span class="mw-headline" id="Evaluation">Evaluation</span></h1>
+<p>Calculating the static evaluation <a href="Score.html" title="Score">score</a> is usually implemented by a <a class="external text" href="https://en.wikipedia.org/wiki/Linear_combination" rel="nofollow">linear combination</a> of various position features scaled by some weights - most importantly the number of pieces and pawns of both sides, further the position of these pieces, <a href="Center Control.html" title="Center Control">centralization</a>, and <a href="Mobility.html" title="Mobility">mobility</a>. Assuming a state of the art search, only considering <a href="Material.html" title="Material">material</a> and <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a> is already sufficient to build a 2000-2200 Elo engine nowadays.
+</p><p>Further refinements of the assessment may include more and more subtle terms of a chess position: the presence and advancement of <a href="Passed Pawn.html" title="Passed Pawn">passed pawns</a>, the <a href="Distance.html" title="Distance">proximity</a> of the <a href="King Safety.html#KingTropism" title="King Safety">king to attacking pieces</a>, its <a href="King Safety.html#PawnShield" title="King Safety">pawn shield</a> and more. The legendary chess program <a href="Kaissa.html" title="Kaissa">Kaissa</a>, first <a href="WCCC 1974.html" title="WCCC 1974">world champion among programs in 1974</a>, had several dozens of evaluation terms, as descibed in <i>The machine plays chess</i> by <a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Georgy Adelson-Velsky</a>, <a href="Vladimir Arlazarov.html" title="Vladimir Arlazarov">Vladimir Arlazarov</a>, <a href="Alexander Bitman.html" title="Alexander Bitman">Alexander Bitman</a> and <a href="Mikhail Donskoy.html" title="Mikhail Donskoy">Mikhail Donskoy</a> in 1983 <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> .
+</p><p>Lacking such resources as the creators of <a href="Deep Blue.html" title="Deep Blue">Deep Blue</a>, the task here is limited, and considers only the most significant term - the <a href="Material.html#Balance" title="Material">balance of material</a> on the board. 
+</p>
+<h1><span class="mw-headline" id="Point_Values_-_Simple_Model">Point Values - Simple Model</span></h1>
+<p>If one takes any chess book for beginners, just behind the explaining of moves, usually these relative <a href="Point Value.html" title="Point Value">point values</a> were given:
+</p>
+<table class="wikitable">
+<tr>
+<th> Piece
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td>  Pawn
+</td>
+<td style="text-align:center;"> 1
+</td></tr>
+<tr>
+<td>  Knight
+</td>
+<td style="text-align:center;"> 3
+</td></tr>
+<tr>
+<td>  Bishop
+</td>
+<td style="text-align:center;"> 3
+</td></tr>
+<tr>
+<td>  Rook
+</td>
+<td style="text-align:center;"> 5
+</td></tr>
+<tr>
+<td>  Queen
+</td>
+<td style="text-align:center;"> 9
+</td></tr>
+<tr>
+<td>  King
+</td>
+<td style="text-align:center;"> ∞
+</td></tr></table>
+<p>The King is sometimes attributed to a final score, certainly greater than the sum of all the material on the board - for example, 200 pawn units. In this study, we will leave His Majesty alone, and kings will not be considered at all. Why is that? The answer is simple, they are always present on the board, so they are mutually subtracted in the material evaluation, as the overall balance of the power is not affected.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:274px;"><a href="http://habrahabr.ru/post/254753/.html"><img alt="MedvedevArticleCapa.jpg" class="thumbimage" height="308" src="images/f/f7/MedvedevArticleCapa.jpg" width="272"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:MedvedevArticleCapa.jpg.html" title="Enlarge"></a></div></div></div></div>
+<p>Here is how the third world champion, <a class="external text" href="https://en.wikipedia.org/wiki/Jos%C3%A9_Ra%C3%BAl_Capablanca" rel="nofollow">José Raúl Capablanca</a>, describes the evaluation of different material combinations in his classic textbook <i>Chess fundamentals</i> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p><p>For all general theoretical purposes the Bishop and the Knight have to be considered as of the same value, though it is my opinion that the Bishop will prove the more valuable piece in most cases; and it is well known that two Bishops are almost always better than two Knights.
+</p><p>The Bishop will be stronger against Pawns than the Knight, and in combination with Pawns will also be stronger against the Rook than the Knight will be. A Bishop and a Rook are also stronger than a Knight and a Rook, but a Queen and a Knight may be stronger than a Queen and a Bishop. A Bishop will often be worth more than three Pawns, but a Knight very seldom so, and may even not be worth so much.
+</p><p>A Rook will be worth a Knight and two Pawns, or a Bishop and two Pawns, but, as said before, the Bishop will be a better piece against the Rook. Two Rooks are slightly stronger than a Queen. They are slightly weaker than two Knights and a Bishop, and a little more so than two Bishops and a Knight. The power of the Knight decreases as the pieces are changed off. The power of the Rook, on the contrary, increases. 
+</p><p>It turns out that most of these rules can be met, while remaining within the framework of a linear model, and just slightly shifting the scores of their "school" values. For example, in <a href="Simplified Evaluation Function.html" title="Simplified Evaluation Function">simplified evaluation function</a>, the following boundary conditions:
+</p>
+<pre>
+ B &gt; N &gt; 3P
+ B + N = R + 1.5P
+ Q + P = 2R
+</pre>
+<p>which might be satisfied by (values in <a href="Centipawns.html" title="Centipawns">centipawns</a>):
+</p>
+<pre>
+ P = 100
+ N = 320
+ B = 330
+ R = 500
+ Q = 900
+ K = 20000
+</pre>
+<p>In fact, the resulted value set is not the only solution. Moreover, even the non-compliance with some of the "inequalities them. Capablanca "will not lead to a sharp drop in strength of the chess program, and only affect its stylistic features. As an experiment, the author spent a little match-tournament - four versions of his engine <a href="GreKo.html" title="GreKo">GreKo</a> with different point values playing <a href="Fruit.html" title="Fruit">Fruit 2.1</a>, <a href="Crafty.html" title="Crafty">Crafty 23.4</a> and <a href="Delfi.html" title="Delfi">Delfi 5.4</a> - 200 games each with ultra-low time control óf 1 sec per game + 0.1 increment per move. The results are shown in the table:
+</p>
+<table class="wikitable">
+<tr>
+<th> Version
+</th>
+<th> Pawn
+</th>
+<th> Knight
+</th>
+<th> Bishop
+</th>
+<th> Rook
+</th>
+<th> Queen
+</th>
+<th> Fruit 2.1
+</th>
+<th> Crafty 23.4
+</th>
+<th> Delfi 5.4
+</th>
+<th> Rating
+</th></tr>
+<tr>
+<th> Greko 12.5
+</th>
+<td style="text-align:right;"> 100
+</td>
+<td style="text-align:right;"> 400
+</td>
+<td style="text-align:right;"> 400
+</td>
+<td style="text-align:right;"> 600
+</td>
+<td style="text-align:right;"> 1200
+</td>
+<td style="text-align:right;"> 61.0
+</td>
+<td style="text-align:right;"> 76.0
+</td>
+<td style="text-align:right;"> 71.0
+</td>
+<td style="text-align:right;"> 2567
+</td></tr>
+<tr>
+<th>  Greko A
+</th>
+<td style="text-align:right;"> 100
+</td>
+<td style="text-align:right;"> 300
+</td>
+<td style="text-align:right;"> 300
+</td>
+<td style="text-align:right;"> 500
+</td>
+<td style="text-align:right;"> 900
+</td>
+<td style="text-align:right;"> 55.0
+</td>
+<td style="text-align:right;"> 69.0
+</td>
+<td style="text-align:right;"> 73.0
+</td>
+<td style="text-align:right;"> 2552
+</td></tr>
+<tr>
+<th>  Greko B
+</th>
+<td style="text-align:right;"> 100
+</td>
+<td style="text-align:right;"> 320
+</td>
+<td style="text-align:right;"> 330
+</td>
+<td style="text-align:right;"> 500
+</td>
+<td style="text-align:right;"> 900
+</td>
+<td style="text-align:right;"> 57.0
+</td>
+<td style="text-align:right;"> 71.0
+</td>
+<td style="text-align:right;"> 64.0
+</td>
+<td style="text-align:right;"> 2548
+</td></tr>
+<tr>
+<th>  Greko C
+</th>
+<td style="text-align:right;"> 100
+</td>
+<td style="text-align:right;"> 325
+</td>
+<td style="text-align:right;"> 325
+</td>
+<td style="text-align:right;"> 550
+</td>
+<td style="text-align:right;"> 1100
+</td>
+<td style="text-align:right;"> 72.5
+</td>
+<td style="text-align:right;"> 74.5
+</td>
+<td style="text-align:right;"> 69.0
+</td>
+<td style="text-align:right;"> 2575
+</td></tr></table>
+<p>We see that some of the variation in the weights of the pieces lead to the fluctuations of the ratings in the range of 20-30 Elo. Moreover, one of the test versions showed even better results than the basic version. However, such statements based on that small number of games is prematurely, since confidence interval calculation rating is comparable to the value of several tens of Elo.
+</p><p>"Classic" weights of chess material were obtained intuitively by chess experience. Attempts were also made to bring these values ​​by some mathematical basis - for example, based on <a href="Mobility.html" title="Mobility">mobility</a> figures, the number of squares that they can keep under control. We try to approach the topic experimentally - based on the analysis of a large number of chess games. To calculate the point values we do not need the approximate assessment of the positions of the games - only the final results, as the most objective measure of success in chess.
+</p>
+<h1><span class="mw-headline" id="Material_Advantage_and_Logistic_Function">Material Advantage and Logistic Function</span></h1>
+<p><a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Statistical analysis</a> was taken from <a href="Portable Game Notation.html" title="Portable Game Notation">PGN-Files</a> containing almost 3,000 blitz chess games between 32 different chess engines in the range from 1800 to 3000 Elo. Using a specially written utility for each batch of material has compiled a list of relations that have arisen on the board. Each material balance was included in the statistics after a <a href="Captures.html" title="Captures">capture</a> or <a href="Promotions.html" title="Promotions">pawn promotions</a>, not considering immediate exchanges. Then, the material balance of scale of "1-3-3-5-9" from -20 to 20 was used as index to accumulate the number of points scored by White. The statistics is presented by the following graph:
+</p>
+<div class="floatnone"><a href="http://habrahabr.ru/post/254753/.html" rel="nofollow"><img alt="MedvedevArticleChart.png" class="thumbborder" height="400" src="images/2/2e/MedvedevArticleChart.png" style="vertical-align: text-bottom" width="605"/></a></div>
+<p>On the x-axis the material balance ΔM from white point of view. It is calculated as the difference between the total values of all the white pieces and pawns and the same value for Black. On the y-axis the expectation of the result of selective batches (0 - winning Black, 0.5 - a draw, 1 - winning White). We see that the experimental data are very well described by the <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_function" rel="nofollow">logistic function</a>:
+</p>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula11.jpg.html"><img alt="PointValByRegressionFormula11.jpg" height="68" src="images/1/17/PointValByRegressionFormula11.jpg" style="vertical-align: text-bottom" width="246"/></a></div>
+<p>with a steepness α of 0.7. For comparison, the graph shows two more logistic curves with steepness α of 0.2 and 0.1.
+</p><p>What does this mean in practice? Suppose we see a randomly chosen position in which White has an pawn advantage of 2. With a probability of close to 80%, we can assert a White win. Similarly, if one lacks the bishop or a knight (ΔM = -3), the chances not to lose are only about 12%. As expected, material equality most often leads to a draw.
+</p>
+<h1><span class="mw-headline" id="Problem_Statement">Problem Statement</span></h1>
+<p>Now we are ready to formulate the problem of optimizing the evaluation function in terms of <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_regression" rel="nofollow">logistic regression</a>. Suppose we are given a set of vectors of the form:
+</p>
+<pre><span style="font-size:150%;">x<span style="vertical-align: sub;">j</span>=(Δ<span style="vertical-align: sub;">P</span>, Δ<span style="vertical-align: sub;">N</span>, Δ<span style="vertical-align: sub;">B</span>, Δ<span style="vertical-align: sub;">R</span>, Δ<span style="vertical-align: sub;">Q</span>)<span style="vertical-align: sub;">j</span></span>
+</pre>
+<p>where Δ<span style="vertical-align: sub;">i, j</span> = P ... Q - is the difference between the number of white and black pieces of type i from pawn to queen. These vectors are material relationships encountered in batches (one batch usually corresponds to several vectors).
+</p><p>Let there be a vector y<span style="vertical-align: sub;">j</span> of components of whith the values ​​0, 1 and 2, corresponding to the outcome of the game - 0 - Black wins, 1 - a draw, 2 - White wins.
+</p><p>Finding the optimal point values ​​of the weight vector θ,
+</p>
+<pre><span style="font-size:150%;"><i>Θ</i> =(<i>Θ</i><span style="vertical-align: sub;">P</span>, <i>Θ</i><span style="vertical-align: sub;">N</span>, <i>Θ</i><span style="vertical-align: sub;">B</span>, <i>Θ</i><span style="vertical-align: sub;">R</span>, <i>Θ</i><span style="vertical-align: sub;">Q</span>)</span>
+</pre>
+<p>requires <a class="external text" href="https://en.wikipedia.org/wiki/Cross_entropy#Cross-entropy_minimization" rel="nofollow">minimizing</a> the <a class="external text" href="https://en.wikipedia.org/wiki/Cross_entropy" rel="nofollow">cross-entropy</a> <a class="external text" href="https://en.wikipedia.org/wiki/Cross_entropy#Cross-entropy_error_function_and_logistic_regression" rel="nofollow">cost function</a> for the <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_regression" rel="nofollow">logistic regression</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>:
+</p>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula2.jpg.html"><img alt="PointValByRegressionFormula2.jpg" height="73" src="images/8/86/PointValByRegressionFormula2.jpg" style="vertical-align: text-bottom" width="604"/></a></div>
+<p>with the <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_function" rel="nofollow">logistic function</a> for the vector argument:
+</p>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula3.jpg.html"><img alt="PointValByRegressionFormula3.jpg" height="63" src="images/0/09/PointValByRegressionFormula3.jpg" style="vertical-align: text-bottom" width="207"/></a></div>
+<p>The introduction of <a class="external text" href="https://en.wikipedia.org/wiki/Regularization_%28mathematics%29" rel="nofollow">regularization</a> prevents <a class="external text" href="https://en.wikipedia.org/wiki/Overfitting" rel="nofollow">overfitting</a> and effects of instability in the solution found in the cost function:
+</p>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula4.jpg.html"><img alt="PointValByRegressionFormula4.jpg" height="89" src="images/6/61/PointValByRegressionFormula4.jpg" style="vertical-align: text-bottom" width="305"/></a></div>
+<p>The coefficients of regularization is chosen small, in this case λ = 10<span style="font-size: 90%; vertical-align: super;">-6</span>.
+</p><p>To solve the problem of <a class="external text" href="https://en.wikipedia.org/wiki/Maxima_and_minima" rel="nofollow">minimization</a>, a simple <a class="external text" href="https://en.wikipedia.org/wiki/Gradient_descent" rel="nofollow">gradient descent</a> with a constant slope is applied <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>:
+</p>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula5.jpg.html"><img alt="PointValByRegressionFormula5.jpg" height="37" src="images/2/27/PointValByRegressionFormula5.jpg" style="vertical-align: text-bottom" width="250"/></a></div>
+<p>where the components of the gradient of J reg have the form:
+</p>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula6.jpg.html"><img alt="PointValByRegressionFormula6.jpg" height="74" src="images/8/8d/PointValByRegressionFormula6.jpg" style="vertical-align: text-bottom" width="374"/></a></div>
+<div class="floatnone"><a class="image" href="File:PointValByRegressionFormula7.jpg.html"><img alt="PointValByRegressionFormula7.jpg" height="72" src="images/a/a8/PointValByRegressionFormula7.jpg" style="vertical-align: text-bottom" width="446"/></a></div>
+<p>Since we are looking for a symmetric solution in material equality which gives the probability of the outcome of the game ½, coefficient vector θ is always zero, and we only need for the gradient of the second of these expressions. Anyone interested in the justification of the above formulas is recommend to study the <a href="#course">already mentioned</a> machine learning course at <a class="external text" href="https://en.wikipedia.org/wiki/Coursera" rel="nofollow">Coursera</a>.
+</p>
+<h1><span class="mw-headline" id="Program_and_Results">Program and Results</span></h1>
+<p>Since the first part of the problem, the analysis of <a href="Portable Game Notation.html" title="Portable Game Notation">PGN-Files</a> and the allocation for each item set of features, has practically been implemented in the chess engine <a href="GreKo.html" title="GreKo">GreKo</a>, it was decided to use <a href="Cpp.html" title="Cpp">C++</a> for the pgn learning stuff as well. Source code and PGN samples are available at <a class="external text" href="https://en.wikipedia.org/wiki/GitHub" rel="nofollow">GitHub</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> . The program can be compiled and run under <a href="Windows.html" title="Windows">Windows</a> ( <a class="external text" href="https://en.wikipedia.org/wiki/Visual_C%2B%2B" rel="nofollow">MSVC</a>) or <a href="Linux.html" title="Linux">Linux</a> (<a href="Free Software Foundation.html#GCC" title="Free Software Foundation">GCC</a>).
+</p><p>The ability to use further <a class="external text" href="https://en.wikipedia.org/wiki/List_of_numerical_analysis_software" rel="nofollow">specialized tools</a> like <a class="external text" href="https://en.wikipedia.org/wiki/GNU_Octave" rel="nofollow">GNU Octave</a>, <a class="external text" href="https://en.wikipedia.org/wiki/MATLAB" rel="nofollow">MATLAB</a>, <a class="external text" href="https://en.wikipedia.org/wiki/R_%28programming_language%29" rel="nofollow">R</a>, etc. is also provided, the program generates an intermediate text file with a set of features and outcome of the game, which can easily be imported into these environments. The file contains the text representation of a set of vectors x j - matrix of dimension mx (n + 1) in the first 5 columns that contain components of the material balance (from the pawn to a queen), and in the 6th - the result of the game.
+</p><p>Consider a simple example. Below is a PGN-record of one of the test batches:
+</p>
+<pre>
+[Event "OpenRating 31"]
+[Site "BEAR-HOME"]
+[Date "2013.05.09"]
+[Round "1"]
+[White "Simplex 0.9.7"]
+[Black "IvanHoe 999946f"]
+[Result "0-1"]
+[TimeControl "60+1"]
+[PlyCount "96"]
+
+1.d4 d5 2.c4 e6 3.e3 c6 4.Nf3 Nd7 5.Nbd2 Nh6 6.e4 Bb4 7.a3 Ba5 8.cxd5 exd5 
+9.exd5 cxd5 10.Qe2+ Kf8 11.Qb5 Nf6 12.Bd3 Qe7+ 13.Kd1 Bb6 14.Re1 Bd7 15.Qb3 
+Be6 16.Re2 Qc7 17.Qb4+ Kg8 18.Nb3 Bf5 19.Bb1 Bxb1 20.Rxb1 Nf5 21.Bd2 a5 22.Qa4 
+h6 23.Rc1 Qb8 24.Bxa5 Qf4 25.Qb4 Bxa5 26.Nxa5 Kh7 27.Nxb7 Rab8 28.a4 Ne4 29.h3 
+Rhc8 30.Ra1 Rc7 31.Qa3 Rcxb7 32.g3 Qc7 33.Rc1 Qa5 34.Rxe4 dxe4 35.Rc5 Qa6
+36.Nd2 Nxd4 37.Rc4 Nb3 38.Nxb3 Qxc4 39.Nd2 Rd8 40.Qc3 Qf1+ 41.Kc2 Qe2 42.f4 e3 
+43.b4 Rc7 44.Kb3 Qd1+ 45.Ka2 Rxc3 46.Nb1 Qxa4+ 47.Na3 Rc2+ 48.Ka1 Rd1# 0-1
+</pre>
+<p>The corresponding fragment of intermediate file looks like:
+</p>
+<pre>
+ 0  0  0  0  0  0
+ 1  0  0  0  0  0
+ 2  0  0  0  0  0
+ 2 -1  0  0  0  0
+ 2  0  0 -1  0  0
+ 1  0  0 -1  0  0
+ 1  1  0 -2  0  0
+</pre>
+<p>The 6th column, 0 everywhere - is the result of the game, black won. The other columns - the balance of pieces on the board. The first line of complete equality of material, all of the components are 0. The second line - a pawn for white, is a position after the 24th move. Note that prior exchanges are not considered as they were too early. After the 27th move White has two extra pawns. Before the final attack of Black, White has only a pawn and a knight for two rooks.
+</p>
+<div class="floatnone"><a href="http://habrahabr.ru/post/254753/.html" rel="nofollow"><img alt="MedvedevArticlegendiag.png" class="thumbborder" height="234" src="images/3/36/MedvedevArticlegendiag.png" style="vertical-align: text-bottom" width="234"/></a></div>
+<p>Like the opening exchanges, the final moves in the game are not considered. They were screened out by "filter tactics" because they represent a series of captures, checks and evadings from check.
+</p><p>Similar records were created for all analyzed batches, the average obtained 5-10 lines per game. After analysis of the PGN-base, that file is further directed to the second part of the program dealing with the problem of minimizing their own decisions. A starting point for the <a class="external text" href="https://en.wikipedia.org/wiki/Gradient_descent" rel="nofollow">gradient descent</a> is a vector with the values ​​of the balances from the textfile. Starting from scratch, it turned out that the cost function is "good" enough to convert during several thousand steps to a global minimum, as shown in the following chart (at each step, the normalization of the weight of the pawn = 100):
+</p>
+<div class="floatnone"><a href="http://habrahabr.ru/post/254753/.html" rel="nofollow"><img alt="MedvedevArticleChart2.png" class="thumbborder" height="465" src="images/c/cd/MedvedevArticleChart2.png" style="vertical-align: text-bottom" width="789"/></a></div>
+<p>After normalization and rounding, the following values were determined:
+</p>
+<table class="wikitable">
+<tr>
+<th> Piece
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td>  Pawn
+</td>
+<td style="text-align:right;"> 100
+</td></tr>
+<tr>
+<td>  Knight
+</td>
+<td style="text-align:right;"> 288
+</td></tr>
+<tr>
+<td>  Bishop
+</td>
+<td style="text-align:right;"> 345
+</td></tr>
+<tr>
+<td>  Rook
+</td>
+<td style="text-align:right;"> 480
+</td></tr>
+<tr>
+<td>  Queen
+</td>
+<td style="text-align:right;"> 1077
+</td></tr>
+<tr>
+<td>  King
+</td>
+<td style="text-align:right;"> ∞
+</td></tr></table>
+<p>Compared with the rules of Capablanca:
+</p>
+<table class="wikitable">
+<tr>
+<th> Condition
+</th>
+<th> Numerical
+</th>
+<th> True?
+</th></tr>
+<tr>
+<td> <span style="color: #088a29;">B &gt; N</span>
+</td>
+<td style="text-align:center;"> <span style="color: #088a29;">345 &gt; 288</span>
+</td>
+<td> <span style="color: #088a29;">yes</span>
+</td></tr>
+<tr>
+<td> <span style="color: #088a29;">B &gt; 3P</span>
+</td>
+<td style="text-align:center;"> <span style="color: #088a29;">345 &gt; 300</span>
+</td>
+<td> <span style="color: #088a29;">yes</span>
+</td></tr>
+<tr>
+<td> <span style="color: #ff0000;">N &gt; 3P</span>
+</td>
+<td style="text-align:center;"> <span style="color: #ff0000;">288 &lt; 300</span>
+</td>
+<td> <span style="color: #ff0000;">no</span>
+</td></tr>
+<tr>
+<td> <span style="color: #088a29;">B + N = R + 1.5P</span>
+</td>
+<td style="text-align:center;"> <span style="color: #088a29;">345+288 = 480+150</span>
+</td>
+<td> <span style="color: #088a29;">yes (accuracy of &lt; 0.5%)</span>
+</td></tr>
+<tr>
+<td> <span style="color: #ff0000;">Q + P = 2R</span>
+</td>
+<td style="text-align:center;"> <span style="color: #ff0000;">1077 + 100 &gt; 960</span>
+</td>
+<td> <span style="color: #ff0000;">no</span>
+</td></tr></table>
+<p>The result is quite encouraging. Not knowing anything about the actual events taking place on the board, considering only the outcome of the game, the algorithm has managed to bring the point values close to their traditional values.
+</p><p>Is it possible to use the resulting values ​​to enhance the chess program? Alas, at this point the answer is no. Test blitz matches showed that the strength of GreKo using the parameters found remained virtually unchanged, and in some cases even declined. Why did it happen? One of the obvious reasons - the already mentioned strong link between search and evaluation. The search incorporates a number of heuristics to cut off the dead-end branches and the criteria of pruning (thresholds) are closely tied to the static evaluation. By changing the value of the pieces, one shifts the scale of values ​​- a form of search tree change requires new balancing of constants for all heuristics, which is a rather time consuming task.
+</p>
+<h1><span class="mw-headline" id="Human_Players">Human Players</span></h1>
+<p>Let's try to expand the experiment, considering not only computers, but also human chess players. The data set to study the games were taken from two outstanding contemporary grandmasters - the <a class="external text" href="https://en.wikipedia.org/wiki/World_Chess_Championship" rel="nofollow">world chess champion</a> <a class="external text" href="https://en.wikipedia.org/wiki/Magnus_Carlsen" rel="nofollow">Magnus Carlsen</a> and former world chess champion <a class="external text" href="https://en.wikipedia.org/wiki/Viswanathan_Anand" rel="nofollow">Viswanathan Anand</a>, as well a representative of <a class="external text" href="https://en.wikipedia.org/wiki/Romantic_chess" rel="nofollow">romantic chess</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/19th_century" rel="nofollow">19th century</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Adolf_Anderssen" rel="nofollow">Adolf Andersen</a>.
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<td style="text-align:center;"> <div class="floatnone"><a class="image" href="File:VishyAnand09.jpg.html"><img alt="VishyAnand09.jpg" class="thumbborder" height="200" src="wikipedia/commons/thumb/2/2a/VishyAnand09.jpg/170px-VishyAnand09.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/VishyAnand09.jpg/255px-VishyAnand09.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/VishyAnand09.jpg/340px-VishyAnand09.jpg 2x" style="vertical-align: text-bottom" width="170"/></a></div>
+</td>
+<td style="text-align:center;"> <div class="floatnone"><a class="image" href="File:Carlsen Magnus (30238051906).jpg.html"><img alt="Carlsen Magnus (30238051906).jpg" class="thumbborder" height="200" src="wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/143px-Carlsen_Magnus_%2830238051906%29.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/214px-Carlsen_Magnus_%2830238051906%29.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/286px-Carlsen_Magnus_%2830238051906%29.jpg 2x" style="vertical-align: text-bottom" width="143"/></a></div>
+</td>
+<td style="text-align:center;"> <div class="floatnone"><a class="image" href="File:And00278.png.html"><img alt="And00278.png" class="thumbborder" height="200" src="wikipedia/commons/thumb/e/e4/And00278.png/147px-And00278.png" srcset="https://upload.wikimedia.org/wikipedia/commons/e/e4/And00278.png 1.5x" style="vertical-align: text-bottom" width="147"/></a></div>
+</td></tr>
+<tr>
+<th>
+</th>
+<th> Anand <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>
+</th>
+<th> Carlsen <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>
+</th>
+<th> Andersen <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup>
+</th></tr>
+<tr>
+<td>  Pawn
+</td>
+<td style="text-align:center;"> 100
+</td>
+<td style="text-align:center;"> 100
+</td>
+<td style="text-align:center;"> 100
+</td></tr>
+<tr>
+<td>  Knight
+</td>
+<td style="text-align:center;"> 216
+</td>
+<td style="text-align:center;"> 213
+</td>
+<td style="text-align:center;"> 286
+</td></tr>
+<tr>
+<td>  Bishop
+</td>
+<td style="text-align:center;"> 230
+</td>
+<td style="text-align:center;"> 243
+</td>
+<td style="text-align:center;"> 289
+</td></tr>
+<tr>
+<td>  Rook
+</td>
+<td style="text-align:center;"> 355
+</td>
+<td style="text-align:center;"> 352
+</td>
+<td style="text-align:center;"> 531
+</td></tr>
+<tr>
+<td>  Queen
+</td>
+<td style="text-align:center;"> 762
+</td>
+<td style="text-align:center;"> 786
+</td>
+<td style="text-align:center;"> 1013
+</td></tr>
+<tr>
+<td>  King
+</td>
+<td style="text-align:center;"> ∞
+</td>
+<td style="text-align:center;"> ∞
+</td>
+<td style="text-align:center;"> ∞
+</td></tr></table>
+<p>It is easy to notice that the "human" point values appear different of how beginners are taught in textbooks. In the case of Carlsen and Anand strikes a smaller scale - the queen is a little more than 7.5 pawns, respectively, reduced for all other pieces. Bishop is still a little more worth than knight, but they don't even reach the traditional three pawns. Two rooks are weaker than the queen, etc.
+</p><p>I must say that a similar situation is observed not only from Vishy and Magnus, but for most GMs, whose games failed the test. The values ​​are shrinked from classic in the same way for masters like <a href="Mikhail Botvinnik.html" title="Mikhail Botvinnik">Mikhail Botvinnik</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Anatoly_Karpov" rel="nofollow">Anatoly Karpov</a>, and the attacking players <a class="external text" href="https://en.wikipedia.org/wiki/Mikhail_Tal" rel="nofollow">Mikhail Tal</a>, and <a class="external text" href="https://en.wikipedia.org/wiki/Judit_Polg%C3%A1r" rel="nofollow">Judit Polgár</a> ...
+</p><p>One of the few exceptions was Adolf Andersen, one of the best European players in the middle of the 19th century, famous for the <a class="external text" href="https://en.wikipedia.org/wiki/Immortal_Game" rel="nofollow">Immortal Game</a>. His point values are very similar to those from chess programs.
+</p><p>Why is there such an effect with compressing the range of point values? Of course, don't forget about the very limited model - considering additional positional features could make a significant difference. But perhaps it is a case of a "weak implementation" of human players concerning material advantage - compared to modern chess programs. Simply put - a person has a hard time to correctly play with the queen due to its opportunities. I remember an anecdote from a textbook by <a href="Mathematician.html#EmanuelLasker" title="Mathematician">Emanuel Lasker</a> (in other versions from Capablanca, <a class="external text" href="https://en.wikipedia.org/wiki/Alexander_Alekhine" rel="nofollow">Alekhine</a> or Tal), ostensibly to play with handicap with a random fellow traveler in the train. The culmination was the phrase: "The queen only hinders!"
+</p>
+<h1><span class="mw-headline" id="Conclusion">Conclusion</span></h1>
+<p>We examined one aspect of the evaluation function of chess programs - the material balance. We made sure that this part of the static evaluation model is smooth through the logistic function and associated with the probability of the outcome of the game. Then we looked at several weight combinations to estimate their influence on the strength of the chess program.
+</p><p>With the help of lots of different regression players, both humans and chess programs, we have determined the optimum value of the piece values under the assumption of a purely "financial" evaluation function. We found an interesting effect in humans versus machines. We tried to use the values ​​found in a real engine, and ... had not achieved much success.
+</p><p>Where to go from here? For a more accurate estimate of the position a new model of chess knowledge may be established - that is, to increase the dimension of x and θ. Even staying in the material only world (excluding the squares occupied by the pieces on the board), one can add a number of relevant features: bishop pair, a couple of queen and knight, the last pawn in the endgame ... Chess players do well know as the value of the pieces may depend on the combination or the stage of the game. In chess programs, corresponding weights (bonuses or penalties) may reach tenths of a pawn and more.
+</p><p>One way (along with an increase in sample size) used for training games, is playing the previous version of the same program. In this case, there is hope for some signs of greater coherence with other assessments. Also, a cost function may be used which is not predicting the outcome of the game (which could end in a few tens of moves behind the position under consideration), but the correlation of static with dynamic assessment, ie. with the result of the alpha-beta search of a certain depth.
+</p><p>However, as noted above, to directly enhance the chess program's results may not be suitable. It often happens that after a series of tests, the trained program begins to better address the tests (in our case - to predict the result of the game), but did not play better! At present, the mainstream chess programs were extensively tested exclusively in practical play. New versions of the top engines are tested before release with tens and hundreds of thousands of games with ultrashort time control ...
+</p><p>In any case, I plan to spend another series of experiments on the statistical analysis of chess games. If this topic is of interest to the audience Habra, upon receipt of any non-trivial result of the article can be continued.
+</p><p>No chess pieces were harmed during investigation.
+</p>
+<div class="floatnone"><a class="image" href="File:MedvedevArticlePieces2.jpg.html"><img alt="MedvedevArticlePieces2.jpg" class="thumbborder" height="193" src="images/1/1e/MedvedevArticlePieces2.jpg" style="vertical-align: text-bottom" width="407"/></a></div>
+<hr/>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Komodo.html#PointValues" title="Komodo">Centered Point Values in Komodo</a></li>
+<li> <a href="Eval Tuning in Deep Thought.html" title="Eval Tuning in Deep Thought">Eval Tuning in Deep Thought</a></li>
+<li> <a href="Learning.html" title="Learning">Learning</a></li>
+<li> <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li>
+<li> <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Pawn Advantage, Win Percentage, and Elo</a></li>
+<li> <a href="Point Value.html" title="Point Value">Point Value</a></li>
+<li> <a href="Texel%27s Tuning Method.html" title="Texel's Tuning Method">Texel's Tuning Method</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168.html" rel="nofollow">Piece weights with regression analysis (in Russian)</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">Vladimir Medvedev</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2015</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168&amp;start=22.html" rel="nofollow">Results of 234 players</a> by <a class="new" href="index.php?title=Jes%C3%BAs Mu%C3%B1oz&amp;action=edit&amp;redlink=1.html" title="Jesús Muñoz (page does not exist)">Jesús Muñoz</a>, <a href="CCC.html" title="CCC">CCC</a>, May 02, 2015</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168&amp;start=36.html" rel="nofollow">Re: Piece weights with regression analysis (in Russian)</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a href="CCC.html" title="CCC">CCC</a>, May 04, 2015</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56232&amp;start=24.html" rel="nofollow">Re: Pawn value estimation</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, May 09, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64972.html" rel="nofollow">Approximating Stockfish's Evaluation by PSQTs</a> by <a href="Thomas Dybdahl Ahle.html" title="Thomas Dybdahl Ahle">Thomas Dybdahl Ahle</a>, <a href="CCC.html" title="CCC">CCC</a>, August 23, 2017 » <a href="Automated Tuning.html#Regression" title="Automated Tuning">Regression</a>, <a href="Piece-Square Tables.html" title="Piece-Square Tables">Piece-Square Tables</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75267.html" rel="nofollow">How to calculate piece weights with logistic regression?</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, October 01, 2020 » <a href="Automated Tuning.html#Regression" title="Automated Tuning">Regression</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://habrahabr.ru/post/254753/" rel="nofollow">Определяем веса шахматных фигур регрессионным анализом / Хабрахабр</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">WinPooh</a>, April 27, 2015 (Russian)</li>
+<li> <a class="external text" href="https://github.com/WinPooh/pgnlearn" rel="nofollow">WinPooh/pgnlearn · GitHub</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Regression_analysis" rel="nofollow">Regression analysis from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_function" rel="nofollow">Logistic function from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Logistic_regression" rel="nofollow">Logistic regression from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Maximum_likelihood" rel="nofollow">Maximum likelihood from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Cross_entropy" rel="nofollow">Cross-entropy from Wikipedia</a></li>
+<li> <a class="external text" href="https://www.coursera.org/learn/machine-learning" rel="nofollow">Machine Learning - Stanford University | Coursera</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://habrahabr.ru/post/254753/" rel="nofollow">Определяем веса шахматных фигур регрессионным анализом / Хабрахабр</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">WinPooh</a>, April 27, 2015 (Russian)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56168.html" rel="nofollow">Piece weights with regression analysis (in Russian)</a> by <a href="Vladimir Medvedev.html" title="Vladimir Medvedev">Vladimir Medvedev</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2015</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.coursera.org/learn/machine-learning" rel="nofollow">Machine Learning - Stanford University | Coursera</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.youtube.com/view_play_list?p=A89DCFA6ADACE599" rel="nofollow">Lecture Collection | Machine Learning - YouTube</a> by <a class="new" href="index.php?title=Andrew Ng&amp;action=edit&amp;redlink=1.html" title="Andrew Ng (page does not exist)">Andrew Ng</a>,  <a href="Stanford University.html" title="Stanford University">Stanford University</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://cs229.stanford.edu/materials.html.html" rel="nofollow">CS 229: Machine Learning (Course handouts)</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Georgy Adelson-Velsky.html" title="Georgy Adelson-Velsky">Г.М. Адельсон-Вельский</a>, <a href="Vladimir Arlazarov.html" title="Vladimir Arlazarov">В.Л. Арлазаров</a>, <a href="Alexander Bitman.html" title="Alexander Bitman">А.Р. Битман</a>, <a href="Mikhail Donskoy.html" title="Mikhail Donskoy">М.В. Донской</a> (<b>1983</b>). <i>Машина играет в шахматы</i>. <a class="external text" href="http://genes1s.net/files/kaissa.pdf.html" rel="nofollow">pdf</a> (book with detailed explanations of Kaissa algorithms, Russian)</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Jos%C3%A9_Ra%C3%BAl_Capablanca" rel="nofollow">José Raúl Capablanca</a> (<b>1921</b>). <i><a class="external text" href="https://openlibrary.org/books/OL23286033M/Chess_fundamentals" rel="nofollow">Chess fundamentals</a></i>. <i><a class="external text" href="https://archive.org/stream/cu31924014756724#page/n41/mode/2up" rel="nofollow">5. Relative Values of the Pieces, pp. 24-25</a></i>.</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text">"Using <a class="external text" href="https://en.wikipedia.org/wiki/Cross_entropy#Cross-entropy_error_function_and_logistic_regression" rel="nofollow">cross-entropy error function</a> instead of <a class="external text" href="https://en.wikipedia.org/wiki/Mean_squared_error" rel="nofollow">sum of squares</a> leads to faster training and improved generalization", from <a class="external text" href="https://en.wikipedia.org/wiki/Sargur_Srihari" rel="nofollow">Sargur Srihari</a>, <a class="external text" href="http://www.cedar.buffalo.edu/~srihari/CSE574/Chap5/Chap5.2-Training.pdf.html" rel="nofollow">Neural Network Training</a> (pdf)</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Del" rel="nofollow">Nabla operator or Del from Wikipedia</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/WinPooh/pgnlearn" rel="nofollow">WinPooh/pgnlearn · GitHub</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Viswanathan_Anand" rel="nofollow">Viswanathan Anand</a>, world chess champion, Photo by Stefan64, January 2013, <a class="external text" href="https://en.wikipedia.org/wiki/World_Chess_Championship_2014" rel="nofollow">World Chess Championship 2014 from Wikipedia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Magnus_Carlsen" rel="nofollow">Magnus Carlsen</a>, chess grandmaster from Norway, Photo by Stefan64, January 2013, <a class="external text" href="https://en.wikipedia.org/wiki/World_Chess_Championship_2014" rel="nofollow">World Chess Championship 2014 from Wikipedia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Adolf_Anderssen" rel="nofollow">Adolf Andersen from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Automated Tuning.html" title="Automated Tuning">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722000211
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.214 seconds
+Real time usage: 2.383 seconds
+Preprocessor visited node count: 302/1000000
+Preprocessor generated node count: 632/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4410-0!canonical and timestamp 20240722000209 and revision id 21566
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Point_Value_by_Regression_Analysis&amp;oldid=21566">https://www.chessprogramming.org/index.php?title=Point_Value_by_Regression_Analysis&amp;oldid=21566</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Point+Value+by+Regression+Analysis&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Point Value by Regression Analysis.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Point Value by Regression Analysis&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Point Value by Regression Analysis.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Point Value by Regression Analysis&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Point Value by Regression Analysis&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Point Value by Regression Analysis.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Point Value by Regression Analysis.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Point Value by Regression Analysis&amp;oldid=21566.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Point Value by Regression Analysis&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 October 2020, at 08:55.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Point_Value_by_Regression_Analysis&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.214","walltime":"2.383","ppvisitednodes":{"value":302,"limit":1000000},"ppgeneratednodes":{"value":632,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722000211","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":55});});</script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Shredder - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Shredder","wgTitle":"Shredder","wgCurRevisionId":23880,"wgRevisionId":23880,"wgArticleId":2585,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UCI","Commercial","ChessBase","DEC Alpha","X86","X64","PC","Android","Linux","Mac","Windows","Chess960"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Shredder","wgRelevantArticleId":2585,"wgRequestId":"Zp7Dp05Wo@-cHXK2v45VFgAAAA0","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Shredder rootpage-Shredder skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Shredder</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Shredder</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.shredderchess.com/images/stories/screenshots/shredderclassic5/e1.png.html"><img alt="" class="thumbimage" height="240" src="images/thumb/8/8a/DeepShredder13.jpg/300px-DeepShredder13.jpg" srcset="/images/8/8a/DeepShredder13.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:DeepShredder13.jpg.html" title="Enlarge"></a></div>Deep Shredder 13 default design and window layout <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Shredder</b>,<br/>
+a chess engine by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a> (SMK). Shredder won an astonished number of tournaments and titles, beside various <a href="World Computer Chess Championship.html" title="World Computer Chess Championship">World Computer Chess Championships</a>, <a href="World Microcomputer Chess Championship.html" title="World Microcomputer Chess Championship">World Microcomputer Chess Championships</a> and <a href="World Chess Software Championship.html" title="World Chess Software Championship">World Chess Software Championships</a>, the <a href="IPCCC.html" title="IPCCC">IPCCC</a>, the <a href="International CSVN Tournament.html" title="International CSVN Tournament">International CSVN Tournament</a>, the <a href="CSVN Programmers Tournament.html" title="CSVN Programmers Tournament">CSVN Programmers Tournament</a>, and more. Shredder had its debut at the <a href="WMCCC 1995.html" title="WMCCC 1995">WMCCC 1995</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Paderborn" rel="nofollow">Paderborn</a>, and soon after winning the first title at the <a href="WMCCC 1996.html" title="WMCCC 1996">WMCCC 1996</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Jakarta" rel="nofollow">Jakarta</a>, Shredder went commercial, distributed by <a href="Millennium 2000 GmbH.html" title="Millennium 2000 GmbH">Millennium 2000 GmbH</a> - since Shredder <b>3</b> along with the <a href="Millennium Chess System.html" title="Millennium Chess System">Millennium Chess System</a> (MCS), since Shredder<b> 5</b>  also developed by SMK supporting the <a href="UCI.html" title="UCI">UCI</a> protocol, which was co-designed and implemented by the same author. Therefore Shredder may use any UCI-compatible <a href="GUI.html" title="GUI">graphical user interface</a>, in particular its own <a href="Shredder.html#GUI" title="Shredder">Shredder Classic GUI</a>. The long-awaited Shredder <b>13</b> and its <a class="external text" href="https://en.wikipedia.org/wiki/Multiprocessing" rel="nofollow">multiprocessor</a> counterpart <b>Deep Shredder 13</b> were released on October 30, 2016.  
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Photos .26 Games"><span class="tocnumber">1</span> <span class="toctext">Photos &amp; Games</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#WCCC 1999"><span class="tocnumber">1.1</span> <span class="toctext">WCCC 1999</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#WCSC 2015"><span class="tocnumber">1.2</span> <span class="toctext">WCSC 2015</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Achievements"><span class="tocnumber">2</span> <span class="toctext">Achievements</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Description"><span class="tocnumber">3</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Portability"><span class="tocnumber">4</span> <span class="toctext">Portability</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Clever .26 Smart"><span class="tocnumber">5</span> <span class="toctext">Clever &amp; Smart</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Deep Shredder"><span class="tocnumber">6</span> <span class="toctext">Deep Shredder</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Shredder Classic GUI"><span class="tocnumber">7</span> <span class="toctext">Shredder Classic GUI</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Pocket Shredder"><span class="tocnumber">8</span> <span class="toctext">Pocket Shredder</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Shredder Mobile"><span class="tocnumber">9</span> <span class="toctext">Shredder Mobile</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Shredder for Android"><span class="tocnumber">10</span> <span class="toctext">Shredder for Android</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Shredderbases"><span class="tocnumber">11</span> <span class="toctext">Shredderbases</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Release Dates"><span class="tocnumber">12</span> <span class="toctext">Release Dates</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Publications"><span class="tocnumber">13</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Forum Posts"><span class="tocnumber">14</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#1996 ..."><span class="tocnumber">14.1</span> <span class="toctext">1996 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2000 ..."><span class="tocnumber">14.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2005 ..."><span class="tocnumber">14.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2010 ..."><span class="tocnumber">14.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2015 ..."><span class="tocnumber">14.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2020 ..."><span class="tocnumber">14.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#External Links"><span class="tocnumber">15</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Chess Engine"><span class="tocnumber">15.1</span> <span class="toctext">Chess Engine</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Shredderbases 2"><span class="tocnumber">15.2</span> <span class="toctext">Shredderbases</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Misc"><span class="tocnumber">15.3</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#References"><span class="tocnumber">16</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Photos_.26_Games">Photos &amp; Games</span></h1>
+<h2><span class="mw-headline" id="WCCC_1999">WCCC 1999</span></h2>
+<div class="floatnone"><a href="WCCC 1999.html" title="WCCC 1999"><img alt="FerretShredder1999.JPG" class="thumbborder" height="521" src="images/e/ec/FerretShredder1999.JPG" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="WCCC 1999.html" title="WCCC 1999">WCCC 1999</a>, round 6: <a href="Ferret.html" title="Ferret">Ferret</a> - <a class="mw-selflink selflink">Shredder</a>, <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a> and <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p>
+<pre>
+[Event "WCCC 1999"]
+[Site "Paderborn, Germany"]
+[Date "1999.06.18"]
+[Round "6"]
+[White "Ferret"]
+[Black "Shredder"]
+[Result "1/2-1/2"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O Nge7 8. cxd4 d5 
+9.exd5 Nxd5 10.Ba3 Be6 11.Bb5 Bb4 12.Bxc6+ bxc6 13.Bxb4 Nxb4 14.Qa4 Qd6 15.Nc3 
+Nd3 16.d5 Nc5 17.Qxc6+ Qxc6 18.dxc6 Ke7 19.Rfe1 Nd3 20.Re3 Nb4 21.Nd4 Rhd8 22.Rd1 
+Kf6 23.a3 Nd5 24.Ne4+ Ke7 25.Ree1 Bg4 26.f3 Bc8 27.Nc5+ Kf6 28.Nb5 Be6 29.Na6 Rac8 
+30.Nbxc7 h5 31.h3 h4 32.a4 Nxc7 33.Rxd8 Rxd8 34.Nxc7 Rc8 35.Nxe6 fxe6 36.Rc1 e5 
+37.Kf2 Ke6 38.g3 hxg3+ 39.Kxg3 Kd6 40.Rd1+ Ke6 41.Rd7 Rxc6 42.Rxg7 Rc3 43.Rg4 Kf5 
+44.h4 Rc1 45.h5 Rc6 46.Rg7 Ra6 47.Rg4 Rc6 48.Rg7 Ra6 49.Rg8 Rb6 50.Kh4 Rb4+ 51.Kg3
+Rb6 52.Kh4 Rb4+ 53.Rg4 Rb2 54.Kg3 Rb6 55.a5 Rd6 56.Rg7 Ra6 57.Rg8 Rd6 58.Kh4 Rd4+ 
+59.Kg3 Rd6 60.Rb8 Kg5 61.Re8 Rd5 62.a6 Ra5 63.Re7 e4 64.Rxa7 Ra3 65.Kf2 Rxf3+ 
+66.Ke2 Kxh5 67.Ra8 Rf7 68.Ke3 Re7 69.Rb8 Kg6 70.Rb6+ Kf5 1/2-1/2
+</pre>
+<h2><span class="mw-headline" id="WCSC_2015">WCSC 2015</span></h2>
+<div class="floatnone"><a href="WCSC 2015.html" title="WCSC 2015"><img alt="BlitzPlayoffR1ShredderWinning.JPG" class="thumbborder" height="480" src="images/5/5e/BlitzPlayoffR1ShredderWinning.JPG" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="WCSC 2015.html" title="WCSC 2015">WCSC 2015</a>, Shredder is winning the first blitz play-off game with Black vs. <a href="Ginkgo.html" title="Ginkgo">Ginkgo</a> operated by <a href="Ingo Bauer.html" title="Ingo Bauer">Ingo Bauer</a>
+</p>
+<pre>
+[Event "WCSC 2015 Play-off 2"]
+[Site "Leiden, The Netherlands"]
+[Date "2015.07.05"]
+[Round "9.1"]
+[White "Ginkgo"]
+[Black "Shredder"]
+[Result "0-1"]
+
+1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 a6 5.Bd3 Nf6 6.O-O d6 7.c4 Bd7 8.Nc3 Nc6 9.Nxc6 Bxc6 
+10.Be3 Be7 11.f3 O-O 12.Qc2 Nd7 13.Rfd1 Nc5 14.Be2 Qb6 15.Rab1 a5 16.Nb5 Rfd8 17.Nd4 Bf6 
+18.g3 Qa7 19.b3 Be8 20.a3 a4 21.b4 Nb3 22.Qd3 Nxd4 23.Bxd4 Qxd4+ 24.Qxd4 Bxd4+ 25.Rxd4 Kf8 
+26.Kf2 b6 27.Rc1 e5 28.Rd2 f6 29.f4 Ke7 30.Rdc2 Rac8 31.Ke3 Rc6 32.Bf3 Rc7 33.h4 h5 34.Be2 
+Rb8 35.Rd2 Bf7 36.Rcd1 Rd8 37.f5 g6 38.fxg6 Bxg6 39.Rg1 Rg8 40.Rgd1 Bf7 41.Kf2 Rd8 42.Ke3 
+Be6 43.Rc1 Rg8 44.Kf2 Bg4 45.Bd3 Rc6 46.Kg2 Rf8 47.Rf1 Be6 48.Rc2 Rcc8 49.Rcc1 Bg4 50.Rc2 
+Ke6 51.Rd2 Rc7 52.Rdf2 Ke7 53.Rc1 Be6 54.Kh2 Rg8 55.Rd2 Bf7 56.Be2 Bg6 57.Rcd1 Rd8 58.Bd3 
+Bf7 59.Rc2 Be6 60.Rf1 Rdc8 61.Rfc1 Bd7 62.Kg2 Rh8 63.Be2 Bc6 64.Bf3 Rhc8 65.Kf2 Bb7 66.Bg2 
+Rf8 67.Rf1 Bc8 68.Bf3 f5 69.Kg1 Rg8 70.Kh2 fxe4 71.Bxe4 Be6 72.Rfc1 Rgc8 73.Bd3 Rf8 74.Kg2 
+d5 75.Re1 dxc4 76.Bg6 Bd5+ 77.Kh2 Kd6 78.Bxh5 e4 79.Bd1 c3 80.Rce2 e3 81.Kh3 Be6+ 82.Kg2 
+Rf2+ 83.Rxf2 exf2 84.Kxf2 c2 85.Bxc2 Rxc2+ 86.Re2 Rxe2+ 87.Kxe2 Bg4+ 88.Kd3 Kd5 89.b5 Bh5 
+90.Kc3 Ke4 91.Kc4 Be2+ 92.Kc3 Ke3 93.g4 Bxg4 94.Kc4 0-1
+</pre>
+<h1><span class="mw-headline" id="Achievements">Achievements</span></h1>
+<p>Quote from <i>Shredder Chess</i> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> :
+The Shredder chess programs by Stefan Meyer-Kahlen provide a game playing and analysis tool for everybody and are accepted as one of the best chess programs of the world. Since 1996 Shredder has won twenty titles.
+</p>
+<ol><li> <a href="WMCCC 1996.html" title="WMCCC 1996">1996 World Micro Computer Chess Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Jakarta" rel="nofollow">Jakarta</a></li>
+<li> <a href="WCCC 1999.html" title="WCCC 1999">1999 World Micro Computer Chess Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Paderborn" rel="nofollow">Paderborn</a></li>
+<li> <a href="WCCC 1999.html" title="WCCC 1999">1999 World Computer Chess Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Paderborn" rel="nofollow">Paderborn</a></li>
+<li> <a href="WMCCC 2000.html" title="WMCCC 2000">2000 World Micro Computer Chess Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/London" rel="nofollow">London</a></li>
+<li> <a href="WMCCC 2001.html" title="WMCCC 2001">2001 World Micro Computer Chess Champion Single CPU</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Maastricht" rel="nofollow">Maastricht</a></li>
+<li> <a href="WCCC 2002.html" title="WCCC 2002">2002 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Maastricht" rel="nofollow">Maastricht</a></li>
+<li> <a href="WCCC 2003.html" title="WCCC 2003">2003 World Computer Chess Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Graz" rel="nofollow">Graz</a></li>
+<li> <a href="WCCC 2003.html" title="WCCC 2003">2003 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Graz" rel="nofollow">Graz</a></li>
+<li> <a href="WCCC 2004.html" title="WCCC 2004">2004 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Ramat_Gan" rel="nofollow">Ramat Gan</a></li>
+<li> <a href="WCCC 2005.html" title="WCCC 2005">2005 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Reykjav%C3%ADk" rel="nofollow">Reykjavik</a></li>
+<li> <a href="Chess960CWC 2006.html" title="Chess960CWC 2006">2006 World Computer Chess960 Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Mainz" rel="nofollow">Mainz</a></li>
+<li> <a href="WCCC 2007.html" title="WCCC 2007">2007 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Amsterdam" rel="nofollow">Amsterdam</a></li>
+<li> <a href="WCCC 2009.html" title="WCCC 2009">2009 World Computer Chess Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Pamplona" rel="nofollow">Pamplona</a></li>
+<li> <a href="14th Computer Olympiad.html#Chess" title="14th Computer Olympiad">2009 Computer Olympiad (no hardware limit)</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Pamplona" rel="nofollow">Pamplona</a></li>
+<li> <a href="WCCC 2009.html" title="WCCC 2009">2009 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Pamplona" rel="nofollow">Pamplona</a></li>
+<li> <a href="WCCC 2010.html" title="WCCC 2010">2010 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Kanazawa,_Ishikawa" rel="nofollow">Kanazawa</a></li>
+<li> <a href="WCSC 2010.html" title="WCSC 2010">2010 World Computer Chess Software Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Kanazawa,_Ishikawa" rel="nofollow">Kanazawa</a></li>
+<li> <a href="WCCC 2013.html" title="WCCC 2013">2013 World Computer Chess Blitz Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Yokohama" rel="nofollow">Yokohama</a></li>
+<li> <a href="WCSC 2015.html" title="WCSC 2015">2015 World Computer Chess Software Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Leiden" rel="nofollow">Leiden</a></li>
+<li> <a href="WCSC 2017.html" title="WCSC 2017">2017 World Computer Chess Software Champion</a> in <a class="external text" href="https://en.wikipedia.org/wiki/Leiden" rel="nofollow">Leiden</a></li></ol>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<p>Description given in 1999 from the <a href="ICCA.html" title="ICCA">ICCA</a> tournament site <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> :
+</p>
+<pre>Shredder has started in 1995 as a project at university. Good tournament and test results encouraged me to spend more work in it and lead to the winning of the 1996 WMCCC in Jakarta. Shredder has been commercially available since then and continued to perform very well in computer chess championships. It was 3rd in Paris 1997 and managed to finish as the runner up in the blitz championship there. Shredder is written in <a class="new" href="index.php?title=Ansi-C&amp;action=edit&amp;redlink=1.html" title="Ansi-C (page does not exist)">ANSI-C</a> and therefore it can easily compiled on various hardware platforms. I think Shredder has good chances in Paderborn this year because it is one of the strongest computer chess programs running on an micro around. 
+</pre>
+<h1><span class="mw-headline" id="Portability">Portability</span></h1>
+<p>Since Shredder is written in <a href="C.html" title="C">C</a>, it is available for various hardware platforms, such as <a href="IBM PC.html" title="IBM PC">PC</a>, <a href="Macintosh.html" title="Macintosh">Macintosh</a>, and <a class="external text" href="https://en.wikipedia.org/wiki/Personal_digital_assistant" rel="nofollow">PDAs</a>, and various operating systems like <a href="Windows.html" title="Windows">Windows</a>, <a href="Linux.html" title="Linux">Linux</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> and <a href="Mac OS.html" title="Mac OS">Mac OS</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> .
+</p>
+<h1><span class="mw-headline" id="Clever_.26_Smart">Clever &amp; Smart</span></h1>
+<p><a href="Clever %26 Smart.html" title="Clever &amp; Smart">Clever &amp; Smart</a> was an experimental triple-brain version of Shredder which played the <a href="IPCCC 1998.html" title="IPCCC 1998">IPCCC 1998</a>.
+<span id="DeepShredder"></span>
+</p>
+<h1><span class="mw-headline" id="Deep_Shredder">Deep Shredder</span></h1>
+<p><b>Deep Shredder</b>, first released in 2001 based on <b>Shredder 5</b> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>, is the <a class="external text" href="https://en.wikipedia.org/wiki/Multiprocessing" rel="nofollow">multiprocessor</a> version of Shredder. The most recent version, <b>Deep Shredder 13</b> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> released on October 30, 2016 <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>, is the further developed <a href="WCSC 2015.html" title="WCSC 2015">2015 World Computer Chess Software Champion</a>, which was a complete rewrite based on <a href="Bitboards.html" title="Bitboards">bitboards</a>. Deep Shredder 13 has improved more than 300 Elo over Shredder 12 <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>.
+<span id="GUI"></span>
+</p>
+<h1><span class="mw-headline" id="Shredder_Classic_GUI">Shredder Classic GUI</span></h1>
+<p>Shredder and Deep Shredder come with a clear and reliable <a href="GUI.html" title="GUI">graphical user interface</a> which evolved from the <a href="Millennium Chess System.html" title="Millennium Chess System">Millennium Chess System</a> - supporting the <a href="UCI.html" title="UCI">universal chess interface</a> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>, also compatible with other <a href="Category:UCI.html" title="Category:UCI">UCI engines</a> running under <a href="Windows.html" title="Windows">Windows</a>, <a href="Linux.html" title="Linux">Linux</a> or <a href="Mac OS.html" title="Mac OS">Mac OS</a>. The Shredder GUI is favoured by many programmers playing over the board tournaments with their engines, for instance <a href="Johannes Zwanzger.html" title="Johannes Zwanzger">Johannes Zwanzger</a> and his <a href="WCCC 1995.html" title="WCCC 1995">WCCC 1995</a> winner <a href="Jonny.html" title="Jonny">Jonny</a>.
+</p>
+<div class="floatnone"><a href="WCCC 2015.html" title="WCCC 2015"><img alt="JonnyChampionWCCC2015.JPG" class="thumbborder" height="480" src="images/6/66/JonnyChampionWCCC2015.JPG" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="Jonny.html" title="Jonny">Jonny's</a> final <a href="WCCC 2015.html" title="WCCC 2015">WCCC 2015</a> screen in the game versus <a href="HIARCS.html" title="HIARCS">HIARCS</a> using the <a href="#GUI">Shredder GUI</a>
+<span id="PocketShredder"></span>
+</p>
+<h1><span class="mw-headline" id="Pocket_Shredder">Pocket Shredder</span></h1>
+<p>Pocket Shredder is a version for <a href="Windows.html" title="Windows">Windows</a> <a class="external text" href="https://en.wikipedia.org/wiki/Personal_digital_assistant" rel="nofollow">PDAs</a>, such as <a class="external text" href="https://en.wikipedia.org/wiki/IPAQ" rel="nofollow">iPAQ</a> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> .
+<span id="ShredderMobile"></span>
+</p>
+<h1><span class="mw-headline" id="Shredder_Mobile">Shredder Mobile</span></h1>
+<p>Shredder Mobile runs on most mobile phones with <a href="Java.html" title="Java">Java</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup> .
+<span id="ShredderForAndroid"></span>
+</p>
+<h1><span class="mw-headline" id="Shredder_for_Android">Shredder for Android</span></h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.shredderchess.com/chess-program/shredder-android.html.html"><img alt="" class="thumbimage" height="450" src="images/thumb/2/2a/ShredderPlaying.png/300px-ShredderPlaying.png" srcset="/images/2/2a/ShredderPlaying.png 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:ShredderPlaying.png.html" title="Enlarge"></a></div>Shredder for Android</div></div></div>
+<p>Shredder for <a href="Android.html" title="Android">Android</a> runs on all phones and tablets with at least <a class="external text" href="https://en.wikipedia.org/wiki/Android_version_history#Android_4.0_Ice_Cream_Sandwich_(API_14)" rel="nofollow">Android 4</a> as well as on all <a class="external text" href="https://en.wikipedia.org/wiki/Kindle_Fire" rel="nofollow">Kindle Fire</a> phones and tables since the <a class="external text" href="https://en.wikipedia.org/wiki/Kindle_Fire#Generations" rel="nofollow">2nd generation</a> <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup>. 
+<span id="Bases"></span>
+</p>
+<h1><span class="mw-headline" id="Shredderbases">Shredderbases</span></h1>
+<p>Shredderbases are compact, proprietary <a href="Endgame Bitbases.html" title="Endgame Bitbases">endgame bitbases</a> for up to 5 men with <a href="Endgame Tablebases.html#Bitbases" title="Endgame Tablebases">WDL</a> information, suited to use inside the <a href="Search.html" title="Search">search</a> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Release_Dates">Release Dates</span></h1>
+<ul><li> Shredder 1.0: 1996</li>
+<li> Shredder 2.0: 1998</li>
+<li> Shredder 3.0: 1999</li>
+<li> Shredder 4.0 : 2000</li>
+<li> Shredder 5.0 : 2001</li>
+<li> Shredder 5.32 : June 2001 </li>
+<li> Shredder 6.0 : December 2001 </li>
+<li> Shredder 7.0 : December 2002 </li>
+<li> Shredder 7.04 : 2003</li>
+<li> Shredder 8 : February 2004 </li>
+<li> Shredder Classic 1.1 : October 2004 </li>
+<li> Shredder 9 : February 2005</li>
+<li> Shredder 9.1 :</li>
+<li> Shredder 9.12 : December 2005 </li>
+<li> Shredder Classic 1.3 : ?</li>
+<li> Shredder 10 : June 2006 </li>
+<li> Shredder 10.1 : April 2007</li>
+<li> Shredder 11 : October 2007 </li>
+<li> Shredder 11 SE</li>
+<li> Shredder WM Edition Bonn : October 2008</li>
+<li> Shredder 12: October 2009</li>
+<li> Shredder 12 SE</li>
+<li> Shredder Classic 4 : November 2011</li>
+<li> Deep Shredder 13: October 30, 2016</li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Tom King.html" title="Tom King">Tom King</a> (<b>2000</b>). <i>Shredder wins the 17th World Microcomputer Chess Championship</i>. <a href="ICGA Journal.html#23 3" title="ICGA Journal">ICGA Journal, Vol. 23, No. 3</a> » <a href="WMCCC 2000.html" title="WMCCC 2000">WMCCC 2000</a></li>
+<li> <a href="Theo van der Storm.html" title="Theo van der Storm">Theo van der Storm</a> (<b>2004</b>). <i>Shredder Shows Strength in International CSVN Tournament</i>. <a href="ICGA Journal.html#27 3" title="ICGA Journal">ICGA Journal, Vol. 27, No. 3</a> » <a href="ICT 2004.html" title="ICT 2004">ICT 2004</a></li>
+<li> <a href="Eric van Reem.html" title="Eric van Reem">Eric van Reem</a> (<b>2006</b>). <i>Shredder Wins Second Chess960 Computer-Chess World Championship</i>. <a href="ICGA Journal.html#29 4" title="ICGA Journal">ICGA Journal, Vol. 29, No. 4</a> » <a href="Chess960CWC 2006.html" title="Chess960CWC 2006">Chess960CWC 2006</a></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2007</b>). <i>Factors affecting diminishing returns for searching deeper</i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a> » <a href="Crafty.html" title="Crafty">Crafty</a>, <a href="Rybka.html" title="Rybka">Rybka</a>, <a class="mw-selflink selflink">Shredder</a>, <a href="Depth.html#DiminishingReturns" title="Depth">Diminishing Returns</a></li>
+<li> <a href="Matej Guid.html" title="Matej Guid">Matej Guid</a>, <a href="Ivan Bratko.html" title="Ivan Bratko">Ivan Bratko</a> (<b>2007</b>). <i>Factors affecting diminishing returns for searching deeper</i>. <a href="ICGA Journal.html#30 2" title="ICGA Journal">ICGA Journal, Vol. 30, No. 2</a>, <a class="external text" href="http://www.ailab.si/matej/doc/Factors Affecting Diminishing Returns.pdf.html" rel="nofollow">pdf</a> </li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1996_...">1996 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/6a56fa2f1727392a.html" rel="nofollow">Information about Shredder</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 22, 1996</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/Qj9rLA0E0oc/T6PKiOclOEcJ" rel="nofollow">Shredder2</a> by Mike Cooter, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, July 26, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=43776" rel="nofollow">What's wrong with Shredder?</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 1999</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/ie_jsMcfQbM/cXUNHOmWEL8J" rel="nofollow">Re: Chess Genius 6.5</a> by pc...@delthis.co.uk, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, November 24, 1999  » <a href="Chess Genius.html" title="Chess Genius">Chess Genius</a>, <a href="Millennium Chess System.html" title="Millennium Chess System">Millennium Chess System</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=105328" rel="nofollow">Shredder in the SSDF list</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2000 » <a href="SSDF.html" title="SSDF">SSDF</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=126390" rel="nofollow">Shredder wins the WMCCC 2000</a> by <a href="Enrique Irazoqui.html" title="Enrique Irazoqui">Enrique Irazoqui</a>, <a href="CCC.html" title="CCC">CCC</a>, August 25, 2000 » <a href="WMCCC 2000.html" title="WMCCC 2000">WMCCC 2000</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=139267" rel="nofollow">Shredder 5</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=143226" rel="nofollow">Shredder5 patch</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 06, 2000</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=18&amp;t=36342.html" rel="nofollow">Wb2Uci from Odd Gunnar Malin is working well on Shredder5 GUI</a> by Carlos E.A. Drake, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, March 06, 2002 » <a href="Wb2UCI.html" title="Wb2UCI">Wb2UCI</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=294486" rel="nofollow">Shredder and Engine Book Learning</a> by <a class="new" href="index.php?title=Stephen Ham&amp;action=edit&amp;redlink=1.html" title="Stephen Ham (page does not exist)">Stephen Ham</a>, <a href="CCC.html" title="CCC">CCC</a>, April 24, 2003 » <a href="Book Learning.html" title="Book Learning">Book Learning</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334429" rel="nofollow">Shredder wins in Graz after controversy</a> by <a href="Darse Billings.html" title="Darse Billings">Darse Billings</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=356109" rel="nofollow">Shredder 8 secret: search depth?</a> by <a href="Jouni Uski.html" title="Jouni Uski">Jouni Uski</a>, <a href="CCC.html" title="CCC">CCC</a>, March 23, 2004</li></ul>
+<dl><dd> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=356131" rel="nofollow">Re: Shredder 8 secret: search depth?</a> by <a href="Vasik Rajlich.html" title="Vasik Rajlich">Vasik Rajlich</a>, <a href="CCC.html" title="CCC">CCC</a>, March 23, 2004 » <a href="Depth.html" title="Depth">Depth</a>, <a href="Junior.html" title="Junior">Junior</a>, <a href="Fritz.html" title="Fritz">Fritz</a></dd></dl>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=407849" rel="nofollow">Shredder 9 improvements over Shredder 8</a> by <a href="Sandro Necchi.html" title="Sandro Necchi">Sandro Necchi</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=473634" rel="nofollow">Shredder 9</a> by Alex Shalamanov, <a href="CCC.html" title="CCC">CCC</a>, December 26, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=475876" rel="nofollow">Non-deterministic behaviour of Deep Shredder - REALLY interesting</a> by George Sobala, <a href="CCC.html" title="CCC">CCC</a>, December 31, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=478268" rel="nofollow">Shredder Classic 1.3</a> by phili_ppe, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2006</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=487301" rel="nofollow">Shredder 10</a> by John Jack, <a href="CCC.html" title="CCC">CCC</a>, February 17, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13036.html" rel="nofollow">Shredder 10.1 now released</a> by AGove, <a href="CCC.html" title="CCC">CCC</a>, April 11, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14903.html" rel="nofollow">Shredder for iPhonet</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, July 06, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17085.html" rel="nofollow">Deep Shredder 11</a> by AGove, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=21670.html" rel="nofollow">Shredder 11 Linux</a> by <a href="Kurt Utzinger.html" title="Kurt Utzinger">Kurt Utzinger</a>, <a href="CCC.html" title="CCC">CCC</a>, June 08, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=24462.html" rel="nofollow">UEP Shredder WC Edition</a> by <a href="Ingo Bauer.html" title="Ingo Bauer">Ingo Bauer</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=29972.html" rel="nofollow">Shredder 12 infos and release date</a> by <a href="Ingo Bauer.html" title="Ingo Bauer">Ingo Bauer</a>, <a href="CCC.html" title="CCC">CCC</a>, October 03, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30094.html" rel="nofollow">Deep Shredder 12 Linux</a> by <a href="Kurt Utzinger.html" title="Kurt Utzinger">Kurt Utzinger</a>, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30138.html" rel="nofollow">Differences between Shredder12 and Shredder Classic 4?</a> by <a class="new" href="index.php?title=Volker Pittlik&amp;action=edit&amp;redlink=1.html" title="Volker Pittlik (page does not exist)">Volker Pittlik</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2009</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=30658.html" rel="nofollow">Shredder for Android</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 17, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33804.html" rel="nofollow">Shredder 12</a> by George Bodkin, <a href="CCC.html" title="CCC">CCC</a>, April 14, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34233.html" rel="nofollow">Which engine version is Shredder Classic 3?</a> by <a href="Luca Hemmerich.html" title="Luca Hemmerich">Luca Hemmerich</a>, <a href="CCC.html" title="CCC">CCC</a>, May 09, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36011.html" rel="nofollow">Shredder for Android ...</a> by <a href="Ingo Bauer.html" title="Ingo Bauer">Ingo Bauer</a>, <a href="CCC.html" title="CCC">CCC</a>, September 08, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=36235.html" rel="nofollow">Shredder gets Gold</a> by Peter Martan, <a href="CCC.html" title="CCC">CCC</a>, October 02, 2010 » <a href="WCSC 2010.html" title="WCSC 2010">WCSC 2010</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41011.html" rel="nofollow">Shredder 4 classic with S12 SE engine for free</a> by <a class="new" href="index.php?title=Volker Pittlik&amp;action=edit&amp;redlink=1.html" title="Volker Pittlik (page does not exist)">Volker Pittlik</a>, <a href="CCC.html" title="CCC">CCC</a>, November 06, 2011</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55277.html" rel="nofollow">Shredder-Chess-Engine will be updated</a> by JoeBoden, <a href="CCC.html" title="CCC">CCC</a>, February 09, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56880.html" rel="nofollow">Shredder is the new World Chess Software Champion</a> by Mehmet Karaman, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2015 » <a href="WCSC 2015.html" title="WCSC 2015">WCSC 2015</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58699.html" rel="nofollow">New Shredder information?</a> by Robert Flesher, <a href="CCC.html" title="CCC">CCC</a>, December 27, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61895.html" rel="nofollow">Deep Shredder 13 Windows out</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 30, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62224.html" rel="nofollow">Shredder 13 for Mac and Linux out</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 22, 2016</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75773.html" rel="nofollow">A new website for Shredder ...</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2020</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Chess_Engine">Chess Engine</span></h2>
+<ul><li> <a class="external text" href="https://www.shredderchess.com/" rel="nofollow">Shredder Computer Chess</a></li></ul>
+<dl><dd> <a class="external text" href="https://www.shredderchess.com/chess-news.html" rel="nofollow">Shredder Computer Chess | News</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Shredder_%28chess%29" rel="nofollow">Shredder from Wikipedia</a></li>
+<li> <a class="external text" href="http://scleinzell.schachvereine.de/p spielprogramme/shredder5.shtml.html" rel="nofollow">Shredder 5.0 - das Weltmeister-Programm!</a> by <a href="Peter Schreiner.html" title="Peter Schreiner">Peter Schreiner</a>,  <a class="external text" href="http://scleinzell.schachvereine.de/home/pitters.shtml.html" rel="nofollow">Schachclub Leinzell Informationen zu aktueller Schachsoftware</a>, Dezember 2000 (German)</li>
+<li> <a class="external text" href="https://en.chessbase.com/post/shredder-9-on-top-of-the-world" rel="nofollow">Shredder 9 on top of the world  - A short introduction to Shredder 9</a> by <a href="Peter Schreiner.html" title="Peter Schreiner">Peter Schreiner</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, March 01, 2005 <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup></li>
+<li> <a class="external text" href="https://en.chessbase.com/post/programs-and-eentials/3" rel="nofollow">Programs and essentials</a> by <a class="new" href="index.php?title=Steve Lopez&amp;action=edit&amp;redlink=1.html" title="Steve Lopez (page does not exist)">Steve Lopez</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, March 13, 2005 »  <a href="Junior.html" title="Junior">Junior 9</a>, <a class="mw-selflink selflink">Shredder 9</a></li>
+<li> <a class="external text" href="https://en.chessbase.com/post/shredder-10-now-available" rel="nofollow">Shredder 10 now available - Interview with Shredder author Stefan Meyer-Kahlen</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, May 26, 2006</li>
+<li> <a class="external text" href="http://www.nk-qy.info/bericht-chessbase-deep-shredder-12.htm.html" rel="nofollow">ChessBase DeepShredder 12</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a class="external text" href="http://www.schach-welt.de/spezial/computerschach-.html.html" rel="nofollow">Schachwelt - Computerschach</a>, January 30, 2010 (German)</li>
+<li> <a class="external text" href="http://www.danamackenzie.com/blog/?p=1120.html" rel="nofollow">First win against Shredder 12!</a> by <a href="Dana Mackenzie.html" title="Dana Mackenzie">Dana Mackenzie</a>, <a class="external text" href="http://www.danamackenzie.com/blog/.html" rel="nofollow">Dana Blogs Chess</a>, July 03, 2011</li></ul>
+<h2><span class="mw-headline" id="Shredderbases_2">Shredderbases</span></h2>
+<ul><li> <a class="external text" href="https://web.archive.org/web/20160312224150/http://www.shredderchess.com/chess-info/features/shredderbases.html" rel="nofollow">Shredderbases</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li>
+<li> <a class="external text" href="https://en.chessbase.com/post/shredder-10-and-the-shredderbases" rel="nofollow">Shredder 10 and the Shredderbases</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, July 07, 2006</li>
+<li> <a class="external text" href="https://en.chessbase.com/post/shredderbases" rel="nofollow">Shredderbases</a> by <a class="new" href="index.php?title=Steve Lopez&amp;action=edit&amp;redlink=1.html" title="Steve Lopez (page does not exist)">Steve Lopez</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, November 11, 2006</li></ul>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wiktionary.org/wiki/shredder" rel="nofollow">shredder - Wiktionary</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Shredding" rel="nofollow">Shredding (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Shredding_%28tree-pruning_technique%29" rel="nofollow">Shredding (tree-pruning technique) from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-info/screenshots/shredder-13-windows-screenshots.html.html" rel="nofollow">Shredder 13 Windows Screenshots</a> from <a class="external text" href="http://www.shredderchess.com/.html" rel="nofollow">Shredder Chess</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">Image captured from <a class="external text" href="http://www.top-5000.nl/Paderborn 1999 1.mp4.html" rel="nofollow">Paderborn 1999 1.mp4</a> by <a href="Thorsten Czub.html" title="Thorsten Czub">Thorsten Czub</a> hosted by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/round.php?tournament=8&amp;round=6&amp;id=3" rel="nofollow">Paderborn 1999 - Chess - Round 6 - Game 3 (ICGA Tournaments)</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/.html" rel="nofollow">Shredder Computer Chess</a>, 19th title added by editor</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=20" rel="nofollow">Shredder's ICGA Tournaments</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-software/linux.html.html" rel="nofollow">Shredder Computer Chess Download - Linux</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-software/macintosh.html.html" rel="nofollow">Shredder Computer Chess Download - Macintosh</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"> <a class="external text" href="http://scleinzell.schachvereine.de/p spielprogramme/shredder5 d.shtml.html#4" rel="nofollow">Shredder 5.0 - das Weltmeister-Programm! - Deep Shredder verfügbar! - April 2001</a> by <a href="Peter Schreiner.html" title="Peter Schreiner">Peter Schreiner</a>,  <a class="external text" href="http://scleinzell.schachvereine.de/home/pitters.shtml.html" rel="nofollow">Schachclub Leinzell Informationen zu aktueller Schachsoftware</a>, Dezember 2000 (German)</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-software/deep-shredder13.html.html" rel="nofollow">Shredder Computer Chess Download - Deep Shredder 13</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61895.html" rel="nofollow">Deep Shredder 13 Windows out</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 30, 2016</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61895&amp;start=5.html" rel="nofollow">Re: Deep Shredder 13 Windows out</a> by <a href="Ingo Bauer.html" title="Ingo Bauer">Ingo Bauer</a>,  <a href="CCC.html" title="CCC">CCC</a>, October 30, 2016</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-program/shredder-classic-3-windows.html.html" rel="nofollow">Shredder Classic 3 user interface</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-news/shredder-news/pocket-shredder-chess-windows-mobile.html.html" rel="nofollow">Pocket Shredder: Chess for Windows Mobile</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-program/shredder-mobile.html.html" rel="nofollow">Shredder Mobile</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.shredderchess.com/chess-program/shredder-android.html" rel="nofollow">hredder Computer Chess Download - Shredder for Android</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.shredderchess.com/chess-info/features/shredderbases.html.html" rel="nofollow">Shredderbases</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55650.html" rel="nofollow">Ten years of Computer Chess revisited</a> by <a href="Kai Laskos.html" title="Kai Laskos">Kai Laskos</a>, <a href="CCC.html" title="CCC">CCC</a>, March 13, 2015</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722095808
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.048 seconds
+Real time usage: 0.060 seconds
+Preprocessor visited node count: 373/1000000
+Preprocessor generated node count: 726/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2585-0!canonical and timestamp 20240722095808 and revision id 23880
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Shredder&amp;oldid=23880">https://www.chessprogramming.org/index.php?title=Shredder&amp;oldid=23880</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:UCI.html" title="Category:UCI">UCI</a></li><li><a href="Category:Commercial.html" title="Category:Commercial">Commercial</a></li><li><a href="Category:ChessBase.html" title="Category:ChessBase">ChessBase</a></li><li><a href="Category:DEC Alpha.html" title="Category:DEC Alpha">DEC Alpha</a></li><li><a href="Category:X86.html" title="Category:X86">X86</a></li><li><a href="Category:X64.html" title="Category:X64">X64</a></li><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Android.html" title="Category:Android">Android</a></li><li><a href="Category:Linux.html" title="Category:Linux">Linux</a></li><li><a href="Category:Mac.html" title="Category:Mac">Mac</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li><li><a href="Category:Chess960.html" title="Category:Chess960">Chess960</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Shredder&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Shredder.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Shredder&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Shredder.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Shredder&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Shredder&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Shredder.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Shredder.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Shredder&amp;oldid=23880.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Shredder&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 28 February 2021, at 22:29.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Shredder&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.048","walltime":"0.060","ppvisitednodes":{"value":373,"limit":1000000},"ppgeneratednodes":{"value":726,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722095808","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

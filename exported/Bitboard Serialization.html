@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Bitboard Serialization - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Bitboard_Serialization","wgTitle":"Bitboard Serialization","wgCurRevisionId":18776,"wgRevisionId":18776,"wgArticleId":1109,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["M. C. Escher","The United Jazz + Rock Ensemble","Ian Carr","Wolfgang Dauner","Jon Hiseman","Volker Kriegel","Albert Mangelsdorff","Charlie Mariano","Barbara Thompson","Eberhard Weber"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Bitboard_Serialization","wgRelevantArticleId":1109,"wgRequestId":"Zp7DNQAL2SoIDHtirCviLQAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Bitboard_Serialization rootpage-Bitboard_Serialization skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Bitboard Serialization</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * Bitboard Serialization</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:278px;"><a href="http://www.mcescher.com/Gallery/back-bmp/LW331.jpg.html"><img alt="" class="thumbimage" height="206" src="images/d/da/EschersEncounter.jpg" width="276"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:EschersEncounter.jpg.html" title="Enlarge"></a></div><a href="Category:M. C. Escher.html" title="Category:M. C. Escher">M. C. Escher</a>, Encounter, 1944 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Bitboard Serialization</b> refers to the transformation of a bitboard with up to 64 one-bits set into a list of up to 64 bit-indices aka <a href="Squares.html" title="Squares">square indices</a> of a <a href="8x8 Board.html" title="8x8 Board">8x8 board</a> - for instance to process <a href="Target Square.html" title="Target Square">move-target</a> sets for <a href="Move Generation.html" title="Move Generation">move generation</a>. This is done in two phases, isolating none-empty <a class="external text" href="https://en.wikipedia.org/wiki/Subset" rel="nofollow">subsets</a> and then transforming those more versatile subsets into lists, either bit by bit, by applying a <a class="external text" href="https://en.wikipedia.org/wiki/Bisection" rel="nofollow">bisection</a> scheme, where finally <a href="Word.html" title="Word">words</a> or <a href="Byte.html" title="Byte">bytes</a> may act as index of a pre-calculated database, or by <a href="Hash Table.html#PerfectHashing" title="Hash Table">perfect hashing</a> of square lists by subsets with a limited maximum popularity, for instance move-target sets of a <a href="King.html" title="King">king</a> or <a href="Knight.html" title="Knight">knight</a> even with <a href="Hash Table.html#MinimalPerfectHashing" title="Hash Table">minimal perfect hashing</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Isolating Subsets"><span class="tocnumber">1</span> <span class="toctext">Isolating Subsets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Single Bits"><span class="tocnumber">1.1</span> <span class="toctext">Single Bits</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Multiple Bits"><span class="tocnumber">1.2</span> <span class="toctext">Multiple Bits</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Converting Sets to Lists"><span class="tocnumber">2</span> <span class="toctext">Converting Sets to Lists</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Square Index Serialization"><span class="tocnumber">2.1</span> <span class="toctext">Square Index Serialization</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Scanning Forward"><span class="tocnumber">2.1.1</span> <span class="toctext">Scanning Forward</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Scanning Reverse"><span class="tocnumber">2.1.2</span> <span class="toctext">Scanning Reverse</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Scanning with Reset"><span class="tocnumber">2.1.3</span> <span class="toctext">Scanning with Reset</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Intrinsic Version"><span class="tocnumber">2.1.4</span> <span class="toctext">Intrinsic Version</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Black or White"><span class="tocnumber">2.1.5</span> <span class="toctext">Black or White</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#STL Iterator"><span class="tocnumber">2.1.6</span> <span class="toctext">STL Iterator</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Hashing Multiple Bits"><span class="tocnumber">2.2</span> <span class="toctext">Hashing Multiple Bits</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ..."><span class="tocnumber">4.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2010 ..."><span class="tocnumber">4.2</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Isolating_Subsets">Isolating Subsets</span></h1>
+<p>The process of isolating subsets is performed by <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersection</a>, for single populated subsets with the <a href="General Setwise Operations.html#TheTwosComplement" title="General Setwise Operations">two's complement</a>.
+</p>
+<h2><span class="mw-headline" id="Single_Bits">Single Bits</span></h2>
+<p>This obvious loop approach is similar to <a href="Population Count.html#BrianKernighansway" title="Population Count">Brian Kernighan's way</a> to count the number of one-bits by consecutively isolating and clearing the LS1B:
+</p>
+<pre>
+while ( x ) {
+   U64 ls1b = x &amp; -x; // isolate LS1B
+   ...
+   x &amp;= x-1; // reset LS1B
+}
+</pre>
+<p>or with likely the same generated assembly:
+</p>
+<pre>
+if ( x ) do {
+   U64 ls1b = x &amp; -x; // isolate LS1B
+   ...
+} while ( x &amp;= x-1 );
+</pre>
+<p>Of course we may also reset the LS1B by
+</p>
+<pre>
+   x ^= ls1b; // reset LS1B
+</pre>
+<p>but todays processors like to gain more parallelism to calculate independent expressions.
+</p>
+<h2><span class="mw-headline" id="Multiple_Bits">Multiple Bits</span></h2>
+<p>Isolating none-empty subsets with possibly multiple one-bits can be applied by <a class="external text" href="https://en.wikipedia.org/wiki/Divide_and_conquer_algorithm" rel="nofollow">divide and conquer</a>, that is to divide the bitboard or <a href="Quad Word.html" title="Quad Word">quad word</a> <a href="Recursion.html" title="Recursion">recursively</a> into smaller items, two <a href="Double Word.html" title="Double Word">double words</a>, consisting of two <a href="Word.html" title="Word">words</a> and those again of two <a href="Byte.html" title="Byte">bytes</a>. Word and byte-wide isolated subsets may then act as an index of a pre-calculated lookup table to convert those subsets to adequate data-structures, most likely lists with up to sixteen or eight elements.
+</p>
+<h1><span class="mw-headline" id="Converting_Sets_to_Lists">Converting Sets to Lists</span></h1>
+<h2><span class="mw-headline" id="Square_Index_Serialization">Square Index Serialization</span></h2>
+<p>For most applications LS1B-isolation alone is not appropriate, but the conversion from the exponential bitboard centric world to the scalar square centric world, also called <a href="BitScan.html" title="BitScan">bit-scanning</a>.
+</p>
+<h3><span class="mw-headline" id="Scanning_Forward">Scanning Forward</span></h3>
+<pre>
+if ( x ) do {
+   int idx = bitScanForward(x); // square index from 0..63
+   *list++ = foo(idx, ...);
+} while (x &amp;= x-1); // reset LS1B
+</pre>
+<p>Per definition bitScanForward reveals the index of LS1B.
+</p>
+<h3><span class="mw-headline" id="Scanning_Reverse">Scanning Reverse</span></h3>
+<p>If - for some reason - we like to traverse the sets in reverse or unknown order anyway, we can not (or don't want to) rely on the independent LS1B reset.
+</p>
+<pre>
+if ( x ) do {
+   int idx = bitScanReverse(x); // square index from 0..63
+   *list++ = foo(idx, ...);
+} while (x ^= powOf2[idx]) ; // or 1ULL &lt;&lt; idx -&gt; reset found bit
+</pre>
+<h3><span class="mw-headline" id="Scanning_with_Reset">Scanning with Reset</span></h3>
+<p>A win of abstraction is to use a combined <a href="BitScan.html#BitscanwithReset" title="BitScan">bitscan with reset</a> found bit routine. This is fine. But probably harder for compilers to generate optimal code in the if-do-while-sense, where reset last bit already sets the zero-flag. If you don't care on such micro-optimizations, this is the preferred control structure <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<pre>
+while ( x ) {
+   int idx = bitScanAndReset(&amp;x); // square index from 0..63
+   *list++ = foo(idx, ...);
+}
+</pre>
+<p>One may even don't care about the order.
+</p>
+<h3><span class="mw-headline" id="Intrinsic_Version">Intrinsic Version</span></h3>
+<p>If bitscan is able to properly handle empty sets - leaving an value outside the 0..63 range (like leading or trailing zero count), we may think about to skip the leading while condition and to break on bitscan(x) &gt; 63 for instance. That was not recommend - since the reset leaves the condition en-passant, and the computational cost of an additional bitscan or zero count was higher. If you like to play the optimization game, it might be fine for <a href="X86-64.html" title="X86-64">x86-64</a> <a class="external text" href="https://en.wikipedia.org/wiki/Intel_Core_2" rel="nofollow">Core 2 duo</a> thought - using <a href="X86-64.html#gpinstructions" title="X86-64">bitscan</a> and <a href="X86-64.html#gpinstructions" title="X86-64">bittestandreset</a> intrinsics or wrappers - if kept all in registers of course.
+</p>
+<pre>
+while (_BitScanForward64(&amp;idx, x)) { // or reverse
+   *list++ = foo(idx, ...);
+   _bittestandreset64(&amp;x, idx);
+}
+</pre>
+<p>The loop is intended to look like this in <a href="X86-64.html" title="X86-64">x86-64</a> <a href="Assembly.html" title="Assembly">assembly</a>:
+</p>
+<pre>
+; input rdx - move target set
+;       ecx - move from aspects
+;       rdi - pointer to movelist
+   std           ; set direction flag
+   bsf  rax, rdx ; scan first to-bit
+   jz   over     ; jump if no more moves
+loop:
+   btr  rdx, rax ; reset found bit
+   or   eax, ecx ; combine to- with from-square
+   stosw         ; store 16-bit move *rdi++ = move
+   bsf  rax, rdx ; scan next to-bit
+   jnz  loop     ; jump if more moves
+over:
+</pre>
+<p><span id="BlackorWhite"></span>
+</p>
+<h3><span class="mw-headline" id="Black_or_White">Black or White</span></h3>
+<p>With bitboard serialization one minor problem is the relative order in <a href="Move Generation.html" title="Move Generation">move generation</a> considering <a href="Side to move.html" title="Side to move">side to move</a>. Bsf scans the board in a1..h1, a2..h2, a8..h8 order, assuming <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">little-endian rank-file mapping</a>, which might be the desired order for an attacking black player. Traversing white pieces and target squares the same way may result in asymmetries and different search behavior of <a href="Color Flipping.html" title="Color Flipping">color flipped positions</a>. Despite other features considered in <a href="Move Ordering.html" title="Move Ordering">move ordering</a>, the initial order in generation has more or less influence. Therefore, it is desired to traverse the "white" bitboards with priority for the black back-rank as well <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . This might be done by bitscan reverse, which covers the rank symmetry, but also mirrors the files. Another alternative is to traverse a <a href="Flipping Mirroring and Rotating.html#FlipVertically" title="Flipping Mirroring and Rotating">vertically flipped</a> "white" bitboard, which can be done outside the do-while loop by a "conditional" <a href="X86-64.html" title="X86-64">x86-64</a> <a href="X86-64.html#gpinstructions" title="X86-64">byte swap</a>, and requires one further register and xor per loop cycle, which might be combined with other stuff, f.i. the <a href="Origin Square.html" title="Origin Square">from square</a> of a move:
+</p>
+<pre>
+if ( x ) {
+   U64 m = (U64)color - 1; // e.g. -1 if white, 0 for black
+   int o = (int)m &amp; 56;
+   x = x ^ ((x ^ flipVertical(x)) &amp; m); // conditional flip
+   do {
+      int idx = bitScanForward(x) ^ o; // square index from 0..63
+      *list++ = foo(idx , ...);
+   } while (x &amp;= x-1); // reset LS1B
+}
+</pre>
+<p><span id="STLIterator"></span>
+</p>
+<h3><span class="mw-headline" id="STL_Iterator">STL Iterator</span></h3>
+<p><a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a> has written a prototype of a <a href="Generic Programming.html" title="Generic Programming">generic</a> <a href="Cpp.html" title="Cpp">C++11</a> bitset <a href="Cpp.html#Template" title="Cpp">template</a> that can be used to traverse a set in <a class="external text" href="https://en.wikipedia.org/wiki/Iterator#C.2B.2B" rel="nofollow">STL iterator</a> style, hiding bitscan and reset <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> ...
+</p>
+<pre>
+typedef bit_set&lt;int64_t, 1&gt; bitset;
+
+void testLoop(int* p, const bitset &amp; x) {
+  for (auto it = x.begin(); it != x.end(); ++it)
+    *p++ = *it;
+}
+/* or std::copy */
+void testCopy(int* p, const bitset &amp; x) {
+  std::copy(x.begin(), x.end(), p); 
+}
+</pre>
+<p>... which yields in following <a href="X86-64.html" title="X86-64">X86-64</a> <a href="Assembly.html" title="Assembly">assembly</a>, almost identical for the iterator loop and std::copy  <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>:
+</p>
+<pre>
+; testLoop(int*, bit_set&lt;long, 1ul&gt;):
+  test  rsi, rsi
+  jne   .L13
+.L7:
+  ret
+.L13:
+  bsf   rax, rsi
+  mov   DWORD PTR [rdi], eax
+  lea   rax, [rsi-1]
+  add   rdi, 4
+  and   rsi, rax
+  jne   .L13
+  jmp   .L7
+</pre>
+<p><span id="HashingMultipleBits"></span>
+</p>
+<h2><span class="mw-headline" id="Hashing_Multiple_Bits">Hashing Multiple Bits</span></h2>
+<p>Similar to the idea to hash occupancies in <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">kindergarten bitboards</a> and <a href="Magic Bitboards.html" title="Magic Bitboards">magic bitboards</a>, one may hash certain move-target subsets of one piece in one run, to lookup tables with pre-calculated moves-lists <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> . Sounds like doing up to eight bitscans in parallel. The idea is to muliply-shift-lookup a move-target bitboard, to do an almost branch-less <a href="Move Generation.html" title="Move Generation">move-generation</a> with pre-calculated moves inside <a href="Move List.html" title="Move List">move-lists</a>. For instance king- and knight-moves <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> as well as moves of sliding pieces per line:
+</p>
+<pre>
+moveTarget = KingAttacks[sq] &amp; ~(ownPieces | attackedSquares);
+idx = (moveTarget * kingMagic[sq]) &gt;&gt; kingShift[sq]);
+movelists = kingMoveLists[sq];
+movelist  = movelists[idx];
+moveCpy(target, movelist, movelist-&gt;n);
+</pre>
+<p>A king in a corner may have up to three moves. Thus there are 2^3 == 8 possible move-lists.
+For instance for a king on a1 (number of moves: vector of moves):
+</p>
+<pre>
+0:{empty}
+1:{a1-b1}
+1:{a1-a2}
+1:{a1-b2}
+2:{a1-b1,a1-a2}
+2:{a1-b1,a1-b2}
+2:{a1-a2,a1-b2}
+3:{a1-b1,a1-a2,a1-b2}
+</pre>
+<p>Kings on edges have 5 potential target squares, thus there are 32 possible move-lists. All other kings have 8 all the 8 neighbors with up to 256 move-lists. Similar move-list enumeration is possible with knights and others. All possible move-target subsets of kings and knights for all 64 from-squares are <a href="Hash Table.html#MinimalPerfectHashing" title="Hash Table">perfectly minimal hashable</a> with a magic factor of four one-bits set. 10016 possible king-move-lists and 5520 knight-move-lists. To reduce memory one may offset the sets to a "normalized" source square per king, knight and sliding piece line, implying some vector arithmetic in the board centric world considering the offset.
+</p><p>The less populated move-target subsets are, the less efficient this hashing technique. This might become a problem since bitboard move-generation is essentially about subsets of moves with certain properties, like most importantly fast winning captures at <a href="Node Types.html#CUT" title="Node Types">Cut-nodes</a>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Move Generation.html" title="Move Generation">Move Generation</a></li></ul>
+<dl><dd> <a href="Belle.html#Hardware" title="Belle">Belle | Hardware Move Generation</a></dd></dl>
+<ul><li> <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a href="Pieces versus Directions.html" title="Pieces versus Directions">Pieces versus Directions</a></li>
+<li> <a href="Table-driven Move Generation.html" title="Table-driven Move Generation">Table-driven Move Generation</a></li>
+<li> <a href="Traversing Subsets of a Set.html" title="Traversing Subsets of a Set">Traversing Subsets of a Set</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=487844" rel="nofollow">Subject: sliding move generation idea with bitboards</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2006</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6099.html" rel="nofollow">Magic Knight- and King-Move Generation</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, Januar 11, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=19837.html" rel="nofollow">compact bitboard move generator</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, February 25, 2008 » <a href="Move Generation.html" title="Move Generation">Move Generation</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2228.html" rel="nofollow">Extracting moves from bitboards</a> by <a href="Christian Daley.html" title="Christian Daley">CDaley11</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 18, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47414&amp;start=4.html" rel="nofollow">Re: C vs ASM</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>,  March 05, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54704.html" rel="nofollow">Symmetric move generation using bitboards</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2014 » <a href="BitScan.html" title="BitScan">BitScan</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70065.html" rel="nofollow">An improvement to classic Chess4.5 style bitboards</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, March 01, 2019</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Serialization" rel="nofollow">Serialization from Wikipedia</a></li>
+<li> <a href="Category:The United Jazz %2B Rock Ensemble.html" title="Category:The United Jazz + Rock Ensemble">The United Jazz + Rock Ensemble</a> - <a class="external text" href="https://www.allmusic.com/song/steps-of-mc-escher-mt0012121605" rel="nofollow">Steps of M.C. Escher</a>, <a class="external text" href="https://www.allmusic.com/album/live-im-schutzenhaus-mw0000062412" rel="nofollow">Live Im Schutzenhaus</a> (1978), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:Eberhard Weber.html" title="Category:Eberhard Weber">Eberhard Weber</a>, <a href="Category:Jon Hiseman.html" title="Category:Jon Hiseman">Jon Hiseman</a>, <a href="Category:Barbara Thompson.html" title="Category:Barbara Thompson">Barbara Thompson</a>, <a href="Category:Volker Kriegel.html" title="Category:Volker Kriegel">Volker Kriegel</a>, <a href="Category:Wolfgang Dauner.html" title="Category:Wolfgang Dauner">Wolfgang Dauner</a>,<br/></dd>
+<dd> <a href="Category:Charlie Mariano.html" title="Category:Charlie Mariano">Charlie Mariano</a>, <a href="Category:Albert Mangelsdorff.html" title="Category:Albert Mangelsdorff">Albert Mangelsdorff</a>, <a href="Category:Ian Carr.html" title="Category:Ian Carr">Ian Carr</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Ack_van_Rooyen" rel="nofollow">Ack van Rooyen</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Kenny_Wheeler" rel="nofollow">Kenny Wheeler</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/XKToNeW7r9s?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.mcescher.com/Gallery/gallery-back.htm.html" rel="nofollow">Picture gallery "Back in Holland 1941 - 1954"</a> from <a class="external text" href="http://www.mcescher.com/.html" rel="nofollow">The Official M.C. Escher Website</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70202.html" rel="nofollow">CPW bitscan with reset could someone explain this line?</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, March 14, 2019</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=289344&amp;t=29611&amp;sid=74848128f12e45f8883a87c3e6729f75.html" rel="nofollow">Re: Alternatives to History Heuristics</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a>, September 02, 2009</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://liveworkspace.org/code/41EaZl$203.html" rel="nofollow">LiveWorkSpace(IDE online): C++-3.2 (clang++): 41EaZl</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=47414&amp;start=4.html" rel="nofollow">Re: C vs ASM</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>,  March 05, 2013</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://gcc.godbolt.org/.html" rel="nofollow">GCC Explorer</a> with g++ 4.7 compiler, options -std=c++11 -O3 -march=k8-sse3 -fverbose-asm </span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=487844" rel="nofollow">Subject: sliding move generation idea with bitboards</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, February 19, 2006</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6099.html" rel="nofollow">Magic Knight- and King-Move Generation</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, Januar 11, 2007</span>
+</li>
+</ol></div>
+<p><b><a href="Bitboards.html" title="Bitboards">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722160735
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.027 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 312/1000000
+Preprocessor generated node count: 648/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1109-0!canonical and timestamp 20240722160735 and revision id 18776
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Bitboard_Serialization&amp;oldid=18776">https://www.chessprogramming.org/index.php?title=Bitboard_Serialization&amp;oldid=18776</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:M. C. Escher.html" title="Category:M. C. Escher">M. C. Escher</a></li><li><a href="Category:The United Jazz %2B Rock Ensemble.html" title="Category:The United Jazz + Rock Ensemble">The United Jazz + Rock Ensemble</a></li><li><a href="Category:Ian Carr.html" title="Category:Ian Carr">Ian Carr</a></li><li><a href="Category:Wolfgang Dauner.html" title="Category:Wolfgang Dauner">Wolfgang Dauner</a></li><li><a href="Category:Jon Hiseman.html" title="Category:Jon Hiseman">Jon Hiseman</a></li><li><a href="Category:Volker Kriegel.html" title="Category:Volker Kriegel">Volker Kriegel</a></li><li><a href="Category:Albert Mangelsdorff.html" title="Category:Albert Mangelsdorff">Albert Mangelsdorff</a></li><li><a href="Category:Charlie Mariano.html" title="Category:Charlie Mariano">Charlie Mariano</a></li><li><a href="Category:Barbara Thompson.html" title="Category:Barbara Thompson">Barbara Thompson</a></li><li><a href="Category:Eberhard Weber.html" title="Category:Eberhard Weber">Eberhard Weber</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Bitboard+Serialization&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Bitboard Serialization.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Bitboard Serialization&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Bitboard Serialization.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Bitboard Serialization&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Bitboard Serialization&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Bitboard Serialization.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Bitboard Serialization.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Bitboard Serialization&amp;oldid=18776.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Bitboard Serialization&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 April 2020, at 10:30.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Bitboard_Serialization&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.027","walltime":"0.029","ppvisitednodes":{"value":312,"limit":1000000},"ppgeneratednodes":{"value":648,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722160735","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":51});});</script>
+</body>
+</html>

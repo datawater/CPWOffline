@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>UCI - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"UCI","wgTitle":"UCI","wgCurRevisionId":27055,"wgRevisionId":27055,"wgArticleId":1636,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Videos"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UCI","wgRelevantArticleId":1636,"wgRequestId":"Zp7Dsf-qaMe6EU8WbZGhQAAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-UCI rootpage-UCI skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">UCI</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Protocols.html" title="Protocols">Protocols</a> * UCI</b>
+</p><p><b>UCI</b>, (Universal Chess Interface)<br/>
+an open <a class="external text" href="https://en.wikipedia.org/wiki/Communication_protocol" rel="nofollow">communication protocol</a> for chess engines to play <a href="Games.html" title="Games">games</a> automatically, that is to communicate with other programs including <a href="GUI.html" title="GUI">Graphical User Interfaces</a>. UCI was designed and developed by <a href="Rudolf Huber.html" title="Rudolf Huber">Rudolf Huber</a> and <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, and released in November 2000 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . It has, by-in-large, replaced the older <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a> (<a href="WinBoard.html" title="WinBoard">WinBoard</a>/<a href="XBoard.html" title="XBoard">XBoard</a>).
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Design Philosophy"><span class="tocnumber">1</span> <span class="toctext">Design Philosophy</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Critique"><span class="tocnumber">2</span> <span class="toctext">Critique</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Contra"><span class="tocnumber">2.1</span> <span class="toctext">Contra</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Pro"><span class="tocnumber">2.2</span> <span class="toctext">Pro</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Engines"><span class="tocnumber">3</span> <span class="toctext">Engines</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#GUIs"><span class="tocnumber">4</span> <span class="toctext">GUIs</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#CLIs"><span class="tocnumber">5</span> <span class="toctext">CLIs</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Utilities"><span class="tocnumber">6</span> <span class="toctext">Utilities</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">8</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#2000 ..."><span class="tocnumber">8.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2005 ..."><span class="tocnumber">8.2</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2010 ..."><span class="tocnumber">8.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2015 ..."><span class="tocnumber">8.4</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2020 ..."><span class="tocnumber">8.5</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#External Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Interviews"><span class="tocnumber">9.1</span> <span class="toctext">Interviews</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Implementations"><span class="tocnumber">9.2</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#JavaScript"><span class="tocnumber">9.3</span> <span class="toctext">JavaScript</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Video Tutorials"><span class="tocnumber">10</span> <span class="toctext">Video Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Design_Philosophy">Design Philosophy</span></h1>
+<p>The UCI capable <a href="GUI.html" title="GUI">GUI</a> is not only View and Controller of a chess <a class="external text" href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" rel="nofollow">MVC</a>, but also keeps the Model with its internal <a href="Chess Game.html" title="Chess Game">game states</a>. It is also an "arbiter" instance to decide about the outcome of the game, for instance in declaring a game to be drawn after a <a href="Repetitions.html" title="Repetitions">threefold repetition</a> has occurred. The UCI GUI may choose and play moves from an <a href="Opening Book.html" title="Opening Book">opening book</a> and <a href="Endgame Tablebases.html" title="Endgame Tablebases">endgame tablebase</a>.
+</p>
+<h1><span class="mw-headline" id="Critique">Critique</span></h1>
+<p>While the UCI design makes it simple for engine programmers to integrate a "stateless" chess engine, it was also disputed by various chess programmers, since it subsumes engine control parameters and delegates possibly game decisive stuff to the GUI.
+</p>
+<h2><span class="mw-headline" id="Contra">Contra</span></h2>
+<ul><li> GUIs may send very long commands (for chess positions) to chess engines</li>
+<li> It is hard for chess engines to process input/output without an extra thread for that duty</li>
+<li> Missing some useful commands/info: inform chess engines the results, no information about after movestogo GUIs will reset clock or not</li></ul>
+<p>Excerpt concerning UCI from a <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> interview by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a> in 2002 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> :
+</p>
+<pre>I simply don't like UCI. It subsumes <b>all</b> engine control parameters. It tells the engine when to <a href="Pondering.html" title="Pondering">ponder</a>, when to <a href="Search.html" title="Search">search</a>, when to stop, etc. That is contrary to my design and I have no interest in hacking <a href="Crafty.html" title="Crafty">Crafty</a> to support something that is so different from the <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">WinBoard/XBoard</a> protocol that has been around for a <b>long</b> time and which works <b>perfectly</b>.
+</pre>
+<pre>It removes several critical engine-decisions that are best made by the engine, not the GUI.
+</pre>
+<p><a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> wrote on a <a class="mw-redirect" href="Talkchess.html" title="Talkchess">Talkchess</a> thread <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+</p>
+<pre>IMO statelessness w.r.t. the game state (including clocks) in UCI was a very bad idea. It is not only that it makes the communication unnecessarily verbose, but w.r.t. clocks there is a real problem: in classical TC the timing info accompanying the 'go' command does not specify how much time will be added after the 'movestogo' have been played. With movestogo=1 and wtime/btime=59000 you could be in a 40moves/hour game, at the brink of receiving another hour for the next 40 moves, in which case it would be wise to completely spend the remaining 59 sec on the upcoming move, as this is already below average. But you could also be in a 40moves/min game, where you got out of book after 39 moves, and receive only 1 new minute for the next 40. Wasting the 59 sec on a single move now effectively reduces your time for the second session by a factor 2, which would be very sub-optimal. The time management in this case should act like you have 1:59 for 41 moves (but be aware of a 'cold-turkey deadline' for the upcoming move). There is no way a UCI engine could know this.
+</pre>
+<h2><span class="mw-headline" id="Pro">Pro</span></h2>
+<ul><li> Statelessness. That reduces unsynchronised problems between chess GUIs and engines</li>
+<li> Chess systems (chess GUIs and chess engines) may work more stably</li>
+<li> Remove the need of having extra configuration/init files for engines</li>
+<li> Easier for chess engine developers to support: easy to parse, create commands, almost no ambiguous, straight/simple code since it is almost not required automatic algorithms</li>
+<li> Easier for debugging: easy to start a match from the middle of a game (using various opening types); easy to pick up a position from long logs (for debugging purposes)</li>
+<li> Almost all new and/or strong chess engines support UCI</li>
+<li> Almost all chess GUIs support UCI</li></ul>
+<p><a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a> emphasize the ease of implementation in a <a href="Frank Quisinsky.html" title="Frank Quisinsky">Quisinsky</a> interview, April 05, 2005 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> :
+</p>
+<pre>The choice of UCI is based on software-design principles that are not easy to explain. It's a programmer's thing really, I don't expect engine users to understand. Let me give you a clue though: think about young WinBoard engines that you have tried; how many handled pondering ... without bugs??? Another clue might be that surely, <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a> knows a lot about good programming, right? So trust him if not me, UCI is good for programmers because it leads to fewer bugs in the code ... 
+
+</pre>
+<p>Fabien wrote a protocol translation program, <a href="PolyGlot.html" title="PolyGlot">PolyGlot</a> to allow use of the new protocol on <a href="Linux.html" title="Linux">Linux</a>, though this is now supported natively by the powerful <a href="Scid vs. PC.html" title="Scid vs. PC">Scid vs. PC</a> toolkit. Scid vs. PC itself includes Polyglot code to enable support for Polyglot opening books.
+</p><p><a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a> replied <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> on a <a class="mw-redirect" href="Talkchess.html" title="Talkchess">Talkchess</a> thread <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</p>
+<pre>The protocol is brilliant (and you can clearly realize it was designed by a very good programmer) because allows the code needed to handle it to be:
+- Straightforward
+- Simple (meaning with the minimal number of 'if' branches and logic)
+- General (meaning the same algorithm can handle all the different cases in an uniform fashion).
+The aim of the UCI protocol is to make the code simple, that's why I think it was made for programmers by a (great) programmer.
+</pre>
+<p><a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a> replied <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> on a <a class="mw-redirect" href="Talkchess.html" title="Talkchess">Talkchess</a> thread <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p>
+<pre>UCI's statelessness is surely not a bad idea. Your example did not prove that (it is a bad idea) but just point out a flawed detail on UCI design.
+A stateless protocol means a chess GUI must provide enough information each time an engine starts thinking. In your example, it cannot send enough information about the timer since the protocol does not mention it. It is not a big deal since programmers can solve that issue easily by adding some assumes. Of course, it is better one day we can fix those flawed details in the protocol (version 2?).
+</pre>
+<pre>I have written engines with both protocols (UCI, WB) and now support them all in my own chess GUI. Thus I have my own ideas about the strong points of each. Both are so good and can do so well their jobs. The stateless idea is the central point of UCI, which makes it a bit more suitable for modern computers and programming - that is why recently it becomes very popular.
+</pre>
+<h1><span class="mw-headline" id="Engines">Engines</span></h1>
+<ul><li> <a href="Category:UCI.html" title="Category:UCI">UCI Engines</a></li>
+<li> <a href="Category:Linux.html" title="Category:Linux">Linux UCI Engines</a></li></ul>
+<p><span id="GUI"></span>
+</p>
+<h1><span class="mw-headline" id="GUIs"><a href="GUI.html" title="GUI">GUIs</a></span></h1>
+<ul><li> <a href="Aquarium.html" title="Aquarium">Aquarium</a></li>
+<li> <a href="Arena.html" title="Arena">Arena</a></li>
+<li> <a href="Banksia.html" title="Banksia">Banksia</a></li>
+<li> <a href="Banksia GUI.html" title="Banksia GUI">Banksia GUI</a></li>
+<li> <a href="Chess Assistant.html" title="Chess Assistant">Chess Assistant</a></li>
+<li> <a href="ChessBase (Database).html" title="ChessBase (Database)">ChessBase (Database)</a></li>
+<li> <a href="Chess for Android.html" title="Chess for Android">Chess for Android</a></li>
+<li> <a href="ChessPartner.html" title="ChessPartner">ChessPartner</a></li>
+<li> <a class="new" href="index.php?title=Chess Wizard (GUI)&amp;action=edit&amp;redlink=1.html" title="Chess Wizard (GUI) (page does not exist)">Chess Wizard</a></li>
+<li> <a href="Cute Chess.html" title="Cute Chess">Cute Chess</a></li>
+<li> <a href="Fritz.html#FritzGUI" title="Fritz">Fritz GUI</a></li>
+<li> <a href="HIARCS Chess Explorer.html" title="HIARCS Chess Explorer">HIARCS Chess Explorer</a> </li>
+<li> <a href="Jerry.html" title="Jerry">Jerry</a></li>
+<li> <a class="new" href="index.php?title=Jose&amp;action=edit&amp;redlink=1.html" title="Jose (page does not exist)">jose</a></li>
+<li> <a href="Kvetka.html" title="Kvetka">Kvetka</a></li>
+<li> <a href="LittleBlitzer.html" title="LittleBlitzer">LittleBlitzer</a></li>
+<li> <a href="Lucas Chess.html" title="Lucas Chess">Lucas Chess</a></li>
+<li> <a href="PyChess.html" title="PyChess">PyChess</a></li>
+<li> <a href="SCID.html" title="SCID">SCID</a></li>
+<li> <a href="Scid vs. PC.html" title="Scid vs. PC">Scid vs. PC</a></li>
+<li> <a href="Scidb.html" title="Scidb">Scidb</a></li>
+<li> <a href="Shredder.html#GUI" title="Shredder">Shredder GUI</a></li>
+<li> <a href="Tarrasch.html" title="Tarrasch">Tarrasch</a></li></ul>
+<h1><span class="mw-headline" id="CLIs"><a href="CLI.html" title="CLI">CLIs</a></span></h1>
+<ul><li> <a href="Cutechess-cli.html" title="Cutechess-cli">Cutechess-cli</a></li>
+<li> <a href="C-chess-cli.html" title="C-chess-cli">c-chess-cli</a></li></ul>
+<h1><span class="mw-headline" id="Utilities">Utilities</span></h1>
+<ul><li> <a href="InBetween.html" title="InBetween">InBetween</a></li>
+<li> <a class="new" href="index.php?title=JSUCI&amp;action=edit&amp;redlink=1.html" title="JSUCI (page does not exist)">JSUCI</a></li>
+<li> <a href="PolyGlot.html" title="PolyGlot">PolyGlot</a></li>
+<li> <a href="Wb2UCI.html" title="Wb2UCI">Wb2UCI</a></li>
+<li> <a href="UCI2WB.html" title="UCI2WB">UCI2WB</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a></li>
+<li> <a href="CPW-Engine com.html" title="CPW-Engine com">CPW-Engine_com</a></li>
+<li> <a href="Engine Testing.html" title="Engine Testing">Engine Testing</a></li>
+<li> <a href="USI.html" title="USI">USI</a> - Universal Shogi Interface</li>
+<li> <a href="Vice.html#UCI" title="Vice">Vice UCI-Videos</a></li>
+<li> <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a href="XBoard.html" title="XBoard">XBoard</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=141612" rel="nofollow">UCI (=universal chess interface)</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 28, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=155894" rel="nofollow">UCI Issues</a> by <a href="Peter McKenzie.html" title="Peter McKenzie">Peter McKenzie</a>, <a href="CCC.html" title="CCC">CCC</a>, February 25, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=202057" rel="nofollow">UCI - a good idea?</a> by <a href="David Rasmussen.html" title="David Rasmussen">David Rasmussen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 15, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=224455" rel="nofollow">Delphi and the UCI Protokoll</a> by <a href="Martin Bauer.html" title="Martin Bauer">Martin Bauer</a>, <a href="CCC.html" title="CCC">CCC</a>, April 18, 2002 » <a href="Delphi.html" title="Delphi">Delphi</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=225107" rel="nofollow">One more time Delphi and UCI</a> by <a href="Martin Bauer.html" title="Martin Bauer">Martin Bauer</a>, <a href="CCC.html" title="CCC">CCC</a>, April 21, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=246554" rel="nofollow">UCI versus Winboard</a> by <a href="Bas Hamstra.html" title="Bas Hamstra">Bas Hamstra</a>, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=269320" rel="nofollow">UCI - Worth Implementing?</a> by <a href="David Rasmussen.html" title="David Rasmussen">David Rasmussen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 07, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=291359" rel="nofollow">UCI-protocoll and engines. score cp (x)</a> by Juergen Wolf, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=360181" rel="nofollow">Extension of the UCI protocol</a> by <a href="Stefan Meyer-Kahlen.html" title="Stefan Meyer-Kahlen">Stefan Meyer-Kahlen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2004</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=2374.html" rel="nofollow">How to implement the UCI command "currline"</a> by <a href="Josu%C3%A9 Forte.html" title="Josué Forte">Josué Forte</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, April 24, 2005</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=453616" rel="nofollow">UCI protocol question</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, October 04, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=24866.html" rel="nofollow">UCI protocol and SMP</a> by <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a>, <a href="CCC.html" title="CCC">CCC</a>, November 13, 2008 » <a href="Parallel Search.html" title="Parallel Search">Parallel Search</a>, <a href="SMP.html" title="SMP">SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=25908.html" rel="nofollow">Appeal to SMP-engines programmers using UCI</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2009</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=19&amp;t=50429.html" rel="nofollow">UCI protocol in winboard</a> by <a href="Engin %C3%9Cst%C3%BCn.html" title="Engin Üstün">Engin Üstün</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 24, 2009 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31608.html" rel="nofollow">Handling UCI protocol and Stockfish / Glaurung behavior</a> by <a href="Pascal Georges.html" title="Pascal Georges">Pascal Georges</a>, <a href="CCC.html" title="CCC">CCC</a>, January 10, 2010 » <a href="Stockfish.html" title="Stockfish">Stockfish</a>, <a href="Glaurung.html" title="Glaurung">Glaurung</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=33088.html" rel="nofollow">UCI extensions for kibitzing</a> by <a href="Aaron Becker.html" title="Aaron Becker">Aaron Becker</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=34481.html" rel="nofollow">UCI issues</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, May 24, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=37126.html" rel="nofollow">UCI-compatible interface for 10x8 chess?</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, December 17, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=381800.html" rel="nofollow">some UCI protocol issues/questions</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, December 17, 2010</li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38753.html" rel="nofollow">SMP for Android UCI engines</a> by <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a>, <a href="CCC.html" title="CCC">CCC</a>, April 14, 2011 » <a href="Android.html" title="Android">Android</a>, <a href="SMP.html" title="SMP">SMP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39340.html" rel="nofollow">UCI multipv question</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, June 11, 2011 » <a href="Principal Variation.html#MultiPV" title="Principal Variation">Multi-PV</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39950.html" rel="nofollow">UCI nullmove</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, August 03, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40117.html" rel="nofollow">UCI Engine Tuning</a> by <a href="Steven Atkinson.html" title="Steven Atkinson">Steven Atkinson</a>, <a href="CCC.html" title="CCC">CCC</a>, August 20, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42037.html" rel="nofollow">About UCI multipv</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2012 » <a href="Principal Variation.html#MultiPV" title="Principal Variation">Multi-PV</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42154.html" rel="nofollow">good macintosh guy for UCI engine development</a> by <a href="Sam Hamilton.html" title="Sam Hamilton">Sam Hamilton</a>, <a href="CCC.html" title="CCC">CCC</a>, January 25, 2012 » <a href="GUI.html" title="GUI">GUI</a>, <a href="Macintosh.html" title="Macintosh">Macintosh</a>, <a href="Mac OS.html" title="Mac OS">Mac OS</a></li>
+<li> <a class="external text" href="https://open-chess.org/viewtopic.php?f=7&amp;t=2053" rel="nofollow">Remote UCI engines and port forwarding</a> by itias, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, August 01, 2012</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2146.html" rel="nofollow">Ponder and UCI</a> by geko, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, November 19, 2012 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46586.html" rel="nofollow">Problem with UCI engines hash in Arena</a> by Carl Langan, <a href="CCC.html" title="CCC">CCC</a>, December 26, 2012 » <a href="Arena.html" title="Arena">Arena</a></li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2221.html" rel="nofollow">UCI Programming</a> by <a href="Christian Daley.html" title="Christian Daley">CDaley11</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 15, 2013</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2245.html" rel="nofollow">UCI protocol not working</a> by <a href="Christian Daley.html" title="Christian Daley">CDaley11</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, January 27, 2013</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2357.html" rel="nofollow">UCI Interfacing question</a> by epideath, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, July 05, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48768.html" rel="nofollow">UCI protocol issue</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, July 27, 2013 » <a href="Repetitions.html" title="Repetitions">Repetitions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48996.html" rel="nofollow">uci ponder protocol</a> by <a href="Marco Belli.html" title="Marco Belli">Marco Belli</a>, <a href="CCC.html" title="CCC">CCC</a>, August 17, 2013 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=50498.html" rel="nofollow">UCI variants support</a> by <a href="Balint Pfliegel.html" title="Balint Pfliegel">Balint Pfliegel</a>, <a href="CCC.html" title="CCC">CCC</a>, December 15, 2013</li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51763.html" rel="nofollow">JSUCI 1.0 - connect javascript chess engines to UCI</a> by <a href="Edmund Moshammer.html" title="Edmund Moshammer">Edmund Moshammer</a>, <a href="CCC.html" title="CCC">CCC</a>, March 28, 2014 » <a href="JavaScript.html" title="JavaScript">JavaScript</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51973.html" rel="nofollow">MadChess UCI_LimitStrength Algorithm</a> by <a href="Erik Madsen.html" title="Erik Madsen">Erik Madsen</a>, <a href="CCC.html" title="CCC">CCC</a>, April 12, 2014 » <a href="MadChess.html" title="MadChess">MadChess</a>, <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52661.html" rel="nofollow">UCI, ownbooks, and a potential problem</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2014 » <a href="Opening Book.html" title="Opening Book">Opening Book</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53123.html" rel="nofollow">UCI exclude move</a> by <a href="Steven Atkinson.html" title="Steven Atkinson">Steven Atkinson</a>, <a href="CCC.html" title="CCC">CCC</a>, July 30, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53504.html" rel="nofollow">UCI Protocol</a> by jay dee, <a href="CCC.html" title="CCC">CCC</a>, August 31, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54093.html" rel="nofollow">PV after stop/readyok</a> by <a href="Steven Atkinson.html" title="Steven Atkinson">Steven Atkinson</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54162.html" rel="nofollow">UCCI2WB</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 27, 2014 » <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54167.html" rel="nofollow">UCI protocol for chess variants</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, October 28, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54703.html" rel="nofollow">How does input console for UCI work ?</a> by <a class="new" href="index.php?title=Piotr Lopusiewicz&amp;action=edit&amp;redlink=1.html" title="Piotr Lopusiewicz (page does not exist)">Piotr Lopusiewicz</a>, <a href="CCC.html" title="CCC">CCC</a>, December 20, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55662.html" rel="nofollow">UCI request answers all time..... how to do it?</a> by <a class="new" href="index.php?title=Luis Babboni&amp;action=edit&amp;redlink=1.html" title="Luis Babboni (page does not exist)">Luis Babboni</a>, <a href="CCC.html" title="CCC">CCC</a>, March 14, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55666.html" rel="nofollow">UCI way to communications. Wich kind of inputs?</a> by <a class="new" href="index.php?title=Luis Babboni&amp;action=edit&amp;redlink=1.html" title="Luis Babboni (page does not exist)">Luis Babboni</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55742.html" rel="nofollow">UCI extension: nodestime</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, March 22, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55745.html" rel="nofollow">UCI extension: nps NODE_RATE</a> by <a href="Marco Costalba.html" title="Marco Costalba">Marco Costalba</a>, <a href="CCC.html" title="CCC">CCC</a>, March 23, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56776.html" rel="nofollow">ponder engine-gui interaction</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, June 25, 2015 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56935.html" rel="nofollow">Crafty UCI version</a> by <a class="new" href="index.php?title=Marek Soszynski&amp;action=edit&amp;redlink=1.html" title="Marek Soszynski (page does not exist)">Marek Soszynski</a>, July 10, 2015 » <a href="Crafty.html" title="Crafty">Crafty</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=58176.html" rel="nofollow">UCI OwnBook shim?</a> by <a href="Ian Osgood.html" title="Ian Osgood">Ian Osgood</a>, <a href="CCC.html" title="CCC">CCC</a>, November 07, 2015 » <a href="PolyGlot.html" title="PolyGlot">PolyGlot</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58392.html" rel="nofollow">Ugly UCI</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2015</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58392&amp;start=9.html" rel="nofollow">Re: Ugly UCI</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2015</dd></dl>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59235.html" rel="nofollow">stateless UCI</a> by <a href="Marco Belli.html" title="Marco Belli">Marco Belli</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2016 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62342.html" rel="nofollow">Question to UCI engine authors</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 01, 2016</li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62869.html" rel="nofollow">UCI protocol: letting the engine know the game result</a> by <a href="Folkert van Heusden.html" title="Folkert van Heusden">Folkert van Heusden</a>, <a href="CCC.html" title="CCC">CCC</a>, January 19, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63228.html" rel="nofollow">UCI: Console Play Mode?</a> by Matthew Hull, <a href="CCC.html" title="CCC">CCC</a>, February 20, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63256.html" rel="nofollow">Novag UCB drivers (Winboard and UCI)</a> by <a class="new" href="index.php?title=Graham O%27Neill&amp;action=edit&amp;redlink=1.html" title="Graham O'Neill (page does not exist)">Graham O'Neill</a>, <a href="CCC.html" title="CCC">CCC</a>, February 24, 2017 » <a href="Novag Universal Electronic Chess Board.html" title="Novag Universal Electronic Chess Board">Novag Universal Electronic Chess Board</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63906.html" rel="nofollow">Reporting a draw in UCI</a> by Vince Sempronio, <a href="CCC.html" title="CCC">CCC</a>, May 05, 2017 » <a href="Draw.html" title="Draw">Draw</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64227.html" rel="nofollow">UCI, What command should the engine expect while it's searching</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, June 09, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64262.html" rel="nofollow">UCI on another thread, programming help !</a> by <a class="new" href="index.php?title=Mahmoud Uthman&amp;action=edit&amp;redlink=1.html" title="Mahmoud Uthman (page does not exist)">Mahmoud Uthman</a>, <a href="CCC.html" title="CCC">CCC</a>, June 11, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64679.html" rel="nofollow">UCI error codes?</a> by <a href="Rasmus Althoff.html" title="Rasmus Althoff">Rasmus Althoff</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65324.html" rel="nofollow">Regarding UCI Pondering</a> by <a href="Manik Charan.html" title="Manik Charan">Manik Charan</a>, <a href="CCC.html" title="CCC">CCC</a>, September 28, 2017 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=65454.html" rel="nofollow">Loading opening book and tablebases (xboard vs uci)</a> by <a href="Pedro Castro.html" title="Pedro Castro">Pedro Castro</a>, <a href="CCC.html" title="CCC">CCC</a>, October 15, 2017 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65679.html" rel="nofollow">UCI pondering or infinite search</a> by Lucas Braesch, <a href="CCC.html" title="CCC">CCC</a>, November 10, 2017 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65913.html" rel="nofollow">Regarding options ponder flag</a> by <a class="new" href="index.php?title=J%C3%BCrgen Pr%C3%A9cour&amp;action=edit&amp;redlink=1.html" title="Jürgen Précour (page does not exist)">Jürgen Précour</a>, <a href="CCC.html" title="CCC">CCC</a>, December 06, 2017 » <a href="Pondering.html" title="Pondering">Pondering</a></li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66745.html" rel="nofollow">UCI vs Winboard question</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, March 05, 2018 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">Chess Engine Communication Protocol</a>, <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67971.html" rel="nofollow">UCI Pondering workaround</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, July 13, 2018 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68703.html" rel="nofollow">ExaChess interface UCI to program</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69279.html" rel="nofollow">UCI pondering done right</a> 	by lucasart, <a href="CCC.html" title="CCC">CCC</a>, December 16, 2018 » <a href="Pondering.html" title="Pondering">Pondering</a></li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=69746.html" rel="nofollow">UCI question</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2019 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71050.html" rel="nofollow">Ambiguous: UCI and option Clear Hash</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, June 20, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71617.html" rel="nofollow">Sending pure comments using UCI protocol</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72019&amp;start=36.html" rel="nofollow">Re: PGN standard, its improvement and standardization</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2019 » from <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> to <a href="Protocols.html" title="Protocols">Protocols</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72140.html" rel="nofollow">UCI Win/Draw/Loss reporting</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, October 22, 2019 » <a href="Pawn Advantage, Win Percentage, and Elo.html" title="Pawn Advantage, Win Percentage, and Elo">Pawn Advantage, Win Percentage, and Elo</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72686.html" rel="nofollow">UCI pondering and time management</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, December 30, 2019 » <a href="Pondering.html" title="Pondering">Pondering</a>, <a href="Time Management.html" title="Time Management">Time Management</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73592.html" rel="nofollow">UCI to CECP</a> by Fulvio, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2020 » <a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol">CECP</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73617.html" rel="nofollow">UCI Options, clarifation</a> by Alan Cooper, <a href="CCC.html" title="CCC">CCC</a>, April 10, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75218.html" rel="nofollow">Remote UCI</a> by <a href="Daniel Jos%C3%A9 Queralt%C3%B3.html" title="Daniel José Queraltó">Daniel José Queraltó</a>, <a href="CCC.html" title="CCC">CCC</a>, September 26, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75783.html" rel="nofollow">UCI wrapper?</a> by Kurt Lanc, <a href="CCC.html" title="CCC">CCC</a>, November 13, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75992.html" rel="nofollow">UCI Gui to remote Linux Engine</a> by <a class="new" href="index.php?title=Joshua Shriver&amp;action=edit&amp;redlink=1.html" title="Joshua Shriver (page does not exist)">Joshua Shriver</a>, <a href="CCC.html" title="CCC">CCC</a>, December 05, 2020 » <a href="GUI.html" title="GUI">GUI</a>, <a href="Linux.html" title="Linux">Linux</a></li></ul>
+<p><b>2021</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76344.html" rel="nofollow">Uci "go" command without other parameters</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77088.html" rel="nofollow">Missing input in ponder</a> by <a href="Fabio Gobbato.html" title="Fabio Gobbato">Fabio Gobbato</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2021 » <a href="Pondering.html" title="Pondering">Pondering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77189.html" rel="nofollow">Listening for GUI input when searching</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, April 27, 2021 » <a href="GUI.html" title="GUI">GUI</a>, <a href="Search.html" title="Search">Search</a>, <a href="Thread.html" title="Thread">Thread</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77432.html" rel="nofollow">Reporting errors in UCI</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, June 03, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77650.html" rel="nofollow">uci question, receive stop before pondering starts</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, July 06, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77835.html" rel="nofollow">UCI's readyok: A mistake or a misunderstanding</a> by <a href="Andrew Grant.html" title="Andrew Grant">Andrew Grant</a>, <a href="CCC.html" title="CCC">CCC</a>, July 31, 2021</li>
+<li> <a class="external text" href="http://talkchess.com/forum3/viewtopic.php?f=7&amp;t=77842.html" rel="nofollow">Ignoring threads option, is it valid?</a> by <a class="new" href="index.php?title=CM Canavessi&amp;action=edit&amp;redlink=1.html" title="CM Canavessi (page does not exist)">CM Canavessi</a>, <a href="CCC.html" title="CCC">CCC</a>, August 01, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77904.html" rel="nofollow">Latest UCI spec?</a> by <a href="Martin Bryant.html" title="Martin Bryant">Martin Bryant</a>, <a href="CCC.html" title="CCC">CCC</a>, August 08, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://www.shredderchess.com/chess-features/uci-universal-chess-interface.html" rel="nofollow">The UCI Specification</a> from <a href="Shredder.html" title="Shredder">Shredder Chess</a></li>
+<li> <a class="external text" href="http://wbec-ridderkerk.nl/html/UCIProtocol.html.html" rel="nofollow">UCI protocol</a> hosted by <a href="WBEC.html" title="WBEC">WBEC Ridderkerk</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Universal_Chess_Interface" rel="nofollow">Universal Chess Interface From Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Interviews">Interviews</span></h2>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20020925204655fw /http://www.playwitharena.com/directory/interviews/interviews.htm.html" rel="nofollow">Arena, Interviews mit Prof. Dr. Robert Hyatt, Tim Mann und Martin Blume</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a> for <a href="ChessBits.html" title="ChessBits">ChessBits</a>, No. 18, May 2002 (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>) »  <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="Tim Mann.html" title="Tim Mann">Tim Mann</a>, <a href="Martin Blume.html" title="Martin Blume">Martin Blume</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li>
+<li> <a class="external text" href="https://web.archive.org/web/20120106031235/http://www.playwitharena.com/?Newsticker:Archive_9" rel="nofollow">Interview with SOS programmer Rudolf Huber in German language!</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="Arena.html" title="Arena">Arena Chess GUI 3.0</a> - Archive 9, 132, May 10, 2005 (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li></ul>
+<h2><span class="mw-headline" id="Implementations">Implementations</span></h2>
+<ul><li> <a class="external text" href="http://www.aartbik.com/MISC/uchess.html.html" rel="nofollow">UCI Engine Support for Android</a> by <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a></li>
+<li> <a class="external text" href="http://www.top-5000.nl/mephisto.htm.html" rel="nofollow">Back to the 80's with UCI</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a> » <a href="Mephisto.html" title="Mephisto">Mephisto</a></li>
+<li> <a class="external text" href="https://github.com/zd3nik/SenjoUCIAdapter" rel="nofollow">Senjo C++ UCI Adapter</a> by <a href="Shawn Chidester.html" title="Shawn Chidester">Shawn Chidester</a> » <a href="Clubfoot.html" title="Clubfoot">Clubfoot</a>, <a href="Cpp.html" title="Cpp">C++</a></li>
+<li> <a class="external text" href="https://github.com/freeeve/uci" rel="nofollow">GitHub - freeeve/uci: a UCI (Universal Chess Interface) API for golang</a> by <a class="new" href="index.php?title=Eve Freeman&amp;action=edit&amp;redlink=1.html" title="Eve Freeman (page does not exist)">Eve Freeman</a> » <a href="Go (Programming Language).html" title="Go (Programming Language)">Go (Programming Language)</a></li>
+<li> <a class="external text" href="https://github.com/nionita/chessNet" rel="nofollow">nionita/chessNet · GitHub</a> by <a href="Nicu Ionita.html" title="Nicu Ionita">Nicu Ionita</a> » <a class="new" href="index.php?title=Haskell&amp;action=edit&amp;redlink=1.html" title="Haskell (page does not exist)">Haskell</a></li></ul>
+<h2><span class="mw-headline" id="JavaScript"><a href="JavaScript.html" title="JavaScript">JavaScript</a></span></h2>
+<ul><li> <a class="external text" href="http://sourceforge.net/projects/jsuci/.html" rel="nofollow">Javascript Universal Chess Interface | Free software downloads at SourceForge.net</a> by <a href="Edmund Moshammer.html" title="Edmund Moshammer">Edmund Moshammer</a></li>
+<li> <a class="external text" href="https://github.com/ebemunk/node-uci" rel="nofollow">GitHub - ebemunk/node-uci: UCI Protocol for node.js - talk to chess engines painlessly</a> by <a class="new" href="index.php?title=Bu%C4%9Fra F%C4%B1rat&amp;action=edit&amp;redlink=1.html" title="Buğra Fırat (page does not exist)">Buğra Fırat</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup></li></ul>
+<dl><dd> <a class="external text" href="https://ebemunk.com/node-uci/" rel="nofollow">node-uci Documentation</a></dd></dl>
+<ul><li> <a class="external text" href="https://github.com/imor/uci" rel="nofollow">GitHub - imor/uci: A thin wrapper on a uci chess engine</a></li></ul>
+<h1><span class="mw-headline" id="Video_Tutorials">Video Tutorials</span></h1>
+<ul><li> An overview of the UCI protocol from a programmer's perspective by <a href="Jonathan Warkentin.html" title="Jonathan Warkentin">Jonathan Warkentin</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/vuvTFNreykk?" width="640"></iframe></div></div></dd></dl>
+<ul><li> Implementing the UCI protocol in your engine (pseudo code) by <a href="Jonathan Warkentin.html" title="Jonathan Warkentin">Jonathan Warkentin</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/D4DBE4UQoAY?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://web.archive.org/web/20120106031235/http://www.playwitharena.com/?Newsticker:Archive_9" rel="nofollow">Interview with SOS programmer Rudolf Huber in German language!</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="Arena.html" title="Arena">Arena Chess GUI 3.0</a> - Archive 9, 132, May 10, 2005 (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Universal_Chess_Interface" rel="nofollow">Universal Chess Interface From Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://web.archive.org/web/20020925204655fw /http://www.playwitharena.com/directory/interviews/interviews.htm.html" rel="nofollow">Arena, Interviews mit Prof. Dr. Robert Hyatt, Tim Mann und Martin Blume</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a> for <a href="ChessBits.html" title="ChessBits">ChessBits</a>, No. 18, May 2002 (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72019&amp;start=36.html" rel="nofollow">Re: PGN standard, its improvement and standardization</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2019 » from <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> to <a href="Protocols.html" title="Protocols">Protocols</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.playwitharena.com/?Newsticker:Archive 7.html" rel="nofollow">The alternative to Crafty, Interview with Fabien Letouzey</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="Arena.html" title="Arena">Arena Chess GUI 3.0</a> - Archive , Page 7, 96, April 05, 2005</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=58392&amp;hilit=winboard&amp;start=20.html#p650169" rel="nofollow">Re: Ugly UCI</a> by <a href="Kempelen.html" title="Kempelen">Kempelen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 29, 2015 » <a href="Protocols.html" title="Protocols">Protocols</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72019&amp;start=36.html" rel="nofollow">Re: PGN standard, its improvement and standardization</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a>, <a href="CCC.html" title="CCC">CCC</a>, October 14, 2019 » from <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> to <a href="Protocols.html" title="Protocols">Protocols</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://sourceforge.net/projects/jsuci/.html" rel="nofollow">Javascript Universal Chess Interface | Free software downloads at SourceForge.net</a> by <a href="Edmund Moshammer.html" title="Edmund Moshammer">Edmund Moshammer</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.xqbase.com/protocol/cchess ucci.htm.html" rel="nofollow">中国象棋电脑应用规范(五)：中国象棋通用引擎协议</a> Universal Chinese Chess Protocol (UCCI)</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=245615" rel="nofollow">3 interviews about engine protocols with T. Mann, R. Hyatt and M. Blume</a> by <a href="Frank Quisinsky.html" title="Frank Quisinsky">Frank Quisinsky</a>, <a href="CCC.html" title="CCC">CCC</a>, August 15, 2002</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Node.js" rel="nofollow">Node.js from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Protocols.html" title="Protocols">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722161327
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.034 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 252/1000000
+Preprocessor generated node count: 524/1000000
+Post‐expand include size: 54/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1636-0!canonical and timestamp 20240722161327 and revision id 27055
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=UCI&amp;oldid=27055">https://www.chessprogramming.org/index.php?title=UCI&amp;oldid=27055</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Videos.html" title="Category:Videos">Videos</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=UCI&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="UCI.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:UCI&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="UCI.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=UCI&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=UCI&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/UCI.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/UCI.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=UCI&amp;oldid=27055.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=UCI&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 17 July 2024, at 23:19.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=UCI&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.034","walltime":"0.036","ppvisitednodes":{"value":252,"limit":1000000},"ppgeneratednodes":{"value":524,"limit":1000000},"postexpandincludesize":{"value":54,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722161327","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Make Move - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Make_Move","wgTitle":"Make Move","wgCurRevisionId":19570,"wgRevisionId":19570,"wgArticleId":1368,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Hozier"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Make_Move","wgRelevantArticleId":1368,"wgRequestId":"Zp7DhwMLGU3EphdnCkJWmQAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Make_Move rootpage-Make_Move skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Make Move</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Moves.html" title="Moves">Moves</a> * Make Move</b>
+</p><p><b>Make Move</b> is a function inside a chess program to update the internal <a href="Chess Position.html" title="Chess Position">chess position</a> and its <a href="Board Representation.html" title="Board Representation">board representation</a> as well as associated or dependent state variables and data by a move made on the internal board, such as <a href="Zobrist Hashing.html" title="Zobrist Hashing">zobrist keys</a> to index the <a href="Transposition Table.html" title="Transposition Table">transposition table</a>. That usually happens inside the <a href="Search.html" title="Search">Search</a> algorithm, where the move acts like an edge connecting two <a href="Node.html" title="Node">nodes</a> of a <a href="Search Tree.html" title="Search Tree">search tree</a>, a parent and a child node. Dependent on the design of the data structures and the used <a href="Search.html" title="Search">search algorithms</a> there are different approaches with respect to randomly accessing aspects of nodes and restoring the position while <a href="Unmake Move.html" title="Unmake Move">unmaking</a> the move.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Operations"><span class="tocnumber">1</span> <span class="toctext">Operations</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Update"><span class="tocnumber">2</span> <span class="toctext">Update</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Operations">Operations</span></h1>
+<p>The general arithmetical and/or bitwise-logical operations to convert a node to its child are either reversible (even for <a href="Irreversible Moves.html" title="Irreversible Moves">irreversible moves</a>), by <a class="external text" href="https://en.wikipedia.org/wiki/Inverse_function" rel="nofollow">inverse</a> (e.g. addition and subtraction) or <a class="external text" href="https://en.wikipedia.org/wiki/Involution_%28mathematics%29" rel="nofollow">own inverse</a> (<a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">exclusive or</a>) operations, or are irreversible, for instance a sequence of addition and conjunction (add, and) of move aspects, to update <a href="En passant.html" title="En passant">ep state</a>, <a href="Castling Rights.html" title="Castling Rights">castling rights</a> and the <a href="Halfmove Clock.html" title="Halfmove Clock">halfmove clock</a>.
+</p>
+<h1><span class="mw-headline" id="Update">Update</span></h1>
+<p>Aspects of a position altered by reversible operations may be kept in global structures, shared by all nodes of the <a href="Search Tree.html" title="Search Tree">tree</a>, for instance square centric <a href="Mailbox.html" title="Mailbox">mailbox</a> board arrays or <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">bitboard board-definition</a>, and require <a href="Incremental Updates.html" title="Incremental Updates">incremental updates</a> by make <b>and</b> <a href="Unmake Move.html" title="Unmake Move">unmake</a>. Irreversible aspects of the position, which can not generally restored from a child-position by unmaking a move, need to be restored by either re-playing the whole game record from the root position (too slow), or to be memorized inside an array indexed by <a href="Ply.html" title="Ply">ply</a> or on a <a href="Stack.html" title="Stack">stack</a> (<a class="external text" href="https://en.wikipedia.org/wiki/LIFO_%28computing%29" rel="nofollow">LIFO</a>), most notably <a href="En passant.html" title="En passant">ep state</a>, <a href="Castling Rights.html" title="Castling Rights">castling rights</a> and the <a href="Halfmove Clock.html" title="Halfmove Clock">halfmove clock</a> enforcing the <a href="Fifty-move Rule.html" title="Fifty-move Rule">fifty-move rule</a>.
+</p><p>All those aspects of a position, no matter if reversible by unmake or not, which may need random access in a branch of moves from the <a href="Root.html" title="Root">root</a> (or initial position of the game) to the current position inside a certain implementation of a search algorithm, require an array of those aspects, indexed by ply, and updated by a <a href="Copy-Make.html" title="Copy-Make">Copy-Make</a> approach.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="General Setwise Operations.html#UpdateByMove" title="General Setwise Operations">Bitboard Update By Move</a></li>
+<li> <a href="Copy-Make.html" title="Copy-Make">Copy-Make</a></li>
+<li> <a href="Encoding Moves.html" title="Encoding Moves">Encoding Moves</a></li>
+<li> <a href="Incremental Updates.html" title="Incremental Updates">Incremental Updates</a></li>
+<li> <a href="Piece-Lists.html#Make" title="Piece-Lists">Piece-List Update by Make Move</a></li>
+<li> <a href="Unmake Move.html" title="Unmake Move">Unmake Move</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/EQxCixpytBg/e1R0a7u1WMsJ" rel="nofollow">Working with moves or with positions</a> by Guillem Barnolas, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, February 22, 1998 » <a href="KC Chess.html" title="KC Chess">KC Chess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=13764.html" rel="nofollow">doing undoing</a> by <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul</a>, <a href="CCC.html" title="CCC">CCC</a>, May 14, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39938.html" rel="nofollow">performance of copy-make</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=42665.html" rel="nofollow">make and unmake stadistics</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, February 28, 2012 » <a href="Search Statistics.html" title="Search Statistics">Search Statistics</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2250.html" rel="nofollow">Make and Unmake implementation</a> by <a href="Christian Daley.html" title="Christian Daley">CDaley11</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 01, 2013 » <a href="Unmake Move.html" title="Unmake Move">Unmake Move</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2554.html" rel="nofollow">Saving info before making a move</a> by <a href="Christian Daley.html" title="Christian Daley">CDaley11</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, December 30, 2013</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a href="Category:Hozier.html" title="Category:Hozier">Hozier</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Wasteland,_Baby!" rel="nofollow">Movement</a>, Live at <a class="external text" href="https://en.wikipedia.org/wiki/KCMP" rel="nofollow">The Current</a>, June 2019, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/Nc7tV0lRfYY?" width="640"></iframe></div></div></dd></dl>
+<p><b><a href="Moves.html" title="Moves">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722101725
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.006 seconds
+Real time usage: 0.006 seconds
+Preprocessor visited node count: 22/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1368-0!canonical and timestamp 20240722101725 and revision id 19570
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Make_Move&amp;oldid=19570">https://www.chessprogramming.org/index.php?title=Make_Move&amp;oldid=19570</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Hozier.html" title="Category:Hozier">Hozier</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Make+Move&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Make Move.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Make Move&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Make Move.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Make Move&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Make Move&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Make Move.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Make Move.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Make Move&amp;oldid=19570.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Make Move&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 21 June 2020, at 11:34.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Make_Move&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.006","walltime":"0.006","ppvisitednodes":{"value":22,"limit":1000000},"ppgeneratednodes":{"value":56,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722101725","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Reverse Bitboards - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Reverse_Bitboards","wgTitle":"Reverse Bitboards","wgCurRevisionId":1652,"wgRevisionId":1652,"wgArticleId":1279,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Reverse_Bitboards","wgRelevantArticleId":1279,"wgRequestId":"Zp7DloY8AD1K7zdlkfzeDQAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Reverse_Bitboards rootpage-Reverse_Bitboards skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Reverse Bitboards</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> * Reverse Bitboards</b>
+</p><p>The idea of <b>Reverse Bitboards</b> was proposed by <a href="Ryan Mack.html" title="Ryan Mack">Ryan Mack</a> in <a href="Timeline.html#2000" title="Timeline">2000</a> while introducing his <i>Hyperbola Project</i>. It was based on the <a href="Subtracting a Rook from a Blocking Piece.html#oxoro2r" title="Subtracting a Rook from a Blocking Piece">x XOR (x - 2)</a> <a href="Bit-Twiddling.html" title="Bit-Twiddling">bit-twiddling</a> trick to generate attacks in <a href="On an empty Board.html#PositiveRays" title="On an empty Board">positive</a> <a href="Rays.html#RayDirections" title="Rays">ray-directions</a>  - and beside the usual <a href="Occupancy.html" title="Occupancy">occupancy</a> bitboard, to maintain a <a href="Flipping Mirroring and Rotating.html#Rotationby180degrees" title="Flipping Mirroring and Rotating">reversed or 180 degree rotated</a> occupied bitboard to apply the trick for <a href="On an empty Board.html#NegativeRays" title="On an empty Board">negative</a> ray-directions as well. It was intended to <a href="Bitboard Serialization.html" title="Bitboard Serialization">traverse</a> reversed sets for move-generation, while re-reversion took place in the scalar, square centric world by <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">xor</a> 63 after <a href="BitScan.html" title="BitScan">bitscan</a>. Alternatively, for other purposes a <a href="MMX.html" title="MMX">MMX</a>-bitreversal routine was mentioned.
+</p><p>Ryan made an interesting and thought-provoking contribution. He introduced the predecessor of the <a href="Subtracting a Rook from a Blocking Piece.html#oxoro2r" title="Subtracting a Rook from a Blocking Piece">o^(o-2r)-trick</a>. With hindsight, the idea of keeping two reversed sets seemed not that successful as the author initially thought. However, <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a>, where fast vertical byteswap flipping is used on the fly to reverse diagonals and files, is somehow the resurrection of Ryan's ideas, vastly improved by <a href="Aleks Peshkov.html" title="Aleks Peshkov">Aleks Peshkov's</a> <a href="General Setwise Operations.html#ExclusiveOr" title="General Setwise Operations">xor</a> wizardry. Aleks' <a href="SSSE3.html#Peshkov" title="SSSE3">SSSE3 approach</a> even relies on keeping reverse occupancies to further use only nine SIMD operations to generate bishop attacks. 
+</p>
+<hr/>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The Hyperbola Project - New Technologies"><span class="tocnumber">1</span> <span class="toctext">The Hyperbola Project - New Technologies</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Bitboard Design and Sliding Piece Attack Generation"><span class="tocnumber">1.1</span> <span class="toctext">Bitboard Design and Sliding Piece Attack Generation</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Now.2C how do reverse bitboards help generate sliding piece attacks.3F"><span class="tocnumber">1.1.1</span> <span class="toctext">Now, how do reverse bitboards help generate sliding piece attacks?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#What benefit comes from having a reversed bitboard in place of rotated bitboards.3F"><span class="tocnumber">1.2</span> <span class="toctext">What benefit comes from having a reversed bitboard in place of rotated bitboards?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Where do the reverse bitboards come in.3F"><span class="tocnumber">1.2.1</span> <span class="toctext">Where do the reverse bitboards come in?</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#How can the reverse bitboards be converted back to normal.3F"><span class="tocnumber">1.2.2</span> <span class="toctext">How can the reverse bitboards be converted back to normal?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Forum Discussions"><span class="tocnumber">3</span> <span class="toctext">Forum Discussions</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="The_Hyperbola_Project_-_New_Technologies">The Hyperbola Project - New Technologies</span></h1>
+<p><sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>
+What follows here is merely a glimpse at the new advances in computer chess that the <b>Hyperbola Project</b> will include. The revolutionary design will generate enormous speed improvements, optimized specifically for the Pentium III processor's SIMD and <a href="MMX.html" title="MMX">MMX</a> enhancements. The downside is that the initial releases of <b>Hyperbola</b> will require a P-III system to operate. As the core engine is being written in <a href="Assembly.html" title="Assembly">assembly</a> code, it is very difficult to optimize for more than one chip at a time.
+</p><p>The past two years have yielded a serious look at the way computer chess programs operate today. The most significant problem with PC-oriented (non 64-bit) programs is the lack of speed associated with doing 64-bit arithmetic in a 32-bit environment.
+</p><p>MMX technology introduced some 64-bit operations to the Pentium family of microprocessors, which do increase performance noticeably, but not optimally. When using MMX, many operations still have to be completed in the old 32-bit system, which degrades the performance gain when the data has to be exchanged back and forth between the regular registers and the MMX registers.
+</p><p>The improvements shown below also address another significant bottleneck in chess programming: memory speeds. Despite the fact that <b>Hyperbola</b> is designed for systems with extremely fast memory (RDRAM), memory is still a bottleneck for some calculations, which require a very tight dependency chain. Since a memory read from the fastest (L1) cache has a latency of three clock cycles, the processor remains stalled in a tight dependency chain such as this, where no other calculations can be completed while the processor waits for the memory read to complete.
+</p>
+<h2><span class="mw-headline" id="Bitboard_Design_and_Sliding_Piece_Attack_Generation">Bitboard Design and Sliding Piece Attack Generation</span></h2>
+<p>Generating the attacks for <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a> proved to be a significant bottleneck in the early trials. For example, before generating legal moves for a position, the program must determine whether the king is in check. To do this, the program has to find the attacks of every type of piece from the king's square and check if an appropriate enemy piece resides there. Since this cannot be done while analyzing other moves, this is a huge slowdown under the current technology, which uses four sets of bitboards (three rotated) and several memory lookups to determine the correct attacks.
+</p><p><b>Hyperbola's</b> design is quite different in this respect from other programs. <b>Hyperbola</b> introduces the concept of a reversed bitboard in place of three rotated bitboards, and TOTALLY eliminates the lookup tables in favor of simple calculations, all of which can be done in the 64-bit <a href="MMX.html" title="MMX">MMX</a> registers.
+</p><p>With the research still in progress on this topic, it is not clear as to exactly how much performance can be enhanced by this new technique, but it is clear that performance will be improved very significantly, especially with MMX hardware. Processors that are completely 64-bit, such as the <a href="Intel.html" title="Intel">Intel</a> <a href="Itanium.html" title="Itanium">Itanium</a>, will also be very much helped by this technique.
+</p>
+<h3><span class="mw-headline" id="Now.2C_how_do_reverse_bitboards_help_generate_sliding_piece_attacks.3F">Now, how do reverse bitboards help generate sliding piece attacks?</span></h3>
+<p>First, let's cover what has to be maintained by the program. There is the normal set of bitboards, all generated in the normal direction. And there is a single <b>reverse bitboard</b>, which roughly takes the place of the three rotated bitboards in most programs today. The <b>reverse bitboard</b> contains the same information as the forward bitboard which denotes all occupied squares, but it is in reverse, that is, bit x in the forward bitboard corresponds to bit 63-x in the <b>reverse bitboard</b>.
+</p>
+<h2><span class="mw-headline" id="What_benefit_comes_from_having_a_reversed_bitboard_in_place_of_rotated_bitboards.3F">What benefit comes from having a reversed bitboard in place of rotated bitboards?</span></h2>
+<ul><li> <b>Maintenance</b></li></ul>
+<dl><dd> A single reversed bitboard is easier to maintain than one rotated bitboard, let alone three. This is because a table lookup is required to convert a bit from the forward format to most rotated formats. With the <b>reverse bitboard</b>, simply subtract the bit number from 63. Considering that only one of these bitboards has to be maintained instead of three, this issue is important.</dd></dl>
+<ul><li> <b>The Calculations</b></li></ul>
+<dl><dd> When taking account of memory latencies, calculating the piece attacks using the forward and <b>reverse bitboards</b> can be done significantly faster due to total independence on lookup tables and complex calculations. There are a few slight snags with the diagonal calculations, but they are minor.</dd>
+<dd> The benefit of having the forward and <b>reverse bitboards</b> really shines in light of a very important bit manipulation trick: x XOR (x - 2) contains bits set to one, starting from the second bit, and stopping at the first bit of x that is one, but including it.</dd>
+<dd> Now, if x is the bitboard of all occupied squares, and it is shifted to the right so that the square for which attacks are being calculated becomes bit zero, then XORing <b>x with (x - 2)</b> gives a mask of all squares attacked by the piece on the desired square, once the result is shifted back to the left. It does not include the piece that is making the attack, but it does include the first occupied square. This is exactly the result the lookup tables return!</dd>
+<dd> The snags come from wraparound - that is, when the mask goes to the end of the file, rank, or diagonal... and keeps going where it shouldn't. This can be easily fixed in rank/file attacks by masking only the rank or file in question, but it is more complicated on diagonals.</dd></dl>
+<h3><span class="mw-headline" id="Where_do_the_reverse_bitboards_come_in.3F">Where do the reverse bitboards come in?</span></h3>
+<p>The regular bitboard is fine for calculating any attacks that go in the positive direction from the starting square (by masking the rank, file, or diagonal), but the bit-manipulating trick won't work in the opposite direction. The solution is simple: calculate attacks in the opposite direction using a <b>reverse bitboard</b>, so that on that bitboard they extend in the positive direction and can be calculated as above.
+</p><p>The real problem comes in trying to combine the forward and <b>reverse bitboards</b> - there is just no simple way to un-reverse the bitboard. The technique to do the switch is not terribly cumbersome, but it certainly cannot be used in cases where only one set of attacks is being generated... the delay far outweighs the gain.
+</p><p>However, in <b>Hyperbola</b>, this delay can be managed for an overall gain. Though it is unclear whether these types of calculations will even be used in generating legal moves, due to an incremental move generator, the two bitboards can be scanned separately, converting the returns from the bitscans from reverse to forward (by subtracting from 63) instead of converting the entire bitboard.
+</p><p>A more pertinent issue arises with determining whether the king is in check, which is done before generating any legal moves. Possible ways to go about this include converting the <b>reverse bitboard</b>, which is probably not optimal, maintaining <b>reverse bitboards</b> for the sliding pieces of both colors, which is possible, and testing the individual squares on the bitboards both in forward and in reverse, which is nearly out of the question. In the newer chip architectures any unpredictable branches severely degrade performance, and the technique to avoid that is also slow because it can only be used on 32-bit registers.
+</p><p>The most viable option is to maintain four <b>reverse bitboards</b>, one for the bishops/queens and rooks/queens of each color. Updating them does not degrade performance because only one of the four must be updated for any move, or none at all, in addition to the regular updates.
+</p><p>With the extra <b>reverse bitboards</b>, it is now very easy to determine if the king is in check without any memory tables. First, calculate the attacks from the king's square for both types of sliding pieces, and simply AND them with the appropriate bitboards of enemy pieces. After that, OR all the results of the comparisons together, and take a single branch.
+</p><p>A possible shortcut exists here still. If the king is not in check, which is almost always the case, and all of the possible sliding piece lines are closed or empty, which is usually true, then the king cannot be checked by a sliding piece. The merit of this idea is questionable, but a more concrete idea is much more helpful. If the previously used sliding piece attack bitboards are saved and it is determined that none of the squares on those bitboards have changed in the bitboard of occupied pieces, then the bitboards can be used again and the calculations skipped. If this shortcut is used, then it might be more economical to reverse the bitboard(s) after calculating them and ignoring the additional <b>reverse bitboards</b>. That depends on the hit rate.
+</p>
+<h3><span class="mw-headline" id="How_can_the_reverse_bitboards_be_converted_back_to_normal.3F">How can the reverse bitboards be converted back to normal?</span></h3>
+<p>The fastest way to do this isn't a huge deal, but it cannot be run in parallel with other operations and does degrade performance if it is run too often. Suppose we have the lower 16 bits of a bitboard, x: FEDCBA9876543210.
+</p>
+<ol><li> Load the constant, k = 5555555555555555h</li>
+<li> x = [(x shl 1) and k] or [(x and k) shr 1] EFCDAB8967452301</li>
+<li> Load the constant, k = 3333333333333333h</li>
+<li> x = [(x shl 2) and k] or [(x and k) shr 2] CDEF89AB45670123</li>
+<li> Load the constant, k = 0F0F0F0F0F0F0F0Fh</li>
+<li> x = [(x shl 4) and k] or [(x and k) shr 4] 89ABCDEF01234567</li>
+<li> Now, due to the availability of a MMX shift instruction that operates on 16-bit words, the bytes can now be switched more easily</li>
+<li> x = (x shlw 8) or (x shrw 8) 0123456789ABCDEF</li>
+<li> And finally, the pshufw on the P-III reorganizes the words in a single instruction</li>
+<li> x = x pshufw 00011011b</li></ol>
+<p>Since all of this arithmetic can be done in the MMX registers, it runs very much in parallel and can complete in a reasonable time frame on the P-III. If this algorithm were to be redesigned for P-II or PMMX architectures (without the pshufw) it would be a little slower since two more steps need to be completed. Trying to do this without 64-bit support would be extremely slow due to the extended-precision operands, despite that most of it could be done in parallel. (This algorithm is also in parallel, so it would probably take over twice as long.)
+</p><p><i>Copyright © 2000 Ryan Mack</i>
+</p>
+<hr/>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Flipping Mirroring and Rotating.html" title="Flipping Mirroring and Rotating">Flipping Mirroring and Rotating</a></li>
+<li> <a href="Hyperbola Quintessence.html" title="Hyperbola Quintessence">Hyperbola Quintessence</a></li>
+<li> <a href="Thor%27s Hammer.html#MoveGeneration" title="Thor's Hammer">Move Generation in Thor's Hammer</a></li>
+<li> <a href="Praetorian.html" title="Praetorian">Praetorian</a></li>
+<li> <a href="Subtracting a Rook from a Blocking Piece.html" title="Subtracting a Rook from a Blocking Piece">Subtracting a Rook from a Blocking Piece</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Discussions">Forum Discussions</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=177693" rel="nofollow">what do think about n xor (n-2) and 'reverse bitboards'?!</a> by Stefan, <a href="CCC.html" title="CCC">CCC</a>, July 01, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=210339" rel="nofollow">Reversed vs. Rotated Bitboards</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, January 28, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=276884" rel="nofollow">Reverse Bitboards</a> by <a href="Sander de Zoete.html" title="Sander de Zoete">Sander de Zoete</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2003</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Copy of the no longer available site: <i>The Hyperbola Project - New Technologies</i>, Copyright © 2000 <a href="Ryan Mack.html" title="Ryan Mack">Ryan Mack</a></span>
+</li>
+</ol></div>
+<p><b><a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722145713
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 90/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1279-0!canonical and timestamp 20240722145713 and revision id 1652
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Reverse_Bitboards&amp;oldid=1652">https://www.chessprogramming.org/index.php?title=Reverse_Bitboards&amp;oldid=1652</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Reverse+Bitboards&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Reverse Bitboards.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Reverse Bitboards&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Reverse Bitboards.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Reverse Bitboards&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Reverse Bitboards&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Reverse Bitboards.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Reverse Bitboards.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Reverse Bitboards&amp;oldid=1652.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Reverse Bitboards&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 May 2018, at 09:02.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Reverse_Bitboards&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.008","ppvisitednodes":{"value":53,"limit":1000000},"ppgeneratednodes":{"value":90,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722145713","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":62});});</script>
+</body>
+</html>

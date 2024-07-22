@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Iterative Deepening - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Iterative_Deepening","wgTitle":"Iterative Deepening","wgCurRevisionId":14825,"wgRevisionId":14825,"wgArticleId":956,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Urszula Dudziak","Michal Urbaniak"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Iterative_Deepening","wgRelevantArticleId":956,"wgRequestId":"Zp7DaX1htEhTE3yaocy3GwAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Iterative_Deepening rootpage-Iterative_Deepening skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Iterative Deepening</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * Iterative Deepening</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://ray.sakura.ne.jp/search problem/i deepening.html.html"><img alt="" class="thumbimage" height="156" src="images/thumb/a/af/Ideep.jpg/300px-Ideep.jpg" srcset="/images/a/af/Ideep.jpg 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Ideep.jpg.html" title="Enlarge"></a></div>Iterative deepening search <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Iterative deepening</b> (ID) has been adopted as the basic <a href="Time Management.html" title="Time Management">time management</a> strategy in <a href="Depth-First.html" title="Depth-First">depth-first searches</a>, but has proved surprisingly beneficial as far as <a href="Move Ordering.html" title="Move Ordering">move ordering</a> is concerned in <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> and its enhancements. It has been noticed, that even if one is about to search to a given depth, that iterative deepening is faster than searching for the given depth immediately. This is due to dynamic move ordering techniques such as; <a href="PV-Move.html" title="PV-Move">PV-</a>, <a href="Hash Move.html" title="Hash Move">hash-</a> and <a href="Refutation Move.html" title="Refutation Move">refutation moves</a> determined in previous <a href="Iteration.html" title="Iteration">iteration(s)</a>, as well the <a href="History Heuristic.html" title="History Heuristic">history heuristic</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How it Works"><span class="tocnumber">1</span> <span class="toctext">How it Works</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#1965 ..."><span class="tocnumber">4.1</span> <span class="toctext">1965 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#1970 ..."><span class="tocnumber">4.2</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#1980 ..."><span class="tocnumber">4.3</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1990 ..."><span class="tocnumber">4.4</span> <span class="toctext">1990 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#1988"><span class="tocnumber">5.1</span> <span class="toctext">1988</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#1990 ... 2"><span class="tocnumber">5.2</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2000 ..."><span class="tocnumber">5.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="How_it_Works">How it Works</span></h1>
+<p>It works as follows: the program starts with a <a href="Ply.html" title="Ply">one ply</a> search, then increments the search <a href="Depth.html" title="Depth">depth</a> and does another search. This process is repeated until the time allocated for the search is exhausted. In case of an unfinished search, the program always has the option to fall back to the move selected in the last iteration of the search. Yet if we make sure that this move is searched first in the next iteration, then overwriting the new move with the old one becomes unnecessary. This way, also the results from the partial search can be accepted - though in case of a severe drop of the score it is wise to allocate some more time, as the first alternative is often a bad capture, delaying the loss instead of preventing it. Iterative deepening, using a <a href="Transposition Table.html" title="Transposition Table">transposition table</a>, embed the <a href="Depth-First.html" title="Depth-First">depth-first</a> algorithms like <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> into a framework with <a href="Best-First.html" title="Best-First">best-first</a> characteristics.
+</p>
+<h1><span class="mw-headline" id="History">History</span></h1>
+<p>Iterative or progressive deepening was first mentioned by <a href="Adriaan de Groot.html" title="Adriaan de Groot">Adriaan de Groot</a> in <i>Thought and Choice in Chess</i> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> on its "discovery" in <i>Depth-first Iterative-Deepening: An Optimal Admissible Tree Search</i> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> :
+</p>
+<pre>Depth-first iterative-deepening has no doubt been rediscovered many times independently. The first use of the algorithm that is documented in the literature is in <a href="David Slate.html" title="David Slate">Slate</a> and <a href="Larry Atkin.html" title="Larry Atkin">Atkin's</a> <a href="Chess (Program).html" title="Chess (Program)">Chess 4.5</a> program <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>. <a href="Hans Berliner.html" title="Hans Berliner">Berliner</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> has observed that breadth-first search is inferior to the iterative-deepening algorithm. <a href="Patrick Winston.html" title="Patrick Winston">Winston</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> shows that for two-person game searches where only terminal-node static evaluations are counted in the cost, the extra computation required by iterative-deepening is insignificant. <a href="Judea Pearl.html" title="Judea Pearl">Pearl</a> initially suggested the iterative-deepening extension of <a class="new" href="index.php?title=A*&amp;action=edit&amp;redlink=1.html" title="A* (page does not exist)">A*</a>, and <a href="Hans Berliner.html" title="Hans Berliner">Berliner</a> and <a href="Gordon Goetsch.html" title="Gordon Goetsch">Goetsch</a> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> have implemented such an algorithm concurrently with this work. 
+</pre>
+<p><a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> in <i>Computer Chess and Search</i> on the History of ID <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> :
+</p>
+<pre>In the early 1970’s several people tried a variety of ways to control the exponential growth of the tree search. A simple fixed depth search is inflexible, especially if it must be completed within a specified time. This difficulty was noted by <a href="John J. Scott.html" title="John J. Scott">Scott</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> who reported in 1969 on the effective use of an iterated search. <a href="James Gillogly.html" title="James Gillogly">Jim Gillogly</a>, author of the <a href="Tech.html" title="Tech">Tech</a> chess program <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> , coined the term iterative deepening to distinguish a full-width search to increasing depths from the progressively more focused search described by <a href="Adriaan de Groot.html" title="Adriaan de Groot">de Groot</a>. About the same time <a href="David Slate.html" title="David Slate">David Slate</a> and <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (1977) sought a better time control mechanism, and introduced an improved iterated search for carrying out a progressively deeper and deeper analysis. For example, an iterated series of 1-ply, 2-ply, 3-ply ... searches is carried out, with each new search first retracing the best path from the previous iteration and then extending the search by one ply. Early experimenters with this scheme were surprised to find that the iterated search often required less time than an equivalent direct search... 
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a></li>
+<li> <a href="Aspiration Windows.html" title="Aspiration Windows">Aspiration Windows</a></li>
+<li> <a href="Best-First.html" title="Best-First">Best-First</a></li>
+<li> <a href="Depth-First.html" title="Depth-First">Depth-First</a></li>
+<li> <a href="Branching Factor.html#EffectiveBranchingFactor" title="Branching Factor">Effective Branching Factor</a></li>
+<li> <a href="Internal Iterative Deepening.html" title="Internal Iterative Deepening">Internal Iterative Deepening</a></li>
+<li> <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a href="MTD(f).html" title="MTD(f)">MTD(f)</a></li>
+<li> <a href="Odd-Even Effect.html" title="Odd-Even Effect">Odd-Even Effect</a></li>
+<li> <a href="Time Management.html" title="Time Management">Time Management</a></li>
+<li> <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1965_...">1965 ...</span></h2>
+<ul><li> <a href="Adriaan de Groot.html" title="Adriaan de Groot">Adriaan de Groot</a> (<b>1965</b>). <i>Thought and Choice in Chess.</i> Mouton &amp; Co Publishers, The Hague, The Netherlands. Second edition <b>1978</b>. ISBN 90-279-7914-6. (<a class="external text" href="http://www.amazon.com/gp/reader/9027979146/ref=sib dp pt.html#reader-link" rel="nofollow">amazon</a>)</li>
+<li> <a href="John J. Scott.html" title="John J. Scott">John J. Scott</a> (<b>1969</b>). <i>A Chess Playing Program</i>. in <a class="external text" href="http://www.doc.ic.ac.uk/~shm/MI/mi4.html.html" rel="nofollow">Machine Intelligence 4</a> (ed. <a href="Donald Michie.html" title="Donald Michie">Donald Michie</a>), pp. 255-265 <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="James Gillogly.html" title="James Gillogly">James Gillogly</a> (<b>1972</b>). <i>The Technology Chess Program</i>. Artificial Intelligence, Vol. 3, pp. 145-163. ISSN 0004-3702. Reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li>
+<li> <a href="David Slate.html" title="David Slate">David Slate</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1977</b>). <i>CHESS 4.5 - The Northwestern University Chess Program.</i> <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a>, reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="William Fink.html" title="William Fink">William Fink</a> (<b>1982</b>). <i>An Enhancement to the Iterative, Alpha-Beta, Minimax Search Procedure</i>. <a href="ICGA Journal.html" title="ICGA Journal">ICCA Newsletter</a>, Vol. 5, No. 1</li>
+<li> <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1983</b>). <i>Search</i>, Artificial Intelligence Syllabus, Department of Computer Science, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a></li>
+<li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> (<b>1984</b>). <i>The Complexity of Brute Force Search</i>. Technical Report, Department of Computer Science, <a href="Columbia University.html" title="Columbia University">Columbia University</a> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup></li>
+<li> <a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> (<b>1985</b>). <i>Depth-first Iterative-Deepening: An Optimal Admissible Tree Search</i>. <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.91.288.html" rel="nofollow">CiteSeerX</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Matthew L. Ginsberg.html" title="Matthew L. Ginsberg">Matthew L. Ginsberg</a>, <a href="Mathematician.html#WDHarvey" title="Mathematician">William D. Harvey</a> (<b>1990</b>). <i>Iterative Broadening</i>. <a href="Conferences.html#AAAI-90" title="Conferences">AAAI 90</a>, <a class="external text" href="https://www.aaai.org/Papers/AAAI/1990/AAAI90-033.pdf" rel="nofollow">pdf</a></li>
+<li> <a href="Matthew L. Ginsberg.html" title="Matthew L. Ginsberg">Matthew L. Ginsberg</a> (<b>1993</b>). <i><a class="external text" href="https://searchworks.stanford.edu/view/2746445" rel="nofollow">Essentials of artificial intelligence</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Morgan_Kaufmann_Publishers" rel="nofollow">Morgan Kaufmann Publishers</a>, 3.3 Iterative Deepening</li>
+<li> <a href="Alexander Reinefeld.html" title="Alexander Reinefeld">Alexander Reinefeld</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1994</b>). <i>Enhanced Iterative-Deepening Search.</i> <a href="IEEE.html#TPAMI" title="IEEE">Transactions on Pattern Analysis and Machine Intelligence</a>, Vol. 16, No. 7, <a class="external text" href="http://webdocs.cs.ualberta.ca/%7Etony/RecentPapers/pami94.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1988">1988</span></h2>
+<ul><li> <a class="external text" href="http://fox.cs.vt.edu/VAD1/DOWN/AILIST/V8/N138.html" rel="nofollow">Re: "Iterative Deeping" reference wanted</a> by <a href="Ira Baxter.html" title="Ira Baxter">Ira Baxter</a>, AIList Digest, December 06, 1988</li></ul>
+<h2><span class="mw-headline" id="1990_..._2">1990 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/XQWb-ZjSsy0/gsXMq42a-FAJ" rel="nofollow">Re: Computer Chess and alpha-beta pruning</a> by <a href="Johannes F%C3%BCrnkranz.html" title="Johannes Fürnkranz">Johannes Fürnkranz</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, September 22, 1993 » <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a></li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/530959055901588a.html" rel="nofollow">Tricks in iterative deepening; was Re: AEGON '97</a> by <a href="Ingo Alth%C3%B6fer.html" title="Ingo Althöfer">Ingo Althöfer</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, April 26, 1997 » <a href="Aegon 1997.html" title="Aegon 1997">Aegon 1997</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/24sL-_prZzw/3km3MA9ADxoJ" rel="nofollow">Iterative Deepening</a> by John Scalo, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 27, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=10903" rel="nofollow">pv score oscillation</a> by <a href="Will Singleton.html" title="Will Singleton">Willie Wood</a>, <a href="CCC.html" title="CCC">CCC</a>, October 18, 1997</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=21654" rel="nofollow">Selective deepening and Hashtables</a> by <a href="Werner Inmann.html" title="Werner Inmann">Werner Inmann</a>, <a href="CCC.html" title="CCC">CCC</a>, June 30, 1998</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=156310" rel="nofollow">Iterative deepening deep increment</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Jose Povoa Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2001 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=14963.html" rel="nofollow">iterative deepening and branching factor</a> by <a class="new" href="index.php?title=J. Wesley Cleveland&amp;action=edit&amp;redlink=1.html" title="J. Wesley Cleveland (page does not exist)">J. Wesley Cleveland</a>, <a href="CCC.html" title="CCC">CCC</a>, July 09, 2007 » <a href="Branching Factor.html#EffectiveBranchingFactor" title="Branching Factor">Effective Branching Factor</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6666.html" rel="nofollow">Even more search questions</a> by <a href="Sven Sch%C3%BCle.html" title="Sven Schüle">Sven Schüle</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, July 17, 2007</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=1403.html" rel="nofollow">Node counts at a given depth/iteration in search</a> by <a href="Mark Watkins.html" title="Mark Watkins">BB+</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, May 23, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41001.html" rel="nofollow">Bigger steps when branching factor &lt; 2?</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2011 » <a href="Branching Factor.html#EffectiveBranchingFactor" title="Branching Factor">Effective Branching Factor</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58542.html" rel="nofollow">Restarting iterative deepening</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2015 » <a href="Aspiration Windows.html" title="Aspiration Windows">Aspiration Windows</a>, <a href="Fail-Low.html" title="Fail-Low">Fail-Low</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59281.html" rel="nofollow">How do you signal stalemate in iterative deepening?</a> by Kenneth Jones, <a href="CCC.html" title="CCC">CCC</a>, February 17, 2016 » <a href="Stalemate.html" title="Stalemate">Stalemate</a></li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2959.html" rel="nofollow">Iterative Deepening</a> by kickstone, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 26, 2016</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=5&amp;t=2961.html" rel="nofollow">TT and Iterative Deepening</a> by kuket15, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, February 26, 2016 » <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60916.html" rel="nofollow">Iterative Deepening Question</a> by <a class="new" href="index.php?title=David Cimbalista&amp;action=edit&amp;redlink=1.html" title="David Cimbalista (page does not exist)">David Cimbalista</a>, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2016 » <a href="Aspiration Windows.html" title="Aspiration Windows">Aspiration Windows</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64321.html" rel="nofollow">(I)ID and PV dropout</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2017 » <a href="Fail-Low.html" title="Fail-Low">Fail-Low</a>, <a href="Internal Iterative Deepening.html" title="Internal Iterative Deepening">Internal Iterative Deepening</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search" rel="nofollow">Iterative deepening depth-first search from Wikipedia</a></li>
+<li> <a class="external text" href="http://cseweb.ucsd.edu/%7Eelkan/130fall99/itdeep.html.html" rel="nofollow">Iterative deepening notes</a> by <a href="Charles Elkan.html" title="Charles Elkan">Charles Elkan</a></li>
+<li> <a class="external text" href="http://homepages.ius.edu/RWISMAN/C463/html/Chapter3.htm.html" rel="nofollow">Chapter 3 Solving Problems by Searching</a> from <a class="external text" href="http://homepages.ius.edu/RWISMAN/C463/html/syllabus.htm.html" rel="nofollow">C463 Artificial Intelligence Syllabus</a> by <a class="external text" href="http://homepages.ius.edu/RWISMAN/.html" rel="nofollow">Raymond F. Wisman</a></li>
+<li> <a class="external text" href="http://home.hccnet.nl/h.g.muller/deepen.html.html" rel="nofollow">µ-Max Search: Iterative Deepening</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a></li>
+<li> <a href="Category:Michal Urbaniak.html" title="Category:Michal Urbaniak">Michał Urbaniak</a> - <a class="external text" href="https://www.discogs.com/de/Micha%C5%82-Urbaniak-Urbaniak/release/1641078" rel="nofollow">Always Ready</a> (1977), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> feat. <a href="Category:Michal Urbaniak.html" title="Category:Michal Urbaniak">Michał Urbaniak</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Zbigniew_Namys%C5%82owski" rel="nofollow">Zbigniew Namysłowski</a>, <a href="Category:Urszula Dudziak.html" title="Category:Urszula Dudziak">Urszula Dudziak</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Kenny_Kirkland" rel="nofollow">Kenny Kirkland</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Tony_Bunn" rel="nofollow">Tony Bunn</a>, <a class="external text" href="https://www.discogs.com/artist/608833-Lurenda-Featherstone" rel="nofollow">Laurenda Featherstone</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/Dav_CKDVGIM?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://ray.sakura.ne.jp/search problem/i deepening.html.html" rel="nofollow">Iterative deepening （反復深化法）</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Adriaan de Groot.html" title="Adriaan de Groot">Adriaan de Groot</a> (<b>1965</b>). <i>Thought and Choice in Chess.</i> Mouton &amp; Co Publishers, The Hague, The Netherlands. Second edition <b>1978</b>. ISBN 90-279-7914-6. (<a class="external text" href="http://www.amazon.com/gp/reader/9027979146/ref=sib dp pt.html#reader-link" rel="nofollow">amazon</a>)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Richard Korf.html" title="Richard Korf">Richard Korf</a> (<b>1985</b>). <i>Depth-first Iterative-Deepening: An Optimal Admissible Tree Search</i>. <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.91.288.html" rel="nofollow">CiteSeerX</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2010</b>). <i>Depth-First Iterative-Deepening: An Optimal Admissible Tree Search by <a href="Richard Korf.html" title="Richard Korf">R. E. Korf</a></i>, slides as <a class="external text" href="http://www.iis.sinica.edu.tw/~tshsu/tcg2010/slides/slide3.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="David Slate.html" title="David Slate">David Slate</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1977</b>). <i>CHESS 4.5 - The Northwestern University Chess Program.</i> <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a>, reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a> (<b>1983</b>). <i>Search</i>. Artificial Intelligence Syllabus, Department of Computer Science, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Patrick Winston.html" title="Patrick Winston">Patrick Winston</a> (<b>1984</b>). <i><a class="external text" href="http://people.csail.mit.edu/phw/Books/index.html.html#AI" rel="nofollow">Artificial Intelligence</a></i>. Addison-Wesley, Reading, MA</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a>, <a href="Gordon Goetsch.html" title="Gordon Goetsch">Gordon Goetsch</a> (<b>1984</b>). <i>A quantitative study of search methods and the effect of constraint satisfaction</i>. Tech. Report CMU-CS-84-147, Department of Computer Science, <a href="Carnegie Mellon University.html" title="Carnegie Mellon University">Carnegie Mellon University</a>, Pittsburgh, PA.</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1992</b>). <i>Computer Chess and Search</i>. Encyclopedia of Artificial Intelligence (2nd ed.)  John Wiley &amp; Sons, Inc. <a class="external text" href="http://webdocs.cs.ualberta.ca/~tony/RecentPapers/Marsland-CCandSearch-1991.pdf.html" rel="nofollow">pdf preprint</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a href="John J. Scott.html" title="John J. Scott">John J. Scott</a> (<b>1969</b>). <i>A chess-playing program</i>. <a class="external text" href="http://www.doc.ic.ac.uk/~shm/MI/mi4.html.html" rel="nofollow">Machine Intelligence 4</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a href="James Gillogly.html" title="James Gillogly">James Gillogly</a> (<b>1972</b>). <i>The Technology Chess Program</i>. Artificial Intelligence, Vol. 3, pp. 145-163. ISSN 0004-3702. Reprinted (<b>1988</b>) in <a href="Computer Chess Compendium.html" title="Computer Chess Compendium">Computer Chess Compendium</a></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://fox.cs.vt.edu/VAD1/DOWN/AILIST/V8/N138.html" rel="nofollow">Re: "Iterative Deeping" reference wanted</a> by <a href="Ira Baxter.html" title="Ira Baxter">Ira Baxter</a>, AIList Digest, December 06, 1988</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text">quoted by <a href="Hans Berliner.html" title="Hans Berliner">Hans Berliner</a>, <a href="Gordon Goetsch.html" title="Gordon Goetsch">Gordon Goetsch</a> (<b>1985</b>). <i>A Study of Search Methods : The Effect of Constraint Satisfaction and Adventurousness</i>. <a class="external text" href="https://www.ijcai.org/Proceedings/85-2/Papers/083.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text">Paper is mentioned by <a href="Richard Korf.html#JudeaPearl" title="Richard Korf">Richard Korf</a> at <a href="Judea Pearl.html#Symposium" title="Judea Pearl">Judea Pearl Symposium</a>, 2010</span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722130021
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.031 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 264/1000000
+Preprocessor generated node count: 562/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:956-0!canonical and timestamp 20240722130021 and revision id 14825
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Iterative_Deepening&amp;oldid=14825">https://www.chessprogramming.org/index.php?title=Iterative_Deepening&amp;oldid=14825</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Urszula Dudziak.html" title="Category:Urszula Dudziak">Urszula Dudziak</a></li><li><a href="Category:Michal Urbaniak.html" title="Category:Michal Urbaniak">Michal Urbaniak</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Iterative+Deepening&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Iterative Deepening.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Iterative Deepening&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Iterative Deepening.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Iterative Deepening&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Iterative Deepening&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Iterative Deepening.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Iterative Deepening.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Iterative Deepening&amp;oldid=14825.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Iterative Deepening&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 4 October 2019, at 23:44.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Iterative_Deepening&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.031","walltime":"0.033","ppvisitednodes":{"value":264,"limit":1000000},"ppgeneratednodes":{"value":562,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722130021","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

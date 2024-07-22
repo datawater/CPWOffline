@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Checkers - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Checkers","wgTitle":"Checkers","wgCurRevisionId":26086,"wgRevisionId":26086,"wgArticleId":1852,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Checkers","wgRelevantArticleId":1852,"wgRequestId":"Zp7DMQAL2SoIDHtirCviIAAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Checkers rootpage-Checkers skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Checkers</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Games.html" title="Games">Games</a> * Checkers</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:CheckersStandard.jpg.html"><img alt="" class="thumbimage" height="199" src="wikipedia/commons/thumb/f/f1/CheckersStandard.jpg/300px-CheckersStandard.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/CheckersStandard.jpg/450px-CheckersStandard.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/CheckersStandard.jpg/600px-CheckersStandard.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:CheckersStandard.jpg.html" title="Enlarge"></a></div>Checkers board <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Checkers</b>, <br/>
+also American Checkers or <a class="external text" href="https://en.wikipedia.org/wiki/English_draughts" rel="nofollow">English draughts</a>, is a variant of <a href="Draughts.html" title="Draughts">Draughts</a> played on an eight by eight board using 32 either dark or light <a href="Squares.html" title="Squares">squares</a>. Like <a href="Chess.html" title="Chess">Chess</a>, Checkers is a <a class="external text" href="https://en.wikipedia.org/wiki/Two-player_game" rel="nofollow">two-player</a> <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum_%28game_theory%29" rel="nofollow">zero-sum</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Perfect_information" rel="nofollow">perfect information</a> <a class="external text" href="https://en.wikipedia.org/wiki/Abstract_strategy" rel="nofollow">abstract strategy</a> <a class="external text" href="https://en.wikipedia.org/wiki/Board_game" rel="nofollow">board game</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Computer Olympiads"><span class="tocnumber">2</span> <span class="toctext">Computer Olympiads</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Solving Checkers"><span class="tocnumber">3</span> <span class="toctext">Solving Checkers</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Programs"><span class="tocnumber">4</span> <span class="toctext">Programs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#American checkers"><span class="tocnumber">4.1</span> <span class="toctext">American checkers</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Classical checkers"><span class="tocnumber">4.2</span> <span class="toctext">Classical checkers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Selected Publications"><span class="tocnumber">6</span> <span class="toctext">Selected Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#1952 ..."><span class="tocnumber">6.1</span> <span class="toctext">1952 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#1960 ..."><span class="tocnumber">6.2</span> <span class="toctext">1960 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#1970 ..."><span class="tocnumber">6.3</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#1980 ..."><span class="tocnumber">6.4</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#1990 ..."><span class="tocnumber">6.5</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#1995 ..."><span class="tocnumber">6.6</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2000 ..."><span class="tocnumber">6.7</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2005 ..."><span class="tocnumber">6.8</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2010 ..."><span class="tocnumber">6.9</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2015 ..."><span class="tocnumber">6.10</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2020 ..."><span class="tocnumber">6.11</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#1990 ... 2"><span class="tocnumber">7.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2000 ... 2"><span class="tocnumber">7.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#2010 ... 2"><span class="tocnumber">7.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#2020 ... 2"><span class="tocnumber">7.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Rules">Rules</span></h1>
+<p>Each side starts with twelve checkers, placed on the three back-ranks. Black moves first, alternating with White - there is no passing move. Checkers move one step diagonally forward, kings diagonally forward and backward. When a checker reaches the last rank, it promotes to a king. Checkers and king capture men by jumping over them to an empty square behind (checkers only forward). Captures are compulsory, one must play a capture if at least one is available, and is required to continue jumping and capturing as part of the same turn. However, a checker reaching the last row must stop to be crowned and can move no further on that turn <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. The side run out of moves loses. 
+</p>
+<h1><span class="mw-headline" id="Computer_Olympiads"><a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiads</a></span></h1>
+<ul><li> <a href="1st Computer Olympiad.html#Checkers" title="1st Computer Olympiad">1st Computer Olympiad, London 1989</a></li>
+<li> <a href="2nd Computer Olympiad.html#Checkers" title="2nd Computer Olympiad">2nd Computer Olympiad, London 1990</a></li></ul>
+<h1><span class="mw-headline" id="Solving_Checkers">Solving Checkers</span></h1>
+<p>In 2007, the <a class="external text" href="https://en.wikipedia.org/wiki/Chinook_%28draughts_player%29" rel="nofollow">Chinook</a> team around <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> declared Checkers <a class="external text" href="https://en.wikipedia.org/wiki/Solved_game" rel="nofollow">solved</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Programs">Programs</span></h1>
+<p>The first Checkers program was written by <a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a>, <a class="external text" href="https://en.wikipedia.org/wiki/National_Research_Development_Corporation" rel="nofollow">National Research Development Corporation</a>, <a class="external text" href="https://en.wikipedia.org/wiki/London" rel="nofollow">London</a>, in the early 1950s to run on a  <a class="external text" href="https://en.wikipedia.org/wiki/Pilot_ACE" rel="nofollow">Pilot ACE</a> at the <a class="external text" href="https://en.wikipedia.org/wiki/National_Physical_Laboratory,_UK" rel="nofollow">National Physical Laboratory</a>, exhausting its memory <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>, and soon ported to  the <a href="Ferranti Mark 1.html" title="Ferranti Mark 1">Ferranti Mark 1</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>. His checkers program from 1966 <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> written in <a class="external text" href="https://en.wikipedia.org/wiki/CPL_%28programming_language%29" rel="nofollow">CPL</a> is available on-line, in a corrected version with courtesy of <a href="Peter Norvig.html" title="Peter Norvig">Peter Norvig</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>. The second program was written in 1956 by <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>: 
+</p>
+<h2><span class="mw-headline" id="American_checkers">American checkers</span></h2>
+<ul><li> <a class="external text" href="http://www.fierz.ch/cake.php.html" rel="nofollow">Cake</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=337" rel="nofollow">Checker!</a> by <a class="new" href="index.php?title=Gil Dodgen&amp;action=edit&amp;redlink=1.html" title="Gil Dodgen (page does not exist)">Gil Dodgen</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=341" rel="nofollow">Checker Hustler</a> by <a href="Derek Oldbury.html" title="Derek Oldbury">Derek Oldbury</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=390" rel="nofollow">Checkermate</a> by <a href="Derek Oldbury.html" title="Derek Oldbury">Derek Oldbury</a> and <a href="Adrian Millett.html" title="Adrian Millett">Adrian Millett</a></li>
+<li> <a class="external text" href="http://www.aifactory.co.uk/AIF Games Checkers.htm.html" rel="nofollow">Checkers</a> from <a href="AI Factory.html" title="AI Factory">AI Factory</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Chinook_%28draughts_player%29" rel="nofollow">Chinook</a> by <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> et al. <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=389" rel="nofollow">Colossus Draughts</a> by <a href="Martin Bryant.html" title="Martin Bryant">Martin Bryant</a></li>
+<li> <a class="external text" href="http://checkersbackground.com/samuel-s-and-the.html.html" rel="nofollow">The Duke program</a> by <a href="Eric Jensen.html" title="Eric Jensen">Eric Jensen</a>, <a href="Tom Truscott.html" title="Tom Truscott">Tom Truscott</a> and <a href="Alan Biermann.html" title="Alan Biermann">Alan Biermann</a></li>
+<li> <a class="external text" href="http://www.3dkingdoms.com/checkers.htm.html" rel="nofollow">GuiNN Checkers 2.0</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup></li>
+<li> <a class="external text" href="http://edgilbert.org/Checkers/KingsRow.htm.html" rel="nofollow">KingsRow</a> by <a class="new" href="index.php?title=Ed Gilbert&amp;action=edit&amp;redlink=1.html" title="Ed Gilbert (page does not exist)">Ed Gilbert</a></li>
+<li> <a class="external text" href="http://www.nemesis.info/index.html.html" rel="nofollow">Nemesis</a> by <a class="new" href="index.php?title=Murray Cash&amp;action=edit&amp;redlink=1.html" title="Murray Cash (page does not exist)">Murray Cash</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=340" rel="nofollow">Sage Draughts</a> by <a href="Adrian Millett.html" title="Adrian Millett">Adrian Millett</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/program.php?id=338" rel="nofollow">Tournament Checkers</a> by <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/person.php?id=314" rel="nofollow">David Butler</a></li>
+<li> <a class="external text" href="http://www.wylliedraughts.com/.html" rel="nofollow">Wyllie</a> by <a href="Roberto Waldteufel.html" title="Roberto Waldteufel">Roberto Waldteufel</a></li></ul>
+<h2><span class="mw-headline" id="Classical_checkers">Classical checkers</span></h2>
+<ul><li> <a href="Alvaro Cardoso.html#Profound" title="Alvaro Cardoso">Profound</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a></li>
+<li> <a class="external text" href="http://alemanni.pagesperso-orange.fr/downloads2.html.html" rel="nofollow">Windamas</a> by <a class="new" href="index.php?title=Jean-Bernard Alemanni&amp;action=edit&amp;redlink=1.html" title="Jean-Bernard Alemanni (page does not exist)">Jean-Bernard Alemanni</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Draughts.html" title="Draughts">Draughts</a></li></ul>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<h2><span class="mw-headline" id="1952_...">1952 ...</span></h2>
+<ul><li> <a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a> (<b>1952</b>). <i><a class="external text" href="http://dl.acm.org/citation.cfm?id=808992.html" rel="nofollow">Logical or non-mathematical Programs</a></i>. Proceedings of the <a href="ACM.html" title="ACM">ACM</a> Conference, Toronto, reprinted in <a href="David Levy.html" title="David Levy">David Levy</a> (ed.) (<b>1988</b>). <i><a class="external text" href="http://link.springer.com/book/10.1007/978-1-4613-8716-9.html" rel="nofollow">Computer Games I</a></i>. </li>
+<li> <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> (<b>1959</b>). <i><a class="external text" href="http://domino.watson.ibm.com/tchjr/journalindex.nsf/600cc5649e2871db852568150060213c/39a870213169f45685256bfa00683d74!OpenDocument.html" rel="nofollow">Some Studies in Machine Learning Using the Game of Checkers</a></i>. IBM Journal July 1959,  reprinted in <a href="David Levy.html" title="David Levy">David Levy</a> (ed.) (<b>1988</b>). <i><a class="external text" href="http://link.springer.com/book/10.1007/978-1-4613-8716-9.html" rel="nofollow">Computer Games I</a></i>.  <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup></li></ul>
+<h2><span class="mw-headline" id="1960_...">1960 ...</span></h2>
+<ul><li> <a href="Arnold K. Griffith.html" title="Arnold K. Griffith">Arnold K. Griffith</a> (<b>1966</b>). <i><a class="external text" href="http://dspace.mit.edu/handle/1721.1/5896.html#files-area" rel="nofollow">A new Machine-Learning Technique applied to the Game of Checkers</a></i>. <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">MIT</a>, <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory#Project_MAC" rel="nofollow">Project MAC</a>, MAC-M-293</li>
+<li> <a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a> (<b>1966</b>). <i><a class="external text" href="http://www.scientificamerican.com/article.cfm?id=system-analysis-and-programming-christopher-strachey.html" rel="nofollow">System Analysis and Programming</a></i>. <a href="Scientific American.html" title="Scientific American">Scientific American</a>, September 1966, re-published August 23, 2011</li>
+<li> <a href="Arthur Samuel.html" title="Arthur Samuel">Arthur Samuel</a> (<b>1967</b>). <i>Some Studies in Machine Learning. Using the Game of Checkers. II-Recent Progress</i>. <a class="external text" href="https://researcher.ibm.com/researcher/files/us-beygel/samuel-checkers.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a href="Arnold K. Griffith.html" title="Arnold K. Griffith">Arnold K. Griffith</a> (<b>1974</b>). <i><a class="external text" href="http://www.sciencedirect.com/science/article/pii/0004370274900277.html" rel="nofollow">A Comparison and Evaluation of Three Machine Learning Procedures as Applied to the Game of Checkers</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 5, No. 2</li>
+<li> <a href="Aviezri Fraenkel.html" title="Aviezri Fraenkel">Aviezri Fraenkel</a>, <a href="Mathematician.html#MRGarey" title="Mathematician">Michael R. Garey</a>, <a href="Mathematician.html#DSJohnson" title="Mathematician">David S. Johnson</a>, <a href="Mathematician.html#TCSchaefer" title="Mathematician">Thomas J. Schaefer</a>, <a href="Mathematician.html#YYesha" title="Mathematician">Yaacov Yesha</a> (<b>1978</b>). <i>The Complexity of Checkers on an N * N Board</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/focs/focs78.html.html#FraenkelGJSY78" rel="nofollow">FOCS 1978</a></li>
+<li> <a href="Tom Truscott.html" title="Tom Truscott">Tom Truscott</a> (<b>1978</b>). <i>Computer-Checkers</i>. <a href="Personal Computing.html#2 9" title="Personal Computing">Personal Computing, Vol. 2, No. 9</a>, pp. 86 </li>
+<li> Editor (<b>1979</b>). <i>Computer Checkers</i>. <a href="Personal Computing.html#3 2" title="Personal Computing">Personal Computing, Vol. 3, No. 2</a>, pp. 73</li>
+<li> Editor (<b>1979</b>). <i>Computer Checkers</i>. <a href="Personal Computing.html#3 4" title="Personal Computing">Personal Computing, Vol. 3, No. 4</a>, pp. 70</li>
+<li> Editor (<b>1979</b>). <i>Computer Checkers - A Checkers Program</i>. <a href="Personal Computing.html#3 5" title="Personal Computing">Personal Computing, Vol. 3, No. 5</a>, pp. 60</li>
+<li> Editor (<b>1979</b>). <i>Computer Checkers - The Tinsely Challange</i>. <a href="Personal Computing.html#3 7" title="Personal Computing">Personal Computing, Vol. 3, No. 7</a>, pp. 88</li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> Editor (<b>1980</b>). <i>A Checkers Debate</i>. <a href="Personal Computing.html#4 5" title="Personal Computing">Personal Computing, Vol. 4, No. 5</a>, pp. 83 » <a href="Martin Gardner.html" title="Martin Gardner">Martin Gardner</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>1991</b>). <i>Checkers, a Preview of what will Happen in Chess?</i> <a href="ICGA Journal.html#14 2" title="ICGA Journal">ICCA Journal, Vol. 14, No. 2</a></li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Joe Culberson.html" title="Joe Culberson">Joe Culberson</a>, <a class="new" href="index.php?title=Norman Treloar&amp;action=edit&amp;redlink=1.html" title="Norman Treloar (page does not exist)">Norman Treloar</a>, <a class="new" href="index.php?title=Brent Knight&amp;action=edit&amp;redlink=1.html" title="Brent Knight (page does not exist)">Brent Knight</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a href="Duane Szafron.html" title="Duane Szafron">Duane Szafron</a> (<b>1991</b>). <i>Checkers Program to Challenge for World Championship</i>. SIGART Bulletin, Vol. 2, No. 2</li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Joe Culberson.html" title="Joe Culberson">Joe Culberson</a>, <a class="new" href="index.php?title=Norman Treloar&amp;action=edit&amp;redlink=1.html" title="Norman Treloar (page does not exist)">Norman Treloar</a>, <a class="new" href="index.php?title=Brent Knight&amp;action=edit&amp;redlink=1.html" title="Brent Knight (page does not exist)">Brent Knight</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a href="Duane Szafron.html" title="Duane Szafron">Duane Szafron</a> (<b>1991</b>). <i>Reviving the Game of Checkers</i>. <a href="2nd Computer Olympiad.html#Workshop" title="2nd Computer Olympiad">Heuristic Programming in AI 2</a></li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Norman Treloar&amp;action=edit&amp;redlink=1.html" title="Norman Treloar (page does not exist)">Norman Treloar</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a> (<b>1993</b>). <i><a class="external text" href="http://www.aaai.org/ojs/index.php/aimagazine/article/view/1040.html" rel="nofollow">Man Versus Machine for the World Checkers Championship</a></i>. <a class="external text" href="http://www.aaai.org/Magazine/magazine.php.html" rel="nofollow">AI Magazine</a>, Vol. 14, No. 2 » <a href="WCCC 1992.html#Workshop" title="WCCC 1992">WCCC 1992 - Workshop</a> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup></li></ul>
+<dl><dd> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Norman Treloar&amp;action=edit&amp;redlink=1.html" title="Norman Treloar (page does not exist)">Norman Treloar</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a> (<b>1993</b>). <i>Man Versus Machine for the World Checkers Championship</i>. <a href="ICGA Journal.html#16 2" title="ICGA Journal">ICCA Journal, Vol. 16, No. 2</a></dd></dl>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a> (<b>1996</b>). <i>Solving the Game of Checkers</i>. <a class="external text" href="http://library.msri.org/books/Book29/index.html.html" rel="nofollow">Games of No Chance</a> edited by <a href="Richard J. Nowakowski.html" title="Richard J. Nowakowski">Richard J. Nowakowski</a>, <a class="external text" href="http://library.msri.org/books/Book29/files/schaeffer.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=J. Ignacio Gir%C3%A1ldez&amp;action=edit&amp;redlink=1.html" title="J. Ignacio Giráldez (page does not exist)">J. Ignacio Giráldez</a>, <a class="new" href="index.php?title=Daniel Borrajo&amp;action=edit&amp;redlink=1.html" title="Daniel Borrajo (page does not exist)">Daniel Borrajo</a> (<b>1998</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-48957-6 11.html" rel="nofollow">Distributed Decision Making in Checkers</a></i>. <a href="CG 1998.html" title="CG 1998">CG 1998</a></li>
+<li> <a class="new" href="index.php?title=Kumar Chellapilla&amp;action=edit&amp;redlink=1.html" title="Kumar Chellapilla (page does not exist)">Kumar Chellapilla</a>, <a href="David B. Fogel.html" title="David B. Fogel">David B. Fogel</a> (<b>1999</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/freeabs all.jsp?arnumber=809083.html" rel="nofollow">Evolving Neural Networks to Play Checkers without Expert Knowledge</a></i>. IEEE Transactions on Neural Networks, Vol. 10, No. 6, pp. 1382-1391.</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Kumar Chellapilla&amp;action=edit&amp;redlink=1.html" title="Kumar Chellapilla (page does not exist)">Kumar Chellapilla</a>, <a href="David B. Fogel.html" title="David B. Fogel">David B. Fogel</a> (<b>2001</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/freeabs all.jsp?arnumber=942536.html" rel="nofollow">Evolving an Expert Checkers Playing Program without Using Human Expertise</a></i>. IEEE Transactions on Evolutionary Computation, Vol. 5, No. 4, pp.422-428</li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>2001</b>). <i><a class="external text" href="http://ilk.uvt.nl/icga/journal/contents/content24-3.htm.html#TECHNOLOGY%20TRANSFER" rel="nofollow">Technology Transfer from One High-Performance Search Engine to Another</a></i>. <a href="ICGA Journal.html#24 3" title="ICGA Journal">ICGA Journal, Vol. 24, No. 3</a></li>
+<li> <a href="David B. Fogel.html" title="David B. Fogel">David B. Fogel</a> (<b>2002</b>). <i>Blondie24: Playing at the Edge of AI</i>. Morgan Kaufmann Publishers, Inc., San Francisco, CA. ISBN 1-55860-783-8, <a class="external text" href="http://www.amazon.com/Blondie24-Playing-Kaufmann-Artificial-Intelligence/dp/1558607838.html" rel="nofollow">amazon.com</a> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup></li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a class="new" href="index.php?title=Neil Burch&amp;action=edit&amp;redlink=1.html" title="Neil Burch (page does not exist)">Neil Burch</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a class="new" href="index.php?title=Steve Sutphen&amp;action=edit&amp;redlink=1.html" title="Steve Sutphen (page does not exist)">Steve Sutphen</a> (<b>2003</b>). <i>Building the Checkers 10-Piece Endgame Databases.</i> <a href="Advances in Computer Games 10.html" title="Advances in Computer Games 10">Advances in Computer Games 10</a>. <a class="external text" href="http://webdocs.cs.ualberta.ca/%7Ejonathan/Grad/Papers/databases10.pdf.html" rel="nofollow">pdf</a> » <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a></li>
+<li> <a class="new" href="index.php?title=Ed Trice&amp;action=edit&amp;redlink=1.html" title="Ed Trice (page does not exist)">Ed Trice</a>, <a class="new" href="index.php?title=Gil Dodgen&amp;action=edit&amp;redlink=1.html" title="Gil Dodgen (page does not exist)">Gil Dodgen</a> (<b>2003</b>). <i><a class="external text" href="http://ilk.uvt.nl/icga/journal/contents/content26-4.htm.html#7%20piece" rel="nofollow">The Perfect 7-Piece Checkers Database</a></i>. <a href="ICGA Journal.html#26 4" title="ICGA Journal">ICGA Journal, Vol. 26, No. 4</a> » <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a class="new" href="index.php?title=Neil Burch&amp;action=edit&amp;redlink=1.html" title="Neil Burch (page does not exist)">Neil Burch</a>, <a href="Akihiro Kishimoto.html" title="Akihiro Kishimoto">Akihiro Kishimoto</a>, <a href="Martin M%C3%BCller.html" title="Martin Müller">Martin Müller</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a class="new" href="index.php?title=Steve Sutphen&amp;action=edit&amp;redlink=1.html" title="Steve Sutphen (page does not exist)">Steve Sutphen</a> (<b>2005</b>). <i>Solving Checkers</i>. <a href="Conferences.html#IJCAI2005" title="Conferences">IJCAI 2005</a></li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Neil Burch&amp;action=edit&amp;redlink=1.html" title="Neil Burch (page does not exist)">Neil Burch</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Akihiro Kishimoto.html" title="Akihiro Kishimoto">Akihiro Kishimoto</a>, <a href="Martin M%C3%BCller.html" title="Martin Müller">Martin Müller</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a class="new" href="index.php?title=Steve Sutphen&amp;action=edit&amp;redlink=1.html" title="Steve Sutphen (page does not exist)">Steve Sutphen</a> (<b>2007</b>). <i><a class="external text" href="http://www.sciencemag.org/content/317/5844/1518.abstract.html" rel="nofollow">Checkers is Solved</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_%28journal%29" rel="nofollow">Science</a>, Vol. 317, no. 5844</li>
+<li> <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/k/Kusiak:Magdalena.html.html" rel="nofollow">Magdalena Kusiak</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/w/Waledzik:Karol.html.html" rel="nofollow">Karol Walędzik</a>, <a href="Jacek Ma%C5%84dziuk.html" title="Jacek Mańdziuk">Jacek Mańdziuk</a> (<b>2007</b>). <i>Evolutionary Approach to the Game of Checkers</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/icannga/icannga2007-1.html.html#KusiakWM07" rel="nofollow">8. ICANNGA</a>, <a class="external text" href="http://www.mini.pw.edu.pl/~mandziuk/PRACE/ICANNGA07-1.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a> (<b>1997, 2009</b>). <i><a class="external text" href="http://www.springer.com/computer/artificial/book/978-0-387-76575-4.html" rel="nofollow">One Jump Ahead</a> Challenging Human Supremacy in Checkers</i>. Springer</li>
+<li> <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/a/Al=Khateeb:Belal.html" rel="nofollow">Belal Al-Khateeb</a>, <a href="Graham Kendall.html" title="Graham Kendall">Graham Kendall</a> (<b>2009</b>). <i>Introducing a round robin tournament into Blondie24</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/cig/cig2009.html.html#Al-KhateebK09" rel="nofollow">CIG 2009</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/w/Waledzik:Karol.html.html" rel="nofollow">Karol Walędzik</a>, <a href="Jacek Ma%C5%84dziuk.html" title="Jacek Mańdziuk">Jacek Mańdziuk</a> (<b>2010</b>). <i>The Layered Learning method and its Application to Generation of Evaluation Functions for the Game of Checkers</i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/ppsn/ppsn2010-2.html.html#WaledzikM10" rel="nofollow">11. PPSN</a>, <a class="external text" href="http://www.mini.pw.edu.pl/~mandziuk/PRACE/PPSN10.pdf.html" rel="nofollow">pdf</a> </li>
+<li> <a class="new" href="index.php?title=Jo%C3%A3o Guerra&amp;action=edit&amp;redlink=1.html" title="João Guerra (page does not exist)">João Guerra</a> (<b>2011</b>). <i>Classical Checkers</i>. Masters thesis, <a class="external text" href="https://en.wikipedia.org/wiki/Technical_University_of_Lisbon" rel="nofollow">Technical University of Lisbon</a>, <a class="external text" href="https://dspace.ist.utl.pt/bitstream/2295/1051359/1/dissertacao.pdf" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/a/Al=Khateeb:Belal" rel="nofollow">Belal Al-Khateeb</a>, <a href="Graham Kendall.html" title="Graham Kendall">Graham Kendall</a> (<b>2011</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/5949894" rel="nofollow">The importance of look-ahead depth in evolutionary checkers</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/cec/cec2011.html" rel="nofollow">CEC 2011</a></li>
+<li> <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a> (<b>2012</b>). <i>Computing Deep Perft and Divide Numbers for Checkers</i>. <a href="ICGA Journal.html#35 4" title="ICGA Journal">ICGA Journal, Vol. 35, No. 4</a> » <a href="Perft.html" title="Perft">Perft</a></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/a/Al=Khateeb:Belal" rel="nofollow">Belal Al-Khateeb</a>, <a href="Graham Kendall.html" title="Graham Kendall">Graham Kendall</a> (<b>2012</b>). <i>Introducing Individual and Social Learning Into Evolutionary Checkers</i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 4, No. 4, <a class="external text" href="http://www.graham-kendall.com/papers/ak2012.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="external text" href="https://dblp.uni-trier.de/pers/hd/a/Al=Khateeb:Belal" rel="nofollow">Belal Al-Khateeb</a>, <a href="Graham Kendall.html" title="Graham Kendall">Graham Kendall</a> (<b>2012</b>). <i><a class="external text" href="https://link.springer.com/article/10.1007/s11390-012-1280-6" rel="nofollow">Effect of Look-Ahead Depth in Evolutionary Checkers</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/journals/jcst/jcst27.html" rel="nofollow">Journal of Computer Science and Technology, Vol. 27</a>, No. 5</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Danilo Carvalho&amp;action=edit&amp;redlink=1.html" title="Danilo Carvalho (page does not exist)">Danilo Carvalho</a>, <a class="new" href="index.php?title=Minh Le Nguyen&amp;action=edit&amp;redlink=1.html" title="Minh Le Nguyen (page does not exist)">Minh Le Nguyen</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (<b>2017</b>). <i>An Analysis of Majority Voting in Homogeneous Groups for Checkers: Understanding Group Performance through Unbalance</i>. <a href="Advances in Computer Games 15.html" title="Advances in Computer Games 15">Advances in Computer Games 15</a>, <a class="external text" href="https://www.researchgate.net/publication/318718797_An_Analysis_of_Majority_Voting_in_Homogeneous_Groups_for_Checkers_Understanding_Group_Performance_through_Unbalance?ev=prf_high" rel="nofollow">ResearchGate</a></li>
+<li> <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a> (<b>2018</b>). <i>Complexity of checkers and draughts on different board sizes</i>. <a href="ICGA Journal.html#40 4" title="ICGA Journal">ICGA Journal, Vol. 40, No. 4</a></li>
+<li> <a href="Nathan Sturtevant.html" title="Nathan Sturtevant">Nathan Sturtevant</a> (<b>2019</b>). <i>On Strongly Solving Chinese Checkers</i>. <a href="Advances in Computer Games 16.html" title="Advances in Computer Games 16">Advances in Computer Games 16</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a href="Bill Jordan.html" title="Bill Jordan">Bill Jordan</a> (<b>2021</b>). <i>How to Write a Checkers Program</i>. <a class="external text" href="https://www.amazon.com/dp/B0968R3TW4/" rel="nofollow">amazon</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup> </li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1990_..._2">1990 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/TLrfJWhG8l0/g3LAwMxYFxgJ" rel="nofollow">A taste of things to come?</a> by <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, September 01, 1990</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/oGxblycMMOo/OVMJxRpiEgwJ" rel="nofollow">Checkers match</a> by <a href="Murray Campbell.html" title="Murray Campbell">Murray Campbell</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 20, 1992 </li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/ieXFLZSIlGo/S4-8k9tvtWQJ" rel="nofollow">Man vs. Machine World Checkers Championship (day 5)</a> by <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Robert Lake</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 21, 1992</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/Y-qJTq--zBQ/OztCF1eaXOUJ" rel="nofollow">Tinsley vs. Chinook?</a> by Robert Williams, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 16, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/4SZY5cxp8wI/6DcEAhUEpgUJ" rel="nofollow">Silicon Graphics World Checkers Championship</a> by <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Robert Lake</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 16, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/gXSmAjNdM60/fZfxspiOq60J" rel="nofollow">Silicon Graphics World Checkers Championship - day 3</a> by <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 18, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/4kE5IqBPb0Y/Js0nawCyu-cJ" rel="nofollow">Checkers Championship - additional information</a> by <a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, August 20, 1994</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/_bc_FD4tSFI/nZq6ifCR58cJ" rel="nofollow">PDN - Portable Draughts Notation</a> by <a href="Adrian Millett.html" title="Adrian Millett">Pc Sol</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, July 22, 1995</li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27814.html" rel="nofollow">perft for 8x8 checkers</a> by <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2009 » <a href="Perft.html" title="Perft">Perft</a></li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?start=0&amp;t=37634.html" rel="nofollow">WinBoard, exotic version</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 15, 2011 » <a href="WinBoard.html" title="WinBoard">WinBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=38554.html" rel="nofollow">UCT surprise for checkers !</a> by <a href="Daniel Shawul.html" title="Daniel Shawul">Daniel Shawul</a>, <a href="CCC.html" title="CCC">CCC</a>, March 25, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63153.html" rel="nofollow">Checkers Is Strongly-Solved for 8-pieces</a> by <a class="new" href="index.php?title=Ed Trice&amp;action=edit&amp;redlink=1.html" title="Ed Trice (page does not exist)">Ed Trice</a>, <a href="CCC.html" title="CCC">CCC</a>, February 12, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=64487.html" rel="nofollow">Checkers Bitboard representation</a> by Pranav Deshpande, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2017 » <a href="Bitboards.html" title="Bitboards">Bitboards</a></li></ul>
+<h2><span class="mw-headline" id="2020_..._2">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75190&amp;start=21.html" rel="nofollow">Re: First success with neural nets</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a>, <a href="CCC.html" title="CCC">CCC</a>, November 11, 2020 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=77768.html" rel="nofollow">Fortress detection?</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a>, <a href="CCC.html" title="CCC">CCC</a>, July 21, 2021 » <a href="Fortress.html" title="Fortress">Fortress</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Checkers" rel="nofollow">Checkers (English draughts) from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.bobnewell.net/nucleus/checkers.php.html" rel="nofollow">The Checker Maven</a></li>
+<li> <a class="external text" href="http://www.usacheckers.com/index.php.html" rel="nofollow">The American Checker Federation - Welcome to the ACF website</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/game.php?id=5" rel="nofollow">Checkers (ICGA Tournaments)</a></li>
+<li> <a class="external text" href="http://aitopics.org/topic/checkers.html" rel="nofollow">AITopics / Checkers</a></li>
+<li> <a class="external text" href="http://webdocs.cs.ualberta.ca/%7Echinook/project/.html" rel="nofollow">Chinook - World Man-Machine Checkers Champion</a></li>
+<li> <a class="external text" href="http://www.fierz.ch/history.htm.html" rel="nofollow">A brief history of computer checkers</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Marion_Tinsley" rel="nofollow">Marion Tinsley from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.nemesis.info/2002%20world%20computer%20championship.htm.html" rel="nofollow">2002 World Computer Championship</a></li>
+<li> <a class="external text" href="http://www.fierz.ch/vegas.htm.html" rel="nofollow">Las Vegas computer checker championship</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a></li>
+<li> <a class="external text" href="http://www.chessbase.com/newsdetail.asp?newsid=3997.html" rel="nofollow">500 billion billion moves later, computers solve checkers</a> from <a href="ChessBase.html" title="ChessBase">ChessBase news</a>, July 19, 2007</li>
+<li> <a class="external text" href="http://www.fierz.ch/checkerboard.php.html" rel="nofollow">CheckerBoard</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a></li>
+<li> <a class="external text" href="http://checker-board.blogspot.com/.html" rel="nofollow">CheckerBoard</a>, A blog on checkers programming by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Portable_Draughts_Notation" rel="nofollow">Portable Draughts Notation from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.3dkingdoms.com/checkers/bitboards.htm.html" rel="nofollow">Checker Bitboards Tutorial</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a></li>
+<li> <a class="external text" href="http://www.3dkingdoms.com/checkers.htm.html" rel="nofollow">Gui Checkers 1.05</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a></li>
+<li> <a class="external text" href="http://checker-board.blogspot.com/2009/02/perft-for-checkers.html.html" rel="nofollow">Perft for Checkers</a> by <a href="Martin Fierz.html" title="Martin Fierz">Martin Fierz</a></li>
+<li> <a class="external text" href="http://www.aartbik.com/strategy.php.html" rel="nofollow">Deep Perft for Checkers</a> by <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a> » <a href="Perft.html" title="Perft">Perft</a> <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup></li>
+<li> <a class="external text" href="http://alemanni.pagesperso-orange.fr/index.html.html" rel="nofollow">Welcome to the checkers programs page</a> by <a class="new" href="index.php?title=Jean-Bernard Alemanni&amp;action=edit&amp;redlink=1.html" title="Jean-Bernard Alemanni (page does not exist)">Jean-Bernard Alemanni</a></li>
+<li> <a class="external text" href="https://www.theatlantic.com/technology/archive/2017/07/marion-tinsley-checkers/534111/" rel="nofollow">How Checkers Was Solved</a> by <a class="external text" href="https://www.theatlantic.com/author/alexis-madrigal/" rel="nofollow">Alexis C. Madrigal</a>, <a class="external text" href="https://en.wikipedia.org/wiki/The_Atlantic" rel="nofollow">The Atlantic - World Edition</a>, July 19, 2017</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Checkers" rel="nofollow">Checkers (English draughts) from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.bobnewell.net/pmwiki/index.php?n=CheckerMaven.RulesOfCheckers.html" rel="nofollow">Mr. Fred Investments | CheckerMaven / RulesOfCheckers</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Jonathan Schaeffer.html" title="Jonathan Schaeffer">Jonathan Schaeffer</a>, <a class="new" href="index.php?title=Neil Burch&amp;action=edit&amp;redlink=1.html" title="Neil Burch (page does not exist)">Neil Burch</a>, <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Akihiro Kishimoto.html" title="Akihiro Kishimoto">Akihiro Kishimoto</a>, <a href="Martin M%C3%BCller.html" title="Martin Müller">Martin Müller</a>, <a class="new" href="index.php?title=Rob Lake&amp;action=edit&amp;redlink=1.html" title="Rob Lake (page does not exist)">Rob Lake</a>, <a href="Paul Lu.html" title="Paul Lu">Paul Lu</a>, <a class="new" href="index.php?title=Steve Sutphen&amp;action=edit&amp;redlink=1.html" title="Steve Sutphen (page does not exist)">Steve Sutphen</a> (<b>2007</b>). <i>Checkers is Solved</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_%28magazine%29" rel="nofollow">Science</a>, Vol. 317 (5844). Work named by Science Magazine as one of the 10 most important scientific achievements of 2007</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.sciencemag.org/content/317/5844/1518.abstract?keytype=ref&amp;siteid=sci&amp;ijkey=jVmVcXy2%2FNTnY.html" rel="nofollow">Checkers Is Solved</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://webdocs.cs.ualberta.ca/~chinook/publications/solving checkers.html.html" rel="nofollow">Chinook - Solving Checkers</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Christopher_Strachey" rel="nofollow">Christopher Strachey from Wikipedia</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.britannica.com/EBchecked/topic/37146/artificial-intelligence-AI/219091/Early-milestones-in-AI?anchor=ref739464.html" rel="nofollow">artificial intelligence (AI) :: Early milestones in AI</a> from <a class="external text" href="https://en.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica" rel="nofollow">Britannica Online Encyclopedia</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a> (<b>1952</b>). <i><a class="external text" href="http://portal.acm.org/citation.cfm?id=800259.808992.html" rel="nofollow">Logical or non-mathematical programmes</a></i>. Proceedings of the 1952 ACM national meeting</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Christopher Strachey.html" title="Christopher Strachey">Christopher Strachey</a> (<b>1966</b>). <i><a class="external text" href="http://www.scientificamerican.com/article.cfm?id=system-analysis-and-programming-christopher-strachey.html" rel="nofollow">System Analysis and Programming</a></i>. <a href="Scientific American.html" title="Scientific American">Scientific American</a>, September 1966, republished August 23, 2011</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://norvig.com/sciam/checkers-complete.html.html" rel="nofollow">Complete Annotated Strachey Checkers Program</a> by <a href="Peter Norvig.html" title="Peter Norvig">Peter Norvig</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://blogs.scientificamerican.com/at-scientific-american/2011/08/23/systems-analysis-look-back-1966-scientific-american-article/.html" rel="nofollow">Prescient but Not Perfect: A Look Back at a 1966 Scientific American Article on Systems Analysis</a> by <a href="Peter Norvig.html" title="Peter Norvig">Peter Norvig</a>, August 23, 2011</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/English_draughts#Computer_players" rel="nofollow">English draughts - Computer players from Wikipedia</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://webdocs.cs.ualberta.ca/~chinook/publications/solving checkers.html.html" rel="nofollow">Chinook - Solving Checkers</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=75190&amp;start=21.html" rel="nofollow">Re: First success with neural nets</a> by <a href="Jonathan Kreuzer.html" title="Jonathan Kreuzer">Jonathan Kreuzer</a>, <a href="CCC.html" title="CCC">CCC</a>, November 11, 2020 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.abaa.org/books/245839575.html.html" rel="nofollow">Some studies in machine learning using the game of checkers by Arthur Lee Samuel from Jeremy Norman's Historyofscience.com - Used Book - Paperback - First Edition</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Marion_Tinsley#Vs._Chinook" rel="nofollow">Marion Tinsley vs. Chinook - Wikipedia</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.jimloy.com/checkers/blondie.htm.html" rel="nofollow">Blondie24 by David B. Fogel</a>, Book Review, © Copyright 2003, <a class="external text" href="http://www.jimloy.com/.html" rel="nofollow">Jim Loy</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/billjordanchess/Checkers-King" rel="nofollow">GitHub - billjordanchess/Checkers-King</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27814.html" rel="nofollow">perft for 8x8 checkers</a> by <a href="Aart Bik.html" title="Aart Bik">Aart Bik</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2009</span>
+</li>
+</ol></div>
+<p><b><a href="Games.html" title="Games">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721223058
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.157 seconds
+Real time usage: 0.845 seconds
+Preprocessor visited node count: 373/1000000
+Preprocessor generated node count: 734/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1852-0!canonical and timestamp 20240721223057 and revision id 26086
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Checkers&amp;oldid=26086">https://www.chessprogramming.org/index.php?title=Checkers&amp;oldid=26086</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Checkers&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Checkers.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Checkers&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Checkers.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Checkers&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Checkers&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Checkers.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Checkers.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Checkers&amp;oldid=26086.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Checkers&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 December 2021, at 16:38.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Checkers&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.157","walltime":"0.845","ppvisitednodes":{"value":373,"limit":1000000},"ppgeneratednodes":{"value":734,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721223058","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

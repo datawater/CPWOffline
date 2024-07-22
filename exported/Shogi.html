@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Shogi - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Shogi","wgTitle":"Shogi","wgCurRevisionId":26075,"wgRevisionId":26075,"wgArticleId":1845,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Shogi","wgRelevantArticleId":1845,"wgRequestId":"Zp7DzY2xCJ5uo1xYemabdgAAAAg","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Shogi rootpage-Shogi skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Shogi</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Games.html" title="Games">Games</a> * Shogi</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Shogiban.png.html"><img alt="" class="thumbimage" height="323" src="wikipedia/commons/thumb/9/9f/Shogiban.png/300px-Shogiban.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Shogiban.png/450px-Shogiban.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/9/9f/Shogiban.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Shogiban.png.html" title="Enlarge"></a></div>The starting setup of a game of Shogi <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Shogi</b> (Japanese Chess),<br/>
+a chess variant that evolved directly from <a href="Shatranj.html" title="Shatranj">Shatranj</a>, just like the western <a href="Chess.html" title="Chess">chess</a>. It is played on 9x9 board. Compared to chess, Shogi pieces have limited mobility, but this is compensated by the fact that captured enemy pieces can be <a class="new" href="index.php?title=Piece Drop&amp;action=edit&amp;redlink=1.html" title="Piece Drop (page does not exist)">dropped</a> on the board as one's own. This leads to the wild, tactical game. Shogi has greater <a href="Branching Factor.html" title="Branching Factor">branching factor</a> than chess. Development of Shogi programs has taken slightly different route than in chess programming. The stress is on <a href="Pattern Recognition.html" title="Pattern Recognition">pattern recognition</a> and <a href="Selectivity.html" title="Selectivity">selective search</a> techniques. However, with the advent of <a href="NNUE.html" title="NNUE">NNUE</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> along with adaptations of <a href="Stockfish.html" title="Stockfish">Stockfish</a> to Shogi such as <a href="YaneuraOu.html" title="YaneuraOu">YaneuraOu</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, and <a href="Kristallweizen.html" title="Kristallweizen">Kristallweizen</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>, and the consequent <a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish NNUE</a> hype <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>, both worlds seem to reunite again.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pieces .26 Moves"><span class="tocnumber">1</span> <span class="toctext">Pieces &amp; Moves</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Shogi Engines"><span class="tocnumber">2</span> <span class="toctext">Shogi Engines</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#World Computer Shogi Championship"><span class="tocnumber">3</span> <span class="toctext">World Computer Shogi Championship</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#1990 ..."><span class="tocnumber">3.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#2000 ..."><span class="tocnumber">3.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#2010 ..."><span class="tocnumber">3.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2020 ..."><span class="tocnumber">3.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Computer Olympiads"><span class="tocnumber">4</span> <span class="toctext">Computer Olympiads</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ... 2"><span class="tocnumber">4.1</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ... 2"><span class="tocnumber">4.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Photos"><span class="tocnumber">4.3</span> <span class="toctext">Photos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Taipei 2005"><span class="tocnumber">4.3.1</span> <span class="toctext">Taipei 2005</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Turin 2006"><span class="tocnumber">4.3.2</span> <span class="toctext">Turin 2006</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Publications"><span class="tocnumber">6</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#1990 ... 2"><span class="tocnumber">6.1</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#1995 ..."><span class="tocnumber">6.2</span> <span class="toctext">1995 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2000 ... 3"><span class="tocnumber">6.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2005 ..."><span class="tocnumber">6.4</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2010 ... 3"><span class="tocnumber">6.5</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2015 ..."><span class="tocnumber">6.6</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2020 ... 2"><span class="tocnumber">6.7</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#2007 ..."><span class="tocnumber">7.1</span> <span class="toctext">2007 ...</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#2010 ... 4"><span class="tocnumber">7.2</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#2015 ... 2"><span class="tocnumber">7.3</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#2020 ... 3"><span class="tocnumber">7.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Shogi"><span class="tocnumber">8.1</span> <span class="toctext">Shogi</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Computer Shogi"><span class="tocnumber">8.2</span> <span class="toctext">Computer Shogi</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Variants"><span class="tocnumber">8.3</span> <span class="toctext">Variants</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Pieces_.26_Moves">Pieces &amp; Moves</span></h1>
+<p>Shogi pieces capture as they move. <span id="Promotion"></span>Promotion is possible with all pieces except King and Gold General - or already promoted pieces with changed move options.
+When such a piece moves to, from or inside (but no <a class="new" href="index.php?title=Piece Drop&amp;action=edit&amp;redlink=1.html" title="Piece Drop (page does not exist)">drops</a>) the promotion zone, that is the three opponent's back-ranks, it has the option to promote.
+Promotion is mandatory for the forward only pieces of Knight, Lance or Pawn with no more moves after moving to the 9th or 8th (Knight) rank.
+Pieces indicate their promotion state by turning the piece over after the corresponding move, revealing the character of the promoted piece. A drop of a captured piece always appears with the unpromoted side up.
+</p>
+<div class="floatnone"><a class="image" href="File:ShogiBoardAndPieces.jpg.html"><img alt="ShogiBoardAndPieces.jpg" class="thumbborder" height="500" src="images/5/50/ShogiBoardAndPieces.jpg" style="vertical-align: text-bottom" width="792"/></a></div>
+<p>Shogi board and pieces, together with their starting position and moves <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+<span id="Engines"></span>
+</p>
+<h1><span class="mw-headline" id="Shogi_Engines">Shogi Engines</span></h1>
+<ul><li> <a href="Apery.html" title="Apery">Apery</a></li>
+<li> <a href="Bonanza.html" title="Bonanza">Bonanza</a></li>
+<li> <a class="new" href="index.php?title=CrazyWa&amp;action=edit&amp;redlink=1.html" title="CrazyWa (page does not exist)">CrazyWa</a></li>
+<li> <a class="new" href="index.php?title=Elmo&amp;action=edit&amp;redlink=1.html" title="Elmo (page does not exist)">Elmo</a></li>
+<li> <a class="new" href="index.php?title=Gekisashi&amp;action=edit&amp;redlink=1.html" title="Gekisashi (page does not exist)">Gekisashi</a></li>
+<li> <a class="new" href="index.php?title=GPS&amp;action=edit&amp;redlink=1.html" title="GPS (page does not exist)">GPS</a></li>
+<li> <a class="new" href="index.php?title=IS&amp;action=edit&amp;redlink=1.html" title="IS (page does not exist)">IS</a></li>
+<li> <a href="Kristallweizen.html" title="Kristallweizen">Kristallweizen</a></li>
+<li> <a class="new" href="index.php?title=ShogiNet&amp;action=edit&amp;redlink=1.html" title="ShogiNet (page does not exist)">ShogiNet</a></li>
+<li> <a class="new" href="index.php?title=Shokidoki&amp;action=edit&amp;redlink=1.html" title="Shokidoki (page does not exist)">Shokidoki</a></li>
+<li> <a class="new" href="index.php?title=Shotest&amp;action=edit&amp;redlink=1.html" title="Shotest (page does not exist)">Shotest</a></li>
+<li> <a href="Sjaak (Glebbeek).html" title="Sjaak (Glebbeek)">Sjaak (Glebbeek)</a></li>
+<li> <a class="new" href="index.php?title=Spear&amp;action=edit&amp;redlink=1.html" title="Spear (page does not exist)">Spear</a></li>
+<li> <a class="new" href="index.php?title=Tacos&amp;action=edit&amp;redlink=1.html" title="Tacos (page does not exist)">Tacos</a></li>
+<li> <a href="YaneuraOu.html" title="YaneuraOu">YaneuraOu</a></li>
+<li> <a class="new" href="index.php?title=YSS&amp;action=edit&amp;redlink=1.html" title="YSS (page does not exist)">YSS</a></li>
+<li> <a href="Zillions of Games.html" title="Zillions of Games">Zillions of Games</a></li></ul>
+<h1><span class="mw-headline" id="World_Computer_Shogi_Championship"><a href="World Computer Shogi Championship.html" title="World Computer Shogi Championship">World Computer Shogi Championship</a></span></h1>
+<p>organized by the <a href="CSA.html" title="CSA">CSA</a>
+</p>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=WCSC01&amp;action=edit&amp;redlink=1.html" title="WCSC01 (page does not exist)">WCSC01 1990</a></li>
+<li> <a class="new" href="index.php?title=WCSC02&amp;action=edit&amp;redlink=1.html" title="WCSC02 (page does not exist)">WCSC02 1991</a></li>
+<li> <a class="new" href="index.php?title=WCSC03&amp;action=edit&amp;redlink=1.html" title="WCSC03 (page does not exist)">WCSC03 1992</a></li>
+<li> <a class="new" href="index.php?title=WCSC04&amp;action=edit&amp;redlink=1.html" title="WCSC04 (page does not exist)">WCSC04 1993</a></li>
+<li> <a class="new" href="index.php?title=WCSC05&amp;action=edit&amp;redlink=1.html" title="WCSC05 (page does not exist)">WCSC05 1994</a></li>
+<li> <a class="new" href="index.php?title=WCSC06&amp;action=edit&amp;redlink=1.html" title="WCSC06 (page does not exist)">WCSC06 1996</a></li>
+<li> <a class="new" href="index.php?title=WCSC07&amp;action=edit&amp;redlink=1.html" title="WCSC07 (page does not exist)">WCSC07 1997</a></li>
+<li> <a class="new" href="index.php?title=WCSC08&amp;action=edit&amp;redlink=1.html" title="WCSC08 (page does not exist)">WCSC08 1998</a></li>
+<li> <a class="new" href="index.php?title=WCSC09&amp;action=edit&amp;redlink=1.html" title="WCSC09 (page does not exist)">WCSC09 1999</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=WCSC10&amp;action=edit&amp;redlink=1.html" title="WCSC10 (page does not exist)">WCSC10 2000</a></li>
+<li> <a class="new" href="index.php?title=WCSC11&amp;action=edit&amp;redlink=1.html" title="WCSC11 (page does not exist)">WCSC11 2001</a></li>
+<li> <a class="new" href="index.php?title=WCSC12&amp;action=edit&amp;redlink=1.html" title="WCSC12 (page does not exist)">WCSC12 2002</a></li>
+<li> <a class="new" href="index.php?title=WCSC13&amp;action=edit&amp;redlink=1.html" title="WCSC13 (page does not exist)">WCSC13 2003</a></li>
+<li> <a class="new" href="index.php?title=WCSC14&amp;action=edit&amp;redlink=1.html" title="WCSC14 (page does not exist)">WCSC14 2004</a></li>
+<li> <a class="new" href="index.php?title=WCSC15&amp;action=edit&amp;redlink=1.html" title="WCSC15 (page does not exist)">WCSC15 2005</a></li>
+<li> <a class="new" href="index.php?title=WCSC16&amp;action=edit&amp;redlink=1.html" title="WCSC16 (page does not exist)">WCSC16 2006</a></li>
+<li> <a class="new" href="index.php?title=WCSC17&amp;action=edit&amp;redlink=1.html" title="WCSC17 (page does not exist)">WCSC17 2007</a></li>
+<li> <a class="new" href="index.php?title=WCSC18&amp;action=edit&amp;redlink=1.html" title="WCSC18 (page does not exist)">WCSC18 2008</a></li>
+<li> <a class="new" href="index.php?title=WCSC19&amp;action=edit&amp;redlink=1.html" title="WCSC19 (page does not exist)">WCSC19 2009</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=WCSC20&amp;action=edit&amp;redlink=1.html" title="WCSC20 (page does not exist)">WCSC20 2010</a></li>
+<li> <a class="new" href="index.php?title=WCSC21&amp;action=edit&amp;redlink=1.html" title="WCSC21 (page does not exist)">WCSC21 2011</a></li>
+<li> <a class="new" href="index.php?title=WCSC22&amp;action=edit&amp;redlink=1.html" title="WCSC22 (page does not exist)">WCSC22 2012</a></li>
+<li> <a class="new" href="index.php?title=WCSC23&amp;action=edit&amp;redlink=1.html" title="WCSC23 (page does not exist)">WCSC23 2013</a></li>
+<li> <a class="new" href="index.php?title=WCSC24&amp;action=edit&amp;redlink=1.html" title="WCSC24 (page does not exist)">WCSC24 2014</a></li>
+<li> <a class="new" href="index.php?title=WCSC25&amp;action=edit&amp;redlink=1.html" title="WCSC25 (page does not exist)">WCSC25 2015</a></li>
+<li> <a class="new" href="index.php?title=WCSC26&amp;action=edit&amp;redlink=1.html" title="WCSC26 (page does not exist)">WCSC26 2016</a></li>
+<li> <a class="new" href="index.php?title=WCSC27&amp;action=edit&amp;redlink=1.html" title="WCSC27 (page does not exist)">WCSC27 2017</a></li>
+<li> <a class="new" href="index.php?title=WCSC28&amp;action=edit&amp;redlink=1.html" title="WCSC28 (page does not exist)">WCSC28 2018</a></li>
+<li> <a class="new" href="index.php?title=WCSC29&amp;action=edit&amp;redlink=1.html" title="WCSC29 (page does not exist)">WCSC29 2019</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<h1><span class="mw-headline" id="Computer_Olympiads"><a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiads</a></span></h1>
+<p>organized by the <a href="ICGA.html" title="ICGA">ICGA</a>
+</p>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a href="5th Computer Olympiad.html#Shogi" title="5th Computer Olympiad">5th Computer Olympiad, London 2000</a></li>
+<li> <a href="6th Computer Olympiad.html#Shogi" title="6th Computer Olympiad">6th Computer Olympiad, Maastricht 2001</a></li>
+<li> <a href="7th Computer Olympiad.html#Shogi" title="7th Computer Olympiad">7th Computer Olympiad, Maastricht 2002</a></li>
+<li> <a href="8th Computer Olympiad.html#Shogi" title="8th Computer Olympiad">8th Computer Olympiad, Graz 2003</a></li>
+<li> <a href="10th Computer Olympiad.html#Shogi" title="10th Computer Olympiad">10th Computer Olympiad, Taipei 2005</a></li>
+<li> <a href="11th Computer Olympiad.html#Shogi" title="11th Computer Olympiad">11th Computer Olympiad, Turin 2006</a></li>
+<li> <a href="12th Computer Olympiad.html#Shogi" title="12th Computer Olympiad">12th Computer Olympiad, Amsterdam 2007</a></li>
+<li> <a href="13th Computer Olympiad.html#Shogi" title="13th Computer Olympiad">13th Computer Olympiad, Beijing 2008</a></li>
+<li> <a href="14th Computer Olympiad.html#Shogi" title="14th Computer Olympiad">14th Computer Olympiad, Pamplona 2009</a></li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a href="15th Computer Olympiad.html#Shogi" title="15th Computer Olympiad">15th Computer Olympiad, Kanazawa 2010</a></li>
+<li> <a href="16th Computer Olympiad.html#Shogi" title="16th Computer Olympiad">16th Computer Olympiad, Tilburg 2011</a></li>
+<li> <a href="17th Computer Olympiad.html#Shogi" title="17th Computer Olympiad">17th Computer Olympiad, Yokohama 2013</a></li>
+<li> <a href="18th Computer Olympiad.html#Shogi" title="18th Computer Olympiad">18th Computer Olympiad, Leiden 2015</a></li>
+<li> <a href="19th Computer Olympiad.html#Shogi" title="19th Computer Olympiad">19th Computer Olympiad, Leiden 2016</a></li>
+<li> <a href="20th Computer Olympiad.html#Shogi" title="20th Computer Olympiad">20th Computer Olympiad, Leiden 2017</a></li></ul>
+<h2><span class="mw-headline" id="Photos">Photos</span></h2>
+<h3><span class="mw-headline" id="Taipei_2005">Taipei 2005</span></h3>
+<div class="floatnone"><a href="http://www.jaist.ac.jp/rccg/menu/topic/image007.jpg.html" rel="nofollow"><img alt="Olympiad2005Shogi.JPG" class="thumbborder" height="452" src="images/3/3b/Olympiad2005Shogi.JPG" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="10th Computer Olympiad.html#Shogi" title="10th Computer Olympiad">10th Computer Olympiad, Taipei 2005</a>, <a class="new" href="index.php?title=Tacos&amp;action=edit&amp;redlink=1.html" title="Tacos (page does not exist)">Tacos</a> by <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a> won vs. <a class="new" href="index.php?title=Spear&amp;action=edit&amp;redlink=1.html" title="Spear (page does not exist)">Spear</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> <br/><a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (Tacos), <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a>, and <a href="Shogo Takeuchi.html" title="Shogo Takeuchi">Shogo Takeuchi</a> posing for the Gold medal winner <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p>
+<h3><span class="mw-headline" id="Turin_2006">Turin 2006</span></h3>
+<div class="floatnone"><a href="http://icga.leidenuniv.nl/icga/news/Olympiad/Olympiad2006/fotos/target100.html.html" rel="nofollow"><img alt="Shogi2006.jpg" class="thumbborder" height="480" src="images/4/46/Shogi2006.jpg" style="vertical-align: text-bottom" width="640"/></a></div>
+<p>Shogi Winners at the <a href="11th Computer Olympiad.html#Shogi" title="11th Computer Olympiad">11th Computer Olympiad, Turin 2006</a>: <a href="Jun Nagashima.html" title="Jun Nagashima">Jun Nagashima</a>  on behalf of <a href="Bonanza.html" title="Bonanza">Bonanza</a> (Silver), <br/><a href="Hiroshi Yamashita.html" title="Hiroshi Yamashita">Hiroshi Yamashita</a> (Gold with <a class="new" href="index.php?title=YSS&amp;action=edit&amp;redlink=1.html" title="YSS (page does not exist)">YSS</a>), and <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (Bronze for <a class="new" href="index.php?title=Tacos&amp;action=edit&amp;redlink=1.html" title="Tacos (page does not exist)">Tacos</a>), <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> congrats <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Conferences.html#GPW" title="Conferences">Game Programming Workshops</a></li>
+<li> <a href="Harm Geert Muller.html#MiniShogi2013" title="Harm Geert Muller">Harm Geert Muller - Yokohama 2013</a></li>
+<li> <a href="Monte-Carlo Tree Search.html" title="Monte-Carlo Tree Search">Monte-Carlo Tree Search</a></li>
+<li> <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a href="Stockfish NNUE.html" title="Stockfish NNUE">Stockfish NNUE</a> </li>
+<li> <a href="USI.html" title="USI">USI</a> - Universal Shogi Interface</li>
+<li> <a href="UCI2WB.html#USI2WB" title="UCI2WB">USI2WB</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1990_..._2">1990 ...</span></h2>
+<ul><li> <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>1991</b>). <i>Computer Shogi</i>. The Proceedings of Game Playing System Workshop, pp. 42-48. ICOT, Tokyo, Japan.</li>
+<li> <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a>, <a href="Barney Pell.html" title="Barney Pell">Barney Pell</a> (<b>1994</b>). <i>Applying metagamer to Shogi</i>. <a href="Conferences.html#GPW" title="Conferences">1st Game Programming Workshop in Kanagawa, Japan</a> » <a class="new" href="index.php?title=Metagamer&amp;action=edit&amp;redlink=1.html" title="Metagamer (page does not exist)">Metagamer</a></li></ul>
+<h2><span class="mw-headline" id="1995_...">1995 ...</span></h2>
+<ul><li> <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (<b>1995</b>). <i>Which moves should be pruned - classification of Shogi Moves and Ratio of Played Moves</i>. <a href="Conferences.html#GPW" title="Conferences">2nd Game Programming Workshop</a></li>
+<li> <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a> (<b>1996</b>). <i><a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.52.3382.html" rel="nofollow">A Shogi-Computer Test Set</a></i>. <a href="ACM.html" title="ACM">ACM</a> Conference on Computer Science</li>
+<li> M. Hirose, <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a>, T. Itoh  (<b>1997</b>). <i>The Composition of Tsume-Shogi Problems</i>. <a href="Advances in Computer Chess 8.html" title="Advances in Computer Chess 8">Advances in Computer Chess 8</a></li>
+<li> <a class="new" href="index.php?title=Yoshihisa Nakayama&amp;action=edit&amp;redlink=1.html" title="Yoshihisa Nakayama (page does not exist)">Yoshihisa Nakayama</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>1997</b>). <i>Characteristic of extended moves by singular extension to Shogi</i>. <a href="Conferences.html#GPW" title="Conferences">4th Game Programming Workshop</a></li>
+<li> <a href="Don Beal.html" title="Don Beal">Don Beal</a>, <a href="Martin C. Smith.html" title="Martin C. Smith">Martin C. Smith</a> (<b>1998</b>). <i><a class="external text" href="http://www.springerlink.com/content/l9f4ngc2tqgnac9e/.html" rel="nofollow">First Results from Using Temporal Difference Learning in Shogi</a></i>. <a href="CG 1998.html" title="CG 1998">CG 1998</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>1998</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-48957-6 20.html" rel="nofollow">A Survey of Tsume-Shogi Programs Using Variable-Depth Search</a></i>. <a href="CG 1998.html" title="CG 1998">CG 1998</a></li>
+<li> <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Jin Yoshimura.html" title="Jin Yoshimura">Jin Yoshimura</a>, <a class="new" href="index.php?title=Kazuro Morita&amp;action=edit&amp;redlink=1.html" title="Kazuro Morita (page does not exist)">Kazuro Morita</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a> (<b>1998</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-48957-6 21.html" rel="nofollow">Retrograde Analysis of the KGK Endgame in Shogi: Its Implications for Ancient Heian Shogi</a></i>. <a href="CG 1998.html" title="CG 1998">CG 1998</a></li>
+<li> <a class="external text" href="http://shogihub.com/players/431.html" rel="nofollow">Yoshinori Kimura</a> (<b>1999</b>). <i>The History of Shogi</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Japan_Foundation" rel="nofollow">Japan Foundation Newsletter</a>, XXVI/Nos. 5–6, <a class="external text" href="https://web.archive.org/web/20151105233924/https://www.jpf.go.jp/j/publish/periodic/jfn/pdf/jfn26_5.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2000_..._3">2000 ...</span></h2>
+<ul><li> <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a>, <a href="Yoichiro Kajihara.html" title="Yoichiro Kajihara">Yoichiro Kajihara</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (<b>2000</b>). <i>Brinkmate Search in Computer Shogi</i>. <a href="5th Computer Olympiad.html#Workshop" title="5th Computer Olympiad">5th Computer Olympiad Workshop</a></li>
+<li> <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 19.html" rel="nofollow">SUPER-SOMA - Solving Tactical Exchanges in Shogi without Tree Searching</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="http://www.aifactory.co.uk/downloads/SUPER-SOMA.doc.html" rel="nofollow">Word preprint</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li>
+<li> <a class="new" href="index.php?title=Youhei Hori&amp;action=edit&amp;redlink=1.html" title="Youhei Hori (page does not exist)">Youhei Hori</a>, <a class="new" href="index.php?title=Minenobu Seki&amp;action=edit&amp;redlink=1.html" title="Minenobu Seki (page does not exist)">Minenobu Seki</a>, <a class="new" href="index.php?title=Tsutomu Maruyama&amp;action=edit&amp;redlink=1.html" title="Tsutomu Maruyama (page does not exist)">Tsutomu Maruyama</a>, <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a>, <a class="new" href="index.php?title=Tsutomu Hoshino&amp;action=edit&amp;redlink=1.html" title="Tsutomu Hoshino (page does not exist)">Tsutomu Hoshino</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 20.html" rel="nofollow">A Shogi Processor with a Field Programmable Gate Array</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 21.html" rel="nofollow">Plausible Move Generation Using Move Merit Analysis with Cut-Off Thresholds in Shogi</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a></li>
+<li> <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 30.html" rel="nofollow">Review: Computer Shogi through 2000</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a></li></ul>
+<p><b>2001</b>
+</p>
+<ul><li> <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2001</b>). <i>Example-based Piece Formation by Partial Matching in Shogi</i>. <a href="Advances in Computer Games 9.html" title="Advances in Computer Games 9">Advances in Computer Games 9</a></li>
+<li> <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2001</b>). <i>Shotest wins Shogi tournament</i>. <a href="ICGA Journal.html#24 3" title="ICGA Journal">ICGA Journal, Vol. 24, No. 3</a> » <a href="6th Computer Olympiad.html#Shogi" title="6th Computer Olympiad">6th Computer Olympiad</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a>, <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2001</b>). <i>Using castle and assault maps for guiding opening and middle game play in Shogi</i>. <a href="Conferences.html#GPW" title="Conferences">6th Game Programming Workshop</a>, <a class="external text" href="http://www.teu.ac.jp/gamelab/RESEARCH/gpw2001.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Don Beal.html" title="Don Beal">Don Beal</a>, <a href="Martin C. Smith.html" title="Martin C. Smith">Martin C. Smith</a> (<b>2001</b>). <i><a class="external text" href="http://www.sciencedirect.com/science? ob=ArticleURL&amp; udi=B6V1G-41MJ1SV-7&amp; user=10&amp; coverDate=02%2F06%2F2001&amp; rdoc=1&amp; fmt=high&amp; orig=search&amp; sort=d&amp; docanchor=&amp;view=c&amp; searchStrId=1436661548&amp; rerunOrigin=google&amp; acct=C000050221&amp; version=1&amp; urlVersion=0&amp; userid=10&amp;md5=d855cbad10953476dbb92258347c8e94.html" rel="nofollow">Temporal difference learning applied to game playing and the results of application to Shogi</a></i>. Theoretical Computer Science, Volume 252, Issues 1-2, pp. 105-119</li>
+<li> <a class="new" href="index.php?title=Masahiro Seo&amp;action=edit&amp;redlink=1.html" title="Masahiro Seo (page does not exist)">Masahiro Seo</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a> (<b>2001</b>). <i>The PN*-Search Algorithm: Applications to Tsume-Shogi.</i> <a class="external text" href="https://en.wikipedia.org/wiki/Artificial_Intelligence_%28journal%29" rel="nofollow">Artificial Intelligence</a>, Vol. 129, Nos. 1-2 » <a href="Proof-Number Search.html" title="Proof-Number Search">Proof-Number Search</a></li></ul>
+<p><b>2002</b>
+</p>
+<ul><li> <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="Makoto Sakuta.html" title="Makoto Sakuta">Makoto Sakuta</a>, <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2002</b>). <i>Computer Shogi</i>. Artificial Intelligence, Vol. 134, <a class="external text" href="https://en.wikipedia.org/wiki/Elsevier" rel="nofollow">Elsevier</a>, <a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.130.2727.html" rel="nofollow">CiteSeerX</a></li>
+<li> <a href="Jun Nagashima.html" title="Jun Nagashima">Jun Nagashima</a> (<b>2002</b>). <i>Realization-Probability Search: Its application to Shogi and LOA</i>. <a href="7th Computer Olympiad.html#Workshop" title="7th Computer Olympiad">7th Computer Olympiad Workshop</a></li>
+<li> <a href="Jun Nagashima.html" title="Jun Nagashima">Jun Nagashima</a>, <a href="Masahumi Taketoshi.html" title="Masahumi Taketoshi">Masahumi Taketoshi</a>, <a href="Yoichiro Kajihara.html" title="Yoichiro Kajihara">Yoichiro Kajihara</a>, <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (<b>2002</b>).  <i><a class="external text" href="http://ci.nii.ac.jp/naid/110006381103.html" rel="nofollow">An Efficient Use of Piece-Square Tables in Computer Shogi</a></i>. </li>
+<li> <a href="Kazutomo Shibahara.html" title="Kazutomo Shibahara">Kazutomo Shibahara</a>, <a class="new" href="index.php?title=Nobuo Inui&amp;action=edit&amp;redlink=1.html" title="Nobuo Inui (page does not exist)">Nobuo Inui</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2002</b>). <i>Effect of ProbCut in Shogi - by changing parameters according to position category</i>. <a href="Conferences.html#GPW" title="Conferences">7th Game Programming Workshop</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a>, <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a> (<b>2002</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-40031-8 12.html" rel="nofollow">Board Maps and Hill-Climbing for Opening and Middle Game Play in Shogi</a></i>. <a href="CG 2002.html" title="CG 2002">CG 2002</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2002</b>). <i>Report on the 12th CSA World Computer-Shogi Championship</i>. <a href="ICGA Journal.html#25 2" title="ICGA Journal">ICGA Journal, Vol. 25, No. 2</a></li>
+<li> <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a>, <a href="Daisaku Yokoyama.html" title="Daisaku Yokoyama">Daisaku Yokoyama</a>, <a href="Takashi Chikayama.html" title="Takashi Chikayama">Takashi Chikayama</a> (<b>2002</b>). <i><a class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.2.9258.html" rel="nofollow">Game-Tree Search Algorithm based on Realization Probability</a></i>. <a href="ICGA Journal.html#25 3" title="ICGA Journal">ICGA Journal, Vol. 25, No. 3</a>, <a class="external text" href="http://www-tsujii.is.s.u-tokyo.ac.jp/~tsuruoka/papers/icga02.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a class="new" href="index.php?title=Yasushi Tanase&amp;action=edit&amp;redlink=1.html" title="Yasushi Tanase (page does not exist)">Yasushi Tanase</a> (<b>2002</b>). <i>ISshogi wins Shogi tournament</i>. <a href="ICGA Journal.html#25 3" title="ICGA Journal">ICGA Journal, Vol. 25, No. 3</a> » <a href="7th Computer Olympiad.html#Shogi" title="7th Computer Olympiad">7th Computer Olympiad</a></li></ul>
+<p><b>2003</b>
+</p>
+<ul><li> <a href="Hiroshi Yamashita.html" title="Hiroshi Yamashita">Hiroshi Yamashita</a> (<b>2003</b>). <i>YSS wins Shogi tournament</i>. <a href="ICGA Journal.html#26 4" title="ICGA Journal">ICGA Journal, Vol. 26, No. 4</a> » <a href="8th Computer Olympiad.html#Shogi" title="8th Computer Olympiad">8th Computer Olympiad</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2005</b>). <i>The 15th CSA World Computer-Shogi Championship</i>. <a href="ICGA Journal.html#28 2" title="ICGA Journal">ICGA Journal, Vol. 28, No. 2</a></li>
+<li> <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a> (<b>2005</b>). <i>Tacos wins Shogi tournament</i>. <a href="ICGA Journal.html#28 3" title="ICGA Journal">ICGA Journal, Vol. 28, No. 3</a> » <a href="10th Computer Olympiad.html#Shogi" title="10th Computer Olympiad">10th Computer Olympiad</a></li>
+<li> <a href="Shunsuke Soeda.html" title="Shunsuke Soeda">Shunsuke Soeda</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a>, <a href="Tetsuro Tanaka.html" title="Tetsuro Tanaka">Tetsuro Tanaka</a> (<b>2005</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/11922155 10.html" rel="nofollow">Dual Lambda Search and Shogi Endgames</a></i>. <a href="Advances in Computer Games 11.html" title="Advances in Computer Games 11">Advances in Computer Games 11</a></li>
+<li> <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a>, <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a>, <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2005</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/11922155 11.html" rel="nofollow">Chunking in Shogi: New Findings</a></i>. <a href="Advances in Computer Games 11.html" title="Advances in Computer Games 11">Advances in Computer Games 11</a></li></ul>
+<p><b>2006</b>
+</p>
+<ul><li> <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a> (<b>2006</b>). <i>YSS wins Shogi tournament</i>. <a href="ICGA Journal.html#29 2" title="ICGA Journal">ICGA Journal, Vol. 29, No. 2</a> » <a href="11th Computer Olympiad.html#Shogi" title="11th Computer Olympiad">11th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Keijirou Yanagi&amp;action=edit&amp;redlink=1.html" title="Keijirou Yanagi (page does not exist)">Keijirou Yanagi</a>, <a href="Kazutomo Shibahara.html" title="Kazutomo Shibahara">Kazutomo Shibahara</a>, <a href="Yasuhiro Tajima.html" title="Yasuhiro Tajima">Yasuhiro Tajima</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2006</b>). <i>Generation of Candidate Moves using Decision Tree in Shogi</i>. <a href="Conferences.html#GPW" title="Conferences">11th Game Programming Workshop</a></li></ul>
+<p><b>2007</b>
+</p>
+<ul><li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2007</b>). <i>Using Bitboards for Move Generation in Shogi</i>. <a href="ICGA Journal.html#30 1" title="ICGA Journal">ICGA Journal, Vol. 30, No. 1</a>, <a class="external text" href="http://www2.teu.ac.jp/gamelab/RESEARCH/ICGAJournal2007.pdf.html" rel="nofollow">pdf</a>, <a href="Conferences.html#GPW" title="Conferences">11th Game Programming Workshop</a></li>
+<li> <a href="Junichi Hashimoto.html" title="Junichi Hashimoto">Junichi Hashimoto</a>, <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (<b>2007</b>). <i><a class="external text" href="https://www.researchgate.net/publication/258121764_Context_Killer_Heuristic_and_Its_Application_to_Computer_Shogi" rel="nofollow">Context Killer Heuristic and Its Application to Computer Shogi</a></i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a></li>
+<li> <a class="new" href="index.php?title=Kosuke Tosaka&amp;action=edit&amp;redlink=1.html" title="Kosuke Tosaka (page does not exist)">Kosuke Tosaka</a>, <a class="new" href="index.php?title=Asuka Takeuchi&amp;action=edit&amp;redlink=1.html" title="Asuka Takeuchi (page does not exist)">Asuka Takeuchi</a>, <a href="Shunsuke Soeda.html" title="Shunsuke Soeda">Shunsuke Soeda</a>, <a href="Hitoshi Matsubara.html" title="Hitoshi Matsubara">Hitoshi Matsubara</a> (<b>2007</b>). <i>Extracting Important Features by Analyzing Game Records in Shogi</i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a></li>
+<li> <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2007</b>). <i>Selfish Search in Shogi</i>. <a href="CGW 2007.html" title="CGW 2007">CGW 2007</a></li>
+<li> <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2007</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007%2F978-3-540-74873-1 52.html" rel="nofollow">Selfish Search on Playing Shogi</a></i>. <a class="external text" href="http://link.springer.com/book/10.1007/978-3-540-74873-1.html" rel="nofollow">ICEC 2007</a></li>
+<li> <a href="Junichi Hashimoto.html" title="Junichi Hashimoto">Junichi Hashimoto</a> (<b>2007</b>). <i>Tacos wins Shogi tournament</i>. <a href="ICGA Journal.html#30 3" title="ICGA Journal">ICGA Journal, Vol. 30, No. 3</a> » <a href="12th Computer Olympiad.html#Shogi" title="12th Computer Olympiad">12th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Keijirou Yanagi&amp;action=edit&amp;redlink=1.html" title="Keijirou Yanagi (page does not exist)">Keijirou Yanagi</a>, <a href="Kazutomo Shibahara.html" title="Kazutomo Shibahara">Kazutomo Shibahara</a>, <a href="Yasuhiro Tajima.html" title="Yasuhiro Tajima">Yasuhiro Tajima</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2007</b>). <i>Multiple Parallel Search in Shogi</i>. <a href="Conferences.html#GPW" title="Conferences">12th Game Programming Workshop</a></li>
+<li> <a href="Jun Nagashima.html" title="Jun Nagashima">Jun Nagashima</a> (<b>2007</b>). <i>Towards master-level play of Shogi</i>. Ph.D. thesis, Supervisor <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a>, <a href="JAIST.html" title="JAIST">JAIST</a>, <a class="external text" href="https://dspace.jaist.ac.jp/dspace/bitstream/10119/3565/3/034paper.pdf" rel="nofollow">pdf</a></li></ul>
+<p><b>2008</b>
+</p>
+<ul><li> <a href="Tsuyoshi Hashimoto.html" title="Tsuyoshi Hashimoto">Tsuyoshi Hashimoto</a> (<b>2008</b>). <i>Tacos wins Shogi tournament</i>. <a href="ICGA Journal.html#31 3" title="ICGA Journal">ICGA Journal, Vol. 31, No. 3</a> » <a href="13th Computer Olympiad.html#Shogi" title="13th Computer Olympiad">13th Computer Olympiad</a></li></ul>
+<p><b>2009</b>
+</p>
+<ul><li> <a class="new" href="index.php?title=Takuya Ugajin&amp;action=edit&amp;redlink=1.html" title="Takuya Ugajin (page does not exist)">Takuya Ugajin</a>, <a href="Yoshiyuki Kotani.html" title="Yoshiyuki Kotani">Yoshiyuki Kotani</a> (<b>2009</b>). <i>The improvement of playout using transition probability of Monte Carlo Shogi</i>. <a href="Conferences.html#GPW14" title="Conferences">14th Game Programming Workshop</a></li>
+<li> <a href="Junichi Hashimoto.html" title="Junichi Hashimoto">Junichi Hashimoto</a> (<b>2009</b>). <i>Tacos wins Shogi tournament</i>. <a href="ICGA Journal.html#32 2" title="ICGA Journal">ICGA Journal, Vol. 32, No. 2</a> » <a href="14th Computer Olympiad.html#Shogi" title="14th Computer Olympiad">14th Computer Olympiad</a></li>
+<li> <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2009</b>). <i>The 19th CSA World Computer-Shogi Championship</i>. <a href="ICGA Journal.html#32 2" title="ICGA Journal">ICGA Journal, Vol. 32, No 2</a> » <a class="mw-selflink selflink">Shogi</a></li></ul>
+<h2><span class="mw-headline" id="2010_..._3">2010 ...</span></h2>
+<ul><li> <a href="Yoshikuni Sato.html" title="Yoshikuni Sato">Yoshikuni Sato</a>, <a href="Daisuke Takahashi.html" title="Daisuke Takahashi">Daisuke Takahashi</a>, <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> (<b>2010</b>). <i>A Shogi Program based on Monte-Carlo Tree Search</i>. <a href="ICGA Journal.html#33 2" title="ICGA Journal">ICGA Journal, Vol. 33, No. 2</a>, <a class="external text" href="http://www.teu.ac.jp/gamelab/RESEARCH/ICGAJournal2010.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Takuya Obata.html" title="Takuya Obata">Takuya Obata</a>, <a href="Takuya Sugiyama.html" title="Takuya Sugiyama">Takuya Sugiyama</a>, <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2010</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007%2F978-3-642-17928-0 15.html" rel="nofollow">Consultation Algorithm for Computer Shogi: Move Decisions by Majority</a></i>. <a href="CG 2010.html" title="CG 2010">CG 2010</a></li>
+<li> <a href="Takuya Sugiyama.html" title="Takuya Sugiyama">Takuya Sugiyama</a>, <a href="Takuya Obata.html" title="Takuya Obata">Takuya Obata</a>, <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2010</b>). <i><a class="external text" href="http://link.springer.com/content/pdf/10.1007%2F978-3-642-17928-0 16.pdf.html" rel="nofollow">Optimistic Selection Rule Better Than Majority Voting System</a></i>. <a href="CG 2010.html" title="CG 2010">CG 2010</a></li>
+<li> <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a> (<b>2010</b>). <i>Gekisashi wins Shogi Tournament</i>. <a href="ICGA Journal.html#33 4" title="ICGA Journal">ICGA Journal, Vol. 33, No. 4</a> » <a href="15th Computer Olympiad.html#Nurikabe" title="15th Computer Olympiad">15th Computer Olympiad</a></li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2011</b>). <i>Clair 1/128 wins 5x5 Shogi Tournament</i>. <a href="ICGA Journal.html#34 1" title="ICGA Journal">ICGA Journal, Vol. 34, No. 1</a> » <a href="15th Computer Olympiad.html#Shogi5x5" title="15th Computer Olympiad">15th Computer Olympiad</a></li>
+<li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2011</b>). <i>The Global Landscape of Objective Functions for the Optimization of Shogi Piece Values with a Game-Tree Search</i>. <a href="Advances in Computer Games 13.html" title="Advances in Computer Games 13">Advances in Computer Games 13</a></li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a>, <a href="Tetsuro Tanaka.html" title="Tetsuro Tanaka">Tetsuro Tanaka</a> (<b>2012</b>). <i><a class="external text" href="https://www.jstage.jst.go.jp/article/jssst/29/1/29_1_1_75/_article" rel="nofollow">GPSShogi and Assembly of Large Shogi Software with Text Protocol</a></i>. <a class="external text" href="https://www.jstage.jst.go.jp/browse/jssst/29/1/_contents" rel="nofollow">Computer Software - JSSST Journal, Vol. 29, No. 1</a></li>
+<li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Masakazu Muramatsu.html" title="Masakazu Muramatsu">Masakazu Muramatsu</a>  (<b>2012</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Efficiency-of-three-forward-pruning-techniques-in-Hoki-Muramatsu/206099961f401c8693e071c2b739f164ae5ffa6c" rel="nofollow">Efficiency of three Forward-Pruning Techniques in Shogi: Futility Pruning, Null-move Pruning, and Late Move Reduction (LMR)</a></i>. <a class="external text" href="https://www.journals.elsevier.com/entertainment-computing" rel="nofollow">Entertainment Computing</a>, Vol. 3, No. 3</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a href="Akira Ura.html" title="Akira Ura">Akira Ura</a>, <a href="Makoto Miwa.html" title="Makoto Miwa">Makoto Miwa</a>, <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a>, <a href="Takashi Chikayama.html" title="Takashi Chikayama">Takashi Chikayama</a> (<b>2013</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-319-09165-5_18" rel="nofollow">Comparison Training of Shogi Evaluation Functions with Self-Generated Training Positions and Moves</a></i>. <a href="CG 2013.html" title="CG 2013">CG 2013</a>, <a class="external text" href="https://pdfs.semanticscholar.org/6ad0/7167425539cf64e6bf420d7a28a1fc1047d6.pdf" rel="nofollow">slides as pdf</a></li>
+<li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a>, <a href="Daisaku Yokoyama.html" title="Daisaku Yokoyama">Daisaku Yokoyama</a>, <a href="Takuya Obata.html" title="Takuya Obata">Takuya Obata</a>, <a href="Hiroshi Yamashita.html" title="Hiroshi Yamashita">Hiroshi Yamashita</a>, <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a>, <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2013</b>). <i><a class="external text" href="https://ieeexplore.ieee.org/document/6598505/" rel="nofollow">A System-Design Outline of the Distributed-Shogi-System Akara 2010</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/snpd/snpd2013.html" rel="nofollow">SNPD 2013</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2014</b>). <i><a class="external text" href="https://www.jair.org/papers/paper4217.html" rel="nofollow">Large-Scale Optimization for Evaluation Functions with Minimax Search</a></i>. <a class="external text" href="https://www.jair.org/vol/vol49.html" rel="nofollow">JAIR Vol. 49</a>, <a class="external text" href="https://www.jair.org/media/4217/live-4217-7792-jair.pdf" rel="nofollow">pdf</a> » <a href="Automated Tuning.html" title="Automated Tuning">Automated Tuning</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup></li>
+<li> <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a> (<b>2014</b>). <i>Computer Shogi 2012 through 2014</i>. <a href="Conferences.html#GPW19" title="Conferences">The 19th Game Programming Workshop</a></li>
+<li> <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a>, <a class="new" href="index.php?title=Seiya Omori&amp;action=edit&amp;redlink=1.html" title="Seiya Omori (page does not exist)">Seiya Omori</a>, <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2014</b>). <i>Analysis of Performance of Consultation Methods in Computer Chess</i>. <a class="external text" href="https://jise.iis.sinica.edu.tw/" rel="nofollow">Journal of Information Science and Engineering</a>, Vol. 30, <a class="external text" href="https://www.iis.sinica.edu.tw/page/jise/2014/201405_10.pdf" rel="nofollow">pdf</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a href="Shu Yokoyama.html" title="Shu Yokoyama">Shu Yokoyama</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a>, <a href="Tetsuro Tanaka.html" title="Tetsuro Tanaka">Tetsuro Tanaka</a> (<b>2015</b>). <i>Parameter-Free Tree Style Pipeline in Asynchronous Parallel Game-Tree Search</i>. <a href="Advances in Computer Games 14.html" title="Advances in Computer Games 14">Advances in Computer Games 14</a>, <a class="external text" href="http://www.graco.c.u-tokyo.ac.jp/~kaneko/papers/acg2015-yokoyama.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a>, <a class="new" href="index.php?title=Daisuke Takano&amp;action=edit&amp;redlink=1.html" title="Daisuke Takano (page does not exist)">Daisuke Takano</a> (<b>2015</b>). <i>Changes in Cognitive Processes and Brain Activity</i>. <a href="ICGA Journal.html#38 4" title="ICGA Journal">ICGA Journal, Vol. 38, No. 4</a> » <a href="Cognition.html" title="Cognition">Cognition</a></li>
+<li> <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> (<b>2015</b>). <i>SHOKIDOKI wins MiniShogi Tournament</i>. <a href="ICGA Journal.html#38 4" title="ICGA Journal">ICGA Journal, Vol. 38, No. 4</a> » <a href="18th Computer Olympiad.html#Shogi" title="18th Computer Olympiad">18th Computer Olympiad | Mini-Shogi</a></li>
+<li> <a href="Shogo Takeuchi.html" title="Shogo Takeuchi">Shogo Takeuchi</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2015</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7336038.html" rel="nofollow">Estimating Ratings of Computer Players by the Evaluation Scores and Principal Variations in Shogi</a></i>. <a class="external text" href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7335993.html" rel="nofollow">ACIT-CSI</a></li>
+<li> <a href="Akira Ura.html" title="Akira Ura">Akira Ura</a>, <a href="Yoshimasa Tsuruoka.html" title="Yoshimasa Tsuruoka">Yoshimasa Tsuruoka</a>, <a href="Takashi Chikayama.html" title="Takashi Chikayama">Takashi Chikayama</a> (<b>2015</b>). <i><a class="external text" href="https://www.jstage.jst.go.jp/article/ipsjjip/23/1/23_9/_article" rel="nofollow">Dynamic Prediction of Minimal Trees in Large-Scale Parallel Game Tree Search</a></i>. <a class="external text" href="https://www.jstage.jst.go.jp/browse/ipsjjip/" rel="nofollow">Journal of Information Processing</a>, Vol. 23, No. 1</li>
+<li> <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a> (<b>2015</b>). <i>The History of the World Computer Shogi Championship (WCSC)</i>. <a href="Conferences.html#GPW20" title="Conferences">The 20th Game Programming Workshop</a></li>
+<li> <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a>, <a href="Takuya Hiraoka.html" title="Takuya Hiraoka">Takuya Hiraoka</a>, <a href="Kunihito Hoki.html" title="Kunihito Hoki">Kunihito Hoki</a> (<b>2015</b>). <i><a class="external text" href="https://link.springer.com/referenceworkentry/10.1007/978-3-319-08234-9_22-1" rel="nofollow">Contemporary Computer Shogi</a></i>. <a class="external text" href="https://link.springer.com/referencework/10.1007/978-3-319-08234-9" rel="nofollow">Encyclopedia of Computer Graphics and Games</a></li></ul>
+<p><b>2017</b>
+</p>
+<ul><li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2017</b>). <i>Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm</i>. <a class="external text" href="https://arxiv.org/abs/1712.01815" rel="nofollow">arXiv:1712.01815</a> » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li></ul>
+<p><b>2018</b>
+</p>
+<ul><li> <a href="Yu Nasu.html" title="Yu Nasu">Yu Nasu</a> (<b>2018</b>). <i>ƎUИИ Efficiently Updatable Neural-Network based Evaluation Functions for Computer Shogi</i>.  Ziosoft Computer Shogi Club, <a class="external text" href="https://github.com/ynasu87/nnue/blob/master/docs/nnue.pdf" rel="nofollow">pdf</a>, <a class="external text" href="https://www.apply.computer-shogi.org/wcsc28/appeal/the_end_of_genesis_T.N.K.evolution_turbo_type_D/nnue.pdf" rel="nofollow">pdf</a> (Japanese with English abstract) <a class="external text" href="https://github.com/asdfjkl/nnue" rel="nofollow">GitHub - asdfjkl/nnue translation</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup></li>
+<li> <a class="new" href="index.php?title=Takafumi Nakamichi&amp;action=edit&amp;redlink=1.html" title="Takafumi Nakamichi (page does not exist)">Takafumi Nakamichi</a>, <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2018</b>). <i>Adjusting the evaluation function for weakening the competency level of a computer shogi program</i>. <a href="ICGA Journal.html#40 1" title="ICGA Journal">ICGA Journal, Vol. 40, No. 1</a></li>
+<li> <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Marc Lanctot.html" title="Marc Lanctot">Marc Lanctot</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a href="Dharshan Kumaran.html" title="Dharshan Kumaran">Dharshan Kumaran</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a> (<b>2018</b>). <i><a class="external text" href="http://science.sciencemag.org/content/362/6419/1140.html" rel="nofollow">A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Science_(journal)" rel="nofollow">Science</a>, Vol. 362, No. 6419 <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup></li>
+<li> <a class="new" href="index.php?title=Hanhua Zhu&amp;action=edit&amp;redlink=1.html" title="Hanhua Zhu (page does not exist)">Hanhua Zhu</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2018</b>). <i>Comparison of Loss Functions for Training of Deep Neural Networks in Shogi</i>. <a href="TAAI 2018.html" title="TAAI 2018">TAAI 2018</a></li>
+<li> <a class="new" href="index.php?title=Taichi Nakayashiki&amp;action=edit&amp;redlink=1.html" title="Taichi Nakayashiki (page does not exist)">Taichi Nakayashiki</a>, <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a> (<b>2018</b>). <i>Learning of Evaluation Functions via Self-Play Enhanced by Checkmate Search</i>. <a href="TAAI 2018.html" title="TAAI 2018">TAAI 2018</a></li>
+<li> <a href="Shogo Takeuchi.html" title="Shogo Takeuchi">Shogo Takeuchi</a> (<b>2018</b>). <i>Weighted Majority Voting with a Heterogeneous System in the Game of Shogi</i>. <a href="TAAI 2018.html" title="TAAI 2018">TAAI 2018</a></li>
+<li> <a href="Takeshi Ito.html" title="Takeshi Ito">Takeshi Ito</a> (<b>2018</b>). <i>Game learning support system based on future position</i>. <a href="CG 2018.html" title="CG 2018">CG 2018</a>, <a href="ICGA Journal.html#40 4" title="ICGA Journal">ICGA Journal, Vol. 40, No. 4</a></li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a class="new" href="index.php?title=Simon Schmitt&amp;action=edit&amp;redlink=1.html" title="Simon Schmitt (page does not exist)">Simon Schmitt</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Edward Lockhart.html" title="Edward Lockhart">Edward Lockhart</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2019</b>). <i>Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model</i>. <a class="external text" href="https://arxiv.org/abs/1911.08265" rel="nofollow">arXiv:1911.08265</a> <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup></li>
+<li> <a href="Tomoyuki Kaneko.html" title="Tomoyuki Kaneko">Tomoyuki Kaneko</a>, <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a> (<b>2019</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Computer-Shogi-Tournaments-and-Techniques-Kaneko-Takizawa/caa062c0d95f15c85251351b20cdd80a2a0e1b82#paper-header" rel="nofollow">Computer Shogi Tournaments and Techniques</a></i>. <a href="IEEE.html#TOG" title="IEEE">IEEE Transactions on Games</a>, Vol. 11</li>
+<li> <a href="Shogo Takeuchi.html" title="Shogo Takeuchi">Shogo Takeuchi</a> (<b>2019</b>). <i>Advice is Useful for Game AI: Experiments with Alpha-Beta Search Players in Shogi</i>. <a href="Advances in Computer Games 16.html" title="Advances in Computer Games 16">Advances in Computer Games 16</a></li></ul>
+<h2><span class="mw-headline" id="2020_..._2">2020 ...</span></h2>
+<ul><li> <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a class="new" href="index.php?title=Hsuan-Yu Wang&amp;action=edit&amp;redlink=1.html" title="Hsuan-Yu Wang (page does not exist)">Hsuan-Yu Wang</a>, <a class="new" href="index.php?title=Po-Hsun Chen&amp;action=edit&amp;redlink=1.html" title="Po-Hsun Chen (page does not exist)">Po-Hsun Chen</a> (<b>2020</b>). <i>Nyanpass wins Minishogi and Diceshogi tournaments</i>. <a href="ICGA Journal.html#42 1" title="ICGA Journal">ICGA Journal, Vol. 42, No. 1</a> » <a class="new" href="index.php?title=22nd Computer Olympiad&amp;action=edit&amp;redlink=1.html" title="22nd Computer Olympiad (page does not exist)">22nd Computer Olympiad</a></li>
+<li> <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a>, <a href="Ioannis Antonoglou.html" title="Ioannis Antonoglou">Ioannis Antonoglou</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Karen Simonyan.html" title="Karen Simonyan">Karen Simonyan</a>, <a href="Laurent Sifre.html" title="Laurent Sifre">Laurent Sifre</a>, <a class="new" href="index.php?title=Simon Schmitt&amp;action=edit&amp;redlink=1.html" title="Simon Schmitt (page does not exist)">Simon Schmitt</a>, <a href="Arthur Guez.html" title="Arthur Guez">Arthur Guez</a>, <a href="Edward Lockhart.html" title="Edward Lockhart">Edward Lockhart</a>, <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a href="Thore Graepel.html" title="Thore Graepel">Thore Graepel</a>, <a href="Timothy Lillicrap.html" title="Timothy Lillicrap">Timothy Lillicrap</a>, <a href="David Silver.html" title="David Silver">David Silver</a> (<b>2020</b>). <i><a class="external text" href="https://www.nature.com/articles/s41586-020-03051-4" rel="nofollow">Mastering Atari, Go, chess and shogi by planning with a learned model</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Nature_%28journal%29" rel="nofollow">Nature</a>, Vol. 588 <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2007_...">2007 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.shogi.net/shogi-l/Archive/2007/Njan15-10.txt.html" rel="nofollow">Some thoughts on computer Shogi</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, January 15, 2007</li>
+<li> <a class="external text" href="http://www.shogi.net/shogi-l/dir07/dirday0124/article070124132552.html.html" rel="nofollow">First draft of the Universal Shogi Interface (USI)</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, January 24, 2007</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6807.html" rel="nofollow">Shogi</a> by <a href="Onno Garms.html" title="Onno Garms">Onno Garms</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, September 14, 2007</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/6VHAAs-RNFY/q6TZO8VPrGgJ" rel="nofollow">test</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Nobu</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, July 22, 2008</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/7Mi2gSO8fo4/2C_edF_JrBkJ" rel="nofollow">Announcement of the 19th World Computer Shogi Championship</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Nobu</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, January 16, 2009 </li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/HstiaM2NNG8/kPw4wlLWSRsJ" rel="nofollow">WCSC19 Participant List</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Nobu</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, February 03, 2009 </li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/gEVmNjO8pM8/R6gBQ_QCgXkJ" rel="nofollow">WCSC19 - current state</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Nobu</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, May 04, 2009 </li></ul>
+<h2><span class="mw-headline" id="2010_..._4">2010 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/bazz1reADOY/KB8UvBZQf_cJ" rel="nofollow">WCSC20 Participant List</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Nobu</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, February 02, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=35482.html" rel="nofollow">USI2WB / UCI2WB release</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, October 01, 2010</li>
+<li> <a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=18385.html" rel="nofollow">UCI2WB / USI2WB</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, October 01, 2010 » <a href="UCI2WB.html#USI2WB" title="UCI2WB">USI2WB</a></li></ul>
+<p><b>2011</b>
+</p>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/Nylx9GIXEgw/qh06-VPUNSsJ" rel="nofollow">Announcement of the 21st World Computer Shogi Championship</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Nobu</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, January 05, 2011</li></ul>
+<p><b>2012</b>
+</p>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/2zM72uecdqM/Hvq6OkGHrykJ" rel="nofollow">The 22nd World Computer Shogi Championship Applicant List</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> on behalf of <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, February 08, 2012</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/wJMDDeC4FSI/v_Yv0QsLEFMJ" rel="nofollow">Results of the 22nd World Computer Shogi Championships</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> on behalf of <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, May 10, 2012</li></ul>
+<p><b>2013</b>
+</p>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/olBJzU1kxqo/NvTDANTwNfUJ" rel="nofollow">computer beats pro</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, April 21, 2013</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/zO3mIXuHetY/6Hx5Cpl83yUJ" rel="nofollow">The 23rd World Computer Shogi Championship Applicant List</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> on behalf of <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, April 29, 2013</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/lauO5HQFQNw/FHtovUqEwBEJ" rel="nofollow">Bonanza wins Computer Shogi Championship</a> by <a href="Hiroshi Yamashita.html" title="Hiroshi Yamashita">Hiroshi Yamashita</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, May 06, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48305.html" rel="nofollow">New version of HaChu released</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2013 <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48324.html" rel="nofollow">Table-less bitboards (bitrays?)</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, June 18, 2013 » <a href="Board Representation.html" title="Board Representation">Board Representation</a></li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=19&amp;t=52967.html" rel="nofollow">Shogi in Unix/Linux?</a> by <a class="new" href="index.php?title=Joshua Pettus&amp;action=edit&amp;redlink=1.html" title="Joshua Pettus (page does not exist)">Joshua Pettus</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 19, 2013 » <a href="Linux.html" title="Linux">Linux</a></li></ul>
+<p><b>2014</b>
+</p>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/XtxS7S29INs/1BH0L125PzkJ" rel="nofollow">The 24th World Computer Shogi Championship Applicant List</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> on behalf of <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, February 10, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53058.html" rel="nofollow">Shogi plea</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, July 23, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=54092.html" rel="nofollow">Shogi</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2014 » <a href="Sjaak (Glebbeek).html" title="Sjaak (Glebbeek)">Sjaak</a></li></ul>
+<h2><span class="mw-headline" id="2015_..._2">2015 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/c4-dY44P8Mw/M3z-RtFR-tsJ" rel="nofollow">The 25th World Computer Shogi Championships</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> on behalf of <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, February 11, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57203.html" rel="nofollow">Large Shogi variants in XBoard</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, August 07, 2015 » <a href="XBoard.html" title="XBoard">XBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58215.html" rel="nofollow">Lima a mini shogi engine</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, November 10, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58329.html" rel="nofollow">Shokidoki wins UEC Cup!</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, November 22, 2015 <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58381.html" rel="nofollow">Siyam, a shogi 9x9 engine</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, November 26, 2015</li></ul>
+<p><b>2016</b>
+</p>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/-fO7GP6Zzww/8pG4UYeNAAAJ" rel="nofollow">WCSC26 participation list</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, April 08, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59955.html" rel="nofollow">Sjaak II, Wa Shogi and XBoard 4.9</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 25, 2016 » <a href="Sjaak (Glebbeek).html" title="Sjaak (Glebbeek)">Sjaak II</a>, <a href="XBoard.html" title="XBoard">XBoard</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=60445.html" rel="nofollow">Perft for Xiangqi &amp; Shogi</a> by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a>, <a href="CCC.html" title="CCC">CCC</a>, June 12, 2016 » <a href="Chinese Chess.html" title="Chinese Chess">Xiangqi</a>, <a href="Perft.html" title="Perft">Perft</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=61407.html" rel="nofollow">Japanese Chess (Shogi) Engines USI - Shogidokoro-GUI 3.7.2</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=61441.html" rel="nofollow">WinBoard 4.8.0 for Shogi - Tanuki USI Engine</a> by <a href="Norbert Raimund Leisner.html" title="Norbert Raimund Leisner">Norbert Raimund Leisner</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62432.html" rel="nofollow">Mini shogi engines and rating list</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62484.html" rel="nofollow">Sjaak II 1.4.1 and Shogi</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, December 14, 2016 » <a href="Sjaak (Glebbeek).html" title="Sjaak (Glebbeek)">Sjaak II</a></li></ul>
+<p><b>2017 ...</b>
+</p>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62878.html" rel="nofollow">I hate this hobby...</a> by <a href="Evert Glebbeek.html" title="Evert Glebbeek">Evert Glebbeek</a>, <a href="CCC.html" title="CCC">CCC</a>, January 20, 2017 » <a href="Sjaak (Glebbeek).html" title="Sjaak (Glebbeek)">Sjaak II</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=63356.html" rel="nofollow">The Inferno thread</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 06, 2017 » <a href="#Tenjiku">Tenjiku Shogi</a>, <a href="Incremental Updates.html" title="Incremental Updates">Incremental Updates</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/v-tznD0IQe0/37KYlSYtAgAJ" rel="nofollow">The 27th World Computer Shogi Championship: participant list</a> by <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, April 17, 2017</li>
+<li> <a class="external text" href="http://www.open-chess.org/viewtopic.php?f=3&amp;t=3116.html" rel="nofollow">Shogi: Ponanza finishes 2-0 sweep of Sato (Meijin)</a> by <a href="Mark Watkins.html" title="Mark Watkins">BB+</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">OpenChess Forum</a>, May 23, 2017</li></ul>
+<p><b>2019</b>
+</p>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/qL5i9rYFXyw/TqDOnZZSDAAJ" rel="nofollow">The 29th World Computer Shogi Championship Applicant List</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a> on behalf of <a href="Takenobu Takizawa.html" title="Takenobu Takizawa">Takenobu Takizawa</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, February 03, 2019</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=71550.html" rel="nofollow">Shogi Perft numbers</a> by <a href="Toni Helminen.html" title="Toni Helminen">Toni Helminen</a>, <a href="CCC.html" title="CCC">CCC</a>, August 14, 2019 » <a href="Perft.html" title="Perft">Perft</a></li></ul>
+<h2><span class="mw-headline" id="2020_..._3">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72754.html" rel="nofollow">The Stockfish of shogi</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2020 » <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73298.html" rel="nofollow">The Inferno Thread, part II</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 07, 2020 » <a href="#Tenjiku">Tenjiku Shogi</a></li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/C4Qfi3pGqdM/nAukLUgMAQAJ" rel="nofollow">Zero?</a> by BCM, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, June 04, 2020</li></ul>
+<dl><dd> <a class="external text" href="https://groups.google.com/d/msg/shogi-l/C4Qfi3pGqdM/RL5EHBCDCAAJ" rel="nofollow">Re: Zero?</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">SHOGI-L</a>, June 05, 2020</dd></dl>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<h2><span class="mw-headline" id="Shogi">Shogi</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Shogi" rel="nofollow">Shogi from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Castle_(shogi)" rel="nofollow">Castle (shogi) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Shogi_strategy_and_tactics" rel="nofollow">Shogi strategy and tactics from Wikipedia</a></li>
+<li> <a class="external text" href="http://eric.macshogi.com/shogi/handicap/handicap.html.html" rel="nofollow">Handicap Series</a> by <a href="Larry Kaufman.html" title="Larry Kaufman">Larry Kaufman</a>, from <a class="external text" href="http://eric.macshogi.com/index.html.html" rel="nofollow">Eric Cheymol's Shogi Page</a></li>
+<li> <a class="external text" href="https://en.chessbase.com/post/the-knight-that-jumps-high-falls-prey-to-a-pawn-1" rel="nofollow">The Knight that Jumps High Falls Prey to a Pawn (1)</a> by <a class="external text" href="https://en.chessbase.com/author/diana-mihajlova" rel="nofollow">Diana Mihajlova</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, January 03, 2015</li>
+<li> <a class="external text" href="https://en.chessbase.com/post/the-knight-that-jumps-high-falls-prey-to-a-pawn-2" rel="nofollow">The Knight that Jumps High Falls Prey to a Pawn (2)</a> by <a class="external text" href="https://en.chessbase.com/author/diana-mihajlova" rel="nofollow">Diana Mihajlova</a>, <a href="ChessBase.html" title="ChessBase">ChessBase News</a>, January 04, 2015</li></ul>
+<h2><span class="mw-headline" id="Computer_Shogi">Computer Shogi</span></h2>
+<ul><li> <a class="external text" href="http://www2.computer-shogi.org/index e.html.html" rel="nofollow">Computer Shogi Association Web Site</a></li>
+<li> <a class="external text" href="https://www.qhapaq.org/shogi/shogiwiki/how-start-computer-shogi-japanese-chess/" rel="nofollow">How to start computer Shogi</a>, <a class="external text" href="https://www.qhapaq.org/shogi/shogiwiki/" rel="nofollow">shogiwiki</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Computer_shogi" rel="nofollow">Computer shogi from Wikipedia</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/game.php?id=17" rel="nofollow">Shogi</a> at the <a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiad</a></li>
+<li> <a class="external text" href="http://hgm.nubati.net/usi.html.html" rel="nofollow">The Universal Shogi Interface (USI)</a> » <a href="USI.html" title="USI">USI</a></li>
+<li> <a class="external text" href="http://www2.teu.ac.jp/gamelab/SHOGI/articlesmain.html.html" rel="nofollow">Shogi articles</a> by <a href="Reijer Grimbergen.html" title="Reijer Grimbergen">Reijer Grimbergen</a></li></ul>
+<h2><span class="mw-headline" id="Variants"><span id="Variants"></span>Variants</span></h2>
+<ul><li> <span id="Mini"></span><a class="external text" href="https://en.wikipedia.org/wiki/Minishogi" rel="nofollow">Minishogi from Wikipedia</a></li>
+<li> <span id="Dai"></span><a class="external text" href="https://en.wikipedia.org/wiki/Dai_shogi" rel="nofollow">Dai shogi from Wikipedia</a></li>
+<li> <span id="Chu"></span><a class="external text" href="https://en.wikipedia.org/wiki/Chu_shogi" rel="nofollow">Chu shogi from Wikipedia</a></li>
+<li> <a class="external text" href="http://hgm.nubati.net/chu/.html" rel="nofollow">Chu Shogi, the ancient super Chess game</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a> <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup></li>
+<li> <span id="Tenjiku"></span><a class="external text" href="https://en.wikipedia.org/wiki/Tenjiku_shogi" rel="nofollow">Tenjiku shogi from Wikipedia</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">A screenshot of a standard Shogi opening], using <a class="external text" href="http://www.macshogi.com/.html" rel="nofollow">MacShogi</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Shogi#Setup_and_gameplay" rel="nofollow">Shogi - Setup and gameplay - Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Yu Nasu.html" title="Yu Nasu">Yu Nasu</a> (<b>2018</b>). <i>ƎUИИ Efficiently Updatable Neural-Network based Evaluation Functions for Computer Shogi</i>.  Ziosoft Computer Shogi Club, <a class="external text" href="https://github.com/ynasu87/nnue/blob/master/docs/nnue.pdf" rel="nofollow">pdf</a> (Japanese with English abstract) <a class="external text" href="https://github.com/asdfjkl/nnue" rel="nofollow">GitHub - asdfjkl/nnue translation</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/yaneurao/YaneuraOu" rel="nofollow">GitHub - yaneurao/YaneuraOu: YaneuraOu is the World's Strongest Shogi engine(AI player), WCSC29 1st winner, educational and USI compliant engine</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/Tama4649/Kristallweizen/" rel="nofollow">GitHub - Tama4649/Kristallweizen: 第29回世界コンピュータ将棋選手権 準優勝のKristallweizenです。</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=74059.html" rel="nofollow">Stockfish NN release (NNUE)</a> by <a class="new" href="index.php?title=Henk Drost&amp;action=edit&amp;redlink=1.html" title="Henk Drost (page does not exist)">Henk Drost</a>, <a href="CCC.html" title="CCC">CCC</a>, May 31, 2020</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text">Image from <a class="external text" href="http://shogihub.com/players/431.html" rel="nofollow">Yoshinori Kimura</a> (<b>1999</b>). <i>The History of Shogi</i>. <a class="external text" href="https://en.wikipedia.org/wiki/Japan_Foundation" rel="nofollow">Japan Foundation Newsletter</a>, XXVI/Nos. 5–6, <a class="external text" href="https://web.archive.org/web/20151105233924/https://www.jpf.go.jp/j/publish/periodic/jfn/pdf/jfn26_5.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text">clipped from <a class="external text" href="http://www.jaist.ac.jp/rccg/menu/topic/image007.jpg.html" rel="nofollow">image007</a> from <a class="external text" href="http://www.jaist.ac.jp/rccg/menu/topic.htm.html" rel="nofollow">Research Center for Computers and Games - Tacos Won Shogi Tournament at the 10th Computer Olympiad</a>, September 18, 2005</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://icga.leidenuniv.nl/icga/news/Olympiad/Olympiad2006/fotos/.html" rel="nofollow">ICGA Olympiad 2006 Photos</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.aifactory.co.uk/newsletter/2006 03 quiescence alts.htm.html" rel="nofollow">Looking for Alternatives to Quiescence Search</a> by <a href="Jeff Rollason.html" title="Jeff Rollason">Jeff Rollason</a>, <a href="AI Factory.html" title="AI Factory">AI Factory</a>, December 2006</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=55084.html" rel="nofollow">MMTO for evaluation learning</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, January 25, 2015</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=76250.html" rel="nofollow">Translation of Yu Nasu's NNUE paper</a> by <a href="Dominik Klein.html" title="Dominik Klein">Dominik Klein</a>, <a href="CCC.html" title="CCC">CCC</a>, January 07, 2021</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="https://deepmind.com/blog/alphazero-shedding-new-light-grand-games-chess-shogi-and-go/" rel="nofollow">AlphaZero: Shedding new light on the grand games of chess, shogi and Go</a> by <a href="David Silver.html" title="David Silver">David Silver</a>, <a href="Thomas Hubert.html" title="Thomas Hubert">Thomas Hubert</a>, <a href="Julian Schrittwieser.html" title="Julian Schrittwieser">Julian Schrittwieser</a> and <a href="Demis Hassabis.html" title="Demis Hassabis">Demis Hassabis</a>, <a class="new" href="index.php?title=DeepMind&amp;action=edit&amp;redlink=1.html" title="DeepMind (page does not exist)">DeepMind</a>, December 03, 2018</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=72381.html" rel="nofollow">New DeepMind paper</a> by GregNeto, <a href="CCC.html" title="CCC">CCC</a>, November 21, 2019</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="https://deepmind.com/blog/article/muzero-mastering-go-chess-shogi-and-atari-without-rules?fbclid=IwAR3mSwrn1YXDKr9uuGm2GlFKh76wBilex7f8QvBiQecwiVmAvD6Bkyjx-rE" rel="nofollow">MuZero: Mastering Go, chess, shogi and Atari without rules</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://hgm.nubati.net/chu/.html" rel="nofollow">Chu Shogi, the ancient super Chess game</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="http://minerva.cs.uec.ac.jp/~uec55shogi/wiki.cgi?page=%C2%E8%A3%B9%B2%F3UEC%C7%D5%A3%B5%B8%DE%BE%AD%B4%FD%C2%E7%B2%F1.html" rel="nofollow">第９回UEC杯５五将棋大会 - 5五将棋 portal</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48305.html" rel="nofollow">New version of HaChu released</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, June 16, 2013</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=63356.html" rel="nofollow">The Inferno thread</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 06, 2017 » <a href="Incremental Updates.html" title="Incremental Updates">Incremental Updates</a></span>
+</li>
+</ol></div>
+<p><b><a href="Games.html" title="Games">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722010910
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.116 seconds
+Real time usage: 0.873 seconds
+Preprocessor visited node count: 390/1000000
+Preprocessor generated node count: 740/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1845-0!canonical and timestamp 20240722010909 and revision id 26075
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Shogi&amp;oldid=26075">https://www.chessprogramming.org/index.php?title=Shogi&amp;oldid=26075</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Shogi&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Shogi.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Shogi&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Shogi.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Shogi&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Shogi&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Shogi.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Shogi.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Shogi&amp;oldid=26075.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Shogi&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 December 2021, at 16:19.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Shogi&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.116","walltime":"0.873","ppvisitednodes":{"value":390,"limit":1000000},"ppgeneratednodes":{"value":740,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722010910","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

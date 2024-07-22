@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Table-driven Move Generation - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Table-driven_Move_Generation","wgTitle":"Table-driven Move Generation","wgCurRevisionId":20142,"wgRevisionId":20142,"wgArticleId":1307,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Kraftwerk"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Table-driven_Move_Generation","wgRelevantArticleId":1307,"wgRequestId":"Zp7Dtf-qaMe6EU8WbZGhSgAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Table-driven_Move_Generation rootpage-Table-driven_Move_Generation skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Table-driven Move Generation</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Move Generation.html" title="Move Generation">Move Generation</a> * Table-driven Move Generation</b>
+</p><p><b>Table-driven Move Generation</b>,
+is a technique to speed up the common traversal of <a href="Pieces.html" title="Pieces">pieces</a> with their <a href="Origin Square.html" title="Origin Square">origin</a> (from square) from a <a href="Piece-Lists.html" title="Piece-Lists">piece-list</a> and their potential <a href="Target Square.html" title="Target Square">move target squares</a> by traversing <a href="Linked List.html" title="Linked List">linked lists</a> with pre-calculated <a href="Moves.html" title="Moves">moves</a>, which head is indexed by <a href="Pieces.html#PieceTypeCoding" title="Pieces">piece-type</a> and origin. There are three control structures to cover the disjoint move abilities for <a href="King.html" title="King">king</a> or <a href="Knight.html" title="Knight">knights</a>, <a href="Pawn.html" title="Pawn">pawns</a>, and <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a>, while we focus on the latter for the most general case. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Prologue"><span class="tocnumber">1</span> <span class="toctext">Prologue</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#GNU Chess"><span class="tocnumber">2</span> <span class="toctext">GNU Chess</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Inspired by Hardware"><span class="tocnumber">2.1</span> <span class="toctext">Inspired by Hardware</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Butterfly Tables"><span class="tocnumber">2.2</span> <span class="toctext">Butterfly Tables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Further Implementations"><span class="tocnumber">3</span> <span class="toctext">Further Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Ferret"><span class="tocnumber">3.1</span> <span class="toctext">Ferret</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Diep"><span class="tocnumber">3.2</span> <span class="toctext">Diep</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Conditional Linked List"><span class="tocnumber">4</span> <span class="toctext">Conditional Linked List</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Data Structure"><span class="tocnumber">4.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Control Structure"><span class="tocnumber">4.2</span> <span class="toctext">Control Structure</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Captures vs Quiet"><span class="tocnumber">4.3</span> <span class="toctext">Captures vs Quiet</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Dense Index List"><span class="tocnumber">4.4</span> <span class="toctext">Dense Index List</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Publications"><span class="tocnumber">6</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#1998 ..."><span class="tocnumber">7.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2000 ..."><span class="tocnumber">7.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2010 ..."><span class="tocnumber">7.3</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Prologue">Prologue</span></h1>
+<p>The classical technique in sliding piece move generation with <a href="Mailbox.html" title="Mailbox">square centric board arrays</a>, is to loop over all <a href="Direction.html#RayDirections" title="Direction">ray-directions</a>, and per ray-direction from the next closest square (if any) to the farthest square of that <a href="Rays.html" title="Rays">ray</a> until either the target square is occupied by an own piece, or occupied by opponent piece which requires a <a href="Captures.html" title="Captures">capture</a> generation. The control structure, its code size, number of local and register variables, and conditional branches on ray-termination, that is on piece-code combined with farthest square or off-the board tests, were the driving force in designing efficient board representations like <a href="0x88.html" title="0x88">0x88</a> and <a href="Mailbox.html" title="Mailbox">mailbox</a> in conjunction with appropriate piece coding. One example is the <a href="Gambiet.html#PieceCoding" title="Gambiet">piece coding</a> in <a href="Gambiet.html" title="Gambiet">Gambiet</a> to conditionally branch on several <a href="Z80.html" title="Z80">Z80</a> processor flags, set by only one shift instruction. For a <a href="8x8 Board.html" title="8x8 Board">8x8 board</a> there was already a proposal by <a href="Alex Bell.html" title="Alex Bell">Alex Bell</a> as used in <a href="Atlas.html" title="Atlas">Atlas</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>, to lookup ray-increments per ray-direction and terminal squares per ray-direction and origin - sample code in <a href="Cpp.html" title="Cpp">C++</a> pseudo code:
+</p>
+<pre>
+for (all directions[piece_kind] -&gt; dir) {
+  delta  = delta_table[dir];
+  lastsq = lastsq_table[dir][fromsq];
+  if ( fromsq != lastsq ) {
+    for (tosq = fromsq + delta; board[tosq].isNotPieceOf(side2move); tosq += delta) {
+      generateMove( fromsq, tosq );
+      if ( board[tosq].isPiece() || tosq == lastsq )
+        break; /* next direction after capture or last square */
+    }
+  }
+}
+</pre>
+<p><span id="GNUChess"></span>
+</p>
+<h1><span class="mw-headline" id="GNU_Chess">GNU Chess</span></h1>
+<h2><span class="mw-headline" id="Inspired_by_Hardware">Inspired by Hardware</span></h2>
+<p>Table-driven move generation was pioneered by <a class="new" href="index.php?title=Hans Eric Sandstr%C3%B6m&amp;action=edit&amp;redlink=1.html" title="Hans Eric Sandström (page does not exist)">Hans Eric Sandström</a> in 1989 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> as introduced in <a href="GNU Chess.html" title="GNU Chess">GNU Chess</a> Version 1.55 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> :
+</p>
+<table class="wikitable">
+<tr>
+<td>  New move Generation algorithm:
+<p>Revision: 1989-09-06
+Author: Hans Eric Sandstroem.
+</p><p>This algorithm is the result of an attempt to make an <a href="Move Generation.html#Hardware" title="Move Generation">hardware move generator</a>, but since I newer had the time and resources to build the hardware I wrote a software version and incorporated that one into gnu chess. This was the best way I could think of sharing this algorithm with the computer chess community.
+</p><p>If there is anybody out there with the time and resources to build a hardware move generator I will be glad to assist.
+</p><p>The general idea behind this algorithm is to pre calculate a lot of data. The data that is pre calculated is every possible move for every piece from every square disregarding any other pieces on the board. This pre calculated data is stored in an array ... 
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Butterfly_Tables">Butterfly Tables</span></h2>
+<p>The GNU Chess implementation used the natural branches on empty square, and if occupied and the next direction is taken, on own or opponent piece. <a href="Pieces.html#PieceTypeCoding" title="Pieces">Piece kind</a>, <a href="Origin Square.html" title="Origin Square">origin</a> and <a href="Target Square.html" title="Target Square">target square</a> index an <a href="Array.html" title="Array">array</a> of eight <a href="Butterfly Boards.html" title="Butterfly Boards">Butterfly boards</a> with 64 Kib in total with <a href="Word.html" title="Word">16-bit words</a> while <a href="Byte.html" title="Byte">bytes</a> might suffice as next direction or next position squares as well. This is very register but less memory friendly due to the Butterfly layout. <a class="external text" href="https://en.wikipedia.org/wiki/Sentinel_node" rel="nofollow">Sentinel nodes</a> use the origin square to terminate the do-while loop <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>: 
+</p>
+<pre>
+struct sqdata {
+  short nextpos;
+  short nextdir;
+};
+struct sqdata posdata[8][64][64];
+
+...
+struct sqdata *p = posdata[piece_kind][fromsq];
+tosq = p[fromsq].nextpos;
+do {
+  if (color[tosq] == neutral) {
+    linkMove(ply, fromsq, tosq, xside);
+    tosq = p[tosq].nextpos;
+  }
+  else {
+    if (color[tosq] == xside) 
+       linkMove(ply, fromsq, tosq, xside);
+    tosq = p[tosq].nextdir;
+  }
+} while (tosq  != fromsq);
+</pre>
+<h1><span class="mw-headline" id="Further_Implementations">Further Implementations</span></h1>
+<p>There are zillions of implementation nuances concerning disjoint move-lists for quiet moves and captures, and <a href="Space-Time Tradeoff.html" title="Space-Time Tradeoff">space-time tradeoff</a>. 
+<span id="Ferret"></span>
+</p>
+<h2><span class="mw-headline" id="Ferret">Ferret</span></h2>
+<p>The <a href="Table-driven Move Generation.html#GNUChess" title="Table-driven Move Generation">GNU Chess approach</a> was refined by <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a>, as used in <a href="Ferret.html" title="Ferret">Ferret</a>, and elaborated in his programming topics, for instance for a bishop on d5 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>:
+</p>
+<pre>
+typedef struct tagMT {
+  int    square;
+  struct tagMT * pmtBlocked;
+} MT;
+
+MT argmtBD5[] = {
+    e6,    &amp;argmtBD5[3], // Element 0, 1st ray.
+    d7,    &amp;argmtBD5[3],
+    f8,    &amp;argmtBD5[3],
+    c6,    &amp;argmtBD5[3], // Element 3, 2nd ray.
+    b7,    &amp;argmtBD5[6],
+    a8,    &amp;argmtBD5[6],
+    e4,    &amp;argmtBD5[6], // Element 6, 3rd ray.
+    f3,    &amp;argmtBD5[6],
+    g2,    &amp;argmtBD5[6],
+    h1,    NULL,         // Element 9, 4th ray.
+    c4,    NULL,
+    b3,    NULL,
+    a2,    NULL,
+    -1,
+};
+
+void genMoves(MT * pmt)
+{
+  for (;;) {
+    if (IsEmpty(pmt-&gt;square)) {
+      GenMove(pmt-&gt;square);
+      if ((++pmt)-&gt;square &lt; 0)
+        break;
+    } else {
+      if (IsEnemy(pmt-&gt;square))
+        GenMove(pmt-&gt;square);
+      if ((pmt = pmt-&gt;pmtBlocked) == NULL)
+        break;
+    }
+  }
+}
+</pre>
+<p><span id="Diep"></span>
+</p>
+<h2><span class="mw-headline" id="Diep">Diep</span></h2>
+<p><a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a> used a similar technique in <a href="Diep.html" title="Diep">Diep</a>. He published a move generation skeleton under the <a href="Free Software Foundation.html#GPL" title="Free Software Foundation">GPL</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>. Vincent's approach uses the default ones-increment of the list pointer, and adds a further skip-increment to the next direction in case of a block, which is done branch-less by intersection of the increment with a mask for target square empty (0) or not (-1), and was inspiration for the <a href="Table-driven Move Generation.html#ConditionalLinkedList" title="Table-driven Move Generation">conditional linked list</a> approach, which stresses memory versus a simplified control structure.
+<span id="ConditionalLinkedList"></span>
+</p>
+<h1><span class="mw-headline" id="Conditional_Linked_List">Conditional Linked List</span></h1>
+<p>To minimize code and to <a href="Avoiding Branches.html" title="Avoiding Branches">avoid branches</a> on todays super pipelined processors, following <a href="Recursion.html" title="Recursion">recursive</a> data structure of a pre-initialized <a class="external text" href="https://en.wikipedia.org/wiki/Skip_list" rel="nofollow">skip list</a> with two alternative next references might be applied for a prototype of table-driven move generation. 
+</p>
+<h2><span class="mw-headline" id="Data_Structure">Data Structure</span></h2>
+<p>One sliding move node consists of the target square, the bit redundant move itself (might already contain a score based on dedicated <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a> concerning <a href="Move Ordering.html" title="Move Ordering">move ordering</a>), and an <a href="Array.html" title="Array">array</a> of two <a class="external text" href="https://en.wikipedia.org/wiki/Pointer_%28computer_programming%29" rel="nofollow">pointers</a> to the next square if any. During traversal, the next array is indexed by the condition whether the target square is empty (0, false) or occupied (1, true), either to arrive the next square on the current ray, or the first square of the next ray-direction if any.
+</p>
+<pre>
+struct SlidingMoveNode
+{
+  TSquare tosq;
+  SMove   move;
+  SlidingMoveNode* pNext[2];
+};
+</pre>
+<p>The number of sliding move node structures is determined by the <a href="Influence Quantity of Pieces.html" title="Influence Quantity of Pieces">influence quantity of pieces</a>, where bishops have a cardinality of 560, rooks of 896, and queens the sum of 1456, and they are typically declared as array with consecutive nodes and almost always <span style="background-color: #dedede;">pNext[0] = this + 1</span>. However, despite avoiding conditional branches, this redundancy a little bit pays off since this approach does not require <a class="external text" href="https://en.wikipedia.org/wiki/Sentinel_node" rel="nofollow">sentinel nodes</a> with one extra indirection to check for an invalid target square for termination, due to storing sentinel values, that is <a class="external text" href="https://en.wikipedia.org/wiki/Pointer_%28computer_programming%29#Null_pointer" rel="nofollow">null pointers</a> aka nil.
+</p>
+<pre>
+SlidingMoveNode  slidingMoveTable[1456+896+560]; /* queen, rook, bishop -&gt;  2912 * 16 = 46592 bytes 45.5 Kib */
+SlidingMoveNode* slidingMoveHead[3][64];
+</pre>
+<p>With following initialization, for instance for a rook on e4:
+</p>
+<pre>
+slidingMoveHead[rook][e4]
+     ▼ north                                   east           south          west
+ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐  ┌────────┐─┐-┐ ┌────────┐─┐-┐ ┌────────┐─-┬-┌────────┐
+ │   e5   │ │   e6   │ │   e7   │ │   e8   │  │   f4   │     │   e3   │     │   d4   │    │   a4   │
+ ├────────┤ ├────────┤ ├────────┤ ├────────┤  ├────────┤g4   ├────────┤e2   ├────────┤c4  ├────────┤
+ │ Re4e5  │ │ Re4e6  │ │ Re4e7  │ │ Re4e8  │  │ Re4f4  │  h4 │ Re4e3  │  e1 │ Re4d4  │  b4│ Re4a4  │
+ ├────────┤ ├────────┤ ├────────┤ ├────────┤  ├────────┤     ├────────┤     ├────────┤    ├────────┤
+ │pNext[0]│►│pNext[0]│►│pNext[0]│►│pNext[0]│►─│pNext[0]│►─...│pNext[0]│►─...│pNext[0]│►─..│   NIL  │
+ ├────────┤ ├────────┤ ├────────┤ ├────────┤  ├────────┤     ├────────┤     ├────────┤    ├────────┤
+ │pNext[1]│ │pNext[1]│ │pNext[1]│ │pNext[1]│►─│pNext[1]│     │pNext[1]│     │   NIL  │    │   NIL  │
+ └────────┘ └────────┘ └────────┘ └────────┘  └────────┘─┘-┘ └────────┘─┘-┘ └────────┘--┴-└────────┘
+       ▼          ▼          ▼                  ▲   ▼          ▲   ▼          ▲
+       │          │          └───►──────────►───┘   │          │   │          │
+       │          └───►──────────►──────────►───┘   │     ... ─┘   │     ... ─┘
+       └───►──────────►──────────►──────────►───┘   └───►─...──┘   └───►─...──┘
+</pre>
+<h2><span class="mw-headline" id="Control_Structure">Control Structure</span></h2>
+<p>This data structure simplifies the control structure to generate moves of one sliding piece with only one conditional branch concerning the while loop. To avoid the branch on blocked by own piece, a <a href="Avoiding Branches.html#ConditionalWrite" title="Avoiding Branches">conditional write</a> taking advantage of <a class="external text" href="https://en.wikipedia.org/wiki/Write-combining" rel="nofollow">write-combining</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> is implemented, storing always, but post-increment the <a href="Move List.html" title="Move List">move list</a> pointer by a boolean aka {0,1} condition:
+</p>
+<pre>
+pMoveNode = slidingMoveHead[slidingPiece_kind_012][fromSq];
+do {
+  tosq = pMoveNode-&gt;tosq;
+  *pMoveList = pMoveNode-&gt;move;
+  pMoveList += board[tosq].isNotPieceOf( side2move );
+  pMoveNode  = pMoveNode-&gt;pNext[ board[tosq].isPiece() ];
+} while ( pMoveNode );
+</pre>
+<h2><span class="mw-headline" id="Captures_vs_Quiet">Captures vs Quiet</span></h2>
+<p>To generate disjoint sets of <a href="Captures.html" title="Captures">captures</a> and <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a> in different move generation stages, the same conditional linked lists could be traversed, stressing <a href="Avoiding Branches.html#ConditionalWrite" title="Avoiding Branches">conditional writes</a> in using different conditions for the move-list pointer increment. 
+</p>
+<pre>
+/* Captures  */
+pMoveNode = slidingMoveHead[slidingPiece_kind_012][fromSq];
+do {
+  tosq = pMoveNode-&gt;tosq;
+  *pMoveList = capture( pMoveNode-&gt;move, board[tosq]);
+  pMoveList += board[tosq].isPieceOf( side2move ^ 1 );
+  pMoveNode  = pMoveNode-&gt;pNext[ board[tosq].isPiece() ];
+} while ( pMoveNode );
+
+/* none Captures */
+pMoveNode = slidingMoveHead[slidingPiece_kind_012][fromSq];
+do {
+  tosq = pMoveNode-&gt;tosq;
+  *pMoveList = pMoveNode-&gt;move;
+  pMoveList += board[tosq].isPiece() ^ 1; /* isEmpty */
+  pMoveNode  = pMoveNode-&gt;pNext[ board[tosq].isPiece() ];
+} while ( pMoveNode );
+</pre>
+<p>However, for capture generation specially in the <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, if one imagines a queen in the late ending, the overhead to visit up to 27 empty squares with conditional stores seems not justified, and one may better rely on branches as demonstrated in <a href="Fritz Reul.html" title="Fritz Reul">Fritz Reul's</a> <a href="Vector Attacks.html#NewArchitecture" title="Vector Attacks">blocking Loop</a>, and to scan potential winning capture targets with a <a href="Vector Attacks.html" title="Vector Attacks">vector attack</a> lookup whether they have lines in common with a sliding piece able to move along that line, to only test whether the squares between are empty - not to mention <a href="Bitboards.html" title="Bitboards">bitboard</a> techniques.
+</p>
+<h2><span class="mw-headline" id="Dense_Index_List">Dense Index List</span></h2>
+<p>As proposed by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a> with 64-bit nodes and indices instead of pointer <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>, an even denser alternative is to use nodes with two 12-bit indices and target square packed in a 32-bit integer. With appropriate piece-type coding, with bits 2 to 4 masked containing a right shift amount, either 8 for empty squares and 20 for pieces, one may "index" the appropriate next index. Bit 0 and 1 are exclusively set for either white and black pieces.
+</p>
+<pre>
+// U32 as struct SlidingMoveNode {int next1 : 12; int next0 : 12; int tosq  :  8; /* low byte */ };
+U32 slidingMoveTable[1456+896+560]; /* queen, rook, bishop -&gt;  2912 * 4 = 11648 bytes  */
+U32 slidingMoveHead[3][64];
+
+/* five least significant piece code bits from board: 
+   01000 empty
+   10101 white piece
+   10110 black piece */
+
+node = slidingMoveHead[slidingPiece_kind_012][fromSq];
+do {
+  node  = slidingMoveTable[node];
+  tosq  = node &amp; 0x3f;
+  piece = board[tosq];
+  *pMoveList = fromaspects | tosq;
+  pMoveList += (piece &amp; side2moveBit) == 0;
+  node = (node &gt;&gt; (piece &amp; 0x1c)) &amp; 0x0fff;
+} while ( node );
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="0x88.html" title="0x88">0x88</a></li>
+<li> <a href="Mailbox.html" title="Mailbox">Mailbox</a></li>
+<li> <a href="CPW-Engine movegen(0x88).html" title="CPW-Engine movegen(0x88)">Move Generation in CPW-Engine</a></li>
+<li> <a href="Atlas.html#MoveGeneration" title="Atlas">Move Generation in Atlas</a></li>
+<li> <a href="10x12 Board.html#OffsetMG" title="10x12 Board">Offset Move Generation</a></li>
+<li> <a href="Vector Attacks.html" title="Vector Attacks">Vector Attacks</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Alex Bell.html" title="Alex Bell">Alex Bell</a> (<b>1972</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/overview.htm.html" rel="nofollow">Games Playing with Computers</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Allen_%26_Unwin" rel="nofollow">Allen &amp; Unwin</a>, ISBN-13: 978-0080212227, <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/index.htm.html" rel="nofollow">index</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/7292bfb78152b40b.html" rel="nofollow">GNU move generation</a> by <a class="new" href="index.php?title=Jan Willem de Kort&amp;action=edit&amp;redlink=1.html" title="Jan Willem de Kort (page does not exist)">Jan Willem de Kort</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, March 18, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=39133" rel="nofollow">Re: 0x88</a> by <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland</a>, January 12, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=116593" rel="nofollow">Pre-calculated move generation</a> by Ujecrh, <a href="CCC.html" title="CCC">CCC</a>, June 26, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=238333" rel="nofollow">Precomputed move information</a> by <a href="Sune Fischer.html" title="Sune Fischer">Sune Fischer</a>, <a href="CCC.html" title="CCC">CCC</a>, July 02, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=403656" rel="nofollow">Diep move generator speeded up</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17790&amp;start=4.html" rel="nofollow">Re: Is it time for another new move generator?</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Bala Jr.</a>, <a href="CCC.html" title="CCC">CCC</a>, November 11, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17820.html" rel="nofollow">Did someone mention the GNUChess move Generator?</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, November 12, 2007</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44939.html" rel="nofollow">What's the fastest move generator?</a> by Marcel Fournier, <a href="CCC.html" title="CCC">CCC</a>,  August 29, 2012 </li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45042.html" rel="nofollow">CPW Move Table compression</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, September 08, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45846.html" rel="nofollow">Move Tables - explain as if I'm five</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, November 04, 2012</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=490492&amp;t=45846.html" rel="nofollow">Re: Move Tables - explain as if I'm five</a> by <a href="Martin Sedlak.html" title="Martin Sedlak">Martin Sedlak</a>, <a href="CCC.html" title="CCC">CCC</a>, November 04, 2012</dd>
+<dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=490652&amp;t=45846.html" rel="nofollow">Re: Move Tables - explain as if I'm five</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Bala Jr.</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2012</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=46056.html" rel="nofollow">Diepeveen's move generator</a> by Hrvoje Horvatic, <a href="CCC.html" title="CCC">CCC</a>, November 18, 2012</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=493083&amp;t=46056.html" rel="nofollow">Re: Diepeveen's move generator</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2012</dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=62686.html" rel="nofollow">Fast table-driven move generation</a> by <a href="Syed Fahad.html" title="Syed Fahad">Syed Fahad</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63126&amp;start=40.html" rel="nofollow">Re: PieceLists ?</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Bala Jr.</a>, <a href="CCC.html" title="CCC">CCC</a>, February 17, 2017 » <a href="Piece-Lists.html" title="Piece-Lists">Piece-Lists</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70082.html" rel="nofollow">Opinions requested for new move gen idea</a>  by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, March 03, 2019</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20070715002634/www.brucemo.com/compchess/programming/movetable.htm.html" rel="nofollow">Move Table move generation</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></li>
+<li> <a class="external text" href="http://mridulm.blogspot.de/2004/06/permission-to-use-code-have-to-put-up.html.html" rel="nofollow">Permission to use code</a> from <a class="external text" href="http://mridulm.blogspot.de/.html" rel="nofollow">Random thoughts</a> by <a href="Mridul Muralidharan.html" title="Mridul Muralidharan">Mridul Muralidharan</a>, June 09, 2004</li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Skip_list" rel="nofollow">Skip list from Wikipedia</a></li>
+<li> <a href="Category:Kraftwerk.html" title="Category:Kraftwerk">Kraftwerk</a> - <a class="external text" href="http://de.wikipedia.org/wiki/Ruck Zuck %28Begriffskl%C3%A4rung%29.html" rel="nofollow">Ruckzuck</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Soest,_Germany" rel="nofollow">Soest</a> <a class="external text" href="https://www.wa.de/kultur/kraftwerk-soest-konzertmitschnitte-karussell-jugend-1970-internet-3522483.html" rel="nofollow">1970</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> lineup: <a class="external text" href="https://en.wikipedia.org/wiki/Ralf_H%C3%BCtter" rel="nofollow">Ralf Hütter</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Florian_Schneider" rel="nofollow">Florian Schneiderr-Esleben</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Klaus_Dinger" rel="nofollow">Klaus Dinger</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/JbK1GulvSDQ?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Alex Bell.html" title="Alex Bell">Alex Bell</a> (<b>1972</b>). <i><a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/overview.htm.html" rel="nofollow">Games Playing with Computers</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Allen_%26_Unwin" rel="nofollow">Allen &amp; Unwin</a>, ISBN-13: 978-0080212227, <a class="external text" href="http://www.chilton-computing.org.uk/acl/literature/books/gamesplaying/index.htm.html" rel="nofollow">index</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=490652&amp;t=45846.html" rel="nofollow">Re: Move Tables - explain as if I'm five</a> by <a href="Karlo Balla.html" title="Karlo Balla">Karlo Bala Jr.</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2012</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.gnu.org/bulletins/bull8.html.html" rel="nofollow">GNU's Bulletin, vol. 1 no. 8 - GNU Project - Free Software Foundation (FSF)</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://slackware.dreamhost.com/slackware/slackware-2.1/usr/doc/gnuchess-4.0/MOVE-GEN.html" rel="nofollow">GNU's new move generation algorithm</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://web.archive.org/web/20070715002634/www.brucemo.com/compchess/programming/movetable.htm.html" rel="nofollow">Move Table move generation</a> from <a href="Bruce Moreland.html" title="Bruce Moreland">Bruce Moreland's</a> <a class="external text" href="http://web.archive.org/web/20070607231311/www.brucemo.com/compchess/programming/index.htm.html" rel="nofollow">Programming Topics</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://mridulm.blogspot.de/2004/06/permission-to-use-code-have-to-put-up.html.html" rel="nofollow">Permission to use code</a> from <a class="external text" href="http://mridulm.blogspot.de/.html" rel="nofollow">Random thoughts</a> by <a href="Mridul Muralidharan.html" title="Mridul Muralidharan">Mridul Muralidharan</a>, June 09, 2004</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=403656" rel="nofollow">Diep move generator speeded up</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, January 01, 2005</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=480825&amp;t=44939.html" rel="nofollow">Re: What's the fastest move generator?</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, August 31, 2012</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=480726&amp;t=44939.html" rel="nofollow">Re: What's the fastest move generator?</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, August 30, 2012</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=493083&amp;t=46056.html" rel="nofollow">Re: Diepeveen's move generator</a> by <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="CCC.html" title="CCC">CCC</a>, November 19, 2012</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://support.amd.com/us/Processor TechDocs/40546.pdf.html" rel="nofollow">Software Optimization Guide for AMD Family 10h and 12h Processors</a> (pdf) see pp. 102 on Conditional Write</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45042.html" rel="nofollow">CPW Move Table compression</a> by <a href="Matthew R. Brades.html" title="Matthew R. Brades">Matthew R. Brades</a>, <a href="CCC.html" title="CCC">CCC</a>, September 08, 2012</span>
+</li>
+</ol></div>
+<p><b><a href="Move Generation.html" title="Move Generation">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722194609
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.026 seconds
+Real time usage: 0.026 seconds
+Preprocessor visited node count: 342/1000000
+Preprocessor generated node count: 708/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1307-0!canonical and timestamp 20240722194609 and revision id 20142
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Table-driven_Move_Generation&amp;oldid=20142">https://www.chessprogramming.org/index.php?title=Table-driven_Move_Generation&amp;oldid=20142</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category:Kraftwerk.html" title="Category:Kraftwerk">Kraftwerk</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Table-driven+Move+Generation&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Table-driven Move Generation.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Table-driven Move Generation&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Table-driven Move Generation.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Table-driven Move Generation&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Table-driven Move Generation&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Table-driven Move Generation.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Table-driven Move Generation.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Table-driven Move Generation&amp;oldid=20142.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Table-driven Move Generation&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 July 2020, at 11:06.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Table-driven_Move_Generation&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.026","walltime":"0.026","ppvisitednodes":{"value":342,"limit":1000000},"ppgeneratednodes":{"value":708,"limit":1000000},"postexpandincludesize":{"value":27,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722194609","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

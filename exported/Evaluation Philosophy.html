@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Evaluation Philosophy - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Evaluation_Philosophy","wgTitle":"Evaluation Philosophy","wgCurRevisionId":21782,"wgRevisionId":21782,"wgArticleId":1450,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["John Scofield","Darryl Jones"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Evaluation_Philosophy","wgRelevantArticleId":1450,"wgRequestId":"Zp7DYP-qaMe6EU8WbZGgdwAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Evaluation_Philosophy rootpage-Evaluation_Philosophy skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Evaluation Philosophy</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * Philosophy</b>
+</p><p>This page discusses some general <b>philosophy</b> behind the <a href="Evaluation.html" title="Evaluation">evaluation</a> function. Instead of discussing the specific aspects of implementation, we discuss general design decisions of the overall evaluation.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General"><span class="tocnumber">1</span> <span class="toctext">General</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Knowledge versus Speed"><span class="tocnumber">1.1</span> <span class="toctext">Knowledge versus Speed</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Light versus Heavy"><span class="tocnumber">1.2</span> <span class="toctext">Light versus Heavy</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#The Art of Evaluation"><span class="tocnumber">2</span> <span class="toctext">The Art of Evaluation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Orthogonality"><span class="tocnumber">2.1</span> <span class="toctext">Orthogonality</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Continuity"><span class="tocnumber">2.2</span> <span class="toctext">Continuity</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Sense of Progress"><span class="tocnumber">2.3</span> <span class="toctext">Sense of Progress</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Good Worst Case Behavior"><span class="tocnumber">2.4</span> <span class="toctext">Good Worst Case Behavior</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="General">General</span></h1>
+<h2><span class="mw-headline" id="Knowledge_versus_Speed">Knowledge versus Speed</span></h2>
+<p>The evaluation is typically a collection of "<a class="external text" href="https://en.wikipedia.org/wiki/Rule_of_thumb" rel="nofollow">rules of thumb</a>" collected from hundreds of years of human <a class="external text" href="https://en.wikipedia.org/wiki/Experience" rel="nofollow">experience</a>. It would be practically impossible to program all of the rules that humans have come up with over the years. Even if you could code for all of them, it would be inadvisable because of performance reasons. There must be a trade-off between <a href="Knowledge.html" title="Knowledge">knowledge</a> versus speed. The more time you spend evaluating a position, the less time you have to search, and therefore, the less deep your program can see. 
+</p>
+<h2><span class="mw-headline" id="Light_versus_Heavy">Light versus Heavy</span></h2>
+<p>Some programs are designed with a very light evaluation function containing only the most basic features, letting the search make up the rest. Others prefer a heavy evaluation with as much knowledge as possible. 
+</p><p>Most programs have an evaluation somewhere in the middle, with the trend in recent years being towards simpler, lighter evaluation functions, the idea being that these evaluations are the most bug-free and maintainable, which is far more important in practice than having many obscure pieces of knowledge. A big influence in this direction was the advent of <a href="Fruit.html" title="Fruit">Fruit</a>, which has a very minimal evaluation function, yet it is a very solid, strong engine. 
+</p>
+<h1><span class="mw-headline" id="The_Art_of_Evaluation">The Art of Evaluation</span></h1>
+<p><a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a> writes about his evaluation philosophy <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>: "You need patience, restraint, thorough testing, and a sound basic philosophy to succeed. The following are, in my opinion, the most important properties of a good evaluation function".
+</p>
+<h2><span class="mw-headline" id="Orthogonality">Orthogonality</span></h2>
+<p>When it is possible, it is better to avoid having two different evaluation components which to some extent quantify the same extent of the position. When adding a new evaluation component which has a non-zero "orthogonal projection" (in a methaphorical sense, of course) on a previously existing component, try to adjust the two components in such a way that the projection is minimized, or to generalize and combine the two components into one.
+</p>
+<h2><span class="mw-headline" id="Continuity">Continuity</span></h2>
+<p>If two positions X and Y which are "close to each other" in the sense that it is possible to get from position X to position Y by a short sequence of good moves, the two positions should ideally have similar evaluations. As a <a class="external text" href="https://en.wikipedia.org/wiki/Corollary" rel="nofollow">corollary</a>, when one adds a big bonus or penalty for some particular pattern, one should also consider introducing a smaller bonus or penalty for getting close to this pattern. For instance, when adding a big bonus for a knight on an outpost square, it might be a good idea to add a smaller bonus for a knight attacking an outpost square.
+</p>
+<h2><span class="mw-headline" id="Sense_of_Progress">Sense of Progress</span></h2>
+<p>It is much more important that the evaluation function is able to accurately judge which of two very similar positions is better, than that it is able to judge which of two totally different positions is better. The evaluation function doesn't need to be able to answer questions like whether a certain classical King's Indian middle game is better than an endgame arising from a Richter-Rauzer Sicilian. What it needs is to be able to decide is things like whether one side should try to exchange a bishop for a knight, or whether it is better to castle kingside or queenside.
+</p>
+<h2><span class="mw-headline" id="Good_Worst_Case_Behavior">Good Worst Case Behavior</span></h2>
+<p>It is better to be wrong by 10 centipawns all the time than to be completely correct 99.9% of the time and wrong by 300 centipawns 0.1% of the time.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Evaluation Discontinuity.html" title="Evaluation Discontinuity">Evaluation Discontinuity</a></li>
+<li> <a href="Knowledge.html" title="Knowledge">Knowledge</a></li>
+<li> <a href="Oracle.html" title="Oracle">Oracle</a></li>
+<li> <a href="Tapered Eval.html" title="Tapered Eval">Tapered Eval</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=135133&amp;t=15504.html" rel="nofollow">The Art of Evaluation</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, August 2, 2007</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Philosophy" rel="nofollow">Philosophy from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Orthogonality" rel="nofollow">Orthogonality from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Continuity" rel="nofollow">Continuity from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Best,_worst_and_average_case" rel="nofollow">Best, worst and average case from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Rule_of_thumb" rel="nofollow">Rule of thumb from Wikipedia</a></li>
+<li> <a href="Category:John Scofield.html" title="Category:John Scofield">John Scofield</a> - Rule of thumb, album <a class="external text" href="https://en.wikipedia.org/wiki/Still_Warm" rel="nofollow">Still Warm</a> (1986), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video </li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/0d1YJtMmxM0?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=135133&amp;t=15504.html" rel="nofollow">The Art of Evaluation</a> by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a>, <a href="CCC.html" title="CCC">CCC</a>, August 2, 2007</span>
+</li>
+</ol></div>
+<p><b><a href="Evaluation.html" title="Evaluation">Up One Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722170423
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.007 seconds
+Real time usage: 0.007 seconds
+Preprocessor visited node count: 70/1000000
+Preprocessor generated node count: 134/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1450-0!canonical and timestamp 20240722170423 and revision id 21782
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Evaluation_Philosophy&amp;oldid=21782">https://www.chessprogramming.org/index.php?title=Evaluation_Philosophy&amp;oldid=21782</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:John Scofield.html" title="Category:John Scofield">John Scofield</a></li><li><a href="Category:Darryl Jones.html" title="Category:Darryl Jones">Darryl Jones</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Evaluation+Philosophy&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Evaluation Philosophy.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Evaluation Philosophy&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Evaluation Philosophy.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Evaluation Philosophy&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Evaluation Philosophy&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Evaluation Philosophy.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Evaluation Philosophy.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Evaluation Philosophy&amp;oldid=21782.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Evaluation Philosophy&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 16 October 2020, at 00:37.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Evaluation_Philosophy&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.007","walltime":"0.007","ppvisitednodes":{"value":70,"limit":1000000},"ppgeneratednodes":{"value":134,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722170423","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

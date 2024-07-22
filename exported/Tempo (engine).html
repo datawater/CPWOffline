@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Tempo (engine) - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tempo_(engine)","wgTitle":"Tempo (engine)","wgCurRevisionId":16788,"wgRevisionId":16788,"wgArticleId":3903,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Experimental","NN","Baden Powell"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Tempo_(engine)","wgRelevantArticleId":3903,"wgRequestId":"Zp7DyoY8AD1K7zdlkfzekwAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tempo_engine rootpage-Tempo_engine skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Tempo (engine)</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Tempo (engine)</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Dragon trees.jpg.html"><img alt="" class="thumbimage" height="215" src="wikipedia/commons/thumb/7/74/Dragon_trees.jpg/300px-Dragon_trees.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dragon_trees.jpg/450px-Dragon_trees.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dragon_trees.jpg/600px-Dragon_trees.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Dragon trees.jpg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/Fractal" rel="nofollow">Fractal</a> <a class="external text" href="https://en.wikipedia.org/wiki/Tree" rel="nofollow">Trees</a> using  <a class="external text" href="https://en.wikipedia.org/wiki/L-system" rel="nofollow">L-system</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Tempo</b>,<br/>
+an experimental chess engine developed by <a class="new" href="index.php?title=Mathieu Auton%C3%A8s&amp;action=edit&amp;redlink=1.html" title="Mathieu Autonès (page does not exist)">Mathieu Autonès</a>, <a class="new" href="index.php?title=Aryel Beck&amp;action=edit&amp;redlink=1.html" title="Aryel Beck (page does not exist)">Aryel Beck</a>, <a class="new" href="index.php?title=Phillippe Camacho&amp;action=edit&amp;redlink=1.html" title="Phillippe Camacho (page does not exist)">Phillippe Camacho</a>, <a class="new" href="index.php?title=Nicolas Lassabe&amp;action=edit&amp;redlink=1.html" title="Nicolas Lassabe (page does not exist)">Nicolas Lassabe</a>, <a class="new" href="index.php?title=Herv%C3%A9 Luga&amp;action=edit&amp;redlink=1.html" title="Hervé Luga (page does not exist)">Hervé Luga</a>, and <a class="new" href="index.php?title=Fran%C3%A7ois Scharffe&amp;action=edit&amp;redlink=1.html" title="François Scharffe (page does not exist)">François Scharffe</a>, using an <a href="Neural Networks.html" title="Neural Networks">artificial neuronal network</a> as <a href="Evaluation Function.html" title="Evaluation Function">evaluation function</a> generated by a <a href="Genetic Programming.html#GeneticAlgorithm" title="Genetic Programming">genetic algorithm</a>. Tempo applies <a class="external text" href="https://en.wikipedia.org/wiki/L-system" rel="nofollow">L-systems</a> as elaborated by <a class="new" href="index.php?title=Egbert Boers&amp;action=edit&amp;redlink=1.html" title="Egbert Boers (page does not exist)">Egbert Boers</a> and <a class="new" href="index.php?title=Herman Kuiper&amp;action=edit&amp;redlink=1.html" title="Herman Kuiper (page does not exist)">Herman Kuiper</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>, to generate <a class="external text" href="https://en.wikipedia.org/wiki/Modular_neural_network" rel="nofollow">modular neural networks</a> whose size is independent of that of the <a class="external text" href="https://en.wikipedia.org/wiki/Chromosome_%28genetic_algorithm%29" rel="nofollow">chromosome</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Crossover_%28genetic_algorithm%29" rel="nofollow">crossover</a> tolerant. A population of L-system construction rules is generated to mark the resulting networks according to their capabilities to <a href="Learning.html" title="Learning">learn</a> game position evaluations from real games. Simple aspects were learnt at first. Strongest individuals learnt more complex faetures, from <a href="Material.html" title="Material">material</a> to <a href="Square Control.html" title="Square Control">square control</a> and <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#See also"><span class="tocnumber">1</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Publications"><span class="tocnumber">2</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Abstract"><span class="tocnumber">3</span> <span class="toctext">Abstract</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Tempo.html" title="Tempo">Tempo</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a class="new" href="index.php?title=Mathieu Auton%C3%A8s&amp;action=edit&amp;redlink=1.html" title="Mathieu Autonès (page does not exist)">Mathieu Autonès</a>, <a class="new" href="index.php?title=Aryel Beck&amp;action=edit&amp;redlink=1.html" title="Aryel Beck (page does not exist)">Aryel Beck</a>, <a class="new" href="index.php?title=Phillippe Camacho&amp;action=edit&amp;redlink=1.html" title="Phillippe Camacho (page does not exist)">Phillippe Camacho</a>, <a class="new" href="index.php?title=Nicolas Lassabe&amp;action=edit&amp;redlink=1.html" title="Nicolas Lassabe (page does not exist)">Nicolas Lassabe</a>, <a class="new" href="index.php?title=Herv%C3%A9 Luga&amp;action=edit&amp;redlink=1.html" title="Hervé Luga (page does not exist)">Hervé Luga</a>, <a class="new" href="index.php?title=Fran%C3%A7ois Scharffe&amp;action=edit&amp;redlink=1.html" title="François Scharffe (page does not exist)">François Scharffe</a> (<b>2004</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-24650-3 1.html" rel="nofollow">Evaluation of Chess Position by Modular Neural network Generated by Genetic Algorithm</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/eurogp/eurogp2004.html.html#AutonesBCLLS04" rel="nofollow">EuroGP 2004</a></li></ul>
+<h1><span class="mw-headline" id="Abstract">Abstract</span></h1>
+<table class="wikitable">
+<tr>
+<td>  In this article we present our chess engine Tempo. One of the major difficulties for this type of program lies in the function for evaluating game positions. This function is composed of a large number of parameters which have to be determined and then adjusted. We propose an alternative which consists in replacing this function by an artificial neuron network (ANN). Without topological knowledge of this complex network, we use the evolutionist methods for its inception, thus enabling us to obtain, among other things, a modular network. Finally, we present our results:
+<ul><li> Reproduction of the <a href="Combinatorial Logic.html#XOR" title="Combinatorial Logic">XOR function</a> which <a href="Neural Networks.html#AIWinter" title="Neural Networks">validates</a> the method used</li>
+<li> Generation of an evaluation function </li></ul>
+</td></tr></table>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=358770" rel="nofollow">Presentation for a neural net learning chess program</a> by <a href="Dann Corbit.html" title="Dann Corbit">Dann Corbit</a>, <a href="CCC.html" title="CCC">CCC</a>, April 06, 2004</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Tempo" rel="nofollow">Tempo from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tempo_%28disambiguation%29" rel="nofollow">Tempo (disambiguation) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tempo_%28chess%29" rel="nofollow">Tempo (chess) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tempo_%28app%29" rel="nofollow">Tempo (app) from Wikipedia</a></li>
+<li> <a href="Category:Baden Powell.html" title="Category:Baden Powell">Baden Powell</a> - <a class="external text" href="http://www.allmusic.com/album/tempo-feliz-mw0000952642.html" rel="nofollow">Tempo Feliz</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/3dFOhMaAwKs?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">cropped from <a class="external text" href="https://commons.wikimedia.org/wiki/File:Dragon_trees.jpg" rel="nofollow">Fractal trees</a> by <a class="external text" href="https://commons.wikimedia.org/wiki/Template:Solkoll" rel="nofollow">Solkoll</a>. The images of the trees was generated from using a <a class="external text" href="https://en.wikipedia.org/wiki/L-system" rel="nofollow">L-system</a>. The <a class="external text" href="https://commons.wikimedia.org/wiki/Fractal" rel="nofollow">fractal</a> used is a varied <a class="external text" href="https://en.wikipedia.org/wiki/Dragon_curve" rel="nofollow">dragon curve</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a>, <a class="external text" href="https://en.wikipedia.org/wiki/L-system" rel="nofollow">L-system from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Egbert Boers&amp;action=edit&amp;redlink=1.html" title="Egbert Boers (page does not exist)">Egbert Boers</a>, <a class="new" href="index.php?title=Herman Kuiper&amp;action=edit&amp;redlink=1.html" title="Herman Kuiper (page does not exist)">Herman Kuiper</a> (<b>1992</b>). <i>Biological metaphors and the design of modular artificial neural networks</i>. Master’s thesis, <a href="Leiden University.html" title="Leiden University">Leiden University</a>, <a class="external text" href="http://liacs.leidenuniv.nl/assets/PDF/boers-kuiper.92.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="new" href="index.php?title=Mathieu Auton%C3%A8s&amp;action=edit&amp;redlink=1.html" title="Mathieu Autonès (page does not exist)">Mathieu Autonès</a>, <a class="new" href="index.php?title=Aryel Beck&amp;action=edit&amp;redlink=1.html" title="Aryel Beck (page does not exist)">Aryel Beck</a>, <a class="new" href="index.php?title=Phillippe Camacho&amp;action=edit&amp;redlink=1.html" title="Phillippe Camacho (page does not exist)">Phillippe Camacho</a>, <a class="new" href="index.php?title=Nicolas Lassabe&amp;action=edit&amp;redlink=1.html" title="Nicolas Lassabe (page does not exist)">Nicolas Lassabe</a>, <a class="new" href="index.php?title=Herv%C3%A9 Luga&amp;action=edit&amp;redlink=1.html" title="Hervé Luga (page does not exist)">Hervé Luga</a>, <a class="new" href="index.php?title=Fran%C3%A7ois Scharffe&amp;action=edit&amp;redlink=1.html" title="François Scharffe (page does not exist)">François Scharffe</a> (<b>2004</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/978-3-540-24650-3 1.html" rel="nofollow">Evaluation of Chess Position by Modular Neural network Generated by Genetic Algorithm</a></i>. <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/eurogp/eurogp2004.html.html#AutonesBCLLS04" rel="nofollow">EuroGP 2004</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722011121
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.068 seconds
+Real time usage: 0.800 seconds
+Preprocessor visited node count: 74/1000000
+Preprocessor generated node count: 174/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:3903-0!canonical and timestamp 20240722011120 and revision id 16788
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Tempo_(engine)&amp;oldid=16788">https://www.chessprogramming.org/index.php?title=Tempo_(engine)&amp;oldid=16788</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Experimental.html" title="Category:Experimental">Experimental</a></li><li><a href="Category:NN.html" title="Category:NN">NN</a></li><li><a href="Category:Baden Powell.html" title="Category:Baden Powell">Baden Powell</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Tempo+%28engine%29&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Tempo (engine).html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Tempo (engine)&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Tempo (engine).html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Tempo (engine)&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Tempo (engine)&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Tempo (engine).html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Tempo (engine).html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Tempo (engine)&amp;oldid=16788.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Tempo (engine)&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 31 December 2019, at 19:14.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Tempo_(engine)&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.068","walltime":"0.800","ppvisitednodes":{"value":74,"limit":1000000},"ppgeneratednodes":{"value":174,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722011121","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

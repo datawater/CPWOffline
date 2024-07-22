@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Checks and Pinned Pieces (Bitboards) - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Checks_and_Pinned_Pieces_(Bitboards)","wgTitle":"Checks and Pinned Pieces (Bitboards)","wgCurRevisionId":26410,"wgRevisionId":26410,"wgArticleId":1140,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Checks_and_Pinned_Pieces_(Bitboards)","wgRelevantArticleId":1140,"wgRequestId":"Zp7DMs@utCIUdSQUVimlHgAAAAU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Checks_and_Pinned_Pieces_Bitboards rootpage-Checks_and_Pinned_Pieces_Bitboards skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Checks and Pinned Pieces (Bitboards)</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * Checks and Pinned Pieces</b>
+</p><p>This is about whether the <a href="King.html" title="King">king</a> is in <a href="Check.html" title="Check">check</a>. If so, one likely uses a specialized check evasion <a href="Move Generation.html" title="Move Generation">move generator</a>. One may also trigger search <a href="Extensions.html" title="Extensions">extensions</a> - based on the king is in check - or based on the check evasion move generator only reports one valid move. Related to determining <a href="Discovered Check.html" title="Discovered Check">discovered check</a> is to look for <a href="Pin.html#AbsolutePin" title="Pin">absolute pins</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Checks"><span class="tocnumber">1</span> <span class="toctext">Checks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#On the Fly"><span class="tocnumber">1.1</span> <span class="toctext">On the Fly</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#By Move"><span class="tocnumber">1.2</span> <span class="toctext">By Move</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Direct Check"><span class="tocnumber">1.2.1</span> <span class="toctext">Direct Check</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Discovered Check"><span class="tocnumber">1.2.2</span> <span class="toctext">Discovered Check</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Absolute Pins"><span class="tocnumber">2</span> <span class="toctext">Absolute Pins</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Opposite Ray-Directions"><span class="tocnumber">3</span> <span class="toctext">Opposite Ray-Directions</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Checks">Checks</span></h1>
+<p>Whether the king is in check may be determined on the fly by looking up attacks to the king square - or based on the last move made by the other, probably checking side. Another option is to determine check giving moves already at generation time, and to flag moves accordantly.
+<span id="ChecksOnTheFly"></span>
+</p>
+<h2><span class="mw-headline" id="On_the_Fly">On the Fly</span></h2>
+<p>Whether a king is in check can be determined by the attacked-routine mentioned in <a href="Square Attacked By.html#AnyAttackBySide" title="Square Attacked By">Square Attacked By</a>. We pass the square of the king and opposite <a href="Color.html" title="Color">color</a> for the potential attackers.
+</p><p>If one needs the set of attackers, either empty, single or double populated - one likely better relies on a specialized <a href="Square Attacked By.html#ByAllPieces" title="Square Attacked By">attacksTo-routine</a> for each side, e.g. as member of the <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">standard bitboard board-definition</a>:
+</p>
+<pre>
+U64 CBoard::attacksToKing(enumSquare squareOfKing, enumColor colorOfKing) {
+   U64 opPawns, opKnights, opRQ, opBQ;
+   opPawns     = pieceBB[nBlackPawn   - colorOfKing];
+   opKnights   = pieceBB[nBlackKnight - colorOfKing];
+   opRQ = opBQ = pieceBB[nBlackQueen  - colorOfKing];
+   opRQ       |= pieceBB[nBlackRook   - colorOfKing];
+   opBQ       |= pieceBB[nBlackBishop - colorOfKing];
+   return (arrPawnAttacks[colorOfKing][squareOfKing] &amp; opPawns)
+        | (arrKnightAttacks[squareOfKing]            &amp; opKnights)
+        | (bishopAttacks (occupiedBB, squareOfKing)  &amp; opBQ)
+        | (rookAttacks   (occupiedBB, squareOfKing)  &amp; opRQ)
+        ;
+}
+</pre>
+<h2><span class="mw-headline" id="By_Move">By Move</span></h2>
+<p>Another idea is to determine the check inside the search-routine by the last <a href="Moves.html" title="Moves">move</a> done by the opponent. It might be a direct or discovered <a href="Check.html" title="Check">check</a> - or in case of <a href="Double Check.html" title="Double Check">double check</a>, both. With bitboards the possible savings to determine checks by last move seems negligible - and one probably better relies on the branch-less <a href="Checks and Pinned Pieces (Bitboards).html#ChecksOnTheFly" title="Checks and Pinned Pieces (Bitboards)">on the fly solution</a>, since we may reuse the rook-wise and bishop-wise attacks for other purposes - like determining absolute pinned pieces, kingsafety-evaluation, and/or whether the opponent side threatens checks or discovered checks.
+</p>
+<h3><span class="mw-headline" id="Direct_Check">Direct Check</span></h3>
+<p>For the direct check we may use the routine mentioned in <a href="Square Attacked By.html#AttackedByPieceOnSquare" title="Square Attacked By">Square Attacked By</a>:
+</p>
+<pre>
+if ( isAttacked(squareOfKing, move.to, move.piece(), occupiedBB) ) -&gt; direct check
+</pre>
+<h3><span class="mw-headline" id="Discovered_Check">Discovered Check</span></h3>
+<p>One solution is to determine the <a href="Direction.html" title="Direction">direction</a> between the <a href="Origin Square.html" title="Origin Square">from-square</a> and the king square (e.g. by 0x88 difference). If both squares share a common line, one calls an appropriate sliding ray- or line-attack getter with king square and occupancy, to look whether this set intersects the possible opponing sliders of that ray. One also has to prove, whether a possible true result was not caused by a direct check of a sliding capture.
+<span id="AbsolutePins"></span>
+</p>
+<h1><span class="mw-headline" id="Absolute_Pins">Absolute Pins</span></h1>
+<p>To detect <a href="Pin.html#AbsolutePin" title="Pin">absolute pins</a> is necessary for <a href="Legal Move.html" title="Legal Move">legal</a> <a href="Move Generation.html" title="Move Generation">move generation</a> and may be considered in <a href="Evaluation.html" title="Evaluation">evaluation</a>. While there are different approaches, the most common for programs based on single sliding piece attacks rather than direction wise set-wise attack getter, relies on the <a href="X-ray Attacks (Bitboards).html#ModifyingOccupancy" title="X-ray Attacks (Bitboards)">xrayRookAttacks</a> or <a href="X-ray Attacks (Bitboards).html#ModifyingOccupancy" title="X-ray Attacks (Bitboards)">xrayBishopAttacks</a> routines - called with square of own king and own pieces as blockers. An <a href="Square Attacked By.html#Obstructed" title="Square Attacked By">in-between lookup</a> (Obstructed) determines the set of pinned pieces while <a href="Bitboard Serialization.html" title="Bitboard Serialization">traversing</a> the pinning pieces <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>.
+</p>
+<pre>
+pinned = 0;
+pinner = xrayRookAttacks(occupiedBB, ownPieces, squareOfKing) &amp; opRQ;
+while ( pinner ) {
+   int sq  = bitScanForward(pinner);
+   pinned |= obstructed(sq, squareOfKing) &amp; ownPieces;
+   pinner &amp;= pinner - 1;
+}
+pinner = xrayBishopAttacks(occupiedBB, ownPieces, squareOfKing) &amp; opBQ;
+while ( pinner ) {
+   int sq  = bitScanForward(pinner);
+   pinned |= obstructed(sq, squareOfKing) &amp; ownPieces;
+   pinner &amp;= pinner - 1;
+}
+</pre>
+<p><span id="OppositeRay"></span>
+</p>
+<h1><span class="mw-headline" id="Opposite_Ray-Directions">Opposite Ray-Directions</span></h1>
+<p>Another idea to determine absolute pins as well as distant check block-targets, or possible discovered check origins, is to apply disjoint direction-wise attacks, as demonstrated in the <a href="DirGolem.html" title="DirGolem">DirGolem</a> proposal, where this technique is used for all eight ray-directions. The intersection of direction attacks of potential pinning sliding pieces with the opposite ray-direction attacks of the king treated as sliding super piece, gains enough information if further intersected by empty squares, own, or opponent pieces. For instance as illustrated with a black rook and white king on the same rank, with no, one and two pieces inbetween:
+</p><p>No obstruction, king in check. In-between intersection consists of empty squares as target set to block the distant check:
+</p>
+<pre>
+     . r . . . . K .     
+r-&gt;  . . 1 1 1 1 1 .      
+&lt;-K  . 1 1 1 1 1 . .
+&amp;    . . 1 1 1 1 . .  
+</pre>
+<p>One piece in-between. Intersection leaves a pinned piece if of king color, otherwise a possible discovered checker:
+</p>
+<pre>
+     . r . . x . K .  
+r-&gt;  . . 1 1 1 . . .             
+&lt;-K  . . . . 1 1 . .
+&amp;    . . . . 1 . . .
+</pre>
+<p>Two (or more) pieces in-between. Intersection is null:
+</p>
+<pre>
+      . r . x x . K .  
+r-&gt;   . . 1 1 . . . .
+&lt;-K   . . . . 1 1 . .
+&amp;     . . . . . . . .   
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Check.html" title="Check">Check</a></li>
+<li> <a href="DirGolem.html" title="DirGolem">DirGolem</a></li>
+<li> <a href="Discovered Check.html" title="Discovered Check">Discovered Check</a></li>
+<li> <a href="Double Check.html" title="Double Check">Double Check</a></li>
+<li> <a href="Pin.html" title="Pin">Pin</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334869" rel="nofollow">Fast check detection in bitboard engine</a> by <a href="Jean-Francois Romang.html" title="Jean-Francois Romang">Jean-Francois Romang</a>, <a href="CCC.html" title="CCC">CCC</a>, December 10, 2003</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=6064&amp;p=29127.html" rel="nofollow">Bitboards and inCheck</a> by <a href="Andreas Guettinger.html" title="Andreas Guettinger">Andreas Guettinger</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, January 03, 2007</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=22550.html" rel="nofollow">Bitboard of Pinned Pieces</a> by <a href="Grant Osborne.html" title="Grant Osborne">Grant Osborne</a>, <a href="CCC.html" title="CCC">CCC</a>, July 24, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41351.html" rel="nofollow">Check detection and move generation using bitboards</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, December 06, 2011</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79617" rel="nofollow">Pinned Pieces With Bitboards</a> by Andrew Zhuo, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2022</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79617&amp;start=2" rel="nofollow">Re: Pinned Pieces With Bitboards</a> by tcusr, <a href="CCC.html" title="CCC">CCC</a>, April 01, 2022</span>
+</li>
+</ol></div>
+<p><a href="Bitboards.html" title="Bitboards">Up one Level</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722081309
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.009 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 114/1000000
+Preprocessor generated node count: 220/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1140-0!canonical and timestamp 20240722081309 and revision id 26410
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Checks_and_Pinned_Pieces_(Bitboards)&amp;oldid=26410">https://www.chessprogramming.org/index.php?title=Checks_and_Pinned_Pieces_(Bitboards)&amp;oldid=26410</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Checks+and+Pinned+Pieces+%28Bitboards%29&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Checks and Pinned Pieces (Bitboards).html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Checks and Pinned Pieces (Bitboards)&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Checks and Pinned Pieces (Bitboards).html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Checks and Pinned Pieces (Bitboards)&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Checks and Pinned Pieces (Bitboards)&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Checks and Pinned Pieces (Bitboards).html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Checks and Pinned Pieces (Bitboards).html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Checks and Pinned Pieces (Bitboards)&amp;oldid=26410.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Checks and Pinned Pieces (Bitboards)&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 4 April 2022, at 12:13.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Checks_and_Pinned_Pieces_(Bitboards)&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.009","walltime":"0.009","ppvisitednodes":{"value":114,"limit":1000000},"ppgeneratednodes":{"value":220,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722081309","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

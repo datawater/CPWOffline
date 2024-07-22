@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CPW-Engine com - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"CPW-Engine_com","wgTitle":"CPW-Engine com","wgCurRevisionId":9308,"wgRevisionId":9308,"wgArticleId":4854,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"CPW-Engine_com","wgRelevantArticleId":4854,"wgRequestId":"Zp7DSEKfcgdPZR8tVSrqawAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CPW-Engine_com rootpage-CPW-Engine_com skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">CPW-Engine com</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * <a href="CPW-Engine.html" title="CPW-Engine">CPW-Engine</a> * com</b>
+</p>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<p>This part of the engine deals with the communication with the <a href="GUI.html" title="GUI">GUI</a>.The supported GUI formats are<a href="Chess Engine Communication Protocol.html" title="Chess Engine Communication Protocol"> Xboard</a> and <a href="UCI.html" title="UCI">UCI</a> Protocol.
+</p><p>In the initialization process, if the engine is started through a program using one of these protocols, they identify themselves with "xboard" and "uci" respectively.In the com() function the variable mode is then set to store the protocol we communicate with.
+</p><p>com() is always called when the engine wants to check whether there is any new user input.gets(command) copies the input into command and returns true in case there has been a message.
+</p><p>The next step is that the commands get executed.This is now either done in com_xboard() or com_uci() depending on the GUI we are communicating with.Should we be running the engine without any GUI(e.g.through the command window for debugging), that means mode is set to 0, some basic commands get executed in the com() function.
+</p><p><br/>
+</p>
+<h1><span class="mw-headline" id="Code">Code</span></h1>
+<pre>
+
+#include "stdafx.h"
+#include "transposition.h"
+
+#include &lt;windows.h&gt;
+
+
+enum etask {
+  TASK_NOTHING,
+  TASK_SEARCH,
+  TASK_PONDER
+} task = TASK_NOTHING;
+
+
+enum eproto {
+  PROTO_NOTHING,
+  PROTO_XBOARD,
+  PROTO_UCI
+} mode = PROTO_NOTHING;
+
+int debug = 0;
+
+int pipe;
+HANDLE hstdin;
+
+int com_init() {
+
+  unsigned long dw;
+  hstdin = GetStdHandle(STD_INPUT_HANDLE);
+  pipe = !GetConsoleMode(hstdin, &amp;dw);
+
+  if (!pipe) {
+    SetConsoleMode(hstdin, dw&amp;~(ENABLE_MOUSE_INPUT | ENABLE_WINDOW_INPUT));
+    FlushConsoleInputBuffer(hstdin);
+  }
+  else {
+    setvbuf(stdin, NULL, _IONBF, 0);
+    setvbuf(stdout, NULL, _IONBF, 0);
+  }
+
+  /* default search settings */
+  chronos.movetime = 5000;
+  chronos.flags = FMOVETIME;
+
+  printWelcome();
+
+  return 0;
+}
+
+int input() {
+
+  unsigned long dw = 0;
+
+  if (task == TASK_NOTHING) return 1;
+
+  if (stdin-&gt;_cnt &gt; 0) return 1;
+
+  if (pipe) {
+    if (!PeekNamedPipe(hstdin, 0, 0, 0, &amp;dw, 0)) return 1;
+    return dw;
+  }
+  else {
+    GetNumberOfConsoleInputEvents(hstdin, &amp;dw);
+    if (dw &gt; 1) task = TASK_NOTHING;
+  }
+
+  return 0;
+}
+
+
+int com() {
+
+  char command[65536];
+
+  if (!input()) return 0;
+
+  /* unwind the search-stack first */
+  if (task == TASK_SEARCH) {
+    task = TASK_NOTHING;
+    return 0;
+  }
+
+  gets(command);
+
+  switch (mode) {
+  case PROTO_XBOARD:	com_xboard(command);  break;
+  case PROTO_UCI:	com_uci(command);     break;
+  case PROTO_NOTHING: com_nothing(command); break;
+  }
+
+  return 0;
+}
+
+int com_nothing(char * command) {
+
+  if (!strcmp(command, "xboard")) com_xboard(command);
+  else if (!strcmp(command, "uci")) com_uci(command);
+  else if (!strncmp(command, "perft", 5)) perft_start(command);
+  else if (!strncmp(command, "bench", 5)) util_bench(command);
+  else if (!strcmp(command, "eval")) printEval();
+  else if (!strcmp(command, "stat")) printStats();
+  else if (!strcmp(command, "d")) board_display();
+  else if (!strcmp(command, "new")) board_loadFromFen(STARTFEN);
+  else if (!strncmp(command, "pos", 3)) board_loadFromFen(command + 4);
+  else if (!strcmp(command, "go")) time_nothing_go();
+  else if (!strcmp(command, "quit")) exit(0);
+  else if (!strcmp(command, "help")) printHelp();
+  else if (com_ismove(command)) {
+    if (algebraic_moves(command))
+      time_nothing_go();
+    else
+      printf("Sorry, this is not a legal move\n");
+  }
+  else if (!strncmp(command, "st", 2)) {
+    sscanf(command, "st %d", &amp;chronos.movetime);
+    chronos.movetime *= 1000;
+    chronos.flags = FMOVETIME;
+  }
+  else if (!strncmp(command, "sd", 2)) {
+    sscanf(command, "sd %d", &amp;chronos.depth);
+    chronos.flags = FDEPTH;
+  }
+  else if (command[0] == '\n') {}
+  else {
+    strcat(command, " - UNKNOWN COMMAND (type 'help' for a list of commands)");
+    com_send(command);
+  }
+
+  return 0;
+}
+
+int com_xboard(char * command) {
+
+  if (!strcmp(command, "xboard"))
+    mode = PROTO_XBOARD;
+
+  if (!strcmp(command, "new"))
+    board_loadFromFen(STARTFEN);
+
+  else if (!strcmp(command, "force"))
+    task = TASK_NOTHING;
+
+  else if (!strcmp(command, "white"))
+    sd.myside = WHITE;
+
+  else if (!strcmp(command, "black"))
+    sd.myside = BLACK;
+
+  else if (!strncmp(command, "st", 2)) {
+    sscanf(command, "st %d", &amp;chronos.movetime);
+    chronos.movetime *= 1000;
+    chronos.flags = FMOVETIME;
+  }
+
+  else if (!strncmp(command, "sd", 2)) {
+    sscanf(command, "sd %d", &amp;chronos.depth);
+    chronos.flags = FDEPTH;
+  }
+
+  else if (!strncmp(command, "time", 4)) {
+    sscanf(command, "time %d", &amp;chronos.time[sd.myside]);
+    chronos.flags = FTIME;
+  }
+
+  else if (!strncmp(command, "otim", 4)) {
+    sscanf(command, "otim %d", &amp;chronos.time[!sd.myside]);
+    chronos.flags = FTIME;
+  }
+
+  else if (!strcmp(command, "go"))
+    time_xboard_go();
+
+  else if (!strcmp(command, "hint")) {
+    // hint
+  }
+
+  else if (!strcmp(command, "undo")) {
+    // undo
+  }
+
+  else if (!strcmp(command, "remove")) {
+    // remove
+  }
+
+  else if (!strcmp(command, "post")) {
+    // post
+  }
+
+  else if (!strcmp(command, "nopost")) {
+    // nopost
+  }
+
+  else if (!strcmp(command, "quit")) {
+    exit(0);
+  }
+
+  else if (com_ismove(command)) {
+    algebraic_moves(command);
+    time_xboard_go();
+  }
+
+  return 0;
+}
+
+
+int com_uci(char * command) {
+
+  if (!strcmp(command, "uci")) {
+    mode = PROTO_UCI;
+
+    com_send("id name CPW-Engine 1.1");
+    com_send("id author Computer Chess Wiki");
+
+    printf("option name Hash type spin default 64 min 1 max 1024\n");
+    // send options
+
+    com_send("uciok");
+  }
+
+  if (!strcmp(command, "isready"))
+    com_send("readyok");
+
+  if (!strncmp(command, "setoption", 9)) {
+    char name[256];
+    char value[256];
+
+    sscanf(command, "setoption name %s value %s", &amp;name, &amp;value);
+
+    if (!strcmp(name, "Hash")) {
+      int val;
+      sscanf(value, "%d", &amp;val);
+      tt_setsize(val &lt;&lt; 20);
+      ttpawn_setsize(val &lt;&lt; 18);
+    }
+  }
+
+  if (!strcmp(command, "ucinewgame")) {}
+
+  if (!strncmp(command, "position", 8)) {
+    //position [fen | startpos] [moves ...]
+
+    if (!strncmp(command, "position fen", 12)) {
+      board_loadFromFen(command + 13);
+    }
+    else {
+      board_loadFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    }
+
+    char * moves = strstr(command, "moves");
+    if (moves) algebraic_moves(moves + 6);
+  }
+
+  if (!strncmp(command, "go", 2))
+    time_uci_go(command);
+
+  if (!strncmp(command, "debug", 5))
+    debug = strcmp(command, "debug off");
+
+  if (!strcmp(command, "ponderhit"))
+    time_uci_ponderhit();
+
+  if (!strcmp(command, "stop"))
+    task = TASK_NOTHING;
+
+  if (!strcmp(command, "quit"))
+    exit(0);
+
+  return 0;
+}
+
+
+int com_send(char * command) {
+  printf("%s\n", command);
+  return 0;
+}
+
+int com_sendmove(smove m) {
+
+  int promotion = 0;
+  char parray[5] = { 0,'q','r','b','n' };
+
+  char command[20];
+  char move[6];
+
+  switch (mode) {
+  case PROTO_XBOARD: strcpy(command, "move "); break;
+  case PROTO_UCI:    strcpy(command, "bestmove "); break;
+  default: strcpy(command, "CPW: ");
+  }
+
+  convert_0x88_a(m.from, move);
+  convert_0x88_a(m.to, move + 2);
+
+  //Promotion piece
+  if (m.piece_to != m.piece_from) {
+    promotion = m.piece_to;
+  }
+  move[4] = parray[promotion];
+  move[5] = 0;
+
+  strcat(command, move);
+
+  com_send(command);
+
+  /* in xboard and nothing actually do the move on the board */
+  if (mode == PROTO_XBOARD || mode == PROTO_NOTHING)
+    move_make(m);
+
+  return 0;
+}
+
+int com_ismove(char * command) {
+  return (command[0] &gt;= 'a' &amp;&amp; command[0] &lt;= 'h' &amp;&amp;
+    command[1] &gt;= '1' &amp;&amp; command[1] &lt;= '8' &amp;&amp;
+    command[2] &gt;= 'a' &amp;&amp; command[2] &lt;= 'h' &amp;&amp;
+    command[3] &gt;= '1' &amp;&amp; command[3] &lt;= '8' &amp;&amp;
+    (command[4] == ' ' || command[4] == '\n' || command[4] == 0 ||
+      command[4] == '-' ||
+      command[4] == 'q' || command[4] == 'r' || command[4] == 'b' || command[4] == 'n'));
+
+  /***************************************************************
+  *  command[4] might be:                                        *
+  *                                                              *
+  *  (a) any kind of a blank space                               *
+  *  (b) '-' or any other mark used in opening book processing   *
+  *  (c) first letter of a name of a promoted piece              *
+  ***************************************************************/
+}
+
+</pre>
+<p><b><a href="CPW-Engine.html" title="CPW-Engine">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722071315
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.003 seconds
+Real time usage: 0.004 seconds
+Preprocessor visited node count: 10/1000000
+Preprocessor generated node count: 32/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:4854-0!canonical and timestamp 20240722071315 and revision id 9308
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=CPW-Engine_com&amp;oldid=9308">https://www.chessprogramming.org/index.php?title=CPW-Engine_com&amp;oldid=9308</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=CPW-Engine+com&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="CPW-Engine com.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:CPW-Engine com&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="CPW-Engine com.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=CPW-Engine com&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=CPW-Engine com&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/CPW-Engine com.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/CPW-Engine com.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=CPW-Engine com&amp;oldid=9308.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=CPW-Engine com&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 December 2018, at 16:05.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=CPW-Engine_com&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.003","walltime":"0.004","ppvisitednodes":{"value":10,"limit":1000000},"ppgeneratednodes":{"value":32,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722071315","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":49});});</script>
+</body>
+</html>

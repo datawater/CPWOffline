@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Selectivity - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Selectivity","wgTitle":"Selectivity","wgCurRevisionId":19641,"wgRevisionId":19641,"wgArticleId":961,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Tony Paeleman","Émile Parisien","Vincent Peirani"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Selectivity","wgRelevantArticleId":961,"wgRequestId":"Zp7Dsl0xYjdSHhMDafgtNAAAAAI","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Selectivity rootpage-Selectivity skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Selectivity</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Search.html" title="Search">Search</a> * Selectivity</b>
+</p><p><b>Selectivity</b> gives a whiff of <a href="Type B Strategy.html" title="Type B Strategy">Shannon's Type B</a> search to <a href="Type A Strategy.html" title="Type A Strategy">Shannon's Type A</a> or <a href="Brute-Force.html" title="Brute-Force">brute-force</a>. The goal is to search "interesting" and forced branches which are or are likely to become part of the <a href="Principal Variation.html" title="Principal Variation">principal variation</a> deeper than nominal, but to reduce uninteresting branches. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Extensions"><span class="tocnumber">1</span> <span class="toctext">Extensions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pruning"><span class="tocnumber">2</span> <span class="toctext">Pruning</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Reductions"><span class="tocnumber">3</span> <span class="toctext">Reductions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#1970 ..."><span class="tocnumber">5.1</span> <span class="toctext">1970 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#1980 ..."><span class="tocnumber">5.2</span> <span class="toctext">1980 ...</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#1990 ..."><span class="tocnumber">5.3</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">5.4</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2010 ..."><span class="tocnumber">5.5</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#1998 ..."><span class="tocnumber">6.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2000 ... 2"><span class="tocnumber">6.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ... 2"><span class="tocnumber">6.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2020 ..."><span class="tocnumber">6.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Extensions"><a href="Extensions.html" title="Extensions">Extensions</a></span></h1>
+<ul><li> <a href="Botvinnik-Markoff Extension.html" title="Botvinnik-Markoff Extension">Botvinnik-Markoff Extension</a></li>
+<li> <a href="Capture Extensions.html" title="Capture Extensions">Capture Extensions</a></li>
+<li> <a href="Check Extensions.html" title="Check Extensions">Check Extensions</a></li>
+<li> <a href="Mate Threat Extensions.html" title="Mate Threat Extensions">Mate Threat Extensions</a></li>
+<li> <a href="One Reply Extensions.html" title="One Reply Extensions">One Reply Extensions</a></li>
+<li> <a href="Passed Pawn Extensions.html" title="Passed Pawn Extensions">Passed Pawn Extensions</a></li>
+<li> <a href="PV Extensions.html" title="PV Extensions">PV Extensions</a></li>
+<li> <a href="Recapture Extensions.html" title="Recapture Extensions">Recapture Extensions</a></li>
+<li> <a href="SEX Algorithm.html" title="SEX Algorithm">SEX Algorithm</a></li>
+<li> <a href="Singular Extensions.html" title="Singular Extensions">Singular Extensions</a></li></ul>
+<h1><span class="mw-headline" id="Pruning"><a href="Pruning.html" title="Pruning">Pruning</a></span></h1>
+<ul><li> <a href="AEL-Pruning.html" title="AEL-Pruning">AEL-Pruning</a></li>
+<li> <a href="Delta Pruning.html" title="Delta Pruning">Delta Pruning</a></li>
+<li> <a href="Enhanced Forward Pruning.html" title="Enhanced Forward Pruning">Enhanced Forward Pruning</a></li>
+<li> <a href="Futility Pruning.html" title="Futility Pruning">Futility Pruning</a></li>
+<li> <a href="History Leaf Pruning.html" title="History Leaf Pruning">History Leaf Pruning</a></li>
+<li> <a href="Mate Distance Pruning.html" title="Mate Distance Pruning">Mate Distance Pruning</a></li>
+<li> <a href="Futility Pruning.html#MoveCountBasedPruning" title="Futility Pruning">Move Count Based Pruning</a> (Late Move Pruning)</li>
+<li> <a href="Multi-Cut.html" title="Multi-Cut">Multi-Cut</a></li>
+<li> <a href="Null Move Pruning.html" title="Null Move Pruning">Null Move Pruning</a></li>
+<li> <a href="Parity Pruning.html" title="Parity Pruning">Parity Pruning</a></li>
+<li> <a href="ProbCut.html" title="ProbCut">ProbCut</a></li>
+<li> <a href="Reverse Futility Pruning.html" title="Reverse Futility Pruning">Reverse Futility Pruning</a></li>
+<li> <a href="Uncertainty Cut-Offs.html" title="Uncertainty Cut-Offs">Uncertainty Cut-Offs</a></li></ul>
+<h1><span class="mw-headline" id="Reductions"><a href="Reductions.html" title="Reductions">Reductions</a></span></h1>
+<ul><li> <a href="Fail-High Reductions.html" title="Fail-High Reductions">Fail-High Reductions</a> - FHR</li>
+<li> <a href="Late Move Reductions.html" title="Late Move Reductions">Late Move Reductions</a> - LMR</li>
+<li> <a href="Null Move Reductions.html" title="Null Move Reductions">Null Move Reductions</a></li>
+<li> <a href="RankCut.html" title="RankCut">RankCut</a></li>
+<li> <a href="Razoring.html" title="Razoring">Razoring</a></li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Bobby.html#StrategicQuiescenceSearch" title="Bobby">Bobby's Strategic Quiescence Search</a></li>
+<li> <a href="Tord Romstad.html#Video" title="Tord Romstad">Parallelism and Selectivity in Game Tree Search | Video</a>, Talk by <a href="Tord Romstad.html" title="Tord Romstad">Tord Romstad</a></li>
+<li> <a href="Quiescence Search.html" title="Quiescence Search">Quiescence Search</a></li>
+<li> <a href="Selective Search.html" title="Selective Search">Selective Search</a> (Magazine)</li>
+<li> <a href="WCCC 1986.html#Workshop" title="WCCC 1986">Selective Search versus Brute Force - Conference at WCCC 1986</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1970_...">1970 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Russell M. Church&amp;action=edit&amp;redlink=1.html" title="Russell M. Church (page does not exist)">Russell M. Church</a>, <a href="Kenneth W. Church.html" title="Kenneth W. Church">Kenneth W. Church</a> (<b>1977</b>). <i>Plans, Goals, and Search Strategies for the Selection of a Move in Chess</i>. <a href="Chess Skill in Man and Machine.html" title="Chess Skill in Man and Machine">Chess Skill in Man and Machine</a></li></ul>
+<h2><span class="mw-headline" id="1980_...">1980 ...</span></h2>
+<ul><li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a> (<b>1983</b>). <i>Searching to Variable Depth in Computer Chess.</i> Proceedings of <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/conf/ijcai/ijcai83.html.html" rel="nofollow">IJCAI 83</a>, pp. 760-762. Karlsruhe. <a class="external text" href="http://ijcai.org/Past%20Proceedings/IJCAI-83-VOL-2/PDF/039.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Don Beal.html" title="Don Beal">Don Beal</a> (<b>1986</b>). <i>Selective Search without Tears.</i> <a href="ICGA Journal.html#9 2" title="ICGA Journal">ICCA Journal, Vol. 9, No. 2</a></li>
+<li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a>, <a href="Marcus Wagner.html" title="Marcus Wagner">Marcus Wagner</a> (<b>1986</b>). <i>Selective Search versus Brute Force.</i> <a href="ICGA Journal.html#9 3" title="ICGA Journal">ICCA Journal, Vol. 9, No. 3</a></li>
+<li> <a href="David Levy.html" title="David Levy">David Levy</a>, <a href="David Broughton.html" title="David Broughton">David Broughton</a>, <a href="Mark Taylor.html" title="Mark Taylor">Mark Taylor</a> (<b>1989</b>). <i>The SEX Algorithm in Computer Chess</i>. <a href="ICGA Journal.html#12 1" title="ICGA Journal">ICCA Journal, Vol. 12, No. 1</a></li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a> (<b>1992</b>). <i>Experiments in Selective Search Extensions</i>. MSc. thesis, Department of Computing Science, <a href="University of Alberta.html" title="University of Alberta">University of Alberta</a>, <a class="external text" href="https://era.library.ualberta.ca/public/datastream/get/uuid:e4fbf48d-7603-490f-85cc-5497bbecf5a8/DS1" rel="nofollow">pdf</a></li>
+<li> <a href="Chun Ye.html" title="Chun Ye">Chun Ye</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>1992</b>). <i>Selective Extensions in Game-Tree Search</i>. <a href="3rd Computer Olympiad.html#Workshop" title="3rd Computer Olympiad">Heuristic Programming in AI 3</a></li>
+<li> <a href="David McAllester.html" title="David McAllester">David McAllester</a>, <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a> (<b>1993</b>). <i>Alpha-Beta Conspiracy Search</i>. <a class="external text" href="http://ttic.uchicago.edu/~dmcallester/abc.ps.html" rel="nofollow">ps (draft)</a> » <a class="new" href="index.php?title=Alpha-Beta Conspiracy Search&amp;action=edit&amp;redlink=1.html" title="Alpha-Beta Conspiracy Search (page does not exist)">Alpha-Beta Conspiracy Search</a></li>
+<li> <a class="new" href="index.php?title=Javier Ros Padilla&amp;action=edit&amp;redlink=1.html" title="Javier Ros Padilla (page does not exist)">Javier Ros Padilla</a> (<b>1994</b>). <i>Estimating Asymmetry and Selectivity in Chess Programs</i>. <a href="ICGA Journal.html#17 1" title="ICGA Journal">ICCA Journal, Vol. 17, No. 1</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></li>
+<li> <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a> (<b>1994</b>). <i><a class="external text" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=EJurXJ4AAAAJ&amp;cstart=40&amp;citation_for_view=EJurXJ4AAAAJ:TQgYirikUcIC" rel="nofollow">The Principle of Pressure in Chess</a></i>. TAINN 1994</li>
+<li> <a href="Lev Finkelstein.html" title="Lev Finkelstein">Lev Finkelstein</a>, <a href="Shaul Markovitch.html" title="Shaul Markovitch">Shaul Markovitch</a> (<b>1998</b>). <i><a class="external text" href="http://www.cs.technion.ac.il/%7Eshaulm/papers/abstracts/Finkelstein-1998-LPC.html.html" rel="nofollow">Learning to Play Chess Selectively by Acquiring Move Patterns.</a></i> <a href="ICGA Journal.html#21 2" title="ICGA Journal">ICCA Journal, Vol. 21, No. 2</a>, <a class="external text" href="http://www.cs.technion.ac.il/%7Eshaulm/papers/pdf/Finkelstein-Markovitch-icca1998.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Rainer Feldmann.html" title="Rainer Feldmann">Rainer Feldmann</a>, <a href="Burkhard Monien.html" title="Burkhard Monien">Burkhard Monien</a> (<b>1998</b>). <i><a class="external text" href="http://www2.cs.uni-paderborn.de/fachbereich/AG/monien/PUBLICATIONS/ABSTRACTS/FM T3E.html.html" rel="nofollow">Selective Game Tree Search on a Cray T3E</a></i>. <a class="external text" href="http://www2.cs.uni-paderborn.de/fachbereich/AG/monien/PUBLICATIONS/POSTSCRIPTS/FM T3E.ps.Z.html" rel="nofollow">ps</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Paul E. Utgoff.html" title="Paul E. Utgoff">Paul E. Utgoff</a>, <a href="Richard P. Cochran.html" title="Richard P. Cochran">Richard P. Cochran</a> (<b>2000</b>). <i><a class="external text" href="http://link.springer.com/chapter/10.1007/3-540-45579-5 1.html" rel="nofollow">A Least-Certainty Heuristic for Selective Search</a></i>. <a href="CG 2000.html" title="CG 2000">CG 2000</a>, <a class="external text" href="http://people.cs.umass.edu/~utgoff/papers/springer-lcf.pdf.html" rel="nofollow">pdf</a> » <a href="Richard P. Cochran.html#LCF" title="Richard P. Cochran">LCF</a></li>
+<li> <a href="Yngvi Bj%C3%B6rnsson.html" title="Yngvi Björnsson">Yngvi Björnsson</a>, <a href="Tony Marsland.html" title="Tony Marsland">Tony Marsland</a> (<b>2000</b>). <i>Selective Depth-First Search Methods</i>. in <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a>, <a href="Hiroyuki Iida.html" title="Hiroyuki Iida">Hiroyuki Iida</a> (eds.) (<b>2000</b>). <i>Games in AI Research</i>. <a href="Maastricht University.html" title="Maastricht University">Universiteit Maastricht</a>, <a class="external text" href="http://www.cs.ualberta.ca/%7Etony/RecentPapers/nec97w.pdf.html" rel="nofollow">pdf preprint</a></li>
+<li> <a href="Ulf Lorenz.html" title="Ulf Lorenz">Ulf Lorenz</a>, <a href="Burkhard Monien.html" title="Burkhard Monien">Burkhard Monien</a> (<b>2002</b>). <i><a class="external text" href="http://www.springerlink.com/content/f6b4wb6l63dpd0jv/.html" rel="nofollow">The Secret of Selective Game Tree Search, When Using Random-Error Evaluations</a></i>. Proceedings of 19th Annual Symposium on Theoretical Aspects of Computer Science (STACS)</li>
+<li> <a href="David McAllester.html" title="David McAllester">David McAllester</a>, <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a> (<b>2002</b>). <i>Alpha-Beta Conspiracy Search</i>. <a href="ICGA Journal.html#25 1" title="ICGA Journal">ICGA Journal, Vol. 25, No. 1</a> » <a class="new" href="index.php?title=Alpha-Beta Conspiracy Search&amp;action=edit&amp;redlink=1.html" title="Alpha-Beta Conspiracy Search (page does not exist)">Alpha-Beta Conspiracy Search</a></li>
+<li> <a href="Brian Sheppard.html" title="Brian Sheppard">Brian Sheppard</a> (<b>2004</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/11674399_1" rel="nofollow">Efficient Control of Selective Simulations</a></i>. <a href="CG 2004.html" title="CG 2004">CG 2004</a></li>
+<li> <a href="Brian Sheppard.html" title="Brian Sheppard">Brian Sheppard</a> (<b>2004</b>). <i>Efficient Control of Selective Simulations</i>. <a href="ICGA Journal.html#27 2" title="ICGA Journal">ICGA Journal, Vol. 27, No. 2</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup></li>
+<li> <a class="new" href="index.php?title=P%C3%A1lmi Skowronski&amp;action=edit&amp;redlink=1.html" title="Pálmi Skowronski (page does not exist)">Pálmi Skowronski</a> (<b>2009</b>). <i>Gradual Focus: A Method for Automated Feature Discovery in Selective Search</i>. M.Sc. thesis</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Eli David.html" title="Eli David">Omid David</a>, <a href="Moshe Koppel.html" title="Moshe Koppel">Moshe Koppel</a>, <a href="Nathan S. Netanyahu.html" title="Nathan S. Netanyahu">Nathan S. Netanyahu</a> (<b>2010</b>). <i>Optimizing Selective Search in Chess</i>. ICML - Workshop on Machine Learning and Games</li>
+<li> <a class="new" href="index.php?title=Maarten Schadd&amp;action=edit&amp;redlink=1.html" title="Maarten Schadd (page does not exist)">Maarten Schadd</a> (<b>2011</b>). <i>Selective Search in Games of Different Complexity</i>. Ph.D. Thesis. Department of Knowledge Engineering, <a href="Maastricht University.html" title="Maastricht University">Maastricht University</a> </li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=21017" rel="nofollow">A new selective heuristic?</a> by <a href="Frank Schneider.html" title="Frank Schneider">Frank Schneider</a>, <a href="CCC.html" title="CCC">CCC</a>, June 21, 1998 » <a href="Reductions.html" title="Reductions">Reductions</a></li></ul>
+<h2><span class="mw-headline" id="2000_..._2">2000 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/7b66bdec7f729fa7.html" rel="nofollow">Selective Searching</a> by Bob Durrett, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, November 19, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=267678" rel="nofollow">pruning vs extensions vs qsearch - are these all effectively the same?</a> by <a href="Scott Farrell.html" title="Scott Farrell">Scott Farrell</a>, <a href="CCC.html" title="CCC">CCC</a>, November 27, 2002</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=338851" rel="nofollow">Evaluation-based Reductions and/or Extensions</a> by <a href="Tom Likens.html" title="Tom Likens">Tom Likens</a>, <a href="CCC.html" title="CCC">CCC</a>, December 28, 2003</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=356488" rel="nofollow">extensions + reductions + pruning = confusion</a> by <a href="Johan de Koning.html" title="Johan de Koning">Johan de Koning</a>, <a href="CCC.html" title="CCC">CCC</a>, March 24, 2004 (was <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=356109" rel="nofollow">Shredder 8 secret: search depth?</a>)</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=4820.html" rel="nofollow">Extension - Reductions and threats</a> by <a href="Mark Lefler.html" title="Mark Lefler">mjlef</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, May 17, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=29905.html" rel="nofollow">Extensions/Reductions</a> by <a href="Luca Hemmerich.html" title="Luca Hemmerich">Luca Hemmerich</a>, <a href="CCC.html" title="CCC">CCC</a>, September 28, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=42677.html" rel="nofollow">Counting depth as a function of number of legal moves</a> by <a class="new" href="index.php?title=Pio Korinth&amp;action=edit&amp;redlink=1.html" title="Pio Korinth (page does not exist)">Pio Korinth</a>, <a href="CCC.html" title="CCC">CCC</a>, February 28, 2012 » <a href="Depth.html" title="Depth">Depth</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44686.html" rel="nofollow">Nullmove vs classic selective search</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, August 04, 2012 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45624.html" rel="nofollow">Houdini 3 reducing the depth feature</a> by Maurizio Maglio, <a href="CCC.html" title="CCC">CCC</a>, October 17, 2012 » <a href="Houdini.html" title="Houdini">Houdini</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51264.html" rel="nofollow">selective depth definition</a> by <a href="Uri Blass.html" title="Uri Blass">Uri Blass</a>, <a href="CCC.html" title="CCC">CCC</a>, February 13, 2014 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66298.html" rel="nofollow">Is modern chess software lossless or lossy?</a> by Meni Rosenfeld, <a href="CCC.html" title="CCC">CCC</a>, January 10, 2018 » <a href="Playing Strength.html" title="Playing Strength">Playing Strength</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=68082.html" rel="nofollow">Names of selectivity algorithms</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, July 26, 2018</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=70165.html" rel="nofollow">delaying tactics: prune or extend?</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2019 » <a href="Tactics.html" title="Tactics">Tactics</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=74170.html" rel="nofollow">Tactical search</a> by <a href="Alvaro Cardoso.html" title="Alvaro Cardoso">Alvaro Cardoso</a>, <a href="CCC.html" title="CCC">CCC</a>, June 13, 2020 » <a href="Tactics.html" title="Tactics">Tactics</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.vincent-peirani.com/projets.html" rel="nofollow">Living Being Quintet</a> - On the heights, <a class="external text" href="http://www.altitudejazz.com/programme-concerts-festival-jazz-hautes-alpes.html.html" rel="nofollow">Altitude Jazz Festival 2015</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:Vincent Peirani.html" title="Category:Vincent Peirani">Vincent Peirani</a>, <a class="new" href="index.php?title=Category:%C3%89mile Parisien&amp;action=edit&amp;redlink=1.html" title="Category:Émile Parisien (page does not exist)">Émile Parisien</a>, <a href="Category:Tony Paeleman.html" title="Category:Tony Paeleman">Tony Paeleman</a>, <a class="external text" href="http://www.julienherne.com/.html" rel="nofollow">Julien Herné</a>, <a class="external text" href="http://www.simonoviez.com/english/YoannSerraus.htm.html" rel="nofollow">Yoann Serra</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/xoaSRUrL8lE?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/5_dMbe0_juo/bXQQVYVEpykJ" rel="nofollow">ICCA Journal, Vol. 17, No. 1</a> by <a href="Jos Uiterwijk.html" title="Jos Uiterwijk">Jos Uiterwijk</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, May 02, 1994</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text">slightly revised version of the <a href="CG 2004.html" title="CG 2004">CG 2004</a> paper</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">Selective Search Techniques in REBEL (introduction) from <a href="Rebel.html#ProgrammerCorner" title="Rebel">Programmer Corner</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a></span>
+</li>
+</ol></div>
+<p><b><a href="Search.html" title="Search">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722011417
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.016 seconds
+Real time usage: 0.018 seconds
+Preprocessor visited node count: 118/1000000
+Preprocessor generated node count: 218/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:961-0!canonical and timestamp 20240722011417 and revision id 19641
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Selectivity&amp;oldid=19641">https://www.chessprogramming.org/index.php?title=Selectivity&amp;oldid=19641</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Tony Paeleman.html" title="Category:Tony Paeleman">Tony Paeleman</a></li><li><a class="new" href="index.php?title=Category:%C3%89mile Parisien&amp;action=edit&amp;redlink=1.html" title="Category:Émile Parisien (page does not exist)">Émile Parisien</a></li><li><a href="Category:Vincent Peirani.html" title="Category:Vincent Peirani">Vincent Peirani</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Selectivity&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Selectivity.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Selectivity&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Selectivity.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Selectivity&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Selectivity&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Selectivity.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Selectivity.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Selectivity&amp;oldid=19641.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Selectivity&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 25 June 2020, at 21:02.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Selectivity&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.018","ppvisitednodes":{"value":118,"limit":1000000},"ppgeneratednodes":{"value":218,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722011417","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

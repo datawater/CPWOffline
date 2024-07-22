@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Candidates (Bitboards) - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Candidates_(Bitboards)","wgTitle":"Candidates (Bitboards)","wgCurRevisionId":23797,"wgRevisionId":23797,"wgArticleId":1219,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak","Hans Kmoch","Industrial Heritage Trail"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Candidates_(Bitboards)","wgRelevantArticleId":1219,"wgRequestId":"Zp7DOAAL2SoIDHtirCviNgAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Candidates_Bitboards rootpage-Candidates_Bitboards skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Candidates (Bitboards)</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Pawn Pattern and Properties</a> * Candidates</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bc1"><img alt="" class="thumbimage" height="317" src="images/thumb/1/19/Designated.jpg/240px-Designated.jpg" srcset="/images/thumb/1/19/Designated.jpg/360px-Designated.jpg 1.5x, /images/thumb/1/19/Designated.jpg/480px-Designated.jpg 2x" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Designated.jpg.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - The Designated <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Candidates</b>,<br/>
+pawns that can force themselves to become <a href="Passed Pawn.html" title="Passed Pawn">passed pawns</a> simply with a series of pawn moves. Candidates are half-open pawns with no mechanical but dynamical obstructions. Specifially, the pawn must be on a half-open file, and the number of defender pawns that can help the pawn advance are greater than or equal to the number of pawns which attack the pawn or squares in front of it. 
+<span id="Faker"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Candidate and Faker"><span class="tocnumber">1</span> <span class="toctext">Candidate and Faker</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Advanced Candidates"><span class="tocnumber">1.1</span> <span class="toctext">Advanced Candidates</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Less Advanced"><span class="tocnumber">1.2</span> <span class="toctext">Less Advanced</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#The Sneaker"><span class="tocnumber">2</span> <span class="toctext">The Sneaker</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Candidate_and_Faker">Candidate and Faker</span></h1>
+<p>While the intersection of the <a href="Pawn Spans.html" title="Pawn Spans">frontspan</a> with opposing pawns is empty, the intersection of <a href="Attack Spans.html" title="Attack Spans">front attackspans</a> with opposing pawns is not (otherwise it would already a passer). The opposing pawns as member of the front attackspan(s), stand sentinel over one or more squares in the <a href="Pawn Fills.html" title="Pawn Fills">frontfill</a> of the open pawn, and are about to <b>capture</b> the open pawn, if it may advance into - or already is - a <a href="Pawn Levers (Bitboards).html" title="Pawn Levers (Bitboards)">lever</a>. Those opposing pawns are called <a href="Sentry.html" title="Sentry">sentries</a>.
+</p><p>If the open pawn has one or more <b>helper-pawns</b> on adjacent files, which are able to <b>recapture</b> the <b>sentry</b>, the candidate is a real one and is guaranteed to force a passer. Otherwise, without enough support from helpers, the candidate is only a <a href="Faker.html" title="Faker">faker</a>.
+</p><p>The following diagrams shows advanced candidates and fakers, assuming black to move:
+</p>
+<pre>
+candidates b6, f4   fakers -
+sentries   c7, g2   more sentries
+helper     c5, g4   than helpers
+. . . . | . . .     . . . . | . . .
+. . b . . . . .     b . b . . . . .
+. w . . . . . .     . w . . . . . .
+. . w . . . . .     . . w . . . . .
+. . . . . b b .     . . . . . b b .
+. . . . . . . .     . . . . . . . .
+. . . . . . w .     . . . . w . w .
+. . . | . . . .     . . . | . . . .
+</pre>
+<p>The white candidate on b6 is already in lever-distance with the sentry c7. The sentry c7 is likely forced to capture - otherwise b6 captures or pushes to become a passer. The white helper immediately recaptures and takes the role of the former candidate and becomes a passer. The black candidate on f4 can also force a passer. The helper on g4 compensates the sentry on g2. Usually, the <b>candidate</b> has to push forward, not the <b>helper</b>.
+</p><p>In the second diagram both candidates are pseudo-candidates or <b>fakers</b>, since there are <b>more</b> sentries than helpers - a7xb6 is required - otherwise, after c7xb6, c5-c6 would allow the helper to advance to a passer.
+</p>
+<h2><span class="mw-headline" id="Advanced_Candidates">Advanced Candidates</span></h2>
+<p>Advanced candidates, already inside or about to enter the opponent side of the board are the most important to consider in evaluation. Even more if the <a href="Pawn Spans.html#InterSpans" title="Pawn Spans">interspan</a> of sentries and helper is already one - and it is only about the control of the stop-square - or if the candidate is already part of a lever, the number of attacks and defenses.
+</p><p>In such cases, due to the forced nature of exchanging candidate, sentry and helper, only two or up to five plies are necessary to establish a passer. In fact those candidates may even be more worth than pawns already a passer - specially if the opponent king is outside the candidates square - or if the outside candidate may deflect the opponent king.
+</p><p>One may argue that a candidate already in lever distance with the sentry should be covered by <a class="new" href="index.php?title=Quiescence search&amp;action=edit&amp;redlink=1.html" title="Quiescence search (page does not exist)">quiescence search</a> - since it is a capture/recapture sequence. Therefor more important to evaluate are the candidate-helper-duo/trio against one or two sentries, which is likely a kind of static exchange evaluation of the candidate's stop-square.
+</p>
+<pre>
+. . . . . . . .
+. . s . . s . s   sentries
+. . . . . . . .
+. c h . . h c h   candidates with helpers
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+</pre>
+<p>To cover sets of advanced white candidates with attacked but sufficient defended stops already on the on the 5th rank, one may use some code like this. Feel free to introduce branches, e.g. if there are no white pawns on the fifth rank. Anyway, <a href="Pawn Attacks (Bitboards).html#PawnAttackMaps" title="Pawn Attacks (Bitboards)">wSafePawnSquares</a> might be used elsewhere, e.g. to decide whether helper pawns may advance to defend candidate's stop.
+</p>
+<pre>
+U64 wCandidatesOn5th(U64 wpawns, U64 bpawns) {
+   const U64 rank5     = C64(0x000000ff00000000);
+   U64 bPawnAnyAttacks = bPawnAnyAttacks(bpawns);
+   U64 wSafeSquares    = wSafePawnSquares(wpawns, bpawns);
+   U64 wSafeAttacked   = bPawnAnyAttacks  &amp;  wSafeSquares;
+   U64 blackFrontSpan  = (bpawns &gt;&gt; 8)    | (bpawns &gt;&gt; 16); // only for 5th rank
+   return wpawns &amp; rank5 &amp;~blackFrontSpan &amp; (wSafeAttacked &gt;&gt; 8);
+}
+</pre>
+<h2><span class="mw-headline" id="Less_Advanced">Less Advanced</span></h2>
+<p>If it is about the long-term evaluation of <a href="Pawn Spans.html#StopandDistantStop" title="Pawn Spans">telestop</a> -squares - or the need of advancement of helper(s) to defend the stop-square, things become more complicated and one probably better relies on search and some general bonus to advance half-free pawns and advanced duos. Feel free to cover attackspan-related stuff for less advanced candidates respectively helpers and helper's helpers.
+</p>
+<pre>
+d4 is candidate     d4 is faker         d4 faker due to     d4 is candidate
+                                        helper's sentry     due to helper's helper f2
+. . . . . . . .     . . . . . . . .     . . . . . . . .     . . . . . . . .
+. . s . s . . .     . . s . s . . .     . . s . s . . .     . . s . s . . .
+. . . . . . . .     . . . . . . . .     . . . . . hs. .     . . . . . hs. .
+. . . . . . . .     . . . . . . . .     . . . . . . . .     . . . . . . . .
+. . . c . . . .     . . . f . . . .     . . . f . . . .     . . . c . . . .
+. . . . . . . .     . . . . . . . .     . . . . . . . .     . . . . . . . .
+. . h . h . . .     . . h . . . . .     . . h . h . . .     . . h . h hh. .
+. . . . . . . .     . . . . . . . .     . . . . . . . .     . . . . . . . .
+</pre>
+<p><span id="Sneaker"></span>
+</p>
+<h1><span class="mw-headline" id="The_Sneaker">The Sneaker</span></h1>
+<p>Also known as a <a href="Hidden Passed Pawn.html" title="Hidden Passed Pawn">hidden passed pawn</a>. A kind of candidate in disguise is an <a href="Unfree Pawns (Bitboards).html" title="Unfree Pawns (Bitboards)">unfree pawn</a> or <a href="#Faker">faker</a> that may become a passer through a sacrificial combination. In the diagram white may sacrifice the faker with b5-b6 - allowing black to establish a passer on b6 - but the sneaker on c6 becomes a much more advanced passer with a frontspan of only two against five:
+</p>
+<pre>
+. . . . . . . .
+. . b . . . . .
+. . w . . . . .
+. w . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+</pre>
+<p>A sneaker is likely advanced (opponent side of the board), <a href="Pawn Rams (Bitboards).html" title="Pawn Rams (Bitboards)">rammed</a> and defended, but no lever. No other opposing pawn controls it's stop or telestop squares.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Candidate Passed Pawn.html" title="Candidate Passed Pawn">Candidate Passed Pawn</a></li>
+<li> <a href="Hidden Passed Pawn.html" title="Hidden Passed Pawn">Hidden Passed Pawn</a></li>
+<li> <a href="Passed Pawn.html" title="Passed Pawn">Passed Pawn</a></li>
+<li> <a href="Passed Pawns (Bitboards).html" title="Passed Pawns (Bitboards)">Passed Pawns (Bitboards)</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/sx7QLbtbEOg/f_rJP6bZiCcJ" rel="nofollow">Candidate passers</a> by <a href="Stefan Geschwentner.html" title="Stefan Geschwentner">Stefan Geschwentner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, October 14, 2013 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://www.chess.com/forum/view/chess-equipment/pawn-power-in-chess-by-hans-kmoch-glossary-of-terms" rel="nofollow">Pawn Power in Chess by Hans Kmoch - Glossary of Terms - Chess Forums</a> - <a class="new" href="index.php?title=Chess.com&amp;action=edit&amp;redlink=1.html" title="Chess.com (page does not exist)">Chess.com</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Candidates_Tournament" rel="nofollow">Candidates Tournament from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Jango_Edwards" rel="nofollow">Jango Edwards</a> - Harry Christmas, September 10, 2009, <a class="external text" href="https://en.wikipedia.org/wiki/Zeche_Carl" rel="nofollow">Zeche Carl</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, <a class="external text" href="https://en.wikipedia.org/wiki/Essen" rel="nofollow">Essen</a>, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video </li></ul>
+<dl><dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/3t8JUmEspUs?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bc1" rel="nofollow">Chess in the Art of Samuel Bak</a>, <a class="external text" href="http://www.chgs.umn.edu/.html" rel="nofollow">Center for Holocaust &amp; Genocide Studies</a>, <a href="University of Minnesota.html" title="University of Minnesota">University of Minnesota</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Hans Kmoch.html" title="Hans Kmoch">Hans Kmoch</a> (<b>1959, 1990</b>). <i>Pawn Power in Chess</i>. New York: Dover, 1990. Previous ed.: New York: McKay, 1959. ISBN 0-486-26486-6</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Zeche_Carl" rel="nofollow">Zeche Carl</a> is part of <a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">The Industrial Heritage Trail</a></span>
+</li>
+</ol></div>
+<p><b><a href="Pawn Pattern and Properties.html" title="Pawn Pattern and Properties">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722021045
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.017 seconds
+Real time usage: 0.019 seconds
+Preprocessor visited node count: 129/1000000
+Preprocessor generated node count: 286/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1219-0!canonical and timestamp 20240722021045 and revision id 23797
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Candidates_(Bitboards)&amp;oldid=23797">https://www.chessprogramming.org/index.php?title=Candidates_(Bitboards)&amp;oldid=23797</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li><li><a href="Category:Hans Kmoch.html" title="Category:Hans Kmoch">Hans Kmoch</a></li><li><a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">Industrial Heritage Trail</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Candidates+%28Bitboards%29&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Candidates (Bitboards).html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Candidates (Bitboards)&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Candidates (Bitboards).html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Candidates (Bitboards)&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Candidates (Bitboards)&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Candidates (Bitboards).html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Candidates (Bitboards).html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Candidates (Bitboards)&amp;oldid=23797.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Candidates (Bitboards)&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 25 February 2021, at 18:44.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Candidates_(Bitboards)&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.017","walltime":"0.019","ppvisitednodes":{"value":129,"limit":1000000},"ppgeneratednodes":{"value":286,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722021045","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

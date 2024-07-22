@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>On an empty Board - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"On_an_empty_Board","wgTitle":"On an empty Board","wgCurRevisionId":26201,"wgRevisionId":26201,"wgArticleId":1110,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"On_an_empty_Board","wgRelevantArticleId":1110,"wgRequestId":"Zp7Div-qaMe6EU8WbZGg3QAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-On_an_empty_Board rootpage-On_an_empty_Board skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">On an empty Board</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> * On an empty Board</b>
+</p><p><b>Single sliding piece attacks</b> on the <b>otherwise empty board</b> or their disjoint subsets on lines or <a href="Rays.html" title="Rays">rays</a> are that simple than none sliding pieces. We simply use pre-calculated tables for each <a href="Pieces.html" title="Pieces">piece-type</a>, line or ray, indexed by square-index. To initialize those tables, one may use a <a href="Kogge-Stone Algorithm.html#Fillonanemptyboard" title="Kogge-Stone Algorithm">fill approach</a> with single populated from-sets, if availably anyway since used elsewhere. While the proposed line-routines here are quite small and cheap, incremental update during an initialization loop has some merits.
+</p><p>The various ray-,line- and piece sets are foundation of further attack calculation considering blocking pieces, for instance to mask the <a href="Occupancy.html" title="Occupancy">occupancy</a> of relevant rays. Of course the piece attacks are union-sets of the disjoint line attacks, while the line attacks are unions of the disjoint ray attacks.
+</p><p><span id="RayAttacks"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Ray Attacks"><span class="tocnumber">1</span> <span class="toctext">Ray Attacks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Rays by Line"><span class="tocnumber">1.1</span> <span class="toctext">Rays by Line</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Positive Rays"><span class="tocnumber">1.2</span> <span class="toctext">Positive Rays</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#By Lookup"><span class="tocnumber">1.2.1</span> <span class="toctext">By Lookup</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Initialization"><span class="tocnumber">1.2.2</span> <span class="toctext">Initialization</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#By Calculation"><span class="tocnumber">1.2.3</span> <span class="toctext">By Calculation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Negative Rays"><span class="tocnumber">1.3</span> <span class="toctext">Negative Rays</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#By Lookup 2"><span class="tocnumber">1.3.1</span> <span class="toctext">By Lookup</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Initialization 2"><span class="tocnumber">1.3.2</span> <span class="toctext">Initialization</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#By Calculation 2"><span class="tocnumber">1.3.3</span> <span class="toctext">By Calculation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Line Attacks"><span class="tocnumber">2</span> <span class="toctext">Line Attacks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#By Lookup 3"><span class="tocnumber">2.1</span> <span class="toctext">By Lookup</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#By Calculation 3"><span class="tocnumber">2.2</span> <span class="toctext">By Calculation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Piece Attacks"><span class="tocnumber">3</span> <span class="toctext">Piece Attacks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#By Lookup 4"><span class="tocnumber">3.1</span> <span class="toctext">By Lookup</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#By Calculation 4"><span class="tocnumber">3.2</span> <span class="toctext">By Calculation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Ray_Attacks">Ray Attacks</span></h1>
+<pre>
+  northwest    north   northeast
+  noWe         nort         noEa
+          +7    +8    +9
+              \  |  /
+  west    -1 &lt;-  0 -&gt; +1    east
+              /  |  \
+          -9    -8    -7
+  soWe         sout         soEa
+  southwest    south   southeast
+</pre>
+<p><span id="SplitRaysFromLine"></span>
+</p>
+<h2><span class="mw-headline" id="Rays_by_Line">Rays by Line</span></h2>
+<p>Ray-Attacks may be conducted from Line-Attacks by intersection with "positive" and "negative" squares:
+</p>
+<pre>
+ positiveRay[sq] = lineAttacks[sq] &amp; (0 - 2*singleBit[sq]);
+ negativeRay[sq] = lineAttacks[sq] &amp; (singleBit[sq] - 1);
+</pre>
+<p>or with shifts instead of lookups
+</p>
+<pre>
+ positiveRay[sq] = lineAttacks[sq] &amp; (C64(-2) &lt;&lt; sq);
+ negativeRay[sq] = lineAttacks[sq] &amp; ((C64(1) &lt;&lt; sq) - 1);
+</pre>
+<p><span id="PositiveRays"></span>
+</p>
+<h2><span class="mw-headline" id="Positive_Rays">Positive Rays</span></h2>
+<p><i>Remember <a href="Square Mapping Considerations.html" title="Square Mapping Considerations">Square Mapping Considerations</a>.</i>
+</p>
+<h3><span class="mw-headline" id="By_Lookup">By Lookup</span></h3>
+<pre>
+East (+1)           Nort (+8)            NoEa (+9)           NoWe (+7)
+. . . . . . . .     . . . 1 . . . .      . . . . . . . 1     . . . . . . . .
+. . . . . . . .     . . . 1 . . . .      . . . . . . 1 .     1 . . . . . . .
+. . . . . . . .     . . . 1 . . . .      . . . . . 1 . .     . 1 . . . . . .
+. . . . . . . .     . . . 1 . . . .      . . . . 1 . . .     . . 1 . . . . .
+. . . R 1 1 1 1     . . . R . . . .      . . . B . . . .     . . . B . . . .
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+</pre>
+<h3><span class="mw-headline" id="Initialization">Initialization</span></h3>
+<p>North attacks are simple to initialize inside a loop, starting from a1, shifting left:
+</p>
+<pre>
+U64 nort = C64(0x0101010101010100);
+for (int sq=0; sq &lt; 64; sq++, nort &lt;&lt;= 1)
+   rayAttacks[sq][Nort] = nort;
+
+</pre>
+<p>Similar, but tad trickier for <a href="Ranks.html" title="Ranks">ranks</a> and <a href="Diagonals.html" title="Diagonals">diagonals</a>, due to the wraps. For instance the north-east <a href="Direction.html" title="Direction">direction</a>:
+</p>
+<pre>
+U64 noea = C64(0x8040201008040200);
+for (int f=0; f &lt; 8; f++, noea = eastOne(noea) {
+   U64 ne = noea;
+   for (int r8 = 0; r8 &lt; 8*8; r8 += 8, ne &lt;&lt;= 8)
+      rayAttacks[r8+f][NoEa] = ne;
+}
+</pre>
+<h3><span class="mw-headline" id="By_Calculation">By Calculation</span></h3>
+<p>Orthogonal positive rays are quite cheap to calculate on the fly. For diagonal rays split the lines as <a href="On an empty Board.html#SplitRaysFromLine" title="On an empty Board">mentioned</a>.
+</p>
+<pre>
+U64 eastMaskEx(int sq) {
+   const U64 one = 1;
+   return 2*( (one &lt;&lt; (sq|7)) - (one &lt;&lt; sq) );
+}
+
+U64 nortMaskEx(int sq) {
+   return C64(0x0101010101010100) &lt;&lt; sq;
+}
+</pre>
+<p><span id="NegativeRays"></span>
+</p>
+<h2><span class="mw-headline" id="Negative_Rays">Negative Rays</span></h2>
+<p>Remember <a href="Square Mapping Considerations.html" title="Square Mapping Considerations">Square Mapping Considerations</a>.
+</p>
+<h3><span class="mw-headline" id="By_Lookup_2">By Lookup</span></h3>
+<pre>
+West (-1)           Sout (-8)            SoWe (-9)           SoEa (-7)
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .     . . . . . . . .      . . . . . . . .     . . . . . . . .
+1 1 1 R . . . .     . . . R . . . .      . . . B . . . .     . . . B . . . .
+. . . . . . . .     . . . 1 . . . .      . . 1 . . . . .     . . . . 1 . . .
+. . . . . . . .     . . . 1 . . . .      . 1 . . . . . .     . . . . . 1 . .
+. . . . . . . .     . . . 1 . . . .      1 . . . . . . .     . . . . . . 1 .
+</pre>
+<h3><span class="mw-headline" id="Initialization_2">Initialization</span></h3>
+<p>South attacks are simple to initialize inside a loop, starting from h8, shifting right:
+</p>
+<pre>
+U64 sout = C64(0x0080808080808080);
+for (int sq=63; sq &gt;= 0; sq--, sout &gt;&gt;= 1)
+   rayAttacks[sq][Sout] = sout;
+</pre>
+<p>Similar, but tad trickier for <a href="Ranks.html" title="Ranks">ranks</a> and <a href="Diagonals.html" title="Diagonals">diagonals</a>, due to the wraps.
+</p>
+<h3><span class="mw-headline" id="By_Calculation_2">By Calculation</span></h3>
+<p>Orthogonal negative rays are quite cheap to calculate on the fly. For diagonal rays split the lines as <a href="On an empty Board.html#SplitRaysFromLine" title="On an empty Board">mentioned</a>.
+</p>
+<pre>
+U64 westMaskEx(int sq) {
+   const U64 one = 1;
+   return (one &lt;&lt; sq) - (one &lt;&lt; (sq&amp;56));
+}
+
+U64 soutMaskEx(int sq) {
+   return C64(0x0080808080808080) &gt;&gt; (sq ^ 63);
+}
+</pre>
+<p><span id="LineAttacks"></span>
+</p>
+<h1><span class="mw-headline" id="Line_Attacks">Line Attacks</span></h1>
+<pre>
+ RankAttacks[sq]         = EastAttacks[sq] | WestAttacks[sq];
+ FileAttacks[sq]         = NortAttacks[sq] | SoutAttacks[sq];
+ DiagonalAttacks[sq]     = NoEaAttacks[sq] | SoWeAttacks[sq];
+ AntiDiagonalAttacks[sq] = NoWeAttacks[sq] | SoEaAttacks[sq];
+</pre>
+<h3><span class="mw-headline" id="By_Lookup_3">By Lookup</span></h3>
+<pre>
+Rank                File                 Diagonal            Anti-Diagonal
+. . . . . . . .     . . . 1 . . . .      . . . . . . . 1     . . . . . . . .
+. . . . . . . .     . . . 1 . . . .      . . . . . . 1 .     1 . . . . . . .
+. . . . . . . .     . . . 1 . . . .      . . . . . 1 . .     . 1 . . . . . .
+. . . . . . . .     . . . 1 . . . .      . . . . 1 . . .     . . 1 . . . . .
+1 1 1 R 1 1 1 1     . . . R . . . .      . . . B . . . .     . . . B . . . .
+. . . . . . . .     . . . 1 . . . .      . . 1 . . . . .     . . . . 1 . . .
+. . . . . . . .     . . . 1 . . . .      . 1 . . . . . .     . . . . . 1 . .
+. . . . . . . .     . . . 1 . . . .      1 . . . . . . .     . . . . . . 1 .
+</pre>
+<h3><span class="mw-headline" id="By_Calculation_3">By Calculation</span></h3>
+<p>To calculate line masks for <a href="Ranks.html" title="Ranks">ranks</a>, <a href="Files.html" title="Files">files</a>, <a href="Diagonals.html" title="Diagonals">diagonals</a> and <a href="Anti-Diagonals.html" title="Anti-Diagonals">antidiagonals</a> on the fly:
+</p>
+<pre>
+U64 rankMask(int sq) {return  C64(0xff) &lt;&lt; (sq &amp; 56);}
+
+U64 fileMask(int sq) {return C64(0x0101010101010101) &lt;&lt; (sq &amp; 7);}
+
+U64 diagonalMask(int sq) {
+   const U64 maindia = C64(0x8040201008040201);
+   int diag =8*(sq &amp; 7) - (sq &amp; 56);
+   int nort = -diag &amp; ( diag &gt;&gt; 31);
+   int sout =  diag &amp; (-diag &gt;&gt; 31);
+   return (maindia &gt;&gt; sout) &lt;&lt; nort;
+}
+
+U64 antiDiagMask(int sq) {
+   const U64 maindia = C64(0x0102040810204080);
+   int diag =56- 8*(sq&amp;7) - (sq&amp;56);
+   int nort = -diag &amp; ( diag &gt;&gt; 31);
+   int sout =  diag &amp; (-diag &gt;&gt; 31);
+   return (maindia &gt;&gt; sout) &lt;&lt; nort;
+}
+</pre>
+<p>The <a href="General Setwise Operations.html#GeneralizedShift" title="General Setwise Operations">generalized shift</a> version for <a href="Diagonals.html" title="Diagonals">diagonals</a> and <a href="Anti-Diagonals.html" title="Anti-Diagonals">antidiagonals</a> as introduced by <a href="Thomas Jahn.html" title="Thomas Jahn">Thomas Jahn</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> produces shorter and faster code on modern <a href="X86-64.html" title="X86-64">x86-64</a> processors due to <a href="BMI2.html" title="BMI2">BMI2</a> shift instructions not affecting the flags <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>:
+</p>
+<pre>
+U64 diagonalMask(int sq) {
+   const U64( maindia = C64(0x8040201008040201);
+   int diag  = (sq&amp;7) - (sq&gt;&gt;3);
+   return diag &gt;= 0 ? maindia &gt;&gt; diag*8 : maindia &lt;&lt; -diag*8;
+}
+
+U64 antiDiagMask(int sq) {
+   const U64( maindia = C64(0x0102040810204080);
+   int diag  = 7 - (sq&amp;7) - (sq&gt;&gt;3);
+   return diag &gt;= 0 ? maindia &gt;&gt; diag*8 : maindia &lt;&lt; -diag*8;
+}
+</pre>
+<p>Excluding the square bit:
+</p>
+<pre>
+U64 rankMaskEx    (int sq) {return (C64(1) &lt;&lt; sq) ^ rankMask(sq);}
+U64 fileMaskEx    (int sq) {return (C64(1) &lt;&lt; sq) ^ fileMask(sq);}
+U64 diagonalMaskEx(int sq) {return (C64(1) &lt;&lt; sq) ^ diagonalMask(sq);}
+U64 antiDiagMaskEx(int sq) {return (C64(1) &lt;&lt; sq) ^ antiDiagMask(sq);}
+</pre>
+<p><span id="PieceAttacks"></span>
+</p>
+<h1><span class="mw-headline" id="Piece_Attacks">Piece Attacks</span></h1>
+<pre>
+RookAttacks[sq]   = RankAttacks[sq]     | FileAttacks[sq];
+BishopAttacks[sq] = DiagonalAttacks[sq] | AntiDiagonalAttacks[sq];
+QueenAttacks[sq]  = RookAttacks[sq] | BishopAttacks[sq];
+</pre>
+<h3><span class="mw-headline" id="By_Lookup_4">By Lookup</span></h3>
+<pre>
+                                   Queen
+                               . . . 1 . . . 1
+                               1 . . 1 . . 1 .
+                               . 1 . 1 . 1 . .
+               Rook            . . 1 1 1 . . .         Bishop
+           . . . 1 . . . .     1 1 1 Q 1 1 1 1     . . . . . . . 1
+           . . . 1 . . . .     . . 1 1 1 . . .     1 . . . . . 1 .
+           . . . 1 . . . .     . 1 . 1 . 1 . .     . 1 . . . 1 . .
+           . . . 1 . . . .     1 . . 1 . . 1 .     . . 1 . 1 . . .
+           1 1 1 R 1 1 1 1                         . . . B . . . .
+           . . . 1 . . . .                         . . 1 . 1 . . .
+           . . . 1 . . . .                         . 1 . . . 1 . .
+           . . . 1 . . . .                         1 . . . . . 1 .
+</pre>
+<h3><span class="mw-headline" id="By_Calculation_4">By Calculation</span></h3>
+<pre>
+U64 rookMask    (int sq) {return rankMask(sq)     | fileMask(sq);}
+U64 bishopMask  (int sq) {return diagonalMask(sq) | antiDiagMask(sq);}
+
+
+U64 rookMaskEx  (int sq) {return rankMask(sq)     ^ fileMask(sq);}
+U64 bishopMaskEx(int sq) {return diagonalMask(sq) ^ antiDiagMask(sq);}
+
+U64 queenMask   (int sq) {return rookMask(sq)     | bishopMask(sq);}
+U64 queenMaskEx (int sq) {return rookMask(sq)     ^ bishopMask(sq);}
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Blockers and Beyond.html" title="Blockers and Beyond">Blockers and Beyond</a></li>
+<li> <a href="Kogge-Stone Algorithm.html#Fillonanemptyboard" title="Kogge-Stone Algorithm">Fill on an empty Board</a> with <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79140" rel="nofollow">[Question] Efficiently generate ray masks?</a> by <a class="new" href="index.php?title=Daniel Infuehr&amp;action=edit&amp;redlink=1.html" title="Daniel Infuehr (page does not exist)">Daniel Infuehr</a>, <a href="CCC.html" title="CCC">CCC</a>, January 16, 2022</li></ul>
+<dl><dd> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79140&amp;start=10" rel="nofollow">Re:  [Question]  Efficiently generate ray masks?</a> by <a href="Thomas Jahn.html" title="Thomas Jahn">Thomas Jahn</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2022</dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=79140&amp;start=10" rel="nofollow">Re:  [Question]  Efficiently generate ray masks?</a> by <a href="Thomas Jahn.html" title="Thomas Jahn">Thomas Jahn</a>, <a href="CCC.html" title="CCC">CCC</a>, January 17, 2022</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.felixcloutier.com/x86/sarx:shlx:shrx" rel="nofollow">SARX/SHLX/SHRX — Shift Without Affecting Flags</a></span>
+</li>
+</ol></div>
+<p><b><a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722065254
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.011 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 296/1000000
+Preprocessor generated node count: 594/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1110-0!canonical and timestamp 20240722065254 and revision id 26201
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=On_an_empty_Board&amp;oldid=26201">https://www.chessprogramming.org/index.php?title=On_an_empty_Board&amp;oldid=26201</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=On+an+empty+Board&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="On an empty Board.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:On an empty Board&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="On an empty Board.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=On an empty Board&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=On an empty Board&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/On an empty Board.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/On an empty Board.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=On an empty Board&amp;oldid=26201.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=On an empty Board&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 January 2022, at 00:44.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=On_an_empty_Board&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.011","walltime":"0.012","ppvisitednodes":{"value":296,"limit":1000000},"ppgeneratednodes":{"value":594,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722065254","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":41});});</script>
+</body>
+</html>

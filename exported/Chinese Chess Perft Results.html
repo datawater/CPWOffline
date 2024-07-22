@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chinese Chess Perft Results - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chinese_Chess_Perft_Results","wgTitle":"Chinese Chess Perft Results","wgCurRevisionId":23577,"wgRevisionId":23577,"wgArticleId":7687,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chinese_Chess_Perft_Results","wgRelevantArticleId":7687,"wgRequestId":"Zp7DTAZUIzne983r89wxRQAAAA4","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chinese_Chess_Perft_Results rootpage-Chinese_Chess_Perft_Results skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chinese Chess Perft Results</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Move Generation.html" title="Move Generation">Move Generation</a> * <a href="Perft.html" title="Perft">Perft</a> * Chinese Chess Perft Results</b>
+</p><p>This page contains detailed <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a> <a href="Perft.html" title="Perft">perft</a> results for several positions that are useful for <a href="Debugging.html" title="Debugging">debugging</a>, beginning with the start position. The move counters consider moves to the leaf positions only.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Initial Position"><span class="tocnumber">1</span> <span class="toctext">Initial Position</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Position 2"><span class="tocnumber">2</span> <span class="toctext">Position 2</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Position 3"><span class="tocnumber">3</span> <span class="toctext">Position 3</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Position 4"><span class="tocnumber">4</span> <span class="toctext">Position 4</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Position 5"><span class="tocnumber">5</span> <span class="toctext">Position 5</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Position 6"><span class="tocnumber">6</span> <span class="toctext">Position 6</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Position 7"><span class="tocnumber">7</span> <span class="toctext">Position 7</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Position 8"><span class="tocnumber">8</span> <span class="toctext">Position 8</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Position 9"><span class="tocnumber">9</span> <span class="toctext">Position 9</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Position 10"><span class="tocnumber">10</span> <span class="toctext">Position 10</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Position 11"><span class="tocnumber">11</span> <span class="toctext">Position 11</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">12</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">13</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#External Links"><span class="tocnumber">14</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#References"><span class="tocnumber">15</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Initial_Position">Initial Position</span></h1>
+<p>Data by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a><sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>
+</p><p><a class="image" href="File:Xiangqi Board.svg.html" title="Xiangqi Initial Position[2]"><img alt="Xiangqi Initial Position[2]" class="thumbborder" height="330" src="wikipedia/commons/thumb/1/1c/Xiangqi_Board.svg/300px-Xiangqi_Board.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Xiangqi_Board.svg/450px-Xiangqi_Board.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Xiangqi_Board.svg/600px-Xiangqi_Board.svg.png 2x" style="vertical-align: text-bottom" width="300"/></a>
+</p><p>FEN: rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th>
+<th> Checks
+</th>
+<th> Captures
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 44
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td style="text-align:right;"> 2
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 1,920
+</td>
+<td style="text-align:right;"> 6
+</td>
+<td style="text-align:right;"> 72
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 79,666
+</td>
+<td style="text-align:right;"> 384
+</td>
+<td style="text-align:right;"> 3,159
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 3,290,240
+</td>
+<td style="text-align:right;"> 19,380
+</td>
+<td style="text-align:right;"> 115,365
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 133,312,995
+</td>
+<td style="text-align:right;"> 953,251
+</td>
+<td style="text-align:right;"> 4,917,734
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 5,392,831,844
+</td>
+<td style="text-align:right;"> 39,288,662
+</td>
+<td style="text-align:right;"> 185,194,510
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 217,154,523,878
+</td>
+<td style="text-align:right;"> 1,793,957,429
+</td>
+<td style="text-align:right;"> 7,806,689,172
+</td></tr></table>
+<h1><span class="mw-headline" id="Position_2">Position 2</span></h1>
+<p>By <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a><sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>
+</p><p><a class="image" href="File:Xiangqi pos2.svg.html" title="Xiangqi Position 2"><img alt="Xiangqi Position 2" class="thumbborder" height="330" src="images/thumb/0/06/Xiangqi_pos2.svg/300px-Xiangqi_pos2.svg.png" srcset="/images/thumb/0/06/Xiangqi_pos2.svg/450px-Xiangqi_pos2.svg.png 1.5x, /images/thumb/0/06/Xiangqi_pos2.svg/600px-Xiangqi_pos2.svg.png 2x" style="vertical-align: text-bottom" width="300"/></a>
+</p><p>FEN: r1ea1a3/4kh3/2h1e4/pHp1p1p1p/4c4/6P2/P1P2R2P/1CcC5/9/2EAKAE2 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th>
+<th> Checks
+</th>
+<th> Captures
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 38
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 1
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 1,128
+</td>
+<td style="text-align:right;"> 12
+</td>
+<td style="text-align:right;"> 10
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 43,929
+</td>
+<td style="text-align:right;"> 1,190
+</td>
+<td style="text-align:right;"> 2,105
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 1,339,047
+</td>
+<td style="text-align:right;"> 21,299
+</td>
+<td style="text-align:right;"> 31,409
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 53,112,976
+</td>
+<td style="text-align:right;"> 1,496,697
+</td>
+<td style="text-align:right;"> 3,262,495
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_3">Position 3</span></h1>
+<p>Middle game, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+</p><p><a class="image" href="File:Xiangqi pos3.svg.html" title="Xiangqi Position 3"><img alt="Xiangqi Position 3" class="thumbborder" height="330" src="images/thumb/7/73/Xiangqi_pos3.svg/300px-Xiangqi_pos3.svg.png" srcset="/images/thumb/7/73/Xiangqi_pos3.svg/450px-Xiangqi_pos3.svg.png 1.5x, /images/thumb/7/73/Xiangqi_pos3.svg/600px-Xiangqi_pos3.svg.png 2x" style="vertical-align: text-bottom" width="300"/></a>
+</p><p>FEN: 1ceak4/9/h2a5/2p1p3p/5cp2/2h2H3/6PCP/3AE4/2C6/3A1K1H1 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 7
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 281
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 8,620
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 326,201
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 10,369,923
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 380,156,340
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 12,345,505,147
+</td></tr></table>
+<h1><span class="mw-headline" id="Position_4">Position 4</span></h1>
+<p>Middle game, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+</p><p><a class="image" href="File:Xiangqi pos4.svg.html" title="Xiangqi Position 4"><img alt="Xiangqi Position 4" class="thumbborder" height="330" src="images/thumb/a/a6/Xiangqi_pos4.svg/300px-Xiangqi_pos4.svg.png" srcset="/images/thumb/a/a6/Xiangqi_pos4.svg/450px-Xiangqi_pos4.svg.png 1.5x, /images/thumb/a/a6/Xiangqi_pos4.svg/600px-Xiangqi_pos4.svg.png 2x" style="vertical-align: text-bottom" width="300"/></a>
+</p><p>FEN: 5a3/3k5/3aR4/9/5r3/5h3/9/3A1A3/5K3/2EC2E2 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 25
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 424
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 9,850
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 202,884
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 4,739,553
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 100,055,401
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 24,477,590,37
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_5">Position 5</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</p><p><a class="image" href="File:Xiangqi pos5.svg.html" title="Xiangqi Position 5"><img alt="Xiangqi Position 5" class="thumbborder" height="330" src="images/thumb/3/35/Xiangqi_pos5.svg/300px-Xiangqi_pos5.svg.png" srcset="/images/thumb/3/35/Xiangqi_pos5.svg/450px-Xiangqi_pos5.svg.png 1.5x, /images/thumb/3/35/Xiangqi_pos5.svg/600px-Xiangqi_pos5.svg.png 2x" style="vertical-align: text-bottom" width="300"/></a>
+</p><p>FEN: CRH1k1e2/3ca4/4ea3/9/2hr5/9/9/4E4/4A4/4KA3 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 28
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 516
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 14,808
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 395,483
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 11,842,230
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 367,168,327
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 11,194,690,506
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_6">Position 6</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p><p>FEN: R1H1k1e2/9/3aea3/9/2hr5/2E6/9/4E4/4A4/4KA3 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 21
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 364
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 7,626
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 162,837
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 3,500,505
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 81,195,154
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 1,765,627,003
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_7">Position 7</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>
+</p><p>FEN: C1hHk4/9/9/9/9/9/h1pp5/E3C4/9/3A1K3 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 28
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 222
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 6,241
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 64,971
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 1,914,306
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 23,496,493
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 713,048,593
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_8">Position 8</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>
+</p><p>FEN: 4ka3/4a4/9/9/4H4/p8/9/4C3c/7h1/2EK5 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 23
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 345
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 8,124
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 149,272
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 3,513,104
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 71,287,903
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 1,657,573,114
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_9">Position 9</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>
+</p><p>FEN: 2e1ka3/9/e3H4/4h4/9/9/9/4C4/2p6/2EK5 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 21
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 195
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 3,883
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 48,060
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 933,096
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 12,250,386
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 235,622,620
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_10">Position 10</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup>
+</p><p>FEN: 1C2ka3/9/C1Hae1h2/p3p3p/6p2/9/P3P3P/3AE4/3p2c2/c1EAK4 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 30
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 830
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 22,787
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 649,866
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 17,920,736
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 517,687,990
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 14,455,679,002
+</td></tr></table>
+<p><br/>
+</p>
+<h1><span class="mw-headline" id="Position_11">Position 11</span></h1>
+<p>A position with complicated checks and evasions, especially designed to test lazy/update-on-fly move generators, by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Nguyen Pham</a><sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup>
+</p><p>FEN: ChH1k1e2/c3a4/4ea3/9/2hr5/9/9/4C4/4A4/4KA3 w - - 0 1
+</p>
+<table class="wikitable">
+<tr>
+<th> Depth
+</th>
+<th> Nodes
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 19
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 583
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 11,714
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 376,467
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 8,148,177
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 270,587,571
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 6,347,480,650
+</td></tr></table>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a></li>
+<li> <a href="Perft Results.html" title="Perft Results">Perft Results</a></li>
+<li> <a href="Chess960 Perft Results.html" title="Chess960 Perft Results">Chess960 Perft Results</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://talkchess.com/forum3/viewtopic.php?t=60445.html" rel="nofollow">Perft for Xiangqi &amp; Shogi</a> by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a>, <a href="CCC.html" title="CCC">CCC</a>, May 25, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76391.html" rel="nofollow">Did anyone write a xiangqi chess engine?</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021 » <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://tonyjh.com/chess/technical/.html" rel="nofollow">Perft for other forms of Chess</a> by <a class="new" href="index.php?title=Tony Hecker&amp;action=edit&amp;redlink=1.html" title="Tony Hecker (page does not exist)">Tony Hecker</a></li>
+<li> <a class="external text" href="https://github.com/fsmosca/FileStorage/blob/main/xiangqi/makulit_xiangqi_perft.epd" rel="nofollow">Perft for Chinese Chess</a> by <a href="Ferdinand Mosca.html" title="Ferdinand Mosca">Ferdinand Mosca</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://talkchess.com/forum3/viewtopic.php?t=60445.html" rel="nofollow">Perft for Xiangqi &amp; Shogi</a> by <a href="Patrice Duhamel.html" title="Patrice Duhamel">Patrice Duhamel</a>, <a href="CCC.html" title="CCC">CCC</a>, May 25, 2013</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Xiangqi" rel="nofollow">Xiangqi from Wikipedia</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76430.html" rel="nofollow">Chinese chess Xiangqi perft results</a> by <a href="Maksim Korzh.html" title="Maksim Korzh">Maksim Korzh</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2021</span>
+</li>
+</ol></div>
+<p><b><a href="Perft.html" title="Perft">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722113111
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.095 seconds
+Real time usage: 0.804 seconds
+Preprocessor visited node count: 231/1000000
+Preprocessor generated node count: 466/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7687-0!canonical and timestamp 20240722113110 and revision id 23577
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chinese_Chess_Perft_Results&amp;oldid=23577">https://www.chessprogramming.org/index.php?title=Chinese_Chess_Perft_Results&amp;oldid=23577</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chinese+Chess+Perft+Results&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chinese Chess Perft Results.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chinese Chess Perft Results&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chinese Chess Perft Results.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chinese Chess Perft Results&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chinese Chess Perft Results&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chinese Chess Perft Results.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chinese Chess Perft Results.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chinese Chess Perft Results&amp;oldid=23577.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chinese Chess Perft Results&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 11 February 2021, at 05:23.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chinese_Chess_Perft_Results&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.095","walltime":"0.804","ppvisitednodes":{"value":231,"limit":1000000},"ppgeneratednodes":{"value":466,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722113111","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":47});});</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Endspiel - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Endspiel","wgTitle":"Endspiel","wgCurRevisionId":20744,"wgRevisionId":20744,"wgArticleId":7370,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["PC","Windows"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Endspiel","wgRelevantArticleId":7370,"wgRequestId":"Zp7DN31htEhTE3yaocy2jwAAABQ","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Endspiel rootpage-Endspiel skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Endspiel</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Endspiel</b>
+</p><p><b>Endspiel</b>,<br/>
+a <a href="Windows.html" title="Windows">Windows</a> chess program and explanation tool dedicated for simple <a href="Endgame.html" title="Endgame">Endgames</a>, written by <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> in the 90s.
+Endspiel combines rule-based <a href="Knowledge.html" title="Knowledge">knowledge</a> with a modified <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> search to generate explanations.
+The rules cover a large part of the positions of an endgame. For each such position they define a <a href="Score.html" title="Score">score</a> interval guaranteed to contain the true value.
+Multiple rules may be applied, resulting in the intersection and narrowing of intervals.
+Further, an <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> search finds the values for all positions not covered and removes uncertainties
+left by too wide intervals in rule-scored positions. Thus, the method yields a correct evaluation for every position and.
+furthermore, the rules governing the position of its successors provide some tutorial insight to the user about the reasons behind the evaluations.
+Moreover, automatic validation assures that mistakes in the rules will be discovered and then can be eliminated in dialogue 
+<sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#KPKP"><span class="tocnumber">2</span> <span class="toctext">KPKP</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Selected Publications"><span class="tocnumber">4</span> <span class="toctext">Selected Publications</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Rules">Rules</span></h1>
+<p>For a specific endgame, e.g. <a href="KPK.html" title="KPK">KPK</a>, KQKQ, <a href="Queen versus Pawn.html" title="Queen versus Pawn">KQKP</a>, or <a class="new" href="index.php?title=KPKP&amp;action=edit&amp;redlink=1.html" title="KPKP (page does not exist)">KPKP</a>,
+a system of rules is developed, which decides for the positions whether they are won, drawn or lost. The remainder of the positions may be left undecided.
+The rules may be arranged by <a class="external text" href="https://en.wikipedia.org/wiki/Decision_tree" rel="nofollow">decision trees</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>, 
+or they may be examined sequentially until applicable to the position involved <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>.
+The rules consist of conditions to match and associated <a href="Score.html" title="Score">score</a> intervals which may express some uncertainty.
+A winning position obtains the value of (maxval - k), where maxval is a huge positive integer, i.e. minus <a href="Checkmate.html#MateScore" title="Checkmate">mate score</a>, and k the minimum of
+</p>
+<ul><li> number of plies on the shortest path to <a href="Checkmate.html" title="Checkmate">mate</a>, and</li>
+<li> minimal number of plies ending with an irreversible move on the winning path  </li></ul>
+<p>For instance in <a href="KPK.html" title="KPK">KPK</a> (BTM), the case of <a href="Opposition.html" title="Opposition">opposition</a> on the same file, white king on the <a href="Stop Square.html" title="Stop Square">stop square</a>,  
+the interval is defined by value[maxval-8, maxval-4]. 
+</p>
+<h1><span class="mw-headline" id="KPKP">KPKP</span></h1>
+<p>In his 1995 <a href="ICGA Journal.html#18 3" title="ICGA Journal">ICCA Journal</a> article on KPKP with <a href="Passed Pawn.html" title="Passed Pawn">passed pawns</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>,
+Wilhelm Barth elaborates on following six rules applied in his Endspiel program, along with several examples.
+</p>
+<table class="wikitable">
+<tr>
+<th> #
+</th>
+<th> Description
+</th>
+<th> Conditions
+</th>
+<th> Assessment
+</th></tr>
+<tr>
+<td> 1
+</td>
+<td> wP can promote without support of<br/>its king and bP is blocked
+</td>
+<td> ♚∉<a href="Rule of the Square.html" title="Rule of the Square">□</a> ∧ ♔∈<a href="Pawn Spans.html" title="Pawn Spans">⤋</a>
+</td>
+<td> White wins
+</td></tr>
+<tr>
+<td> <span id="R2"></span> 2
+</td>
+<td> wK stops bP definitely
+</td>
+<td> ♔∈<a href="Rule of the Square.html" title="Rule of the Square">■</a> ∧ (<a href="Distance.html" title="Distance">D (♔,♟)</a> &lt; <a href="Distance.html" title="Distance">D (♚,♟)</a> ∨ <a href="Distance.html" title="Distance">D (♔</a>,<a href="Stop Square.html#Tele" title="Stop Square">🛑)</a> &lt; <a href="Distance.html" title="Distance">D (♚</a>,<a href="Stop Square.html#Tele" title="Stop Square">🛑)</a>)
+</td>
+<td> White achieves at least a draw
+</td></tr>
+<tr>
+<td> 3
+</td>
+<td> wp reaches promotion before bP does
+</td>
+<td> 𝒘 ::= <a href="Distance.html" title="Distance">D (♙</a>,<a href="Promotion Square.html" title="Promotion Square">♕)</a> - <a href="Distance.html" title="Distance">D (♟</a>,<a href="Promotion Square.html" title="Promotion Square">♛)</a><br/>
+<p>𝒘 &gt;= 3 usually wins, but 8/3K4/4P3/5p2/8/8/8/5k2 w - -<br/>
+𝒘 == 2 usually wins, but <a href="Queen versus Pawn.html" title="Queen versus Pawn">rook and bishop pawn cases</a><br/>
+𝒘 == 1 often wins, but more exceptions with other pawn files<br/>
+𝒘 == 0 normally draw, but some <a href="Skewer.html" title="Skewer">skewer</a> cases that win<br/>
+𝒘 == -1 despite exceptional drawn positions,<br/> left without evaluation<br/>
+</p>
+</td>
+<td> White wins or achieves a draw depending<br/>on 𝒘 and some other conditions
+</td></tr>
+<tr>
+<td> 4
+</td>
+<td> wk stops bP definitely after wP<br/>has attracted the bK
+</td>
+<td> (𝒘 &gt; 0 ∨ (𝒘 == 0 ∧ ♟<a href="Promotion Square.html" title="Promotion Square">♛</a>!<a href="Check.html" title="Check">+</a>)) ∧ ♚∈<a href="Rule of the Square.html" title="Rule of the Square">□</a> ⇒ <a href="#R2">rule 2</a>
+</td>
+<td> White achieves at least a draw
+</td></tr>
+<tr>
+<td> 5
+</td>
+<td> with support of its King, wP promotes<br/>before bP does
+</td>
+<td> conditions similar to rule 3
+</td>
+<td> White wins or achieves a draw depending<br/>on 𝒘 and some other conditions
+</td></tr>
+<tr>
+<td> 6
+</td>
+<td> bP is unstoppable and bK stops wP<br/>and wK cannot parry both threats
+</td>
+<td> addresses <a href="R%C3%A9ti Endgame Study.html" title="Réti Endgame Study">Réti Endgame Study</a>
+</td>
+<td> Black wins
+</td></tr></table>
+<p>Symbols:
+</p>
+<ul><li> ∧ - and</li>
+<li> ∨ - or</li>
+<li> ∈ / ∉ - Element of / Not Element of</li>
+<li> ■, □ - <a href="Rule of the Square.html" title="Rule of the Square">Square of The White, Black Pawn</a></li>
+<li> ⤋ - Black <a href="Pawn Spans.html" title="Pawn Spans">Pawn's Front Span</a></li>
+<li> D - <a href="Distance.html" title="Distance">Chebyshev Distance</a></li>
+<li> 🛑 - Black Pawn's <a href="Stop Square.html#Tele" title="Stop Square">Tele Stop</a></li>
+<li> ♕ / ♛ - White / Black Pawn's <a href="Promotion Square.html" title="Promotion Square">Promotion Square</a></li>
+<li> !+ - No <a href="Check.html" title="Check">Check</a> after Queening</li></ul>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chunker.html" title="Chunker">Chunker</a></li>
+<li> <a href="Queen versus Pawn.html" title="Queen versus Pawn">KQKP</a></li>
+<li> <a href="KPK.html" title="KPK">KPK</a></li>
+<li> <a href="Pawn Endgame.html" title="Pawn Endgame">Pawn Endgame</a></li></ul>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<ul><li> <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a>, <a class="new" href="index.php?title=Stephan Barth&amp;action=edit&amp;redlink=1.html" title="Stephan Barth (page does not exist)">Stephan Barth</a> (<b>1991</b>). <i>Programme für korrekte Schachendspiele und deren Validierung</i>. Institutsbericht, Nr. 34. Institut für Computergraphik, <a href="Vienna University of Technology.html" title="Vienna University of Technology">TU Wien</a> (German)</li>
+<li> <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a>, <a class="new" href="index.php?title=Stephan Barth&amp;action=edit&amp;redlink=1.html" title="Stephan Barth (page does not exist)">Stephan Barth</a> (<b>1992</b>). <i>Validating a Range of Endgame Programs</i>. <a href="ICGA Journal.html#15 3" title="ICGA Journal">ICCA Journal, Vol. 15, No. 3</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup></li>
+<li> <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1994</b>). <i>Computerschach - Ein korrektes Programm für das Endspiel König und Bauer gegen König und Bauer - Unterteilung von Endspielen in Klassen - Behandlung der Stellungswiederholung bei der Intervallbewertung</i>. Institutsbericht Nr. 36, Institut für Computergraphik, <a href="Vienna University of Technology.html" title="Vienna University of Technology">TU Wien</a> (German)</li>
+<li> <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1995</b>). <i>Combining Knowledge and Search to Yield Infallible Endgame Programs A study of passed Pawns in the KPKP endgame.</i> <a href="ICGA Journal.html#18 3" title="ICGA Journal">ICCA Journal, Vol. 18, No. 3</a> </li>
+<li> <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a> (<b>1995</b>). <i>Comments on Barth’s Article “Combining Knowledge and Search to Yield Infallible Endgame Programs.”</i> <a href="ICGA Journal.html#18 4" title="ICGA Journal">ICCA Journal, Vol. 18, No. 4</a></li>
+<li> <a href="Heinz Herbeck.html" title="Heinz Herbeck">Heinz Herbeck</a>, <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1996</b>). <i>An Explanation Tool for Chess Endgames Based on the Rule Method</i>. <a href="ICGA Journal.html#19 2" title="ICGA Journal">ICCA Journal, Vol. 19, No. 2</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://idw-online.de/de/news4179" rel="nofollow">Neues Schachprogramm für Spezialprobleme</a>, October 28, 1996 (German)</li>
+<li> <a class="external text" href="https://web.archive.org/web/20130612090002/https://www.ads.tuwien.ac.at/research/Chess.html" rel="nofollow">Computer Chess site (Barth, Herbeck)</a> (<a class="external text" href="https://en.wikipedia.org/wiki/Wayback_Machine" rel="nofollow">Wayback Machine</a>)</li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1995</b>). <i>Combining Knowledge and Search to Yield Infallible Endgame Programs A study of passed Pawns in the KPKP endgame.</i> <a href="ICGA Journal.html#18 3" title="ICGA Journal">ICCA Journal, Vol. 18, No. 3</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a href="Ross Quinlan.html" title="Ross Quinlan">Ross Quinlan</a> (<b>1983</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-662-12405-5_15" rel="nofollow">Learning Efficient Classification Procedures and Their Application to Chess End Games</a></i>. <a class="external text" href="https://link.springer.com/book/10.1007%2F978-3-662-12405-5" rel="nofollow">Machine Learning: An Artificial Intelligence Approach</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Gerhard Mehlsam.html" title="Gerhard Mehlsam">Gerhard Mehlsam</a>, <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1991</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-662-02711-0_6" rel="nofollow">Feature Construction during Tree Learning</a></i>. <a class="external text" href="https://dblp.uni-trier.de/db/conf/ki/gwai91.html" rel="nofollow">GWAI 1991</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> (<b>1983</b>). <i><a class="external text" href="https://www.semanticscholar.org/paper/Representation-of-Experts'-Knowledge-in-a-Subdomain-Herik/5f29c029a69f2d69980da4b35402050203421ed4" rel="nofollow">Representation of Experts' Knowledge in a Subdomain of Chess Intelligence</a></i>. <a href="Conferences.html#IJCAI1983" title="Conferences">IJCAI 1983</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Wilhelm Barth.html" title="Wilhelm Barth">Wilhelm Barth</a> (<b>1995</b>). <i>Combining Knowledge and Search to Yield Infallible Endgame Programs A study of passed Pawns in the KPKP endgame</i>. <a href="ICGA Journal.html#18 3" title="ICGA Journal">ICCA Journal, Vol. 18, No. 3</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a href="Ulrich Thiemonds.html" title="Ulrich Thiemonds">Ulrich Thiemonds</a> (<b>1999</b>). <i>Ein regelbasiertes Spielprogramm für Schachendspiele</i>. <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Bonn" rel="nofollow">University of Bonn</a>, Diplom thesis (German)</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240721225348
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.015 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 121/1000000
+Preprocessor generated node count: 260/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7370-0!canonical and timestamp 20240721225348 and revision id 20744
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Endspiel&amp;oldid=20744">https://www.chessprogramming.org/index.php?title=Endspiel&amp;oldid=20744</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:PC.html" title="Category:PC">PC</a></li><li><a href="Category:Windows.html" title="Category:Windows">Windows</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Endspiel&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Endspiel.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Endspiel&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Endspiel.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Endspiel&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Endspiel&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Endspiel.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Endspiel.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Endspiel&amp;oldid=20744.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Endspiel&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 14 August 2020, at 19:26.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Endspiel&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.015","walltime":"0.016","ppvisitednodes":{"value":121,"limit":1000000},"ppgeneratednodes":{"value":260,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240721225348","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

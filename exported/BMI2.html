@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>BMI2 - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"BMI2","wgTitle":"BMI2","wgCurRevisionId":26115,"wgRevisionId":26115,"wgArticleId":1625,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"BMI2","wgRelevantArticleId":1625,"wgRequestId":"Zp7DSv-qaMe6EU8WbZGgNgAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-BMI2 rootpage-BMI2 skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">BMI2</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Hardware.html" title="Hardware">Hardware</a> * <a href="X86-64.html" title="X86-64">x86-64</a> * BMI2</b>
+</p><p><b>BMI2</b>,<br/>
+an x86-64 expansion of <a href="Bit-Twiddling.html#BitManipulation" title="Bit-Twiddling">bit-manipulation</a> instructions by <a href="Intel.html" title="Intel">Intel</a>. Like <a href="BMI1.html" title="BMI1">BMI1</a>, BMI2 employs <a class="external text" href="https://en.wikipedia.org/wiki/VEX_prefix" rel="nofollow">VEX prefix</a> encoding to support three-operand syntax with non-destructive source operands on 32- or 64-bit general-purpose registers. Along with <a href="AVX2.html" title="AVX2">AVX2</a>, BMI2 was expected to be part of <a href="Intel.html" title="Intel">Intel's</a> <a class="external text" href="https://en.wikipedia.org/wiki/Haswell_%28microarchitecture%29" rel="nofollow">Haswell</a> architecture planned for 2013, but was not yet available in one of the first tested Haswell generations of mid 2013 as reported by Andreas Stiller from the German  c't magazine <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. 
+BMI2 requires bit 8 set in EBX of <a class="external text" href="https://en.wikipedia.org/wiki/CPUID" rel="nofollow">CPUID</a> with EAX=07H, ECX=0H <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. 
+In 2017, BMI2 was further incorporated in <a href="AMD.html" title="AMD">AMD's</a> <a class="external text" href="https://en.wikipedia.org/wiki/Zen_(microarchitecture)" rel="nofollow">Zen-architecture</a> but until <a class="external text" href="https://en.wikipedia.org/wiki/Zen_3" rel="nofollow">Zen 3</a> in November 2020 <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> with a slow implementation of critical instructions such as <a href="#PDEP">PDEP</a> and <a href="#PEXT">PEXT</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+<sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Instructions"><span class="tocnumber">1</span> <span class="toctext">Instructions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#BZHI"><span class="tocnumber">1.1</span> <span class="toctext">BZHI</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#PDEP"><span class="tocnumber">1.2</span> <span class="toctext">PDEP</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Intrinsic Prototype"><span class="tocnumber">1.2.1</span> <span class="toctext">Intrinsic Prototype</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Sample"><span class="tocnumber">1.2.2</span> <span class="toctext">Sample</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Serial Implementation"><span class="tocnumber">1.2.3</span> <span class="toctext">Serial Implementation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#PEXT"><span class="tocnumber">1.3</span> <span class="toctext">PEXT</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Intrinsic Prototype 2"><span class="tocnumber">1.3.1</span> <span class="toctext">Intrinsic Prototype</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Sample 2"><span class="tocnumber">1.3.2</span> <span class="toctext">Sample</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Serial Implementation 2"><span class="tocnumber">1.3.3</span> <span class="toctext">Serial Implementation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Applications"><span class="tocnumber">2</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#PEXT Bitboards"><span class="tocnumber">2.1</span> <span class="toctext">PEXT Bitboards</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#PEXT.2FPDEP Bitboards"><span class="tocnumber">2.2</span> <span class="toctext">PEXT/PDEP Bitboards</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#FEN Compression"><span class="tocnumber">2.3</span> <span class="toctext">FEN Compression</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Syzygy Generator"><span class="tocnumber">2.4</span> <span class="toctext">Syzygy Generator</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Early PEXT.2FPDEP Proposal"><span class="tocnumber">3</span> <span class="toctext">Early PEXT/PDEP Proposal</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#2006"><span class="tocnumber">5.1</span> <span class="toctext">2006</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#2011 ..."><span class="tocnumber">5.2</span> <span class="toctext">2011 ...</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#2015 ..."><span class="tocnumber">5.3</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#2020 ..."><span class="tocnumber">5.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Instructions">Instructions</span></h1>
+<p>Beside the instructions explained in more detail below, there is MULX, Unsigned Multiply, and RORX, SARX/SHLX/SHRX, that is rotate and shifts without affecting processor flags. PEXT and PDEP <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> allow for an alternative of <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">kindergarten</a>- or <a href="Magic Bitboards.html" title="Magic Bitboards">magic bitboards</a>, and clearly makes maintaining <a href="Rotated Bitboards.html" title="Rotated Bitboards">rotated bitboards</a> obsolete <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup>.
+<span id="BZHI"></span>
+</p>
+<h2><span class="mw-headline" id="BZHI">BZHI</span></h2>
+<p>Zero High Bits Starting with Specified Bit Position.
+</p>
+<pre>
+dest ::= src &amp; ((1 &lt;&lt; index)-1);
+
+unsigned __int64 _bzhi_u64(unsigned __int64 src, unsigned __int32 index);
+</pre>
+<p><span id="PDEP"></span>
+</p>
+<h2><span class="mw-headline" id="PDEP">PDEP</span></h2>
+<p>Parallel Bits Deposit. May be used to map <a href="First Rank Attacks.html" title="First Rank Attacks">first rank attacks</a> to any rank, file, or diagonal on the chess board.
+</p>
+<h3><span class="mw-headline" id="Intrinsic_Prototype">Intrinsic Prototype</span></h3>
+<pre>
+unsigned __int64 pdep_u64(unsigned __int64 src, unsigned __int64 mask);
+</pre>
+<h3><span class="mw-headline" id="Sample">Sample</span></h3>
+<pre>
+SRC1   ┌───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+       │S63│S62│S61│S60│S59│....│ S7│ S6│ S5│ S4│ S3│ S2│ S1│ S0│ 
+       └───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+SRC2   ┌───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+(mask) │ 0 │ 0 │ 0 │ 1 │ 0 │0...│ 1 │ 0 │ 1 │ 0 │ 0 │ 1 │ 0 │ 0 │  (f.i. 4 bits set)
+       └───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+DEST   ┌───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+       │ 0 │ 0 │ 0 │ S3│ 0 │0...│ S2│ 0 │ S1│ 0 │ 0 │ S0│ 0 │ 0 │ 
+       └───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┴───┴───┘
+</pre>
+<h3><span class="mw-headline" id="Serial_Implementation">Serial Implementation</span></h3>
+<p>in <a href="C.html" title="C">C</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup>:
+</p>
+<pre>
+U64 _pdep_u64(U64 val, U64 mask) {
+  U64 res = 0;
+  for (U64 bb = 1; mask; bb += bb) {
+    if (val &amp; bb)
+      res |= mask &amp; -mask;
+    mask &amp;= mask - 1;
+  }
+  return res;
+}
+</pre>
+<p><span id="PEXT"></span>
+</p>
+<h2><span class="mw-headline" id="PEXT">PEXT</span></h2>
+<p>Parallel Bits Extract. Great to get the <a href="First Rank Attacks.html#TheOuterSquares" title="First Rank Attacks">inner six bit</a> occupancy of any rank, file, or diagonal as index of six consecutive lower bit, or the up to 12 bits for a <a href="#PEXTBitboards">magic attack lookup</a>.
+</p>
+<h3><span class="mw-headline" id="Intrinsic_Prototype_2">Intrinsic Prototype</span></h3>
+<pre>
+unsigned __int64 _pext_u64(unsigned __int64 src, unsigned __int64 mask);
+</pre>
+<h3><span class="mw-headline" id="Sample_2">Sample</span></h3>
+<pre>
+SRC1   ┌───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+       │S63│S62│S61│S60│S59│....│ S7│ S6│ S5│ S4│ S3│ S2│ S1│ S0│ 
+       └───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+SRC2   ┌───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+(mask) │ 0 │ 0 │ 0 │ 1 │ 0 │0...│ 1 │ 0 │ 1 │ 0 │ 0 │ 1 │ 0 │ 0 │  (f.i. 4 bits set)
+       └───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+DEST   ┌───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+       │ 0 │ 0 │ 0 │ 0 │ 0 │0...│ 0 │ 0 │ 0 │ 0 │S60│ S7│ S5│ S2│ 
+       └───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┴───┴───┘
+</pre>
+<h3><span class="mw-headline" id="Serial_Implementation_2">Serial Implementation</span></h3>
+<p>in <a href="C.html" title="C">C</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup>, quite similar to <a href="#PDEP">PDEP</a> in traversing the mask, and only two expressions, "mask &amp; -mask" and "bb" swapped:
+</p>
+<pre>
+U64 _pext_u64(U64 val, U64 mask) {
+  U64 res = 0;
+  for (U64 bb = 1; mask; bb += bb) {
+    if ( val &amp; mask &amp; -mask )
+      res |= bb;
+    mask &amp;= mask - 1;
+  }
+  return res;
+} 
+</pre>
+<p><span id="PEXTBitboards"></span>
+</p>
+<h1><span class="mw-headline" id="Applications">Applications</span></h1>
+<h2><span class="mw-headline" id="PEXT_Bitboards">PEXT Bitboards</span></h2>
+<p>Fancy <b>PEXT Bitboards</b> as replacement for <a href="Magic Bitboards.html#Fancy" title="Magic Bitboards">Fancy Magic Bitboards</a>. The relevant up to four ray occupancies are mapped to a dense index range by using the <a href="#PEXT">PEXT</a> instruction:
+</p>
+<pre>
+U64 arrAttacks  [...]; // ~840 KByte all rook and bishop attacks
+U64 arrRookMask  [64]; // 10..12 relevant occupancy bits per rook square
+U64 arrBishopMask[64]; //  5.. 9 relevant occupancy bits per bishop square
+U32 arrRookBase  [64]; // arrAttacks base offset per rook square
+U32 arrBishopBase[64]; // arrAttacks base offset per bishop square
+
+U64 rookAttack(U64 occ, enumSquare sq) {
+  return arrAttacks[arrRookBase[sq] + _pext_u64(occ, arrRookMask[sq])];
+}
+
+U64 bishopAttack(U64 occ, enumSquare sq) {
+  return arrAttacks[arrBishopBase[sq] + _pext_u64(occ, arrBishopMask[sq])];
+}
+</pre>
+<p><span id="PDEPBitboards"></span>
+</p>
+<h2><span class="mw-headline" id="PEXT.2FPDEP_Bitboards">PEXT/PDEP Bitboards</span></h2>
+<p>An idea for denser sliding attack tables is also using <a href="#PDEP">PDEP</a>, dividing the table size of the <a href="#PEXTBitboards">PEXT Bitboards</a> by four but some trailing computation. Looking up <a href="Word.html" title="Word">16-bit words</a> instead of bitboards - to get the scattered bits of the up to four ray attacks per square in an extracted form mapped to a 16-bit word, which then becomes the attack bitboard by performing a deposit instruction with an appropriate second mask per square. The technique was introduced by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a> in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-11"><a href="#cite note-11">[11]</a></sup> <sup class="reference" id="cite_ref-12"><a href="#cite note-12">[12]</a></sup> and implemented by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a> with a table of slightly more than 210 KiB <sup class="reference" id="cite_ref-13"><a href="#cite note-13">[13]</a></sup> <sup class="reference" id="cite_ref-14"><a href="#cite note-14">[14]</a></sup>. Ronald's code was  tested by <a href="Jean-Francois Romang.html" title="Jean-Francois Romang">Jean-Francois Romang</a> using <a href="Stockfish.html" title="Stockfish">Stockfish</a> as testbed, giving promising results   <sup class="reference" id="cite_ref-15"><a href="#cite note-15">[15]</a></sup> <sup class="reference" id="cite_ref-16"><a href="#cite note-16">[16]</a></sup>. 
+</p>
+<h2><span class="mw-headline" id="FEN_Compression">FEN Compression</span></h2>
+<p>Concerning the application of <a href="Neural Networks.html" title="Neural Networks">neural network</a> training, in particular <a href="NNUE.html#Training" title="NNUE">NNUE training</a> with millions of <a href="Chess Position.html" title="Chess Position">chess position</a> inside a huge file of <a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">FEN</a> records, 
+Lucas Braesch proposed the idea to <a class="external text" href="https://en.wikipedia.org/wiki/Data_compression" rel="nofollow">compress</a> a chess position by a sequence of <a href="#PEXT">PEXT</a> instructions,
+while the decompression is done by an sequence of corresponding <a href="#PDEP">PDEP</a> instructions <sup class="reference" id="cite_ref-17"><a href="#cite note-17">[17]</a></sup>.
+This is intended as possible alternative of the <a class="external text" href="https://en.wikipedia.org/wiki/Huffman_coding" rel="nofollow">Huffman coding</a> as applied in the <a href="Gary Linscott.html#PyTorch NNUE" title="Gary Linscott">PyTorch NNUE</a> code by <a href="Gary Linscott.html" title="Gary Linscott">Gary Linscott</a> <sup class="reference" id="cite_ref-18"><a href="#cite note-18">[18]</a></sup>. The table illustrates the layout:
+</p>
+<table class="wikitable">
+<tr>
+<th> Item
+</th>
+<th> Bits
+</th>
+<th> Definition
+</th></tr>
+<tr>
+<td> occupancy rocc<br/>(remaining occupancy)
+</td>
+<td style="text-align:right;"> 64
+</td>
+<td style="text-align:center;"> rocc = white | black 
+</td></tr>
+<tr>
+<td> pext(white, rocc)
+</td>
+<td style="text-align:right;"> cnt(rocc)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> black = rocc ^ white
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td>
+</td></tr>
+<tr>
+<td> pext(pawns, rocc)
+</td>
+<td style="text-align:right;"> cnt(rocc)
+</td>
+<td>
+</td></tr>
+<tr>
+<td> pext(knights, rocc)
+</td>
+<td style="text-align:right;"> cnt(rocc)
+</td>
+<td style="text-align:center;"> rocc ^= pawns
+</td></tr>
+<tr>
+<td> pext(bishops, rocc)
+</td>
+<td style="text-align:right;"> cnt(rocc)
+</td>
+<td style="text-align:center;"> rocc ^= bishops
+</td></tr>
+<tr>
+<td> pext(rooks, rocc)
+</td>
+<td style="text-align:right;"> cnt(rocc)
+</td>
+<td style="text-align:center;"> rocc ^= rooks
+</td></tr>
+<tr>
+<td> pext(queens, rocc)
+</td>
+<td style="text-align:right;"> cnt(rocc)
+</td>
+<td style="text-align:center;"> rocc ^= queens
+</td></tr>
+<tr>
+<td> kings = rocc
+</td>
+<td style="text-align:right;"> 0
+</td>
+<td>
+</td></tr>
+<tr>
+<td> side to move
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td>
+</td></tr>
+<tr>
+<td> ep
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td>
+</td></tr>
+<tr>
+<td> pext(epSquare, candis)
+</td>
+<td style="text-align:right;"> cnt(candis)
+</td>
+<td style="text-align:right;"> candis = ((white &amp; pawns &amp; rank4) &lt;&lt; 8)<br/> | ((black &amp; pawns &amp; rank6) &gt;&gt; 8)
+</td></tr>
+<tr>
+<td> pext(castler, rooks)
+</td>
+<td style="text-align:right;"> cnt(rooks)
+</td>
+<td style="text-align:center;"> castler = rooks with castling rights<br/>(any color)
+</td></tr>
+<tr>
+<td> rule50
+</td>
+<td style="text-align:right;"> 7
+</td>
+<td>
+</td></tr></table>
+<p>The uncompressed piece placement bitstream is based on the <a href="Bitboard Board-Definition.html#SixTwo" title="Bitboard Board-Definition">dense bitboard board-definition</a> 
+and consists of the <a href="Occupancy.html" title="Occupancy">occupancy</a>, one color bitboard (e.g. White pieces), 
+and subsequently the piece bitboards of both colors, from pawns, knights, bishops, rooks until queens. King bitboards are redundant,
+due to the subsequent <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a> of a remaining occupancy with all mentioned piece bitboards.  
+Instead of storing the sparsely populated piece bitboards, the compression is due to saving their extracted bits from the remaining occupancy -  
+with bit size of <a href="Population Count.html" title="Population Count">population count</a> of the remaining occupancy, rather than 64. 
+The pseudo code below omits further aspects of a chess position, such as side to move, castling ability, en passant target square and halfmove clock.
+</p>
+<pre>
+BitStream compress(const U64 * pieceBB, ...) {
+  BitStream stream;
+  U64 rocc = pieceBB[nWhite] | pieceBB[nBlack];
+  stream.write_n_bit(rocc, 64);
+  stream.write_n_bit(_pext_u64(pieceBB[nWhite], rocc), popCount(rocc));
+  for (pt = nPawn; pt &lt;= nQueen; ++pt) { 
+    stream.write_n_bit(_pext_u64(pieceBB[pt], rocc), popCount(rocc));
+    rocc ^= pieceBB[pt]; 
+  }
+  assert (rocc == pieceBB[nKing]);
+  // side to move, ep and castling omitted
+  return stream;
+}
+
+void decompress (const BitStream &amp;stream, U64 * pieceBB, ...) {
+  U64 rocc = stream.read_n_bit(64);
+  pieceBB[nWhite] = _pdep_u64(stream.read_n_bit(popCount(rocc)), rocc);
+  pieceBB[nBlack] = rocc ^ pieceBB[nWhite];
+  for (pt = nPawn; pt &lt;= nKing; ++pt) { 
+    pieceBB[pt] = _pdep_u64(stream.read_n_bit(popCount(rocc)), rocc);
+    rocc ^= pieceBB[pt]; 
+  }
+  assert (rocc == 0);
+  // side to move, ep and castling omitted
+}
+</pre>
+<h2><span class="mw-headline" id="Syzygy_Generator">Syzygy Generator</span></h2>
+<p><a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man's</a> generator for <a href="Syzygy Bases.html" title="Syzygy Bases">Syzygy Bases</a> can take profit of <a href="#PDEP">PDEP</a> and <a href="#PEXT">PEXT</a> instructions, or to use their serial implementations to further reduce the size of his already compact <a href="Endgame Tablebases.html" title="Endgame Tablebases">endgame tablebases</a> <sup class="reference" id="cite_ref-19"><a href="#cite note-19">[19]</a></sup>.
+<span id="PEXTPDEPProposal"></span>
+</p>
+<h1><span class="mw-headline" id="Early_PEXT.2FPDEP_Proposal">Early PEXT/PDEP Proposal</span></h1>
+<p>In late 2006, <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a> already proposed a <b>PEXTPDEP</b> instruction, <a href="#PEXT">Parallel Bits Extract</a> controlled by a source mask followed by <a href="#PDEP">Parallel Bits Deposit</a> controlled by a destination mask <sup class="reference" id="cite_ref-20"><a href="#cite note-20">[20]</a></sup> <sup class="reference" id="cite_ref-21"><a href="#cite note-21">[21]</a></sup>.
+However, it is not known whether his proposal was recognized by Intel engineers and had any influence on the design of the BMI2 PEXT and PDEP instructions. 
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="AVX.html" title="AVX">AVX</a></li>
+<li> <a href="AVX2.html" title="AVX2">AVX2</a></li>
+<li> <a href="BitScan.html" title="BitScan">BitScan</a></li>
+<li> <a href="Bit-Twiddling.html" title="Bit-Twiddling">Bit-Twiddling</a></li>
+<li> <a href="BMI1.html" title="BMI1">BMI1</a></li>
+<li> <a href="General Setwise Operations.html" title="General Setwise Operations">General Setwise Operations</a></li>
+<li> <a href="TBM.html" title="TBM">TBM</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2006">2006</span></h2>
+<ul><li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5962.html" rel="nofollow">New instruction that intel/amd should add</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, December 05, 2006 » <a href="#PEXTPDEPProposal">Early PEXT/PDEP Proposal</a></li></ul>
+<h2><span class="mw-headline" id="2011_...">2011 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40333.html" rel="nofollow">Haswell New Instructions</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2011</li>
+<li> <a class="external text" href="http://www.randombit.net/bitbashing/2012/06/22/haswell bit permutations.html.html" rel="nofollow">Bit manipulations using BMI2</a> by <a class="external text" href="http://www.randombit.net/.html" rel="nofollow">Jack Lloyd</a>, <a class="external text" href="http://www.randombit.net/.html" rel="nofollow">/ :: bitbashing</a>, June 22, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48220.html" rel="nofollow">PEXT Bitboards</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49611.html" rel="nofollow">152k rook and bishop attacks using PEXT and PDEP</a> by <a href="Lasse Hansen.html" title="Lasse Hansen">Lasse Hansen</a>, <a href="CCC.html" title="CCC">CCC</a>, October 06, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51879.html" rel="nofollow">Stockfish haswell optimized build</a>  by <a href="Jean-Francois Romang.html" title="Jean-Francois Romang">Jean-Francois Romang</a>, <a href="CCC.html" title="CCC">CCC</a>, April 06, 2014 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=58910.html" rel="nofollow">smaller tables for PEXT-style attack getters</a> by <a class="new" href="index.php?title=Wylie Garvin&amp;action=edit&amp;redlink=1.html" title="Wylie Garvin (page does not exist)">Wylie Garvin</a>, <a href="CCC.html" title="CCC">CCC</a>, January 13, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63978.html" rel="nofollow">BMI2 intrinsics in gcc</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, May 14, 2017</li>
+<li> <a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=32016.html" rel="nofollow">Ryzen Fritz Chess Benchmarks ?</a> by ralunger, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, March 03, 2017</li>
+<li> <a class="external text" href="https://www.reddit.com/r/Amd/comments/60i6er/ryzen_and_bmi2_strange_behavior_and_high_latencies/" rel="nofollow">Ryzen and BMI2: Strange behavior and high latencies</a> by DonnieTinyHands, <a class="external text" href="https://en.wikipedia.org/wiki/Reddit" rel="nofollow">Reddit</a>, March 20, 2017 » <a href="AMD.html" title="AMD">AMD</a>, <a href="#PEXT">BMI2 PEXT</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65191.html" rel="nofollow">BMI2 PEXT idea for attacks generation</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, September 16, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66737&amp;start=4.html" rel="nofollow">Re: Komodo 11.3</a> by <a href="Mark Lefler.html" title="Mark Lefler">Mark Lefler</a>, <a href="CCC.html" title="CCC">CCC</a>, March 04, 2018 » <a href="AMD.html" title="AMD">AMD</a>, <a href="#PEXT">BMI2 PEXT</a>, <a href="Komodo.html#11" title="Komodo">Komodo 11.3</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67432.html" rel="nofollow">Ryzen 2 and BMI2?</a> by <a href="Steve Maughan.html" title="Steve Maughan">Steve Maughan</a>, <a href="CCC.html" title="CCC">CCC</a>, May 13, 2018 » <a href="AMD.html" title="AMD">AMD</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67432&amp;start=12.html" rel="nofollow">Re: Ryzen 2 and BMI2?</a> by <a href="Joost Buijs.html" title="Joost Buijs">Joost Buijs</a>, <a href="CCC.html" title="CCC">CCC</a>, May 18, 2020 » <a href="AVX2.html" title="AVX2">AVX2</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=70167.html" rel="nofollow">AMD BMI2 question</a> by Leo, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2019 » <a href="AMD.html" title="AMD">AMD</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72538.html" rel="nofollow">PEXT/PDEP are even slower than you think on Zen</a> by <a href="Gian-Carlo Pascutto.html" title="Gian-Carlo Pascutto">Gian-Carlo Pascutto</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2019 » <a href="AMD.html" title="AMD">AMD</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=67432&amp;start=12.html" rel="nofollow">Re: Ryzen 2 and BMI2?</a> by <a href="Joost Buijs.html" title="Joost Buijs">Joost Buijs</a>, <a href="CCC.html" title="CCC">CCC</a>, May 18, 2020 » <a href="AMD.html" title="AMD">AMD</a>, <a href="AVX2.html" title="AVX2">AVX2</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75333.html" rel="nofollow">New AMD Zen 3 and Ryzen processors</a> by mmt, <a href="CCC.html" title="CCC">CCC</a>, October 09, 2020</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75333&amp;start=8.html" rel="nofollow">Re: New AMD Zen 3 and Ryzen processors</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Mike Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2020 » <a href="#PEXTPDEPProposal">Early PEXT/PDEP Proposal</a></dd></dl>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75691.html" rel="nofollow">Zen3 supports fast PEXT aka BMI2</a> by <a class="new" href="index.php?title=Alayan Feh&amp;action=edit&amp;redlink=1.html" title="Alayan Feh (page does not exist)">Alayan Feh</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2020 » <a href="AMD.html" title="AMD">AMD</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76892.html" rel="nofollow">FEN compression</a> by lucasart, <a href="CCC.html" title="CCC">CCC</a>, March 17, 2021 » <a href="#FEN Compression">FEN Compression</a>, <a href="NNUE.html#Training" title="NNUE">NNUE Training</a></li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78804" rel="nofollow">pdep/pext for 128-bit integers and bit-arrays</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a href="CCC.html" title="CCC">CCC</a>, December 03, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Bit_Manipulation_Instruction_Sets" rel="nofollow">Bit Manipulation Instruction Sets from Wikipedia</a></li>
+<li> <a class="external text" href="http://www.randombit.net/bitbashing/2012/06/22/haswell bit permutations.html.html" rel="nofollow">Bit manipulations using BMI2 — bitbashing</a>, June 22, 2012</li>
+<li> <a class="external text" href="http://users.atw.hu/instlatx64/GenuineIntel00306C3 Haswell InstLatX64.txt.html" rel="nofollow">Haswell Instructions Latency</a></li>
+<li> <a class="external text" href="http://software.intel.com/sites/landingpage/IntrinsicsGuide/.html" rel="nofollow">Intel Intrinsics Guide</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://de.linkedin.com/pub/andreas-stiller/a/381/aa9.html" rel="nofollow">Andreas Stiller</a> (<b>2013</b>). <i><a class="external text" href="http://www.heise.de/ct/inhalt/2013/14/114/.html" rel="nofollow">Der Rechenkünstler</a></i>. <a class="external text" href="http://www.heise.de/ct/.html" rel="nofollow">c't Magazin für Computertechnik</a> 14/2013, p. 114-119 (German)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://software.intel.com/en-us/articles/how-to-detect-new-instruction-support-in-the-4th-generation-intel-core-processor-family.html" rel="nofollow">How to detect New Instruction support in the 4th generation Intel® Core™ processor family | Intel® Developer Zone</a> by <a class="external text" href="http://software.intel.com/de-de/user/76418.html" rel="nofollow">Max Locktyukhin</a>, August 05, 2013</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75691.html" rel="nofollow">Zen3 supports fast PEXT aka BMI2</a> by <a class="new" href="index.php?title=Alayan Feh&amp;action=edit&amp;redlink=1.html" title="Alayan Feh (page does not exist)">Alayan Feh</a>, <a href="CCC.html" title="CCC">CCC</a>, November 05, 2020</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://rybkaforum.net/cgi-bin/rybkaforum/topic show.pl?tid=32016.html" rel="nofollow">Ryzen Fritz Chess Benchmarks ?</a> by ralunger, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Rybka Forum</a>, March 03, 2017</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.reddit.com/r/Amd/comments/60i6er/ryzen_and_bmi2_strange_behavior_and_high_latencies/" rel="nofollow">Ryzen and BMI2: Strange behavior and high latencies</a> by DonnieTinyHands, <a class="external text" href="https://en.wikipedia.org/wiki/Reddit" rel="nofollow">Reddit</a>, March 20, 2017 » <a href="AMD.html" title="AMD">AMD</a>, <a href="#PEXT">BMI2 PEXT</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.techpowerup.com/forums/threads/amd-announces-a-red-october-zen-3-on-october-8-rdna2-on-october-28.271981/page-2#post-4344965" rel="nofollow">Re: AMD Announces a Red October: Zen 3 on October 8, RDNA2 on October 28</a> by dragontamer5788, <a class="external text" href="https://www.techpowerup.com/forums/" rel="nofollow">TechPowerUp Forum</a>, September 9, 2020</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/l/Lee:Ruby B=.html" rel="nofollow">Ruby Lee</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/s/Shi:Zhijie Jerry.html.html" rel="nofollow">Zhijie Shi</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/pers/hd/y/Yang:Xiao.html.html" rel="nofollow">Xiao Yang</a> (<b>2001</b>). <i>Efficient Permutation Instructions for Fast Software Cryptography</i>. Micro, IEEE, Vol. 21,  No. 6, <a class="external text" href="http://palms.ee.princeton.edu/PALMSopen/lee01efficient.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40333.html" rel="nofollow">Haswell New Instructions</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2011</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48220&amp;start=1.html" rel="nofollow">Re: PEXT Bitboards</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2013</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48220&amp;start=2.html" rel="nofollow">Re: PEXT Bitboards</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2013</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite ref-11">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40333.html" rel="nofollow">Haswell New Instructions</a> by <a href="Zach Wegner.html" title="Zach Wegner">Zach Wegner</a>, <a href="CCC.html" title="CCC">CCC</a>, September 09, 2011</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite ref-12">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=40333&amp;start=12.html" rel="nofollow">Re: Haswell New Instructions</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2011</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite ref-13">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49611&amp;start=1.html" rel="nofollow">Re: 152k rook and bishop attacks using PEXT and PDEP</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a>, <a href="CCC.html" title="CCC">CCC</a>, October 06, 2013</span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite ref-14">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/syzygy1/tb/blob/master/src/bmi2.h" rel="nofollow">tb/src/bmi2.h at master · syzygy1/tb · GitHub</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><a href="#cite ref-15">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51879&amp;start=2.html" rel="nofollow">Re: Stockfish haswell optimized build</a> by <a href="Jean-Francois Romang.html" title="Jean-Francois Romang">Jean-Francois Romang</a>, <a href="CCC.html" title="CCC">CCC</a>, April 06, 2014</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><a href="#cite ref-16">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/jromang/Stockfish/blob/bmi2/src/bitboard.h#L255" rel="nofollow">Stockfish/src/bitboard.h at bmi2 · jromang/Stockfish · GitHub</a> by  <a href="Jean-Francois Romang.html" title="Jean-Francois Romang">Jean-Francois Romang</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite ref-17">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76892&amp;start=3.html" rel="nofollow">Re: FEN compression</a> by lucasart, <a href="CCC.html" title="CCC">CCC</a>, March 17, 2021 » <a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">Forsyth-Edwards Notation</a>, <a href="NNUE.html#Training" title="NNUE">NNUE Training</a></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><a href="#cite ref-18">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/glinscott/nnue-pytorch/blob/master/lib/nnue_training_data_formats.h#L6405" rel="nofollow">nnue-pytorch/nnue_training_data_formats.h at master · glinscott/nnue-pytorch · GitHub</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><a href="#cite ref-19">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=48220&amp;start=1.html" rel="nofollow">Re: PEXT Bitboards</a> by <a href="Ronald de Man.html" title="Ronald de Man">Ronald de Man</a>, <a href="CCC.html" title="CCC">CCC</a>, June 07, 2013</span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite ref-20">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=5962.html" rel="nofollow">New instruction that intel/amd should add</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Michael Sherwin</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, December 05, 2006</span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite ref-21">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=75333&amp;start=8.html" rel="nofollow">Re: New AMD Zen 3 and Ryzen processors</a> by <a href="Michael Sherwin.html" title="Michael Sherwin">Mike Sherwin</a>, <a href="CCC.html" title="CCC">CCC</a>, October 11, 2020</span>
+</li>
+</ol></div>
+<p><b><a href="X86-64.html" title="X86-64">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722085833
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.036 seconds
+Real time usage: 0.037 seconds
+Preprocessor visited node count: 489/1000000
+Preprocessor generated node count: 1002/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1625-0!canonical and timestamp 20240722085833 and revision id 26115
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=BMI2&amp;oldid=26115">https://www.chessprogramming.org/index.php?title=BMI2&amp;oldid=26115</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=BMI2&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="BMI2.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:BMI2&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="BMI2.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=BMI2&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=BMI2&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/BMI2.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/BMI2.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=BMI2&amp;oldid=26115.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=BMI2&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 3 December 2021, at 14:09.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=BMI2&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.036","walltime":"0.037","ppvisitednodes":{"value":489,"limit":1000000},"ppgeneratednodes":{"value":1002,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722085833","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":54});});</script>
+</body>
+</html>

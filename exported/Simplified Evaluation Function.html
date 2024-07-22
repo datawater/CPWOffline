@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Simplified Evaluation Function - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Simplified_Evaluation_Function","wgTitle":"Simplified Evaluation Function","wgCurRevisionId":23730,"wgRevisionId":23730,"wgArticleId":1547,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Simplified_Evaluation_Function","wgRelevantArticleId":1547,"wgRequestId":"Zp7Dto2xCJ5uo1xYemabOQAAAAg","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Simplified_Evaluation_Function rootpage-Simplified_Evaluation_Function skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Simplified Evaluation Function</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * Simplified Evaluation Function</b>
+</p><p>The content of this page has been originally posted by <a href="Tomasz Michniewski.html" title="Tomasz Michniewski">Tomasz Michniewski</a> on the Polish chess programming discussion list (progszach). It contains a proposal of extremely basic evaluation function required from the participants of a "Unified Evaluation" test tournament. Please note that the values presented here have been designed specifically to compensate for the lack of any other chess knowledge, and <b>not</b> for being supplemented by it.
+</p><p>There are two parts of this email, the first is about simple <a href="Point Value.html" title="Point Value">piece values</a>, the second is about <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Piece Values"><span class="tocnumber">1</span> <span class="toctext">Piece Values</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Piece-Square Tables"><span class="tocnumber">2</span> <span class="toctext">Piece-Square Tables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Pawns"><span class="tocnumber">2.1</span> <span class="toctext">Pawns</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Knights"><span class="tocnumber">2.2</span> <span class="toctext">Knights</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Bishops"><span class="tocnumber">2.3</span> <span class="toctext">Bishops</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Rooks"><span class="tocnumber">2.4</span> <span class="toctext">Rooks</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Queen"><span class="tocnumber">2.5</span> <span class="toctext">Queen</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#King"><span class="tocnumber">2.6</span> <span class="toctext">King</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Piece_Values">Piece Values</span></h1>
+<p>Setting piece values I wanted to achieve several results:
+</p>
+<ol><li> Avoid exchanging one minor piece for three pawns.</li>
+<li> Encourage the engine to have the bishop pair.</li>
+<li> Avoid exchanging of two minor pieces for a rook and a pawn.</li>
+<li> Stick to human chess experience.</li></ol>
+<p>Point 1 is achieved by simple:
+</p>
+<pre>
+B &gt; 3P
+N &gt; 3P
+</pre>
+<p>Of course there are positions where three (or even two) pawns are better than a piece. But generally, exchanging of a minor piece for three pawns is a bad idea, as these pawns might come under attack and after capturing one of them the position becomes critical. So in longer term it is better to have a piece, not three pawns.
+</p><p>Point 2 is achieved by:
+</p>
+<pre>
+B &gt; N
+</pre>
+<p>Of course this doesn't guarantee anything, because we may end up with just one bishop against one knight. But on the other hand chess players often capture bishop with knight while rarely capture knight with bishop. For example white bishop d3 rarely captures black knight standing on central square e4. On the contrary, white knight on e4 may easily capture black bishop at f6. Of course one may say that sometimes white bishop from g5 captures black knight at f6. But this often happens after forcing h6 or just time issues are involved, which we ignore here. The same with <a class="external text" href="https://en.wikipedia.org/wiki/Aron_Nimzowitsch" rel="nofollow">Nimzowitsch</a> bishop at b4, which should capture knight at c3 only after being forced with a3 let say.
+</p><p>So, we avoid unnecessary exchanging of a bishop for a knight. We increase the chance to have the bishop pair. On the other hand we risk to end up in an ending with either a wrong bishop or just a bishop over a knight with pawns on only one side or in closed position. So additional evaluation with looking at pawns' constellation is called for, but at this stage we can't afford this.
+</p><p>So together we may say:
+</p>
+<pre>
+B &gt; N &gt; 3P
+</pre>
+<p>Point 3 is achieved by:
+</p>
+<pre>
+B + N &gt; R + P
+</pre>
+<p>This is a bit problematic, as once I read in Russian Shachmaty that two minor pieces are worth a rook and two pawns. However, this might be an exageration. I may recall game from Karpov-Kasparov match where Kasparov could have won the ending with R + 2P against two minor pieces (plus some extra pawns on both sides). The game ended up in a draw, but a rook plus two pawns might be a bit too much. So instead of:
+</p>
+<pre>
+R + 2P &gt; B + N &gt; R + P
+</pre>
+<p>let's say something between:
+</p>
+<pre>
+B + N = R + 1.5P
+</pre>
+<p>OK, now I'd like to call for the word "symmetry". In chess the more symmetric position and material balance, the bigger probability of a draw result. Here, since the material balance isn't symmetric, we underline this with 1.5 factor, so the engine will either tend to have two minors against a rook plus a pawn or a rook plus two pawns against two minors. Please remember that this is still material evaluation, we aren't even in piece/square tables, not talking about real positional evaluation - so there is huge room for improvement in the future.
+</p><p>Additional comment to the last equation is that two knights would be a bit weaker than R + 1.5P, while two bishops would be a bit stronger, but this is not important now.
+</p><p>As you see I try to stick to the rule 4 as well. The final equation I would refer to is:
+</p>
+<pre>
+Q + P = 2R
+</pre>
+<p>Together we have:
+</p>
+<pre>
+B &gt; N &gt; 3P
+B + N = R + 1.5P
+Q + P = 2R
+</pre>
+<p>which might be satisfied by (values in <a href="Centipawns.html" title="Centipawns">centipawns</a>):
+</p>
+<pre>
+P = 100
+N = 320
+B = 330
+R = 500
+Q = 900
+K = 20000
+</pre>
+<p>Additionally we can see that they satisfy another relationship:
+</p>
+<pre>
+B + 2P &gt; N + 2P &gt; R
+</pre>
+<p>However I didn't like to use it, because to exchange a rook for a minor piece and two pawns it is not enough to simply capture a knight with a rook and then additionally capture the recapturing pawn, because we additionally need two extra plies for capturing of another pawn. So this isn't often - instead just a rook for a minor piece plus one pawn is more often, where additionally some compensation is achieved. But this isn't our subject at the moment.
+</p><p>According to these settings:
+</p>
+<pre>
+2B + N &gt; Q
+and
+R + B + P &gt; Q (or R + N + P &gt; Q as well)
+</pre>
+<p>I don't know what is Adam's or Mateusz's opinion about these relations and all the settings. I don't like last two formulas, but on the other hand I would like to stick to the classical rule:
+</p>
+<pre>
+Q + P = 2R
+</pre>
+<p>Additional comment to:
+</p>
+<pre>
+K = 20000
+</pre>
+<p>This is <a href="Claude Shannon.html" title="Claude Shannon">Shannon's</a> value for the king, which sometimes might be useful for discovering whether the king was taken. It has this feature that the maximal material balance has a value of 20000 + 9*900 + 2*500 + 4*300 = 30300 (approx.) and might be stored as 2 byte integer with a sign, so if someone wants to store two such values in one 4 byte integer - why not.
+</p><p>Another comment is that sometimes material balance might be perceived as investing on the stock exchange - we should look at the results in longer perspective. I'd like to recall the example with a game, where one side wins without moving Ra1, which waited silently for development of Nb1, which wasn't touched at all. This side somehow won. Now let's ask whether White would win if there was no white rook at a1 from the beginning. Probably not. Why? Because there would appear exchange variants which would favour Black. So the material balance played its role. But the results of the presence of white rook at a1 could be seen only after several moves, maybe in the ending.
+</p>
+<h1><span class="mw-headline" id="Piece-Square_Tables">Piece-Square Tables</span></h1>
+<p>Now, let's move for piece-square values. Generally I would like to give bonuses for pieces standing well and penalties for pieces standing badly. Other squares will have neutral value of 0. Of course one may incorporate above <a href="Point Value.html" title="Point Value">piece values</a> into <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a> if they wish. I don't do this.
+</p>
+<h2><span class="mw-headline" id="Pawns">Pawns</span></h2>
+<p>For pawns we simply encourage the pawns to advance. Additionally we try to discourage the engine from leaving central pawns unmoved. The problem I could see here is that this is contradictory to keeping pawns in front of the king. We also ignore the factor whether the pawn is passed or not. So more advanced evaluation is called for, especially that "pawns are soul of the game".
+</p>
+<pre>
+// pawn
+ 0,  0,  0,  0,  0,  0,  0,  0,
+50, 50, 50, 50, 50, 50, 50, 50,
+10, 10, 20, 30, 30, 20, 10, 10,
+ 5,  5, 10, 25, 25, 10,  5,  5,
+ 0,  0,  0, 20, 20,  0,  0,  0,
+ 5, -5,-10,  0,  0,-10, -5,  5,
+ 5, 10, 10,-20,-20, 10, 10,  5,
+ 0,  0,  0,  0,  0,  0,  0,  0
+</pre>
+<p>OK, let's comment this table. Firstly the shelter in front of white short castle (long castle - it's symmetrical) - pawns at f2, g2 and h2 get bonuses. Additionally we set negative values for f3 and smaller for g3 which both create holes around king. Pawn h2 have the same value on h2 and h3, so the engine may create the hole if the situation calls for it. Moreover - if it gets position with a pawn at g3 and a bishop at g2, then it still may play h3 or not. Therefore h3 has the same value as h2.
+</p><p>Zero value on f4, g4, h4 prevents playing with pawns in front of the king. Moving these pawns to f5, g5, h5 still brings nothing, but at this moment we have the same values as on rank 2.
+</p><p>In the centre we have the most negative values on d2 and e2. We don't like these pawns. d3 and e3 aren't good either. Only d4 and e4 in the centre. Even better on d5 and e5.
+</p><p>Beginning with rank 6th we give bonus for advanced pawns. On rank 7th even bigger.
+</p>
+<h2><span class="mw-headline" id="Knights">Knights</span></h2>
+<p>With knights we simply encourage them to go to the center. Standing on the edge is a bad idea. Standing in the corner is a terrible idea. Probably it was Tartakover who said that "one piece stands badly, the whole game stands badly". And knights move slowly.
+</p>
+<pre>
+// knight
+-50,-40,-30,-30,-30,-30,-40,-50,
+-40,-20,  0,  0,  0,  0,-20,-40,
+-30,  0, 10, 15, 15, 10,  0,-30,
+-30,  5, 15, 20, 20, 15,  5,-30,
+-30,  0, 15, 20, 20, 15,  0,-30,
+-30,  5, 10, 15, 15, 10,  5,-30,
+-40,-20,  0,  5,  5,  0,-20,-40,
+-50,-40,-30,-30,-30,-30,-40,-50,
+</pre>
+<p>As you can see I would happily trade for three pawns any knight standing on the edge. Additionally I put slight bonuses for e2, d2, b5, g5, b3 and g3. Then there are bonuses for being in the center.
+</p>
+<h2><span class="mw-headline" id="Bishops">Bishops</span></h2>
+<pre>
+// bishop
+-20,-10,-10,-10,-10,-10,-10,-20,
+-10,  0,  0,  0,  0,  0,  0,-10,
+-10,  0,  5, 10, 10,  5,  0,-10,
+-10,  5,  5, 10, 10,  5,  5,-10,
+-10,  0, 10, 10, 10, 10,  0,-10,
+-10, 10, 10, 10, 10, 10, 10,-10,
+-10,  5,  0,  0,  0,  0,  5,-10,
+-20,-10,-10,-10,-10,-10,-10,-20,
+</pre>
+<p>We avoid corners and borders. Additionally we prefer squares like b3, c4, b5, d3 and the central ones. Moreover, I wouldn't like to exchange white bishop at d3 (or c3) for black knight at e4, so squares at c3 (f3) have value of 10. As a result white bishop at d3 (c3) is worth (330+10) and black knight at e4 is worth (320+20). So the choice of whether to exchange or not should depend on other issues. On the contrary white bishop at e4 (330+10) would be captured by black knight from f6 (320+10). White bishop at g5 (330+5) won't capture black knight at f6 (320+10).
+</p>
+<h2><span class="mw-headline" id="Rooks">Rooks</span></h2>
+<pre>
+rook
+  0,  0,  0,  0,  0,  0,  0,  0,
+  5, 10, 10, 10, 10, 10, 10,  5,
+ -5,  0,  0,  0,  0,  0,  0, -5,
+ -5,  0,  0,  0,  0,  0,  0, -5,
+ -5,  0,  0,  0,  0,  0,  0, -5,
+ -5,  0,  0,  0,  0,  0,  0, -5,
+ -5,  0,  0,  0,  0,  0,  0, -5,
+  0,  0,  0,  5,  5,  0,  0,  0
+</pre>
+<p>The only ideas which came to my mind was to centralize, occupy the 7th rank and avoid a, h columns (in order not to defend pawn b3 from a3). So generally this is <a href="Gerbil.html" title="Gerbil">Gerbil</a> like.
+</p>
+<h2><span class="mw-headline" id="Queen">Queen</span></h2>
+<pre>
+//queen
+-20,-10,-10, -5, -5,-10,-10,-20,
+-10,  0,  0,  0,  0,  0,  0,-10,
+-10,  0,  5,  5,  5,  5,  0,-10,
+ -5,  0,  5,  5,  5,  5,  0, -5,
+  0,  0,  5,  5,  5,  5,  0, -5,
+-10,  5,  5,  5,  5,  5,  0,-10,
+-10,  0,  5,  0,  0,  0,  0,-10,
+-20,-10,-10, -5, -5,-10,-10,-20
+</pre>
+<p>Generally with queen I marked places where I wouldn't like to have a queen. Additionally I slightly marked central squares to keep the queen in the centre and b3, c2 squares (Paweł's suggestion). The rest should be done by tactics.
+</p>
+<h2><span class="mw-headline" id="King">King</span></h2>
+<pre>
+king middle game
+-30,-40,-40,-50,-50,-40,-40,-30,
+-30,-40,-40,-50,-50,-40,-40,-30,
+-30,-40,-40,-50,-50,-40,-40,-30,
+-30,-40,-40,-50,-50,-40,-40,-30,
+-20,-30,-30,-40,-40,-30,-30,-20,
+-10,-20,-20,-20,-20,-20,-20,-10,
+ 20, 20,  0,  0,  0,  0, 20, 20,
+ 20, 30, 10,  0,  0, 10, 30, 20
+</pre>
+<p>This is to make the king stand behind the pawn shelter.
+</p><p>In the ending the values change.
+</p>
+<pre>
+// king end game
+-50,-40,-30,-20,-20,-30,-40,-50,
+-30,-20,-10,  0,  0,-10,-20,-30,
+-30,-10, 20, 30, 30, 20,-10,-30,
+-30,-10, 30, 40, 40, 30,-10,-30,
+-30,-10, 30, 40, 40, 30,-10,-30,
+-30,-10, 20, 30, 30, 20,-10,-30,
+-30,-30,  0,  0,  0,  0,-30,-30,
+-50,-30,-30,-30,-30,-30,-30,-50
+</pre>
+<p>And of course "These values are for white, for black I use mirrored values." Additionally we should define where the ending begins. For me it might be either if:
+</p>
+<ol><li> Both sides have no queens or</li>
+<li> Every side which has a queen has additionally no other pieces or one minorpiece maximum.</li></ol>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="PeSTO%27s Evaluation Function.html" title="PeSTO's Evaluation Function">PeSTO's Evaluation Function</a></li></ul>
+<p><b><a href="Evaluation.html" title="Evaluation">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722082513
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.007 seconds
+Real time usage: 0.007 seconds
+Preprocessor visited node count: 215/1000000
+Preprocessor generated node count: 440/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1547-0!canonical and timestamp 20240722082513 and revision id 23730
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Simplified_Evaluation_Function&amp;oldid=23730">https://www.chessprogramming.org/index.php?title=Simplified_Evaluation_Function&amp;oldid=23730</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Simplified+Evaluation+Function&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Simplified Evaluation Function.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Simplified Evaluation Function&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Simplified Evaluation Function.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Simplified Evaluation Function&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Simplified Evaluation Function&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Simplified Evaluation Function.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Simplified Evaluation Function.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Simplified Evaluation Function&amp;oldid=23730.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Simplified Evaluation Function&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 23 February 2021, at 22:15.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Simplified_Evaluation_Function&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.007","walltime":"0.007","ppvisitednodes":{"value":215,"limit":1000000},"ppgeneratednodes":{"value":440,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722082513","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":42});});</script>
+</body>
+</html>

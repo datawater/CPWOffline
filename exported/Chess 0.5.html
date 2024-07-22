@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chess 0.5 - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chess_0.5","wgTitle":"Chess 0.5","wgCurRevisionId":21498,"wgRevisionId":21498,"wgArticleId":710,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Open Source","Pascal","Didactic"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chess_0.5","wgRelevantArticleId":710,"wgRequestId":"Zp7DUgMLGU3EphdnCkJWFgAAAAo","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chess_0_5 rootpage-Chess_0_5 skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chess 0.5</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * Chess 0.5</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:126px;"><a href="https://archive.org/details/byte-magazine-1978-10"><img alt="" class="thumbimage" height="163" src="images/0/01/223-front.gif" width="124"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:223-front.gif.html" title="Enlarge"></a></div><a href="Byte Magazine.html#BYTE310" title="Byte Magazine">BYTE, Vol. 3, No. 10</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Chess 0.5</b>,<br/>
+a program by <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> and <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a> for didactic purposes, written in the <a href="ETH Zurich.html" title="ETH Zurich">ETH Zurich</a> dialect of <a href="Pascal.html" title="Pascal">Pascal</a> for the <a href="CDC 6600.html" title="CDC 6600">CDC 6600</a> series of mainframes, published 1978/1979 in <a href="Byte Magazine.html" title="Byte Magazine">Byte Magazine</a>, and re-published on-line in 2005, available from Scott A. Moore's <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> sites, unfortunately with some <a class="external text" href="https://en.wikipedia.org/wiki/Optical_character_recognition" rel="nofollow">OCR</a>-errors such as syntactical correct replacement of '*' by '+' with score factor by side (XTMV, ±1) in some places <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> . Chess 0.5 may be compiled with <a href="Pascal.html#GNUPascal" title="Pascal">GNU Pascal</a> for recent hardware. Due to non-local <a class="external text" href="https://en.wikipedia.org/wiki/Goto" rel="nofollow">goto</a> statements over procedure or function boundaries compiling with <a href="Pascal.html#FreePascal" title="Pascal">Free Pascal</a> is not possible <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> .
+</p><p>Larry Atkin is co-author of the famous <a href="Northwestern University.html" title="Northwestern University">Northwestern University</a> <a href="Chess (Program).html" title="Chess (Program)">Chess</a> line of programs. At the time of the article, Chess was at about version 4.6 <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> . Chess 0.5 is based on his intimate knowledge of that program, but is a seperate program designed for pedagogical purposes to play chess vaguely well <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup> using Chess 4.x like structures of a <a href="Type A Strategy.html" title="Type A Strategy">Shannon Type A</a> approach with <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a> and <a href="Quiescence Search.html" title="Quiescence Search">quiescence search</a>, <a href="Bitboards.html" title="Bitboards">bitboards</a> and <a href="Incremental Updates.html" title="Incremental Updates">incremental updated</a> <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">attack tables</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Blueprint"><span class="tocnumber">1</span> <span class="toctext">Blueprint</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Description"><span class="tocnumber">2</span> <span class="toctext">Description</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Board Representation"><span class="tocnumber">2.1</span> <span class="toctext">Board Representation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Bitboard Infrastructure"><span class="tocnumber">2.2</span> <span class="toctext">Bitboard Infrastructure</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Setwise Operations"><span class="tocnumber">2.2.1</span> <span class="toctext">Setwise Operations</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#BitScan"><span class="tocnumber">2.2.2</span> <span class="toctext">BitScan</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Popcount"><span class="tocnumber">2.2.3</span> <span class="toctext">Popcount</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Evaluation"><span class="tocnumber">2.3</span> <span class="toctext">Evaluation</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Search"><span class="tocnumber">2.4</span> <span class="toctext">Search</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Blueprint">Blueprint</span></h1>
+<p>As encouraged by Frey and Atkin in their article "The reader with an interest in chess and programming should use this listing as starting point for developing a program" <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup> , Chess 0.5 was origin of at least three other competing programs, the Austrian <a href="Merlin.html" title="Merlin">Merlin</a> by <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a>, <a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a>, <a href="Marcus Wagner.html" title="Marcus Wagner">Marcus Wagner</a> and <a class="new" href="index.php?title=Roland Schreier&amp;action=edit&amp;redlink=1.html" title="Roland Schreier (page does not exist)">Roland Schreier</a>, further developed in Pascal except some time critical, often called routines, which were re-written in <a href="CDC 6600.html" title="CDC 6600">CDC</a> <a href="Assembly.html" title="Assembly">assembly</a> by Wagner <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup> , the Dutch <a href="Chess 0.5X.html" title="Chess 0.5X">Chess 0.5X</a> by <a href="Wim Elsenaar.html" title="Wim Elsenaar">Wim Elsenaar</a>, a <a href="PDP-11.html" title="PDP-11">PDP-11</a> assembly port, and according to postings in <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a> <sup class="reference" id="cite_ref-10"><a href="#cite note-10">[10]</a></sup> , the Finnish <a href="Shy.html" title="Shy">Shy</a> by <a href="Juha Kasanen.html" title="Juha Kasanen">Juha Kasanen</a>, <a href="Mika Korhonen.html" title="Mika Korhonen">Mika Korhonen</a> and <a href="Timo Saari.html" title="Timo Saari">Timo Saari</a>, written in <a href="Algol.html" title="Algol">Algol</a>.
+</p>
+<h1><span class="mw-headline" id="Description">Description</span></h1>
+<h2><span class="mw-headline" id="Board_Representation">Board Representation</span></h2>
+<p>Chess 0.5 keeps an <a href="8x8 Board.html" title="8x8 Board">8x8 board</a> either indexed by <a href="Squares.html" title="Squares">square</a> or <a href="Ranks.html" title="Ranks">rank</a> and <a href="Files.html" title="Files">file</a>, ...
+</p>
+<pre>
+CONST
+  AX = 0;       ZX = 31;               (* SUBSETS OF SQUARES *)
+  AS = 0;       ZS = 63;               (* BOARD VECTOR LIMITS *)
+TYPE
+  TF = (F1,F2,F3,F4,F5,F6,F7,F8);      (* FILES *)
+  TR = (R1,R2,R3,R4,R5,R6,R7,R8);      (* RANKS *)
+  TI = INTEGER;                        (* NUMBERS *)
+  TS = AS..ZS;                         (* SQUARES *)
+  TX = AX..ZX;                         (* SOME SQUARES *)
+  TY = AY..ZY;                         (* NUMBER OF TX'S IN A BOARD *)
+  TM = (LITE,DARK,NONE);               (* SIDES *)
+  TP = (LP,LR,LN,LB,LQ,LK,DP,DR,DN,DB,DQ,DK,MT); (* PIECES: LIGHT PAWN,... , DARK KING, EMPTY SQUARE *)
+  SX = SET OF TX;                      (* SET OF SOME SQUARES *)
+
+  RB = RECORD                          (*   BOARDS  *)
+    RBTM : TM;                         (*  SIDE  TO MOVE  *)
+    RBTS : TT;                         (*  ENPASSANT  SQUARE   *)
+    RBTI : TI;                         (*  MOVE   NUMBER   *)
+    RBSQ : SQ;                         (*  CASTLE  FLAGS   *)
+    CASE INTEGER OF
+      0: ( RBIS  : ARRAY [TS] OF TP);   (* INDEXED BY SQUARE *)
+      1: ( RBIRF : ARRAY [TR,TF] OF TP);(* INDEXED BY RANK AND FILE *)
+    END;
+</pre>
+<p><span id="Bitboard"></span>... and further relies on <a href="Bitboards.html" title="Bitboards">bitboards</a>, defined as union of arrays of sets and integers:
+</p>
+<pre>
+  RS = RECORD                          (* BIT BOARDS *)
+    CASE INTEGER OF
+      0: (RSSS: ARRAY [TY] OF SX);     (* ARRAY OF SETS *)
+      1: (RSTI: ARRAY [TY] OF TI);     (* ARRAY OF INTEGERS *)
+    END;
+</pre>
+<p>Beside the <a href="Mailbox.html" title="Mailbox">mailbox</a> arrays (BOARD, MBORD) and <a href="Bitboard Board-Definition.html" title="Bitboard Board-Definition">bitboard board definition</a> (TPLOC, TMLOC), Chess 0.5 maintains <a href="Incremental Updates.html" title="Incremental Updates">incremental updated</a> <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">attack tables</a>, two 8x8 arrays ATKTO and ATKFR, the first for every square a attack bitboard <b>to</b> other squares of the piece (if any) residing on that square, the second for each square a bitboard of all white and black man <a href="Square Attacked By.html" title="Square Attacked By">attacking this square</a>.
+</p>
+<pre>
+  BOARD : RB;                          (* THE BOARD *)
+  MBORD : ARRAY [TS] OF TP;            (* LOOK-AHEAD BOARD *)
+  ATKFR : ARRAY [TS] OF RS;            (* ATTACKS FROM A SQUARE *)
+  ATKTO : ARRAY [TS] OF RS;            (* ATTACKS TO A SQUARE *)
+  ALATK : ARRAY [TM] OF RS;            (* ATTACKS BY EACH COLOR *)
+  TPLOC : ARRAY [TP] OF RS;            (* LOCATIONS OF PIECE BY TYPE *)
+  TMLOC : ARRAY [TM] OF RS;            (* LOCATIONS OF PIECE BY COLOR *)
+</pre>
+<h2><span class="mw-headline" id="Bitboard_Infrastructure">Bitboard Infrastructure</span></h2>
+<h3><span class="mw-headline" id="Setwise_Operations">Setwise Operations</span></h3>
+<p><a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">Bitboard intersection</a>, <a href="General Setwise Operations.html#Union" title="General Setwise Operations">union</a> and <a href="General Setwise Operations.html#RelativeComplement" title="General Setwise Operations">relative complement</a> are implemented with <a class="external text" href="http://www.freepascal.org/docs-html/ref/refsu50.html.html" rel="nofollow">set-wise operations</a> "*, +, -", <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">complement</a> (not) by relative complement from the <a href="General Setwise Operations.html#EmptyAndUniverse" title="General Setwise Operations">universe</a> ([AX..ZX]):
+</p>
+<pre>
+PROCEDURE ANDRS                        (* INTERSECTION OF TWO BITBOARDS *)
+  (VAR C:RS;                           (* RESULT *)
+   A, B:RS);                           (* OPERANDS *)
+VAR
+  INTY : TY;                           (* BIT BOARD WORD INDEX *)
+BEGIN
+  FOR INTY := AY TO ZY DO
+    C.RSSS[INTY] := A.RSSS[INTY] * B.RSSS[INTY];
+END;  (* ANDRS *)
+
+PROCEDURE IORRS                        (* UNION OF TWO BIT BOARDS *)
+ (VAR C:RS;                            (* RESULT *)
+  A, B:RS);                            (* OPERANDS *)
+VAR
+  INTY : TY;                           (* BIT BOARD WORD INDEX *)
+BEGIN
+  FOR   INTY :=  AY TO ZY DO
+    C.RSSS[INTY] := A.RSSS[INTY] + B.RSSS[INTY];
+END;  (* IORRS *)
+
+PROCEDURE NOTRS                        (* COMPLEMENT OF A BIT BOARD *)
+ (VAR C:RS;                            (* RESULT *)
+  A:RS);                               (* OPERAND *)
+VAR
+  INTY : TY;                           (* BIT BOARD WORD INDEX *)
+BEGIN
+  FOR INTY := AY TO ZY DO
+    C.RSSS[INTY] := [AX..ZX] - A.RSSS[INTY];
+END;  (* NOTRS *)
+</pre>
+<h3><span class="mw-headline" id="BitScan">BitScan</span></h3>
+<p><span id="BitScan"></span><a href="BitScan.html#BitscanwithReset" title="BitScan">BitScan reverse with reset</a> is implemented with machine dependent <a href="CDC 6600.html" title="CDC 6600">CDC 6600</a> <a href="Float.html#BitScan" title="Float">float conversion</a> (omitted here) - the machine independent code inefficiently loops over up to 2*32 bits of the set and cries for improvement:
+</p>
+<pre>
+FUNCTION NXTTS                         (* NEXT ELEMENT IN BIT BOARD *)
+ (VAR A:RS;                            (* BIT BOARD TO LOCATE FIRST SQUARE, AND THEN REMOVE *)
+  VAR B:TS                             (* SQUARE NUMBER OF FIRST SQUARE IN BIT BOARD *)
+ ): TB;                                (* TRUE IFF ANY SQUARES WERE SET INITIALLY *)
+LABEL
+  11;                                  (* RETURN *)
+VAR
+  INTX : TX;                           (* BIT BOARD BIT INDEX *)
+  INTY : TY;                           (* BIT BOARD WORD INDEX *)
+  X : RK;                              (* KLUDGE WORD *)
+BEGIN
+  FOR INTY := ZY DOWNTO AY DO          (* LOOP THRU BIT BOARD WORDS *)
+    IF A.RSTI[INTY] &lt;&gt; 0 THEN
+    BEGIN
+      FOR INTX := ZX DOWNTO AX DO      (* LOOP THROUGH BITS IN WORD OF SET *)
+        IF INTX IN  A.RSSS[INTY] THEN
+        BEGIN
+          B := INTX+INTY*(ZX+1);       (* RETURN SQUARE NUMBER *)
+          A.RSSS[INTY] := A.RSSS[INTY] - [INTX]; (* REMOVE  BIT FROM WORD *)
+          NXTTS := TRUE;               (* RETURN A BIT SET *)
+          GOTO 11;                     (* RETURN *)
+        END;
+    END;
+  NXTTS := FALSE;                      (* ELSE RETURN NC BITS SET *)
+11:                                    (* RETURN *)
+END;  (* NXTTS *)
+</pre>
+<h3><span class="mw-headline" id="Popcount">Popcount</span></h3>
+<p><span id="Popcount"></span>The machine independent <a href="Population Count.html" title="Population Count">population count</a> relies on the above <a href="Chess 0.5.html#BitScan" title="Chess 0.5">bitscan with reset</a>!
+</p>
+<pre>
+FUNCTION CNTRS                         (* COUNT NENBERS OF A BIT BOARD *)
+(A:RS): TS;                            (* BIT BOARD TO COUNT *)
+VAR
+  INTS : TS;                           (* TEMPORARY *)
+  INRS : RS;                           (* SCRATCH *)
+  IMTS : TS;                           (* SCRATCH *)
+BEGIN
+  INTS := 0;
+  CPYRS(INRS,A);
+  WHILE NXTTS(INRS,IMTS) DO
+    INTS := INTS+1;                    (* COUNT SQUARES *)
+  CNTRS := INTS;                       (* RETURN SUM *)
+END;  (* CNTRS *)
+</pre>
+<p><span id="EVALU8"></span>
+</p>
+<h2><span class="mw-headline" id="Evaluation">Evaluation</span></h2>
+<p>Chess 0.5's <a href="Evaluation.html" title="Evaluation">evaluation</a> routine <b>EVALU8</b> implements a <a href="Lazy Evaluation.html" title="Lazy Evaluation">lazy evaluation</a> only for too worse <a href="Score.html" title="Score">scores</a>. If the <a href="Incremental Updates.html" title="Incremental Updates">incremental updated</a> <a href="Material.html" title="Material">material balance</a> plus the maximum positional score is still less or equal than <a href="Alpha.html" title="Alpha">alpha</a> (best value two plies up BSTVL[JNTK-2]), only the material balance is assigned without further positional analysis. Otherwise <b>EVALU8</b> consides <a href="Mobility.html" title="Mobility">piece mobility</a> (counting attacks), <a href="Pawn Structure.html" title="Pawn Structure">pawn structure</a>, <a href="King Safety.html" title="King Safety">king safety</a> and some rook terms such as doubled rooks and <a href="Rook on Seventh.html" title="Rook on Seventh">rook on 7th rank</a>. Differences of light minus dark positional terms are adjusted by appropriate feature weights. To make white point of view scores relative to the <a href="Side to move.html" title="Side to move">side to move</a>, they are multiplied by a score factor (+1, -1) indexed by side.
+</p>
+<pre>
+PROCEDURE EVALU8;                      (* EVALUATE CURRENT POSITION *)
+  FUNCTION EVKING                      (* EVALUATE KING *)
+  FUNCTION EVMOBL                      (* EVALUATE MOBILITY *)
+  FUNCTION EVPAWN                      (* EVALUATE PAWNS *)
+  FUNCTION EVROOK                      (* EVALUATE ROOKS *)
+BEGIN
+  IF XTMV[JNTM]*MBVAL[JNTK] + MAXPS &lt;= BSTVL[JNTK-2] THEN   (* !!! OCR  *)
+                                       (* MOVE WILL PRUNE ANYWAY *)
+    INTV := XTMV[JNTM] * MBVAL[JNTK]
+  ELSE
+  BEGIN
+    INTV := (  FWPAWN*(EVPAWN(TPLOC[LP],S2,R2)-EVPAWN(TPLOC[DP],S4,R7))
+             + FWMINM*(EVMOBL(LB,LN)          -EVMOBL(DB,DN)          )
+             + FWMAJM*(EVMOBL(LR,LQ)          -EVMOBL(DR,DQ)          )
+             + FWROOK*(EVROOK(TPLOC[LR],XRRS[R7])
+                      -EVROOK(TPLOC[DR],XRRS[R2])                     )
+             + FWKING*(EVKING(TPLOC[LK],TPLOC[LP])
+                      -EVKING(TPLOC[DK],TPLOC[DP])                    )
+            ) DIV 64;
+    MAXPS := MAX(MAXPS,ABS(INTV));
+    INTV := XTMV[JNTM] * (MBVAL[JNTK] + INTV);
+  END;
+  IF SWTR THEN
+    BEGIN
+      WRITE(" EVALU8",JNTK,JNTW,INDEX[JNTK],INTV);
+      PRIMOV(MOVES[INDEX[JNTK]]);
+    END;
+  VALUE[INDEX[JNTK]] := INTV;          (* RETURN SCORE *)
+END;  (* EVALU8 *)
+</pre>
+<p><span id="Search"></span>
+</p>
+<h2><span class="mw-headline" id="Search">Search</span></h2>
+<p>The <a href="Search.html" title="Search">search</a> is implemented spaghetti like <a href="Iterative Search.html" title="Iterative Search">non-recursively</a> as <a class="external text" href="https://en.wikipedia.org/wiki/Finite-state_machine" rel="nofollow">finite-state machine</a> with <a class="external text" href="https://en.wikipedia.org/wiki/Goto" rel="nofollow">goto</a> labels using explicit <a href="Stack.html" title="Stack">stacks</a> aka <a href="Ply.html" title="Ply">ply</a> indexed <a href="Array.html" title="Array">arrays</a>, and features <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening</a> with <a href="Aspiration Windows.html" title="Aspiration Windows">aspiration</a> and <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta pruning</a>. The value array of <a href="Best Move.html" title="Best Move">best moves</a> indexed by current ply is the current <a href="Alpha.html" title="Alpha">alpha</a> of a newly entered node, initialized by grand parent's best value (ply-2) - best value of the parent node (ply-1) is minus <a href="Beta.html" title="Beta">beta</a> in the <a href="Negamax.html" title="Negamax">negamax</a> sense. The nested function SELECT implements a <a href="Move Generation.html#Staged" title="Move Generation">staged move generation</a>, considering <a href="Root.html" title="Root">root search</a> (ply 0), full-width and <a href="Quiescence Search.html" title="Quiescence Search">quiescence</a>, generating <a href="Captures.html" title="Captures">captures</a> in <a href="MVV-LVA.html" title="MVV-LVA">MVV/LVA</a> order, <a href="Killer Move.html" title="Killer Move">killers</a>, and remaining moves. While the ply indices range from 0 to 16, the best value array needs three additional sentinels due to ply-2, ply-1, and ply+1 accesses. The outline of the search routine with jump labels (:) is given below, most lines omitted:
+</p>
+<pre>
+  BSTVL : ARRAY [AKM2..ZKP1] OF TV;    (* VALUE OF BEST MOVE [-2..17] *)
+
+FUNCTION SEARCH                        (* SEARCH LOOK-AHEAD TREE *)
+: TW;                                  (* RETURNS THE BEST MOVE *)
+  PROCEDURE NEWBST                     (* SAVE BEST MOVE INFORMATION *)
+    (A:TK);                            (* PLY OF BEST MOVE *)
+
+  FUNCTION MINMAX                      (* PERFORM MINIMAX OPERATION *)
+    (A:TK)                             (* PLY TO MINIMAX AT *)
+     : TB;                             (* TRUE IF REFUTATION *)
+    MINMAX := FALSE;                   (* DEFAULT IS NO PRUNING *)
+    IF -BSTVL[A+1] &gt; BSTVL[A] THEN     (* Score &gt; Alpha ? *)
+    BEGIN
+      BSTVL[A] := -BSTVL[A+1];         (* Alpha = Score  *)
+      NEWBST(A);                       (* SAVE BEST MOVE *)
+      MINMAX := BSTVL[A+1] &lt;= BSTVL[A-1]; (* -Score &lt; -Beta =&gt; Score &gt; Beta *)
+    END;
+  END;  (* MINMAX *)
+
+  FUNCTION SELECT                      (* SELECT NEXT MOVE TO SEARCH *)
+     : TB;                             (* TRUE IF MOVE RETURNED *)
+  BEGIN
+  21:  (* NEW SEARCH MOOE *)
+    CASE SRCHM[JNTK] OF
+      H0:  (* INITIALIZE FOR NEW MOVE *)
+      H1:  (* INITIALIZE AT  NEW DEPTH *)
+      H2:  (* CAPTURE SEARCH *)
+      H3:  (* FULL WIDTH SEARCH - CAPTURES *)
+      H4:  (* INITIALIZE SCAN OF CASTLE MOVES AND OTHER MOVES BY KILLER PIECE *)
+      H5:  (* FULL WIDTH SEARCH - CASTLES AND OTHER MOVES BY KILLER PIECE *)
+      H6:  (* FULL WIDTH SEARCH - REMAINING MOVES *)
+      H7:  (* RESEARCH FIRST PLY *)
+  22:  (* SELECT EXIT *)
+    SELECT := INTB;                    (* RETURN VALUE *)
+  END;  (* SELECT *)
+
+BEGIN  (* SEARCH *)
+  EVALU8;                              (* INITIAL GUESS AT SCORE *)
+  BSTVL[AK-2] :=   VALUE[AW] - WINDOW; (* INITIALIZE ALPHA-BETA WINDON *)
+  BSTVL[AK-1] := -(VALUE[AW] + WINDOW);
+  JMTK := AK+1;
+  WHILE (NODES &lt; FNODEL) AND (JNTK &lt; MAX(ZK DIV 2, ZK-8)) DO
+  BEGIN
+11:  (* START NEW PLY *)
+12:  (* DIFFERENT  FIRST MOVE  *)
+13:  (* FLOAT   VALUE   BACK  *)
+      IF   MINMAX(JNTK)   THEN
+        GOTO 15;                       (* PRUNE *)
+14:  (* FIND ANOTHER MOVE AT THIS PLY *)
+15:  (* BACK UP A PLY *)
+16:  (* EXIT SEARCH *)
+  SEARCH := BSTMV[AK];                 (* RETURN BEST MOVE *)
+END;  (* SEARCH *)
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chess (Program).html" title="Chess (Program)">Chess</a></li>
+<li> <a href="Chess 0.5X.html" title="Chess 0.5X">Chess 0.5X</a></li>
+<li> <a href="Chess 7.0.html" title="Chess 7.0">Chess 7.0</a></li>
+<li> <a href="CookieCat.html" title="CookieCat">CookieCat</a></li>
+<li> <a href="Merlin.html" title="Merlin">Merlin</a></li>
+<li> <a href="Shy.html" title="Shy">Shy</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1978</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1978-10/1978_10_BYTE_03-10_Chess_for_the_Microcomputer#page/n181/mode/2up" rel="nofollow">Creating a Chess Player</a>.</i> An Essay on Human and Computer Chess Skill, <a href="Byte Magazine.html#BYTE310" title="Byte Magazine">BYTE, Vol. 3, No. 10</a>, pp. 182-191. <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/text/3-3.Creating A Chess Player/Creating A Chess Player.Frey Atkin.Byte Magazine.Oct-1978.062303029.pdf.html" rel="nofollow">pdf</a> from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a></li>
+<li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1978</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1978-11/1978_11_BYTE_03-11_The_Sky_is_the_Limit#page/n163/mode/2up" rel="nofollow">Creating a Chess Player, Part 2: Chess 0.5</a></i>. <a href="Byte Magazine.html#BYTE311" title="Byte Magazine">BYTE, Vol. 3, No. 11</a></li>
+<li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1978</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1978-12/1978_12_BYTE_03-12_Life#page/n141/mode/2up" rel="nofollow">Creating a Chess Player, Part 3: Chess 0.5 (continued)</a></i>. <a href="Byte Magazine.html#BYTE312" title="Byte Magazine">BYTE, Vol. 3, No. 12</a></li>
+<li> <a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1979</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1979-01/1979_01_BYTE_04-01_Life_Algorithms#page/n127/mode/2up" rel="nofollow">Creating a Chess-Player, Part 4: Thoughts on Strategy</a></i>. In <a class="external text" href="http://cs.millersville.edu/~liffick/.html" rel="nofollow">Blaise W. Liffick</a> (ed.), <a class="external text" href="http://books.google.com/books/about/The BYTE book of Pascal.html?id=ofpfQgAACAAJ.html" rel="nofollow">The Byte Book of Pascal</a>, pp. 143-155. Byte Publications, also <a href="Byte Magazine.html#BYTE401" title="Byte Magazine">BYTE, Vol. 4, No. 1</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/3iSe8NsM024/-SrmrNv4saMJ" rel="nofollow">Byte Chess 0.5 finally available. From Byte Magazine 1978</a> by I Forget, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 01, 2005</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/comp.lang.pascal.misc/ATJoB3c4-jM/9nM_TWmqAwUJ" rel="nofollow">Update for Byte Chess 0.5</a> by I Forget, <a class="external text" href="http://groups.google.com/group/comp.lang.pascal.misc/topics.html" rel="nofollow">comp.lang.pascal.misc</a>, June 12, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=2&amp;t=39612.html" rel="nofollow">Missing from Computer-Chess Wiki</a> by Sylwy, <a href="CCC.html" title="CCC">CCC</a>, July 05, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41896.html" rel="nofollow">Need a little help from a Pascal guru (Chess05 Frey/Atkin)</a> by <a href="Jim Ablett.html" title="Jim Ablett">Jim Ablett</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2012</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.moorecad.com/standardpascal/ByteChess.txt.html" rel="nofollow">Chess 0.5, Release 1 - 2005-05-30</a> by <a class="external text" href="http://www.moorecad.com/standardpascal/scottmoore.html.html" rel="nofollow">Scott A. Moore</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.moorecad.com/standardpascal/Chess05.pas.html" rel="nofollow">Byte Chess 0.5 source code</a> hosted by <a class="external text" href="http://www.moorecad.com/standardpascal/scottmoore.html.html" rel="nofollow">Scott A. Moore</a></dd></dl>
+<ul><li> <a class="external text" href="http://web.archive.org/web/20071221115817/http://classicchess.googlepages.com/Chess.htm.html" rel="nofollow">Classic Computer Chess - ... The programs of yesteryear</a> by <a href="Carey Bloodworth.html" title="Carey Bloodworth">Carey</a>, hosted by the <a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a></li>
+<li> <a class="external text" href="http://www.andreadrian.de/schach/.html" rel="nofollow">Computer-Schach</a> by <a href="Andre Adrian.html" title="Andre Adrian">Andre Adrian</a> (German)</li></ul>
+<dl><dd> <a class="external text" href="http://www.andreadrian.de/schach/Chess05GNU.pas.html" rel="nofollow">Chess05GNU.pas</a></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://archive.org/details/byte-magazine-1978-10" rel="nofollow">Byte Vol. 3, No. 10, October 1978</a> from the <a class="external text" href="https://en.wikipedia.org/wiki/Internet_Archive" rel="nofollow">Internet Archive</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.moorecad.com/standardpascal/scottmoore.html.html" rel="nofollow">Scott A. Moore's site</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.moorecad.com/standardpascal/Chess05.pas.html" rel="nofollow">Byte Chess 0.5 source code</a> (OCR-Errors!)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41896&amp;start=1.html" rel="nofollow">Re: Need a little help from a Pascal guru (Chess05 Frey/Atkin)</a> by <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="CCC.html" title="CCC">CCC</a>, January 09, 2012</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=sft-431614f455002.html" rel="nofollow">Chess 4.6 source code</a>, gift of <a href="David Slate.html" title="David Slate">David Slate</a>, from <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a>, <a class="external text" href="http://archive.computerhistory.org/projects/chess/related materials/software/3-3.Chess 4.6 Sourcecode.102645430/chess 4-6.sourcecode.102645430.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.moorecad.com/standardpascal/ByteChess.txt.html" rel="nofollow">Chess 0.5, Release 1 - 2005-05-30</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a href="Peter W. Frey.html" title="Peter W. Frey">Peter W. Frey</a>, <a href="Larry Atkin.html" title="Larry Atkin">Larry Atkin</a> (<b>1978</b>). <i><a class="external text" href="https://archive.org/stream/byte-magazine-1978-12/1978_12_BYTE_03-12_Life#page/n141/mode/2up" rel="nofollow">Creating a Chess Player, Part 3: Chess 0.5 (continued)</a></i>. <a href="Byte Magazine.html#BYTE312" title="Byte Magazine">BYTE, Vol. 3, No. 12</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a href="Werner Schimanovich.html" title="Werner Schimanovich">Werner DePauli-Schimanovich</a> (<b>2006</b>). <i>Europolis 6</i>. Informatik für Spiele und Verkehr. Extension der Mengenlehre, Herausgeber: Franz Pichler, Universitätsverlag Rudolf Trauner, ISBN 978-3-85487-946-6, (SG7) Merlin (ein ComputerChess-Programm) s. 171 (German), <a class="external text" href="http://books.google.com/books?id=Gf4WibmHVbcC&amp;pg=PA175&amp;lpg=PA175&amp;source=bl&amp;ots=YPtaHAp3Z4&amp;sig=DNRPh11heo8Q1zS3UOBe0qoCF-8&amp;hl=en&amp;ei=0GmnTMX1GMfJswaL-NivDA&amp;sa=X&amp;oi=book result&amp;ct=result&amp;resnum=1&amp;ved=0CBgQ6AEwAA.html#v=onepage&amp;q&amp;f=false" rel="nofollow">Google Books</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a href="Helmut Horacek.html" title="Helmut Horacek">Helmut Horacek</a>, <a href="Marcus Wagner.html" title="Marcus Wagner">Marcus Wagner</a> (<b>1981</b>). <i>Das Schachprogramm Merlin, Verbesserung von Laufzeit-Effizient, Eröffnungsbibliothek und Bewertungsfunktion.</i> 4. Tagung "Berichte aus Informatik-Instituten" (German)</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite ref-10">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/rec.games.chess.computer/3iSe8NsM024/DrW8Dzsr2tYJ" rel="nofollow">Re: Byte Chess 0.5 finally available. From Byte Magazine 1978</a> by I Forget, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, June 02, 2005</span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722012135
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.030 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 276/1000000
+Preprocessor generated node count: 568/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:710-0!canonical and timestamp 20240722012135 and revision id 21498
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chess_0.5&amp;oldid=21498">https://www.chessprogramming.org/index.php?title=Chess_0.5&amp;oldid=21498</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:Pascal.html" title="Category:Pascal">Pascal</a></li><li><a href="Category:Didactic.html" title="Category:Didactic">Didactic</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chess+0.5&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chess 0.5.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chess 0.5&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chess 0.5.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chess 0.5&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chess 0.5&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chess 0.5.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chess 0.5.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chess 0.5&amp;oldid=21498.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chess 0.5&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 27 September 2020, at 23:06.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chess_0.5&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.030","walltime":"0.032","ppvisitednodes":{"value":276,"limit":1000000},"ppgeneratednodes":{"value":568,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722012135","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

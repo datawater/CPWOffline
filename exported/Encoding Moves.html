@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Encoding Moves - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Encoding_Moves","wgTitle":"Encoding Moves","wgCurRevisionId":25910,"wgRevisionId":25910,"wgArticleId":1369,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Encoding_Moves","wgRelevantArticleId":1369,"wgRequestId":"Zp7DM8@utCIUdSQUVimlIQAAAAU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.FenTT.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.FenTT.styles%7Cext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Encoding_Moves rootpage-Encoding_Moves skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Encoding Moves</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Chess.html" title="Chess">Chess</a> * <a href="Moves.html" title="Moves">Moves</a> * Encoding Moves</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:Bagua-name-earlier.svg.html"><img alt="" class="thumbimage" height="300" src="wikipedia/commons/thumb/4/4d/Bagua-name-earlier.svg/300px-Bagua-name-earlier.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bagua-name-earlier.svg/450px-Bagua-name-earlier.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bagua-name-earlier.svg/600px-Bagua-name-earlier.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Bagua-name-earlier.svg.html" title="Enlarge"></a></div><a class="external text" href="https://en.wikipedia.org/wiki/Taoism" rel="nofollow">Daoist</a> <a class="external text" href="https://en.wikipedia.org/wiki/Bagua" rel="nofollow">Bagua</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Encoding Moves</b> inside a chess program refers to both <a href="Chess Game.html#GameRecord" title="Chess Game">game records</a> or <a href="Game Notation.html" title="Game Notation">game notation</a>, and <a href="Search.html" title="Search">search</a> related <a href="Move Generation.html" title="Move Generation">generation</a>, <a href="Make Move.html" title="Make Move">make</a> and <a href="Unmake Move.html" title="Unmake Move">unmake move</a> to <a href="Incremental Updates.html" title="Incremental Updates">incremental update</a> the <a href="Chessboard.html" title="Chessboard">board</a>. During generation, moves are stored inside <a href="Move List.html" title="Move List">move lists</a>, and <a href="Best Move.html" title="Best Move">best moves</a> or <a href="Refutation Move.html" title="Refutation Move">refutation moves</a> <a href="Fail-High.html" title="Fail-High">failing high</a> inside the <a href="Search.html" title="Search">search</a> are stored inside the <a href="Transposition Table.html" title="Transposition Table">transposition table</a>, <a href="Killer Heuristic.html" title="Killer Heuristic">Killer slots</a>, <a href="Triangular PV-Table.html" title="Triangular PV-Table">PV-</a> or <a href="Refutation Table.html" title="Refutation Table">refutation table</a>, and moves, or certain aspects of a move, such as <a href="Origin Square.html" title="Origin Square">origin square</a> and the <a href="Target Square.html" title="Target Square">target square</a> are used to index <a href="Butterfly Boards.html" title="Butterfly Boards">butterfly boards</a> for <a href="History Heuristic.html" title="History Heuristic">history</a>- or <a href="Countermove Heuristic.html" title="Countermove Heuristic">countermove heuristic</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Space-Time Tradeoff"><span class="tocnumber">1</span> <span class="toctext">Space-Time Tradeoff</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Information Required"><span class="tocnumber">2</span> <span class="toctext">Information Required</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#From-To Based"><span class="tocnumber">2.1</span> <span class="toctext">From-To Based</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Extended Move Structure"><span class="tocnumber">2.2</span> <span class="toctext">Extended Move Structure</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#C.2B.2B Sample"><span class="tocnumber">2.3</span> <span class="toctext">C++ Sample</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Various Encodings and Decorations"><span class="tocnumber">3</span> <span class="toctext">Various Encodings and Decorations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Algebraic Notation"><span class="tocnumber">3.1</span> <span class="toctext">Algebraic Notation</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Direction-Target"><span class="tocnumber">3.2</span> <span class="toctext">Direction-Target</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Check Flag"><span class="tocnumber">3.3</span> <span class="toctext">Check Flag</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Move Index"><span class="tocnumber">3.4</span> <span class="toctext">Move Index</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Move Enumeration"><span class="tocnumber">3.5</span> <span class="toctext">Move Enumeration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Per Piece and Square"><span class="tocnumber">3.5.1</span> <span class="toctext">Per Piece and Square</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Over All Pieces and Squares"><span class="tocnumber">3.5.2</span> <span class="toctext">Over All Pieces and Squares</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#1993 ..."><span class="tocnumber">5.1</span> <span class="toctext">1993 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#2010 ..."><span class="tocnumber">5.3</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#2020 ..."><span class="tocnumber">5.4</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Space-Time_Tradeoff">Space-Time Tradeoff</span></h1>
+<p>Move encoding in <a href="Chess Game.html#GameRecord" title="Chess Game">game records</a> and <a href="Databases.html" title="Databases">game databases</a> is usually designed to minimize size, while in <a href="Search.html" title="Search">search</a> efficiency in generating is the main concern, considering <a href="Board Representation.html" title="Board Representation">board representation</a> and other data structures like <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">attack and defend maps</a>. In general, move encoding either comprehend full information, that is contains involved <a href="Pieces.html" title="Pieces">pieces</a> and square coordinates, or more common, omits the redundant piece information and relies on a adequate board representation to lookup the pieces by square. In <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-Beta</a> like search, an important consideration is lazy move generation, to delay acquisition of certain information until it is really needed, which might be never in case of <a href="Node Types.html#CUT" title="Node Types">Cut-nodes</a>.
+</p>
+<h1><span class="mw-headline" id="Information_Required">Information Required</span></h1>
+<h2><span class="mw-headline" id="From-To_Based">From-To Based</span></h2>
+<p>The information required to uniquely describe a move is the <a href="Origin Square.html" title="Origin Square">initial square</a>, also called from-, origin- or departure square, and the <a href="Target Square.html" title="Target Square">target square</a>, also called to- or destination square, and in case of <a href="Promotions.html" title="Promotions">promotions</a> the promoted piece code. While this from-to information is also sufficient for <a href="Castling.html" title="Castling">castling</a> in standard chess, due to the otherwise impossible double king step, it might not in <a href="Chess960.html" title="Chess960">Chess960</a>. Therefore and also for <span style="line-height: 1.5;">efficiency reasons, castles are tagged as "special" moves. Such a move encoding conveniently fits inside a 16-bit <a href="Word.html" title="Word">word</a>, 6 bits for from-to square each to index a <a href="Butterfly Boards.html" title="Butterfly Boards">butterfly board</a>, still leaves a <a href="Nibble.html" title="Nibble">nibble</a> for flags for move kind and promoted piece code, for instance this arbitrary flags:</span>
+</p>
+<table class="wikitable">
+<tr>
+<th> code
+</th>
+<th> promotion
+</th>
+<th> capture
+</th>
+<th> special 1
+</th>
+<th> special 0
+</th>
+<th> kind of move
+</th></tr>
+<tr>
+<th> 0
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> <a href="Quiet Moves.html" title="Quiet Moves">quiet moves</a>
+</td></tr>
+<tr>
+<th> 1
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> <a href="Pawn Push.html#DoublePush" title="Pawn Push">double pawn push</a>
+</td></tr>
+<tr>
+<th> 2
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> <a href="Castling.html" title="Castling">king castle</a>
+</td></tr>
+<tr>
+<th> 3
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> <a href="Castling.html" title="Castling">queen castle</a>
+</td></tr>
+<tr>
+<th> 4
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> <a href="Captures.html" title="Captures">captures</a>
+</td></tr>
+<tr>
+<th> 5
+</th>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> <a href="En passant.html" title="En passant">ep-capture</a>
+</td></tr>
+<tr>
+<th> 8
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> <a href="Promotions.html" title="Promotions">knight-promotion</a>
+</td></tr>
+<tr>
+<th> 9
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> <a href="Promotions.html" title="Promotions">bishop-promotion</a>
+</td></tr>
+<tr>
+<th> 10
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> <a href="Promotions.html" title="Promotions">rook-promotion</a>
+</td></tr>
+<tr>
+<th> 11
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> <a href="Promotions.html" title="Promotions">queen-promotion</a>
+</td></tr>
+<tr>
+<th> 12
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> knight-promo capture
+</td></tr>
+<tr>
+<th> 13
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> bishop-promo capture
+</td></tr>
+<tr>
+<th> 14
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 0
+</td>
+<td style="text-align:center;"> rook-promo capture
+</td></tr>
+<tr>
+<th> 15
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:center;"> queen-promo capture
+</td></tr></table>
+<h2><span class="mw-headline" id="Extended_Move_Structure">Extended Move Structure</span></h2>
+<p>The information which piece performs the move and which piece is captured (if any) is implicit given by the from-to squares, with the requirement to lookup the current board before making the move, but in case of <a href="Captures.html" title="Captures">captures</a> not after making or before unmaking the move. Some programs use a 32-bit <a href="Double Word.html" title="Double Word">double word</a> as extended move structure at generation time as well for making/unmaking moves, with the upper bits used for a move score scaled by various <a href="Move Ordering.html" title="Move Ordering">move ordering</a> techniques for instance dedicated <a href="Piece-Square Tables.html" title="Piece-Square Tables">piece-square tables</a> and/or <a href="History Heuristic.html" title="History Heuristic">history heuristic</a>, and perhaps two three bit codes for the moving and captured piece (if any) which also implies a kind of <a href="MVV-LVA.html" title="MVV-LVA">MVV-LVA</a> coding. Also the extended move may apply composite indices for <a href="Incremental Updates.html" title="Incremental Updates">incremental update</a> of <a href="Zobrist Hashing.html" title="Zobrist Hashing">Zobrist</a>- or <a href="BCH Hashing.html" title="BCH Hashing">BCH keys</a>.
+</p><p>Having the piece codes inside the move structure safes the board lookups during make, and makes storing captured pieces on a ply stack for unmake needless. Of course for space considerations to store moves inside <a href="Transposition Table.html" title="Transposition Table">transposition table</a>, <a href="Killer Heuristic.html" title="Killer Heuristic">Killer slots</a>, <a href="Triangular PV-Table.html" title="Triangular PV-Table">PV-</a> or <a href="Refutation Table.html" title="Refutation Table">refutation table</a>, the compact 16-bit move structure is still adequate for coordinate and move kind comparison with the lower 16 bits of the extended move structure.
+</p>
+<h2><span class="mw-headline" id="C.2B.2B_Sample">C++ Sample</span></h2>
+<p>Rather than using <a href="C.html#Bitfield" title="C">bitfield</a> move structures or classes in <a href="C.html" title="C">C</a> and <a href="Cpp.html" title="Cpp">C++</a>, most programmers rely on scalar integers, such as <i>short</i> and <i>int</i> for 16- or 32-bit words, but implement the composition and extraction while writing and reading various structure elements by explicit shifts and masks, likely encapsulated thought an interface with most likely inlined functions (or macros) to hide the internal representation. Further extended move structures might either embed or inherit this most compact base structure or class, which might already rely the native 32-bit integer type to avoid <a href="X86.html" title="X86">x86</a> 16-bit optimization issues.
+</p>
+<pre>
+class CMove {
+   CMove(unsigned int from, unsigned int to, unsigned int flags) {
+      m_Move = ((flags &amp; 0xf)&lt;&lt;12) | ((from &amp; 0x3f)&lt;&lt;6) | (to &amp; 0x3f);
+   }
+   void operator=(CMove a} {m_Move = a.m_Move;}
+
+   unsigned int getTo() const {return m_Move &amp; 0x3f;}
+   unsigned int getFrom() const {return (m_Move &gt;&gt; 6) &amp; 0x3f;}
+   unsigned int getFlags() const {return (m_Move &gt;&gt; 12) &amp; 0x0f;}
+
+   void setTo(unsigned int to) {m_Move &amp;= ~0x3f; m_Move |= to &amp; 0x3f;}
+   void setFrom(unsigned int from) {m_Move &amp;= ~0xfc0; m_Move |= (from &amp; 0x3f) &lt;&lt; 6;}
+   ...
+
+   bool isCapture() const {return (m_Move &amp; CAPTURE_FLAG) != 0;}
+   ...
+
+   unsigned int getButterflyIndex() const {return m_Move &amp; 0x0fff;}
+   bool operator==(CMove a) const {return (m_Move &amp; 0xffff) == (a.m_Move &amp; 0xffff);}
+   bool operator!=(CMove a) const {return (m_Move &amp; 0xffff) != (a.m_Move &amp; 0xffff);}
+
+   unsigned short asShort() const {return (unsigned short) m_Move;}
+
+protected:
+   unsigned int m_Move; // or short or template type
+};
+</pre>
+<h1><span class="mw-headline" id="Various_Encodings_and_Decorations">Various Encodings and Decorations</span></h1>
+<h2><span class="mw-headline" id="Algebraic_Notation">Algebraic Notation</span></h2>
+<p>Based on <a class="external text" href="https://en.wikipedia.org/wiki/Philipp_Stamma" rel="nofollow">Philipp Stamma's</a> short <a href="Algebraic Chess Notation.html" title="Algebraic Chess Notation">algebraic chess notation</a>, a move can be described by the moving piece code and destination square. In case of disambiguating moves if two (or more) identical pieces can move to the same square, the file of departure, or if files are identical as well, the rank or both file and rank are given. A capture move, denoted by the symbol 'x' (takes) does not explicitly specify the captured piece and requires a look to the board as well.
+</p><p>Chess programs usually use algebraic notations concerning the <a href="GUI.html" title="GUI">user interface</a> and <a href="Portable Game Notation.html" title="Portable Game Notation">Portable Game Notation</a> - for appropriate conversion they have to deal with disambiguating source squares, that is need to be aware of all other moves of this piece-kind to the destination square to determine whether the from square needs additional file and/or rank information despite the moving piece.
+</p>
+<h2><span class="mw-headline" id="Direction-Target">Direction-Target</span></h2>
+<p>Another move encoding alternative motivated by <a href="Pieces versus Directions.html#DirectionWise" title="Pieces versus Directions">direction wise</a> target square serialization in <a href="Bitboards.html" title="Bitboards">bitboards</a> is not to use the from-square but target square and <a href="Direction.html" title="Direction">direction</a>. While the information is non-ambiguous it needs some effort with ray-lookup and <a href="BitScan.html" title="BitScan">bitscan</a> to determine the from-square.
+</p>
+<h2><span class="mw-headline" id="Check_Flag">Check Flag</span></h2>
+<p>It might be interesting to determine whether a move gives <a href="Check.html" title="Check">check</a> in advance during generation time, to possibly score them higher for move ordering, i. e. to don't <a href="Late Move Reductions.html" title="Late Move Reductions">reduce</a> or even <a href="Check Extensions.html" title="Check Extensions">extend</a> them, and also to safe in check detection after make move. However, as mentioned, lazy move generation is required, to delay acquisition of information until it is really needed, which might be never in case of <a href="Node Types.html#CUT" title="Node Types">Cut-nodes</a>. Additionally an early determined checking move, even if <a href="Fail-High.html" title="Fail-High">failing high</a>, usually implies a huge sub-tree due to <a href="Check Extensions.html" title="Check Extensions">check extensions</a>, while an early non checking moves likely makes a cheaper <a href="Beta-Cutoff.html" title="Beta-Cutoff">cutoff</a> for most futile Cut-nodes. Therefor, determining checking moves in advance is not that recommended for most board-representations.
+<span id="MoveIndex"></span>
+</p>
+<h2><span class="mw-headline" id="Move_Index">Move Index</span></h2>
+<p>If the <a href="Move Generation.html" title="Move Generation">generated moves</a> inside a <a href="Move List.html" title="Move List">move list</a> are <a class="external text" href="https://en.wikipedia.org/wiki/Determinism" rel="nofollow">deterministic</a>, one may encode moves as relative list index. Since the maximum number of moves per positions seems 218 <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> , one <a href="Byte.html" title="Byte">byte</a> is enough to index the move. This encoding was used in early game databases.
+</p>
+<table>
+<tr>
+<th> Two Positions with 218 Moves each
+</th>
+<th> <a class="external text" href="http://commons.wikimedia.org/wiki/File:DickinsAnthony.jpg.html" rel="nofollow">A. Dickins</a> (1968) <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>
+</th></tr>
+<tr>
+<td> <table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">      <br/>       <br/>      <br/>       <br/>      <br/>      <br/>     <br/>  <br/></div><div class="pcfg">♖      ♖<br/>   ♕    <br/> ♕    ♕ <br/>    ♕   <br/>  ♕    ♕<br/>♕    ♕  <br/>♟♟ ♕    <br/>♚♗♘♘ ♔♗ <br/></div></div></td></tr></table>
+</td>
+<td> <table class="fentt" style="font-size:24pt"><tr><td class="board" style="width: 8em;"><div class="board"><div class="sq">    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/></div><div class="pcbg">       <br/>      <br/>       <br/>      <br/>      <br/>       <br/>     <br/>  <br/></div><div class="pcfg">   ♕    <br/> ♕    ♕ <br/>    ♕   <br/>  ♕    ♖<br/>♕    ♕  <br/>   ♕    <br/> ♕    ♖♟<br/> ♔ ♗♗♘♘♚<br/></div></div></td></tr></table>
+</td></tr>
+<tr>
+<td> <span style="font-size: 80%;">R6R/3Q4/1Q4Q1/4Q3/2Q4Q/Q4Q2/pp1Q4/kBNN1KB1 w - - 0 1</span>
+</td>
+<td> <span style="font-size: 80%;">3Q4/1Q4Q1/4Q3/2Q4R/Q4Q2/3Q4/1Q4Rp/1K1BBNNk w - - 0 1</span>
+</td></tr></table>
+<p>This method can be refined if variable-length encoding is allowed. This is especially useful for long sequences of moves. If the number of legal moves from the position is equal to <code>n</code> then only <code>ceil(log2(n))</code> bits need to be used to encode the move (note: positions without a move available require special handling; position with one move available need 0 bits, so they may need some more information to encode whether a move was made or the game terminated prior to it, depending on use-case). Empirical data based on a sample of human games shows that each move when encoded with this scheme takes approximately 5.11 bits, that is about 63.8% of the original size (1 byte per move).
+</p><p>A simple variation of this is to use a list of pseudo-legal moves, which may speed up the encoding/decoding process at a cost of a slightly larger size. On the same dataset as above it amounts to approximately 5.41 bits per move, or about 67.7% of the original size. Other methods of indexing into the movelist (for example using 2 indirections - piece and square) and other criteria for the moves included in the movelist can be devised for different tradeoffs between speed and compression ratio.
+</p>
+<h2><span class="mw-headline" id="Move_Enumeration">Move Enumeration</span></h2>
+<h3><span class="mw-headline" id="Per_Piece_and_Square">Per Piece and Square</span></h3>
+<p>For the subset of common chess positions a faster encoding scheme is possible that doesn't require move generation of any kind. Let's enumerate the upper bound on the number of unique moves a piece of a given type can make from one <a href="Squares.html" title="Squares">square</a> - for <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a> assuming no obstacles:
+</p>
+<table class="wikitable">
+<tr>
+<th> Piece
+</th>
+<th> # of Moves
+</th>
+<th> Remarks
+</th></tr>
+<tr>
+<td> <a href="Pawn.html" title="Pawn">Pawn</a>
+</td>
+<td style="text-align:right;"> 12
+</td>
+<td> 7th rank, 4 <a href="Promotions.html" title="Promotions">promotions</a> * 3 <a href="Target Square.html" title="Target Square">target squares</a>
+</td></tr>
+<tr>
+<td> <a href="Knight.html" title="Knight">Knight</a>
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td> from the 16 <a href="Center.html#ExtendedCenter" title="Center">extended center</a> squares
+</td></tr>
+<tr>
+<td> <a href="Bishop.html" title="Bishop">Bishop</a>
+</td>
+<td style="text-align:right;"> 13
+</td>
+<td> from the 4 <a href="Center.html" title="Center">center</a> squares
+</td></tr>
+<tr>
+<td> <a href="Rook.html" title="Rook">Rook</a>
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td> from any square
+</td></tr>
+<tr>
+<td> <a href="Queen.html" title="Queen">Queen</a>
+</td>
+<td style="text-align:right;"> 27
+</td>
+<td> from the 4 <a href="Center.html" title="Center">center</a> squares
+</td></tr>
+<tr>
+<td> <a href="King.html" title="King">King</a>
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td> there are two additional <a href="Castling.html" title="Castling">castling moves</a>,<br/>but they are only possible from the start position<br/>where the king has 5 normal moves available
+</td></tr></table>
+<p>NOTE: We will always use this upper bound instead of the actual number of possible legal moves because this way we don't have to compute any attacks.
+</p><p>So for the standard chess piece set we have an upper bound of <code>12*8 + 8*2 + 13*2 + 14*2 + 27 + 8 == 201</code> possible moves before considering promotions. Each knight promotion reduces it by 12-8=4. Each bishop promotion increases it by 1; rook promotion by 2; queen promotion by 15. In the parametrized worst case (all pawns promoted to either rooks or queens) we have <code>n</code> queen and <code>8-n</code> rook promotions, so the upper bound is <code>f(n) = 8*2 + 13*2 + 14*(2+8-n) + 27*(1+n) + 8 == 217 + 13n</code>. <code>f(n=3)=256 &lt;= 2^8</code>.
+</p><p>So for legal <a href="Chess960.html" title="Chess960">Chess960</a> positions with at most 3 queens on the board one can encode any legal move in just one byte. Note that whether the result can always fit in one byte is determined based solely one the position, so no additional information needs to be stored for disambiguation. This way it's easy to implement a fallback for the positions not supported by this encoding (this could be either to use 2 bytes for the move index or use legal move generation to ensure all values take one byte). One way to encode a position using this information is in the following way:
+</p>
+<pre>
+offset = 0
+for each square in our_pieces_bb:
+    if square == move.from:
+        break
+    
+    offset += upper_bound(pos.piece_on(square).type)
+
+move_index = offset + piece_move_index(moved_piece, move)</pre>
+<p>The <code>piece_move_index(moved_piece, move)</code> function can be implemented for example using lookup tables - the board state doesn't matter, only the move does.
+</p><p>Alternatively we can go through each piece type in some order (instead of going through individual squares), which allows faster computation of the offset if <a href="Population Count.html" title="Population Count">popcount</a> instruction is available:
+</p>
+<pre>
+offset = 0
+for each piece_type lower than moved_piece.type:
+    offset += 
+        popcount(pos.pieces_bb(piece_type, side_to_move)) 
+        * upper_bound(piece_type)
+
+offset += 
+    popcount(
+        pos.pieces_bb(moved_piece.type, side_to_move) 
+        &amp; squares_before_bb(move.from)) 
+    * upper_bound(piece_type)
+
+move_index = offset + piece_move_index(moved_piece, move)
+</pre>
+<p>To decode the move we step through different offsets in the same way as we did when encoding, but now we have to look for the range of values that contains the encoded move index - once we find the range we can just decode the move index of that specific piece type (using an inverse of <code>piece_move_index</code>). While this method allows much faster encoding/decoding then the one involving a list of legal moves, it requires additional work if one needs to verify the correctness of the decoded moves (in the former one just needs to check if the index is within bounds).
+</p><p>This method is used in one of the move encodings available in the <a class="new" href="index.php?title=BCGN&amp;action=edit&amp;redlink=1.html" title="BCGN (page does not exist)">BCGN</a> chess game storage format <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>.
+<span id="Enumeration"></span>
+</p>
+<h3><span class="mw-headline" id="Over_All_Pieces_and_Squares">Over All Pieces and Squares</span></h3>
+<p>Based on <a href="Influence Quantity of Pieces.html" title="Influence Quantity of Pieces">Influence Quantity of Pieces</a> one may enumerate all moves, to specify a unique determined move number with respect to moving piece, from- and to squares, captured piece (if any) and promoted piece inside a 16-bit range.
+</p><p><b>Pawn Moves</b>
+</p>
+<table class="wikitable">
+<tr>
+<th> Move Kind
+</th>
+<th> Ranks
+</th>
+<th> Files
+</th>
+<th> Directions
+</th>
+<th> Target<br/>Combinations
+</th>
+<th> Cardinality
+</th></tr>
+<tr>
+<th>  Pushs
+</th>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 40
+</td></tr>
+<tr>
+<th>  Promotions
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 4
+</td>
+<td style="text-align:right;"> 32
+</td></tr>
+<tr>
+<th> Double Pushs
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 8
+</td></tr>
+<tr>
+<th> Total Pushs
+</th>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> <span style="color: #c0c0c0;">1+2/3</span>
+</td>
+<td style="text-align:right;"> <b>80</b>
+</td></tr>
+<tr>
+<th> Captures
+</th>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 7
+</td>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 5
+</td>
+<td style="text-align:right;"> 350
+</td></tr>
+<tr>
+<th> Captures &amp; Promotions
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 7
+</td>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 4*4
+</td>
+<td style="text-align:right;"> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>  224
+</td></tr>
+<tr>
+<th>  En passant
+</th>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 7
+</td>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 1
+</td>
+<td style="text-align:right;"> 14
+</td></tr>
+<tr>
+<th> Total Captures
+</th>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 7
+</td>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;"> <b>588</b>
+</td></tr>
+<tr>
+<th> Total Pawns
+</th>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;"> <b>668</b>
+</td></tr></table>
+<p><b>Piece Moves</b>
+Reversible and Captures, <a href="Influence Quantity of Pieces.html" title="Influence Quantity of Pieces">Influence Quantity of Pieces</a> times six target combinations for empty and five possible capture targets.
+</p>
+<table class="wikitable">
+<tr>
+<th> Piece
+</th>
+<th> Influence Quantity
+</th>
+<th> Cardinality
+</th></tr>
+<tr>
+<th> Knight
+</th>
+<td style="text-align:right;"> 336
+</td>
+<td style="text-align:right;"> 2016
+</td></tr>
+<tr>
+<th> King
+</th>
+<td style="text-align:right;"> 420
+</td>
+<td style="text-align:right;"> 2520
+</td></tr>
+<tr>
+<th> Bishop
+</th>
+<td style="text-align:right;"> 560
+</td>
+<td style="text-align:right;"> 3360
+</td></tr>
+<tr>
+<th> Rook
+</th>
+<td style="text-align:right;"> 896
+</td>
+<td style="text-align:right;"> 5376
+</td></tr>
+<tr>
+<th> Queen
+</th>
+<td style="text-align:right;"> 1456
+</td>
+<td style="text-align:right;"> 8736
+</td></tr>
+<tr>
+<th> Total
+</th>
+<td style="text-align:right;"> 3668
+</td>
+<td style="text-align:right;"> <b>22008</b>
+</td></tr></table>
+<p><b>All Moves</b>
+Sheet of all moves, considering <a href="Castling.html" title="Castling">Castling</a> (but no null move):
+</p>
+<table class="wikitable">
+<tr>
+<th> Piece
+</th>
+<th> Move Kind
+</th>
+<th> From-To
+</th>
+<th> None
+</th>
+<th> Captures
+</th>
+<th> per Side
+</th>
+<th> Total
+</th></tr>
+<tr>
+<th rowspan="7">  Pawn
+</th>
+<td style="text-align:center;"> Promotions
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> 32
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 32
+</td>
+<td style="text-align:right;"> 64
+</td></tr>
+<tr>
+<td style="text-align:center;"> Captures &amp; Promotions
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 224
+</td>
+<td style="text-align:right;"> 224
+</td>
+<td style="text-align:right;"> 448
+</td></tr>
+<tr>
+<td style="text-align:center;"> Double Pushs
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 8
+</td>
+<td style="text-align:right;"> 16
+</td></tr>
+<tr>
+<td style="text-align:center;"> Pushs
+</td>
+<td style="text-align:right;"> 40
+</td>
+<td style="text-align:right;"> 40
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 40
+</td>
+<td style="text-align:right;"> 80
+</td></tr>
+<tr>
+<td style="text-align:center;"> Captures
+</td>
+<td style="text-align:right;"> 70
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 350
+</td>
+<td style="text-align:right;"> 350
+</td>
+<td style="text-align:right;"> 700
+</td></tr>
+<tr>
+<td style="text-align:center;"> En passant
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> 14
+</td>
+<td style="text-align:right;"> 28
+</td></tr>
+<tr>
+<td style="text-align:center;"> <b>Total</b>
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;"> <b>80</b>
+</td>
+<td style="text-align:right;"> <b>588</b>
+</td>
+<td style="text-align:right;"> <b>668</b>
+</td>
+<td style="text-align:right;"> <b>1336</b>
+</td></tr>
+<tr>
+<th rowspan="3"> King
+</th>
+<td style="text-align:center;"> Castles
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> -
+</td>
+<td style="text-align:right;"> 2
+</td>
+<td style="text-align:right;"> 4
+</td></tr>
+<tr>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;"> 420
+</td>
+<td style="text-align:right;"> 420
+</td>
+<td style="text-align:right;"> 2100
+</td>
+<td style="text-align:right;"> 2520
+</td>
+<td style="text-align:right;"> 5040
+</td></tr>
+<tr>
+<td style="text-align:center;"> <b>Total</b>
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;"> <b>422</b>
+</td>
+<td style="text-align:right;"> <b>2100</b>
+</td>
+<td style="text-align:right;"> <b>2522</b>
+</td>
+<td style="text-align:right;"> <b>5044</b>
+</td></tr>
+<tr>
+<th> Knight
+</th>
+<td>
+</td>
+<td style="text-align:right;"> 336
+</td>
+<td style="text-align:right;"> 336
+</td>
+<td style="text-align:right;"> 1680
+</td>
+<td style="text-align:right;"> 2016
+</td>
+<td style="text-align:right;"> 4032
+</td></tr>
+<tr>
+<th>  Bishop
+</th>
+<td>
+</td>
+<td style="text-align:right;"> 560
+</td>
+<td style="text-align:right;"> 560
+</td>
+<td style="text-align:right;"> 2800
+</td>
+<td style="text-align:right;"> 3360
+</td>
+<td style="text-align:right;"> 6720
+</td></tr>
+<tr>
+<th>  Rook
+</th>
+<td>
+</td>
+<td style="text-align:right;"> 896
+</td>
+<td style="text-align:right;"> 896
+</td>
+<td style="text-align:right;"> 4480
+</td>
+<td style="text-align:right;"> 5376
+</td>
+<td style="text-align:right;"> 10752
+</td></tr>
+<tr>
+<th>  Queen
+</th>
+<td>
+</td>
+<td style="text-align:right;"> 1456
+</td>
+<td style="text-align:right;"> 1456
+</td>
+<td style="text-align:right;"> 7280
+</td>
+<td style="text-align:right;"> 8736
+</td>
+<td style="text-align:right;"> 17472
+</td></tr>
+<tr>
+<th>
+</th>
+<td style="text-align:center;"> <b>Total</b>
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;"> <b>3248</b>
+</td>
+<td style="text-align:right;"> <b>16240</b>
+</td>
+<td style="text-align:right;"> <b>19488</b>
+</td>
+<td style="text-align:right;"> <b>38976</b>
+</td></tr>
+<tr>
+<th>  Total
+</th>
+<td>
+</td>
+<td>
+</td>
+<td style="text-align:right;"> <b>3750</b>
+</td>
+<td style="text-align:right;"> <b>18928</b>
+</td>
+<td style="text-align:right;"> <b>22678</b>
+</td>
+<td style="text-align:right;"> <b>45356</b>
+</td></tr></table>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Influence Quantity of Pieces.html" title="Influence Quantity of Pieces">Influence Quantity of Pieces</a></li>
+<li> <a href="Move Generation.html" title="Move Generation">Move Generation</a></li>
+<li> <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1993_...">1993 ...</span></h2>
+<ul><li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/RspnvkCEY7s/W4kUZ0uH7jMJ" rel="nofollow">recording chess games in very few bits per move</a> by Toby Robison, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, March 05, 1993</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/yL_tzhBpVsw/PBb6dSWl9FgJ" rel="nofollow">Chess move binary encoding</a> by <a href="Jeff Mallett.html" title="Jeff Mallett">Jeff Mallett</a> via <a href="Steven Edwards.html" title="Steven Edwards">Steven Edwards</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgc</a>, July 04, 1994</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=424966" rel="nofollow">Subject: Maximum Number of Legal Moves</a> by <a href="Andrew Shapira.html" title="Andrew Shapira">Andrew Shapira</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2005</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=20092.html" rel="nofollow">Two doubts</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, March 10, 2008 </li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39332.html" rel="nofollow">max amount of moves from a position?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, June 10, 2011 » <a href="Chess.html#Maxima" title="Chess">Chess Maxima</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=41388.html" rel="nofollow">Contest: Find Position with the most moves</a> by <a href="Charles Roberson.html" title="Charles Roberson">Charles Roberson</a>, <a href="CCC.html" title="CCC">CCC</a>, December 09, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52083.html" rel="nofollow">Move encoding</a> by <a href="Russell Reagan.html" title="Russell Reagan">Russell Reagan</a>, <a href="CCC.html" title="CCC">CCC</a>, April 21, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53289.html" rel="nofollow">Killer and move encoding</a> by <a href="Fabio Gobbato.html" title="Fabio Gobbato">Fabio Gobbato</a>, <a href="CCC.html" title="CCC">CCC</a>, August 14, 2014 » <a href="Killer Heuristic.html" title="Killer Heuristic">Killer Heuristic</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73867.html" rel="nofollow">Generating all the moves on a board</a> by <a href="Marc-Philippe Huget.html" title="Marc-Philippe Huget">Marc-Philippe Huget</a>, <a href="CCC.html" title="CCC">CCC</a>, May 07, 2020</li>
+<li> <a class="external text" href="https://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=78466" rel="nofollow">Move structure and hash tables</a> by gaard, <a href="CCC.html" title="CCC">CCC</a>, October 20, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://labraj.uni-mb.si/en/Move Representation.html" rel="nofollow">Move Representation - Computer Architecture and Languages Laboratory</a>, <a href="University of Maribor.html" title="University of Maribor">University of Maribor</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Code" rel="nofollow">Code from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Binary_code" rel="nofollow">Binary code from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=424966" rel="nofollow">Subject: Maximum Number of Legal Moves</a> by <a href="Andrew Shapira.html" title="Andrew Shapira">Andrew Shapira</a>, <a href="CCC.html" title="CCC">CCC</a>, May 08, 2005</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39332.html" rel="nofollow">max amount of moves from a position?</a> by <a href="Srdja Matovic.html" title="Srdja Matovic">Srdja Matovic</a>, <a href="CCC.html" title="CCC">CCC</a>, June 10, 2011</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=410026&amp;t=39332.html" rel="nofollow">Re: max amount of moves from a position?</a> by <a href="%C3%81rp%C3%A1d Rusz.html" title="Árpád Rusz">Árpád Rusz</a>, <a href="CCC.html" title="CCC">CCC</a>, June 11, 2011</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/Sopel97/chess_pos_db/blob/master/docs/bcgn/move_index.md" rel="nofollow">A detailed walkthrough of an implementation of BCGN's move index based move encoding scheme · GitHub</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text">PxP not possible during promotion, therefore only four capture targets</span>
+</li>
+</ol></div>
+<p><b><a href="Moves.html" title="Moves">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175358
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.086 seconds
+Real time usage: 0.770 seconds
+Preprocessor visited node count: 222/1000000
+Preprocessor generated node count: 410/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1369-0!canonical and timestamp 20240722175357 and revision id 25910
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Encoding_Moves&amp;oldid=25910">https://www.chessprogramming.org/index.php?title=Encoding_Moves&amp;oldid=25910</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Encoding+Moves&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Encoding Moves.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Encoding Moves&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Encoding Moves.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Encoding Moves&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Encoding Moves&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Encoding Moves.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Encoding Moves.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Encoding Moves&amp;oldid=25910.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Encoding Moves&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 4 November 2021, at 10:32.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Encoding_Moves&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.086","walltime":"0.770","ppvisitednodes":{"value":222,"limit":1000000},"ppgeneratednodes":{"value":410,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722175358","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":46});});</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>King Safety - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"King_Safety","wgTitle":"King Safety","wgCurRevisionId":24107,"wgRevisionId":24107,"wgArticleId":1523,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Samuel Bak","Darryl Jones","The Rolling Stones"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"King_Safety","wgRelevantArticleId":1523,"wgRequestId":"Zp7De--qaMe6EU8WbZGgvAAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-King_Safety rootpage-King_Safety skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">King Safety</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Evaluation.html" title="Evaluation">Evaluation</a> * King Safety</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bb0"><img alt="" class="thumbimage" height="304" src="images/4/49/SamuelBak_King.jpg" width="240"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:SamuelBak King.jpg.html" title="Enlarge"></a></div><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a> - King <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p>Good evaluation of the <b>king safety</b> is one of the most challenging tasks in writing an evaluation function, but also the most rewarding. The subjects are placed here in order of approximate (implementation) difficulty. If this page grows, it might be worthwhile to create a sub-page for each term. 
+<span id="PawnShield"></span>
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pawn Shield"><span class="tocnumber">1</span> <span class="toctext">Pawn Shield</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pawn Storm"><span class="tocnumber">2</span> <span class="toctext">Pawn Storm</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#King Tropism"><span class="tocnumber">3</span> <span class="toctext">King Tropism</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Virtual Mobility"><span class="tocnumber">4</span> <span class="toctext">Virtual Mobility</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Scaling"><span class="tocnumber">5</span> <span class="toctext">Scaling</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Attacking King Zone"><span class="tocnumber">6</span> <span class="toctext">Attacking King Zone</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Square Control"><span class="tocnumber">6.1</span> <span class="toctext">Square Control</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Attack Units"><span class="tocnumber">6.2</span> <span class="toctext">Attack Units</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Patterns"><span class="tocnumber">7</span> <span class="toctext">Patterns</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Forums Posts"><span class="tocnumber">9</span> <span class="toctext">Forums Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#1998 ..."><span class="tocnumber">9.1</span> <span class="toctext">1998 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2000 ..."><span class="tocnumber">9.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2005 ..."><span class="tocnumber">9.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2010 ..."><span class="tocnumber">9.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#2015 ..."><span class="tocnumber">9.5</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#2020 ..."><span class="tocnumber">9.6</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#External Links"><span class="tocnumber">10</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Pawn_Shield">Pawn Shield</span></h1>
+<p>When the king has castled, it is important to preserve pawns next to it, in order to protect it against the assault. Generally speaking, it is best to keep the pawns unmoved or possibly moved up one square. The lack of a shielding pawn deserves a penalty, even more so if there is an <a href="Open File.html" title="Open File">open file</a> next to the king.
+<span id="PawnStorm"></span>
+</p>
+<h1><span class="mw-headline" id="Pawn_Storm">Pawn Storm</span></h1>
+<p>If the enemy pawns are near to the king, there might be a threat of opening a file, even if the pawn shield is intact. Penalties for storming enemy pawns must be lower than penalties for (semi)open files, otherwise the pawn storm might backfire, resulting in a blockage.
+<span id="KingTropism"></span>
+</p>
+<h1><span class="mw-headline" id="King_Tropism">King Tropism</span></h1>
+<p>King <a class="external text" href="https://en.wikipedia.org/wiki/Tropism" rel="nofollow">tropism</a> is a simplified form of king safety evaluation. It takes into account the <a href="Distance.html" title="Distance">distance</a> between the King and the attacking pieces, possibly weighted against <a href="Point Value.html" title="Point Value">piece value</a>. For example, one may double the distance value for a queen, and halve it for bishops and rooks. This kind of evaluation acts in a probabilistic way - it is by no means certain that being close to the king helps in attacking it. For example, if white castles short, black rook on h8 gets a higher tropism value regardless whether it stands on an open file. Nevertheless, using this kind of crude evaluation term increases a probability of building up an attack.
+</p><p>This kind of algorithm is used by <a href="Crafty.html" title="Crafty">Crafty</a>. Another, perhaps more basic example is the <a href="CPW-Engine.html" title="CPW-Engine">CPW-Engine</a> as implemented in <a href="CPW-Engine eval.html" title="CPW-Engine eval">CPW-Engine_eval</a>, and the one demonstrated in the <a href="Evaluation Function Draft.html" title="Evaluation Function Draft">Evaluation Function Draft</a>.
+<span id="VMOB"></span>
+</p>
+<h1><span class="mw-headline" id="Virtual_Mobility">Virtual Mobility</span></h1>
+<p>Another heuristic is to temporary replace the king by a <a href="Queen.html" title="Queen">queen</a>, to use her virtual <a href="Mobility.html" title="Mobility">mobility</a> as a measure of opponent's <a href="Sliding Pieces.html" title="Sliding Pieces">sliding piece</a> <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">attacking</a> chances and therefore an unsafe king.
+One may even temporary modify the <a href="Occupancy.html" title="Occupancy">occupancy</a> to improve this virtual mobility, e.g by removing mobile opponent pieces.
+<span id="Scaling"></span>
+</p>
+<h1><span class="mw-headline" id="Scaling">Scaling</span></h1>
+<p>Usually king safety value is scaled one way or the other. Even <a href="TSCP.html" title="TSCP">TSCP</a> uses the pawn shield and pawn storm score, scaled by the opponent's material. This way, whenever the engine finds itself with a broken pawn shield, it tends to exchange pieces in order to alleviate the danger. <a href="Fruit.html" title="Fruit">Fruit</a> uses a more elaborate scheme, counting the bonuses for attacking the squares near to the enemy king, and then multiplying their sum by the constant derived from the number of attackers. For an approximation of such approach, see <a href="CPW King.html" title="CPW King">CPW_King</a> evaluation function.
+<span id="Attacking"></span>
+</p>
+<h1><span class="mw-headline" id="Attacking_King_Zone">Attacking King Zone</span></h1>
+<p><i>sample specification</i>
+King zone is usually defined as squares to which enemy King can move plus two or three additional squares facing enemy position. Basic King safety function, similar to the one described in <a href="Toga Log.html#UserManual" title="Toga Log">Toga log user manual</a>, can work as follows: we have two variables, <b>attackingPiecesCount</b> and <b>valueOfAttacks</b>, zeroed at startup. If a piece attacks enemy king zone, we increase attackingPiecesCount by one, and count how many squares within enemy King zone are attacked. We multpily the number of attacked squares by a constant: 20 for a knight, 20 for a bishop, 40 for a rook and 80 for a queen. The result of multiplication is added to valueOfAttacks. After finding all attacks, we look at attackingPiecesCount, use it as an index to the table given below, and our king attack score is<br/> <b>valueOfAttacks * attackWeight[attackingPiecesCount] / 100</b>.
+</p>
+<table class="wikitable">
+<tr>
+<th> Nr of<br/>Attackers
+</th>
+<th> Attack<br/>weight
+</th></tr>
+<tr>
+<td style="text-align:center;"> 1
+</td>
+<td style="text-align:right;"> 0
+</td></tr>
+<tr>
+<td style="text-align:center;"> 2
+</td>
+<td style="text-align:right;"> 50
+</td></tr>
+<tr>
+<td style="text-align:center;"> 3
+</td>
+<td style="text-align:right;"> 75
+</td></tr>
+<tr>
+<td style="text-align:center;"> 4
+</td>
+<td style="text-align:right;"> 88
+</td></tr>
+<tr>
+<td style="text-align:center;"> 5
+</td>
+<td style="text-align:right;"> 94
+</td></tr>
+<tr>
+<td style="text-align:center;"> 6
+</td>
+<td style="text-align:right;"> 97
+</td></tr>
+<tr>
+<td style="text-align:center;"> 7
+</td>
+<td style="text-align:right;"> 99
+</td></tr></table>
+<p><span id="SquareControl"></span>
+</p>
+<h2><span class="mw-headline" id="Square_Control">Square Control</span></h2>
+<p>The most elaborate king safety evaluation schemes gather information about <a href="Square Control.html" title="Square Control">control of the squares</a> near the enemy king. A good explanation of such an algorithm might be found on <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder's</a> <a href="Rebel.html#ProgrammerCorner" title="Rebel">Programmer Corner</a>. If a program, unlike <a href="Rebel.html" title="Rebel">Rebel</a>, does not keep <a href="Incremental Updates.html" title="Incremental Updates">incrementally updated</a> <a href="Attack and Defend Maps.html" title="Attack and Defend Maps">attack tables</a>, this knowledge is likely to be uncovered while calculating <a href="Mobility.html" title="Mobility">mobility</a>.
+</p>
+<h2><span class="mw-headline" id="Attack_Units">Attack Units</span></h2>
+<p><a href="Rebel.html" title="Rebel">Rebel</a> (as we know from its description) and <a href="Stockfish.html" title="Stockfish">Stockfish</a> (as we know from its code) use attack counter as an index to a table holding king attack scores. Stockfish counts each minor piece attack on a king zone (defined as squares that enemy king can reach + three more forward squares facing enemy position) as 2 attack units, rook attack on king zone as 3 attack units and a queen attack as 5 attack units. The virtue of such approach is twofold. <b>(1)</b> other factors beside these attacks can be counted. For example, Stockfish adds 6 attack units for a safe queen contact check and a couple attack units for a safe rook contact check. <b>(2)</b> the values held in the table may reflect attitude that "the whole is greater than the sum of parts". Typical curve is S-shaped: it raises slowly at first, then it goes up faster, becoming almost flat at the end.
+</p><p>This is the table from <a href="Glaurung.html" title="Glaurung">Glaurung</a> 1.2:
+</p>
+<pre>
+static const int SafetyTable[100] = {
+   0,   0,   0,   1,   1,   2,   3,   4,   5,   6,
+   8,  10,  13,  16,  20,  25,  30,  36,  42,  48,
+  55,  62,  70,  80,  90, 100, 110, 120, 130, 140,
+ 150, 160, 170, 180, 190, 200, 210, 220, 230, 240,
+ 250, 260, 270, 280, 290, 300, 310, 320, 330, 340,
+ 350, 360, 370, 380, 390, 400, 410, 420, 430, 440,
+ 450, 460, 470, 480, 490, 500, 510, 520, 530, 540,
+ 550, 560, 570, 580, 590, 600, 610, 620, 630, 640,
+ 650, 650, 650, 650, 650, 650, 650, 650, 650, 650,
+ 650, 650, 650, 650, 650, 650, 650, 650, 650, 650
+};
+</pre>
+<p>This is the table generated using a formula from <a href="Stockfish.html" title="Stockfish">Stockfish</a>, rescaled to <a href="Centipawns.html" title="Centipawns">centipawns</a> :
+</p>
+<pre>
+static const int SafetyTable[100] = {
+    0,  0,   1,   2,   3,   5,   7,   9,  12,  15,
+  18,  22,  26,  30,  35,  39,  44,  50,  56,  62,
+  68,  75,  82,  85,  89,  97, 105, 113, 122, 131,
+ 140, 150, 169, 180, 191, 202, 213, 225, 237, 248,
+ 260, 272, 283, 295, 307, 319, 330, 342, 354, 366,
+ 377, 389, 401, 412, 424, 436, 448, 459, 471, 483,
+ 494, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+ 500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+ 500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+ 500, 500, 500, 500, 500, 500, 500, 500, 500, 500
+};
+</pre>
+<p>Using such tables, it is advisable not to evaluate king attack if only two pieces are attacking.
+<span id="Patterns"></span>
+</p>
+<h1><span class="mw-headline" id="Patterns">Patterns</span></h1>
+<p>There are positions that tend to be notoriously difficult for the chess programs. One of them is a sacrifice of a minor piece on g5/g4, when it is simultaneously attacked and protected by the "h" pawns. Another one occurs after a standard Bxh7 sacrifice: White knight stands unchallenged on g5, white queen on h5, black King on g8 (positions with Kg6 are best left to the search). Hard-coding such patterns raises program's tactical awareness.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Castling Rights.html" title="Castling Rights">Castling Rights</a></li>
+<li> <a href="Pawn Chain.html#ChainDirection" title="Pawn Chain">Pawn Chain Direction</a></li>
+<li> <a href="Evaluation Function Draft.html" title="Evaluation Function Draft">Evaluation Function Draft</a></li>
+<li> <a href="Evaluation Patterns.html" title="Evaluation Patterns">Evaluation Patterns</a></li>
+<li> <a href="King Pattern.html#KingSafety" title="King Pattern">King Safety</a> in <a href="King Pattern.html" title="King Pattern">King Pattern</a> with <a href="Bitboards.html" title="Bitboards">Bitboards</a></li>
+<li> <a href="Mate at a Glance.html" title="Mate at a Glance">Mate at a Glance</a></li></ul>
+<h1><span class="mw-headline" id="Forums_Posts">Forums Posts</span></h1>
+<h2><span class="mw-headline" id="1998_...">1998 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=17373" rel="nofollow">King Safety</a> by <a href="Stuart Cracraft.html" title="Stuart Cracraft">Stuart Cracraft</a>, <a href="CCC.html" title="CCC">CCC</a>, April 22, 1998</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=19415" rel="nofollow">King safety evaluation</a> by <a href="Roberto Waldteufel.html" title="Roberto Waldteufel">Roberto Waldteufel</a>, <a href="CCC.html" title="CCC">CCC</a>, May 28, 1998</li>
+<li> <a class="external text" href="http://groups.google.com/group/rec.games.chess.computer/browse frm/thread/462b49226d1f1dfe.html#" rel="nofollow">Asymetric king safety</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, March 13, 1999</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=192418" rel="nofollow">What is Piece´s tropism?</a> by carlos, <a href="CCC.html" title="CCC">CCC</a>, October 08, 2001</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=235856" rel="nofollow">Bishop tropism?</a> by <a href="Pham Hong Nguyen.html" title="Pham Hong Nguyen">Pham Hong Nguyen</a>, <a href="CCC.html" title="CCC">CCC</a>, June 17, 2002</li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=17546.html" rel="nofollow">king safety</a> by <a href="Charles Roberson.html" title="Charles Roberson">Charles Roberson</a>, <a href="CCC.html" title="CCC">CCC</a>, November 02, 2007</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=31571.html" rel="nofollow">Distance to King</a> by <a href="Adam Berent.html" title="Adam Berent">Adam Berent</a>, <a href="CCC.html" title="CCC">CCC</a>, January 08, 2010</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=38756.html" rel="nofollow">About king safety</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, April 15, 2011 » <a href="Rodin.html" title="Rodin">Rodin</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=39102.html" rel="nofollow">value of king tropism in eval function</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, May 17, 2011</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=42065.html" rel="nofollow">Approaches to king safety?</a> by <a class="new" href="index.php?title=Mike Robinson&amp;action=edit&amp;redlink=1.html" title="Mike Robinson (page does not exist)">Mike Robinson</a>, <a href="CCC.html" title="CCC">CCC</a>, January 19, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=44849.html" rel="nofollow">For Ed Schroeder: Rebel's Pawn Shield and Pawn Storm Eval</a> by Marcel Fournier, <a href="CCC.html" title="CCC">CCC</a>, August 21, 2012</li>
+<li> <a class="external text" href="https://groups.google.com/d/msg/fishcooking/lIjQUH3dsYg/4VEtHUkrdBsJ" rel="nofollow">Pinned pieces in king safety</a> by <a href="Stefan Geschwentner.html" title="Stefan Geschwentner">Stefan Geschwentner</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">FishCooking</a>, March 28, 2014 » <a href="Pin.html" title="Pin">Pin</a>, <a href="Stockfish.html" title="Stockfish">Stockfish</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52774.html" rel="nofollow">King shelter x-ray attacks</a> by <a href="Lyudmil Tsvetkov.html" title="Lyudmil Tsvetkov">Lyudmil Tsvetkov</a>, <a href="CCC.html" title="CCC">CCC</a>, June 27, 2014 » <a href="X-ray Attacks (Bitboards).html" title="X-ray Attacks (Bitboards)">X-ray Attacks (Bitboards)</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=52779.html" rel="nofollow">Heavy piece shelter</a> by <a href="Lyudmil Tsvetkov.html" title="Lyudmil Tsvetkov">Lyudmil Tsvetkov</a>, <a href="CCC.html" title="CCC">CCC</a>, June 27, 2014</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=53508.html" rel="nofollow">King safety refinements</a> by <a href="Lyudmil Tsvetkov.html" title="Lyudmil Tsvetkov">Lyudmil Tsvetkov</a>, <a href="CCC.html" title="CCC">CCC</a>, August 31, 2014</li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=57403.html" rel="nofollow">about king attack</a> by <a href="Daniel Anulliero.html" title="Daniel Anulliero">Daniel Anulliero</a>, <a href="CCC.html" title="CCC">CCC</a>, August 27, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59583.html" rel="nofollow">king shelter - when and how?</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 21, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=59647.html" rel="nofollow">king safety: hard positions for zurichess</a> by <a href="Alexandru Mosoi.html" title="Alexandru Mosoi">Alexandru Mosoi</a>, <a href="CCC.html" title="CCC">CCC</a>, March 27, 2016 » <a href="Zurichess.html" title="Zurichess">Zurichess</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61014.html" rel="nofollow">Castling Evaluation</a> by <a href="Dennis Sceviour.html" title="Dennis Sceviour">Dennis Sceviour</a>, <a href="CCC.html" title="CCC">CCC</a>, August 02, 2016 » <a href="Castling.html" title="Castling">Castling</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=65338.html" rel="nofollow">enemy edge pawn as part of own king shelter</a> by Bram Mourik, <a href="CCC.html" title="CCC">CCC</a>, September 30, 2017</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66599.html" rel="nofollow">Pawn Storm - Theory</a> by <a href="Dennis Sceviour.html" title="Dennis Sceviour">Dennis Sceviour</a>, <a href="CCC.html" title="CCC">CCC</a>, February 14, 2018 » <a href="King Safety.html#PawnStorm" title="King Safety">Pawn Storm</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=72981.html" rel="nofollow">Pruning / reduction depending on king safety</a> by <a href="Vivien Clauzon.html" title="Vivien Clauzon">Vivien Clauzon</a>, <a href="CCC.html" title="CCC">CCC</a>, February 02, 2020 » <a href="Pruning.html" title="Pruning">Pruning</a>, <a href="Reductions.html" title="Reductions">Reductions</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73877.html" rel="nofollow">Positional evaluation of your engine on this?</a> by <a href="Tom King.html" title="Tom King">Tom King</a>, <a href="CCC.html" title="CCC">CCC</a>, May 09, 2020</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=76976.html" rel="nofollow">King safety evaluation</a> by <a href="Niels Abildskov.html" title="Niels Abildskov">Niels Abildskov</a>, <a href="CCC.html" title="CCC">CCC</a>, March 29, 2021</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://www.mark-weeks.com/aboutcom/aa03e17.htm.html" rel="nofollow">Middle game - King safety</a> from <a class="external text" href="http://www.mark-weeks.com/aboutcom/aa02j19.htm.html" rel="nofollow">Chess Tutorial : Improve Your Middle Game</a> by <a href="Mark Weeks.html" title="Mark Weeks">Mark Weeks</a></li>
+<li> <a class="external text" href="https://en.wikibooks.org/wiki/Chess_Strategy/The_positions_of_the_kings" rel="nofollow">Chess Strategy/The positions of the kings - Wikibooks</a></li>
+<li> <a href="Category:The Rolling Stones.html" title="Category:The Rolling Stones">The Rolling Stones</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Gimme_Shelter" rel="nofollow">Gimme Shelter</a> (1998 promotion video), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Bridges_to_Babylon_Tour_%2797%E2%80%9398" rel="nofollow">Bridges to Babylon Tour</a> feat. <a class="external text" href="https://en.wikipedia.org/wiki/Lisa_Fischer" rel="nofollow">Lisa Fischer</a> and  <a href="Category:Darryl Jones.html" title="Category:Darryl Jones">Darryl Jones</a>, et al., December 12 1997, <a class="external text" href="https://en.wikipedia.org/wiki/The_Dome_at_America%27s_Center" rel="nofollow">Trans World Dome</a>, <a class="external text" href="https://en.wikipedia.org/wiki/St._Louis" rel="nofollow">St. Louis</a> <a class="external text" href="https://en.wikipedia.org/wiki/Missouri" rel="nofollow">Missouri</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/8kl6q_9qZOs?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="http://chgs.elevator.umn.edu/asset/viewAsset/57f3b6787d58ae5f74bf8ba9.html#57f3b6d77d58ae5574bf8bb0" rel="nofollow">Chess in the Art of Samuel Bak</a>, <a class="external text" href="http://www.chgs.umn.edu/.html" rel="nofollow">Center for Holocaust &amp; Genocide Studies</a>, <a href="University of Minnesota.html" title="University of Minnesota">University of Minnesota</a></span>
+</li>
+</ol></div>
+<p><b><a href="Evaluation.html" title="Evaluation">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722132542
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.020 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 124/1000000
+Preprocessor generated node count: 218/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1523-0!canonical and timestamp 20240722132542 and revision id 24107
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=King_Safety&amp;oldid=24107">https://www.chessprogramming.org/index.php?title=King_Safety&amp;oldid=24107</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Samuel Bak.html" title="Category:Samuel Bak">Samuel Bak</a></li><li><a href="Category:Darryl Jones.html" title="Category:Darryl Jones">Darryl Jones</a></li><li><a href="Category:The Rolling Stones.html" title="Category:The Rolling Stones">The Rolling Stones</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=King+Safety&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="King Safety.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:King Safety&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="King Safety.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=King Safety&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=King Safety&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/King Safety.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/King Safety.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=King Safety&amp;oldid=24107.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=King Safety&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 29 March 2021, at 22:20.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=King_Safety&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.020","walltime":"0.022","ppvisitednodes":{"value":124,"limit":1000000},"ppgeneratednodes":{"value":218,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722132542","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":43});});</script>
+</body>
+</html>

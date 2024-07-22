@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Dumb7Fill - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Dumb7Fill","wgTitle":"Dumb7Fill","wgCurRevisionId":10266,"wgRevisionId":10266,"wgArticleId":1274,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heinrich Kley","Industrial Heritage Trail","Henrichshütte","Alphonse Mouzon","Airto Moreira","Wayne Shorter","Miroslav Vitouš","Weather Report","Joe Zawinul"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Dumb7Fill","wgRelevantArticleId":1274,"wgRequestId":"Zp7DMwAL2SoIDHtirCviJwAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dumb7Fill rootpage-Dumb7Fill skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Dumb7Fill</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> * Dumb7Fill</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a class="image" href="File:KruppsDevils.jpg.html"><img alt="" class="thumbimage" height="281" src="images/thumb/7/7f/KruppsDevils.jpg/400px-KruppsDevils.jpg" srcset="/images/thumb/7/7f/KruppsDevils.jpg/600px-KruppsDevils.jpg 1.5x, /images/thumb/7/7f/KruppsDevils.jpg/800px-KruppsDevils.jpg 2x" width="400"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:KruppsDevils.jpg.html" title="Enlarge"></a></div><a href="Category:Heinrich Kley.html" title="Category:Heinrich Kley">Heinrich Kley</a> - The Demons of Krupp 1912/1913 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Dumb7Fill</b>,<br/>
+the obvious, straight forward <a class="external text" href="https://en.wikipedia.org/wiki/Flood_fill" rel="nofollow">flood-fill</a> approach works <b>set-wise</b> - <b>seven</b> times one fill-cycle by <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">one step only</a> in one of eight <a href="Direction.html" title="Direction">directions</a>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Compass Rose"><span class="tocnumber">1</span> <span class="toctext">Compass Rose</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Occluded Fill"><span class="tocnumber">2</span> <span class="toctext">Occluded Fill</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Seven Fill Cycles"><span class="tocnumber">2.1</span> <span class="toctext">Seven Fill Cycles</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Fill Loop"><span class="tocnumber">2.2</span> <span class="toctext">Fill Loop</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Unrolled Loop"><span class="tocnumber">2.3</span> <span class="toctext">Unrolled Loop</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Attack Fill"><span class="tocnumber">3</span> <span class="toctext">Attack Fill</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Comparison with Kogge-Stone"><span class="tocnumber">3.1</span> <span class="toctext">Comparison with Kogge-Stone</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#All Directions"><span class="tocnumber">3.2</span> <span class="toctext">All Directions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Generalized Rays"><span class="tocnumber">4</span> <span class="toctext">Generalized Rays</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Loop Version"><span class="tocnumber">4.1</span> <span class="toctext">Loop Version</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Unrolled Attacks"><span class="tocnumber">4.2</span> <span class="toctext">Unrolled Attacks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Compass_Rose">Compass Rose</span></h1>
+<p>We rely on the <a class="external text" href="https://en.wikipedia.org/wiki/Compass_rose" rel="nofollow">compass rose</a> to identify ray-directions.
+</p>
+<pre>
+  noWe         nort         noEa
+          +7    +8    +9
+              \  |  /
+  west    -1 &lt;-  0 -&gt; +1    east
+              /  |  \
+          -9    -8    -7
+  soWe         sout         soEa
+</pre>
+<table>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:51px;"><a href="Square Mapping Considerations.html" title="Square Mapping Considerations"><img alt="Cpwmappinghint.JPG" class="thumbimage" height="48" src="images/4/43/Cpwmappinghint.JPG" width="49"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Cpwmappinghint.JPG.html" title="Enlarge"></a></div></div></div></div>
+</td>
+<td> <i>Code samples and bitboard diagrams rely on <a href="Square Mapping Considerations.html#LittleEndianRankFileMapping" title="Square Mapping Considerations">Little endian file and rank mapping</a></i>.
+</td></tr></table>
+<p><span id="OccludedFill"></span>
+</p>
+<h1><span class="mw-headline" id="Occluded_Fill">Occluded Fill</span></h1>
+<p>An <a class="external text" href="http://www.thefreedictionary.com/occluded.html" rel="nofollow">occluded</a> fill includes the flood generating <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a>, but excludes the blocker. It is base of attack fills. One additional <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">direction shift</a> excludes the sliders but includes the blocker.
+</p>
+<h2><span class="mw-headline" id="Seven_Fill_Cycles">Seven Fill Cycles</span></h2>
+<p>The sliding pieces generate the flood. They were <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">shifted one step</a> in the desired direction and <a href="General Setwise Operations.html#Intersection" title="General Setwise Operations">intersected</a> with the set of empty squares, the propagator. The flood aggregates the intersection and the cycle repeats six further times to cover the maximum <a href="Distance.html" title="Distance">distance</a> on the <a href="Chessboard.html" title="Chessboard">chessboard</a>. A blocker, not member of propagator, stops the flood in that particular ray-direction for one sliding piece. Therefor occluded fill contains the initial generator but excludes any blocker.
+</p>
+<pre>
+U64 soutOccl(U64 gen, U64 pro) {
+   for (int cycle = 0; cycle &lt; 7; cycle++)
+      gen |= pro &amp; (gen &gt;&gt; 8);
+   return gen;
+}
+</pre>
+<h2><span class="mw-headline" id="Fill_Loop">Fill Loop</span></h2>
+<p>Alternatively one may save move-instructions by introducing an explicit flood accumulator, and to probably terminate the loop early if the flood stops:
+</p>
+<pre>
+U64 soutOccl(U64 gen, U64 pro) {
+   U64 flood = 0;
+   while (gen) {
+      flood |= gen;
+      gen = (gen &gt;&gt; 8) &amp; pro;
+   }
+   return flood;
+}
+</pre>
+<h2><span class="mw-headline" id="Unrolled_Loop">Unrolled Loop</span></h2>
+<p>To <a href="Avoiding Branches.html" title="Avoiding Branches">avoid conditional branches</a> and to schedule several directions in parallel, the "real" dumb7fill unrolls the loop:
+</p>
+<pre>
+U64 soutOccl(U64 gen, U64 pro) {
+   U64 flood = gen;
+   flood |= gen = (gen &gt;&gt; 8) &amp; pro;
+   flood |= gen = (gen &gt;&gt; 8) &amp; pro;
+   flood |= gen = (gen &gt;&gt; 8) &amp; pro;
+   flood |= gen = (gen &gt;&gt; 8) &amp; pro;
+   flood |= gen = (gen &gt;&gt; 8) &amp; pro;
+   flood |= gen = (gen &gt;&gt; 8) &amp; pro;
+   flood |=       (gen &gt;&gt; 8) &amp; pro;
+   return flood;
+}
+</pre>
+<p>Some south fill cycles in slow motion:
+</p>
+<pre>
+flood = gen =
+brooks|bqueen       empty
+1 . . . . . . .     . 1 1 1 1 1 . 1
+. . . 1 . . . .     1 1 . . 1 . 1 .
+. . . . . . . .     1 . 1 1 1 1 . 1
+. . . . . . . .     1 1 . 1 1 1 1 1
+. . . . . 1 . .     1 1 1 . 1 . 1 1
+. . . . . . . .     1 1 . 1 1 1 1 .
+. . . . . . . .     . . . 1 1 . . 1
+. . . . . . . .     . 1 1 . 1 1 . 1
+1.fill
+ gen = gen &gt;&gt; 8   &amp;  empty           =&gt;  flood
+. . . . . . . .      . . . . . . . .     1 . . . . . . .
+1 . . . . . . .      1 . . . . . . .     1 . . 1 . . . .
+. . . 1 . . . .      . . . 1 . . . .     . . . 1 . . . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .      . . . . . . . .     . . . . . 1 . .
+. . . . . 1 . .      . . . . . 1 . .     . . . . . 1 . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+2.fill
+ gen = gen &gt;&gt; 8   &amp;  empty               flood  |= ...
+. . . . . . . .      . . . . . . . .     1 . . . . . . .
+. . . . . . . .      . . . . . . . .     1 . . 1 . . . .
+1 . . . . . . .      1 . . . . . . .     1 . . 1 . . . .
+. . . 1 . . . .      . . . 1 . . . .     . . . 1 . . . .
+. . . . . . . .      . . . . . . . .     . . . . . 1 . .
+. . . . . . . .      . . . . . . . .     . . . . . 1 . .
+. . . . . 1 . .      . . . . . 0 . .     . . . . . . . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+3.fill
+ gen = gen &gt;&gt; 8   &amp;  empty               flood |= ...
+. . . . . . . .      . . . . . . . .     1 . . . . . . .
+. . . . . . . .      . . . . . . . .     1 . . 1 . . . .
+. . . . . . . .      . . . . . . . .     1 . . 1 . . . .
+1 . . . . . . .      1 . . . . . . .     1 . . 1 . . . .
+. . . 1 . . . .      . . . 0 . . . .     . . . . . 1 . .
+. . . . . . . .      . . . . . . . .     . . . . . 1 . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+
+...
+
+6.fill
+ gen = gen &gt;&gt; 8  &amp;   empty               flood  |= ...
+. . . . . . . .      . . . . . . . .     1 . . . . . . .
+. . . . . . . .      . . . . . . . .     1 . . 1 . . . .
+. . . . . . . .      . . . . . . . .     1 . . 1 . . . .
+. . . . . . . .      . . . . . . . .     1 . . 1 . . . .
+. . . . . . . .      . . . . . . . .     1 . . . . 1 . .
+. . . . . . . .      . . . . . . . .     1 . . . . 1 . .
+1 . . . . . . .      0 . . . . . . .     . . . . . . . .
+. . . . . . . .      . . . . . . . .     . . . . . . . .
+</pre>
+<p>The flood already stopped, the final 7th fill cycles don't change anything.
+</p>
+<h1><span class="mw-headline" id="Attack_Fill">Attack Fill</span></h1>
+<p>To get attacks, one additional <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">direction shift</a> of the occluded fill is necessary to exclude the rooks/queen and include the blocker:
+</p>
+<pre>
+U64 soutAttacks (U64 rooks, U64 empty) {return soutOne(soutOccl(rooks, empty));}
+</pre>
+<h2><span class="mw-headline" id="Comparison_with_Kogge-Stone">Comparison with Kogge-Stone</span></h2>
+<p>To combine the dumb7fill as attack getter, we also can take advantage of <a href="First Rank Attacks.html#TheOuterSquares" title="First Rank Attacks">outer square</a> occupancy doesn't affect the attack set. We need one fill cycle less, before the final shift. That takes 19 operations. In anticipation to <a href="Parallel Prefix Algorithms.html" title="Parallel Prefix Algorithms">parallel prefix</a>, a <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone</a> approach takes 14 instructions, 5 less. Kogge-Stone needs more move-instructions and a temporary register to compute generator as well as propagator, while dumb7fill uses a const propagator:
+</p>
+<pre>
+dumb7fill                                  | Kogge-Stone Algorithm
+                                           |
+U64 soutAttacks(U64 rooks, U64 empty) {    | U64 soutAttacks(U64 rooks, U64 empty) {
+   U64 flood = rooks;                      |    rooks |= empty &amp; (rooks &gt;&gt;  8);
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;  |    empty  = empty &amp; (empty &gt;&gt;  8);
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;  |    rooks |= empty &amp; (rooks &gt;&gt; 16);
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;  |    empty  = empty &amp; (empty &gt;&gt; 16);
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;  |    rooks |= empty &amp; (rooks &gt;&gt; 32);
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;  |    return            rooks &gt;&gt;  8;
+   flood |=         (rooks &gt;&gt; 8) &amp; empty;  | }
+   return            flood &gt;&gt; 8;           |
+}                                          |
+                                           |
+in x86/64 assembly                         | in x86/64 assembly
+; dumb7fill                                |  ; koggeStone
+; rooks rdx                                |  ; rooks rdx
+; empty rcx                                |  ; empty rcx
+                                           |
+  mov   rax, rdx                           |    mov   rax, rdx
+                                           |    shr   rax, 8
+  shr   rdx, 8                             |    and   rax, rcx
+  and   rdx, rcx                           |    or    rdx, rax
+  or    rax, rdx                           |
+                                           |    mov   rax, rcx
+  shr   rdx, 8                             |    shr   rax, 8
+  and   rdx, rcx                           |    and   rcx, rax
+  or    rax, rdx                           |
+                                           |    mov   rax, rdx
+  shr   rdx, 8                             |    shr   rax, 16
+  and   rdx, rcx                           |    and   rax, rcx
+  or    rax, rdx                           |    or    rdx, rax
+                                           |
+  shr   rdx, 8                             |    mov   rax, rcx
+  and   rdx, rcx                           |    shr   rax, 16
+  or    rax, rdx                           |    and   rcx, rax
+                                           |
+  shr   rdx, 8                             |    mov   rax, rdx
+  and   rdx, rcx                           |    shr   rax, 32
+  or    rax, rdx                           |    and   rax, rcx
+                                           |    or    rax, rdx
+  shr   rdx, 8                             |
+  and   rdx, rcx                           |    shr   rax, 8
+  or    rax, rdx                           |
+                                           |
+  shr   rax, 8                             |
+                                           |
+   1 move                                  |     5 moves
+  19 operations                            |    14 operations
+  20 instructions                          |    19 instructions
+</pre>
+<p>Thus, dumb7fill is not that bad, specially if processing several directions in parallel, like south and north, all east and all west attacks.
+</p>
+<h2><span class="mw-headline" id="All_Directions">All Directions</span></h2>
+<pre>
+U64 soutAttacks(U64 rooks, U64 empty) {
+   U64 flood = rooks;
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 8) &amp; empty;
+   flood |=         (rooks &gt;&gt; 8) &amp; empty;
+   return            flood &gt;&gt; 8;
+}
+
+U64 nortAttacks(U64 rooks, U64 empty) {
+   U64 flood = rooks;
+   flood |= rooks = (rooks &lt;&lt; 8) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 8) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 8) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 8) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 8) &amp; empty;
+   flood |=         (rooks &lt;&lt; 8) &amp; empty;
+   return            flood &lt;&lt; 8;
+}
+</pre>
+<p>Horizontal fills need to consider wraps from H-file to A-file and vice versa. Fortunately this can be combined by intersection of ~A-file or ~H-file with the propagator:
+</p>
+<pre>
+U64 eastAttacks(U64 rooks, U64 empty) {
+   const U64 notA = C64(0xfefefefefefefefe);
+   U64 flood = rooks;
+   empty &amp;= notA;
+   flood |= rooks = (rooks &lt;&lt; 1) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 1) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 1) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 1) &amp; empty;
+   flood |= rooks = (rooks &lt;&lt; 1) &amp; empty;
+   flood |=         (rooks &lt;&lt; 1) &amp; empty;
+   return           (flood &lt;&lt; 1) &amp; notA ;
+}
+
+U64 noEaAttacks(U64 bishops, U64 empty) {
+   const U64 notA = C64(0xfefefefefefefefe);
+   U64 flood = bishops;
+   empty &amp;= notA;
+   flood |= bishops = (bishops &lt;&lt; 9) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 9) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 9) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 9) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 9) &amp; empty;
+   flood |=           (bishops &lt;&lt; 9) &amp; empty;
+   return               (flood &lt;&lt; 9) &amp; notA ;
+}
+
+U64 soEaAttacks(U64 bishops, U64 empty) {
+   const U64 notA = C64(0xfefefefefefefefe);
+   U64 flood = bishops;
+   empty &amp;= notA;
+   flood |= bishops = (bishops &gt;&gt; 7) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 7) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 7) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 7) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 7) &amp; empty;
+   flood |=           (bishops &gt;&gt; 7) &amp; empty;
+   return               (flood &gt;&gt; 7) &amp; notA ;
+}
+
+U64 westAttacks(U64 rooks, U64 empty) {
+   const U64 notH = C64(0x7f7f7f7f7f7f7f7f);
+   U64 flood = rooks;
+   empty &amp;= notH;
+   flood |= rooks = (rooks &gt;&gt; 1) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 1) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 1) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 1) &amp; empty;
+   flood |= rooks = (rooks &gt;&gt; 1) &amp; empty;
+   flood |=         (rooks &gt;&gt; 1) &amp; empty;
+   return           (flood &gt;&gt; 1) &amp; notH ;
+}
+
+U64 soWeAttacks(U64 bishops, U64 empty) {
+   const U64 notH = C64(0x7f7f7f7f7f7f7f7f);
+   U64 flood = bishops;
+   empty &amp;= notH;
+   flood |= bishops = (bishops &gt;&gt; 9) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 9) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 9) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 9) &amp; empty;
+   flood |= bishops = (bishops &gt;&gt; 9) &amp; empty;
+   flood |=           (bishops &gt;&gt; 9) &amp; empty;
+   return               (flood &gt;&gt; 9) &amp; notH ;
+}
+
+U64 noWeAttacks(U64 bishops, U64 empty) {
+   const U64 notH = C64(0x7f7f7f7f7f7f7f7f);
+   U64 flood = bishops;
+   empty &amp;= notH;
+   flood |= bishops = (bishops &lt;&lt; 7) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 7) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 7) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 7) &amp; empty;
+   flood |= bishops = (bishops &lt;&lt; 7) &amp; empty;
+   flood |=           (bishops &lt;&lt; 7) &amp; empty;
+   return               (flood &lt;&lt; 7) &amp; notH ;
+}
+</pre>
+<p><span id="GeneralizedRays"></span>
+</p>
+<h1><span class="mw-headline" id="Generalized_Rays">Generalized Rays</span></h1>
+<p>Since <a href="General Setwise Operations.html#Rotate" title="General Setwise Operations">rotate</a> works like a <a href="General Setwise Operations.html#GeneralizedShift" title="General Setwise Operations">generalized shift</a> with positive or negative shift amount - since it internally applies a modulo 64 and makes -i = 64-i. We need to clear either the lower or upper bits by intersection with a mask, which might be combined with the wrap-ands for <a href="General Setwise Operations.html#OneStepOnly" title="General Setwise Operations">one step</a>. It might be applied to get attacks for both sides with a direction parameter and small lookups for shift amount and wrap-ands - instead of multiple code for eight directions. Of course generalized shift will be a bit slower due to lookups and using cl as the shift amount register.
+</p>
+<h2><span class="mw-headline" id="Loop_Version">Loop Version</span></h2>
+<p>This is the loop-version:
+</p>
+<pre>
+U64 occludedFill (U64 gen, U64 pro, int dir8) {
+   U64 flood = 0;
+   if (gen) {
+      int r = shift[dir8]; // {+-1,7,8,9}
+      pro  &amp;= avoidWrap[dir8];
+      do {
+         flood |= gen;
+         gen = rotateLeft(gen, r) &amp; pro;
+      } while (gen);
+   }
+   return flood;
+}
+
+U64 shiftOne (U64 b, int dir8) {
+   int r = shift[dir8]; // {+-1,7,8,9}
+   return rotateLeft(b, r) &amp; avoidWrap[dir8];
+}
+
+U64 slidingAttacks (U64 sliders, U64 empty, int dir8) {
+   U64 fill = occludedFill(slider, empty, dir8)
+   return shiftOne(fill, dir8);
+}
+
+// positve left, negative right shifts
+int shift[8] = {9, 1,-7,-8,-9,-1, 7, 8};
+
+U64 avoidWrap[8] =
+{
+   0xfefefefefefefe00,
+   0xfefefefefefefefe,
+   0x00fefefefefefefe,
+   0x00ffffffffffffff,
+   0x007f7f7f7f7f7f7f,
+   0x7f7f7f7f7f7f7f7f,
+   0x7f7f7f7f7f7f7f00,
+   0xffffffffffffff00,
+};
+</pre>
+<p>The avoidWrap masks by some arbitrary dir8 enumeration and shift amount:
+</p>
+<pre>
+6 == noWe -&gt; +7     7 == nort -&gt; +8     0 == noEa -&gt; +9
+0x7F7F7F7F7F7F7F00  0xFFFFFFFFFFFFFF00  0xFEFEFEFEFEFEFE00
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+
+5 == west -&gt; -1                         1 == east -&gt; +1
+0x7F7F7F7F7F7F7F7F                      0xFEFEFEFEFEFEFEFE
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .                         . 1 1 1 1 1 1 1
+
+4 == soWe -&gt; -9     3 == sout -&gt; -8     2 == soEa -&gt; -7
+0x007F7F7F7F7F7F7F  0x00FFFFFFFFFFFFFF  0x00FEFEFEFEFEFEFE
+. . . . . . . .     . . . . . . . .     . . . . . . . .
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 .     1 1 1 1 1 1 1 1     . 1 1 1 1 1 1 1
+</pre>
+<h2><span class="mw-headline" id="Unrolled_Attacks">Unrolled Attacks</span></h2>
+<p>The generalized unrolled sliding attack getter:
+</p>
+<pre>
+U64 slidingAttacks (U64 sliders, U64 empty, int dir8) {
+   U64 flood = sliders;
+   int r = shift[dir8]; // {+-1,7,8,9}
+   empty &amp;= avoidWrap[dir8];
+   flood |= sliders = rotateLeft(sliders , r) &amp; empty;
+   flood |= sliders = rotateLeft(sliders , r) &amp; empty;
+   flood |= sliders = rotateLeft(sliders , r) &amp; empty;
+   flood |= sliders = rotateLeft(sliders , r) &amp; empty;
+   flood |= sliders = rotateLeft(sliders , r) &amp; empty;
+   flood |=         = rotateLeft(sliders , r) &amp; empty;
+   return   rotateLeft(flood, r)  &amp;   avoidWrap[dir8];
+}
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="AVX2.html#Dumb7Fill" title="AVX2">AVX2 Dumb7Fill</a></li>
+<li> <a href="Fill Algorithms.html" title="Fill Algorithms">Fill Algorithms</a></li>
+<li> <a href="Kogge-Stone Algorithm.html" title="Kogge-Stone Algorithm">Kogge-Stone Algorithm</a></li>
+<li> <a href="Pieces versus Directions.html" title="Pieces versus Directions">Pieces versus Directions</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://radagast.se/othello/bitmob.c.html" rel="nofollow">bitboard mobility</a> Copyright (c) 2003, <a href="Gunnar Andersson.html" title="Gunnar Andersson">Gunnar Andersson</a> » <a href="Othello.html" title="Othello">Othello</a>, <a href="Mobility.html" title="Mobility">Mobility</a></li>
+<li> <a href="Category:Weather Report.html" title="Category:Weather Report">Weather Report</a> -  <a class="external text" href="https://en.wikipedia.org/wiki/Weather_Report_(1971_album)" rel="nofollow">Seventh Arrow</a> (1971), <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a>, <a href="Category:Wayne Shorter.html" title="Category:Wayne Shorter">Wayne Shorter</a>, <a href="Category:Miroslav Vitou%C5%A1.html" title="Category:Miroslav Vitouš">Miroslav Vitouš</a>, <a href="Category:Alphonse Mouzon.html" title="Category:Alphonse Mouzon">Alphonse Mouzon</a>, <a href="Category:Airto Moreira.html" title="Category:Airto Moreira">Airto Moreira</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/swfHr-6DC2s?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Category:Heinrich Kley.html" title="Category:Heinrich Kley">Heinrich Kley</a> - Die Krupp'schen Teufel (The Demons of Krupp) 1912/1913, "The bacchanal in which <a class="external text" href="https://en.wikipedia.org/wiki/Satyr" rel="nofollow">satyrs</a> and devils pour in liquid steel in a cast steel works" - once a wall decoration in one of the <a class="external text" href="https://en.wikipedia.org/wiki/Krupp" rel="nofollow">Krupp</a> casinos. Source <a class="external text" href="https://de.wikipedia.org/wiki/LWL-Industriemuseum" rel="nofollow">LWL-Industriemuseum</a>, In June 2017 at <a href="Category:Henrichsh%C3%BCtte.html" title="Category:Henrichshütte">Henrichshütte Ironworks - Museum of iron and steel</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Hattingen" rel="nofollow">Hattingen</a>, <a class="external text" href="https://en.wikipedia.org/wiki/North_Rhine-Westphalia" rel="nofollow">North Rhine-Westphalia</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Germany" rel="nofollow">Germany</a>, part of <a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">The Industrial Heritage Trail</a> of the <a class="external text" href="https://en.wikipedia.org/wiki/Ruhr" rel="nofollow">Ruhr area</a>, Image from <a class="external text" href="http://www.thescreamonline.com/art/art7-1/kley/kley.html.html" rel="nofollow">The Art of Heinrich Kley</a>, also photographed by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a> on June 11, 2017</span>
+</li>
+</ol></div>
+<p><b><a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722185002
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.022 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 192/1000000
+Preprocessor generated node count: 396/1000000
+Post‐expand include size: 270/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.284      1 Template:MappingHint
+100.00%    1.284      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1274-0!canonical and timestamp 20240722185002 and revision id 10266
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Dumb7Fill&amp;oldid=10266">https://www.chessprogramming.org/index.php?title=Dumb7Fill&amp;oldid=10266</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Heinrich Kley.html" title="Category:Heinrich Kley">Heinrich Kley</a></li><li><a href="Category:Industrial Heritage Trail.html" title="Category:Industrial Heritage Trail">Industrial Heritage Trail</a></li><li><a href="Category:Henrichsh%C3%BCtte.html" title="Category:Henrichshütte">Henrichshütte</a></li><li><a href="Category:Alphonse Mouzon.html" title="Category:Alphonse Mouzon">Alphonse Mouzon</a></li><li><a href="Category:Airto Moreira.html" title="Category:Airto Moreira">Airto Moreira</a></li><li><a href="Category:Wayne Shorter.html" title="Category:Wayne Shorter">Wayne Shorter</a></li><li><a href="Category:Miroslav Vitou%C5%A1.html" title="Category:Miroslav Vitouš">Miroslav Vitouš</a></li><li><a href="Category:Weather Report.html" title="Category:Weather Report">Weather Report</a></li><li><a href="Category:Joe Zawinul.html" title="Category:Joe Zawinul">Joe Zawinul</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Dumb7Fill&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Dumb7Fill.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Dumb7Fill&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Dumb7Fill.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Dumb7Fill&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Dumb7Fill&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Dumb7Fill.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Dumb7Fill.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Dumb7Fill&amp;oldid=10266.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Dumb7Fill&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 24 January 2019, at 22:17.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Dumb7Fill&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.022","walltime":"0.027","ppvisitednodes":{"value":192,"limit":1000000},"ppgeneratednodes":{"value":396,"limit":1000000},"postexpandincludesize":{"value":270,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    1.284      1 Template:MappingHint","100.00%    1.284      1 -total"]},"cachereport":{"timestamp":"20240722185002","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":53});});</script>
+</body>
+</html>

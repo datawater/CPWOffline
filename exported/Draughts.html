@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Draughts - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Draughts","wgTitle":"Draughts","wgCurRevisionId":23317,"wgRevisionId":23317,"wgArticleId":1859,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Draughts","wgRelevantArticleId":1859,"wgRequestId":"Zp7DU4Y8AD1K7zdlkfzdbAAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Draughts rootpage-Draughts skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Draughts</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Games.html" title="Games">Games</a> * Draughts</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:International draughts.jpg.html"><img alt="" class="thumbimage" height="213" src="wikipedia/commons/thumb/3/30/International_draughts.jpg/300px-International_draughts.jpg" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/International_draughts.jpg/450px-International_draughts.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/International_draughts.jpg/600px-International_draughts.jpg 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:International draughts.jpg.html" title="Enlarge"></a></div>10×10 Draughts starting position <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Draughts</b>,<br/>
+a group of <a class="external text" href="https://en.wikipedia.org/wiki/Two-player_game" rel="nofollow">two-player</a> <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum_%28game_theory%29" rel="nofollow">zero-sum</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Perfect_information" rel="nofollow">perfect information</a> <a class="external text" href="https://en.wikipedia.org/wiki/Abstract_strategy" rel="nofollow">abstract strategy</a> <a class="external text" href="https://en.wikipedia.org/wiki/Board_game" rel="nofollow">board games</a> which involve diagonal moves of uniform game pieces and mandatory captures by jumping over opponent pieces. The most popular forms are <a class="external text" href="https://en.wikipedia.org/wiki/International_draughts" rel="nofollow">international draughts</a>, also called <b>Polish draughts</b>, played on a <b>10×10</b> board and topic of this page, and 8x8 <a href="Checkers.html" title="Checkers">Checkers</a>.  
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#International Draughts"><span class="tocnumber">1</span> <span class="toctext">International Draughts</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Computer Draughts"><span class="tocnumber">2</span> <span class="toctext">Computer Draughts</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Computer Olympiads"><span class="tocnumber">3</span> <span class="toctext">Computer Olympiads</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Photos"><span class="tocnumber">4</span> <span class="toctext">Photos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Yokohama 2013"><span class="tocnumber">4.1</span> <span class="toctext">Yokohama 2013</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Leiden 2015"><span class="tocnumber">4.2</span> <span class="toctext">Leiden 2015</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#1989"><span class="tocnumber">5.1</span> <span class="toctext">1989</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#2005 ..."><span class="tocnumber">5.3</span> <span class="toctext">2005 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2015 ..."><span class="tocnumber">5.5</span> <span class="toctext">2015 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ... 2"><span class="tocnumber">6.1</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2020 ..."><span class="tocnumber">6.2</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Computer Draughts 2"><span class="tocnumber">7.1</span> <span class="toctext">Computer Draughts</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Draughts Programs"><span class="tocnumber">7.2</span> <span class="toctext">Draughts Programs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="International_Draughts">International Draughts</span></h1>
+<p>The starting position of international draughts has 20 men each placed on its home squares of the 50 relevant dark squares. If a men land on the opponent back rank, it promotes to a king. Men can move diagonally forward, and in international draughts capture forward and backward by moving two consecutive steps in the same line, jumping over the piece on the first step. Multiple opposing pieces may be captured in a single turn provided this is done by successive jumps made by a single piece. The jumps do not need to be in the same line but may "zigzag". In international draughts, kings (sometimes called flying kings) move any distance along unblocked diagonals, and may capture an opposing man any distance away by jumping to any of the unoccupied squares immediately beyond it. Since captured pieces remain on the board until the turn is complete, it is possible to reach a position in a multi-capture move where the flying king is blocked from capturing further by a piece already captured.
+</p>
+<h1><span class="mw-headline" id="Computer_Draughts">Computer Draughts</span></h1>
+<p>10x10 Computer Draughts is regular played at the <a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiad</a>. Some (former) chess programmers were or are also active in Computer Draughts, such as <a href="Ard van Bergen.html" title="Ard van Bergen">Ard van Bergen</a>, <a href="Joost Buijs.html" title="Joost Buijs">Joost Buijs</a>, <a href="Eric van Riet Paap.html" title="Eric van Riet Paap">Eric van Riet Paap</a>, <a href="Vincent Diepeveen.html" title="Vincent Diepeveen">Vincent Diepeveen</a>, <a href="Gijsbert Wiesenekker.html" title="Gijsbert Wiesenekker">Gijsbert Wiesenekker</a>, and <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>. The <a href="18th Computer Olympiad.html" title="18th Computer Olympiad">18th Computer Olympiad, Leiden 2015</a> had 12 participants, a gained some interests in the computer chess comunity also because Fabien Letouzey participated with his new Draughts program <i>Scan</i>, and even won the tournament. Computer Draughts is a <a href="Bitboards.html" title="Bitboards">bitboard</a> friendly game, three (all, kings, white) or four bitboards are sufficient to represent the board. In his program Fabien applies his <a href="Blockers and Beyond.html" title="Blockers and Beyond">Blockers and Beyond</a> like technique to generate king moves <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Computer_Olympiads"><a href="Computer Olympiad.html" title="Computer Olympiad">Computer Olympiads</a></span></h1>
+<ul><li> <a href="1st Computer Olympiad.html#Draughts" title="1st Computer Olympiad">1st Computer Olympiad, London 1989</a></li>
+<li> <a href="3rd Computer Olympiad.html#Draughts" title="3rd Computer Olympiad">3rd Computer Olympiad, Maastricht 1991</a></li>
+<li> <a href="4th Computer Olympiad.html#Draughts" title="4th Computer Olympiad">4th Computer Olympiad, London 1992</a></li>
+<li> <a href="7th Computer Olympiad.html#Draughts" title="7th Computer Olympiad">7th Computer Olympiad, Maastricht 2002</a></li>
+<li> <a href="8th Computer Olympiad.html#Draughts" title="8th Computer Olympiad">8th Computer Olympiad, Graz 2003</a></li>
+<li> <a href="11th Computer Olympiad.html#Draughts" title="11th Computer Olympiad">11th Computer Olympiad, Turin 2006</a></li>
+<li> <a href="12th Computer Olympiad.html#Draughts" title="12th Computer Olympiad">12th Computer Olympiad, Amsterdam 2007</a></li>
+<li> <a href="13th Computer Olympiad.html#Draughts" title="13th Computer Olympiad">13th Computer Olympiad, Beijing 2008</a></li>
+<li> <a href="14th Computer Olympiad.html#Draughts" title="14th Computer Olympiad">14th Computer Olympiad, Pamplona 2009</a></li>
+<li> <a href="15th Computer Olympiad.html#Draughts" title="15th Computer Olympiad">15th Computer Olympiad, Kanazawa 2010</a></li>
+<li> <a href="16th Computer Olympiad.html#Draughts" title="16th Computer Olympiad">16th Computer Olympiad, Tilburg 2011</a></li>
+<li> <a href="17th Computer Olympiad.html#Draughts" title="17th Computer Olympiad">17th Computer Olympiad, Yokohama 2013</a></li>
+<li> <a href="18th Computer Olympiad.html#Draughts" title="18th Computer Olympiad">18th Computer Olympiad, Leiden 2015</a></li>
+<li> <a href="19th Computer Olympiad.html#Draughts" title="19th Computer Olympiad">19th Computer Olympiad, Leiden 2016</a></li>
+<li> <a href="20th Computer Olympiad.html#Draughts" title="20th Computer Olympiad">20th Computer Olympiad, Leiden 2017</a></li></ul>
+<h1><span class="mw-headline" id="Photos">Photos</span></h1>
+<h2><span class="mw-headline" id="Yokohama_2013">Yokohama 2013</span></h2>
+<div class="floatnone"><a href="https://icga.leidenuniv.nl/?page_id=827&amp;wppa-album=5&amp;wppa-cover=0&amp;wppa-occur=1&amp;wppa-photo=73" rel="nofollow"><img alt="YokohamaDraughts2013.jpg" class="thumbborder" height="424" src="images/1/1e/YokohamaDraughts2013.jpg" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="17th Computer Olympiad.html" title="17th Computer Olympiad">17th Computer Olympiad, Yokohama 2013</a>, <a class="new" href="index.php?title=Andrew Lin&amp;action=edit&amp;redlink=1.html" title="Andrew Lin (page does not exist)">Andrew Lin</a>, <a class="new" href="index.php?title=Ton Tillemans&amp;action=edit&amp;redlink=1.html" title="Ton Tillemans (page does not exist)">Ton Tillemans</a> (Gold) and Tornado operator <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>
+</p>
+<h2><span class="mw-headline" id="Leiden_2015">Leiden 2015</span></h2>
+<div class="floatnone"><a href="https://icga.leidenuniv.nl/?page_id=1497" rel="nofollow"><img alt="Draghts10x10Prizes2015.jpg" class="thumbborder" height="462" src="images/3/37/Draghts10x10Prizes2015.jpg" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="18th Computer Olympiad.html" title="18th Computer Olympiad">18th Computer Olympiad, Leiden 2015</a>, <a class="new" href="index.php?title=Bert Tuyt&amp;action=edit&amp;redlink=1.html" title="Bert Tuyt (page does not exist)">Bert Tuyt</a>, <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a class="new" href="index.php?title=Ron Van Bemmelen&amp;action=edit&amp;redlink=1.html" title="Ron Van Bemmelen (page does not exist)">Ron Van Bemmelen</a> , TD <a class="new" href="index.php?title=Jaap Bus&amp;action=edit&amp;redlink=1.html" title="Jaap Bus (page does not exist)">Jaap Bus</a> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</p>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1989">1989</span></h2>
+<ul><li> <a href="Derek Oldbury.html" title="Derek Oldbury">Derek Oldbury</a> (<b>1989</b>). <i>AI (Any Interest) for Draughts</i>? <a href="1st Computer Olympiad.html#Workshop" title="1st Computer Olympiad">Heuristic Programming in AI 1</a></li>
+<li> <a class="new" href="index.php?title=John Smeets&amp;action=edit&amp;redlink=1.html" title="John Smeets (page does not exist)">John Smeets</a>, <a class="new" href="index.php?title=Gerard Putter&amp;action=edit&amp;redlink=1.html" title="Gerard Putter (page does not exist)">Gerard Putter</a> (<b>1989</b>). <i>Some Experience with a Self-Learning Computer Program for Playing Draughts</i>. <a href="1st Computer Olympiad.html#Workshop" title="1st Computer Olympiad">Heuristic Programming in AI 1</a></li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Jaap Bus&amp;action=edit&amp;redlink=1.html" title="Jaap Bus (page does not exist)">Jaap Bus</a> (<b>2002</b>). <i>Dam 2.2 wins Draughts tournament</i>. <a href="ICGA Journal.html#25 3" title="ICGA Journal">ICGA Journal, Vol. 25, No. 3</a> » <a href="7th Computer Olympiad.html#Draughts" title="7th Computer Olympiad">7th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Ton Tillemans&amp;action=edit&amp;redlink=1.html" title="Ton Tillemans (page does not exist)">Ton Tillemans</a> (<b>2003</b>). <i>Sjende Blyn wins Draughts tournament</i>. <a href="ICGA Journal.html#26 4" title="ICGA Journal">ICGA Journal, Vol. 26, No. 4</a> » <a href="8th Computer Olympiad.html#Draughts" title="8th Computer Olympiad">8th Computer Olympiad</a></li></ul>
+<h2><span class="mw-headline" id="2005_...">2005 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Ton Tillemans&amp;action=edit&amp;redlink=1.html" title="Ton Tillemans (page does not exist)">Ton Tillemans</a> (<b>2006</b>). <i>TDKing wins the Draughts 10x10 tournament</i>. <a href="ICGA Journal.html#29 2" title="ICGA Journal">ICGA Journal, Vol. 29, No. 2</a> » <a href="11th Computer Olympiad.html#Draughts" title="11th Computer Olympiad">11th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Ton Tillemans&amp;action=edit&amp;redlink=1.html" title="Ton Tillemans (page does not exist)">Ton Tillemans</a> (<b>2007</b>). <i>Dam 2.2 wins Draughts tournament</i>. <a href="ICGA Journal.html#30 3" title="ICGA Journal">ICGA Journal, Vol. 30, No. 3</a> » <a href="12th Computer Olympiad.html#Draughts" title="12th Computer Olympiad">12th Computer Olympiad</a></li>
+<li> <a class="new" href="index.php?title=Ton Tillemans&amp;action=edit&amp;redlink=1.html" title="Ton Tillemans (page does not exist)">Ton Tillemans</a> (<b>2008</b>). <i>TDKing wins Draughts tournament</i>. <a href="ICGA Journal.html#31 4" title="ICGA Journal">ICGA Journal, Vol. 31, No. 4</a> » <a href="13th Computer Olympiad.html#Draughts" title="13th Computer Olympiad">13th Computer Olympiad</a></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Ton Tillemans&amp;action=edit&amp;redlink=1.html" title="Ton Tillemans (page does not exist)">Ton Tillemans</a> (<b>2010</b>). <i>TDKing wins Draughts Tournament</i>. <a href="ICGA Journal.html#33 4" title="ICGA Journal">ICGA Journal, Vol. 33, No. 4</a> » <a href="15th Computer Olympiad.html#Draughts" title="15th Computer Olympiad">15th Computer Olympiad</a></li>
+<li> <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a> (<b>2012</b>). <i>Schwarzman vs. MAXIMUS: A Man-Machine Match in International Draughts</i>. <a href="ICGA Journal.html#35 2" title="ICGA Journal">ICGA Journal, Vol. 35, No. 2</a>, <a class="external text" href="http://www.amersfoortsdamgenootschap.nl/archief/2012-2013/Schwarzman-Maximus%20versie%202.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a> (<b>2012</b>). <i>Schwarzman vs. MAXIMUS: Games 5 and 6 annotated</i>. <a href="ICGA Journal.html#35 3" title="ICGA Journal">ICGA Journal, Vol. 35, No. 3</a></li>
+<li> <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a> (<b>2013</b>). <i>The 27th Dutch Open Computer Rapid-Draughts Championship</i>. <a href="ICGA Journal.html#36 4" title="ICGA Journal">ICGA Journal, Vol. 36, No. 4</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Jaap Bus&amp;action=edit&amp;redlink=1.html" title="Jaap Bus (page does not exist)">Jaap Bus</a> (<b>2015</b>). <i>SCAN wins Draughts Tournament</i>. <a href="ICGA Journal.html#38 4" title="ICGA Journal">ICGA Journal, Vol. 38, No. 4</a> » <a href="18th Computer Olympiad.html#Draughts" title="18th Computer Olympiad">18th Computer Olympiad | Draughts</a></li>
+<li> <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a> (<b>2018</b>). <i>Complexity of checkers and draughts on different board sizes</i>. <a href="ICGA Journal.html#40 4" title="ICGA Journal">ICGA Journal, Vol. 40, No. 4</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="2010_..._2">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?t=3819.html" rel="nofollow">(Free) draughts software</a> by A. Presman, <a class="external text" href="http://laatste.info/bb3/index.php.html" rel="nofollow">World Draughts Forum</a>, April 21, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56170.html" rel="nofollow">Draughts at the ICGA Olympiad</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">Harm Geert Muller</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2015</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56170&amp;start=2.html" rel="nofollow">Re: Draughts at the ICGA Olympiad</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a href="CCC.html" title="CCC">CCC</a>, April 30, 2015</dd></dl>
+<ul><li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=6700.html" rel="nofollow">Computer Olympiad 2015 Leiden</a> by <a class="new" href="index.php?title=Bert Tuyt&amp;action=edit&amp;redlink=1.html" title="Bert Tuyt (page does not exist)">Bert Tuyt</a>, <a class="external text" href="http://laatste.info/bb3/index.php?sid=a58b41156d433755b2d4b3dc45087638.html" rel="nofollow">World Draughts Forum</a>, May 01, 2015</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=56884&amp;start=4.html" rel="nofollow">A little more info about Scan by Fabien Letouzey</a> by <a class="new" href="index.php?title=Jes%C3%BAs Mu%C3%B1oz&amp;action=edit&amp;redlink=1.html" title="Jesús Muñoz (page does not exist)">Jesús Muñoz</a>, <a href="CCC.html" title="CCC">CCC</a>, July 06, 2015</li>
+<li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=6786.html" rel="nofollow">Scan</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a>, <a class="external text" href="http://laatste.info/bb3/index.php.html" rel="nofollow">World Draughts Forum</a>, July 08, 2015</li>
+<li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=7052.html" rel="nofollow">Registration for the 2016 ICGA Computer Olympiad</a> by <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a>, <a class="external text" href="http://laatste.info/bb3/index.php?sid=a58b41156d433755b2d4b3dc45087638.html" rel="nofollow">World Draughts Forum</a>, February 29, 2016</li>
+<li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=7817.html" rel="nofollow">Complexity of Checkers and Draughts on board sizes 6x6/8x8/10x10/12x12/14x14</a> by <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a>, <a class="external text" href="http://laatste.info/bb3/viewforum.php?f=53.html" rel="nofollow">World Draughts Forum</a>, August 13, 2017</li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=8281.html" rel="nofollow">New board layouts / square numberings</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a class="external text" href="http://laatste.info/bb3/viewforum.php?f=53.html" rel="nofollow">World Draughts Forum</a>, May 24, 2020</li>
+<li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=8298.html" rel="nofollow">NNUE</a> by <a class="new" href="index.php?title=Bert Tuyt&amp;action=edit&amp;redlink=1.html" title="Bert Tuyt (page does not exist)">Bert Tuyt</a>, <a class="external text" href="http://laatste.info/bb3/viewforum.php?f=53.html" rel="nofollow">World Draughts Forum</a>, August 19, 2020 »  <a href="NNUE.html" title="NNUE">NNUE</a></li>
+<li> <a class="external text" href="http://laatste.info/bb3/viewtopic.php?f=53&amp;t=8327.html" rel="nofollow">Learning draughts evaluation functions using Keras/TensorFlow</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a>, <a class="external text" href="http://laatste.info/bb3/viewforum.php?f=53.html" rel="nofollow">World Draughts Forum</a>, November 30, 2020 » <a href="Neural Networks.html" title="Neural Networks">Neural Networks</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Draughts" rel="nofollow">Draughts from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/International_draughts" rel="nofollow">International draughts from Wikipedia</a></li>
+<li> <a class="external text" href="http://10x10.dse.nl/index.html.html" rel="nofollow">10x10 Draughts</a></li>
+<li> <a class="external text" href="http://www.alldraughts.com/index.php/en/.html" rel="nofollow">Alldraughts!</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Portable_Draughts_Notation" rel="nofollow">Portable Draughts Notation (PDN) from Wikipedia</a></li>
+<li> <a class="external text" href="http://pdn.fmjd.org/.html" rel="nofollow">PDN 3.0 standard 1.0 documentation</a></li></ul>
+<h2><span class="mw-headline" id="Computer_Draughts_2">Computer Draughts</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/International_draughts#Computers" rel="nofollow">International draughts Computers - Wikipedia</a></li>
+<li> <a class="external text" href="http://www.mesander.nl/computerdammen.htm.html" rel="nofollow">Computerdammen</a> by <a class="new" href="index.php?title=Frank Mesander&amp;action=edit&amp;redlink=1.html" title="Frank Mesander (page does not exist)">Frank Mesander</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.mesander.nl/elo/rating.htm.html" rel="nofollow">ELO rating computer draughts / computerdammen</a> by <a class="new" href="index.php?title=Frank Mesander&amp;action=edit&amp;redlink=1.html" title="Frank Mesander (page does not exist)">Frank Mesander</a></dd></dl>
+<ul><li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/game.php?id=19" rel="nofollow">Draughts (ICGA Tournaments)</a></li>
+<li> <a class="external text" href="https://bitbucket.org/rhalbersma/dctl/src" rel="nofollow">DCTL: Draughts and Checkers Template Library</a> by <a href="Rein Halbersma.html" title="Rein Halbersma">Rein Halbersma</a></li></ul>
+<h2><span class="mw-headline" id="Draughts_Programs">Draughts Programs</span></h2>
+<p><sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p>
+<ul><li> <a class="external text" href="http://windames.free.fr/apage76 e.html.html" rel="nofollow">All 10x10 programs in the world</a></li>
+<li> <a class="external text" href="http://www.buggy-online.com/index e.htm.html" rel="nofollow">Buggy</a> by <a class="new" href="index.php?title=Nicolas Guibert&amp;action=edit&amp;redlink=1.html" title="Nicolas Guibert (page does not exist)">Nicolas Guibert</a></li>
+<li> <a class="external text" href="http://hjetten.home.xs4all.nl/dameng.html.html" rel="nofollow">Dam</a> by <a class="new" href="index.php?title=Harm Jetten&amp;action=edit&amp;redlink=1.html" title="Harm Jetten (page does not exist)">Harm Jetten</a></li>
+<li> <a class="external text" href="http://members.chello.nl/h.tuyt/.html" rel="nofollow">Damage</a> by <a class="new" href="index.php?title=Bert Tuyt&amp;action=edit&amp;redlink=1.html" title="Bert Tuyt (page does not exist)">Bert Tuyt</a></li>
+<li> <a class="external text" href="http://mdgsoft.home.xs4all.nl/draughts/.html" rel="nofollow">Dragon draughts</a> by <a class="new" href="index.php?title=Michel Grimminck&amp;action=edit&amp;redlink=1.html" title="Michel Grimminck (page does not exist)">Michel Grimminck</a></li>
+<li> <a class="external text" href="http://pcsol-sage.tripod.com/pages/dynamo.htm.html" rel="nofollow">Dynamo Draughts</a> by <a href="Adrian Millett.html" title="Adrian Millett">Adrian Millett</a></li>
+<li> <a class="external text" href="http://edgilbert.org/InternationalDraughts/kingsrow international.htm.html" rel="nofollow">Kingsrow International</a> by <a class="new" href="index.php?title=Ed Gilbert&amp;action=edit&amp;redlink=1.html" title="Ed Gilbert (page does not exist)">Ed Gilbert</a></li>
+<li> <a class="external text" href="https://jhorssen.home.xs4all.nl/Maximus/index.htm" rel="nofollow">Maximus</a> by <a href="Jan-Jaap van Horssen.html" title="Jan-Jaap van Horssen">Jan-Jaap van Horssen</a></li></ul>
+<dl><dd> <a class="external text" href="https://play.google.com/store/apps/details?id=com.jj.max" rel="nofollow">Maximus</a> for <a href="Android.html" title="Android">Android</a> </dd></dl>
+<ul><li> <a class="external text" href="https://hjetten.home.xs4all.nl/scan/scan.html" rel="nofollow">Scan</a> by <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a></li>
+<li> <a class="external text" href="http://www.mesander.nl/tornado/tornado.htm.html" rel="nofollow">Tornado</a> by <a class="new" href="index.php?title=Frank Mesander&amp;action=edit&amp;redlink=1.html" title="Frank Mesander (page does not exist)">Frank Mesander</a></li>
+<li> <a class="external text" href="http://windames.free.fr/truus e.html.html" rel="nofollow">Truus</a> by <a href="Stef Keetman.html" title="Stef Keetman">Stef Keetman</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">Starting position on a 10×10 draughts board, Image by <a class="external text" href="https://en.wikipedia.org/wiki/User:Michel32Nl" rel="nofollow">Michel32Nl</a>, <a class="external text" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" rel="nofollow">CC BY-SA 3.0</a>, <a class="external text" href="https://en.wikipedia.org/wiki/International_draughts" rel="nofollow">International draughts from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://windames.free.fr/apage76 e.html.html" rel="nofollow">All 10x10 programs in the world</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text">personal communication of the <a href="Gerd Isenberg.html" title="Gerd Isenberg">editor</a> with <a href="Fabien Letouzey.html" title="Fabien Letouzey">Fabien Letouzey</a> at the <a href="18th Computer Olympiad.html" title="18th Computer Olympiad">18th Computer Olympiad</a>, July 04, 2015</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://icga.leidenuniv.nl/?page_id=827" rel="nofollow">Photos 2013 Events: day 4</a>, <a href="ICGA.html" title="ICGA">ICGA</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://icga.leidenuniv.nl/?page_id=627#10x10" rel="nofollow">Games Tournament 2013 - 10×10 Draughts</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="https://icga.leidenuniv.nl/?page_id=1497" rel="nofollow">18th Computer Olympiad - Day 7 Photos</a> by <a href="Jan Krabbenbos.html" title="Jan Krabbenbos">Jan Krabbenbos</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://laatste.info/bb3/viewtopic.php?t=3819.html" rel="nofollow">(Free) draughts software</a> by A. Presman, <a class="external text" href="http://laatste.info/bb3/index.php?sid=a58b41156d433755b2d4b3dc45087638.html" rel="nofollow">World Draughts Forum</a>, April 21, 2012</span>
+</li>
+</ol></div>
+<p><b><a href="Games.html" title="Games">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722203844
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.083 seconds
+Real time usage: 0.962 seconds
+Preprocessor visited node count: 177/1000000
+Preprocessor generated node count: 322/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1859-0!canonical and timestamp 20240722203843 and revision id 23317
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Draughts&amp;oldid=23317">https://www.chessprogramming.org/index.php?title=Draughts&amp;oldid=23317</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Draughts&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Draughts.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Draughts&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Draughts.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Draughts&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Draughts&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Draughts.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Draughts.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Draughts&amp;oldid=23317.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Draughts&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 17 January 2021, at 11:27.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Draughts&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.083","walltime":"0.962","ppvisitednodes":{"value":177,"limit":1000000},"ppgeneratednodes":{"value":322,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722203844","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1014});});</script>
+</body>
+</html>

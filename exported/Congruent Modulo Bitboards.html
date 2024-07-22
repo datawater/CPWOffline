@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Congruent Modulo Bitboards - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Congruent_Modulo_Bitboards","wgTitle":"Congruent Modulo Bitboards","wgCurRevisionId":2199,"wgRevisionId":2199,"wgArticleId":1623,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Congruent_Modulo_Bitboards","wgRelevantArticleId":1623,"wgRequestId":"Zp7DQEKfcgdPZR8tVSrqUwAAAAM","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Congruent_Modulo_Bitboards rootpage-Congruent_Modulo_Bitboards skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Congruent Modulo Bitboards</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Board Representation.html" title="Board Representation">Board Representation</a> * <a href="Bitboards.html" title="Bitboards">Bitboards</a> * <a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Sliding Piece Attacks</a> * Congruent Modulo Bitboards</b>
+</p><p><b>Congruent Modulo Bitboards</b> was introduced by <a href="Trevor Fenner.html" title="Trevor Fenner">Trevor Fenner</a> and <a href="Mark Levene.html" title="Mark Levene">Mark Levene</a> in the <a href="ICGA Journal.html#31 1" title="ICGA Journal">ICGA Journal, Vol. 31, No. 1</a> in 2008 <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup>. While their <a href="Hash Table.html" title="Hash Table">Perfect Hashing</a> approach provides great mathematical insights in <a class="external text" href="https://en.wikipedia.org/wiki/Modulo" rel="nofollow">Congruent Modulo</a> arithmetic, their final conclusion in comparison with <a href="Hashing Dictionaries.html" title="Hashing Dictionaries">Hashing Dictionaries</a>, <a href="Rotated Bitboards.html" title="Rotated Bitboards">Rotated Bitboards</a> and <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a> was criticized by the obvious comparison with <a href="Kindergarten Bitboards.html" title="Kindergarten Bitboards">Kindergarten Bitboards</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Modulo vs. Multiplication"><span class="tocnumber">1</span> <span class="toctext">Modulo vs. Multiplication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Modulo"><span class="tocnumber">1.1</span> <span class="toctext">Modulo</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Congruence relation"><span class="tocnumber">1.1.1</span> <span class="toctext">Congruence relation</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Casting out 255"><span class="tocnumber">1.1.2</span> <span class="toctext">Casting out 255</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Reciprocal Multiplication"><span class="tocnumber">1.1.3</span> <span class="toctext">Reciprocal Multiplication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Multiplication"><span class="tocnumber">1.2</span> <span class="toctext">Multiplication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Fenner.27s and Levene.27s conclusion"><span class="tocnumber">2</span> <span class="toctext">Fenner's and Levene's conclusion</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Publications"><span class="tocnumber">3</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Forum Posts"><span class="tocnumber">4</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Modulo_vs._Multiplication">Modulo vs. Multiplication</span></h1>
+<p><a href="BitScan.html" title="BitScan">BitScan</a> broaches the issue of <a href="Hash Table.html" title="Hash Table">Perfect Hashing</a> with <a href="General Setwise Operations.html#Modulo" title="General Setwise Operations">Modulo</a> versus <a href="General Setwise Operations.html#Multiplication" title="General Setwise Operations">Multiplication</a> as well:
+</p>
+<ul><li> <a href="BitScan.html#BitscanByModulo" title="BitScan">Bitscan by Modulo</a></li>
+<li> <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">De Bruijn Multiplication</a></li></ul>
+<p>So does the <a href="Population Count.html#SWARPopcount" title="Population Count">SWAR-Popcount</a>, when it is about to finally add byte-wise populations:
+</p>
+<ul><li> <a href="Population Count.html#Castingout" title="Population Count">Casting out</a></li>
+<li> <a href="Population Count.html#Multiplication" title="Population Count">Multiplication</a></li></ul>
+<h2><span class="mw-headline" id="Modulo">Modulo</span></h2>
+<h3><span class="mw-headline" id="Congruence_relation">Congruence relation</span></h3>
+<p>Fenner and Levene use masked lines (not necessarily excluding the sliding piece), that is bitboards with N=8 active bits with k={7,8,9} bits apart, starting with bit zero
+</p>
+<pre>A<span style="vertical-align: sub;">kN</span> = {0, k, 2k, ...,(N-1)k}
+</pre>
+<p>Based on <a class="external text" href="https://en.wikipedia.org/wiki/Congruence_relation" rel="nofollow">Congruence relation</a>
+</p>
+<pre>b ≡ c (mod m)
+</pre>
+<p>or equivalently
+</p>
+<pre>b mod m = c mod m
+</pre>
+<p>they deduced two general perfect hashing functions. The case N &lt;= k with
+</p>
+<pre>h<span style="vertical-align: sub;">1</span>(a) = a mod (2<span style="vertical-align: super;">k</span> + 2)
+</pre>
+<p>and the case N &lt;= k + 1
+</p>
+<pre>h<span style="vertical-align: sub;">2</span>(a) = a mod (2<span style="vertical-align: super;">k+1</span> + 1)
+</pre>
+<p>This results in modulo 514 for <a href="Diagonals.html" title="Diagonals">diagonals</a>, modulo 257 for <a href="Anti-Diagonals.html" title="Anti-Diagonals">anti-diagonals</a>, and modulo 258 for <a href="Files.html" title="Files">files</a>, to calculate the occupied index. Tables could made denser by storing indices, but that would require a second indirection. While Fenner and Levene used a <a class="external text" href="https://en.wikipedia.org/wiki/MATLAB" rel="nofollow">Matlab</a> 32-bit implementation to conclude their approach might be competitive, this is how it may be implemented in <a href="C.html" title="C">C</a> by looking up pre-calculated attack-bitboards:
+</p>
+<pre>
+U64 arrCmodDiaAttacks [514][64];  // 257 K
+U64 arrCmodAntiAttacks[257][64];
+U64 arrCmodFileAttacks[258][64];
+
+U64 diagonalAttacks(U64 occ, enumSquare sq) {
+   const U64 aDia = C64(0x8040201008040201);
+   occ = ( (occ &gt;&gt; diashift[sq]) &amp; aDia) % 514;
+   return arrCmodDiaAttacks[occ][sq];
+}
+
+U64 antiDiagAttacks(U64 occ, enumSquare sq) {
+   const U64 aAntiDiaShr7 = C64(0x0002040810204081);
+   occ = ( (occ &gt;&gt; antishift[sq]) &amp; aAntiDiaShr7 ) % 257;
+   return arrCmodAntiAttacks[occ][sq];
+}
+
+U64 fileAttacks(U64 occ, enumSquare sq) {
+   const U64 aFile = C64(0x0101010101010101);
+   occ = ( (occ &gt;&gt; (sq&amp;7)) &amp; aFile) % 258;
+   return arrCmodFileAttacks[occ][sq];
+}
+</pre>
+<p><span id="Castingout255"></span>
+</p>
+<h3><span class="mw-headline" id="Casting_out_255">Casting out 255</span></h3>
+<p>For ranks, diagonals or anti-diagonals, where the occupancy mask excludes the sliding piece, and the rank-or byte-wise sum of disjoint bits is therefor less than 255, <a href="Population Count.html#Castingout" title="Population Count">Casting out</a> 256-1 works as well, without any shifts required, and with more space saving options for the lookup table, i. e. similar to Kindergarten Bitboards with shared multiples of first rank attacks and an trailing post-mask with the same line <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+</p>
+<pre>
+masked occupany  %  256-1            =  A-H    
+. . . . . . . H     . . . . . . . .     . . . . . . . .
+. . . . . . G .     . . . . . . . .     . . . . . . . . 
+. . . . . F . .     . . . . . . . .     . . . . . . . . 
+. . . . E . . .     . . . . . . . .     . . . . . . . . 
+. . . . . . . .  %  . . . . . . . .  =  . . . . . . . . 
+. . C . . . . .     . . . . . . . .     . . . . . . . . 
+. B . . . . . .     . . . . . . . .     . . . . . . . . 
+A . . . . . . .     1 1 1 1 1 1 1 1     A B C . E F G H 
+</pre>
+<h3><span class="mw-headline" id="Reciprocal_Multiplication">Reciprocal Multiplication</span></h3>
+<p>The 64-bit modulo by a constant can be done most efficiently by <a href="General Setwise Operations.html#Modulo" title="General Setwise Operations">reciprocal fixed point multiplication</a>, this is how <a href="Microsoft.html" title="Microsoft">Microsoft</a> <a class="external text" href="https://en.wikipedia.org/wiki/Visual_C%2B%2B" rel="nofollow">Visual C++</a> 2005 compiler implements the mod constant for <a href="X86-64.html" title="X86-64">x86-64</a> processors. One 64*64=128 bit multiplication, one shift, one further 32-bit multiplication , one subtraction. Of course using 64-bit <a href="General Setwise Operations.html#Division" title="General Setwise Operations">division</a> to get the remainder burns even more cycles.
+</p>
+<pre>
+Code:
+% 514
+ mov    r11d, r10 ; masked diagonal
+ mov    rax, ff00ff00ff00ff01H
+ mul    r10
+ shr    rdx, 9
+ imul   edx, 514 ; 00000202H
+ sub    r11d, edx
+
+% 257
+ mov    r11d, r10 ; masked diagonal
+ mov    rax, ff00ff00ff00ff01H
+ mul    r10
+ shr    rdx, 8
+ imul   edx, 257 ; 00000101H
+ sub    r11d, edx
+</pre>
+<h2><span class="mw-headline" id="Multiplication">Multiplication</span></h2>
+<p>A Kindergarten like approach might look like this (not considering <a href="First Rank Attacks.html#TheOuterSquares" title="First Rank Attacks">inner six bits</a>):
+</p>
+<pre>
+U64 arrDiagonalAttacks[256][64];  // 128 K
+
+U64 diagonalAttacks(U64 occ, enumSquare sq) {
+   occ = (diagonalMask[sq] &amp; occ) * C64(0x0101010101010101) &gt;&gt; 56;
+   return arrDiagonalAttacks[occ][sq];
+}
+</pre>
+<p>and uses one 64*64=64-bit multiplication, with this <a href="X86-64.html" title="X86-64">x86-64</a> assembly for calculating an eight-bit occupied index:
+</p>
+<pre>
+ mov    rax, 0101010101010101H
+ imul   rdx, rax
+ shr    rdx, 56
+</pre>
+<p>Even <a href="Kindergarten Bitboards.html#FileAttacks" title="Kindergarten Bitboards">Kindergarten File-Attacks</a> are cheaper and faster, not to mention <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a>, which covers two lines of a rook or bishop in one run.
+</p>
+<h1><span class="mw-headline" id="Fenner.27s_and_Levene.27s_conclusion">Fenner's and Levene's conclusion</span></h1>
+<p>Quote from their paper, pp 11<br/>
+<b>3.5. Comparison with other Methods</b>
+</p>
+<pre>As reported in Hyatt (2007), the rotated and magic bitboard methods are of comparable performance, and Tannous (2007) claims just a small improvement of the direct lookup method over rotated bitboards. It is easy to see that, in terms of the number of computer operations, the efficiency of our method will be similar to that of direct lookup. Thus we are justified in claiming that the computational efficiency of our method is comparable to the others.
+</pre>
+<p>Their conclusion was based on following statement of <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> <b>...</b>
+</p>
+<pre>I had reported this earlier. Magic was no faster than rotated. I switched because of two things...
+</pre>
+<pre>1. Magic is simpler, and simpler is better as I get older.
+2. Magic gives you the opportunity to update the occupied_squares and then generate moves easily.
+</pre>
+<pre>To do this with rotated bitboards first requires that all rotated bitboards be updated in addition to the normal occupied_squares bitboard. This is faster, if you use the feature (I don't yet, but well might at times).
+</pre>
+<p><b>...</b> and this claim of <a href="Sam Tannous.html" title="Sam Tannous">Sam Tannous</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>:
+</p>
+<pre>The results shown indicate that directly looking up the attacking moves for sliding pieces in hash tables improves the move generation speeds from 10% to 15% depending on computer architecture. Further efficiencies can be expected in a full implementation where the overhead of maintaining rotated bitboards is eliminated. The implementation and test code is made available in an Open-Source, interactive, chess programming module called “Shatranj” (Tannous, 2006).
+</pre>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a class="external text" href="http://sun.aei.polsl.pl/~zjc/.html" rel="nofollow">Zbigniew J. Czech</a>, <a class="external text" href="http://itee.uq.edu.au/~havas/.html" rel="nofollow">George Havas</a>, <a class="external text" href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/m/Majewski:Bohdan S=.html.html" rel="nofollow">Bohdan S. Majewski</a> (<b>1997</b>). <i>Perfect Hashing</i>. Theoretical Computer Science, Vol. 182, Nos. 1-2, pp. 1-143</li>
+<li> <a href="Trevor Fenner.html" title="Trevor Fenner">Trevor Fenner</a>, <a href="Mark Levene.html" title="Mark Levene">Mark Levene</a> (<b>2008</b>). <i>Move Generation with Perfect Hashing Functions.</i> <a href="ICGA Journal.html#31 1" title="ICGA Journal">ICGA Journal, Vol. 31, No. 1</a>, pp. 3-12. <a class="external text" href="http://www.dcs.bbk.ac.uk/~mark/download/bitboard sliding icga final.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20913.html" rel="nofollow">Nice Math - Strange Conclusions</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, April 29, 2008</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51996.html" rel="nofollow">Low memory usage attack bitboard generation</a> by crystalclear, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 06, 2011</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Congruence_relation" rel="nofollow">Congruence relation from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Linear_congruence_theorem" rel="nofollow">Linear congruence theorem from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Modular_arithmetic" rel="nofollow">Modular arithmetic from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Modulo_operation" rel="nofollow">Modulo operation from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a href="Trevor Fenner.html" title="Trevor Fenner">Trevor Fenner</a>, <a href="Mark Levene.html" title="Mark Levene">Mark Levene</a> (<b>2008</b>). <i>Move Generation with Perfect Hashing Functions.</i> <a href="ICGA Journal.html#31 1" title="ICGA Journal">ICGA Journal, Vol. 31, No. 1</a>, pp. 3-12. <a class="external text" href="http://www.dcs.bbk.ac.uk/~mark/download/bitboard sliding icga final.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20913.html" rel="nofollow">Nice Math - Strange Conclusions</a> by <a href="Gerd Isenberg.html" title="Gerd Isenberg">Gerd Isenberg</a>, <a href="CCC.html" title="CCC">CCC</a>, April 29, 2008</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51996.html" rel="nofollow">Low memory usage attack bitboard generation</a> by crystalclear, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Forum</a>, October 06, 2011</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?topic view=threads&amp;p=140141&amp;t=16002.html" rel="nofollow">Re: BitBoard Tests Magic v Non-Rotated 32 Bits v 64 Bits</a> by <a href="Robert Hyatt.html" title="Robert Hyatt">Robert Hyatt</a>, <a href="CCC.html" title="CCC">CCC</a> August 25, 2007</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Sam Tannous.html" title="Sam Tannous">Sam Tannous</a> (<b>2007</b>). <i>Avoiding Rotated Bitboards with Direct Lookup</i>. <a href="ICGA Journal.html#30 2" title="ICGA Journal">ICGA Journal, Vol. 30, No. 2</a>, pp. 85-91, <a class="external text" href="http://arxiv.org/PS cache/arxiv/pdf/0704/0704.3773v2.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+</ol></div>
+<p><b><a href="Sliding Piece Attacks.html" title="Sliding Piece Attacks">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722073823
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.028 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 168/1000000
+Preprocessor generated node count: 338/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1623-0!canonical and timestamp 20240722073823 and revision id 2199
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Congruent_Modulo_Bitboards&amp;oldid=2199">https://www.chessprogramming.org/index.php?title=Congruent_Modulo_Bitboards&amp;oldid=2199</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Congruent+Modulo+Bitboards&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Congruent Modulo Bitboards.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Congruent Modulo Bitboards&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Congruent Modulo Bitboards.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Congruent Modulo Bitboards&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Congruent Modulo Bitboards&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Congruent Modulo Bitboards.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Congruent Modulo Bitboards.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Congruent Modulo Bitboards&amp;oldid=2199.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Congruent Modulo Bitboards&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 18 May 2018, at 12:12.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Congruent_Modulo_Bitboards&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.028","walltime":"0.029","ppvisitednodes":{"value":168,"limit":1000000},"ppgeneratednodes":{"value":338,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722073823","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":47});});</script>
+</body>
+</html>

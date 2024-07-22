@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ConvChess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ConvChess","wgTitle":"ConvChess","wgCurRevisionId":24870,"wgRevisionId":24870,"wgArticleId":7864,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Open Source","Python","Didactic","NN","Chess Suffix","Animation"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ConvChess","wgRelevantArticleId":7864,"wgRequestId":"Zp7DSoY8AD1K7zdlkfzdUwAAAAk","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ConvChess rootpage-ConvChess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">ConvChess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engines.html" title="Engines">Engines</a> * ConvChess</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" href="File:2D Convolution Animation.gif.html"><img alt="" class="thumbimage" height="265" src="wikipedia/commons/thumb/1/19/2D_Convolution_Animation.gif/300px-2D_Convolution_Animation.gif" srcset="https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif 1.5x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:2D Convolution Animation.gif.html" title="Enlarge"></a></div>Convolutional Layer Animation <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>ConvChess</b>,<br/>
+a didactic <a href="Neural Networks.html#Convolutional" title="Neural Networks">convolutional neural network</a> (CNN) chess playing entity designed and implemented by <a href="Barak Oshri.html" title="Barak Oshri">Barak Oshri</a> and <a href="Nishith Khandwala.html" title="Nishith Khandwala">Nishith Khandwala</a> during their 2015 project work at <a href="Stanford University.html" title="Stanford University">Stanford University</a> <sup class="reference" id="cite_ref-paper_2-0"><a href="#cite note-paper-2">[2]</a></sup>.
+ConvChess was likely the first chess playing entity using a CNN, as mentioned by <a href="Matthia Sabatelli.html" title="Matthia Sabatelli">Matthia Sabatelli</a> et al. <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup>.
+ConvChess is implemented in <a href="Python.html" title="Python">Python</a>, using the <a href="Python-chess.html" title="Python-chess">python-chess</a> and <a class="external text" href="https://en.wikipedia.org/wiki/NumPy" rel="nofollow">NumPy</a> libraries, source code and datasets available on <a class="external text" href="https://en.wikipedia.org/wiki/GitHub" rel="nofollow">GitHub</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup>. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Idea"><span class="tocnumber">1</span> <span class="toctext">Idea</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Network"><span class="tocnumber">2</span> <span class="toctext">Network</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Training"><span class="tocnumber">3</span> <span class="toctext">Training</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Results"><span class="tocnumber">4</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Publications"><span class="tocnumber">6</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Forum Posts"><span class="tocnumber">7</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#External Links"><span class="tocnumber">8</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Idea">Idea</span></h1>
+<p>Inspired by the <a href="Supervised Learning.html" title="Supervised Learning">supervised learning</a> approach of <a href="Christopher Clark.html" title="Christopher Clark">Christopher Clark</a> and <a href="Amos Storkey.html" title="Amos Storkey">Amos Storkey</a> to predict moves in <a href="Go.html" title="Go">Go</a> without any <a href="Search.html" title="Search">search</a>,
+to defeat the traditional search program <a class="new" href="index.php?title=Gnu Go&amp;action=edit&amp;redlink=1.html" title="Gnu Go (page does not exist)">Gnu Go</a> in 86% of the games <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup>,
+Oshri and Khandwala tried a similar idea to implement a move predictor or policy network in Chess. They were well aware that such winning rates without search as reported in Go are not possible in Chess, first due to the tactical nature of the game, 
+and also due to move classification aspect that <a href="Moves.html" title="Moves">chess moves</a> require <a href="Origin Square.html" title="Origin Square">origin square</a> and <a href="Target Square.html" title="Target Square">target square</a>, instead of a single coordinate for a 19x19 grid to drop a stone. 
+Therefore in this novel approach, the classification was divided into two parts. The first part trains a piece-selector CNN to predict the origin square a piece moves from,
+while the second part trains six move-selector CNNs to encode which target squares would be advantageous for each of the six possible <a href="Pieces.html#PieceTypeCoding" title="Pieces">piece types</a>.
+These seven CNNs take the <a href="Board Representation.html" title="Board Representation">board representation</a> as input and output a probability distribution for 64 origin and 6x64 target squares.
+The predicted move is then obtained by composing the piece-selector CNN by multiplying its values by the highest value in the corresponding move-selector CNN, 
+clipping all illegal origins and targets to zero, and taking the <a class="external text" href="https://en.wikipedia.org/wiki/Arg_max" rel="nofollow">arg max</a> over the entire composition.
+Since the model considers White to move only, Black to move positions require a <a href="Color Flipping.html" title="Color Flipping">color flip</a>. 
+</p>
+<h1><span class="mw-headline" id="Network">Network</span></h1>
+<p>Each of the seven CNNs consists of three <a class="external text" href="https://en.wikipedia.org/wiki/Convolutional_neural_network#Convolutional_layer" rel="nofollow">convolutional layers</a> with 32 3x3 filters stride 1, including <a class="external text" href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)" rel="nofollow">ReLU</a> and 2x2 <a class="external text" href="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer" rel="nofollow">pooling layer</a> stride 2 (The authors reported less success using five convolution layers <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>)
+followed by two <a class="external text" href="https://en.wikipedia.org/wiki/Layer_(deep_learning)#Dense_layer" rel="nofollow">fully connected layers</a> with a <a class="external text" href="https://en.wikipedia.org/wiki/Affine_transformation" rel="nofollow">affine transformation</a>to 128 features, the first including ReLU and <a class="external text" href="https://en.wikipedia.org/wiki/Dilution_(neural_networks)" rel="nofollow">Dropout</a>, the second <a class="external text" href="https://en.wikipedia.org/wiki/Softmax_function" rel="nofollow">Softmax</a>.
+The input layer, feeding in the <a href="Board Representation.html" title="Board Representation">board representation</a> ignoring <a href="En passant.html" title="En passant">en passant</a> square and <a href="Castling Rights.html" title="Castling Rights">castling rights</a>, has a shape of six channels for each piece type with three possible values for each of the 8x8 squares, -1 for Black pieces, 0 for empty square, and +1 for White pieces.
+The output, reflecting the number of classifications, is a vector of 64 <a href="Float.html" title="Float">floats</a>. 
+</p>
+<h1><span class="mw-headline" id="Training">Training</span></h1>
+<p>The networks were trained for 245,000 moves over 20,000 games <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>, 
+with the piece-selector CNN trained on every piece and each move-selector CNN trained on every move made by the respective piece, without considering the outcome of the game.
+Their best model was found by doing a <a class="external text" href="https://en.wikipedia.org/wiki/Hyperparameter_optimization#Grid_search" rel="nofollow">grid-search</a> over the parameters of <a class="external text" href="https://en.wikipedia.org/wiki/Learning_rate" rel="nofollow">learning rate</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" rel="nofollow">regularization</a>, and weight initialization with fine tuning afterwards.
+The parameters of the best model were a regularization of 0.0001, learning rate of 0.0015, <a class="external text" href="https://en.wikipedia.org/wiki/Batch_normalization" rel="nofollow">batch size</a> of 250, a <a class="external text" href="https://en.wikipedia.org/wiki/Learning_rate#Learning_rate_schedule" rel="nofollow">learning rate decay</a> of 0.999 on <a class="external text" href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent#RMSProp" rel="nofollow">RMSprop</a> with no <a class="external text" href="https://en.wikipedia.org/wiki/Dilution_(neural_networks)" rel="nofollow">dropout</a> trained in 15 <a class="external text" href="https://en.wikipedia.org/wiki/Epoch_(disambiguation)#Science_and_technology" rel="nofollow">epochs</a> <sup class="reference" id="cite_ref-paper_2-1"><a href="#cite note-paper-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="Results">Results</span></h1>
+<p>The best result obtained with the piece-selector CNN was 38.30%. The results for the move-selector varied. Pieces with local movements (P=52%, N=56%, K=47%) performed significantly better than <a href="Sliding Pieces.html" title="Sliding Pieces">sliding pieces</a> (B=40%, R=30%, Q=27%) - the latter with more options to fail, and possibly also due to the restricted influence of only three 3x3 convolutions.
+ConvChess was played against <a href="Sunfish.html" title="Sunfish">Sunfish</a> (search depth not reported) in 100 games. 26 of the games drew and the rest were lost <sup class="reference" id="cite_ref-paper_2-2"><a href="#cite note-paper-2">[2]</a></sup>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li>
+<li> <a href="FastChess.html" title="FastChess">FastChess</a></li>
+<li> <a href="Sunfish.html" title="Sunfish">Sunfish</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Barak Oshri.html" title="Barak Oshri">Barak Oshri</a>, <a href="Nishith Khandwala.html" title="Nishith Khandwala">Nishith Khandwala</a> (<b>2015</b>). <i>Predicting Moves in Chess using Convolutional Neural Networks</i>. <a class="external text" href="http://vision.stanford.edu/teaching/cs231n/reports/2015/pdfs/ConvChess.pdf.html" rel="nofollow">pdf</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=63458.html" rel="nofollow">ConvChess CNN</a> by <a href="Brian Richardson.html" title="Brian Richardson">Brian Richardson</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2017</li></ul>
+<dl><dd> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=63458&amp;start=1.html" rel="nofollow">Re: ConvChess CNN</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2017</dd></dl>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://github.com/BarakOshri/ConvChess" rel="nofollow">GitHub - BarakOshri/ConvChess: Predicting Moves in Chess Using Convolutional Neural Networks</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Convolutional_neural_network" rel="nofollow">Convolutional neural network from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://commons.wikimedia.org/wiki/File:2D_Convolution_Animation.gif" rel="nofollow">2D Image-Kernel Convolution Animation</a> by Michael Plotke, January 28, 2013, <a class="external text" href="https://en.wikipedia.org/wiki/Wikimedia_Commons" rel="nofollow">Wikimedia Commons</a></span>
+</li>
+<li id="cite_note-paper-2"><span class="mw-cite-backlink">↑ <sup><a href="#cite ref-paper 2-0">2.0</a></sup> <sup><a href="#cite ref-paper 2-1">2.1</a></sup> <sup><a href="#cite ref-paper 2-2">2.2</a></sup></span> <span class="reference-text"><a href="Barak Oshri.html" title="Barak Oshri">Barak Oshri</a>, <a href="Nishith Khandwala.html" title="Nishith Khandwala">Nishith Khandwala</a> (<b>2015</b>). <i>Predicting Moves in Chess using Convolutional Neural Networks</i>. <a class="external text" href="http://vision.stanford.edu/teaching/cs231n/reports/2015/pdfs/ConvChess.pdf.html" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a href="Matthia Sabatelli.html" title="Matthia Sabatelli">Matthia Sabatelli</a>, <a href="Francesco Bidoia.html" title="Francesco Bidoia">Francesco Bidoia</a>, <a href="Valeriu Codreanu.html" title="Valeriu Codreanu">Valeriu Codreanu</a>, <a href="Marco Wiering.html" title="Marco Wiering">Marco Wiering</a> (<b>2018</b>). <i>Learning to Evaluate Chess Positions with Deep Neural Networks and Limited Lookahead</i>. ICPRAM 2018, <a class="external text" href="https://www.ai.rug.nl/~mwiering/GROUP/ARTICLES/ICPRAM_CHESS_DNN_2018.pdf" rel="nofollow">pdf</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://github.com/BarakOshri/ConvChess" rel="nofollow">GitHub - BarakOshri/ConvChess: Predicting Moves in Chess Using Convolutional Neural Networks</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a href="Christopher Clark.html" title="Christopher Clark">Christopher Clark</a>, <a href="Amos Storkey.html" title="Amos Storkey">Amos Storkey</a> (<b>2014</b>). <i>Teaching Deep Convolutional Neural Networks to Play Go</i>. <a class="external text" href="http://arxiv.org/abs/1412.3409.html" rel="nofollow">arXiv:1412.3409</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?t=63458&amp;start=1.html" rel="nofollow">Re: ConvChess CNN</a> by <a href="%C3%81lvaro Begu%C3%A9.html" title="Álvaro Begué">Álvaro Begué</a>, <a href="CCC.html" title="CCC">CCC</a>, March 15, 2017</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="https://raw.githubusercontent.com/BarakOshri/ConvChess/master/data/FICS_2000.pgn" rel="nofollow">ConvChess/master/data/FICS_2000.pgn</a></span>
+</li>
+</ol></div>
+<p><b><a href="Engines.html" title="Engines">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722034521
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.070 seconds
+Real time usage: 0.805 seconds
+Preprocessor visited node count: 153/1000000
+Preprocessor generated node count: 318/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:7864-0!canonical and timestamp 20240722034521 and revision id 24870
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=ConvChess&amp;oldid=24870">https://www.chessprogramming.org/index.php?title=ConvChess&amp;oldid=24870</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:Open Source.html" title="Category:Open Source">Open Source</a></li><li><a href="Category:Python.html" title="Category:Python">Python</a></li><li><a href="Category:Didactic.html" title="Category:Didactic">Didactic</a></li><li><a href="Category:NN.html" title="Category:NN">NN</a></li><li><a href="Category:Chess Suffix.html" title="Category:Chess Suffix">Chess Suffix</a></li><li><a href="Category:Animation.html" title="Category:Animation">Animation</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=ConvChess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="ConvChess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:ConvChess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="ConvChess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=ConvChess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=ConvChess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/ConvChess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/ConvChess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=ConvChess&amp;oldid=24870.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=ConvChess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 1 June 2021, at 10:27.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=ConvChess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.070","walltime":"0.805","ppvisitednodes":{"value":153,"limit":1000000},"ppgeneratednodes":{"value":318,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722034521","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>

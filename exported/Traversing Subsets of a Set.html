@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Traversing Subsets of a Set - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Traversing_Subsets_of_a_Set","wgTitle":"Traversing Subsets of a Set","wgCurRevisionId":19557,"wgRevisionId":19557,"wgArticleId":61,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Traversing_Subsets_of_a_Set","wgRelevantArticleId":61,"wgRequestId":"Zp7DyP-qaMe6EU8WbZGhdwAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Traversing_Subsets_of_a_Set rootpage-Traversing_Subsets_of_a_Set skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Traversing Subsets of a Set</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * <a href="Algorithms.html" title="Algorithms">Algorithms</a> * Traversing Subsets of a Set</b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://commons.wikimedia.org/wiki/File:Hypercubeorder_binary.svg"><img alt="" class="thumbimage" height="300" src="wikipedia/commons/thumb/9/9b/Hypercubeorder_binary.svg/300px-Hypercubeorder_binary.svg.png" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Hypercubeorder_binary.svg/450px-Hypercubeorder_binary.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Hypercubeorder_binary.svg/600px-Hypercubeorder_binary.svg.png 2x" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" href="File:Hypercubeorder binary.svg.html" title="Enlarge"></a></div>4D-hypercube <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup></div></div></div>
+<p><b>Traversing Subsets of a Set</b> determines the <a class="external text" href="https://en.wikipedia.org/wiki/Power_set" rel="nofollow">power set</a> of a set, or a subset of the power set with certain properties such as equal <a class="external text" href="https://en.wikipedia.org/wiki/Cardinality" rel="nofollow">cardinality</a>. Represented by a <a href="Bitboards.html" title="Bitboards">bitboard</a>, this is useful to loop over possible <a href="Occupancy.html" title="Occupancy">occupancies</a> of a set of rays or lines, and to <a href="Looking for Magics.html" title="Looking for Magics">look for</a> <a href="Magic Bitboards.html" title="Magic Bitboards">magic factors</a> with a certain cardinality.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Enumerating All Subsets"><span class="tocnumber">1</span> <span class="toctext">Enumerating All Subsets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#All Subsets of the Universal Set"><span class="tocnumber">1.1</span> <span class="toctext">All Subsets of the Universal Set</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#All Subsets of any Set"><span class="tocnumber">1.2</span> <span class="toctext">All Subsets of any Set</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Subsets with equal Cardinality"><span class="tocnumber">2</span> <span class="toctext">Subsets with equal Cardinality</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Snoobing the Universe"><span class="tocnumber">2.1</span> <span class="toctext">Snoobing the Universe</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Modified Snoob"><span class="tocnumber">2.1.1</span> <span class="toctext">Modified Snoob</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Reverse Snoob"><span class="tocnumber">2.1.2</span> <span class="toctext">Reverse Snoob</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Snoobing any Sets"><span class="tocnumber">2.2</span> <span class="toctext">Snoobing any Sets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Selected Publications"><span class="tocnumber">4</span> <span class="toctext">Selected Publications</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#External Links"><span class="tocnumber">6</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Enumerating_All_Subsets">Enumerating All Subsets</span></h1>
+<h2><span class="mw-headline" id="All_Subsets_of_the_Universal_Set">All Subsets of the Universal Set</span></h2>
+<p>To enumerate all subsets of the universal set -1 is obvious, but takes some time. Assuming one loop cycle takes one nano-second, it would still take 18,446,744,073 seconds or about 585 years!
+</p>
+<pre>
+// enumerate all subsets of the universal set -1
+void enumerateAllSubsetsOfTheBitboardUniverse() {
+   U64 n = 0;
+   do {
+      doSomeThingWithSubset(n);
+      n++;
+   } while ( n );
+}
+</pre>
+<h2><span class="mw-headline" id="All_Subsets_of_any_Set"><span id="AllSubsetsofanySet"></span>All Subsets of any Set</span></h2>
+<pre>
+// enumerate all subsets of set d
+void enumerateAllSubsets(U64 d) {
+   U64 n = 0;
+   do {
+      doSomeThingWithSubset(n);
+      n = (n - d) &amp; d;
+   } while ( n );
+}
+</pre>
+<p>This is how the Carry-Rippler, introduced by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> and later by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a> <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> works: we first set all "unused" bits of the set by oring the One's Complement of d. The increment ripples a possible carry through all unused bits - and finally we clear all unused bits again by intersection with the set d:
+</p>
+<pre>
+n = ((n | ~d) + 1) &amp; d;
+</pre>
+<p>We can safely replace bitwise-or by add, since unused bits are always zero:
+</p>
+<pre>
+n = ((n + ~d) + 1) &amp; d;
+</pre>
+<p>Replacing One's Complement by Two's Complement minus one
+</p>
+<pre>
+n = ((n + (-d-1) + 1) &amp; d;
+</pre>
+<p>leaves the final expression
+</p>
+<pre>
+n = (n - d) &amp; d;
+</pre>
+<h1><span class="mw-headline" id="Subsets_with_equal_Cardinality"><span id="Snoob"></span>Subsets with equal Cardinality</span></h1>
+<p>Traversing subsets with one bit set was already mentioned in the <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a> topic.
+</p><p>Equal cardinality subsets have <b>S</b>ame <b>n</b>umber <b>o</b>f <b>o</b>ne <b>b</b>its - thus <b>Snoob</b>, as synonym of the iterator-function. 
+To use snoob in a loop:
+</p>
+<pre>
+U64 x, y, first = 0x0f; // traverse all 4-bit sequences
+for (x = first; (y = snoob(x)) &gt; x; x = y)
+   doSomethingWith(y);
+</pre>
+<p>We add the <a href="General Setwise Operations.html#TheLeastSignificantOneBitLS1B" title="General Setwise Operations">LS1B</a> (smallest) to the set, to get a greater number. The former LS1B becomes zero with overflow. If the next higher bit was zero, it takes the carry and the number of set bits didn't change - two flipped bits. Otherwise, if the carry ripples through, leaving further zero(s), we need to set least significant bits accordingly, to keep the cardinality equal. Thus, we xor ripple to get the flipped bits as ones. We shift this sequence right, until it becomes the least significant bits (divide by smallest). To take the two compensating bits off, we need to further divide by 4 (leading or trailing shift right 2). Get the next higher number with the same number of one bits (Snoob) was devised by <a href="Bill Gosper.html" title="Bill Gosper">Bill Gosper</a> as <a href="Bill Gosper.html#HAKMEM175" title="Bill Gosper">HAKMEM 175</a> in <a href="PDP-6.html" title="PDP-6">PDP-6</a> <a href="Assembly.html" title="Assembly">Assembly</a> <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> and elaborated in <a href="Henry S. Warren, Jr..html#HackersDeligh" title="Henry S. Warren, Jr.">Hacker's Delight</a> by <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>.
+</p>
+<h2><span class="mw-headline" id="Snoobing_the_Universe"><span id="NextSnoob"></span>Snoobing the Universe</span></h2>
+<pre>
+// get next greater value with same number of one bits
+// Taken from "Hacker's Delight" by Henry S. Warren, Jr.
+// originally appeared as  HAKMEM ITEM 175 (Bill Gosper)
+U64 snoob (U64 x) {
+   U64 smallest, ripple, ones;
+   smallest = x &amp; -x;
+   ripple = x + smallest;
+   ones = x ^ ripple;
+   ones = (ones &gt;&gt; 2) / smallest;
+   return ripple | ones;
+}
+</pre>
+<h3><span class="mw-headline" id="Modified_Snoob">Modified Snoob</span></h3>
+<p>Division by power of two replaced by <a href="BitScan.html#DeBruijnMultiplation" title="BitScan">De Bruijn bitscan</a> and shift right:
+</p>
+<pre>
+const U64 deBruijn = C64(0x03f79d71b4cb0a89);
+
+const unsigned int deBruijnLookup[64] = // or unsigned char
+{
+    0,  1, 48,  2, 57, 49, 28,  3,
+   61, 58, 50, 42, 38, 29, 17,  4,
+   62, 55, 59, 36, 53, 51, 43, 22,
+   45, 39, 33, 30, 24, 18, 12,  5,
+   63, 47, 56, 27, 60, 41, 37, 16,
+   54, 35, 52, 21, 44, 32, 23, 11,
+   46, 26, 40, 15, 34, 20, 31, 10,
+   25, 14, 19,  9, 13,  8,  7,  6,
+};
+
+// get next greater value with same number of one bits
+U64 snoob (U64 x) {
+   U64 smallest, ripple, ones;
+   smallest = x &amp; (0-x);
+   ripple   = x + smallest;
+   ones     = x ^ ripple;
+   ones     = (ones &gt;&gt; 2) &gt;&gt; deBruijnLookup[(smallest*deBruijn) &gt;&gt; 58];
+   return ripple | ones;
+}
+</pre>
+<p>Due to implicit modulo(64) of the shift amount by the processor
+</p>
+<pre>
+(ones &gt;&gt; i) &gt;&gt; 2 == (ones &gt;&gt; 2) &gt;&gt; i might not equal to ones &gt;&gt; (2 + i)!
+</pre>
+<h3><span class="mw-headline" id="Reverse_Snoob">Reverse Snoob</span></h3>
+<p>based on <a href="General Setwise Operations.html#ComplementSet" title="General Setwise Operations">One's Complement</a>:
+</p>
+<pre>
+// get next less value with same number of one bits
+U64 rSnoob (U64 sub) {
+   return ~snoob(~sub);
+}
+</pre>
+<p>or to safe some bitscans
+</p>
+<pre>
+// get next less value with same number of one bits
+U64 rSnoob (U64 sub) {
+   if ( sub &amp; 1 )
+      return ~snoob(~sub);
+   U64 lsb = sub &amp; (0-sub);
+   return sub ^ lsb ^ (lsb&gt;&gt;1);
+}
+</pre>
+<h2><span class="mw-headline" id="Snoobing_any_Sets">Snoobing any Sets</span></h2>
+<p>combining the Carry Rippler with Snoob - a little more complicated
+</p>
+<pre>
+set:
+... 1110 0110 0x..e6
+e.g. all subsets with two set bits:
+... 0000 0110 0x..06
+... 0010 0010 0x..22
+... 0010 0100 0x..24
+... 0100 0010 0x..42
+... 0100 0100 0x..44
+... 0110 0000 0x..60
+... 1000 0010 0x..82
+... 1000 0100 0x..84
+... 1010 0000 0x..a0
+... 1100 0000 0x..c0
+</pre>
+<pre>
+// get next greater subset of set with same number of one bits
+U64 snoob (U64 sub, U64 set) {
+   U64 tmp = sub-1;
+   U64 rip = set &amp; (tmp + (sub &amp; (0-sub)) - set);
+   for(sub = (tmp &amp; sub) ^ rip; sub &amp;= sub-1; rip ^= tmp, set ^= tmp)
+       tmp = set &amp; (0-set);
+   return rip;
+}
+</pre>
+<pre>
+// get next less set of a subset with same number of one bits
+U64 rSnoob (U64 sub, U64 set) {
+   return ~snoob(~sub &amp; set, set) &amp; set;
+}
+</pre>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Bitboard Serialization.html" title="Bitboard Serialization">Bitboard Serialization</a></li>
+<li> <a href="De Bruijn Sequence.html" title="De Bruijn Sequence">De Bruijn Sequence</a></li>
+<li> <a href="Magic Bitboards.html" title="Magic Bitboards">Magic Bitboards</a></li></ul>
+<h1><span class="mw-headline" id="Selected_Publications">Selected Publications</span></h1>
+<ul><li> Michael Beeler, <a href="Bill Gosper.html" title="Bill Gosper">Bill Gosper</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Richard_Schroeppel" rel="nofollow">Rich Schroeppel</a> (<b>1972</b>). <i><a class="external text" href="http://home.pipeline.com/~hbaker1/hakmem/hakmem.html.html" rel="nofollow">HAKMEM</a>, Memo 239</i>. <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory" rel="nofollow">CSAIL</a>, <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">MIT</a>, <a class="external text" href="http://home.pipeline.com/~hbaker1/hakmem/hacks.html.html#item175" rel="nofollow">ITEM 175 (Gosper)</a></li>
+<li> <a href="Mathematician.html#FRuskey" title="Mathematician">Frank Ruskey</a> (<b>2003</b>). <i>Combinatorial Generation</i>. <a class="external text" href="https://en.wikipedia.org/wiki/University_of_Victoria" rel="nofollow">University of Victoria</a>, <a class="external text" href="http://www.1stworks.com/ref/ruskeycombgen.pdf.html" rel="nofollow">pdf</a></li>
+<li> <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a>  (<b>2012</b>). <i><a class="external text" href="http://hackersdelight.org/.html" rel="nofollow">Hacker's Delight, 2nd Edition</a></i>. <a class="external text" href="https://en.wikipedia.org/wiki/Addison%E2%80%93Wesley" rel="nofollow">Addison-Wesley</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess/msg/f4f0751cc8b928c8.html" rel="nofollow">Re: move generators in computer chess, Tricky bit tricks</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 20, 1994</li>
+<li> <a class="external text" href="http://www.stmintz.com/ccc/index.php?id=490129.html" rel="nofollow">Re: algorithm question</a> by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2006</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=73198.html" rel="nofollow">Don't understand CarryRippler</a> by <a href="Marcel Vanthoor.html" title="Marcel Vanthoor">Marcel Vanthoor</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2020 » <a href="#AllSubsetsofanySet">Carry-Rippler</a>, <a href="Rust.html" title="Rust">Rust</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Partially_ordered_set" rel="nofollow">Partially ordered set from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Power_set" rel="nofollow">Power set from Wikipedia</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text">The <a class="external text" href="https://en.wikipedia.org/wiki/Four-dimensional_space" rel="nofollow">4D</a>-<a class="external text" href="https://en.wikipedia.org/wiki/Hypercube" rel="nofollow">hypercube</a>, layered according to distance from one corner. As described in "<a href="Alice.html" title="Alice">Alice in Wonderland</a>" by the <a class="external text" href="https://en.wikipedia.org/wiki/Cheshire_Cat" rel="nofollow">Cheshire Cat</a>, this vertex-first-shadow of the <a class="external text" href="https://en.wikipedia.org/wiki/Tesseract" rel="nofollow">tesseract</a> forms a <a class="external text" href="https://en.wikipedia.org/wiki/Rhombic_dodecahedron" rel="nofollow">rhombic dodecahedron</a>. Note that the two central (green) vertices should coincide if using an orthogonal projection from 4 to 3 dimensions, but were drawn here slightly apart. The eight <a href="Nibble.html" title="Nibble">nibbles</a> with odd binary digit sums form a cube and are marked in white. The two <a class="external text" href="https://en.wikipedia.org/wiki/Palindrome" rel="nofollow">palindromes</a> 0110 and 1001 (compare XOR and XNOR) are projected in the center of the rhombic dodecahedron and are marked in green. The other six nibbles with even binary digit sums form an <a class="external text" href="https://en.wikipedia.org/wiki/Octahedron" rel="nofollow">octahedron</a> and are marked in blue, image by Lipedia, 2010, <a class="external text" href="https://en.wikipedia.org/wiki/Hasse_diagram" rel="nofollow">Hasse diagram from Wikipedia</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://groups.google.com/d/msg/rec.games.chess/KnJvBnhgDKU/yCi5yBx18PQJ" rel="nofollow">Tricky bit tricks</a> by <a href="Marcel van Kervinck.html" title="Marcel van Kervinck">Marcel van Kervinck</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rec.games.chess</a>, October 20, 1994</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.stmintz.com/ccc/index.php?id=490129.html" rel="nofollow">Re: algorithm question</a> by <a href="Steffan Westcott.html" title="Steffan Westcott">Steffan Westcott</a>, <a href="CCC.html" title="CCC">CCC</a>, February 27, 2006</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text">Michael Beeler, <a href="Bill Gosper.html" title="Bill Gosper">Bill Gosper</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Richard_Schroeppel" rel="nofollow">Rich Schroeppel</a> (<b>1972</b>). <i><a class="external text" href="http://home.pipeline.com/~hbaker1/hakmem/hakmem.html.html" rel="nofollow">HAKMEM</a>, Memo 239</i>. <a class="external text" href="https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory" rel="nofollow">CSAIL</a>, <a href="Massachusetts Institute of Technology.html" title="Massachusetts Institute of Technology">MIT</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.hackersdelight.org/basics1.pdf.html" rel="nofollow">Sample section of Hacker's Delight, Chapter 2 Basics</a> (pdf) by <a href="Henry S. Warren, Jr..html" title="Henry S. Warren, Jr.">Henry S. Warren, Jr.</a> pp.14 Figure 2–1. <i>Next higher number with same number of 1-bits</i>.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.hackersdelight.org/hdcodetxt/snoob.c.txt.html" rel="nofollow">C code for most of the programs that appear in HD | Fig. 2-1. Next higher number with same number of 1-bits</a></span>
+</li>
+</ol></div>
+<p><b><a href="Algorithms.html" title="Algorithms">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722011414
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.071 seconds
+Real time usage: 0.733 seconds
+Preprocessor visited node count: 277/1000000
+Preprocessor generated node count: 572/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:61-0!canonical and timestamp 20240722011413 and revision id 19557
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Traversing_Subsets_of_a_Set&amp;oldid=19557">https://www.chessprogramming.org/index.php?title=Traversing_Subsets_of_a_Set&amp;oldid=19557</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Traversing+Subsets+of+a+Set&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Traversing Subsets of a Set.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Traversing Subsets of a Set&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Traversing Subsets of a Set.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Traversing Subsets of a Set&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Traversing Subsets of a Set&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Traversing Subsets of a Set.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Traversing Subsets of a Set.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Traversing Subsets of a Set&amp;oldid=19557.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Traversing Subsets of a Set&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 20 June 2020, at 16:45.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Traversing_Subsets_of_a_Set&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.071","walltime":"0.733","ppvisitednodes":{"value":277,"limit":1000000},"ppgeneratednodes":{"value":572,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722011414","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":48});});</script>
+</body>
+</html>

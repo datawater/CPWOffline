@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Search Statistics - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Search_Statistics","wgTitle":"Search Statistics","wgCurRevisionId":17077,"wgRevisionId":17077,"wgArticleId":1672,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Search_Statistics","wgRelevantArticleId":1672,"wgRequestId":"Zp7Drf-qaMe6EU8WbZGhNgAAAAs","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Search_Statistics rootpage-Search_Statistics skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Search Statistics</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Engine Testing.html" title="Engine Testing">Engine Testing</a> * Search Statistics</b>
+</p><p><b>Search statistics</b> refers to counting various appearances of interest inside the <a href="Search.html" title="Search">search</a> or <a href="Evaluation.html" title="Evaluation">evaluation</a> routines and to analyze their relationships to eventually spot <a href="Engine Testing.html#bugs" title="Engine Testing">bugs</a> or unfavorable conditions in <a href="Move Ordering.html" title="Move Ordering">move ordering</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Node Statistics"><span class="tocnumber">1</span> <span class="toctext">Node Statistics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Cutoffs"><span class="tocnumber">1.1</span> <span class="toctext">Cutoffs</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Re-Searches"><span class="tocnumber">1.2</span> <span class="toctext">Re-Searches</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Root Statistics"><span class="tocnumber">1.3</span> <span class="toctext">Root Statistics</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Selectivity"><span class="tocnumber">1.4</span> <span class="toctext">Selectivity</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#TT Statistics"><span class="tocnumber">2</span> <span class="toctext">TT Statistics</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Forum Posts"><span class="tocnumber">5</span> <span class="toctext">Forum Posts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#1994 ..."><span class="tocnumber">5.1</span> <span class="toctext">1994 ...</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#2000 ..."><span class="tocnumber">5.2</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#2010 ..."><span class="tocnumber">5.3</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Node_Statistics">Node Statistics</span></h1>
+<p>Of interest is the appearance of searched <a href="Node.html" title="Node">nodes</a> inside an <a href="Iterative Deepening.html" title="Iterative Deepening">iterative deepening framework</a> and the ratio of <a href="Quiescent Node.html" title="Quiescent Node">quiescent nodes</a>, per <a href="Depth.html" title="Depth">depth</a> and/or aggregated, in conjunction with <a href="Branching Factor.html#EffectiveBranchingFactor" title="Branching Factor">effective branching factor</a> (EBF) and of course <a href="Nodes per Second.html" title="Nodes per Second">nodes per second</a>.
+</p>
+<h2><span class="mw-headline" id="Cutoffs">Cutoffs</span></h2>
+<p>Inside <a href="Alpha-Beta.html" title="Alpha-Beta">Alpha-beta</a>- or <a href="Principal Variation Search.html" title="Principal Variation Search">PV-search</a> it is of particular interest to count how often a node <a href="Fail-High.html" title="Fail-High">failes high</a> or not, in relation to its <a href="Node Types.html" title="Node Types">node types</a>, that is expected <a href="Node Types.html#CUT" title="Node Types">cut-Nodes</a> or expected <a href="Node Types.html#ALL" title="Node Types">All-nodes</a>. If a fail-high occurs, it is illuminative to know whether the fail-high move it was tried first, early or late and what <a href="Move Ordering.html" title="Move Ordering">move ordering</a> classification like move from the <a href="Transposition Table.html" title="Transposition Table">transposition table</a>, <a href="Captures.html" title="Captures">winning captures</a>, <a href="Killer Move.html" title="Killer Move">killer moves</a>, etc. was applied.
+</p>
+<h2><span class="mw-headline" id="Re-Searches">Re-Searches</span></h2>
+<p>At <a href="Node Types.html#PV" title="Node Types">PV-nodes</a> inside a <a href="Alpha-Beta.html" title="Alpha-Beta">alpha-beta</a>- or <a href="Principal Variation Search.html" title="Principal Variation Search">PV-search</a> the number of re-searches does concern, and how often a re-search does improve alpha (or even performs a cutoff) or not.
+</p>
+<h2><span class="mw-headline" id="Root_Statistics">Root Statistics</span></h2>
+<p>The <a href="Root.html" title="Root">Root</a> as distinguished PV-node specially with <a href="Aspiration Windows.html" title="Aspiration Windows">aspiration window</a> often has its own statistics related to how much relative time (nodes) of the whole <a href="Iteration.html" title="Iteration">iteration</a> is performed per each root-move, and how often another best move was found. In conjunction with static move properties, score graph by searched depth so far, etc., these statistic based informations may be considered in <a href="Time Management.html" title="Time Management">time management</a> to possibly decide about a new iteration.
+</p>
+<h2><span class="mw-headline" id="Selectivity">Selectivity</span></h2>
+<p>Counting the various <a href="Extensions.html" title="Extensions">extensions</a>, <a href="Reductions.html" title="Reductions">reductions</a> and <a href="Pruning.html" title="Pruning">forward pruning</a> decisions in relation with <a href="Branching Factor.html#EffectiveBranchingFactor" title="Branching Factor">effective branching factor</a> might also spot some deficiency inside the search.
+<span id="TTStatistics"></span>
+</p>
+<h1><span class="mw-headline" id="TT_Statistics">TT Statistics</span></h1>
+<p>Statistics of the <a href="Transposition Table.html" title="Transposition Table">transposition table</a> covers number of probes and stores, fill level, and number of probe hits, likely differentiated by sufficient <a href="Depth.html" title="Depth">draft</a> and <a href="Node Types.html" title="Node Types">type of stored node</a>.
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a class="new" href="index.php?title=Profiling&amp;action=edit&amp;redlink=1.html" title="Profiling (page does not exist)">Profiling</a></li>
+<li> <a href="Match Statistics.html" title="Match Statistics">Match Statistics</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<ul><li> <a href="Hermann Kaindl.html" title="Hermann Kaindl">Hermann Kaindl</a> (<b>1988</b>). <i>Useful Statistics from Tournament Programs</i>. <a href="ICGA Journal.html#11 4" title="ICGA Journal">ICCA Journal, Vol. 11, No. 4</a> » <a href="Merlin.html" title="Merlin">Merlin</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<h2><span class="mw-headline" id="1994_...">1994 ...</span></h2>
+<ul><li> <a class="external text" href="http://groups.google.com/group/rec.games.chess/browse frm/thread/32af80f05abdc805.html" rel="nofollow">COMPUTER CHESS: statistics</a> by <a href="Deniz Yuret.html" title="Deniz Yuret">Deniz Yuret</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">rgcc</a>, October 27, 1994</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=13052" rel="nofollow">Cutoff Statistics</a> by <a href="Roland Pfister.html" title="Roland Pfister">Roland Pfister</a>, <a href="CCC.html" title="CCC">CCC</a>, December, 18, 1997</li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=92156" rel="nofollow">A matter of statistics</a> by <a class="new" href="index.php?title=Tijs van Dam&amp;action=edit&amp;redlink=1.html" title="Tijs van Dam (page does not exist)">Tijs van Dam</a>, <a href="CCC.html" title="CCC">CCC</a>, January 26, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=115020" rel="nofollow">Re: The Scalable Search Test / Results of "Der Bringer"</a> by <a href="Gerrit Reubold.html" title="Gerrit Reubold">Gerrit Reubold</a>, <a href="CCC.html" title="CCC">CCC</a>, June 18, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=129504" rel="nofollow">Faster, deeper and more of such...</a> by <a href="Ed Schroder.html" title="Ed Schroder">Ed Schröder</a>, <a href="CCC.html" title="CCC">CCC</a>, September 14, 2000 » <a href="Depth.html#DiminishingReturns" title="Depth">Diminishing Returns</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=143022" rel="nofollow">Hash table efficiency</a> by <a href="Miguel A. Ballicora.html" title="Miguel A. Ballicora">Miguel A. Ballicora</a>, <a href="CCC.html" title="CCC">CCC</a>, December 05, 2000 » <a href="Gaviota.html" title="Gaviota">Gaviota</a>, <a href="Transposition Table.html" title="Transposition Table">Transposition Table</a></li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=359148" rel="nofollow">Hash table statistics</a> by <a class="new" href="index.php?title=Andrew Wagner&amp;action=edit&amp;redlink=1.html" title="Andrew Wagner (page does not exist)">Andrew Wagner</a>, <a href="CCC.html" title="CCC">CCC</a>, April 08, 2004</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=20562.html" rel="nofollow">What is the Ideal Output for Understanding a Chess Engine?</a> by Rick Fadden, <a href="CCC.html" title="CCC">CCC</a>, April 07, 2008</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=27737.html" rel="nofollow">Search statistics</a> by henkf, <a href="CCC.html" title="CCC">CCC</a>, May 04, 2009</li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="http://www.talkchess.com/forum3/viewtopic.php?f=7&amp;t=42665.html" rel="nofollow">make and unmake stadistics</a> by <a href="Fermin Serrano.html" title="Fermin Serrano">Fermin Serrano</a>, <a href="CCC.html" title="CCC">CCC</a>, February 28, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=45264.html" rel="nofollow">Probabilistic approach to optimize search tree</a> by <a href="Sergei Markoff.html" title="Sergei Markoff">Sergei S. Markoff</a>, <a href="CCC.html" title="CCC">CCC</a>, September 22, 2012</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=49871.html" rel="nofollow">Search statistics</a> by <a href="Robert Pope.html" title="Robert Pope">Robert Pope</a>, <a href="CCC.html" title="CCC">CCC</a>, October 30, 2013</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=51075.html" rel="nofollow">pruning statistics</a> by <a href="Jon Dart.html" title="Jon Dart">Jon Dart</a>, <a href="CCC.html" title="CCC">CCC</a>, January 27, 2014 » <a href="Pruning.html" title="Pruning">Pruning</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=61401.html" rel="nofollow">Best move statistics</a> by <a href="Matthew Lai.html" title="Matthew Lai">Matthew Lai</a>, <a href="CCC.html" title="CCC">CCC</a>, September 12, 2016</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63280.html" rel="nofollow">Move ordering statistics</a> by <a class="new" href="index.php?title=Sander Maassen vd Brink&amp;action=edit&amp;redlink=1.html" title="Sander Maassen vd Brink (page does not exist)">Sander Maassen vd Brink</a>, <a href="CCC.html" title="CCC">CCC</a>, February 26, 2017 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=63555.html" rel="nofollow">Testing for Move Ordering Improvements</a> by <a class="new" href="index.php?title=Cheney Nattress&amp;action=edit&amp;redlink=1.html" title="Cheney Nattress (page does not exist)">Cheney Nattress</a>, <a href="CCC.html" title="CCC">CCC</a>, March 25, 2017 » <a href="Move Ordering.html" title="Move Ordering">Move Ordering</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66335.html" rel="nofollow">Komodo 11.2.2 - Initial position until depth 54</a> by <a href="Andreas Strangm%C3%BCller.html" title="Andreas Strangmüller">Andreas Strangmüller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 15, 2018 » <a href="Komodo.html" title="Komodo">Komodo</a>, <a href="Initial Position.html" title="Initial Position">Initial Position</a></li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?t=66340.html" rel="nofollow">Stockfish 8 - Initial position until depth 59</a> by <a href="Andreas Strangm%C3%BCller.html" title="Andreas Strangmüller">Andreas Strangmüller</a>, <a href="CCC.html" title="CCC">CCC</a>, January 16, 2018 » <a href="Stockfish.html" title="Stockfish">Stockfish</a></li></ul>
+<p><b><a href="Engine Testing.html" title="Engine Testing">Up one level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722002729
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 48/1000000
+Preprocessor generated node count: 54/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1672-0!canonical and timestamp 20240722002729 and revision id 17077
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Search_Statistics&amp;oldid=17077">https://www.chessprogramming.org/index.php?title=Search_Statistics&amp;oldid=17077</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Search+Statistics&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Search Statistics.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Search Statistics&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Search Statistics.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Search Statistics&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Search Statistics&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Search Statistics.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Search Statistics.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Search Statistics&amp;oldid=17077.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Search Statistics&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 16 January 2020, at 12:18.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Search_Statistics&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.008","walltime":"0.009","ppvisitednodes":{"value":48,"limit":1000000},"ppgeneratednodes":{"value":54,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722002729","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

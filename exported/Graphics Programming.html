@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Graphics Programming - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Graphics_Programming","wgTitle":"Graphics Programming","wgCurRevisionId":19251,"wgRevisionId":19251,"wgArticleId":2045,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["David Fiuczynski","Hiromi Uehara"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Graphics_Programming","wgRelevantArticleId":2045,"wgRequestId":"Zp7DcQAL2SoIDHtirCviywAAABU","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","ext.embedVideo","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.embedVideo.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Graphics_Programming rootpage-Graphics_Programming skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Graphics Programming</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Programming.html" title="Programming">Programming</a> * Graphics Programming</b>
+</p><p><b>Graphics Programming</b> in computer chess is essentially about drawing <a href="Chess Position.html" title="Chess Position">chess positions</a> or diagrams within a <a href="User Interface.html" title="User Interface">user interface</a> to give <a class="external text" href="https://en.wikipedia.org/wiki/User_%28computing%29" rel="nofollow">users</a> a visual <a class="external text" href="https://en.wikipedia.org/wiki/Feedback" rel="nofollow">feedback</a> of the game state, while <a class="external text" href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction" rel="nofollow">interacting</a> with the program. 
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Visualization"><span class="tocnumber">1</span> <span class="toctext">Visualization</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pseudo Graphics"><span class="tocnumber">2</span> <span class="toctext">Pseudo Graphics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#ASCII Diagrams"><span class="tocnumber">2.1</span> <span class="toctext">ASCII Diagrams</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Semigraphics"><span class="tocnumber">2.2</span> <span class="toctext">Semigraphics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#High Resolution Graphics"><span class="tocnumber">3</span> <span class="toctext">High Resolution Graphics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#DOS Area"><span class="tocnumber">3.1</span> <span class="toctext">DOS Area</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Abstraction"><span class="tocnumber">3.2</span> <span class="toctext">Abstraction</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Screenshots"><span class="tocnumber">3.3</span> <span class="toctext">Screenshots</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#See also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Publications"><span class="tocnumber">5</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#1979"><span class="tocnumber">5.1</span> <span class="toctext">1979</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#1990 ..."><span class="tocnumber">5.2</span> <span class="toctext">1990 ...</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#2000 ..."><span class="tocnumber">5.3</span> <span class="toctext">2000 ...</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#2010 ..."><span class="tocnumber">5.4</span> <span class="toctext">2010 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Forum Posts"><span class="tocnumber">6</span> <span class="toctext">Forum Posts</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#External Links"><span class="tocnumber">7</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Algorithms"><span class="tocnumber">7.1</span> <span class="toctext">Algorithms</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Coordinates"><span class="tocnumber">7.2</span> <span class="toctext">Coordinates</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Geometric primitives"><span class="tocnumber">7.3</span> <span class="toctext">Geometric primitives</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Toolkits.2C Libraries and APIs"><span class="tocnumber">7.4</span> <span class="toctext">Toolkits, Libraries and APIs</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Misc"><span class="tocnumber">7.5</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Visualization">Visualization</span></h1>
+<ul><li> <a href="2D Graphics Board.html" title="2D Graphics Board">2D Graphics Board</a></li>
+<li> <a href="3D Graphics Board.html" title="3D Graphics Board">3D Graphics Board</a></li></ul>
+<p><span id="ASCIIDiagrams"></span>
+</p>
+<h1><span class="mw-headline" id="Pseudo_Graphics">Pseudo Graphics</span></h1>
+<h2><span class="mw-headline" id="ASCII_Diagrams">ASCII Diagrams</span></h2>
+<p>ASCII Diagrams on <a class="external text" href="https://en.wikipedia.org/wiki/Teleprinter" rel="nofollow">teleprinters</a> were already used by early programs, such as <a href="The Bernstein Chess Program.html" title="The Bernstein Chess Program">The Bernstein Chess Program</a>, and are still appropriate today for a rudimentary text oriented <a href="CLI.html" title="CLI">command line</a> <a href="User Interface.html" title="User Interface">user interface</a>, to display a position on a <a class="external text" href="https://en.wikipedia.org/wiki/Computer_terminal" rel="nofollow">terminal</a> with <a class="external text" href="https://en.wikipedia.org/wiki/Monospaced_font" rel="nofollow">monospaced</a> <a class="external text" href="https://en.wikipedia.org/wiki/ASCII" rel="nofollow">ASCII</a> <a class="external text" href="https://en.wikipedia.org/wiki/Character_%28computing%29" rel="nofollow">characters</a>. One may further store the characters inside "<i><a class="external text" href="https://en.wikipedia.org/wiki/Human-readable_medium" rel="nofollow">human readable</a></i>" <a class="external text" href="https://en.wikipedia.org/wiki/Text_file#ASCII" rel="nofollow">ASCII files</a> for <a href="Logging.html" title="Logging">logging-</a> or <a href="Debugging.html" title="Debugging">debugging</a> purposes. Several proposals to display an ASCII board were made in <a href="CCC.html" title="CCC">CCC</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite note-2">[2]</a></sup> . <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a> came up with the left one <sup class="reference" id="cite_ref-3"><a href="#cite note-3">[3]</a></sup> , <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a> proposed the right one with the remarks below <sup class="reference" id="cite_ref-4"><a href="#cite note-4">[4]</a></sup> :
+</p>
+<pre>
+kqKQ -
+  +------------------------+       +-*--b--c--d--*--f--g--*-+
+8 |*R *N:*B *Q:*K *B:*N *R:|     8 |[r][n][b][q][k][b][n][r]|
+7 |*P:*P *P:*P *P:*P *P:*P |     7 |[p][p][p][p][p][p][p][p]|
+6 |   :::   :::   :::   :::|     6 |   :::   :::   :::   :::|
+5 |:::   :::   :::   :::   |     5 |:::   :::   :::   :::   |
+4 |   :::   :::   :::   :::|     4 |   :::   :::   :::   :::|
+3 |:::   :::   :::   :::   |     3 |:::   :::   :::   :::   |
+2 | P :P: P :P: P :P: P :P:|     2 |&lt;P&gt;&lt;P&gt;&lt;P&gt;&lt;P&gt;&lt;P&gt;&lt;P&gt;&lt;P&gt;&lt;P&gt;|
+1 |:R: N :B: Q :K: B :N: R |     1 |&lt;R&gt;&lt;N&gt;&lt;B&gt;&lt;Q&gt;&lt;K&gt;&lt;B&gt;&lt;N&gt;&lt;R&gt;|
+  +------------------------+     =&gt;+-*--b--c--d--*--f--g--*-+
+    a  b  c  d  e  f  g  h
+
+Remarks:
+a) with "*"  is shown, where castling potential resides (FRC specific)
+b) with "=&gt;" is shown, which side has to move
+</pre>
+<p><span id="Semigraphics"></span>
+</p>
+<h2><span class="mw-headline" id="Semigraphics">Semigraphics</span></h2>
+<p>Some of the early <a class="external text" href="https://en.wikipedia.org/wiki/Home_computer" rel="nofollow">home computers</a> had semigraphics characters and <a class="external text" href="https://en.wikipedia.org/wiki/Sprite_%28computer_graphics%29" rel="nofollow">sprites</a> <sup class="reference" id="cite_ref-5"><a href="#cite note-5">[5]</a></sup> for a more realistic board representation of chess programs.
+</p>
+<div class="floatnone"><a href="http://www.computerhistory.org/chess/full record.php?iid=stl-431e1a080c29f.html" rel="nofollow"><img alt="Microchess-1-5-trs80-screenshot.l062302023.jennings.jpg" class="thumbborder" height="479" src="images/d/d1/Microchess-1-5-trs80-screenshot.l062302023.jennings.jpg" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="MicroChess.html" title="MicroChess">MicroChess</a> Screen on <a href="TRS-80.html" title="TRS-80">TRS-80</a>, 1976 <sup class="reference" id="cite_ref-6"><a href="#cite note-6">[6]</a></sup>
+</p>
+<h1><span class="mw-headline" id="High_Resolution_Graphics">High Resolution Graphics</span></h1>
+<p>Next generation <a class="external text" href="https://en.wikipedia.org/wiki/Home_computer" rel="nofollow">home-</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Personal_computer" rel="nofollow">personal computers</a> already did support not only <a class="external text" href="https://en.wikipedia.org/wiki/Text_mode" rel="nofollow">text mode</a> and semigraphics, but <a class="external text" href="https://en.wikipedia.org/wiki/Computer_graphics" rel="nofollow">graphic</a> modes for <a class="external text" href="https://en.wikipedia.org/wiki/Graphic_display_resolutions" rel="nofollow">resolutions</a> supported by the <a class="external text" href="https://en.wikipedia.org/wiki/Computer_monitor" rel="nofollow">computer monitor</a> and its <a class="external text" href="https://en.wikipedia.org/wiki/Video_card" rel="nofollow">video controller</a>. A <a class="external text" href="https://en.wikipedia.org/wiki/System_call" rel="nofollow">system call</a> was necessary to switch the video card into a mode, where each <a class="external text" href="https://en.wikipedia.org/wiki/Pixel" rel="nofollow">pixel</a> was an element of an <a href="Array.html" title="Array">array</a> <a class="external text" href="https://en.wikipedia.org/wiki/Memory-mapped_I/O" rel="nofollow">mapped</a> into the <a href="Memory.html" title="Memory">main memory</a>, either <a href="Bit.html" title="Bit">bit-wise</a> for <a class="external text" href="https://en.wikipedia.org/wiki/Black-and-white" rel="nofollow">black-and-white</a> or <a href="Nibble.html" title="Nibble">nibble-</a>, <a href="Byte.html" title="Byte">byte-</a> or <a href="Word.html" title="Word">word-wise</a> for sixteen, 256 or more colors or <a class="external text" href="https://en.wikipedia.org/wiki/Grayscale" rel="nofollow">grayscale</a>. 
+</p>
+<h2><span class="mw-headline" id="DOS_Area">DOS Area</span></h2>
+<p>Programs running under <a href="MS-DOS.html" title="MS-DOS">MS-DOS</a> on <a href="IBM PC.html" title="IBM PC">IBM PCs</a>, initially using a <a class="external text" href="https://en.wikipedia.org/wiki/Color_Graphics_Adapter" rel="nofollow">color graphics adapter</a> (CGA), and later <a class="external text" href="https://en.wikipedia.org/wiki/Hercules_Graphics_Card" rel="nofollow">Hercules graphics cards</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Video_Graphics_Array" rel="nofollow">video graphics array</a> (VGA), needed to use a <a class="external text" href="https://en.wikipedia.org/wiki/BIOS_interrupt_call" rel="nofollow">BIOS interrupt call</a>, the <a class="external text" href="https://en.wikipedia.org/wiki/INT_10H" rel="nofollow">INT 10H</a>, to switch graphic modes accordantly to make <a class="external text" href="https://en.wikipedia.org/wiki/All_Points_Addressable" rel="nofollow">all points addressable</a>. Chess programs usually worked in <a class="external text" href="https://en.wikipedia.org/wiki/Fullscreen" rel="nofollow">fullscreen</a> mode at that times on single tasking operating systems, the program run exclusively and could access whole the hardware and memory. A VGA <a class="external text" href="https://en.wikipedia.org/wiki/Display_resolution" rel="nofollow">resolution</a> of 640x480 was quite sufficient for drawing an ergonomic chess board in <a href="2D Graphics Board.html" title="2D Graphics Board">2D</a> or even <a href="3D Graphics Board.html" title="3D Graphics Board">3D</a>. 
+</p>
+<h2><span class="mw-headline" id="Abstraction">Abstraction</span></h2>
+<p>With the advent of <a class="external text" href="https://en.wikipedia.org/wiki/Computer_multitasking" rel="nofollow">multitasking</a> operating systems with <a class="external text" href="https://en.wikipedia.org/wiki/Memory_protection" rel="nofollow">memory protection</a> between <a href="Process.html" title="Process">processes</a> and a <a class="external text" href="https://en.wikipedia.org/wiki/Ring_%28computer_security%29" rel="nofollow">protection ring model</a>, and their <a class="external text" href="https://en.wikipedia.org/wiki/Graphical_user_interface" rel="nofollow">graphical user interfaces</a> and window managers, direct access was no longer possible, and video hardware became abstract, accessible via <a class="external text" href="https://en.wikipedia.org/wiki/Application_programming_interface" rel="nofollow">API-calls</a> of kernel- or <a class="external text" href="https://en.wikipedia.org/wiki/Graphics_library" rel="nofollow">graphic libraries</a> or toolkits.
+</p>
+<h2><span class="mw-headline" id="Screenshots">Screenshots</span></h2>
+<div class="floatnone"><a href="http://www.mobygames.com/game/psion-chess/screenshots.html" rel="nofollow"><img alt="275507-psion-chess-atari-st-screenshot-information-window-colour.png" class="thumbborder" height="400" src="images/1/1e/275507-psion-chess-atari-st-screenshot-information-window-colour.png" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="Psion.html" title="Psion">Psion</a> for <a href="Atari ST.html" title="Atari ST">Atari ST</a> <sup class="reference" id="cite_ref-7"><a href="#cite note-7">[7]</a></sup>
+</p>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="Chess Position.html" title="Chess Position">Chess Position</a></li>
+<li> <a href="Extended Position Description.html" title="Extended Position Description">Extended Position Description</a> (EPD)</li>
+<li> <a href="Algebraic Chess Notation.html#FAN" title="Algebraic Chess Notation">Figurine Algebraic Notation</a> (FAN)</li>
+<li> <a href="Forsyth-Edwards Notation.html" title="Forsyth-Edwards Notation">Forsyth-Edwards Notation</a> (FEN)</li>
+<li> <a href="GPU.html" title="GPU">GPU</a></li>
+<li> <a href="GUI.html" title="GUI">GUI</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="1979">1979</span></h2>
+<ul><li> <a href="Kathe Spracklen.html" title="Kathe Spracklen">Kathe Spracklen</a> (<b>1979</b>). <i>Micro Graphics and X-Y Plotter</i>. <a href="Personal Computing.html#3 2" title="Personal Computing">Personal Computing, Vol. 3, No. 2</a>, pp. 75</li></ul>
+<h2><span class="mw-headline" id="1990_...">1990 ...</span></h2>
+<ul><li> <a class="new" href="index.php?title=Alexander G. M. Smith&amp;action=edit&amp;redlink=1.html" title="Alexander G. M. Smith (page does not exist)">Alexander G. M. Smith</a> (<b>1991</b>). <i><a class="external text" href="http://web.ncf.ca/au829/Handyman/Thesis.html.html" rel="nofollow">Handyman - A Multiuser Puppeteering System for Computer Graphics Motion Control</a></i>. Masters thesis, <a class="external text" href="https://en.wikipedia.org/wiki/Carleton_University" rel="nofollow">Carleton University</a> </li></ul>
+<h2><span class="mw-headline" id="2000_...">2000 ...</span></h2>
+<ul><li> <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a> (<b>2004</b>). <i>Reduction of lighting calculations using Spherical Harmonics</i>. in <a class="external text" href="http://www.shaderx3.com/Tables%20of%20Content.htm.html" rel="nofollow">ShaderX3 - Advanced Rendering Techniques</a></li>
+<li> <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a> (<b>2005</b>). <i>Real-time damage deformation methods</i>. in <a class="external text" href="http://www.shaderx4.com/TOC.html.html" rel="nofollow">ShaderX4 - Advanced Rendering Techniques</a></li>
+<li> <a href="Oliver Vornberger.html" title="Oliver Vornberger">Oliver Vornberger</a> (<b>2006</b>). <i><a class="external text" href="http://www-lehre.inf.uos.de/%7Ecg/2006/skript/skript.html.html" rel="nofollow">Computergrafik</a></i>. <a class="external text" href="http://www-lehre.inf.uos.de/%7Ecg/2006/PDF/skript.pdf.html" rel="nofollow">pdf</a> (German)</li>
+<li> <a href="Leen Ammeraal.html" title="Leen Ammeraal">Leen Ammeraal</a>, <a class="external text" href="http://www.utdallas.edu/%7Ekzhang/.html" rel="nofollow">Kang Zhang</a> (<b>2007</b>). <i><a class="external text" href="http://home.planet.nl/%7Eammeraal/grjava2e.html.html" rel="nofollow">Computer Graphics for Java Programmers</a></i>. 2nd edition, <a class="external text" href="https://en.wikipedia.org/wiki/Wiley_(publisher)" rel="nofollow">Wiley</a> </li>
+<li> <a class="external text" href="http://goossens.web.cern.ch/goossens/.html" rel="nofollow">Michel Goossens</a>, <a class="external text" href="http://www.informit.com/authors/bio.aspx?a=A2624A62-C2B4-40F9-B8ED-E99563F89A27.html" rel="nofollow">Frank Mittelbach</a>, <a class="external text" href="http://users.ox.ac.uk/~rahtz/.html" rel="nofollow">Sebastian Rahtz</a>, <a class="external text" href="http://www.loria.fr/~roegel/.html" rel="nofollow">Denis Roegel</a>, <a class="external text" href="http://www.uit.co.uk/Authors/HerbVoss.html" rel="nofollow">Herbert Voß</a> (<b>2007</b>). <i><a class="external text" href="http://xml.web.cern.ch/XML/lgc2/.html" rel="nofollow">The LATEXGraphics Companion</a></i>. 2nd edition, Addison-Wesley, <a class="external text" href="http://ptgmedia.pearsoncmg.com/images/9780321508928/samplepages/0321508920 Sample.pdf.html" rel="nofollow">sample pdf</a>, 10.1 Chess, 10.2 Xiangqi—Chinese Chess <sup class="reference" id="cite_ref-8"><a href="#cite note-8">[8]</a></sup></li>
+<li> <a href="Vlad Stamate.html" title="Vlad Stamate">Vlad Stamate</a> (<b>2008</b>). <i>Real Time Photon Mapping Approximation on the GPU</i>. in <a class="external text" href="http://shaderx6.com/TOC.html.html" rel="nofollow">ShaderX6 - Advanced Rendering Techniques</a> <sup class="reference" id="cite_ref-9"><a href="#cite note-9">[9]</a></sup></li></ul>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Eric_Lengyel" rel="nofollow">Eric Lengye</a> (<b>2011</b>). <i><a class="external text" href="http://www.mathfor3dgameprogramming.com/.html" rel="nofollow">Mathematics for 3D Game Programming and Computer Graphics, 3rd edition</a></i>. <a class="external text" href="http://www.amazon.com/exec/obidos/tg/detail/-/1435458869.html" rel="nofollow">amazon.com</a></li>
+<li> <a href="Leen Ammeraal.html" title="Leen Ammeraal">Leen Ammeraal</a>, <a class="external text" href="http://www.utdallas.edu/%7Ekzhang/.html" rel="nofollow">Kang Zhang</a> (<b>2017</b>). <i><a class="external text" href="http://home.planet.nl/~ammeraal/grjava3e.html.html" rel="nofollow">Computer Graphics for Java Programmers</a></i>. 3rd edition, <a class="external text" href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" rel="nofollow">Springer</a></li></ul>
+<h1><span class="mw-headline" id="Forum_Posts">Forum Posts</span></h1>
+<ul><li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=113510" rel="nofollow">ASCII chess boards</a> by <a href="Steffen A. Jakob.html" title="Steffen A. Jakob">Steffen Jakob</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 2000</li>
+<li> <a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334290" rel="nofollow">ASCII Board representation</a> by <a href="Andreas Guettinger.html" title="Andreas Guettinger">Andreas Guettinger</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2003</li>
+<li> <a class="external text" href="http://www.talkchess.com/forum/viewtopic.php?start=0&amp;t=27853.html" rel="nofollow">How to place a chess piece on a bmp square ?</a> by <a href="Matthias Gemuh.html" title="Matthias Gemuh">Matthias Gemuh</a>, <a href="CCC.html" title="CCC">CCC</a>, May 11, 2009</li>
+<li> <a class="external text" href="http://www.open-aurec.com/wbforum/viewtopic.php?f=4&amp;t=51798.html#p196372" rel="nofollow">Re: piece bitmaps - how to get a transparent background</a> by <a href="Harm Geert Muller.html" title="Harm Geert Muller">H.G.Muller</a>, <a href="Computer Chess Forums.html" title="Computer Chess Forums">Winboard Programming Forum</a>, May 23, 2011</li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="http://commons.wikimedia.org/wiki/Category:Chess bitmap pieces.html" rel="nofollow">Category:Chess bitmap pieces - Wikimedia Commons</a></li>
+<li> <a class="external text" href="http://www.enpassant.dk/chess/grafeng.htm.html" rel="nofollow">Chess Graphics</a> from <a class="external text" href="http://www.enpassant.dk/chess/homeeng.htm.html" rel="nofollow">En Passant - Nørresundby Chess Club</a></li></ul>
+<h2><span class="mw-headline" id="Algorithms">Algorithms</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Even-odd_rule" rel="nofollow">Even-odd rule from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Flood_fill" rel="nofollow">Flood fill from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Line_drawing_algorithm" rel="nofollow">Line drawing algorithm from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Digital_Differential_Analyzer_%28graphics_algorithm%29" rel="nofollow">Digital Differential Analyzer (graphics algorithm)</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm" rel="nofollow">Bresenham's line algorithm</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm" rel="nofollow">Xiaolin Wu's line algorithm</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29" rel="nofollow">Ray tracing (graphics) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Spline_interpolation" rel="nofollow">Spline interpolation from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/De_Boor%27s_algorithm" rel="nofollow">De Boor's algorithm</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm" rel="nofollow">De Casteljau's algorithm</a></dd></dl>
+<h2><span class="mw-headline" id="Coordinates"><a class="external text" href="https://en.wikipedia.org/wiki/Coordinate_system" rel="nofollow">Coordinates</a></span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Coordinate_system" rel="nofollow">Coordinate system from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system" rel="nofollow">Cartesian coordinate system</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Curvilinear_coordinates" rel="nofollow">Curvilinear coordinates</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Coordinate_rotations_and_reflections" rel="nofollow">Coordinate rotations and reflections from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Euclidean_space" rel="nofollow">Euclidean space from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_common_coordinate_transformations" rel="nofollow">List of common coordinate transformations from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Orthogonal_group" rel="nofollow">Orthogonal group from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Transformation_%28function%29" rel="nofollow">Transformation (function) from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Reflection_%28mathematics%29" rel="nofollow">Reflection (mathematics)</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Rotation_%28mathematics%29" rel="nofollow">Rotation (mathematics)</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Rotation_matrix" rel="nofollow">Rotation matrix</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Transformation_matrix" rel="nofollow">Transformation matrix</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Translation_%28geometry%29" rel="nofollow">Translation (geometry)</a></dd></dl>
+<h2><span class="mw-headline" id="Geometric_primitives"><a class="external text" href="https://en.wikipedia.org/wiki/Geometric_primitive" rel="nofollow">Geometric primitives</a></span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Arc_%28geometry%29" rel="nofollow">Arc (geometry) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/B-spline" rel="nofollow">B-spline from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Bitmap" rel="nofollow">Bitmap from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" rel="nofollow">Bézier curve from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Circle" rel="nofollow">Circle from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Ellipse" rel="nofollow">Ellipse from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Line_segment" rel="nofollow">Line segment from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Pixel" rel="nofollow">Pixel from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Plane_%28geometry%29" rel="nofollow">Plane (geometry) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Polygon" rel="nofollow">Polygon from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Polygonal_chain" rel="nofollow">Polygonal chain from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Point_%28geometry%29" rel="nofollow">Point (geometry) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Point_in_polygon" rel="nofollow">Point in polygon from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Quadrilateral" rel="nofollow">Quadrilateral from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Rectangle" rel="nofollow">Rectangle from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Spline_%28mathematics%29" rel="nofollow">Spline (mathematics) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Texture_mapping" rel="nofollow">Texture mapping from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Triangle" rel="nofollow">Triangle from Wikipedia</a></li></ul>
+<h2><span class="mw-headline" id="Toolkits.2C_Libraries_and_APIs">Toolkits, Libraries and APIs</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/DirectX" rel="nofollow">DirectX from Wikipedia</a> » <a href="Windows.html" title="Windows">Windows</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Direct2D" rel="nofollow">Direct2D from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Direct3D" rel="nofollow">Direct3D from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/DirectDraw" rel="nofollow">DirectDraw from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/DirectDraw_Surface" rel="nofollow">DirectDraw Surface from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/FLTK" rel="nofollow">Fast Light Tool Kit (FLTK) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/GDK" rel="nofollow">GDK</a> / <a class="external text" href="https://en.wikipedia.org/wiki/Xlib" rel="nofollow">XLib from Wikipedia</a> » <a href="Unix.html" title="Unix">Unix</a>, <a href="Linux.html" title="Linux">Linux</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Graphics_Device_Interface" rel="nofollow">Graphics Device Interface from Wikipedia</a> (GDI) » <a href="Windows.html" title="Windows">Windows</a></li></ul>
+<dl><dd> <a class="external text" href="http://msdn.microsoft.com/de-de/library/fxhhde73%28v=VS.100%29.aspx.html" rel="nofollow">CDC Class - Device Context</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library" rel="nofollow">Microsoft Foundation Class Library</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Microsoft_Developer_Network" rel="nofollow">MSDN</a> </dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/GTK%2B" rel="nofollow">GTK+ (GIMP Toolkit) from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/Gtkmm" rel="nofollow">gtkmm from Wikipedia</a></dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Gtk_Sharp" rel="nofollow">Gtk Sharp from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Google_Web_Toolkit" rel="nofollow">Google Web Toolkit (GWT) from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="http://www.vectomatic.org/libs/lib-gwt-svg.html" rel="nofollow">lib-gwt-svg « vectomatic</a></dd>
+<dd> <a class="external text" href="https://code.google.com/p/vectomatic/" rel="nofollow">vectomatic - standard dynamic 2D graphics in web browsers - Google Project Hosting</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/List_of_widget_toolkits" rel="nofollow">List of widget toolkits from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Motif_%28widget_toolkit%29" rel="nofollow">Motif (widget toolkit) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/OpenGL" rel="nofollow">OpenGL from Wikipedia</a></li></ul>
+<dl><dd> <a class="external text" href="http://graphics.usc.edu/~suyay/class/Programming.pdf.html" rel="nofollow">Graphics Programming - Introduction to OpenGL</a> (pdf)</dd>
+<dd> <a class="external text" href="https://en.wikipedia.org/wiki/Comparison_of_OpenGL_and_Direct3D" rel="nofollow">Comparison of OpenGL and Direct3D from Wikipedia</a></dd></dl>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Quartz_%28graphics_layer%29" rel="nofollow">Quartz from Wikipedia</a> » <a href="Mac OS.html" title="Mac OS">OS X</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/QuickDraw" rel="nofollow">QuickDraw from Wikipedia</a> » <a href="Mac OS.html" title="Mac OS">OS X</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Qt_%28toolkit%29" rel="nofollow">QT toolkit from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/S3_Texture_Compression" rel="nofollow">S3 Texture Compression from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics" rel="nofollow">Scalable Vector Graphics from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Standard_Widget_Toolkit" rel="nofollow">Standard Widget Toolkit from Wikipedia</a> » <a href="Java.html" title="Java">Java</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Swing_%28Java%29" rel="nofollow">Swing from Wikipedia</a> » <a href="Java.html" title="Java">Java</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Texture_compression" rel="nofollow">Texture compression from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Tk_%28framework%29" rel="nofollow">Tk (framework) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Vector_graphics" rel="nofollow">Vector Graphics from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Visual_Component_Library" rel="nofollow">Visual Component Library (VCL) from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/Widget_toolkit" rel="nofollow">Widget toolkit from Wikipedia</a></li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/WxWidgets" rel="nofollow">wxWidgets from Wikipedia</a> </li>
+<li> <a class="external text" href="https://en.wikipedia.org/wiki/X_Window_System" rel="nofollow">X Window System (X11) from Wikipedia</a> » <a href="Unix.html" title="Unix">Unix</a>, <a href="Linux.html" title="Linux">Linux</a></li></ul>
+<dl><dd> <a class="external text" href="https://en.wikipedia.org/wiki/X11.app" rel="nofollow">X11.app (XQuartz) from Wikipedia</a> » <a href="Mac OS.html" title="Mac OS">OS X</a></dd></dl>
+<h2><span class="mw-headline" id="Misc">Misc</span></h2>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Hiromi_Uehara#Hiromi.27s_Sonicbloom" rel="nofollow">Hiromi's Sonicbloom</a> - <a class="external text" href="https://en.wikipedia.org/wiki/Beyond_Standard" rel="nofollow">XYG</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Blue_Note_Tokyo" rel="nofollow">Blue Note Tokyo</a>, November 29, 2007, <a class="external text" href="https://en.wikipedia.org/wiki/YouTube" rel="nofollow">YouTube</a> Video</li></ul>
+<dl><dd> <a href="Category:Hiromi Uehara.html" title="Category:Hiromi Uehara">Hiromi Uehara</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Martin_Valihora" rel="nofollow">Martin Valihora</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Tony_Grey" rel="nofollow">Tony Grey</a>, <a href="Category:David Fiuczynski.html" title="Category:David Fiuczynski">David Fiuczynski</a></dd>
+<dd> <div class="embedvideo ev_inline ev_top autoResize" style=" width: 646px;"><div class="embedvideowrap" style="width: 640px;"><iframe allowfullscreen="true" frameborder="0" height="360" src="//www.youtube.com/embed/IZtG4CltzWA?" width="640"></iframe></div></div></dd></dl>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=113510" rel="nofollow">ASCII chess boards</a> by <a href="Steffen A. Jakob.html" title="Steffen A. Jakob">Steffen Jakob</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 2000</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite ref-2">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334290" rel="nofollow">ASCII Board representation</a> by <a href="Andreas Guettinger.html" title="Andreas Guettinger">Andreas Guettinger</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2003</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite ref-3">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=113544" rel="nofollow">Re: ASCII chess boards</a> by <a href="Ernst A. Heinz.html" title="Ernst A. Heinz">Ernst A. Heinz</a>, <a href="CCC.html" title="CCC">CCC</a>, June 05, 2000</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite ref-4">↑</a></span> <span class="reference-text"><a class="external text" href="https://www.stmintz.com/ccc/index.php?id=334328" rel="nofollow">Re: ASCII Board representation</a> by <a href="Reinhard Scharnagl.html" title="Reinhard Scharnagl">Reinhard Scharnagl</a>, <a href="CCC.html" title="CCC">CCC</a>, December 08, 2003</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite ref-5">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/List_of_home_computers_by_video_hardware" rel="nofollow">List of home computers by video hardware from Wikipedia</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite ref-6">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.computerhistory.org/chess/full record.php?iid=stl-431e1a080c29f.html" rel="nofollow">Microchess 1.5 running on a Radio Shack TRS-80 microcomputer</a>, 1976, Courtesy of <a href="Peter Jennings.html" title="Peter Jennings">Peter Jennings</a>, <a href="The Computer History Museum.html" title="The Computer History Museum">The Computer History Museum</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite ref-7">↑</a></span> <span class="reference-text"><a class="external text" href="http://www.mobygames.com/game/psion-chess/screenshots.html" rel="nofollow">Psion Chess screenshots</a> from <a class="external text" href="https://en.wikipedia.org/wiki/MobyGames" rel="nofollow">MobyGames</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite ref-8">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/LaTeX" rel="nofollow">LaTeX from Wikipedia</a></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite ref-9">↑</a></span> <span class="reference-text"><a class="external text" href="https://en.wikipedia.org/wiki/Photon_mapping" rel="nofollow">Photon mapping from Wikipedia</a></span>
+</li>
+</ol></div>
+<p><b><a href="Programming.html" title="Programming">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722175457
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.035 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 241/1000000
+Preprocessor generated node count: 474/1000000
+Post‐expand include size: 4268/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.736      1 -total
+ 47.85%    1.309      1 Template:Graphic_and_Widgets
+ 46.78%    1.280      1 Template:Graphic_Algorithms
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:2045-0!canonical and timestamp 20240722175457 and revision id 19251
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Graphics_Programming&amp;oldid=19251">https://www.chessprogramming.org/index.php?title=Graphics_Programming&amp;oldid=19251</a>"					</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category:David Fiuczynski.html" title="Category:David Fiuczynski">David Fiuczynski</a></li><li><a href="Category:Hiromi Uehara.html" title="Category:Hiromi Uehara">Hiromi Uehara</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Graphics+Programming&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Graphics Programming.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Graphics Programming&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Graphics Programming.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Graphics Programming&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Graphics Programming&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Graphics Programming.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Graphics Programming.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Graphics Programming&amp;oldid=19251.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Graphics Programming&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 28 May 2020, at 11:32.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Graphics_Programming&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.035","walltime":"0.040","ppvisitednodes":{"value":241,"limit":1000000},"ppgeneratednodes":{"value":474,"limit":1000000},"postexpandincludesize":{"value":4268,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    2.736      1 -total"," 47.85%    1.309      1 Template:Graphic_and_Widgets"," 46.78%    1.280      1 Template:Graphic_Algorithms"]},"cachereport":{"timestamp":"20240722175457","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":45});});</script>
+</body>
+</html>

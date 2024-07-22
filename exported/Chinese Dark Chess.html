@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="client-nojs" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chinese Dark Chess - Chessprogramming wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Chinese_Dark_Chess","wgTitle":"Chinese Dark Chess","wgCurRevisionId":19792,"wgRevisionId":19792,"wgArticleId":1876,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Chinese_Dark_Chess","wgRelevantArticleId":1876,"wgRequestId":"Zp7DTRyNUS9uSkBTB6KTJwAAAAY","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@0kthzed",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;printable=1&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.30.1" name="generator"/>
+<meta content="noindex,follow" name="robots"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/opensearch_desc.php" rel="search" title="Chessprogramming wiki (en)" type="application/opensearchdescription+xml"/>
+<link href="https://www.chessprogramming.org/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="/Chessprogramming:About" rel="license"/>
+<link href="/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="Chessprogramming wiki Atom feed" type="application/atom+xml"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js?40bd4"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chinese_Dark_Chess rootpage-Chinese_Dark_Chess skin-vector action-view"> <div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 class="firstHeading" id="firstHeading" lang="en">Chinese Dark Chess</h1>
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Chessprogramming wiki</div>
+<div id="contentSub"></div>
+<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p><b><a href="Main Page.html" title="Main Page">Home</a> * <a href="Games.html" title="Games">Games</a> * Chinese Dark Chess</b>
+</p><p><b>Chinese Dark Chess</b> (暗棋),<br/>
+a popular version of <a class="external text" href="https://en.wikipedia.org/wiki/Banqi" rel="nofollow">Banqi</a>, a variation of <a href="Chinese Chess.html" title="Chinese Chess">Chinese Chess</a> that only uses half of the board, also called <i>dark chess</i>, <i>half chess</i> or <i>blind chess</i>. Chinese dark chess is a <a class="external text" href="https://en.wikipedia.org/wiki/Two-player_game" rel="nofollow">two-player</a> <a class="external text" href="https://en.wikipedia.org/wiki/Zero-sum_%28game_theory%29" rel="nofollow">zero-sum</a> and incomplete information <a class="external text" href="https://en.wikipedia.org/wiki/Board_game" rel="nofollow">board game</a>.
+</p>
+<div class="toc" id="toc"><div class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Photos"><span class="tocnumber">1</span> <span class="toctext">Photos</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tournaments"><span class="tocnumber">2</span> <span class="toctext">Tournaments</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Publications"><span class="tocnumber">4</span> <span class="toctext">Publications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#2010 ..."><span class="tocnumber">4.1</span> <span class="toctext">2010 ...</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#2015 ..."><span class="tocnumber">4.2</span> <span class="toctext">2015 ...</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#2020 ..."><span class="tocnumber">4.3</span> <span class="toctext">2020 ...</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#External Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<h1><span class="mw-headline" id="Photos">Photos</span></h1>
+<div class="floatnone"><a href="https://icga.org/?page_id=849&amp;wppa-album=6&amp;wppa-cover=0&amp;wppa-occur=1&amp;wppa-photo=83" rel="nofollow"><img alt="DarkChess2013.jpg" class="thumbborder" height="424" src="images/a/ab/DarkChess2013.jpg" style="vertical-align: text-bottom" width="640"/></a></div>
+<p><a href="17th Computer Olympiad.html" title="17th Computer Olympiad">Yokohama 2013</a> award ceremony <a class="mw-selflink selflink">Chinese Dark Chess</a>, <a href="Hung-Jui Chang.html" title="Hung-Jui Chang">Hung-Jui Chang</a> (Operator Yahari, Bronze),<br/><a href="Wen-Jie Tseng.html" title="Wen-Jie Tseng">Wen-Jie Tseng</a> (DarkKnight, Gold), <a href="Cheng-Wei Chou.html" title="Cheng-Wei Chou">Cheng-Wei Chou</a> (Diablo, Silver), and <a href="Jaap van den Herik.html" title="Jaap van den Herik">Jaap van den Herik</a> <sup class="reference" id="cite_ref-1"><a href="#cite note-1">[1]</a></sup> 
+|}
+</p>
+<h1><span class="mw-headline" id="Tournaments">Tournaments</span></h1>
+<table class="wikitable">
+<tr>
+<th> Date
+</th>
+<th> Event
+</th>
+<th> Rank 1
+</th>
+<th> Rank 2
+</th>
+<th> Rank 3
+</th>
+<th> Rank 4
+</th>
+<th> Rank 5
+</th></tr>
+<tr>
+<th> 2010/09
+</th>
+<td> <a class="new" href="index.php?title=TAAI 2010&amp;action=edit&amp;redlink=1.html" title="TAAI 2010 (page does not exist)">TAAI 2010</a>
+</td>
+<td>  Flipper
+</td>
+<td>  Dark Chess Beta
+</td>
+<td>  Leave or Lose
+</td>
+<td>  -
+</td>
+<td>  -
+</td></tr>
+<tr>
+<th> 2010/10
+</th>
+<td> <a href="15th Computer Olympiad.html#ChineseDarkChess" title="15th Computer Olympiad">15th Computer Olympiad</a>
+</td>
+<td>  Modark
+</td>
+<td>  Dark Chess Beta
+</td>
+<td>  Leave or Lose
+</td>
+<td>  Flipper
+</td>
+<td>  Dark chesser
+</td></tr>
+<tr>
+<th> 2011/06
+</th>
+<td> <a class="new" href="index.php?title=TCGA 2011&amp;action=edit&amp;redlink=1.html" title="TCGA 2011 (page does not exist)">TCGA 2011</a>
+</td>
+<td>  Diablo
+</td>
+<td>  Leave-or-Lose
+</td>
+<td>  Dark chesser
+</td>
+<td>  Flipper
+</td>
+<td>  Piranha
+</td></tr>
+<tr>
+<th> 2011/11
+</th>
+<td> <a class="new" href="index.php?title=TAAI 2011&amp;action=edit&amp;redlink=1.html" title="TAAI 2011 (page does not exist)">TAAI 2011</a>
+</td>
+<td>  Diablo
+</td>
+<td>  DarkCraft
+</td>
+<td>  Dark chesser
+</td>
+<td>  ?
+</td>
+<td>  -
+</td></tr>
+<tr>
+<th> 2011/11
+</th>
+<td> <a href="16th Computer Olympiad.html#ChineseDarkChess" title="16th Computer Olympiad">16th Computer Olympiad</a>
+</td>
+<td>  DarkCraft
+</td>
+<td>  Dark chesser
+</td>
+<td>  Diablo
+</td>
+<td>  TopGun
+</td>
+<td>  -
+</td></tr>
+<tr>
+<th> 2012/07
+</th>
+<td> <a class="new" href="index.php?title=TCGA 2012&amp;action=edit&amp;redlink=1.html" title="TCGA 2012 (page does not exist)">TCGA 2012</a>
+</td>
+<td>  Diablo
+</td>
+<td>  Flipper
+</td>
+<td>  TuxedoCat
+</td>
+<td>  Darkness, Dark Chesser
+</td></tr>
+<tr>
+<th> 2012/11
+</th>
+<td> <a class="new" href="index.php?title=TAAI 2012&amp;action=edit&amp;redlink=1.html" title="TAAI 2012 (page does not exist)">TAAI 2012</a>
+</td>
+<td>  Diablo
+</td>
+<td>  Flipper, Darkness
+</td>
+<td>
+</td>
+<td>  TuxedoCat
+</td></tr>
+<tr>
+<th> 2013/06
+</th>
+<td> <a class="new" href="index.php?title=TCGA 2013&amp;action=edit&amp;redlink=1.html" title="TCGA 2013 (page does not exist)">TCGA 2013</a>
+</td>
+<td>  DarkKnight
+</td>
+<td>  SGTDark
+</td>
+<td>  Darkness
+</td>
+<td>  ?
+</td>
+<td>  ?
+</td></tr>
+<tr>
+<th> 2013/08
+</th>
+<td> <a href="17th Computer Olympiad.html#ChineseDarkChess" title="17th Computer Olympiad">17th Computer Olympiad</a>
+</td>
+<td>  DarkKnight
+</td>
+<td>  Diablo
+</td>
+<td>  Yahari
+</td>
+<td>  Flipper
+</td>
+<td>  Darkness
+</td></tr>
+<tr>
+<th> 2013/12
+</th>
+<td> <a class="new" href="index.php?title=TAAI 2013&amp;action=edit&amp;redlink=1.html" title="TAAI 2013 (page does not exist)">TAAI 2013</a>
+</td>
+<td>  Yahari
+</td>
+<td>  ?
+</td></tr>
+<tr>
+<th> 2014/06
+</th>
+<td> <a class="new" href="index.php?title=TCGA 2014&amp;action=edit&amp;redlink=1.html" title="TCGA 2014 (page does not exist)">TCGA 2014</a>
+</td>
+<td>  Yahari
+</td>
+<td>  DarkKnight
+</td>
+<td>  Observer
+</td>
+<td>  TuxedoCat
+</td>
+<td>  Diablo
+</td></tr>
+<tr>
+<th> 2015/07
+</th>
+<td> <a href="18th Computer Olympiad.html#ChineseDarkChess" title="18th Computer Olympiad">18th Computer Olympiad</a>
+</td>
+<td>  DarkKnight
+</td>
+<td>  Yahari
+</td>
+<td>  Observer
+</td>
+<td>  TuxedoCat
+</td>
+<td>  Darkness
+</td></tr>
+<tr>
+<th> 2016/07
+</th>
+<td> <a href="19th Computer Olympiad.html#ChineseDarkChess" title="19th Computer Olympiad">19th Computer Olympiad</a>
+</td>
+<td>  DarkKnight
+</td>
+<td>  Yahari
+</td>
+<td>  NewbieDarkChess
+</td>
+<td>  Observer
+</td>
+<td>  Dancing
+</td></tr>
+<tr>
+<th> 2017/07
+</th>
+<td> <a href="20th Computer Olympiad.html#ChineseDarkChess" title="20th Computer Olympiad">20th Computer Olympiad</a>
+</td>
+<td>  DarkKnight
+</td>
+<td>  PupilDarkChess
+</td>
+<td>  Yahari
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h1><span class="mw-headline" id="See_also">See also</span></h1>
+<ul><li> <a href="KriegSpiel.html" title="KriegSpiel">KriegSpiel</a></li>
+<li> <a href="Phantom Go.html" title="Phantom Go">Phantom Go</a></li></ul>
+<h1><span class="mw-headline" id="Publications">Publications</span></h1>
+<h2><span class="mw-headline" id="2010_...">2010 ...</span></h2>
+<ul><li> <a href="Bo-Nian Chen.html" title="Bo-Nian Chen">Bo-Nian Chen</a>, <a href="Bing-Jie Shen.html" title="Bing-Jie Shen">Bing-Jie Shen</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2010</b>). <i>Chinese Dark Chess</i>. <a href="ICGA Journal.html#33 2" title="ICGA Journal">ICGA Journal, Vol. 33, No. 2</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a class="new" href="index.php?title=Shih-Yuan Chiu&amp;action=edit&amp;redlink=1.html" title="Shih-Yuan Chiu (page does not exist)">Shih-Yuan Chiu</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a> (<b>2010</b>). <i>Modark wins Chinese Dark Chess Tournament</i>. <a href="ICGA Journal.html#33 4" title="ICGA Journal">ICGA Journal, Vol. 33, No. 4</a> » <a href="15th Computer Olympiad.html#ChineseDarkChess" title="15th Computer Olympiad">15th Computer Olympiad</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a href="Cheng-Wei Chou.html" title="Cheng-Wei Chou">Cheng-Wei Chou</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a>, <a href="Kuo-Yuan Kao.html" title="Kuo-Yuan Kao">Kuo-Yuan Kao</a> (<b>2012</b>). <i>The Art of the Chinese Dark Chess Program DIABLE</i>. <a class="external text" href="http://ics2012.ndhu.edu.tw/.html" rel="nofollow">ICS 2012</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Hualien_City" rel="nofollow">Hualien</a>, <a class="external text" href="https://en.wikipedia.org/wiki/Taiwan" rel="nofollow">Taiwan</a>, December 2012</li>
+<li> <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a class="new" href="index.php?title=Ting-Yu Lin&amp;action=edit&amp;redlink=1.html" title="Ting-Yu Lin (page does not exist)">Ting-Yu Lin</a>, <a href="Shun-Chin Hsu.html" title="Shun-Chin Hsu">Shun-Chin Hsu</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2012</b>). <i>Design and Implementation of Computer Chinese Dark Chess Endgame Database</i>, <a class="new" href="index.php?title=TCGA 2012&amp;action=edit&amp;redlink=1.html" title="TCGA 2012 (page does not exist)">TCGA Workshop 2012</a></li>
+<li> <a href="Bo-Nian Chen.html" title="Bo-Nian Chen">Bo-Nian Chen</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2013</b>). <i>Automatic Generation of Chinese Dark Chess Opening Books</i>. <a href="CG 2013.html" title="CG 2013">CG 2013</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="Bo-Nian Chen.html" title="Bo-Nian Chen">Bo-Nian Chen</a>, <a href="Wen-Jie Tseng.html" title="Wen-Jie Tseng">Wen-Jie Tseng</a> (<b>2013</b>).  <i>DARKNIGHT Wins Chinese Dark Chess Tournament</i>. <a href="ICGA Journal.html#36 3" title="ICGA Journal">ICGA Journal, Vol. 36, No. 3</a> » <a href="17th Computer Olympiad.html#ChineseDarkChess" title="17th Computer Olympiad">17th Computer Olympiad</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a href="Cheng-Wei Chou.html" title="Cheng-Wei Chou">Cheng-Wei Chou</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a>, <a href="Kuo-Yuan Kao.html" title="Kuo-Yuan Kao">Kuo-Yuan Kao</a> (<b>2014</b>). <i>Design and Implementation of Chinese Dark Chess Programs</i>. Computational Intelligence and AI in Games</li>
+<li> <a class="new" href="index.php?title=Nicolas Jouandeau&amp;action=edit&amp;redlink=1.html" title="Nicolas Jouandeau (page does not exist)">Nicolas Jouandeau</a>, <a href="Tristan Cazenave.html" title="Tristan Cazenave">Tristan Cazenave</a> (<b>2014</b>). <i>Small and Large MCTS Playouts applied to Chinese Dark Chess Stochastic Game</i>. <a class="new" href="index.php?title=ECAI CGW 2014&amp;action=edit&amp;redlink=1.html" title="ECAI CGW 2014 (page does not exist)">ECAI CGW 2014</a></li></ul>
+<h2><span class="mw-headline" id="2015_...">2015 ...</span></h2>
+<ul><li> <a href="Chu-Hsuan Hsueh.html" title="Chu-Hsuan Hsueh">Chu-Hsuan Hsueh</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a> (<b>2015</b>). <i>DARKKNIGHT wins Chinese Dark Chess Tournament</i>. <a href="ICGA Journal.html#38 4" title="ICGA Journal">ICGA Journal, Vol. 38, No. 4</a> » <a href="18th Computer Olympiad.html#ChineseDarkChess" title="18th Computer Olympiad">18th Computer Olympiad</a></li>
+<li> <a href="Shi-Jim Yen.html" title="Shi-Jim Yen">Shi-Jim Yen</a>, <a href="Cheng-Wei Chou.html" title="Cheng-Wei Chou">Cheng-Wei Chou</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a>, <a href="Kuo-Yuan Kao.html" title="Kuo-Yuan Kao">Kuo-Yuan Kao</a> (<b>2015</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/document/6826513/.html" rel="nofollow">Design and Implementation of Chinese Dark Chess Programs</a></i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 7, No. 1</li>
+<li> <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a class="new" href="index.php?title=Ting-Yu Lin&amp;action=edit&amp;redlink=1.html" title="Ting-Yu Lin (page does not exist)">Ting-Yu Lin</a>, <a href="Bo-Nian Chen.html" title="Bo-Nian Chen">Bo-Nian Chen</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2015</b>). <i><a class="external text" href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4804728.html" rel="nofollow">Equivalence Classes in Chinese Dark Chess Endgames</a></i>. <a href="IEEE.html#TOCIAIGAMES" title="IEEE">IEEE Transactions on Computational Intelligence and AI in Games</a>, Vol. 7, No. 2</li>
+<li> <a href="Wen-Jie Tseng.html" title="Wen-Jie Tseng">Wen-Jie Tseng</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a> (<b>2017</b>). <i>DarkKnight Wins Chinese Dark Chess Tournament</i>. <a href="ICGA Journal.html#39 2" title="ICGA Journal">ICGA Journal, Vol. 39, No. 2</a> » <a href="19th Computer Olympiad.html#ChineseDarkChess" title="19th Computer Olympiad">19th Computer Olympiad 2016</a></li>
+<li> <a href="Hung-Jui Chang.html" title="Hung-Jui Chang">Hung-Jui Chang</a>, <a class="new" href="index.php?title=Gang-Yu Fan&amp;action=edit&amp;redlink=1.html" title="Gang-Yu Fan (page does not exist)">Gang-Yu Fan</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="Chih-Wen Hsueh.html" title="Chih-Wen Hsueh">Chih-Wen Hsueh</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2017</b>). <i><a class="external text" href="https://link.springer.com/chapter/10.1007/978-3-319-75931-9_10" rel="nofollow">Validating and Fine-Tuning of Game Evaluation Functions Using Endgame Databases</a></i>. <a href="Conferences.html#IJCAI2017" title="Conferences">CGW@IJCAI 2017</a></li>
+<li> <a href="Hung-Jui Chang.html" title="Hung-Jui Chang">Hung-Jui Chang</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a class="new" href="index.php?title=Gang-Yu Fan&amp;action=edit&amp;redlink=1.html" title="Gang-Yu Fan (page does not exist)">Gang-Yu Fan</a>, <a href="Chih-Wen Hsueh.html" title="Chih-Wen Hsueh">Chih-Wen Hsueh</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a>  (<b>2018</b>). <i>Using Chinese dark chess endgame databases to validate and fine-tune game evaluation functions</i>. <a href="ICGA Journal.html#40 2" title="ICGA Journal">ICGA Journal, Vol. 40, No. 2</a> » <a href="Endgame Tablebases.html" title="Endgame Tablebases">Endgame Tablebases</a></li>
+<li> <a href="Hung-Jui Chang.html" title="Hung-Jui Chang">Hung-Jui Chang</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="Chih-Wen Hsueh.html" title="Chih-Wen Hsueh">Chih-Wen Hsueh</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2018</b>). <i>Analysis and efficient solutions for 2 × 4 Chinese dark chess</i>. <a href="ICGA Journal.html#40 2" title="ICGA Journal">ICGA Journal, Vol. 40, No. 2</a></li>
+<li> <a href="Chu-Hsuan Hsueh.html" title="Chu-Hsuan Hsueh">Chu-Hsuan Hsueh</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a> (<b>2018</b>). <i>An investigation of strength analysis metrics for game-playing programs: A case study in Chinese dark chess</i>. <a href="ICGA Journal.html#40 2" title="ICGA Journal">ICGA Journal, Vol. 40, No. 2</a></li>
+<li> <a href="Chu-Hsuan Hsueh.html" title="Chu-Hsuan Hsueh">Chu-Hsuan Hsueh</a>, <a href="I-Chen Wu.html" title="I-Chen Wu">I-Chen Wu</a>, <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a href="Tsan-sheng Hsu.html" title="Tsan-sheng Hsu">Tsan-sheng Hsu</a> (<b>2018</b>). <i>AlphaZero for a Non-Deterministic Game</i>. <a href="TAAI 2018.html" title="TAAI 2018">TAAI 2018</a> » <a href="AlphaZero.html" title="AlphaZero">AlphaZero</a></li></ul>
+<h2><span class="mw-headline" id="2020_...">2020 ...</span></h2>
+<ul><li> <a href="Jr-Chang Chen.html" title="Jr-Chang Chen">Jr-Chang Chen</a>, <a class="new" href="index.php?title=Ting-Yu Lin&amp;action=edit&amp;redlink=1.html" title="Ting-Yu Lin (page does not exist)">Ting-Yu Lin</a>, <a class="new" href="index.php?title=Gang-Yu Fan&amp;action=edit&amp;redlink=1.html" title="Gang-Yu Fan (page does not exist)">Gang-Yu Fan</a> (<b>2020</b>). <i>Yahari wins Chinese dark chess tournament</i>. <a href="ICGA Journal.html#42 1" title="ICGA Journal">ICGA Journal, Vol. 42, No. 1</a> » <a class="new" href="index.php?title=22nd Computer Olympiad&amp;action=edit&amp;redlink=1.html" title="22nd Computer Olympiad (page does not exist)">22nd Computer Olympiad</a></li></ul>
+<h1><span class="mw-headline" id="External_Links">External Links</span></h1>
+<ul><li> <a class="external text" href="https://en.wikipedia.org/wiki/Banqi" rel="nofollow">Banqi from Wikipedia</a></li>
+<li> <a class="external text" href="http://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E6%9A%97%E6%A3%8B.html" rel="nofollow">Chinese Dark Chess from Wikipedia</a> (Chinese)</li>
+<li> <a class="external text" href="http://ref.kcwu.csie.org/darkchess/.html" rel="nofollow">Links about Chinse Dark Chess</a></li>
+<li> <a class="external text" href="https://www.game-ai-forum.org/icga-tournaments/game.php?id=40" rel="nofollow">Chinese Dark Chess (ICGA Tournaments)</a></li></ul>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite ref-1">↑</a></span> <span class="reference-text"><a class="external text" href="https://icga.org/?page_id=849" rel="nofollow">Photos 2013 Events: day 5</a>, <a href="ICGA.html" title="ICGA">ICGA</a></span>
+</li>
+</ol></div>
+<p><b><a href="Games.html" title="Games">Up one Level</a></b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240722062003
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.018 seconds
+Real time usage: 0.020 seconds
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 90/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key oscar70_mw1-mw_:pcache:idhash:1876-0!canonical and timestamp 20240722062003 and revision id 19792
+ -->
+</div> <div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.chessprogramming.org/index.php?title=Chinese_Dark_Chess&amp;oldid=19792">https://www.chessprogramming.org/index.php?title=Chinese_Dark_Chess&amp;oldid=19792</a>"					</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div aria-labelledby="p-personal-label" class="" id="p-personal" role="navigation">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a accesskey="o" href="index.php?title=Special:UserLogin&amp;returnto=Chinese+Dark+Chess&amp;returntoquery=printable%3Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li class="selected" id="ca-nstab-main"><span><a accesskey="c" href="Chinese Dark Chess.html" title="View the content page [c]">Page</a></span></li>
+<li class="new" id="ca-talk"><span><a accesskey="t" href="index.php?title=Talk:Chinese Dark Chess&amp;action=edit&amp;redlink=1.html" rel="discussion" title="Discussion about the content page [t]">Discussion</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+<h3 id="p-variants-label">
+<span>Variants</span>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li class="selected" id="ca-view"><span><a href="Chinese Dark Chess.html">Read</a></span></li>
+<li id="ca-viewsource"><span><a accesskey="e" href="index.php?title=Chinese Dark Chess&amp;action=edit.html" title="This page is protected.
+You can view its source [e]">View source</a></span></li>
+<li class="collapsible" id="ca-history"><span><a accesskey="h" href="index.php?title=Chinese Dark Chess&amp;action=history.html" title="Past revisions of this page [h]">View history</a></span></li>
+</ul>
+</div>
+<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+<h3 id="p-cactions-label"><span>More</span></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/index.php" id="searchform">
+<div id="simpleSearch">
+<input accesskey="f" id="searchInput" name="search" placeholder="Search Chessprogramming wiki" title="Search Chessprogramming wiki [f]" type="search"/><input name="title" type="hidden" value="Special:Search"/><input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/><input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main Page.html" title="Visit the main page"></a></div>
+<div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+<h3 id="p-navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a accesskey="z" href="Main Page.html" title="Visit the main page [z]">Main page</a></li><li id="n-recentchanges"><a accesskey="r" href="Special:RecentChanges.html" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-randompage"><a accesskey="x" href="Special:Random.html" title="Load a random page [x]">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+<h3 id="p-tb-label">Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="Special:WhatLinksHere/Chinese Dark Chess.html" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="Special:RecentChangesLinked/Chinese Dark Chess.html" rel="nofollow" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-specialpages"><a accesskey="q" href="Special:SpecialPages.html" title="A list of all special pages [q]">Special pages</a></li><li id="t-permalink"><a href="index.php?title=Chinese Dark Chess&amp;oldid=19792.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php?title=Chinese Dark Chess&amp;action=info.html" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 29 June 2020, at 15:37.</li>
+<li id="footer-info-copyright">Content is available under <a href="Chessprogramming:About.html" title="Chessprogramming:About">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="Chessprogramming:Privacy policy.html" title="Chessprogramming:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="Chessprogramming:About.html" title="Chessprogramming:About">About Chessprogramming wiki</a></li>
+<li id="footer-places-disclaimer"><a href="Chessprogramming:General disclaimer.html" title="Chessprogramming:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="https://www.chessprogramming.org/index.php?title=Chinese_Dark_Chess&amp;printable=yes&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+</ul>
+<ul class="noprint" id="footer-icons">
+<li id="footer-copyrightico">
+<a href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)" height="31" src="images/cc-by-sa.png" width="88"/></a> </li>
+<li id="footer-poweredbyico">
+<a href="/www.mediawiki.org/.html"><img alt="Powered by MediaWiki" height="31" src="resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.018","walltime":"0.020","ppvisitednodes":{"value":53,"limit":1000000},"ppgeneratednodes":{"value":90,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240722062003","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":44});});</script>
+</body>
+</html>
